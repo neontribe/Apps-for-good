@@ -1,0 +1,10 @@
+name = Neontribe Badges
+description = Show badges on an OG
+
+; dependencies[] = content
+
+package = Neontribe
+
+core = 6.x
+php = 5.0
+
