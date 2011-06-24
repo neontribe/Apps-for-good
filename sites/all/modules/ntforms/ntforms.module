@@ -2,13 +2,28 @@
 define('_GROUP_APP_TEAM_BODY_TITLE', 'Short Pitch');
 define('_GROUP_CENTRE_SCHOOL_BODY_TITLE', 'About this centre');
 
+function ntforms_init() {
+  $wt = db_result(
+    db_query(
+      'SELECT weight from {system} WHERE name = "ntforms"'
+    )
+  );
+  if ($wt < 99999) {
+    db_query(
+      'SELECT {system} SET weight = 99999 WHERE name = "ntforms"'
+    );
+  }
+}
+
 function ntforms_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'group_app_team_node_form') {
     // Rewrite the body field title
     $form['body_field']['body']['#title'] = _GROUP_APP_TEAM_BODY_TITLE;
 
     // Preconfigure the group space
-    // firep($form['spaces_preset'], 'spaces_preset');
+    $form['spaces_preset']['spaces_preset_og']['#disabled'] = TRUE;
+    $form['spaces_preset']['spaces_preset_og']['#default_value'] =
+      'application_team';
   } elseif ($form_id == 'group_centre_school_node_form') {
     // Rewrite the body field title
     $form['body_field']['body']['#title'] = _GROUP_CENTRE_SCHOOL_BODY_TITLE;
@@ -20,6 +35,11 @@ function ntforms_form_alter(&$form, &$form_state, $form_id) {
 
     $path = drupal_get_path('module', 'ntforms') . '/ntforms.js';
     drupal_add_js($path);
+
+    // Preconfigure the group space
+    $form['spaces_preset']['spaces_preset_og']['#disabled'] = TRUE;
+    $form['spaces_preset']['spaces_preset_og']['#default_value'] =
+      'centre_school';
   }
 }
 
