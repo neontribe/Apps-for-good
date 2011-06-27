@@ -35,6 +35,9 @@ function create_app_button_block($op = 'list', $delta = 0, $edit = array()) {
  * Create app form
  */
 function create_app_button_form(&$form_state) {
+
+//	drupal_set_message("test");
+
 	$form = array();
 	$form['appName'] = array(
 		'#type' => 'textfield',
@@ -87,7 +90,7 @@ function create_app_button_callback($parentNid, $appName) {
                 drupal_set_message('You need to be the administrator of the group to add an app to it.', 'error');
 		return;
         }
-	if(node_load(array('title' => $appName, 'type' => 'group')) != FALSE) { //does the group already exist?
+	if(node_load(array('title' => $appName, 'type' => 'group_app_team')) != FALSE) { //does the group already exist?
                 drupal_set_message('The ' . $appName . ' group already exists.', 'error');
 		return;
         }
@@ -96,7 +99,7 @@ function create_app_button_callback($parentNid, $appName) {
         $appGroup->title = $appName;
         $appGroup->uid = $user->uid;
         $appGroup->name = $user->name;
-        $appGroup->purl = array('value' => $appName);
+        $appGroup->purl = array('value' => urlencode(str_replace(' ', '-',$appName)));
         $appGroup->og_description = $appName;
         $appGroup->og_register = $parentGroup->og_register;
         $appGroup->og_directory = $parentGroup->og_directory;
@@ -104,6 +107,6 @@ function create_app_button_callback($parentNid, $appName) {
         $appGroup->og_private = $parentGroup->og_private;
         $appGroup = node_submit($appGroup);
 	node_save($appGroup);
-	drupal_set_message($appName . ' Group was created.'); //redirect to new group dashboard
-        return drupal_goto("../$appName");
+	drupal_set_message($appName . ' Group was created.'); //redirect to new group dashboard	
+        return drupal_goto('../' . urlencode(str_replace(' ','-',$appName)));
 }
