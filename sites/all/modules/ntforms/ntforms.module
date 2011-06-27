@@ -63,6 +63,7 @@ function ntforms_form_alter(&$form, &$form_state, $form_id) {
   }
 }
 
+
 /*
 // This function is not needed as we rely on core atrium validation of form
 function ntforms_pul_validate($form, &$form_state) {
