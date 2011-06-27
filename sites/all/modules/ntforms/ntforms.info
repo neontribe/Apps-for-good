@@ -1,0 +1,10 @@
+name = Neontribe Form Munger
+description = Various form tweaks for the A4G site
+
+; dependencies[] = content
+
+package = Neontribe
+
+core = 6.x
+php = 5.0
+

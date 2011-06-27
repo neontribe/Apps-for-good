@@ -1,0 +1,14 @@
+; $Id: addresses_cck.info,v 1.2 2010/07/09 06:48:19 alexiswilke Exp $
+core            = "6.x"
+description     = "Link addresses to contents using CCK"
+dependencies[]  = addresses
+dependencies[]  = content
+name            = "Addresses - CCK"
+package         = "Addresses"
+
+; Information added by drupal.org packaging script on 2010-09-08
+version = "6.x-1.10"
+core = "6.x"
+project = "addresses"
+datestamp = "1283982104"
+
