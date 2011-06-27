@@ -157,6 +157,29 @@ function afg_groups_views_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'content_extra_weights_group_centre_school';
+  $strongarm->value = array(
+    'title' => '-5',
+    'body_field' => '0',
+    'revision_information' => '6',
+    'author' => '7',
+    'options' => '8',
+    'comment_settings' => '10',
+    'menu' => '-1',
+    'taxonomy' => '-2',
+    'book' => '5',
+    'attachments' => '9',
+    'og_description' => '-4',
+    'og_selective' => '1',
+    'og_register' => '2',
+    'og_directory' => '3',
+    'og_private' => '4',
+  );
+
+  $export['content_extra_weights_group_centre_school'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_group_app_team';
   $strongarm->value = array(
     0 => 'status',

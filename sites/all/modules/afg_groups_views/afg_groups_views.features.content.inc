@@ -165,8 +165,90 @@ function afg_groups_views_content_default_fields() {
     ),
   );
 
+  // Exported field: field_logo
+  $fields['group_centre_school-field_logo'] = array(
+    'field_name' => 'field_logo',
+    'type_name' => 'group_centre_school',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'filefield',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'filefield',
+    'active' => '1',
+    'list_field' => '0',
+    'list_default' => 1,
+    'description_field' => '0',
+    'widget' => array(
+      'file_extensions' => 'png gif jpg jpeg',
+      'file_path' => '',
+      'progress_indicator' => 'bar',
+      'max_filesize_per_file' => '',
+      'max_filesize_per_node' => '',
+      'max_resolution' => '0',
+      'min_resolution' => '0',
+      'alt' => '',
+      'custom_alt' => 0,
+      'title' => '',
+      'custom_title' => 0,
+      'title_type' => 'textfield',
+      'default_image' => array(
+        'filename' => 'logo.jpg',
+        'filepath' => 'sites/default/files/imagefield_default_images/logo.jpg',
+        'filemime' => 'image/jpeg',
+        'source' => 'default_image_upload',
+        'destination' => 'sites/default/files/imagefield_default_images/logo.jpg',
+        'filesize' => 848,
+        'uid' => '1',
+        'status' => 1,
+        'timestamp' => 1308653674,
+        'fid' => '3',
+      ),
+      'use_default_image' => 1,
+      'label' => 'Centre logo',
+      'weight' => '-3',
+      'description' => 'These images will be re-sized to a 50px x 50px thumbnail. Please upload at this size if possible.',
+      'type' => 'imagefield_widget',
+      'module' => 'imagefield',
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
+  t('Centre logo');
   t('Parent Centre');
   t('logo');
 

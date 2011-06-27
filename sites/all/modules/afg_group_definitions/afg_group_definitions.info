@@ -1,6 +1,6 @@
 core = "6.x"
 dependencies[] = "spaces"
-description = "This feature installs the pre-configured group types. Should include dashboard settings and permissions, but at the moment, just defines spaces variables."
+description = "This feature installs the pre-configured group types. Should include dashboard context settings."
 features[ctools][] = "spaces:spaces:3"
 features[spaces_presets][] = "application_team"
 features[spaces_presets][] = "apps_for_good"

@@ -18,6 +18,23 @@ function afg_group_definitions_spaces_presets() {
       'spaces_og_register' => 1,
       'spaces_og_directory' => 1,
       'spaces_og_private' => 0,
+      'spaces_features' => array(
+        'atrium_blog' => '1',
+        'atrium_book' => '0',
+        'atrium_calendar' => '0',
+        'atrium_casetracker' => '0',
+        'atrium_members' => '1',
+        'atrium_shoutbox' => '0',
+        'spaces_dashboard' => '1',
+      ),
+      'site_frontpage' => 'dashboard',
+      'site_frontpage_path' => 'dashboard',
+      'designkit_image' => array(
+        'logo' => 0,
+      ),
+      'designkit_color' => array(
+        'background' => '#44aa55',
+      ),
     ),
   );
 
@@ -62,6 +79,31 @@ function afg_group_definitions_spaces_presets() {
       'spaces_og_register' => 1,
       'spaces_og_directory' => 1,
       'spaces_og_private' => 0,
+      'spaces_features' => array(
+        'atrium_blog' => '1',
+        'atrium_book' => '0',
+        'atrium_calendar' => '0',
+        'atrium_casetracker' => '0',
+        'atrium_members' => '1',
+        'atrium_shoutbox' => '0',
+        'spaces_dashboard' => '1',
+      ),
+      'site_frontpage' => 'dashboard',
+      'site_frontpage_path' => 'dashboard',
+      'designkit_image' => array(
+        'logo' => 0,
+      ),
+      'designkit_color' => array(
+        'background' => '#44aa55',
+      ),
+      'spaces_dashboard_custom' => array(
+        'custom-1' => 'Centre-School Dashboard',
+        'custom-2' => '',
+        'custom-3' => '',
+        'custom-4' => '',
+        'custom-5' => '',
+        0 => '',
+      ),
     ),
   );
 
