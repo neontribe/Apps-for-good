@@ -10,7 +10,7 @@ function ntforms_init() {
   );
   if ($wt < 99999) {
     db_query(
-      'SELECT {system} SET weight = 99999 WHERE name = "ntforms"'
+      'UPDATE {system} SET weight = 99999 WHERE name = "ntforms"'
     );
   }
 }
