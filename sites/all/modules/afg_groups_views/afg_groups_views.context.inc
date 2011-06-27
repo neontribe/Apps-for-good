@@ -20,6 +20,11 @@ function afg_groups_views_context_default_contexts() {
         'node_form' => '1',
       ),
     ),
+    'user' => array(
+      'values' => array(
+        'administrator' => 'administrator',
+      ),
+    ),
     'views' => array(
       'values' => array(
         'groups_listing_centre_school' => 'groups_listing_centre_school',
