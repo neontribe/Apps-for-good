@@ -133,7 +133,7 @@ function afg_profile_content_default_fields() {
     'province_size' => '',
     'province_label' => 'County',
     'province_desc' => '',
-    'city_select' => '0',
+    'city_select' => '1',
     'city_size' => '',
     'city_label' => '',
     'city_desc' => '',
@@ -152,7 +152,10 @@ function afg_profile_content_default_fields() {
     '0' => '',
     'widget' => array(
       'default_value' => array(
-        '0' => '',
+        '0' => array(
+          'province' => 'GSY',
+          'country' => 'uk',
+        ),
       ),
       'default_value_php' => NULL,
       'label' => 'Location',
