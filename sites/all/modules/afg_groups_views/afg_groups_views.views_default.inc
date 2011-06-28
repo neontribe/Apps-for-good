@@ -941,7 +941,7 @@ function afg_groups_views_views_default_views() {
     'weight' => 0,
     'name' => 'navigation',
   ));
-  $handler = $view->new_display('block', 'Block: User groups', 'block_1');
+  $handler = $view->new_display('block', 'Block: User applications', 'block_1');
   $handler->override_option('arguments', array(
     'uid' => array(
       'default_action' => 'default',
@@ -949,7 +949,7 @@ function afg_groups_views_views_default_views() {
       'style_options' => array(),
       'wildcard' => 'all',
       'wildcard_substitution' => 'All',
-      'title' => '%1\'s groups',
+      'title' => '%1\'s Applications',
       'breadcrumb' => '',
       'default_argument_type' => 'user',
       'default_argument' => '',
@@ -965,6 +965,7 @@ function afg_groups_views_views_default_views() {
         '2' => 0,
         '3' => 0,
         '4' => 0,
+        '5' => 0,
       ),
       'override' => array(
         'button' => 'Use default',
@@ -985,11 +986,16 @@ function afg_groups_views_views_default_views() {
         'shoutbox' => 0,
         'casetracker_basic_case' => 0,
         'casetracker_basic_project' => 0,
+        'group_app_team' => 0,
+        'group_centre_school' => 0,
+        'group_cdi' => 0,
       ),
       'validate_argument_node_access' => 0,
       'validate_argument_nid_type' => 'nid',
       'validate_argument_vocabulary' => array(
+        '2' => 0,
         '1' => 0,
+        '3' => 0,
       ),
       'validate_argument_type' => 'tid',
       'validate_argument_transform' => 0,
@@ -997,25 +1003,14 @@ function afg_groups_views_views_default_views() {
       'validate_argument_is_member' => 'OG_VIEWS_DO_NOT_VALIDATE_MEMBERSHIP',
       'validate_argument_group_node_type' => array(
         'group' => 0,
+        'group_app_team' => 0,
+        'group_centre_school' => 0,
+        'group_cdi' => 0,
       ),
       'validate_argument_php' => '',
     ),
   ));
   $handler->override_option('filters', array(
-    'type_groups_all' => array(
-      'operator' => '=',
-      'value' => '',
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type_groups_all',
-      'table' => 'og',
-      'field' => 'type_groups_all',
-      'relationship' => 'none',
-    ),
     'status' => array(
       'operator' => '=',
       'value' => 1,
@@ -1030,14 +1025,33 @@ function afg_groups_views_views_default_views() {
       'field' => 'status',
       'relationship' => 'none',
     ),
+    'type_groups' => array(
+      'operator' => 'in',
+      'value' => array(
+        'group_app_team' => 'group_app_team',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type_groups',
+      'table' => 'og',
+      'field' => 'type_groups',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
   ));
-  $handler->override_option('block_description', 'User groups');
+  $handler->override_option('block_description', 'User applications');
   $handler->override_option('block_caching', -1);
   $translatables['groups_listing_app_team'] = array(
     t('Application Directory'),
     t('Archived applications'),
     t('Block: My applications (sidebar)'),
-    t('Block: User groups'),
+    t('Block: User applications'),
     t('Defaults'),
     t('My applications'),
     t('No archived groups found.'),
@@ -1045,7 +1059,7 @@ function afg_groups_views_views_default_views() {
     t('Page: Application directory'),
     t('Page: Archived applications'),
     t('Page: My applications'),
-    t('User groups'),
+    t('User applications'),
     t('View more'),
   );
 
@@ -1930,7 +1944,7 @@ function afg_groups_views_views_default_views() {
     'weight' => 0,
     'name' => 'navigation',
   ));
-  $handler = $view->new_display('block', 'Block: User groups', 'block_1');
+  $handler = $view->new_display('block', 'Block: User centres', 'block_1');
   $handler->override_option('arguments', array(
     'uid' => array(
       'default_action' => 'default',
@@ -1938,7 +1952,7 @@ function afg_groups_views_views_default_views() {
       'style_options' => array(),
       'wildcard' => 'all',
       'wildcard_substitution' => 'All',
-      'title' => '%1\'s groups',
+      'title' => '%1\'s Centres',
       'breadcrumb' => '',
       'default_argument_type' => 'user',
       'default_argument' => '',
@@ -1954,6 +1968,7 @@ function afg_groups_views_views_default_views() {
         '2' => 0,
         '3' => 0,
         '4' => 0,
+        '5' => 0,
       ),
       'override' => array(
         'button' => 'Use default',
@@ -1974,11 +1989,16 @@ function afg_groups_views_views_default_views() {
         'shoutbox' => 0,
         'casetracker_basic_case' => 0,
         'casetracker_basic_project' => 0,
+        'group_app_team' => 0,
+        'group_centre_school' => 0,
+        'group_cdi' => 0,
       ),
       'validate_argument_node_access' => 0,
       'validate_argument_nid_type' => 'nid',
       'validate_argument_vocabulary' => array(
+        '2' => 0,
         '1' => 0,
+        '3' => 0,
       ),
       'validate_argument_type' => 'tid',
       'validate_argument_transform' => 0,
@@ -1986,25 +2006,14 @@ function afg_groups_views_views_default_views() {
       'validate_argument_is_member' => 'OG_VIEWS_DO_NOT_VALIDATE_MEMBERSHIP',
       'validate_argument_group_node_type' => array(
         'group' => 0,
+        'group_app_team' => 0,
+        'group_centre_school' => 0,
+        'group_cdi' => 0,
       ),
       'validate_argument_php' => '',
     ),
   ));
   $handler->override_option('filters', array(
-    'type_groups_all' => array(
-      'operator' => '=',
-      'value' => '',
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type_groups_all',
-      'table' => 'og',
-      'field' => 'type_groups_all',
-      'relationship' => 'none',
-    ),
     'status' => array(
       'operator' => '=',
       'value' => 1,
@@ -2019,13 +2028,32 @@ function afg_groups_views_views_default_views() {
       'field' => 'status',
       'relationship' => 'none',
     ),
+    'type_groups' => array(
+      'operator' => 'in',
+      'value' => array(
+        'group_centre_school' => 'group_centre_school',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type_groups',
+      'table' => 'og',
+      'field' => 'type_groups',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
   ));
-  $handler->override_option('block_description', 'User groups');
+  $handler->override_option('block_description', 'User centres');
   $handler->override_option('block_caching', -1);
   $translatables['groups_listing_centre_school'] = array(
     t('Archived centres'),
     t('Block: My centres (sidebar)'),
-    t('Block: User groups'),
+    t('Block: User centres'),
     t('Defaults'),
     t('Directory'),
     t('My centres'),
@@ -2035,7 +2063,7 @@ function afg_groups_views_views_default_views() {
     t('Page: Archived centres'),
     t('Page: Centre directory'),
     t('Page: My centres'),
-    t('User groups'),
+    t('User centres'),
     t('View more'),
   );
 
