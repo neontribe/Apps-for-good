@@ -156,7 +156,7 @@ function afg_profile_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Address',
-      'weight' => '-3',
+      'weight' => '-2',
       'description' => '',
       'type' => 'addresses_elements',
       'module' => 'addresses_cck',
