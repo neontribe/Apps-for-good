@@ -127,7 +127,7 @@ function afg_profile_content_default_fields() {
     'aname_desc' => '',
     'country_select' => '2',
     'country_size' => '',
-    'country_label' => '',
+    'country_label' => 'Country',
     'country_desc' => '',
     'province_select' => '1',
     'province_size' => '',
@@ -135,7 +135,7 @@ function afg_profile_content_default_fields() {
     'province_desc' => '',
     'city_select' => '1',
     'city_size' => '',
-    'city_label' => '',
+    'city_label' => 'City',
     'city_desc' => '',
     'street_select' => '0',
     'street_size' => '',
@@ -153,6 +153,7 @@ function afg_profile_content_default_fields() {
     'widget' => array(
       'default_value' => array(
         '0' => array(
+          'city' => '',
           'province' => 'GSY',
           'country' => 'uk',
         ),

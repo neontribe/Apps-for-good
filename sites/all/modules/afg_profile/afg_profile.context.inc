@@ -17,30 +17,23 @@ function afg_profile_context_default_contexts() {
         'view' => 'view',
       ),
       'options' => array(
-        'mode' => 'all',
+        'mode' => 'other',
+      ),
+    ),
+    'views' => array(
+      'values' => array(
+        'afg_profile_display' => 'afg_profile_display',
       ),
     ),
   );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-7ac8fa8ea620f2e3cbc056a7f16aa38d' => array(
-          'module' => 'views',
-          'delta' => '7ac8fa8ea620f2e3cbc056a7f16aa38d',
-          'region' => 'right',
-          'weight' => 0,
-        ),
         'views-activity_listing-block_3' => array(
           'module' => 'views',
           'delta' => 'activity_listing-block_3',
           'region' => 'content',
           'weight' => 0,
-        ),
-        'ntbadges-0' => array(
-          'module' => 'ntbadges',
-          'delta' => 0,
-          'region' => 'content',
-          'weight' => 1,
         ),
       ),
     ),
@@ -56,7 +49,7 @@ function afg_profile_context_default_contexts() {
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'afg_profile_groups';
-  $context->description = 'display this user\'s groups in a block';
+  $context->description = 'display this user\'s groups in a block for other users to see';
   $context->tag = 'Profile';
   $context->conditions = array(
     'user_page' => array(
@@ -64,7 +57,7 @@ function afg_profile_context_default_contexts() {
         'view' => 'view',
       ),
       'options' => array(
-        'mode' => 'all',
+        'mode' => 'other',
       ),
     ),
     'views' => array(
@@ -96,7 +89,7 @@ function afg_profile_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Profile');
-  t('display this user\'s groups in a block');
+  t('display this user\'s groups in a block for other users to see');
 
   $export['afg_profile_groups'] = $context;
   return $export;
