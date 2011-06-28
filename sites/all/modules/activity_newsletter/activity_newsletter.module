@@ -1,0 +1,27 @@
+<?php
+
+/*
+ * Implementation of hook_views_api()
+ */
+function activity_newsletter_views_api() {
+	return array(
+		'api' => 2
+	);
+}
+
+
+/*
+ * Implementation of hook_cron()
+ */
+function activity_newsletter_cron() {
+	$view = views_get_view('activity_listing');	//load the view
+	$view->set_arguments(array(1));			//set the url arguments of the view
+	$result = db_query('SELECT * FROM {users} u WHERE u.uid != 0');
+	while($user = db_fetch_object($result)) {
+		$user = drupal_unpack($user);
+		$view->set_arguments(array($user->uid));                 //set the url arguments of the view
+		echo '<b>' . $user->name . '</b>:';
+		echo $view->preview('block_3');                 //execute the user activity view
+		echo "\n\n";
+	}
+}
