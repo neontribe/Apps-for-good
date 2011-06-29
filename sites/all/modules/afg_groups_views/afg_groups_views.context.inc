@@ -22,7 +22,7 @@ function afg_groups_views_context_default_contexts() {
     ),
     'user' => array(
       'values' => array(
-        'administrator' => 'administrator',
+        'cdi employee' => 'cdi employee',
       ),
     ),
     'views' => array(
