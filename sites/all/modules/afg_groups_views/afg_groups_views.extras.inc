@@ -54,6 +54,8 @@ function afg_groups_views_form_alter(&$form, &$form_state, $form_id) {
     if (!isset($form['nid']['#value'])) {
       $path = drupal_get_path('module', 'afg_groups_views') . '/afg_groups_views.js';
       drupal_add_js($path);
+      // drupal_add_js("$('#edit-title').trigger('change');", 'inline');
+
     }
 
     // Preconfigure the group space
@@ -66,6 +68,11 @@ function afg_groups_views_form_alter(&$form, &$form_state, $form_id) {
     // if prepopulates are set for title of centre the set them
     if (isset($_GET['title'])) {
       $form['title']['#default_value'] = $_GET['title'];
+      drupal_add_js(
+        "$('#edit-purl-value').val($('#edit-title').val().replace(/[^a-zA-Z0-9]/g, '-').toLowerCase())",
+        'inline',
+        'footer'
+      );
     }
     if (isset($_GET['centre'])) {
       $form['taxonomy'][2]['#default_value'] = $_GET['centre'];

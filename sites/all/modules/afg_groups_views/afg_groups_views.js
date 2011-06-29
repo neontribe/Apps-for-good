@@ -6,3 +6,5 @@ Drupal.behaviors.ntforms = function (context) {
     $('#edit-purl-value').val(newname);
   });
 }
+
+// $('#edit-title').trigger('change');
