@@ -61,6 +61,16 @@ function afg_groups_views_form_alter(&$form, &$form_state, $form_id) {
     $form['spaces_preset']['spaces_preset_og']['#default_value']
       = $forms[$form_id]['space'];
   }
+
+  if ($form_id == 'group_app_team_node_form') {
+    // if prepopulates are set for title of centre the set them
+    if (isset($_GET['title'])) {
+      $form['title']['#default_value'] = $_GET['title'];
+    }
+    if (isset($_GET['centre'])) {
+      $form['taxonomy'][2]['#default_value'] = $_GET['centre'];
+    }
+  }
 }
 
 

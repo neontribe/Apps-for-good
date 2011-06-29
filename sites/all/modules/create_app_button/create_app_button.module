@@ -53,60 +53,45 @@ function create_app_button_form(&$form_state) {
 }
 
 /*
- * Create app form submit handler
- */
-function create_app_button_form_submit($form, &$form_state) {
-	$space = spaces_get_space();
-	$group = $space->group->nid;
-	create_app_button_callback($group, $form['appName']['#value']);
-}
-
-/*
  * Implementation of hook_context_links_alter
  * 
  * Adds an entry to the context links menu
  */
 function create_app_button_context_links_alter(&$links) {
-	$space = spaces_get_space();
-	if($space->group->type == 'group_centre_school') {
-		$links['create-app-button'] = array(
-	                'title' => t('Create Application'),
-	                'href' => "create_app_button",
-	                'fragment' => 'block-create_app_button-0',
-	                'attributes' => array(
-	                        'class' => 'palette-toggle'
-                	)
-        	);
-	}
+  global $user;
+  $og = spaces_get_space();
+  $type = $og->group->type;
+  $nid = $og->group->nid;
+  $node = node_load($nid);
+  
+  if (
+    $type == 'group_centre_school'
+    && og_is_group_admin($node, $user)
+  ) {
+    $links['create-app-button'] = array(
+      'title' => t('Create Application'),
+      'href' => "create_app_button",
+      'fragment' => 'block-create_app_button-0',
+      'attributes' => array(
+        'class' => 'palette-toggle'
+      )
+    );
+  }
 }
 
 /*
- * Create the child group
+ * Create app form submit handler
  */
-function create_app_button_callback($parentNid, $appName) {
-	global $user;
-	$parentGroup = node_load($parentNid);
-	if(!og_is_group_admin($parentGroup)) { //is the current user admin on the parent group?
-                drupal_set_message('You need to be the administrator of the group to add an app to it.', 'error');
-		return;
-        }
-	if(node_load(array('title' => $appName, 'type' => 'group_app_team')) != FALSE) { //does the group already exist?
-                drupal_set_message('The ' . $appName . ' group already exists.', 'error');
-		return;
-        }
-	$appGroup = new stdClass(); //create the child group
-        $appGroup->type = 'group_app_team';
-        $appGroup->title = $appName;
-        $appGroup->uid = $user->uid;
-        $appGroup->name = $user->name;
-        $appGroup->purl = array('value' => urlencode(str_replace(' ', '-',$appName)));
-        $appGroup->og_description = $appName;
-        $appGroup->og_register = $parentGroup->og_register;
-        $appGroup->og_directory = $parentGroup->og_directory;
-        $appGroup->og_selective = $parentGroup->og_selective;
-        $appGroup->og_private = $parentGroup->og_private;
-        $appGroup = node_submit($appGroup);
-	node_save($appGroup);
-	drupal_set_message($appName . ' Group was created.'); //redirect to new group dashboard	
-        return drupal_goto('../' . urlencode(str_replace(' ','-',$appName)));
+function create_app_button_form_submit($form, &$form_state) {
+  $og = spaces_get_space();
+  $type = $og->group->type;
+  $id = $og->id;
+
+  if ($type == 'group_centre_school') {
+    $path = 'node/add/group-app-team';
+    $qs = 
+      'title=' . urlencode($form['appName']['#value'])
+      . '&centre=' . $id;
+    drupal_goto($path, $qs);
+  }
 }
