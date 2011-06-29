@@ -75,11 +75,19 @@ function afg_groups_views_form_alter(&$form, &$form_state, $form_id) {
       );
     }
     if (isset($_GET['centre'])) {
-      $form['taxonomy'][2]['#default_value'] = $_GET['centre'];
+      $form['field_centre_ref']['#default_value'] =
+        array(0 => array('nid' => $_GET['centre']));
     }
   }
 }
 
+function afg_groups_views_exit() {
+  $bc = drupal_get_breadcrumb();
+  // dpm($bc);
+  $bc[1] = l('xxx', '<front>');
+  // dpm($bc);
+  drupal_set_breadcrumb($bc);
+}
 
 /*
 // This function is not needed as we rely on core atrium validation of form
