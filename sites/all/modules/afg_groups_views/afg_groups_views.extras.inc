@@ -85,7 +85,6 @@ function afg_groups_views_context_page_reaction() {
   $space = spaces_get_space();
   $group = $space->group;
   $type = $group->type;
-  dpm($type);
   if ($type == 'group_centre_school' || $type == 'group_app_team') {
     $bc = drupal_get_breadcrumb();
     switch ($type) {
