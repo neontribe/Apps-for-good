@@ -81,12 +81,23 @@ function afg_groups_views_form_alter(&$form, &$form_state, $form_id) {
   }
 }
 
-function afg_groups_views_exit() {
-  $bc = drupal_get_breadcrumb();
-  // dpm($bc);
-  $bc[1] = l('xxx', '<front>');
-  // dpm($bc);
-  drupal_set_breadcrumb($bc);
+function afg_groups_views_context_page_reaction() {
+  $space = spaces_get_space();
+  $group = $space->group;
+  $type = $group->type;
+  dpm($type);
+  if ($type == 'group_centre_school' || $type == 'group_app_team') {
+    $bc = drupal_get_breadcrumb();
+    switch ($type) {
+      case 'group_centre_school':
+        $bc[1] = l('Centres', 'cen/all');
+      break;
+      case 'group_app_team':
+        $bc[1] = l('Applications', 'apps/all');
+      break;
+    }
+    drupal_set_breadcrumb($bc);
+  }
 }
 
 /*
