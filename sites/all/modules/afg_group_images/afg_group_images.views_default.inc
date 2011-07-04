@@ -156,11 +156,11 @@ function afg_group_images_views_default_views() {
   $handler = $view->new_display('page', 'Group Images', 'page_1');
   $handler->override_option('path', 'group-images');
   $handler->override_option('menu', array(
-    'type' => 'none',
-    'title' => '',
-    'description' => '',
-    'weight' => 0,
-    'name' => 'navigation',
+    'type' => 'normal',
+    'title' => 'Group Images',
+    'description' => 'This groups images',
+    'weight' => '0',
+    'name' => 'features',
   ));
   $handler->override_option('tab_options', array(
     'type' => 'none',
