@@ -138,9 +138,25 @@ function afg_group_images_views_default_views() {
       'field' => 'type',
       'relationship' => 'none',
     ),
+    'current' => array(
+      'operator' => '=',
+      'value' => '',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'current',
+      'table' => 'spaces',
+      'field' => 'current',
+      'relationship' => 'none',
+    ),
   ));
   $handler->override_option('access', array(
-    'type' => 'none',
+    'type' => 'spaces_feature',
+    'spaces_feature' => 'afg_group_images',
+    'perm' => 'access content',
   ));
   $handler->override_option('cache', array(
     'type' => 'none',
