@@ -33,7 +33,15 @@ function afg_group_definitions_spaces_presets() {
         'logo' => 0,
       ),
       'designkit_color' => array(
-        'background' => '#44aa55',
+        'background' => '#aa44a1',
+      ),
+      'spaces_dashboard_custom' => array(
+        'custom-1' => 'App Team Dashboard',
+        'custom-2' => '',
+        'custom-3' => '',
+        'custom-4' => '',
+        'custom-5' => '',
+        0 => '',
       ),
     ),
   );
@@ -97,7 +105,7 @@ function afg_group_definitions_spaces_presets() {
         'background' => '#44aa55',
       ),
       'spaces_dashboard_custom' => array(
-        'custom-1' => 'Centre-School Dashboard',
+        'custom-1' => 'Centre-School Homespace',
         'custom-2' => '',
         'custom-3' => '',
         'custom-4' => '',
