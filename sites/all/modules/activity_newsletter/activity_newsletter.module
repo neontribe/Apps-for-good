@@ -18,7 +18,7 @@ function activity_newsletter_views_api() {
  */
 function activity_newsletter_cron() {
 	//is a newsletter due?
-	$last_newsletter = 0;//variable_get('activity_newsletter_last', 0);	//0 won't do everything as view has a time limit it imposes anyways
+	$last_newsletter = variable_get('activity_newsletter_last', 0);	//0 won't do everything as view has a time limit it imposes anyways
 	if((time() - $last_newsletter) < variable_get('activity_newsletter_interval', 60*60*24)) return; //Only continue if newsletter is due
 	variable_set('activity_newsletter_last', time()); //newsletter time set
 	//load the view
