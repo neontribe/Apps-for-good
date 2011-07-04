@@ -11,6 +11,7 @@ function string_replaces_strongarm() {
   $strongarm->name = 'locale_custom_strings_en';
   $strongarm->value = array(
     'Members' => 'Supporters',
+    'Dashboard' => 'Homespace',
   );
 
   $export['locale_custom_strings_en'] = $strongarm;
