@@ -49,7 +49,7 @@ function afg_profile_context_default_contexts() {
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'afg_profile_groups';
-  $context->description = 'display this user\'s groups in a block for other users to see';
+  $context->description = 'display this user\'s groups and badges in a block for other users to see';
   $context->tag = 'Profile';
   $context->conditions = array(
     'user_page' => array(
@@ -81,6 +81,12 @@ function afg_profile_context_default_contexts() {
           'region' => 'right',
           'weight' => 1,
         ),
+        'views-badges-block_2' => array(
+          'module' => 'views',
+          'delta' => 'badges-block_2',
+          'region' => 'right',
+          'weight' => 2,
+        ),
       ),
     ),
   );
@@ -89,7 +95,7 @@ function afg_profile_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Profile');
-  t('display this user\'s groups in a block for other users to see');
+  t('display this user\'s groups and badges in a block for other users to see');
 
   $export['afg_profile_groups'] = $context;
   return $export;
