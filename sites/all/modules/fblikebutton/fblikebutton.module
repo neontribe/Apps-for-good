@@ -206,6 +206,7 @@ function fblikebutton_block($op = 'list', $delta = 0, $edit = array()) {
       if (user_access('users may access Like button')) {
         $block['subject'] = t('');
         $block['content'] = _fblikebutton_field($addr, $conf);
+	$fh = fopen('/tmp/fb', 'a'); fwrite($fh, $block['content'] . "\n"); fclose($fh);
         return $block;
       }
   }
