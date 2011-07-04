@@ -54,6 +54,8 @@ function afg_groups_views_form_alter(&$form, &$form_state, $form_id) {
     if (!isset($form['nid']['#value'])) {
       $path = drupal_get_path('module', 'afg_groups_views') . '/afg_groups_views.js';
       drupal_add_js($path);
+      // drupal_add_js("$('#edit-title').trigger('change');", 'inline');
+
     }
 
     // Preconfigure the group space
@@ -61,8 +63,41 @@ function afg_groups_views_form_alter(&$form, &$form_state, $form_id) {
     $form['spaces_preset']['spaces_preset_og']['#default_value']
       = $forms[$form_id]['space'];
   }
+
+  if ($form_id == 'group_app_team_node_form') {
+    // if prepopulates are set for title of centre the set them
+    if (isset($_GET['title'])) {
+      $form['title']['#default_value'] = $_GET['title'];
+      drupal_add_js(
+        "$('#edit-purl-value').val($('#edit-title').val().replace(/[^a-zA-Z0-9]/g, '-').toLowerCase())",
+        'inline',
+        'footer'
+      );
+    }
+    if (isset($_GET['centre'])) {
+      $form['field_centre_ref']['#default_value'] =
+        array(0 => array('nid' => $_GET['centre']));
+    }
+  }
 }
 
+function afg_groups_views_context_page_reaction() {
+  $space = spaces_get_space();
+  $group = $space->group;
+  $type = $group->type;
+  if ($type == 'group_centre_school' || $type == 'group_app_team') {
+    $bc = drupal_get_breadcrumb();
+    switch ($type) {
+      case 'group_centre_school':
+        $bc[1] = l('Centres', 'cen/all');
+      break;
+      case 'group_app_team':
+        $bc[1] = l('Applications', 'apps/all');
+      break;
+    }
+    drupal_set_breadcrumb($bc);
+  }
+}
 
 /*
 // This function is not needed as we rely on core atrium validation of form

@@ -73,9 +73,9 @@ function afg_profile_content_default_fields() {
     ),
   );
 
-  // Exported field: field_address
-  $fields['profile-field_address'] = array(
-    'field_name' => 'field_address',
+  // Exported field: field_location
+  $fields['profile-field_location'] = array(
+    'field_name' => 'field_location',
     'type_name' => 'profile',
     'display_settings' => array(
       'label' => array(
@@ -127,15 +127,15 @@ function afg_profile_content_default_fields() {
     'aname_desc' => '',
     'country_select' => '2',
     'country_size' => '',
-    'country_label' => '',
+    'country_label' => 'Country',
     'country_desc' => '',
     'province_select' => '1',
     'province_size' => '',
     'province_label' => 'County',
     'province_desc' => '',
-    'city_select' => '0',
+    'city_select' => '1',
     'city_size' => '',
-    'city_label' => '',
+    'city_label' => 'City',
     'city_desc' => '',
     'street_select' => '0',
     'street_size' => '',
@@ -152,10 +152,14 @@ function afg_profile_content_default_fields() {
     '0' => '',
     'widget' => array(
       'default_value' => array(
-        '0' => '',
+        '0' => array(
+          'city' => '',
+          'province' => 'GSY',
+          'country' => 'uk',
+        ),
       ),
       'default_value_php' => NULL,
-      'label' => 'Address',
+      'label' => 'Location',
       'weight' => '-3',
       'description' => '',
       'type' => 'addresses_elements',
@@ -166,7 +170,7 @@ function afg_profile_content_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('About me');
-  t('Address');
+  t('Location');
 
   return $fields;
 }

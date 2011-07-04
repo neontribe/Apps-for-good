@@ -1,0 +1,3 @@
+<?php
+
+include_once('afg_facebook_like.features.inc');

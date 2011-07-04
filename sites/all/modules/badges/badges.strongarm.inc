@@ -46,14 +46,14 @@ function badges_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'taxonomy_image_imagecache_preset';
-  $strongarm->value = 'badge-thumb';
+  $strongarm->value = 'AttachmentThumbnail';
 
   $export['taxonomy_image_imagecache_preset'] = $strongarm;
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'taxonomy_image_link_title';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
 
   $export['taxonomy_image_link_title'] = $strongarm;
   $strongarm = new stdClass;
