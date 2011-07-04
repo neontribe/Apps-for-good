@@ -1,0 +1,63 @@
+<?php
+
+/*
+ * Implementation of hook_views_api()
+ 
+function activity_newsletter_views_api() {
+	return array(
+		'api' => 2
+	);
+}*/
+
+
+/*
+ * Implementation of hook_cron()
+ *
+ * TODO
+ * 	Instead of using the recent activity view, build the view object from scratch programmatically
+ */
+function activity_newsletter_cron() {
+	//is a newsletter due?
+	$last_newsletter = 0;//variable_get('activity_newsletter_last', 0);	//0 won't do everything as view has a time limit it imposes anyways
+	if((time() - $last_newsletter) < variable_get('activity_newsletter_interval', 60*60*24)) return; //Only continue if newsletter is due
+	variable_set('activity_newsletter_last', time()); //newsletter time set
+	//load the view
+	$view = views_get_view('activity_listing');	//load the view
+	//get resource array of users
+	$result = db_query('SELECT * FROM {users} u WHERE u.uid != 0');
+	//loop through each generating recenty activity email for each
+	while($user = db_fetch_object($result)) {
+		//use the user activity display
+		$view->set_display('block_3');
+		//pre-execute, sets argument
+		$view->pre_execute(array($user->uid));
+		//builds results array according to filters
+		$view->execute();
+		//remove results that are older than the last newsletter
+		foreach($view->result as $result_index => $result_value) {		//filter out each item that happened before last newsletter
+			if($result_value->history_user_timestamp < $last_newsletter) {
+				unset($view->result[$result_index]);
+			}
+		}
+		$view->result = array_values($view->result);				//fix indexes
+		//run the results through the display handler
+		$activity_feed = $view->display_handler->execute();
+		//template
+		$output = theme('activity-newsletter', $activity_feed['content'], $user->name);	
+		//email the user
+		mail($user->email, variable_get('site_name', 'Apps for good'), $output);
+	}
+	drupal_set_message("Recent activity newsletter has been sent");
+}
+
+/*
+ * Implementation of hook_theme()
+ */
+function activity_newsletter_theme($existing, $type, $theme, $path) {
+	return array(
+		'activity-newsletter' => array(
+			'arguments' => array('content' => NULL, 'name' => NULL),
+			'template' => 'activity-newsletter'	
+		)
+	);
+}

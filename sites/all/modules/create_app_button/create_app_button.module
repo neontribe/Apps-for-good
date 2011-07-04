@@ -1,9 +1,5 @@
 <?php
 
-//TODO git commit
-//TODO git push
-//TODO when on the live site create node reference
-
 /*
  * Implementation of hook_menu
  *
