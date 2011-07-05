@@ -75,18 +75,14 @@ function afg_group_images_strongarm() {
   $strongarm->value = array(
     'title' => '-5',
     'body_field' => '2',
-    'revision_information' => '5',
-    'author' => '6',
-    'options' => '7',
-    'comment_settings' => '8',
-    'menu' => '-2',
-    'book' => '4',
-    'attachments' => '9',
-    'og_description' => '-4',
-    'og_selective' => '-1',
-    'og_register' => '0',
-    'og_directory' => '3',
-    'og_private' => '1',
+    'revision_information' => '4',
+    'author' => '5',
+    'options' => '6',
+    'comment_settings' => '7',
+    'menu' => '0',
+    'book' => '3',
+    'attachments' => '8',
+    'og_nodeapi' => '1',
   );
 
   $export['content_extra_weights_group_image'] = $strongarm;

@@ -40,9 +40,9 @@ function afg_group_images_imagecache_default_presets() {
 function afg_group_images_node_info() {
   $items = array(
     'group_image' => array(
-      'name' => t('Group Image'),
+      'name' => t('Group Media'),
       'module' => 'features',
-      'description' => t('This is an image that can be added to a group.'),
+      'description' => t('This allows various media to be added to a group gallery.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'has_body' => '1',

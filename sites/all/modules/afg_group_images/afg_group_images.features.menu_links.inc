@@ -11,10 +11,10 @@ function afg_group_images_menu_default_menu_links() {
     'menu_name' => 'navigation',
     'link_path' => 'node/add/group-image',
     'router_path' => 'node/add/group-image',
-    'link_title' => 'Group Image',
+    'link_title' => 'Group Media',
     'options' => array(
       'attributes' => array(
-        'title' => 'This is an image that can be added to a group.',
+        'title' => 'This allows various media to be added to a group gallery.',
       ),
     ),
     'module' => 'system',
@@ -27,7 +27,7 @@ function afg_group_images_menu_default_menu_links() {
   );
   // Translatables
   // Included for use with string extractors like potx.
-  t('Group Image');
+  t('Group Media');
 
 
   return $menu_links;

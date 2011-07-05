@@ -120,6 +120,88 @@ function afg_group_images_views_default_views() {
       'field' => 'comments_link',
       'relationship' => 'none',
     ),
+    'field_group_flickr_embed' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'label_type' => 'none',
+      'format' => 'video_thumbnail',
+      'multiple' => array(
+        'group' => TRUE,
+        'multiple_number' => '',
+        'multiple_from' => '',
+        'multiple_reversed' => FALSE,
+      ),
+      'exclude' => 0,
+      'id' => 'field_group_flickr_embed',
+      'table' => 'node_data_field_group_flickr',
+      'field' => 'field_group_flickr_embed',
+      'override' => array(
+        'button' => 'Override',
+      ),
+      'relationship' => 'none',
+    ),
+    'field_group_video_embed' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'label_type' => 'none',
+      'format' => 'video_replace_preview',
+      'multiple' => array(
+        'group' => TRUE,
+        'multiple_number' => '',
+        'multiple_from' => '',
+        'multiple_reversed' => FALSE,
+      ),
+      'exclude' => 0,
+      'id' => 'field_group_video_embed',
+      'table' => 'node_data_field_group_video',
+      'field' => 'field_group_video_embed',
+      'override' => array(
+        'button' => 'Override',
+      ),
+      'relationship' => 'none',
+    ),
   ));
   $handler->override_option('filters', array(
     'type' => array(
@@ -169,8 +251,8 @@ function afg_group_images_views_default_views() {
     'alignment' => 'horizontal',
     'fill_single_line' => 1,
   ));
-  $handler = $view->new_display('page', 'Group Images', 'page_1');
-  $handler->override_option('path', 'group-images');
+  $handler = $view->new_display('page', 'Media Gallery', 'page_1');
+  $handler->override_option('path', 'media-gallery');
   $handler->override_option('menu', array(
     'type' => 'normal',
     'title' => 'Group Images',
@@ -187,7 +269,7 @@ function afg_group_images_views_default_views() {
   ));
   $translatables['Group_Images'] = array(
     t('Defaults'),
-    t('Group Images'),
+    t('Media Gallery'),
   );
 
   $views[$view->name] = $view;
