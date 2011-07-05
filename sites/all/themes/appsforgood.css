@@ -1,0 +1,66 @@
+/* support the renaming of the casetracker to tasks whilist maintaining its menu icon */
+#features-menu li a.icon-tasks span.icon {
+      background-position: -120px -40px;
+}
+
+body.spaces-design { background:url(images/texture.jpg) repeat; }
+
+body.spaces-design #page,
+body.spaces-design #navigation,
+body.spaces-design #page-header { background:transparent; }
+
+body #header .block-widget .block-content, body #header .block .block-title {
+    background-color: #4FB143; /* the brand color that is not carrying through >:( */
+}
+
+a {
+color:#005128;
+}
+
+.atrium-skin { background-image:url(images/sprite_skin.png); }
+
+#global, #global a.logo, #global .breadcrumb span.link-0 a, #global .breadcrumb span.divider, #global .breadcrumb span.space a, #navigation, #features-menu li, #features-menu li a {
+background-image: url("images/sprite_skin.png");
+}
+
+#global {
+height:100px;
+background:#fff url(images/squares.png) no-repeat left bottom !important;
+}
+
+span.divider, #global .breadcrumb span a {
+color:#666;
+}
+
+.limiter {
+border-bottom: 1px dotted #CCCCCC;
+}
+
+a.logo {
+background:url(images/logo.png) no-repeat right center !important;
+margin:10px 0;
+height:80px !important;
+}
+
+.views-field-feature span.spaces-feature,
+#features-menu li a span.icon { background-image:url(images/sprite_icons.png); }
+
+#features-menu li.active a span.icon { background-image:url(images/sprite_icons_active.png); }
+
+/* adjustments from example --------------------------------- */
+
+#page { border-bottom:0px; }
+
+#navigation {
+background:none;
+}
+
+#navigation ul.space-links { padding:15px 0px 0px; }
+
+#navigation ul.space-links li a { border-color:#fff; }
+
+#footer {
+border-top:0px;
+padding:80px 0px 40px;
+background:url(images/footer.png) repeat-x;
+}
