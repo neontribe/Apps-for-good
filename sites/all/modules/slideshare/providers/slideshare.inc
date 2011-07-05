@@ -157,7 +157,7 @@ function emvideo_slideshare_thumbnail($field, $item, $formatter, $node, $width, 
 /**
  * Implementation of hook_<provider>_video()
  */
-function emvideo_slideshare_video($embed, $width, $height, $field, $item, &$node, $autoplay) {
+function emvideo_slideshare_video($embed, $width, $height, $field, $item, $node, $autoplay) {
   $output = theme('slideshare_flash', $embed, $width, $height, $field, $item, $node, $autoplay);
   return $output;
 }
@@ -165,7 +165,7 @@ function emvideo_slideshare_video($embed, $width, $height, $field, $item, &$node
 /**
  * Implementation of hook_<provider>_preview()
  */
-function emvideo_slideshare_preview($embed, $width, $height, $field, $item, &$node, $autoplay) {
+function emvideo_slideshare_preview($embed, $width, $height, $field, $item, $node, $autoplay) {
   $output = theme('slideshare_flash', $embed, $width, $height, $field, $item, $node, $autoplay);
   return $output;
 }

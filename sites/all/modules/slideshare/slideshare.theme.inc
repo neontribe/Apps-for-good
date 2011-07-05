@@ -10,7 +10,10 @@
 /**
  * Flash embed.
  */
-function theme_slideshare_flash($embed, $width, $height, $field, $item, &$node, $autoplay) {
+function theme_slideshare_flash($embed, $width, $height, $field, $item, $node, $autoplay) {
+   if (is_numeric($embed)) {
+     $embedded_content = $item['data']['EMBED'][0];
+   }
   $matches = array();
   preg_match_all('/<object[^>]*>(.*?)<\/object>/', $item['data']['EMBED'][0], $matches);
   $output = '<object width="'. $width .'" height="'. $height .'" style="margin: 0;">'. $matches[1][0] .'</object>';
