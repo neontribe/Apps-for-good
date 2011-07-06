@@ -19,6 +19,7 @@ function afg_group_definitions_spaces_presets() {
       'spaces_og_directory' => 1,
       'spaces_og_private' => 0,
       'spaces_features' => array(
+        'afg_group_images' => '1',
         'atrium_blog' => '1',
         'atrium_book' => '0',
         'atrium_calendar' => '0',
@@ -42,6 +43,18 @@ function afg_group_definitions_spaces_presets() {
         'custom-4' => '',
         'custom-5' => '',
         0 => '',
+      ),
+      'spaces_dashboard_blocks' => array(
+        'atrium_calendar-mini' => 1,
+        'views-activity_listing-block_1' => 1,
+        'views-activity_listing-block_2' => 1,
+        'views-blog_comments-block_1' => 1,
+        'views-blog_listing-block_2' => 1,
+        'views-calendar_upcoming-block_1' => 1,
+        'views-casetracker_cases-block_2' => 1,
+        'views-casetracker_cases-block_3' => 1,
+        'views-casetracker_projects-block_1' => 1,
+        'views-groups_listing_app_team-block_3' => 1,
       ),
     ),
   );
