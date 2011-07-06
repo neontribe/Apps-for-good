@@ -1203,6 +1203,57 @@ function afg_groups_views_views_default_views() {
       'validate_argument_php' => '',
     ),
   ));
+  $handler->override_option('filters', array(
+    'type_groups_all' => array(
+      'operator' => '=',
+      'value' => '',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type_groups_all',
+      'table' => 'og',
+      'field' => 'type_groups_all',
+      'relationship' => 'none',
+    ),
+    'status' => array(
+      'operator' => '=',
+      'value' => 1,
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'group_app_team' => 'group_app_team',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'none',
+    ),
+  ));
+  $handler->override_option('access', array(
+    'type' => 'spaces_feature',
+    'spaces_feature' => 'atrium_groups',
+    'perm' => 'access content',
+  ));
   $handler->override_option('title', 'Centre');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);

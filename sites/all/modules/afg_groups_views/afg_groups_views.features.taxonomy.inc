@@ -17,9 +17,9 @@ function afg_groups_views_taxonomy_default_vocabularies() {
       'module' => 'features_badges',
       'weight' => '0',
       'nodes' => array(
-        'group_app_team' => 'group_app_team',
-        'group_centre_school' => 'group_centre_school',
         'profile' => 'profile',
+        'group_centre_school' => 'group_centre_school',
+        'group_app_team' => 'group_app_team',
       ),
     ),
   );
