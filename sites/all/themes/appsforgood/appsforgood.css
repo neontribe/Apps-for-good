@@ -21,6 +21,10 @@ a.icon-centres span.icon {
 background:transparent url(images/sprite_icons.png) no-repeat -40px 0 !important;
 }
 
+a.icon-media-gallery span.icon {
+background:transparent url(images/sprite_icons.png) no-repeat -80px 0 !important;
+}
+
 .atrium-skin { background-image:url(images/sprite_skin.png); }
 
 #global, #global a.logo, #global .breadcrumb span.link-0 a, #global .breadcrumb span.divider, #global .breadcrumb span.space a, #navigation, #features-menu li, #features-menu li a {
