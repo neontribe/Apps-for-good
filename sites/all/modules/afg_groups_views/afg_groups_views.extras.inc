@@ -89,7 +89,7 @@ function afg_groups_views_context_page_reaction() {
     $bc = drupal_get_breadcrumb();
     switch ($type) {
       case 'group_centre_school':
-        $bc[1] = l('Centres', '../cen/all');
+        $bc[1] = l('Centres', '../centres/all');
       break;
       case 'group_app_team':
         $bc[1] = l('Applications', '../apps/all');
