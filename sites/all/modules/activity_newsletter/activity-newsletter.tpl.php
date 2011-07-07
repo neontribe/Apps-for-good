@@ -1,2 +1,5 @@
-<p>To <?php echo $name ?></p>
-<p><?php echo $content ?></p>
+<?php
+	foreach($rows as $row) {
+		echo "$row\n";
+	}
+?>
