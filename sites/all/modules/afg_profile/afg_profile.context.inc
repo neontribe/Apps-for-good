@@ -87,6 +87,12 @@ function afg_profile_context_default_contexts() {
           'region' => 'right',
           'weight' => 2,
         ),
+        'fb_social_like-like' => array(
+          'module' => 'fb_social_like',
+          'delta' => 'like',
+          'region' => 'right',
+          'weight' => 3,
+        ),
       ),
     ),
   );

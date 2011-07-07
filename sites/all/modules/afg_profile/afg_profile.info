@@ -1,6 +1,7 @@
 core = "6.x"
 dependencies[] = "addresses_cck"
 dependencies[] = "atrium_activity"
+dependencies[] = "fb_social_like"
 dependencies[] = "features"
 dependencies[] = "ntbadges"
 dependencies[] = "strongarm"
