@@ -1255,6 +1255,8 @@ function afg_groups_views_views_default_views() {
     'perm' => 'access content',
   ));
   $handler->override_option('title', 'Centre');
+  $handler->override_option('empty', '');
+  $handler->override_option('empty_format', '5');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $translatables['groups_listing_app_team'] = array(
@@ -1421,8 +1423,10 @@ function afg_groups_views_views_default_views() {
     'type' => 'perm',
     'perm' => 'access content',
   ));
+  $handler->override_option('empty', '');
+  $handler->override_option('empty_format', '5');
   $handler->override_option('items_per_page', 15);
-  $handler->override_option('block_description', 'My groups');
+  $handler->override_option('block_description', 'My centres');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('page', 'Page: My centres', 'page_1');
   $handler->override_option('fields', array(
@@ -2259,16 +2263,23 @@ function afg_groups_views_views_default_views() {
       'relationship' => 'none',
     ),
   ));
+  $handler->override_option('empty', '');
+  $handler->override_option('empty_format', '5');
   $handler->override_option('block_description', 'User centres');
   $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'Apps', 'block_3');
+  $handler->override_option('title', 'Centre\'s Apps');
+  $handler->override_option('block_description', 'Centre\'s Apps');
+  $handler->override_option('block_caching', -1);
   $translatables['groups_listing_centre_school'] = array(
+    t('Apps'),
     t('Archived centres'),
     t('Block: My centres (sidebar)'),
     t('Block: User centres'),
+    t('Centre\'s Apps'),
     t('Defaults'),
     t('Directory'),
     t('My centres'),
-    t('My groups'),
     t('No archived groups found.'),
     t('No groups found.'),
     t('Page: Archived centres'),
