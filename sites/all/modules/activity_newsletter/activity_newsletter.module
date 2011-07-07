@@ -1,13 +1,39 @@
 <?php
 
 /*
- * Implementation of hook_views_api()
- 
-function activity_newsletter_views_api() {
-	return array(
-		'api' => 2
+ * Implementation of hook_menu
+ */
+function activity_newsletter_menu() {
+	$items = array();
+	$items['admin/settings/activitynewsletter'] = array(
+		'title' => t('Recent activity newsletter'),
+		'description' => t('Recent activity newsletter configuration settings'),
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('activity_newsletter_admin'),
+		'access arguments' => array('access administration pages'),
+		'type' => MENU_NORMAL_ITEM,
 	);
-}*/
+	return $items;
+}
+
+/*
+ * Configuration form
+ */
+function activity_newsletter_admin() {
+	$form = array();
+	$form['test_fieldset'] = array(
+		'#type' => 'fieldset',
+		'#title' => t('Send Newsletter'),
+		'#collapsible' => TRUE,
+		'#description' => t('Send a newsletter manually'),
+		'#collapsed' => FALSE
+	);
+	$url = urldecode(url('cron.php?activitynewslettertest=1'));
+	$form['test_fieldset']['markup'] = array(
+		'#value' => "<input type='button' class='form-submit' value='Send' onclick='window.location=\"$url\"'/>",
+	);
+	return system_settings_form($form);
+}
 
 
 /*
@@ -20,12 +46,14 @@ function activity_newsletter_views_api() {
  */
 function activity_newsletter_cron() {
 	//do we need to do a newsletter this cron?
-	//$last_newsletter = variable_get('activity_newsletter_last', 0);	//0 won't do everything as view has a time limit it imposes anyways
-	//if((time() - $last_newsletter) < variable_get('activity_newsletter_interval', 60*60*24)) return;
-	//variable_set('activity_newsletter_last', time()); //set newsletter last time to now
+	if(!$GLOBALS['_GET']['activitynewslettertest']) {
+		$last_newsletter = variable_get('activity_newsletter_last', 0); //0 won't do everything as view has a time limit it imposes anyways
+	        if((time() - $last_newsletter) < variable_get('activity_newsletter_interval', 60*60*24)) return;
+	}
+	variable_set('activity_newsletter_last', time()); //set newsletter last time to now
 	//iterate over each user generating their own newsletter
-	$result = db_query('SELECT * FROM {users} u WHERE u.uid != 0');
-	while($recipient = db_fetch_object($result)) {
+	$users = db_query('SELECT * FROM {users} u WHERE u.uid != 0');
+	while($user = db_fetch_object($users)) {
 		//load and execute the view
 		$view = views_get_view('activity_listing');
 		$view->set_display('block_1');						//Use recent activity view
@@ -33,24 +61,28 @@ function activity_newsletter_cron() {
 		//iterate over results, removing results
 		foreach($view->result as $result_index => $result_value) {		//filter out each item that happened before last newsletter
 			//if this activity was done before the last newsletter then remove it
-			//if($result_value->history_user_timestamp < $last_newsletter) {
-			//	unset($view->result[$result_index]);
-			//	continue;
-			//}
+			if($result_value->history_user_timestamp < $last_newsletter) {
+				unset($view->result[$result_index]);
+				continue;
+			}
 			//if it's a group that the user is registered as a member of then skip it
-			if(db_result(db_query('SELECT count(*) FROM og_uid WHERE nid=%d AND uid=%d', $result_value->nid, $recipient->uid)) >= 1) {
+			if(db_result(db_query('SELECT count(*) FROM og_uid WHERE nid=%d AND uid=%d', $result_value->nid, $user->uid)) >= 1) {
 				continue;
 			} else {
 				//otherwise load the node, get the group it belongs to and check if the user is a member of that group
-				$node = node_load($result_value->nid);
 				$is_group_member = FALSE;
-				foreach($node->og_groups as $group) {
-					if(og_is_group_member($group, TRUE, $recipient->uid)) {
-						$is_group_member = TRUE;
-						break;
-					}	
-				}
-				if(!$is_group_member) {
+				$node = node_load($result_value->nid);
+				if($node->og_groups) {
+					foreach($node->og_groups as $group) {
+						if(og_is_group_member($group, TRUE, $user->uid)) {
+							$is_group_member = TRUE;
+							break;
+						}	
+					}
+					if(!$is_group_member) {
+						unset($view->result[$result_index]);
+					}
+				} else {
 					unset($view->result[$result_index]);
 				}
 			}
@@ -62,31 +94,28 @@ function activity_newsletter_cron() {
 				'activity_newsletter',
 				'Skipped newsletter for @user due to no recent activity.',
 				array(
-					'@user' => $recipient->name
+					'@user' => $user->name
 				),
 				WATCHDOG_INFO
 			);
 			continue;
 		}
 		//render
-
-		echo '<pre>';
-		print_r($view);
-		echo '</pre>';
-		
-
-
-		list($content,) = array_values($view->display_handler->execute());
-
-
+		$rows = array();
+		foreach($view->result as $result) {
+			$node = node_load($result->nid);
+			$operation = ($result->changed == $result->created) ? 'posted' : 'updated';
+			$by = user_load(array('uid' => $result->node_revisions_uid));
+			$rows[] = theme('activity-newsletter-row', $result->node_title, $operation, $result->history_user_timestamp, $by->name, $node);
+		}
 		//send to user
-		if(mail($recipient->mail, variable_get('site_name', 'Apps for good'), theme('activity-newsletter', $recipient->name, $content))) {
+		if(mail($user->mail, variable_get('site_name', 'Apps for good'), theme('activity-newsletter', $rows))) {
 			watchdog(
 				'activity_newsletter',
 				'Successfully sent newsletter to @user at @mail.',
 				array(
-					'@user' => $recipient->name,
-					'@mail' => $recipient->mail
+					'@user' => $user->name,
+					'@mail' => $user->mail
 				),
 				WATCHDOG_INFO
 			);
@@ -95,11 +124,15 @@ function activity_newsletter_cron() {
 				'activity_newsletter',
 				'Failed to send newsletter @user at @mail.',
 				array(
-					'@user' => $recipient->name,
-					'@mail' => $recipient->mail
+					'@user' => $user->name,
+					'@mail' => $user->mail
 				),
 				WATCHDOG_ERROR
 			);
+		}		
+		if($GLOBALS['_GET']['activitynewslettertest']) {
+			drupal_set_message('Sent newsletter');
+			drupal_goto('admin/settings/activitynewsletter');
 		}
 	}
 }
@@ -109,9 +142,13 @@ function activity_newsletter_cron() {
  */
 function activity_newsletter_theme($existing, $type, $theme, $path) {
 	return array(
+		'activity-newsletter-row' => array(
+			'arguments' => array('title' => NULL, 'operation' => NULL, 'timestamp' => NULL, 'by' => NULL, 'node' => NULL),
+			'template' => 'activity-newsletter-row'	
+		),
 		'activity-newsletter' => array(
-			'arguments' => array('name' => NULL, 'content' => NULL),
-			'template' => 'activity-newsletter'	
-		)
+                        'arguments' => array('rows' => NULL),
+                        'template' => 'activity-newsletter'
+                )
 	);
 }
