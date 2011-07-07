@@ -15,39 +15,93 @@ function activity_newsletter_views_api() {
  *
  * TODO
  * 	Instead of using the recent activity view, build the view object from scratch programmatically
+ *	GUI config
+ *	Templating individual rows - text only
  */
 function activity_newsletter_cron() {
-	//is a newsletter due?
-	$last_newsletter = variable_get('activity_newsletter_last', 0);	//0 won't do everything as view has a time limit it imposes anyways
-	if((time() - $last_newsletter) < variable_get('activity_newsletter_interval', 60*60*24)) return; //Only continue if newsletter is due
-	variable_set('activity_newsletter_last', time()); //newsletter time set
-	//load the view
-	$view = views_get_view('activity_listing');	//load the view
-	//get resource array of users
+	//do we need to do a newsletter this cron?
+	//$last_newsletter = variable_get('activity_newsletter_last', 0);	//0 won't do everything as view has a time limit it imposes anyways
+	//if((time() - $last_newsletter) < variable_get('activity_newsletter_interval', 60*60*24)) return;
+	//variable_set('activity_newsletter_last', time()); //set newsletter last time to now
+	//iterate over each user generating their own newsletter
 	$result = db_query('SELECT * FROM {users} u WHERE u.uid != 0');
-	//loop through each generating recenty activity email for each
-	while($user = db_fetch_object($result)) {
-		//use the user activity display
-		$view->set_display('block_3');
-		//pre-execute, sets argument
-		$view->pre_execute(array($user->uid));
-		//builds results array according to filters
-		$view->execute();
-		//remove results that are older than the last newsletter
+	while($recipient = db_fetch_object($result)) {
+		//load and execute the view
+		$view = views_get_view('activity_listing');
+		$view->set_display('block_1');						//Use recent activity view
+		$view->execute();							//Execute view
+		//iterate over results, removing results
 		foreach($view->result as $result_index => $result_value) {		//filter out each item that happened before last newsletter
-			if($result_value->history_user_timestamp < $last_newsletter) {
-				unset($view->result[$result_index]);
+			//if this activity was done before the last newsletter then remove it
+			//if($result_value->history_user_timestamp < $last_newsletter) {
+			//	unset($view->result[$result_index]);
+			//	continue;
+			//}
+			//if it's a group that the user is registered as a member of then skip it
+			if(db_result(db_query('SELECT count(*) FROM og_uid WHERE nid=%d AND uid=%d', $result_value->nid, $recipient->uid)) >= 1) {
+				continue;
+			} else {
+				//otherwise load the node, get the group it belongs to and check if the user is a member of that group
+				$node = node_load($result_value->nid);
+				$is_group_member = FALSE;
+				foreach($node->og_groups as $group) {
+					if(og_is_group_member($group, TRUE, $recipient->uid)) {
+						$is_group_member = TRUE;
+						break;
+					}	
+				}
+				if(!$is_group_member) {
+					unset($view->result[$result_index]);
+				}
 			}
 		}
 		$view->result = array_values($view->result);				//fix indexes
-		//run the results through the display handler
-		$activity_feed = $view->display_handler->execute();
-		//template
-		$output = theme('activity-newsletter', $activity_feed['content'], $user->name);	
-		//email the user
-		mail($user->email, variable_get('site_name', 'Apps for good'), $output);
+		//are there any results? if not don't send
+		if(!count($view->result)) {
+			watchdog(
+				'activity_newsletter',
+				'Skipped newsletter for @user due to no recent activity.',
+				array(
+					'@user' => $recipient->name
+				),
+				WATCHDOG_INFO
+			);
+			continue;
+		}
+		//render
+
+		echo '<pre>';
+		print_r($view);
+		echo '</pre>';
+		
+
+
+		list($content,) = array_values($view->display_handler->execute());
+
+
+		//send to user
+		if(mail($recipient->mail, variable_get('site_name', 'Apps for good'), theme('activity-newsletter', $recipient->name, $content))) {
+			watchdog(
+				'activity_newsletter',
+				'Successfully sent newsletter to @user at @mail.',
+				array(
+					'@user' => $recipient->name,
+					'@mail' => $recipient->mail
+				),
+				WATCHDOG_INFO
+			);
+		} else {
+			watchdog(
+				'activity_newsletter',
+				'Failed to send newsletter @user at @mail.',
+				array(
+					'@user' => $recipient->name,
+					'@mail' => $recipient->mail
+				),
+				WATCHDOG_ERROR
+			);
+		}
 	}
-	drupal_set_message("Recent activity newsletter has been sent");
 }
 
 /*
@@ -56,7 +110,7 @@ function activity_newsletter_cron() {
 function activity_newsletter_theme($existing, $type, $theme, $path) {
 	return array(
 		'activity-newsletter' => array(
-			'arguments' => array('content' => NULL, 'name' => NULL),
+			'arguments' => array('name' => NULL, 'content' => NULL),
 			'template' => 'activity-newsletter'	
 		)
 	);
