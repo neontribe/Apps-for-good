@@ -17,6 +17,13 @@ function afg_groups_views_views_default_views() {
   $view->api_version = 2;
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
   $handler = $view->new_display('default', 'Defaults', 'default');
+  $handler->override_option('relationships', array(
+    'field_centre_ref_nid' => array(
+      'id' => 'field_centre_ref_nid',
+      'table' => 'node_data_field_centre_ref',
+      'field' => 'field_centre_ref_nid',
+    ),
+  ));
   $handler->override_option('fields', array(
     'title' => array(
       'label' => '',
@@ -239,7 +246,7 @@ function afg_groups_views_views_default_views() {
       'relationship' => 'none',
     ),
     'member_count' => array(
-      'label' => 'Members',
+      'label' => 'Number of Supporters',
       'alter' => array(
         'alter_text' => 0,
         'text' => '',
@@ -258,6 +265,9 @@ function afg_groups_views_views_default_views() {
         'html' => 0,
         'strip_tags' => 1,
       ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
       'set_precision' => FALSE,
       'precision' => 0,
       'decimal' => '.',
@@ -433,7 +443,7 @@ function afg_groups_views_views_default_views() {
       'relationship' => 'none',
     ),
     'member_count' => array(
-      'label' => 'Members',
+      'label' => 'Number of Supporters',
       'alter' => array(
         'alter_text' => 0,
         'text' => '',
@@ -452,6 +462,9 @@ function afg_groups_views_views_default_views() {
         'html' => 0,
         'strip_tags' => 1,
       ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
       'set_precision' => FALSE,
       'precision' => 0,
       'decimal' => '.',
@@ -501,17 +514,6 @@ function afg_groups_views_views_default_views() {
       ),
       'relationship' => 'none',
     ),
-    'selective' => array(
-      'label' => 'Type',
-      'exclude' => 0,
-      'id' => 'selective',
-      'table' => 'og',
-      'field' => 'selective',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-      'relationship' => 'none',
-    ),
     'title_1' => array(
       'label' => '',
       'alter' => array(
@@ -540,7 +542,7 @@ function afg_groups_views_views_default_views() {
         'frontpage' => 0,
         'type' => 'spaces_og',
       ),
-      'exclude' => 0,
+      'exclude' => 1,
       'id' => 'title_1',
       'table' => 'node',
       'field' => 'title',
@@ -676,6 +678,20 @@ function afg_groups_views_views_default_views() {
     'name' => 'features',
   ));
   $handler = $view->new_display('page', 'Page: Archived applications', 'page_3');
+  $handler->override_option('relationships', array(
+    'field_centre_ref_nid' => array(
+      'label' => 'Parent Centre',
+      'required' => 0,
+      'delta' => -1,
+      'id' => 'field_centre_ref_nid',
+      'table' => 'node_data_field_centre_ref',
+      'field' => 'field_centre_ref_nid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+  ));
   $handler->override_option('fields', array(
     'private' => array(
       'label' => '',
@@ -817,16 +833,42 @@ function afg_groups_views_views_default_views() {
       ),
       'relationship' => 'none',
     ),
-    'selective' => array(
-      'label' => 'Type',
-      'exclude' => 0,
-      'id' => 'selective',
-      'table' => 'og',
-      'field' => 'selective',
+    'title_1' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'spaces' => array(
+        'frontpage' => 0,
+        'type' => 'spaces_og',
+      ),
+      'exclude' => 1,
+      'id' => 'title_1',
+      'table' => 'node',
+      'field' => 'title',
       'override' => array(
         'button' => 'Use default',
       ),
-      'relationship' => 'none',
+      'relationship' => 'field_centre_ref_nid',
     ),
   ));
   $handler->override_option('filters', array(
@@ -888,7 +930,7 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('use_pager', '1');
   $handler->override_option('style_plugin', 'table');
   $handler->override_option('style_options', array(
-    'grouping' => '',
+    'grouping' => 'title_1',
     'override' => 1,
     'sticky' => 0,
     'order' => 'asc',
@@ -898,7 +940,7 @@ function afg_groups_views_views_default_views() {
       'description' => 'title',
       'created' => 'created',
       'member_count' => 'member_count',
-      'selective' => 'selective',
+      'title_1' => 'title_1',
     ),
     'info' => array(
       'private' => array(
@@ -920,7 +962,8 @@ function afg_groups_views_views_default_views() {
         'sortable' => 0,
         'separator' => '',
       ),
-      'selective' => array(
+      'title_1' => array(
+        'sortable' => 0,
         'separator' => '',
       ),
     ),
@@ -1324,6 +1367,11 @@ function afg_groups_views_views_default_views() {
       'field' => 'title',
       'relationship' => 'none',
     ),
+    'description' => array(
+      'id' => 'description',
+      'table' => 'og',
+      'field' => 'description',
+    ),
   ));
   $handler->override_option('sorts', array(
     'title' => array(
@@ -1610,16 +1658,6 @@ function afg_groups_views_views_default_views() {
   ));
   $handler = $view->new_display('page', 'Page: Centre directory', 'page_2');
   $handler->override_option('fields', array(
-    'private' => array(
-      'label' => '',
-      'type' => 'yes-no',
-      'not' => 0,
-      'exclude' => 1,
-      'id' => 'private',
-      'table' => 'og',
-      'field' => 'private',
-      'relationship' => 'none',
-    ),
     'title' => array(
       'label' => '',
       'alter' => array(
@@ -1652,48 +1690,10 @@ function afg_groups_views_views_default_views() {
       'id' => 'title',
       'table' => 'node',
       'field' => 'title',
-      'override' => array(
-        'button' => 'Use default',
-      ),
       'relationship' => 'none',
     ),
     'description' => array(
-      'id' => 'description',
-      'table' => 'og',
-      'field' => 'description',
-    ),
-    'created' => array(
-      'label' => 'Created',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'strip_tags' => 0,
-        'html' => 0,
-      ),
-      'date_format' => 'small',
-      'custom_date_format' => '',
-      'exclude' => 0,
-      'id' => 'created',
-      'table' => 'node',
-      'field' => 'created',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-      'relationship' => 'none',
-    ),
-    'member_count' => array(
-      'label' => 'Members',
+      'label' => 'Centre Location',
       'alter' => array(
         'alter_text' => 0,
         'text' => '',
@@ -1710,8 +1710,78 @@ function afg_groups_views_views_default_views() {
         'word_boundary' => 1,
         'ellipsis' => 1,
         'html' => 0,
-        'strip_tags' => 1,
+        'strip_tags' => 0,
       ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'exclude' => 0,
+      'id' => 'description',
+      'table' => 'og',
+      'field' => 'description',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+    'created' => array(
+      'label' => 'Created',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'date_format' => 'small',
+      'custom_date_format' => '',
+      'reldate' => '0',
+      'exclude' => 0,
+      'id' => 'created',
+      'table' => 'node',
+      'field' => 'created',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+    'member_count' => array(
+      'label' => 'Number of Supporters',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
       'set_precision' => FALSE,
       'precision' => 0,
       'decimal' => '.',
@@ -1722,51 +1792,6 @@ function afg_groups_views_views_default_views() {
       'id' => 'member_count',
       'table' => 'og',
       'field' => 'member_count',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-      'relationship' => 'none',
-    ),
-    'post_count' => array(
-      'label' => 'Total posts',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'strip_tags' => 0,
-        'html' => 0,
-      ),
-      'set_precision' => FALSE,
-      'precision' => 0,
-      'decimal' => '.',
-      'separator' => ',',
-      'prefix' => '',
-      'suffix' => '',
-      'exclude' => 1,
-      'id' => 'post_count',
-      'table' => 'og',
-      'field' => 'post_count',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-      'relationship' => 'none',
-    ),
-    'selective' => array(
-      'label' => 'Type',
-      'exclude' => 0,
-      'id' => 'selective',
-      'table' => 'og',
-      'field' => 'selective',
       'override' => array(
         'button' => 'Use default',
       ),
@@ -2030,17 +2055,6 @@ function afg_groups_views_views_default_views() {
       'id' => 'member_count',
       'table' => 'og',
       'field' => 'member_count',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-      'relationship' => 'none',
-    ),
-    'selective' => array(
-      'label' => 'Type',
-      'exclude' => 0,
-      'id' => 'selective',
-      'table' => 'og',
-      'field' => 'selective',
       'override' => array(
         'button' => 'Use default',
       ),
