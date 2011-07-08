@@ -13,14 +13,6 @@ function activity_newsletter_menu() {
 		'access arguments' => array('access administration pages'),
 		'type' => MENU_NORMAL_ITEM,
 	);
-	$items['activity_newsletter/test'] = array(
-		'title' => t('Test newsletter callback'),
-		'description' => t('Callback for testing the newsletter'),
-		'page callback' => 'activity_newsletter_execute',
-		'page arguments' => array(TRUE),
-		'access arguments' => array('access administration pages'),
-		'type' => MENU_CALLBACK
-	);
 	return $items;
 }
 
@@ -29,32 +21,50 @@ function activity_newsletter_menu() {
  */
 function activity_newsletter_admin() {
 	$form = array();
-	$form['test_fieldset'] = array(
+	$form['basic'] = array(
+		'#type' => 'fieldset',
+		'#title' => t('Basic configuration'),
+		'#collapsible' => TRUE,
+		'#collapsed' => FALSE	
+	);
+	$form['basic']['activity_newsletter_interval'] = array(
+		'#type' => 'textfield',
+		'#title' => t('Newsletter Interval'),
+		'#field_suffix' => t('Days'),
+		'#description' => t('Amount of days to wait before sending another newsletter.'),
+		'#default_value' => variable_get('activity_newsletter_interval', 7),
+		'#size' => 2,
+		'#maxlength' => 2,
+	);
+	$form['test'] = array(
 		'#type' => 'fieldset',
 		'#title' => t('Send Newsletter'),
 		'#collapsible' => TRUE,
-		'#description' => t('Send a newsletter manually'),
+		'#description' => t('The newsletter is automatically sent via a Cron job but if you want to send a newsletter manually click the button below.'),
 		'#collapsed' => FALSE
 	);
-	$url = urldecode(url('activity_newsletter/test'));
-	$form['test_fieldset']['markup'] = array(
-		'#value' => "<input type='button' class='form-submit' value='Send' onclick='window.location=\"$url\"'/>",
+	$form['test']['test'] = array(
+		'#type' => 'submit',
+		'#value' => t('Send'),
+		'#submit' => array('activity_newsletter_test')
 	);
 	return system_settings_form($form);
 }
 
+/*
+ * Implementation of hook_form_validate
+ */
+function activity_newsletter_admin_validate($form, &$form_state) {
+	if(!is_numeric($form_state['values']['activity_newsletter_interval']) || $form_state['values']['activity_newsletter_interval'] > 99) {
+		form_set_error('interval', t('Interval must be an integer.'));
+	}
+}
 
 /*
  * Implementation of hook_cron()
- *
- * TODO
- * 	Instead of using the recent activity view, build the view object from scratch programmatically
- *	GUI config
- *	Templating individual rows - text only
  */
 function activity_newsletter_cron() {
-	$last_newsletter = variable_get('activity_newsletter_last', 0);
-	if((time() - $last_newsletter) < variable_get('activity_newsletter_interval', variable_get('activity_newsletter_interval', 60*60*24*7))) return;
+	if((time() - variable_get('activity_newsletter_last', 0)) < (variable_get('activity_newsletter_interval', 7) * (60*60*24))) return;
 	activity_newsletter_execute();
 }
 
@@ -74,10 +84,18 @@ function activity_newsletter_theme($existing, $type, $theme, $path) {
 	);
 }
 
+/*
+ * Submit handler for manual send button
+ */
+function activity_newsletter_test($form, &$form_state) {
+	activity_newsletter_execute(TRUE);
+}
 
+/*
+ * Sends the newsletters
+ */
 function activity_newsletter_execute($is_test_run = FALSE) {
-	$last_newsletter = variable_get('activity_newsletter_last', 0); //0 won't do everything as view has a time limit it imposes anyways
-	variable_set('activity_newsletter_last', time()); //set newsletter last time to now
+	variable_set('activity_newsletter_last', strtotime('midnight', time()) + (60*60*24)); //set newsletter last time to midnight tonight
 	$users = db_query('SELECT * FROM {users} u WHERE u.uid != 0'); //iterate over each user generating their own newsletter
 	while($user = db_fetch_object($users)) {
 		//load and execute the view
@@ -85,6 +103,7 @@ function activity_newsletter_execute($is_test_run = FALSE) {
 		$view->set_display('block_1');						//Use recent activity view
 		$view->execute();							//Execute view
 		//iterate over results, removing results
+		$last_newsletter = variable_get('activity_newsletter_last', 0);
 		foreach($view->result as $result_index => $result_value) {		//filter out each item that happened before last newsletter
 			//if this activity was done before the last newsletter then remove it
 			if($result_value->history_user_timestamp < $last_newsletter) {
@@ -169,7 +188,4 @@ function activity_newsletter_execute($is_test_run = FALSE) {
 			}
 		}
 	}		
-	if($is_test_run) {
-		drupal_goto('admin/settings/activity_newsletter');
-	}
 }
