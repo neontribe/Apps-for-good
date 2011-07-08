@@ -13,7 +13,7 @@ function activity_newsletter_menu() {
 		'access arguments' => array('access administration pages'),
 		'type' => MENU_NORMAL_ITEM,
 	);
-	$items['activity_newsletter/test/%'] = array(
+	$items['activity_newsletter/test'] = array(
 		'title' => t('Test newsletter callback'),
 		'description' => t('Callback for testing the newsletter'),
 		'page callback' => 'activity_newsletter_execute',
@@ -117,7 +117,7 @@ function activity_newsletter_execute($is_test_run = FALSE) {
 		//are there any results? if not don't send
 		if(!count($view->result)) {
 			if($is_test_run) {
-				drupal_set_message("Skipped newsletter for $user->name because there has been no recent activity since the last newsletter.");
+				drupal_set_message("Skipped newsletter for $user->name because there has been no recent activity since the last newsletter.", 'status');
 			} else {
 				watchdog(
 					'activity_newsletter',
@@ -141,7 +141,7 @@ function activity_newsletter_execute($is_test_run = FALSE) {
 		//send to user
 		if(mail($user->mail, variable_get('site_name', 'Apps for good'), theme('activity-newsletter', $rows))) {
 			if($is_test_run) {
-				drupal_set_message("Successfully sent newsletter to $user->name at $user->mail.");
+				drupal_set_message("Successfully sent newsletter to $user->name at $user->mail.", 'status');
 			} else {
 				watchdog(
 					'activity_newsletter',
@@ -155,7 +155,7 @@ function activity_newsletter_execute($is_test_run = FALSE) {
 			}
 		} else {
 			if($is_test_run) {
-				drupal_set_message("Failed to send newsletter to $user->name at $user->mail.");
+				drupal_set_message("Failed to send newsletter to $user->name at $user->mail.", 'error');
 			} else {
 				watchdog(
 					'activity_newsletter',
