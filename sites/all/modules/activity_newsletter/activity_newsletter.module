@@ -5,13 +5,21 @@
  */
 function activity_newsletter_menu() {
 	$items = array();
-	$items['admin/settings/activitynewsletter'] = array(
+	$items['admin/settings/activity_newsletter'] = array(
 		'title' => t('Recent activity newsletter'),
 		'description' => t('Recent activity newsletter configuration settings'),
 		'page callback' => 'drupal_get_form',
 		'page arguments' => array('activity_newsletter_admin'),
 		'access arguments' => array('access administration pages'),
 		'type' => MENU_NORMAL_ITEM,
+	);
+	$items['activity_newsletter/test/%'] = array(
+		'title' => t('Test newsletter callback'),
+		'description' => t('Callback for testing the newsletter'),
+		'page callback' => 'activity_newsletter_execute',
+		'page arguments' => array(TRUE),
+		'access arguments' => array('access administration pages'),
+		'type' => MENU_CALLBACK
 	);
 	return $items;
 }
@@ -28,7 +36,7 @@ function activity_newsletter_admin() {
 		'#description' => t('Send a newsletter manually'),
 		'#collapsed' => FALSE
 	);
-	$url = urldecode(url('cron.php?activitynewslettertest=1'));
+	$url = urldecode(url('activity_newsletter/test'));
 	$form['test_fieldset']['markup'] = array(
 		'#value' => "<input type='button' class='form-submit' value='Send' onclick='window.location=\"$url\"'/>",
 	);
@@ -45,14 +53,32 @@ function activity_newsletter_admin() {
  *	Templating individual rows - text only
  */
 function activity_newsletter_cron() {
-	//do we need to do a newsletter this cron?
-	if(!$GLOBALS['_GET']['activitynewslettertest']) {
-		$last_newsletter = variable_get('activity_newsletter_last', 0); //0 won't do everything as view has a time limit it imposes anyways
-	        if((time() - $last_newsletter) < variable_get('activity_newsletter_interval', 60*60*24)) return;
-	}
+	$last_newsletter = variable_get('activity_newsletter_last', 0);
+	if((time() - $last_newsletter) < variable_get('activity_newsletter_interval', variable_get('activity_newsletter_interval', 60*60*24*7))) return;
+	activity_newsletter_execute();
+}
+
+/*
+ * Implementation of hook_theme()
+ */
+function activity_newsletter_theme($existing, $type, $theme, $path) {
+	return array(
+		'activity-newsletter-row' => array(
+			'arguments' => array('title' => NULL, 'operation' => NULL, 'timestamp' => NULL, 'by' => NULL, 'node' => NULL),
+			'template' => 'activity-newsletter-row'	
+		),
+		'activity-newsletter' => array(
+                        'arguments' => array('rows' => NULL),
+                        'template' => 'activity-newsletter'
+                )
+	);
+}
+
+
+function activity_newsletter_execute($is_test_run = FALSE) {
+	$last_newsletter = variable_get('activity_newsletter_last', 0); //0 won't do everything as view has a time limit it imposes anyways
 	variable_set('activity_newsletter_last', time()); //set newsletter last time to now
-	//iterate over each user generating their own newsletter
-	$users = db_query('SELECT * FROM {users} u WHERE u.uid != 0');
+	$users = db_query('SELECT * FROM {users} u WHERE u.uid != 0'); //iterate over each user generating their own newsletter
 	while($user = db_fetch_object($users)) {
 		//load and execute the view
 		$view = views_get_view('activity_listing');
@@ -90,14 +116,18 @@ function activity_newsletter_cron() {
 		$view->result = array_values($view->result);				//fix indexes
 		//are there any results? if not don't send
 		if(!count($view->result)) {
-			watchdog(
-				'activity_newsletter',
-				'Skipped newsletter for @user due to no recent activity.',
-				array(
-					'@user' => $user->name
-				),
-				WATCHDOG_INFO
-			);
+			if($is_test_run) {
+				drupal_set_message("Skipped newsletter for $user->name because there has been no recent activity since the last newsletter.");
+			} else {
+				watchdog(
+					'activity_newsletter',
+					'Skipped newsletter for @user due to no recent activity.',
+					array(
+						'@user' => $user->name
+					),
+					WATCHDOG_INFO
+				);
+			}
 			continue;
 		}
 		//render
@@ -110,45 +140,36 @@ function activity_newsletter_cron() {
 		}
 		//send to user
 		if(mail($user->mail, variable_get('site_name', 'Apps for good'), theme('activity-newsletter', $rows))) {
-			watchdog(
-				'activity_newsletter',
-				'Successfully sent newsletter to @user at @mail.',
-				array(
-					'@user' => $user->name,
-					'@mail' => $user->mail
-				),
-				WATCHDOG_INFO
-			);
+			if($is_test_run) {
+				drupal_set_message("Successfully sent newsletter to $user->name at $user->mail.");
+			} else {
+				watchdog(
+					'activity_newsletter',
+					'Successfully sent newsletter to @user at @mail.',
+					array(
+						'@user' => $user->name,
+						'@mail' => $user->mail
+					),
+					WATCHDOG_INFO
+				);
+			}
 		} else {
-			watchdog(
-				'activity_newsletter',
-				'Failed to send newsletter @user at @mail.',
-				array(
-					'@user' => $user->name,
-					'@mail' => $user->mail
-				),
-				WATCHDOG_ERROR
-			);
-		}		
-		if($GLOBALS['_GET']['activitynewslettertest']) {
-			drupal_set_message('Sent newsletter');
-			drupal_goto('admin/settings/activitynewsletter');
+			if($is_test_run) {
+				drupal_set_message("Failed to send newsletter to $user->name at $user->mail.");
+			} else {
+				watchdog(
+					'activity_newsletter',
+					'Failed to send newsletter @user at @mail.',
+					array(
+						'@user' => $user->name,
+						'@mail' => $user->mail
+					),
+					WATCHDOG_ERROR
+				);
+			}
 		}
+	}		
+	if($is_test_run) {
+		drupal_goto('admin/settings/activity_newsletter');
 	}
-}
-
-/*
- * Implementation of hook_theme()
- */
-function activity_newsletter_theme($existing, $type, $theme, $path) {
-	return array(
-		'activity-newsletter-row' => array(
-			'arguments' => array('title' => NULL, 'operation' => NULL, 'timestamp' => NULL, 'by' => NULL, 'node' => NULL),
-			'template' => 'activity-newsletter-row'	
-		),
-		'activity-newsletter' => array(
-                        'arguments' => array('rows' => NULL),
-                        'template' => 'activity-newsletter'
-                )
-	);
 }
