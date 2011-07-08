@@ -36,17 +36,17 @@ function activity_newsletter_admin() {
 		'#size' => 2,
 		'#maxlength' => 2,
 	);
-	$form['test'] = array(
+	$form['manual_fieldset'] = array(
 		'#type' => 'fieldset',
 		'#title' => t('Send Newsletter'),
 		'#collapsible' => TRUE,
 		'#description' => t('The newsletter is automatically sent via a Cron job but if you want to send a newsletter manually click the button below.'),
 		'#collapsed' => FALSE
 	);
-	$form['test']['test'] = array(
+	$form['manual_fieldset']['manual_button'] = array(
 		'#type' => 'submit',
 		'#value' => t('Send'),
-		'#submit' => array('activity_newsletter_test')
+		'#submit' => array('activity_newsletter_manual')
 	);
 	return system_settings_form($form);
 }
@@ -87,14 +87,14 @@ function activity_newsletter_theme($existing, $type, $theme, $path) {
 /*
  * Submit handler for manual send button
  */
-function activity_newsletter_test($form, &$form_state) {
+function activity_newsletter_manual($form, &$form_state) {
 	activity_newsletter_execute(TRUE);
 }
 
 /*
  * Sends the newsletters
  */
-function activity_newsletter_execute($is_test_run = FALSE) {
+function activity_newsletter_execute($is_manual = FALSE) {
 	variable_set('activity_newsletter_last', strtotime('midnight', time()) + (60*60*24)); //set newsletter last time to midnight tonight
 	$users = db_query('SELECT * FROM {users} u WHERE u.uid != 0'); //iterate over each user generating their own newsletter
 	while($user = db_fetch_object($users)) {
@@ -135,7 +135,7 @@ function activity_newsletter_execute($is_test_run = FALSE) {
 		$view->result = array_values($view->result);				//fix indexes
 		//are there any results? if not don't send
 		if(!count($view->result)) {
-			if($is_test_run) {
+			if($is_manual) {
 				drupal_set_message("Skipped newsletter for $user->name because there has been no recent activity since the last newsletter.", 'status');
 			} else {
 				watchdog(
@@ -159,7 +159,7 @@ function activity_newsletter_execute($is_test_run = FALSE) {
 		}
 		//send to user
 		if(mail($user->mail, variable_get('site_name', 'Apps for good'), theme('activity-newsletter', $rows))) {
-			if($is_test_run) {
+			if($is_manual) {
 				drupal_set_message("Successfully sent newsletter to $user->name at $user->mail.", 'status');
 			} else {
 				watchdog(
@@ -173,7 +173,7 @@ function activity_newsletter_execute($is_test_run = FALSE) {
 				);
 			}
 		} else {
-			if($is_test_run) {
+			if($is_manual) {
 				drupal_set_message("Failed to send newsletter to $user->name at $user->mail.", 'error');
 			} else {
 				watchdog(
