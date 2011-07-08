@@ -1,8 +1,0 @@
-core = "6.x"
-dependencies[] = "context"
-dependencies[] = "fblikebutton"
-description = "puts a facebook like button in a block on profile, app team, centre/school"
-features[context][] = "facebook_like_button"
-features[ctools][] = "context:context:3"
-name = "afg_facebook_like"
-package = "Features"

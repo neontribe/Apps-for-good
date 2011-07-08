@@ -143,6 +143,24 @@ function badges_views_default_views() {
       'validate_argument_php' => '',
     ),
   ));
+  $handler->override_option('filters', array(
+    'vid' => array(
+      'operator' => 'in',
+      'value' => array(
+        '2' => '2',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'vid',
+      'table' => 'term_data',
+      'field' => 'vid',
+      'relationship' => 'none',
+    ),
+  ));
   $handler->override_option('access', array(
     'type' => 'none',
   ));
@@ -223,6 +241,7 @@ function badges_views_default_views() {
       'validate_argument_php' => '',
     ),
   ));
+  $handler->override_option('empty', 'No badges awarded');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $translatables['badges'] = array(
@@ -230,6 +249,7 @@ function badges_views_default_views() {
     t('Defaults'),
     t('Group Badges'),
     t('No Badges awarded'),
+    t('No badges awarded'),
     t('User Badges'),
   );
 
