@@ -14,6 +14,30 @@ function afg_groups_views_ctools_plugin_api() {
 }
 
 /**
+ * Implementation of hook_imagecache_default_presets().
+ */
+function afg_groups_views_imagecache_default_presets() {
+  $items = array(
+    'centre-app-logo' => array(
+      'presetname' => 'centre-app-logo',
+      'actions' => array(
+        '0' => array(
+          'weight' => '0',
+          'module' => 'imagecache',
+          'action' => 'imagecache_scale',
+          'data' => array(
+            'width' => '',
+            'height' => '120',
+            'upscale' => 1,
+          ),
+        ),
+      ),
+    ),
+  );
+  return $items;
+}
+
+/**
  * Implementation of hook_node_info().
  */
 function afg_groups_views_node_info() {
