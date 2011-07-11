@@ -1,5 +1,5 @@
 <?php
 	foreach($rows as $row) {
-		echo "$row\n";
+		echo "$row\n\n";
 	}
 ?>

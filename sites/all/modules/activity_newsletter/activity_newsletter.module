@@ -74,7 +74,7 @@ function activity_newsletter_cron() {
 function activity_newsletter_theme($existing, $type, $theme, $path) {
 	return array(
 		'activity-newsletter-row' => array(
-			'arguments' => array('title' => NULL, 'operation' => NULL, 'timestamp' => NULL, 'by' => NULL, 'node' => NULL),
+			'arguments' => array('title' => NULL, 'operation' => NULL, 'timestamp' => NULL, 'by' => NULL, 'teaser' => NULL, 'url' => NULL),
 			'template' => 'activity-newsletter-row'	
 		),
 		'activity-newsletter' => array(
@@ -136,56 +136,73 @@ function activity_newsletter_execute($is_manual = FALSE) {
 		//are there any results? if not don't send
 		if(!count($view->result)) {
 			if($is_manual) {
-				drupal_set_message("Skipped newsletter for $user->name because there has been no recent activity since the last newsletter.", 'status');
-			} else {
-				watchdog(
-					'activity_newsletter',
-					'Skipped newsletter for @user due to no recent activity.',
-					array(
-						'@user' => $user->name
-					),
-					WATCHDOG_INFO
-				);
+				drupal_set_message("Skipped newsletter for $user->name because there has been no recent activity in their groups since the last newsletter.", 'status');
 			}
+			watchdog(
+				'activity_newsletter',
+				'Skipped newsletter for @user due to no recent activity.',
+				array(
+					'@user' => $user->name
+				),
+				WATCHDOG_INFO
+			);
 			continue;
 		}
 		//render
 		$rows = array();
 		foreach($view->result as $result) {
 			$node = node_load($result->nid);
-			$operation = ($result->changed == $result->created) ? 'posted' : 'updated';
-			$by = user_load(array('uid' => $result->node_revisions_uid));
-			$rows[] = theme('activity-newsletter-row', $result->node_title, $operation, $result->history_user_timestamp, $by->name, $node);
+			$url = url('node/'.$node->nid, array('absolute' => TRUE));
+			if(!empty($result->comments_uid)) { //it's a comment
+				$user = user_load(array('uid' => $result->comments_uid));
+				if(user_access('access comments', $user)) {			
+					$operation = 'commented on';
+	                                $teaser = db_result(db_query('SELECT comment FROM comments WHERE cid=%d', $result->comments_cid));
+	                                $by = $user;
+				} else {
+					continue;
+				}
+			}
+			else { //assume it's a post
+				$user = user_load(array('uid' => $result->node_revisions_uid));
+				if(user_access('access content', $user)) {
+					$operation = ($result->changed == $result->created) ? 'posted' : 'updated';
+					$teaser = $node->teaser;
+					$by = $user;
+				} else {
+					continue;
+				}
+			}
+			$rows[] = theme('activity-newsletter-row', $result->node_title, $operation, $result->history_user_timestamp, $by->name, $teaser, $url);
 		}
 		//send to user
 		if(mail($user->mail, variable_get('site_name', 'Apps for good'), theme('activity-newsletter', $rows))) {
 			if($is_manual) {
 				drupal_set_message("Successfully sent newsletter to $user->name at $user->mail.", 'status');
-			} else {
-				watchdog(
-					'activity_newsletter',
-					'Successfully sent newsletter to @user at @mail.',
-					array(
-						'@user' => $user->name,
-						'@mail' => $user->mail
-					),
-					WATCHDOG_INFO
-				);
 			}
+			watchdog(
+				'activity_newsletter',
+				'Successfully sent newsletter to @user at @mail.',
+				array(
+					'@user' => $user->name,
+					'@mail' => $user->mail
+				),
+				WATCHDOG_INFO
+			);
+	
 		} else {
 			if($is_manual) {
 				drupal_set_message("Failed to send newsletter to $user->name at $user->mail.", 'error');
-			} else {
-				watchdog(
-					'activity_newsletter',
-					'Failed to send newsletter @user at @mail.',
-					array(
-						'@user' => $user->name,
-						'@mail' => $user->mail
-					),
-					WATCHDOG_ERROR
-				);
 			}
+			watchdog(
+				'activity_newsletter',
+				'Failed to send newsletter @user at @mail.',
+				array(
+					'@user' => $user->name,
+					'@mail' => $user->mail
+				),
+				WATCHDOG_ERROR
+			);
 		}
 	}		
 }
