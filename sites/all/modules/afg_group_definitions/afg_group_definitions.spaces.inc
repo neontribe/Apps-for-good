@@ -55,17 +55,24 @@ function afg_group_definitions_spaces_presets() {
         'views-casetracker_cases-block_3' => 1,
         'views-casetracker_projects-block_1' => 1,
         'views-groups_listing_app_team-block_3' => 1,
+        'views-groups_listing_app_team-block_4' => 1,
       ),
       'spaces_preset_og' => 'application_team',
     ),
     'context' => array(
       'spaces_dashboard-custom-1:reaction:block' => array(
         'blocks' => array(
+          'views-groups_listing_app_team-block_4' => array(
+            'module' => 'views',
+            'delta' => 'groups_listing_app_team-block_4',
+            'region' => 'content',
+            'weight' => 0,
+          ),
           'views-activity_listing-block_1' => array(
             'module' => 'views',
             'delta' => 'activity_listing-block_1',
             'region' => 'content',
-            'weight' => 0,
+            'weight' => 1,
           ),
           'views-groups_listing_app_team-block_3' => array(
             'module' => 'views',
