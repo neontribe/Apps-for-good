@@ -147,6 +147,7 @@ function afg_group_definitions_spaces_presets() {
       'spaces_dashboard_blocks' => array(
         'atrium_calendar-mini' => 1,
         'views-4279d6353ce04c2723ce5268875465d0' => 1,
+        'views-7a3971c58a24107b75cfdb9163cf5dc3' => 1,
         'views-activity_listing-block_1' => 1,
         'views-activity_listing-block_2' => 1,
         'views-blog_comments-block_1' => 1,
