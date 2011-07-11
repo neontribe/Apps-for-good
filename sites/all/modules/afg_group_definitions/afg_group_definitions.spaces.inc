@@ -163,23 +163,35 @@ function afg_group_definitions_spaces_presets() {
     'context' => array(
       'spaces_dashboard-custom-1:reaction:block' => array(
         'blocks' => array(
+          'views-7a3971c58a24107b75cfdb9163cf5dc3' => array(
+            'module' => 'views',
+            'delta' => '7a3971c58a24107b75cfdb9163cf5dc3',
+            'region' => 'content',
+            'weight' => 0,
+          ),
           'views-activity_listing-block_1' => array(
             'module' => 'views',
             'delta' => 'activity_listing-block_1',
             'region' => 'content',
+            'weight' => 1,
+          ),
+          'views-blog_comments-block_1' => array(
+            'module' => 'views',
+            'delta' => 'blog_comments-block_1',
+            'region' => 'right',
             'weight' => 0,
           ),
           'views-blog_listing-block_2' => array(
             'module' => 'views',
             'delta' => 'blog_listing-block_2',
-            'region' => 'content',
+            'region' => 'right',
             'weight' => 1,
           ),
-          'views-4279d6353ce04c2723ce5268875465d0' => array(
+          'views-badges-block_1' => array(
             'module' => 'views',
-            'delta' => '4279d6353ce04c2723ce5268875465d0',
+            'delta' => 'badges-block_1',
             'region' => 'right',
-            'weight' => 0,
+            'weight' => 2,
           ),
         ),
       ),
