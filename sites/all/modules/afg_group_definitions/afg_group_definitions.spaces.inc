@@ -55,17 +55,24 @@ function afg_group_definitions_spaces_presets() {
         'views-casetracker_cases-block_3' => 1,
         'views-casetracker_projects-block_1' => 1,
         'views-groups_listing_app_team-block_3' => 1,
+        'views-groups_listing_app_team-block_4' => 1,
       ),
       'spaces_preset_og' => 'application_team',
     ),
     'context' => array(
       'spaces_dashboard-custom-1:reaction:block' => array(
         'blocks' => array(
+          'views-groups_listing_app_team-block_4' => array(
+            'module' => 'views',
+            'delta' => 'groups_listing_app_team-block_4',
+            'region' => 'content',
+            'weight' => 0,
+          ),
           'views-activity_listing-block_1' => array(
             'module' => 'views',
             'delta' => 'activity_listing-block_1',
             'region' => 'content',
-            'weight' => 0,
+            'weight' => 1,
           ),
           'views-groups_listing_app_team-block_3' => array(
             'module' => 'views',
@@ -147,6 +154,7 @@ function afg_group_definitions_spaces_presets() {
       'spaces_dashboard_blocks' => array(
         'atrium_calendar-mini' => 1,
         'views-4279d6353ce04c2723ce5268875465d0' => 1,
+        'views-7a3971c58a24107b75cfdb9163cf5dc3' => 1,
         'views-activity_listing-block_1' => 1,
         'views-activity_listing-block_2' => 1,
         'views-blog_comments-block_1' => 1,
@@ -162,17 +170,23 @@ function afg_group_definitions_spaces_presets() {
     'context' => array(
       'spaces_dashboard-custom-1:reaction:block' => array(
         'blocks' => array(
+          'views-7a3971c58a24107b75cfdb9163cf5dc3' => array(
+            'module' => 'views',
+            'delta' => '7a3971c58a24107b75cfdb9163cf5dc3',
+            'region' => 'content',
+            'weight' => 0,
+          ),
           'views-activity_listing-block_1' => array(
             'module' => 'views',
             'delta' => 'activity_listing-block_1',
             'region' => 'content',
-            'weight' => 0,
+            'weight' => 1,
           ),
           'views-blog_listing-block_2' => array(
             'module' => 'views',
             'delta' => 'blog_listing-block_2',
             'region' => 'content',
-            'weight' => 1,
+            'weight' => 2,
           ),
           'views-4279d6353ce04c2723ce5268875465d0' => array(
             'module' => 'views',
