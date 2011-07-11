@@ -2658,14 +2658,12 @@ function afg_groups_views_views_default_views() {
         'casetracker_basic_project' => 0,
         'group_app_team' => 0,
         'group_centre_school' => 0,
-        'group_cdi' => 0,
       ),
       'validate_argument_node_access' => 0,
       'validate_argument_nid_type' => 'nid',
       'validate_argument_vocabulary' => array(
         '2' => 0,
         '1' => 0,
-        '3' => 0,
       ),
       'validate_argument_type' => 'tid',
       'validate_argument_transform' => 0,
@@ -2675,15 +2673,62 @@ function afg_groups_views_views_default_views() {
         'group' => 0,
         'group_app_team' => 0,
         'group_centre_school' => 0,
-        'group_cdi' => 0,
       ),
       'validate_argument_php' => '',
     ),
   ));
+  $handler->override_option('filters', array(
+    'type_groups_all' => array(
+      'operator' => '=',
+      'value' => '',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type_groups_all',
+      'table' => 'og',
+      'field' => 'type_groups_all',
+      'relationship' => 'none',
+    ),
+    'status' => array(
+      'operator' => '=',
+      'value' => 1,
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'group_centre_school' => 'group_centre_school',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'none',
+    ),
+  ));
+  $handler->override_option('title', 'About this Centre');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $translatables['groups_listing_centre_school'] = array(
     t('About Centre'),
+    t('About this Centre'),
     t('Apps'),
     t('Archived centres'),
     t('Block: My centres (sidebar)'),
