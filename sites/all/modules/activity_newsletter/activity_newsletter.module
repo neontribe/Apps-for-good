@@ -152,13 +152,13 @@ function activity_newsletter_execute($is_manual = FALSE) {
 		$rows = array();
 		foreach($view->result as $result) {
 			$node = node_load($result->nid);
-			$url = url('node/'.$node->nid, array('absolute' => TRUE));
 			if(!empty($result->comments_uid)) { //it's a comment
 				$user = user_load(array('uid' => $result->comments_uid));
 				if(user_access('access comments', $user)) {			
 					$operation = 'commented on';
 	                                $teaser = db_result(db_query('SELECT comment FROM comments WHERE cid=%d', $result->comments_cid));
 	                                $by = $user;
+					$url = url('node/'.$node->nid.'#comment-'.$result->comments_cid, array('absolute' => TRUE));
 				} else {
 					continue;
 				}
@@ -169,6 +169,7 @@ function activity_newsletter_execute($is_manual = FALSE) {
 					$operation = ($result->changed == $result->created) ? 'posted' : 'updated';
 					$teaser = $node->teaser;
 					$by = $user;
+					$url = url('node/'.$node->nid, array('absolute' => TRUE));
 				} else {
 					continue;
 				}
