@@ -2562,6 +2562,47 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('fields', array(
+    'field_logo_fid' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'label_type' => 'none',
+      'format' => 'centre-app-logo_default',
+      'multiple' => array(
+        'group' => TRUE,
+        'multiple_number' => '',
+        'multiple_from' => '',
+        'multiple_reversed' => FALSE,
+      ),
+      'exclude' => 0,
+      'id' => 'field_logo_fid',
+      'table' => 'node_data_field_logo',
+      'field' => 'field_logo_fid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
     'title' => array(
       'label' => '',
       'alter' => array(
@@ -2748,7 +2789,7 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('access', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'Our Apps');
+  $handler->override_option('title', 'App Teams Based Here');
   $handler->override_option('block_description', 'Our Apps');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'About Centre', 'block_4');
@@ -2981,6 +3022,7 @@ function afg_groups_views_views_default_views() {
   $translatables['groups_listing_centre_school'] = array(
     t('About Centre'),
     t('About this Centre'),
+    t('App Teams Based Here'),
     t('Apps'),
     t('Archived centres'),
     t('Block: My centres (sidebar)'),
