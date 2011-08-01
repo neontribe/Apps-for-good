@@ -47,6 +47,7 @@ function afg_group_definitions_spaces_presets() {
       ),
       'spaces_dashboard_blocks' => array(
         'atrium_calendar-mini' => 1,
+        'commentblock-comment_form' => 1,
         'views-activity_listing-block_1' => 1,
         'views-activity_listing-block_2' => 1,
         'views-blog_comments-block_1' => 1,
@@ -158,6 +159,7 @@ function afg_group_definitions_spaces_presets() {
       ),
       'spaces_dashboard_blocks' => array(
         'atrium_calendar-mini' => 1,
+        'commentblock-comment_form' => 1,
         'views-4279d6353ce04c2723ce5268875465d0' => 1,
         'views-7a3971c58a24107b75cfdb9163cf5dc3' => 1,
         'views-activity_listing-block_1' => 1,
@@ -168,6 +170,7 @@ function afg_group_definitions_spaces_presets() {
         'views-casetracker_cases-block_2' => 1,
         'views-casetracker_cases-block_3' => 1,
         'views-casetracker_projects-block_1' => 1,
+        'views-ed790d718541f2aaea81054dab60bd25' => 1,
         'views-groups_listing_app_team-block_3' => 1,
         'views-updates-block_4' => 1,
       ),
@@ -182,21 +185,27 @@ function afg_group_definitions_spaces_presets() {
             'region' => 'content',
             'weight' => 0,
           ),
-          'views-activity_listing-block_1' => array(
+          'views-4279d6353ce04c2723ce5268875465d0' => array(
             'module' => 'views',
-            'delta' => 'activity_listing-block_1',
+            'delta' => '4279d6353ce04c2723ce5268875465d0',
             'region' => 'content',
             'weight' => 1,
+          ),
+          'views-updates-block_4' => array(
+            'module' => 'views',
+            'delta' => 'updates-block_4',
+            'region' => 'content',
+            'weight' => 2,
           ),
           'views-blog_listing-block_2' => array(
             'module' => 'views',
             'delta' => 'blog_listing-block_2',
             'region' => 'content',
-            'weight' => 2,
+            'weight' => 3,
           ),
-          'views-4279d6353ce04c2723ce5268875465d0' => array(
+          'views-ed790d718541f2aaea81054dab60bd25' => array(
             'module' => 'views',
-            'delta' => '4279d6353ce04c2723ce5268875465d0',
+            'delta' => 'ed790d718541f2aaea81054dab60bd25',
             'region' => 'right',
             'weight' => 0,
           ),
