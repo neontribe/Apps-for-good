@@ -1341,9 +1341,7 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('access', array(
-    'type' => 'spaces_feature',
-    'spaces_feature' => 'atrium_groups',
-    'perm' => 'access content',
+    'type' => 'none',
   ));
   $handler->override_option('title', 'Centre');
   $handler->override_option('empty', '');
@@ -1541,6 +1539,9 @@ function afg_groups_views_views_default_views() {
       'field' => 'type',
       'relationship' => 'none',
     ),
+  ));
+  $handler->override_option('access', array(
+    'type' => 'none',
   ));
   $handler->override_option('title', 'About this App');
   $handler->override_option('block_description', '');
@@ -2744,6 +2745,9 @@ function afg_groups_views_views_default_views() {
       ),
     ),
   ));
+  $handler->override_option('access', array(
+    'type' => 'none',
+  ));
   $handler->override_option('title', 'Our Apps');
   $handler->override_option('block_description', 'Our Apps');
   $handler->override_option('block_caching', -1);
@@ -2967,6 +2971,9 @@ function afg_groups_views_views_default_views() {
       'field' => 'type',
       'relationship' => 'none',
     ),
+  ));
+  $handler->override_option('access', array(
+    'type' => 'none',
   ));
   $handler->override_option('title', 'About this Centre');
   $handler->override_option('block_description', '');
