@@ -128,7 +128,7 @@ function afg_group_media_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_group_media_video';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
 
   $export['comment_form_location_group_media_video'] = $strongarm;
   $strongarm = new stdClass;
@@ -218,15 +218,16 @@ function afg_group_media_strongarm() {
   $strongarm->name = 'content_extra_weights_group_media_video';
   $strongarm->value = array(
     'title' => '-5',
-    'body_field' => '-2',
-    'revision_information' => '2',
-    'author' => '1',
-    'options' => '3',
-    'comment_settings' => '5',
-    'menu' => '-4',
-    'book' => '0',
-    'attachments' => '4',
-    'og_nodeapi' => '-1',
+    'body_field' => '-1',
+    'revision_information' => '3',
+    'author' => '2',
+    'options' => '4',
+    'comment_settings' => '6',
+    'menu' => '-3',
+    'taxonomy' => '-2',
+    'book' => '1',
+    'attachments' => '5',
+    'og_nodeapi' => '0',
   );
 
   $export['content_extra_weights_group_media_video'] = $strongarm;

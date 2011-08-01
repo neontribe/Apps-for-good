@@ -76,25 +76,24 @@ function afg_group_media_content_default_fields() {
     ),
   );
 
-  // Exported field: field_group_video
-  $fields['group_media_video-field_group_video'] = array(
-    'field_name' => 'field_group_video',
+  // Exported field: field_video
+  $fields['group_media_video-field_video'] = array(
+    'field_name' => 'field_video',
     'type_name' => 'group_media_video',
     'display_settings' => array(
-      'weight' => '32',
-      'parent' => '',
       'label' => array(
-        'format' => 'hidden',
-      ),
-      'teaser' => array(
-        'format' => 'video_replace_preview',
-        'exclude' => 0,
-      ),
-      'full' => array(
-        'format' => 'default',
+        'format' => 'above',
         'exclude' => 0,
       ),
       '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
@@ -125,16 +124,16 @@ function afg_group_media_content_default_fields() {
       'video_width' => '425',
       'video_height' => '350',
       'video_autoplay' => 0,
-      'preview_width' => '250',
-      'preview_height' => '153',
+      'preview_width' => '142',
+      'preview_height' => '117',
       'preview_autoplay' => 0,
       'thumbnail_width' => '120',
       'thumbnail_height' => '90',
       'thumbnail_default_path' => '',
       'thumbnail_link_title' => 'See video',
       'meta_fields' => array(
-        'title' => 'title',
-        'description' => 'description',
+        'title' => 0,
+        'description' => 0,
       ),
       'providers' => array(
         'youtube' => 'youtube',
@@ -145,10 +144,6 @@ function afg_group_media_content_default_fields() {
         '0' => array(
           'embed' => '',
           'value' => '',
-          'emvideo' => array(
-            'title' => '',
-            'description' => '',
-          ),
         ),
       ),
       'default_value_php' => NULL,
@@ -184,8 +179,8 @@ function afg_group_media_content_default_fields() {
       'media_flickr_controlbar_preview' => 'none',
       'media_flickr_allowfullscreen_preview' => 1,
       'media_flickr_logo_preview' => '',
-      'label' => 'video-slideshare-flickr',
-      'weight' => '-3',
+      'label' => 'Video',
+      'weight' => '-4',
       'description' => '',
       'type' => 'emvideo_textfields',
       'module' => 'emvideo',
@@ -195,7 +190,7 @@ function afg_group_media_content_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Image');
-  t('video-slideshare-flickr');
+  t('Video');
 
   return $fields;
 }

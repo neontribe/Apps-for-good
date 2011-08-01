@@ -90,7 +90,7 @@ function afg_group_media_views_default_views() {
       'field' => 'field_group_image_fid',
       'relationship' => 'none',
     ),
-    'field_group_video_embed' => array(
+    'field_video_embed' => array(
       'label' => '',
       'alter' => array(
         'alter_text' => 0,
@@ -123,9 +123,9 @@ function afg_group_media_views_default_views() {
         'multiple_reversed' => FALSE,
       ),
       'exclude' => 0,
-      'id' => 'field_group_video_embed',
-      'table' => 'node_data_field_group_video',
-      'field' => 'field_group_video_embed',
+      'id' => 'field_video_embed',
+      'table' => 'node_data_field_video',
+      'field' => 'field_video_embed',
       'relationship' => 'none',
     ),
     'comments_link' => array(
@@ -163,9 +163,7 @@ function afg_group_media_views_default_views() {
     'type' => array(
       'operator' => 'in',
       'value' => array(
-        'group_image' => 'group_image',
         'group_media_image' => 'group_media_image',
-        'group_media_text' => 'group_media_text',
         'group_media_video' => 'group_media_video',
       ),
       'group' => '0',
