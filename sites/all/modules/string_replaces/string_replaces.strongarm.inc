@@ -10,8 +10,9 @@ function string_replaces_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'locale_custom_strings_en';
   $strongarm->value = array(
-    'Members' => 'Supporters',
     'Dashboard' => 'Homespace',
+    'Members' => 'Supporters',
+    'Blog' => 'Text',
   );
 
   $export['locale_custom_strings_en'] = $strongarm;
