@@ -13,6 +13,7 @@ function string_replaces_strongarm() {
     'Blog' => 'Text',
     'Dashboard' => 'Profile',
     'Members' => 'Supporters',
+    'Membership' => 'Following',
   );
 
   $export['locale_custom_strings_en'] = $strongarm;
