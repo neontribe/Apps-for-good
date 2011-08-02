@@ -72,17 +72,23 @@ function afg_group_definitions_spaces_presets() {
             'region' => 'content',
             'weight' => 0,
           ),
-          'views-activity_listing-block_1' => array(
+          'views-updates-block_4' => array(
             'module' => 'views',
-            'delta' => 'activity_listing-block_1',
+            'delta' => 'updates-block_4',
             'region' => 'content',
             'weight' => 1,
+          ),
+          'views-updates-block_5' => array(
+            'module' => 'views',
+            'delta' => 'updates-block_5',
+            'region' => 'right',
+            'weight' => 0,
           ),
           'views-groups_listing_app_team-block_3' => array(
             'module' => 'views',
             'delta' => 'groups_listing_app_team-block_3',
             'region' => 'right',
-            'weight' => 0,
+            'weight' => 1,
           ),
         ),
       ),
