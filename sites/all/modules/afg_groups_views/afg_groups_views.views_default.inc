@@ -3155,8 +3155,95 @@ function afg_groups_views_views_default_views() {
       ),
       'relationship' => 'field_staff_nid',
     ),
+    'mail' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_user' => 'mailto',
+      'exclude' => 1,
+      'id' => 'mail',
+      'table' => 'users',
+      'field' => 'mail',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'field_staff_nid',
+    ),
   ));
   $handler->override_option('title', 'Staff');
+  $handler->override_option('block_description', '');
+  $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'Contact Centre', 'block_7');
+  $handler->override_option('relationships', array(
+    'field_staff_nid' => array(
+      'label' => 'Staff',
+      'required' => 1,
+      'delta' => '-1',
+      'id' => 'field_staff_nid',
+      'table' => 'node_data_field_staff',
+      'field' => 'field_staff_nid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+  ));
+  $handler->override_option('fields', array(
+    'mail' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 1,
+        'text' => '<a href=\'[mail]\'>Contact Centre</a>',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 1,
+      'empty_zero' => 0,
+      'link_to_user' => 'mailto',
+      'exclude' => 0,
+      'id' => 'mail',
+      'table' => 'users',
+      'field' => 'mail',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'field_staff_nid',
+    ),
+  ));
+  $handler->override_option('title', 'Contact Centre');
+  $handler->override_option('items_per_page', 1);
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $translatables['groups_listing_centre_school'] = array(
@@ -3168,6 +3255,7 @@ function afg_groups_views_views_default_views() {
     t('Block: My centres (sidebar)'),
     t('Block: User centres'),
     t('Centre Logo'),
+    t('Contact Centre'),
     t('Defaults'),
     t('Directory'),
     t('My centres'),
