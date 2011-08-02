@@ -165,6 +165,7 @@ function afg_group_definitions_spaces_presets() {
       ),
       'spaces_dashboard_blocks' => array(
         'atrium_calendar-mini' => 1,
+        'views-1242aa2838f5e0ae93853fa3f054df98' => 1,
         'views-4279d6353ce04c2723ce5268875465d0' => 1,
         'views-436144bdc189eb30bee4a256ccd4eef6' => 1,
         'views-7a3971c58a24107b75cfdb9163cf5dc3' => 1,
@@ -213,13 +214,19 @@ function afg_group_definitions_spaces_presets() {
             'module' => 'views',
             'delta' => 'ed790d718541f2aaea81054dab60bd25',
             'region' => 'right',
-            'weight' => 0,
+            'weight' => 1,
           ),
           'views-436144bdc189eb30bee4a256ccd4eef6' => array(
             'module' => 'views',
             'delta' => '436144bdc189eb30bee4a256ccd4eef6',
             'region' => 'right',
             'weight' => 2,
+          ),
+          'views-1242aa2838f5e0ae93853fa3f054df98' => array(
+            'module' => 'views',
+            'delta' => '1242aa2838f5e0ae93853fa3f054df98',
+            'region' => 'right',
+            'weight' => 3,
           ),
         ),
       ),
