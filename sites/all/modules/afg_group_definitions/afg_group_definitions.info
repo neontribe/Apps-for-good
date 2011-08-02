@@ -1,5 +1,6 @@
 core = "6.x"
 dependencies[] = "spaces"
+dependencies[] = "spaces_dashboard"
 description = "This feature installs the pre-configured group types. Should include dashboard context settings."
 features[ctools][] = "spaces:spaces:3"
 features[spaces_presets][] = "application_team"
