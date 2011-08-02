@@ -20,13 +20,23 @@ function spaces_dashboard_context_default_contexts() {
     ),
   );
   $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-badges-block_1' => array(
+          'module' => 'views',
+          'delta' => 'badges-block_1',
+          'region' => 'right',
+          'weight' => 0,
+        ),
+      ),
+    ),
     'menu' => 'dashboard',
   );
   $context->condition_mode = 0;
 
-  $translatables['spaces_dashboard'] = array(
-    t('Dashboard'),
-  );
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Dashboard');
 
   $export['spaces_dashboard'] = $context;
   return $export;
