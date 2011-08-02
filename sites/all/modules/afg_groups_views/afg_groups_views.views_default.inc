@@ -1625,11 +1625,6 @@ function afg_groups_views_views_default_views() {
       'table' => 'og',
       'field' => 'description',
     ),
-    'title_1' => array(
-      'id' => 'title_1',
-      'table' => 'node',
-      'field' => 'title',
-    ),
   ));
   $handler->override_option('sorts', array(
     'title' => array(
@@ -1674,20 +1669,6 @@ function afg_groups_views_views_default_views() {
       'id' => 'status',
       'table' => 'node',
       'field' => 'status',
-      'relationship' => 'none',
-    ),
-    'uid' => array(
-      'operator' => '=',
-      'value' => 1,
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'uid',
-      'table' => 'og_uid',
-      'field' => 'uid',
       'relationship' => 'none',
     ),
     'type' => array(
@@ -2967,52 +2948,6 @@ function afg_groups_views_views_default_views() {
       'validate_argument_php' => '',
     ),
   ));
-  $handler->override_option('filters', array(
-    'type_groups_all' => array(
-      'operator' => '=',
-      'value' => '',
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type_groups_all',
-      'table' => 'og',
-      'field' => 'type_groups_all',
-      'relationship' => 'none',
-    ),
-    'status' => array(
-      'operator' => '=',
-      'value' => 1,
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'status',
-      'table' => 'node',
-      'field' => 'status',
-      'relationship' => 'none',
-    ),
-    'type' => array(
-      'operator' => 'in',
-      'value' => array(
-        'group_centre_school' => 'group_centre_school',
-      ),
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type',
-      'table' => 'node',
-      'field' => 'type',
-      'relationship' => 'none',
-    ),
-  ));
   $handler->override_option('access', array(
     'type' => 'none',
   ));
@@ -3133,53 +3068,95 @@ function afg_groups_views_views_default_views() {
       'validate_argument_php' => '',
     ),
   ));
-  $handler->override_option('filters', array(
-    'type_groups_all' => array(
-      'operator' => '=',
-      'value' => '',
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
+  $handler->override_option('title', '');
+  $handler->override_option('block_description', '');
+  $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'Staff', 'block_6');
+  $handler->override_option('relationships', array(
+    'field_staff_nid' => array(
+      'label' => 'Staff',
+      'required' => 0,
+      'delta' => '-1',
+      'id' => 'field_staff_nid',
+      'table' => 'node_data_field_staff',
+      'field' => 'field_staff_nid',
+      'override' => array(
+        'button' => 'Use default',
       ),
-      'id' => 'type_groups_all',
-      'table' => 'og',
-      'field' => 'type_groups_all',
-      'relationship' => 'none',
-    ),
-    'status' => array(
-      'operator' => '=',
-      'value' => 1,
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'status',
-      'table' => 'node',
-      'field' => 'status',
-      'relationship' => 'none',
-    ),
-    'type' => array(
-      'operator' => 'in',
-      'value' => array(
-        'group_centre_school' => 'group_centre_school',
-      ),
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type',
-      'table' => 'node',
-      'field' => 'type',
       'relationship' => 'none',
     ),
   ));
-  $handler->override_option('title', '');
+  $handler->override_option('fields', array(
+    'name' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_user' => 1,
+      'overwrite_anonymous' => 0,
+      'anonymous_text' => '',
+      'exclude' => 0,
+      'id' => 'name',
+      'table' => 'users',
+      'field' => 'name',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'field_staff_nid',
+    ),
+    'picture' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'imagecache_preset' => 'user-s',
+      'exclude' => 0,
+      'id' => 'picture',
+      'table' => 'users',
+      'field' => 'picture',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'field_staff_nid',
+    ),
+  ));
+  $handler->override_option('title', 'Staff');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $translatables['groups_listing_centre_school'] = array(
@@ -3200,6 +3177,7 @@ function afg_groups_views_views_default_views() {
     t('Page: Archived centres'),
     t('Page: Centre directory'),
     t('Page: My centres'),
+    t('Staff'),
     t('User centres'),
     t('View more'),
   );

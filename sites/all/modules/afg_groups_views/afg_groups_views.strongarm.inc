@@ -160,20 +160,20 @@ function afg_groups_views_strongarm() {
   $strongarm->name = 'content_extra_weights_group_centre_school';
   $strongarm->value = array(
     'title' => '-5',
-    'body_field' => '0',
-    'revision_information' => '6',
-    'author' => '7',
-    'options' => '8',
-    'comment_settings' => '10',
-    'menu' => '-1',
-    'taxonomy' => '-2',
-    'book' => '5',
-    'attachments' => '9',
+    'body_field' => '1',
+    'revision_information' => '7',
+    'author' => '8',
+    'options' => '9',
+    'comment_settings' => '11',
+    'menu' => '0',
+    'taxonomy' => '-1',
+    'book' => '6',
+    'attachments' => '10',
     'og_description' => '-4',
-    'og_selective' => '1',
-    'og_register' => '2',
-    'og_directory' => '3',
-    'og_private' => '4',
+    'og_selective' => '2',
+    'og_register' => '3',
+    'og_directory' => '4',
+    'og_private' => '5',
   );
 
   $export['content_extra_weights_group_centre_school'] = $strongarm;
