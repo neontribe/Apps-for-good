@@ -3068,6 +3068,9 @@ function afg_groups_views_views_default_views() {
       'validate_argument_php' => '',
     ),
   ));
+  $handler->override_option('access', array(
+    'type' => 'none',
+  ));
   $handler->override_option('title', '');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
@@ -3261,6 +3264,9 @@ function afg_groups_views_views_default_views() {
       'validate_argument_php' => '',
     ),
   ));
+  $handler->override_option('access', array(
+    'type' => 'none',
+  ));
   $handler->override_option('title', 'Staff');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
@@ -3385,6 +3391,9 @@ function afg_groups_views_views_default_views() {
       ),
       'validate_argument_php' => '',
     ),
+  ));
+  $handler->override_option('access', array(
+    'type' => 'none',
   ));
   $handler->override_option('title', 'Contact Centre');
   $handler->override_option('items_per_page', 1);
