@@ -180,6 +180,7 @@ function afg_group_definitions_spaces_presets() {
         'views-ed790d718541f2aaea81054dab60bd25' => 1,
         'views-groups_listing_app_team-block_3' => 1,
         'views-updates-block_4' => 1,
+        'views-updates-block_6' => 1,
       ),
       'spaces_preset_og' => 'centre_school',
     ),
@@ -198,17 +199,11 @@ function afg_group_definitions_spaces_presets() {
             'region' => 'content',
             'weight' => 1,
           ),
-          'views-updates-block_4' => array(
+          'views-updates-block_6' => array(
             'module' => 'views',
-            'delta' => 'updates-block_4',
+            'delta' => 'updates-block_6',
             'region' => 'content',
             'weight' => 2,
-          ),
-          'views-blog_listing-block_2' => array(
-            'module' => 'views',
-            'delta' => 'blog_listing-block_2',
-            'region' => 'content',
-            'weight' => 3,
           ),
           'views-ed790d718541f2aaea81054dab60bd25' => array(
             'module' => 'views',
