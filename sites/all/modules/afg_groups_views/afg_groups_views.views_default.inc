@@ -3623,13 +3623,6 @@ function afg_groups_views_views_default_views() {
       'relationship' => 'none',
     ),
   ));
-  $handler->override_option('arguments', array(
-    'group_nid' => array(
-      'id' => 'group_nid',
-      'table' => 'og_ancestry',
-      'field' => 'group_nid',
-    ),
-  ));
   $handler->override_option('filters', array(
     'status' => array(
       'operator' => '=',
@@ -4886,7 +4879,7 @@ function afg_groups_views_views_default_views() {
       'override' => array(
         'button' => 'Use default',
       ),
-      'relationship' => 'field_centre_ref_nid',
+      'relationship' => 'none',
     ),
     'field_centre_ref_nid' => array(
       'label' => 'Parent Centre',
@@ -4931,6 +4924,11 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('arguments', array(
+    'views_or_begin' => array(
+      'id' => 'views_or_begin',
+      'table' => 'node',
+      'field' => 'views_or_begin',
+    ),
     'field_centre_ref_nid' => array(
       'default_action' => 'default',
       'style_plugin' => 'default_summary',
@@ -5000,6 +4998,103 @@ function afg_groups_views_views_default_views() {
         'group_centre_school' => 0,
       ),
       'validate_argument_php' => '',
+    ),
+    'views_or_next' => array(
+      'default_action' => 'default',
+      'style_plugin' => 'default_summary',
+      'style_options' => array(),
+      'wildcard' => 'all',
+      'wildcard_substitution' => 'All',
+      'title' => '',
+      'breadcrumb' => '',
+      'default_argument_type' => 'fixed',
+      'default_argument' => '',
+      'validate_type' => 'none',
+      'validate_fail' => 'not found',
+      'default_argument_fixed' => '',
+      'share_arguments' => 1,
+      'id' => 'views_or_next',
+      'table' => 'node',
+      'field' => 'views_or_next',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+    'group_nid' => array(
+      'default_action' => 'default',
+      'style_plugin' => 'default_summary',
+      'style_options' => array(),
+      'wildcard' => 'all',
+      'wildcard_substitution' => 'All',
+      'title' => '',
+      'breadcrumb' => '',
+      'default_argument_type' => 'og_group_node',
+      'default_argument' => '',
+      'validate_type' => 'none',
+      'validate_fail' => 'not found',
+      'break_phrase' => 0,
+      'not' => 0,
+      'id' => 'group_nid',
+      'table' => 'og_ancestry',
+      'field' => 'group_nid',
+      'validate_user_argument_type' => 'uid',
+      'validate_user_roles' => array(
+        '2' => 0,
+        '3' => 0,
+        '6' => 0,
+        '4' => 0,
+        '5' => 0,
+      ),
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+      'default_options_div_prefix' => '',
+      'default_argument_fixed' => '',
+      'default_argument_user' => 0,
+      'default_argument_php' => '',
+      'validate_argument_node_type' => array(
+        'blog' => 0,
+        'book' => 0,
+        'event' => 0,
+        'feed_ical' => 0,
+        'feed_ical_item' => 0,
+        'group' => 0,
+        'profile' => 0,
+        'shoutbox' => 0,
+        'group_media_image' => 0,
+        'group_media_video' => 0,
+        'casetracker_basic_case' => 0,
+        'casetracker_basic_project' => 0,
+        'group_app_team' => 0,
+        'group_centre_school' => 0,
+        'request_for_help' => 0,
+      ),
+      'validate_argument_node_access' => 0,
+      'validate_argument_nid_type' => 'nid',
+      'validate_argument_vocabulary' => array(
+        '2' => 0,
+        '5' => 0,
+        '1' => 0,
+        '6' => 0,
+        '4' => 0,
+      ),
+      'validate_argument_type' => 'tid',
+      'validate_argument_transform' => 0,
+      'validate_user_restrict_roles' => 0,
+      'validate_argument_is_member' => 'OG_VIEWS_DO_NOT_VALIDATE_MEMBERSHIP',
+      'validate_argument_group_node_type' => array(
+        'group' => 0,
+        'group_app_team' => 0,
+        'group_centre_school' => 0,
+      ),
+      'validate_argument_php' => '',
+    ),
+    'views_or_end' => array(
+      'id' => 'views_or_end',
+      'table' => 'node',
+      'field' => 'views_or_end',
     ),
   ));
   $handler->override_option('filters', array(
