@@ -66,29 +66,35 @@ function afg_group_definitions_spaces_presets() {
     'context' => array(
       'spaces_dashboard-custom-1:reaction:block' => array(
         'blocks' => array(
+          'quicktabs-app_media' => array(
+            'module' => 'quicktabs',
+            'delta' => 'app_media',
+            'region' => 'content',
+            'weight' => 0,
+          ),
           'views-groups_listing_app_team-block_4' => array(
             'module' => 'views',
             'delta' => 'groups_listing_app_team-block_4',
             'region' => 'content',
-            'weight' => 0,
+            'weight' => 1,
           ),
           'views-updates-block_4' => array(
             'module' => 'views',
             'delta' => 'updates-block_4',
             'region' => 'content',
-            'weight' => 1,
+            'weight' => 2,
           ),
           'views-updates-block_5' => array(
             'module' => 'views',
             'delta' => 'updates-block_5',
             'region' => 'right',
-            'weight' => 0,
+            'weight' => 1,
           ),
           'views-groups_listing_app_team-block_3' => array(
             'module' => 'views',
             'delta' => 'groups_listing_app_team-block_3',
             'region' => 'right',
-            'weight' => 1,
+            'weight' => 2,
           ),
         ),
       ),
