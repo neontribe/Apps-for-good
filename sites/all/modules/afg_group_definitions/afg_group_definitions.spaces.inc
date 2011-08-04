@@ -47,7 +47,7 @@ function afg_group_definitions_spaces_presets() {
       ),
       'spaces_dashboard_blocks' => array(
         'atrium_calendar-mini' => 1,
-        'commentblock-comment_form' => 1,
+        'quicktabs-app_media' => 1,
         'views-activity_listing-block_1' => 1,
         'views-activity_listing-block_2' => 1,
         'views-blog_comments-block_1' => 1,

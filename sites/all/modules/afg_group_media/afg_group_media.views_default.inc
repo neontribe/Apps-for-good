@@ -437,6 +437,7 @@ function afg_group_media_views_default_views() {
   ));
   $handler->override_option('title', 'Pitch Video');
   $handler->override_option('items_per_page', 1);
+  $handler->override_option('style_plugin', 'default');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Problem Video', 'block_2');
