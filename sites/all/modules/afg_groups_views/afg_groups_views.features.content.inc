@@ -165,9 +165,9 @@ function afg_groups_views_content_default_fields() {
     ),
   );
 
-  // Exported field: field_address
-  $fields['group_centre_school-field_address'] = array(
-    'field_name' => 'field_address',
+  // Exported field: field_centre_location
+  $fields['group_centre_school-field_centre_location'] = array(
+    'field_name' => 'field_centre_location',
     'type_name' => 'group_centre_school',
     'display_settings' => array(
       'label' => array(
@@ -204,57 +204,160 @@ function afg_groups_views_content_default_fields() {
       ),
     ),
     'widget_active' => '1',
-    'type' => 'addresses_cck',
-    'required' => '0',
+    'type' => 'location',
+    'required' => '1',
     'multiple' => '0',
-    'module' => 'addresses_cck',
+    'module' => 'location_cck',
     'active' => '1',
-    'is_primary_select' => '0',
-    'is_primary_size' => '',
-    'is_primary_label' => '',
-    'is_primary_desc' => '',
-    'aname_select' => '0',
-    'aname_size' => '',
-    'aname_label' => '',
-    'aname_desc' => '',
-    'country_select' => '0',
-    'country_size' => '',
-    'country_label' => '',
-    'country_desc' => '',
-    'province_select' => '0',
-    'province_size' => '',
-    'province_label' => '',
-    'province_desc' => '',
-    'city_select' => '1',
-    'city_size' => '',
-    'city_label' => 'City',
-    'city_desc' => '',
-    'street_select' => '0',
-    'street_size' => '',
-    'street_label' => '',
-    'street_desc' => '',
-    'additional_select' => '0',
-    'additional_size' => '',
-    'additional_label' => '',
-    'additional_desc' => '',
-    'postal_code_select' => '1',
-    'postal_code_size' => '',
-    'postal_code_label' => 'Post code',
-    'postal_code_desc' => '',
-    '0' => '',
+    'location_settings' => array(
+      'form' => array(
+        'fields' => array(
+          'name' => array(
+            'collect' => '0',
+            'default' => '',
+            'weight' => '2',
+          ),
+          'street' => array(
+            'collect' => '0',
+            'default' => '',
+            'weight' => '4',
+          ),
+          'additional' => array(
+            'collect' => '0',
+            'default' => '',
+            'weight' => '6',
+          ),
+          'city' => array(
+            'collect' => '1',
+            'default' => '',
+            'weight' => '8',
+          ),
+          'province' => array(
+            'collect' => '1',
+            'default' => '',
+            'weight' => '10',
+          ),
+          'postal_code' => array(
+            'collect' => '2',
+            'default' => '',
+            'weight' => '12',
+          ),
+          'country' => array(
+            'collect' => '4',
+            'default' => 'uk',
+            'weight' => '14',
+          ),
+          'locpick' => array(
+            'collect' => '0',
+            'weight' => '20',
+          ),
+        ),
+      ),
+      'display' => array(
+        'hide' => array(
+          'name' => 0,
+          'street' => 0,
+          'additional' => 0,
+          'city' => 0,
+          'province' => 0,
+          'postal_code' => 0,
+          'country' => 0,
+          'locpick' => 0,
+          'province_name' => 0,
+          'country_name' => 0,
+          'map_link' => 0,
+          'coords' => 0,
+        ),
+      ),
+    ),
+    'gmap_macro' => '[gmap ]',
+    'gmap_marker' => 'drupal',
     'widget' => array(
       'default_value' => array(
         '0' => array(
-          'postal_code' => '',
-          'city' => '',
+          'name' => '',
+          'street' => '',
+          'additional' => '',
+          'country' => 'uk',
+          'locpick' => array(
+            'user_latitude' => '',
+            'user_longitude' => '',
+          ),
+          'cck_preview_in_progress' => TRUE,
+          'location_settings' => array(
+            'form' => array(
+              'fields' => array(
+                'lid' => array(
+                  'default' => FALSE,
+                ),
+                'name' => array(
+                  'default' => '',
+                  'collect' => 1,
+                  'weight' => 2,
+                ),
+                'street' => array(
+                  'default' => '',
+                  'collect' => 1,
+                  'weight' => 4,
+                ),
+                'additional' => array(
+                  'default' => '',
+                  'collect' => 1,
+                  'weight' => 6,
+                ),
+                'city' => array(
+                  'default' => '',
+                  'collect' => 0,
+                  'weight' => 8,
+                ),
+                'province' => array(
+                  'default' => '',
+                  'collect' => 0,
+                  'weight' => 10,
+                ),
+                'postal_code' => array(
+                  'default' => '',
+                  'collect' => 0,
+                  'weight' => 12,
+                ),
+                'country' => array(
+                  'default' => 'uk',
+                  'collect' => 1,
+                  'weight' => 14,
+                ),
+                'locpick' => array(
+                  'default' => FALSE,
+                  'collect' => 1,
+                  'weight' => 20,
+                  'nodiff' => TRUE,
+                ),
+                'latitude' => array(
+                  'default' => 0,
+                ),
+                'longitude' => array(
+                  'default' => 0,
+                ),
+                'source' => array(
+                  'default' => 0,
+                ),
+                'is_primary' => array(
+                  'default' => 0,
+                ),
+                'delete_location' => array(
+                  'default' => FALSE,
+                  'nodiff' => TRUE,
+                ),
+              ),
+            ),
+          ),
         ),
       ),
       'default_value_php' => NULL,
-      'label' => 'Centre address',
-      'weight' => '-4',
+      'label' => 'Centre Location',
+      'weight' => '-2',
       'description' => '',
-      'type' => 'addresses_elements',
-      'module' => 'addresses_cck',
+      'type' => 'location',
+      'module' => 'location_cck',
     ),
   );
 
@@ -332,7 +435,7 @@ function afg_groups_views_content_default_fields() {
       ),
       'use_default_image' => 1,
       'label' => 'Centre logo',
-      'weight' => '-2',
+      'weight' => '-3',
       'description' => 'These images will be re-sized to a 50px x 50px thumbnail. Please upload at this size if possible.',
       'type' => 'imagefield_widget',
       'module' => 'imagefield',
@@ -407,14 +510,14 @@ function afg_groups_views_content_default_fields() {
       'size' => 60,
       'default_value' => array(
         '0' => array(
-          'nid' => '',
+          'nid' => NULL,
         ),
       ),
       'default_value_php' => NULL,
       'label' => 'Staff',
       'weight' => '-1',
       'description' => '',
-      'type' => 'nodereference_select',
+      'type' => 'nodereference_buttons',
       'module' => 'nodereference',
     ),
   );
@@ -495,7 +598,7 @@ function afg_groups_views_content_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Centre address');
+  t('Centre Location');
   t('Centre logo');
   t('Centre website');
   t('Parent Centre');

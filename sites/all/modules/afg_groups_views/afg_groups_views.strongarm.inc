@@ -169,7 +169,7 @@ function afg_groups_views_strongarm() {
     'taxonomy' => '0',
     'book' => '8',
     'attachments' => '12',
-    'og_description' => '-3',
+    'og_description' => '-4',
     'og_selective' => '4',
     'og_register' => '5',
     'og_directory' => '6',

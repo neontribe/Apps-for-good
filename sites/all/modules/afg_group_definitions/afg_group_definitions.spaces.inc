@@ -165,6 +165,7 @@ function afg_group_definitions_spaces_presets() {
       ),
       'spaces_dashboard_blocks' => array(
         'atrium_calendar-mini' => 1,
+        'block-1' => 1,
         'views-1242aa2838f5e0ae93853fa3f054df98' => 1,
         'views-4279d6353ce04c2723ce5268875465d0' => 1,
         'views-436144bdc189eb30bee4a256ccd4eef6' => 1,
@@ -194,21 +195,21 @@ function afg_group_definitions_spaces_presets() {
             'region' => 'content',
             'weight' => 0,
           ),
+          'block-1' => array(
+            'module' => 'block',
+            'delta' => '1',
+            'region' => 'content',
+            'weight' => 1,
+          ),
           'views-4279d6353ce04c2723ce5268875465d0' => array(
             'module' => 'views',
             'delta' => '4279d6353ce04c2723ce5268875465d0',
             'region' => 'content',
-            'weight' => 1,
+            'weight' => 2,
           ),
           'views-updates-block_6' => array(
             'module' => 'views',
             'delta' => 'updates-block_6',
-            'region' => 'content',
-            'weight' => 2,
-          ),
-          'views-blog_listing-block_2' => array(
-            'module' => 'views',
-            'delta' => 'blog_listing-block_2',
             'region' => 'content',
             'weight' => 3,
           ),
@@ -222,7 +223,7 @@ function afg_group_definitions_spaces_presets() {
             'module' => 'views',
             'delta' => 'updates-block_7',
             'region' => 'right',
-            'weight' => 1,
+            'weight' => 2,
           ),
           'views-436144bdc189eb30bee4a256ccd4eef6' => array(
             'module' => 'views',
