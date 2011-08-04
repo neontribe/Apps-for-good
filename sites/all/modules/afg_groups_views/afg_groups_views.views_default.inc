@@ -1584,6 +1584,25 @@ function afg_groups_views_views_default_views() {
       'table' => 'node_data_field_centre_ref',
       'field' => 'field_centre_ref_nid',
     ),
+    'term_node_tid' => array(
+      'label' => 'term',
+      'required' => 0,
+      'vids' => array(
+        '7' => 7,
+        '2' => 0,
+        '5' => 0,
+        '1' => 0,
+        '6' => 0,
+        '4' => 0,
+      ),
+      'id' => 'term_node_tid',
+      'table' => 'node',
+      'field' => 'term_node_tid',
+      'override' => array(
+        'button' => 'Override',
+      ),
+      'relationship' => 'none',
+    ),
   ));
   $handler->override_option('fields', array(
     'title' => array(
@@ -1624,6 +1643,12 @@ function afg_groups_views_views_default_views() {
       'id' => 'description',
       'table' => 'og',
       'field' => 'description',
+    ),
+    'node_count' => array(
+      'id' => 'node_count',
+      'table' => 'term_node_count',
+      'field' => 'node_count',
+      'relationship' => 'term_node_tid',
     ),
   ));
   $handler->override_option('sorts', array(
@@ -1686,6 +1711,11 @@ function afg_groups_views_views_default_views() {
       'table' => 'node',
       'field' => 'type',
       'relationship' => 'none',
+    ),
+    'type_1' => array(
+      'id' => 'type_1',
+      'table' => 'node',
+      'field' => 'type',
     ),
   ));
   $handler->override_option('access', array(
@@ -2532,7 +2562,7 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('empty_format', '5');
   $handler->override_option('block_description', 'User centres');
   $handler->override_option('block_caching', -1);
-  $handler = $view->new_display('block', 'Apps', 'block_3');
+  $handler = $view->new_display('block', 'Apps at centre', 'block_3');
   $handler->override_option('relationships', array(
     'field_centre_ref_nid' => array(
       'label' => 'Parent Centre',
@@ -2729,40 +2759,6 @@ function afg_groups_views_views_default_views() {
       ),
       'relationship' => 'none',
     ),
-    'tid_2' => array(
-      'label' => 'Term image',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'html' => 0,
-        'strip_tags' => 0,
-      ),
-      'empty' => '',
-      'hide_empty' => 0,
-      'empty_zero' => 0,
-      'imagecache_preset' => 'badge-thumb',
-      'link_to_taxonomy' => 0,
-      'exclude' => 0,
-      'id' => 'tid_2',
-      'table' => 'term_image',
-      'field' => 'tid',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-      'relationship' => 'none',
-    ),
     'body' => array(
       'label' => 'Short Pitch',
       'alter' => array(
@@ -2915,7 +2911,7 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('access', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'App Teams Based Here');
+  $handler->override_option('title', '');
   $handler->override_option('row_options', array(
     'inline' => array(
       'field_logo_fid' => 'field_logo_fid',
@@ -3103,6 +3099,52 @@ function afg_groups_views_views_default_views() {
       'validate_argument_php' => '',
     ),
   ));
+  $handler->override_option('filters', array(
+    'type_groups_all' => array(
+      'operator' => '=',
+      'value' => '',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type_groups_all',
+      'table' => 'og',
+      'field' => 'type_groups_all',
+      'relationship' => 'none',
+    ),
+    'status' => array(
+      'operator' => '=',
+      'value' => 1,
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'group_centre_school' => 'group_centre_school',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'none',
+    ),
+  ));
   $handler->override_option('access', array(
     'type' => 'none',
   ));
@@ -3221,6 +3263,52 @@ function afg_groups_views_views_default_views() {
         'group_centre_school' => 0,
       ),
       'validate_argument_php' => '',
+    ),
+  ));
+  $handler->override_option('filters', array(
+    'type_groups_all' => array(
+      'operator' => '=',
+      'value' => '',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type_groups_all',
+      'table' => 'og',
+      'field' => 'type_groups_all',
+      'relationship' => 'none',
+    ),
+    'status' => array(
+      'operator' => '=',
+      'value' => 1,
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'group_centre_school' => 'group_centre_school',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'none',
     ),
   ));
   $handler->override_option('access', array(
@@ -3419,6 +3507,52 @@ function afg_groups_views_views_default_views() {
       'validate_argument_php' => '',
     ),
   ));
+  $handler->override_option('filters', array(
+    'type_groups_all' => array(
+      'operator' => '=',
+      'value' => '',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type_groups_all',
+      'table' => 'og',
+      'field' => 'type_groups_all',
+      'relationship' => 'none',
+    ),
+    'status' => array(
+      'operator' => '=',
+      'value' => 1,
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'group_centre_school' => 'group_centre_school',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'none',
+    ),
+  ));
   $handler->override_option('access', array(
     'type' => 'none',
   ));
@@ -3558,8 +3692,7 @@ function afg_groups_views_views_default_views() {
   $translatables['groups_listing_centre_school'] = array(
     t('About Centre'),
     t('About this Centre'),
-    t('App Teams Based Here'),
-    t('Apps'),
+    t('Apps at centre'),
     t('Archived centres'),
     t('Block: My centres (sidebar)'),
     t('Block: User centres'),
@@ -4814,43 +4947,6 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('fields', array(
-    'title' => array(
-      'label' => '',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'html' => 0,
-        'strip_tags' => 0,
-      ),
-      'empty' => '',
-      'hide_empty' => 0,
-      'empty_zero' => 0,
-      'link_to_node' => 0,
-      'spaces' => array(
-        'frontpage' => 0,
-        'type' => 'spaces_og',
-      ),
-      'exclude' => 0,
-      'id' => 'title',
-      'table' => 'node',
-      'field' => 'title',
-      'override' => array(
-        'button' => 'Override',
-      ),
-      'relationship' => 'none',
-    ),
     'group_nid' => array(
       'label' => '',
       'alter' => array(
@@ -4884,6 +4980,43 @@ function afg_groups_views_views_default_views() {
       'id' => 'group_nid',
       'table' => 'og_ancestry',
       'field' => 'group_nid',
+      'relationship' => 'none',
+    ),
+    'title' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'spaces' => array(
+        'frontpage' => 0,
+        'type' => 'spaces_og',
+      ),
+      'exclude' => 1,
+      'id' => 'title',
+      'table' => 'node',
+      'field' => 'title',
+      'override' => array(
+        'button' => 'Use default',
+      ),
       'relationship' => 'none',
     ),
     'feature' => array(
@@ -4920,11 +5053,14 @@ function afg_groups_views_views_default_views() {
       'date_format' => 'small',
       'custom_date_format' => '',
       'reldate' => 'time',
-      'exclude' => 0,
+      'exclude' => 1,
       'id' => 'atrium_activity_timestamp',
       'table' => 'comments',
       'field' => 'atrium_activity_timestamp',
       'relationship' => 'none',
+      'override' => array(
+        'button' => 'Use default',
+      ),
     ),
     'atrium_activity' => array(
       'label' => '',
@@ -4956,6 +5092,27 @@ function afg_groups_views_views_default_views() {
     ),
     'timestamp' => array(
       'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
       'link_to_node' => 0,
       'comments' => 0,
       'exclude' => 0,
@@ -4963,7 +5120,7 @@ function afg_groups_views_views_default_views() {
       'table' => 'history_user',
       'field' => 'timestamp',
       'override' => array(
-        'button' => 'Override',
+        'button' => 'Use default',
       ),
       'relationship' => 'none',
     ),
@@ -5027,7 +5184,7 @@ function afg_groups_views_views_default_views() {
         'enabled' => 0,
         'acronym' => 0,
       ),
-      'exclude' => 0,
+      'exclude' => 1,
       'id' => 'group_nid_1',
       'table' => 'og_ancestry',
       'field' => 'group_nid',
@@ -5068,7 +5225,7 @@ function afg_groups_views_views_default_views() {
         'multiple_from' => '',
         'multiple_reversed' => FALSE,
       ),
-      'exclude' => 0,
+      'exclude' => 1,
       'id' => 'field_centre_ref_nid',
       'table' => 'node_data_field_centre_ref',
       'field' => 'field_centre_ref_nid',

@@ -165,6 +165,99 @@ function afg_groups_views_content_default_fields() {
     ),
   );
 
+  // Exported field: field_address
+  $fields['group_centre_school-field_address'] = array(
+    'field_name' => 'field_address',
+    'type_name' => 'group_centre_school',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'addresses_cck',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'addresses_cck',
+    'active' => '1',
+    'is_primary_select' => '0',
+    'is_primary_size' => '',
+    'is_primary_label' => '',
+    'is_primary_desc' => '',
+    'aname_select' => '0',
+    'aname_size' => '',
+    'aname_label' => '',
+    'aname_desc' => '',
+    'country_select' => '0',
+    'country_size' => '',
+    'country_label' => '',
+    'country_desc' => '',
+    'province_select' => '0',
+    'province_size' => '',
+    'province_label' => '',
+    'province_desc' => '',
+    'city_select' => '1',
+    'city_size' => '',
+    'city_label' => 'City',
+    'city_desc' => '',
+    'street_select' => '0',
+    'street_size' => '',
+    'street_label' => '',
+    'street_desc' => '',
+    'additional_select' => '0',
+    'additional_size' => '',
+    'additional_label' => '',
+    'additional_desc' => '',
+    'postal_code_select' => '1',
+    'postal_code_size' => '',
+    'postal_code_label' => 'Post code',
+    'postal_code_desc' => '',
+    '0' => '',
+    'widget' => array(
+      'default_value' => array(
+        '0' => array(
+          'postal_code' => '',
+          'city' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Centre address',
+      'weight' => '-4',
+      'description' => '',
+      'type' => 'addresses_elements',
+      'module' => 'addresses_cck',
+    ),
+  );
+
   // Exported field: field_logo
   $fields['group_centre_school-field_logo'] = array(
     'field_name' => 'field_logo',
@@ -239,7 +332,7 @@ function afg_groups_views_content_default_fields() {
       ),
       'use_default_image' => 1,
       'label' => 'Centre logo',
-      'weight' => '-3',
+      'weight' => '-2',
       'description' => 'These images will be re-sized to a 50px x 50px thumbnail. Please upload at this size if possible.',
       'type' => 'imagefield_widget',
       'module' => 'imagefield',
@@ -319,7 +412,7 @@ function afg_groups_views_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Staff',
-      'weight' => '-2',
+      'weight' => '-1',
       'description' => '',
       'type' => 'nodereference_select',
       'module' => 'nodereference',
@@ -393,7 +486,7 @@ function afg_groups_views_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Centre website',
-      'weight' => 0,
+      'weight' => '1',
       'description' => 'The url for Centre\'s website',
       'type' => 'link',
       'module' => 'link',
@@ -402,6 +495,7 @@ function afg_groups_views_content_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Centre address');
   t('Centre logo');
   t('Centre website');
   t('Parent Centre');
