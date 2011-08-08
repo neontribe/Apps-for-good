@@ -120,13 +120,6 @@ function afg_groups_views_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_request_for_help';
-  $strongarm->value = '2';
-
-  $export['comment_request_for_help'] = $strongarm;
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_group_app_team';
   $strongarm->value = '1';
 
