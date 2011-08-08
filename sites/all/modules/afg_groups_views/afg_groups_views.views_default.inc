@@ -3894,20 +3894,6 @@ function afg_groups_views_views_default_views() {
       'field' => 'status',
       'relationship' => 'none',
     ),
-    'current' => array(
-      'operator' => 'active',
-      'value' => '',
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'current',
-      'table' => 'spaces',
-      'field' => 'current',
-      'relationship' => 'none',
-    ),
     'update_type' => array(
       'operator' => '=',
       'value' => '',
@@ -3921,6 +3907,11 @@ function afg_groups_views_views_default_views() {
       'table' => 'node',
       'field' => 'update_type',
       'relationship' => 'none',
+    ),
+    'uid' => array(
+      'id' => 'uid',
+      'table' => 'og_uid',
+      'field' => 'uid',
     ),
   ));
   $handler->override_option('access', array(
@@ -5830,14 +5821,17 @@ function afg_groups_views_views_default_views() {
       'separator' => ', ',
       'spaces_og_frontpage' => 1,
       'crayon' => array(
-        'enabled' => 'enabled',
-        'acronym' => 'acronym',
+        'enabled' => 0,
+        'acronym' => 0,
       ),
       'exclude' => 0,
       'id' => 'group_nid',
       'table' => 'og_ancestry',
       'field' => 'group_nid',
       'relationship' => 'none',
+      'override' => array(
+        'button' => 'Use default',
+      ),
     ),
   ));
   $handler->override_option('filters', array(
@@ -5876,6 +5870,78 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('title', 'Help Needed!');
+  $handler->override_option('row_options', array(
+    'inline' => array(
+      'title' => 'title',
+      'group_nid' => 'group_nid',
+    ),
+    'separator' => '',
+    'hide_empty' => 0,
+  ));
+  $handler->override_option('block_description', '');
+  $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'Stuff I\'m following', 'block_9');
+  $handler->override_option('relationships', array(
+    'group_nid' => array(
+      'label' => 'Group node (post)',
+      'required' => 0,
+      'id' => 'group_nid',
+      'table' => 'og_ancestry',
+      'field' => 'group_nid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+  ));
+  $handler->override_option('filters', array(
+    'status' => array(
+      'operator' => '=',
+      'value' => 1,
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+    'update_type' => array(
+      'operator' => '=',
+      'value' => '',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'update_type',
+      'table' => 'node',
+      'field' => 'update_type',
+      'relationship' => 'none',
+    ),
+    'uid' => array(
+      'operator' => '=',
+      'value' => '1',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'uid',
+      'table' => 'og_uid',
+      'field' => 'uid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'group_nid',
+    ),
+  ));
+  $handler->override_option('title', 'Stuff I\'m following');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $translatables['updates'] = array(
@@ -5892,6 +5958,7 @@ function afg_groups_views_views_default_views() {
     t('No recent activity found.'),
     t('No recent files found.'),
     t('Recent activity'),
+    t('Stuff I\'m following'),
     t('Updates'),
     t('User activity'),
     t('User\'s activity'),
