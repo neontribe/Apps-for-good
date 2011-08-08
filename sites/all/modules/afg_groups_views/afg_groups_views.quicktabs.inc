@@ -24,11 +24,13 @@ function afg_groups_views_quicktabs_default_quicktabs() {
       'type' => 'view',
     ),
     1 => array(
-      'bid' => 'views_delta_updates-block_3',
-      'hide_title' => 1,
+      'vid' => 'updates',
+      'display' => 'block_1',
+      'args' => '',
+      'get_displays' => 'vdisp_1',
       'title' => 'What\'s popular',
       'weight' => '-99',
-      'type' => 'block',
+      'type' => 'view',
     ),
   );
   $quicktabs->style = 'Basic';
