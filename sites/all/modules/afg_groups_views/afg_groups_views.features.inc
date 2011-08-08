@@ -67,17 +67,6 @@ function afg_groups_views_node_info() {
       'min_word_count' => '0',
       'help' => '',
     ),
-    'request_for_help' => array(
-      'name' => t('Request for Help'),
-      'module' => 'features',
-      'description' => t('A request for help posted into a group.'),
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'has_body' => '1',
-      'body_label' => t('Body'),
-      'min_word_count' => '0',
-      'help' => '',
-    ),
   );
   return $items;
 }
