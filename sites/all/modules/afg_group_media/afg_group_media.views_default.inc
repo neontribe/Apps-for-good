@@ -437,6 +437,7 @@ function afg_group_media_views_default_views() {
   ));
   $handler->override_option('title', 'Pitch Video');
   $handler->override_option('items_per_page', 1);
+  $handler->override_option('use_pager', '0');
   $handler->override_option('style_plugin', 'default');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
@@ -622,6 +623,7 @@ function afg_group_media_views_default_views() {
   ));
   $handler->override_option('title', 'Problem Video');
   $handler->override_option('items_per_page', 1);
+  $handler->override_option('use_pager', '0');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Logo', 'block_3');
@@ -806,6 +808,7 @@ function afg_group_media_views_default_views() {
   ));
   $handler->override_option('title', 'Logo');
   $handler->override_option('items_per_page', 1);
+  $handler->override_option('use_pager', '0');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Biz Plan', 'block_4');
@@ -984,6 +987,7 @@ function afg_group_media_views_default_views() {
   ));
   $handler->override_option('title', 'Business Plan');
   $handler->override_option('items_per_page', 1);
+  $handler->override_option('use_pager', '0');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $translatables['Group_Media'] = array(
