@@ -38,12 +38,6 @@
   <?php endif; ?>
 
 
-<?php /*Supporter Counter Header*/ ?>
-<h2><a href="members/directory">
-<?php echo afg_user_count(); ?>
- Supporters </a></h2>
-
-
   <?php if ($header): ?>
     <div class="view-header">
       <?php print $header; ?>
