@@ -290,6 +290,9 @@ function afg_groups_views_views_default_views() {
       'relationship' => 'none',
     ),
   ));
+  $handler->override_option('header', '<a href="members/directory"><?php echo (afg_user_count()); ?> Supporters </a>');
+  $handler->override_option('header_format', '6');
+  $handler->override_option('header_empty', 0);
   $handler->override_option('items_per_page', 5);
   $handler->override_option('row_options', array(
     'inline' => array(
@@ -302,6 +305,7 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $translatables['Counters'] = array(
+    t('<a href="members/directory"><?php echo (afg_user_count()); ?> Supporters </a>'),
     t('Block'),
     t('Defaults'),
     t('Supporter Count'),
