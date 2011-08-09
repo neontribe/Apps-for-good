@@ -28,7 +28,7 @@ function afg_groups_views_quicktabs_default_quicktabs() {
       'display' => 'block_1',
       'args' => '',
       'get_displays' => 'vdisp_1',
-      'title' => 'What\'s popular',
+      'title' => 'Recent Activity',
       'weight' => '-99',
       'type' => 'view',
     ),

@@ -33,3 +33,16 @@ function appsforgood_preprocess_box(&$vars, $hook) {
     $vars['title'] = t('Leave a comment or feedback...');
   }
 }
+
+/*count funtions*/
+
+function afg_user_count() {
+$count_users = db_result(db_query("SELECT COUNT(uid) FROM {users}"));
+return $count_users;
+}
+
+
+function afg_content_count($type) {
+$count_content = db_result(db_query("SELECT COUNT(*) FROM {node} WHERE type = '%s' AND status = 1", $type));
+return $count_content;
+}

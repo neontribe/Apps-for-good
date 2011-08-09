@@ -6,6 +6,309 @@
 function afg_groups_views_views_default_views() {
   $views = array();
 
+  // Exported view: Counters
+  $view = new view;
+  $view->name = 'Counters';
+  $view->description = 'afg_counters';
+  $view->tag = '';
+  $view->view_php = '';
+  $view->base_table = 'node';
+  $view->is_cacheable = FALSE;
+  $view->api_version = 2;
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+  $handler = $view->new_display('default', 'Defaults', 'default');
+  $handler->override_option('relationships', array(
+    'term_node_tid' => array(
+      'label' => 'term',
+      'required' => 0,
+      'vids' => array(
+        '7' => 7,
+        '2' => 0,
+        '5' => 0,
+        '1' => 0,
+        '6' => 0,
+        '4' => 0,
+      ),
+      'id' => 'term_node_tid',
+      'table' => 'node',
+      'field' => 'term_node_tid',
+      'relationship' => 'none',
+    ),
+  ));
+  $handler->override_option('fields', array(
+    'node_count' => array(
+      'id' => 'node_count',
+      'table' => 'term_node_count',
+      'field' => 'node_count',
+      'relationship' => 'term_node_tid',
+    ),
+  ));
+  $handler->override_option('filters', array(
+    'type' => array(
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+    ),
+  ));
+  $handler->override_option('access', array(
+    'type' => 'none',
+  ));
+  $handler->override_option('cache', array(
+    'type' => 'none',
+  ));
+  $handler->override_option('distinct', 0);
+  $handler->override_option('style_plugin', 'list');
+  $handler->override_option('row_options', array(
+    'inline' => array(
+      'node_count' => 'node_count',
+      'description' => 'description',
+    ),
+    'separator' => '',
+    'hide_empty' => 0,
+  ));
+  $handler = $view->new_display('block', 'Block', 'block_1');
+  $handler->override_option('fields', array(
+    'node_count' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'set_precision' => FALSE,
+      'precision' => 0,
+      'decimal' => '.',
+      'separator' => ',',
+      'prefix' => '',
+      'suffix' => '',
+      'link_to_term' => 0,
+      'exclude' => 0,
+      'id' => 'node_count',
+      'table' => 'term_node_count',
+      'field' => 'node_count',
+      'relationship' => 'term_node_tid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+    ),
+    'description' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'exclude' => 0,
+      'id' => 'description',
+      'table' => 'term_data',
+      'field' => 'description',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'term_node_tid',
+    ),
+  ));
+  $handler->override_option('filters', array(
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'group_app_team' => 'group_app_team',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+  ));
+  $handler->override_option('block_description', '');
+  $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'Supporter Count', 'block_2');
+  $handler->override_option('relationships', array());
+  $handler->override_option('fields', array(
+    'atrium_activity' => array(
+      'label' => 'Activity',
+      'alter' => array(
+        'alter_text' => FALSE,
+        'text' => '',
+        'make_link' => FALSE,
+        'path' => '',
+        'alt' => '',
+        'link_class' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'trim' => FALSE,
+        'max_length' => '',
+        'word_boundary' => TRUE,
+        'ellipsis' => TRUE,
+        'strip_tags' => FALSE,
+        'html' => FALSE,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'time_horizon' => '30',
+      'exclude' => 1,
+      'id' => 'atrium_activity',
+      'table' => 'comments',
+      'field' => 'atrium_activity',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+    'name' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_user' => 1,
+      'overwrite_anonymous' => 0,
+      'anonymous_text' => '',
+      'exclude' => 0,
+      'id' => 'name',
+      'table' => 'users',
+      'field' => 'name',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+    'title' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 1,
+      'spaces' => array(
+        'frontpage' => 0,
+        'type' => 'spaces_og',
+      ),
+      'exclude' => 0,
+      'id' => 'title',
+      'table' => 'node',
+      'field' => 'title',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+  ));
+  $handler->override_option('filters', array(
+    'update_type' => array(
+      'operator' => '=',
+      'value' => '',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'update_type',
+      'table' => 'node',
+      'field' => 'update_type',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+  ));
+  $handler->override_option('items_per_page', 5);
+  $handler->override_option('row_options', array(
+    'inline' => array(
+      'name' => 'name',
+      'title' => 'title',
+    ),
+    'separator' => '',
+    'hide_empty' => 0,
+  ));
+  $handler->override_option('block_description', '');
+  $handler->override_option('block_caching', -1);
+  $translatables['Counters'] = array(
+    t('Block'),
+    t('Defaults'),
+    t('Supporter Count'),
+  );
+
+  $views[$view->name] = $view;
+
   // Exported view: groups_listing_app_team
   $view = new view;
   $view->name = 'groups_listing_app_team';
