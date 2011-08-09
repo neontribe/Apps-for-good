@@ -4,8 +4,8 @@ define('_GROUP_APP_TEAM_DESCRIPTION', 'Who we are');
 define('_GROUP_APP_TEAM_DESCRIPTION_HINT', 'Describe your organisation');
 
 define('_GROUP_CENTRE_SCHOOL_BODY_TITLE', 'About this centre');
-define('_GROUP_CENTRE_SCHOOL_DESCRIPTION', 'Location');
-define('_GROUP_CENTRE_SCHOOL_DESCRIPTION_HINT', 'Where is this centre');
+define('_GROUP_CENTRE_SCHOOL_DESCRIPTION', 'Description');
+define('_GROUP_CENTRE_SCHOOL_DESCRIPTION_HINT', 'Description of group');
 
 function ntforms_init() {
   $wt = db_result(
@@ -35,8 +35,8 @@ function ntforms_form_alter(&$form, &$form_state, $form_id) {
     ),
     'group_centre_school_node_form' => array(
       'body_title' => _GROUP_CENTRE_SCHOOL_BODY_TITLE,
-      'description' => _GROUP_CENTRE_SCHOOL_DESCRIPTION,
-      'description_hint' => _GROUP_CENTRE_SCHOOL_DESCRIPTION_HINT,
+      'description' => NULL,
+      'description_hint' => NULL,
       'space' => 'centre_school',
     ),
   );
@@ -45,11 +45,12 @@ function ntforms_form_alter(&$form, &$form_state, $form_id) {
     // Rewrite the body field title
     $form['body_field']['body']['#title'] = $forms[$form_id]['body_title'];
 
-    // Rewrite descriptoion field
-    $form['og_description']['#title']
-      = $forms[$form_id]['description'];
-    $form['og_description']['#description']
-      = $forms[$form_id]['description_hint'];
+    // Rewrite description field
+    //$form['og_description']['#title']
+     // = $forms[$form_id]['description'];
+    //$form['og_description']['#description']
+     // = $forms[$form_id]['description_hint'];
+	unset($form['og_description']);
 
     if (!isset($form['nid']['#value'])) {
       $path = drupal_get_path('module', 'ntforms') . '/ntforms.js';
