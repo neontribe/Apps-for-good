@@ -57,7 +57,7 @@ function afg_groups_views_node_info() {
       'help' => '',
     ),
     'group_centre_school' => array(
-      'name' => t('Center/ School'),
+      'name' => t('Centre/ School'),
       'module' => 'features',
       'description' => t('This is a centre or school group.'),
       'has_title' => '1',
