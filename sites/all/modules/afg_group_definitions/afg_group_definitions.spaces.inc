@@ -120,6 +120,26 @@ function afg_group_definitions_spaces_presets() {
       'spaces_og_register' => 1,
       'spaces_og_directory' => 1,
       'spaces_og_private' => 0,
+      'spaces_features' => array(
+        'afg_group_media' => '0',
+        'afg_groups_views' => '0',
+        'atrium_blog' => '1',
+        'atrium_book' => '0',
+        'atrium_calendar' => '0',
+        'atrium_casetracker' => '0',
+        'atrium_members' => '1',
+        'atrium_shoutbox' => '0',
+        'cdi_blog' => '1',
+        'spaces_dashboard' => '1',
+      ),
+      'site_frontpage' => 'dashboard',
+      'site_frontpage_path' => 'dashboard',
+      'designkit_image' => array(
+        'logo' => '7',
+      ),
+      'designkit_color' => array(
+        'background' => '#4fb143',
+      ),
     ),
   );
 
@@ -151,6 +171,7 @@ function afg_group_definitions_spaces_presets() {
         'atrium_casetracker' => '0',
         'atrium_members' => '1',
         'atrium_shoutbox' => '0',
+        'cdi_blog' => '0',
         'spaces_dashboard' => '1',
       ),
       'site_frontpage' => 'dashboard',
