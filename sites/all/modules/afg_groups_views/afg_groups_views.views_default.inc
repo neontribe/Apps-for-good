@@ -1418,6 +1418,18 @@ function afg_groups_views_views_default_views() {
       ),
       'relationship' => 'none',
     ),
+    'field_staff_nid' => array(
+      'label' => 'Staff',
+      'required' => 0,
+      'delta' => '0',
+      'id' => 'field_staff_nid',
+      'table' => 'node_data_field_staff',
+      'field' => 'field_staff_nid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'field_centre_ref_nid',
+    ),
   ));
   $handler->override_option('fields', array(
     'title' => array(
@@ -1529,6 +1541,39 @@ function afg_groups_views_views_default_views() {
         'button' => 'Use default',
       ),
       'relationship' => 'field_centre_ref_nid',
+    ),
+    'mail' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 1,
+        'text' => '<a href=\'mailto:[mail]\'>Contact Centre</a>',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_user' => '0',
+      'exclude' => 0,
+      'id' => 'mail',
+      'table' => 'users',
+      'field' => 'mail',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'field_staff_nid',
     ),
   ));
   $handler->override_option('arguments', array(
