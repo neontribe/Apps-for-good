@@ -1928,6 +1928,32 @@ function afg_groups_views_views_default_views() {
         'button' => 'Use default',
       ),
     ),
+    'tid' => array(
+      'operator' => 'or',
+      'value' => array(
+        '17' => '17',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'type' => 'select',
+      'limit' => TRUE,
+      'limit_by' => 'vid',
+      'vid' => '6',
+      'module' => 'features_app_status',
+      'id' => 'tid',
+      'table' => 'term_node',
+      'field' => 'tid',
+      'hierarchy' => 0,
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+      'reduce_duplicates' => 0,
+    ),
     'current' => array(
       'operator' => '=',
       'value' => '',
@@ -1944,32 +1970,6 @@ function afg_groups_views_views_default_views() {
         'button' => 'Use default',
       ),
       'relationship' => 'none',
-    ),
-    'tid' => array(
-      'operator' => 'or',
-      'value' => array(
-        '11' => '11',
-      ),
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'type' => 'select',
-      'limit' => TRUE,
-      'limit_by' => 'vid',
-      'vid' => '4',
-      'module' => 'features_app_status',
-      'id' => 'tid',
-      'table' => 'term_node',
-      'field' => 'tid',
-      'hierarchy' => 0,
-      'override' => array(
-        'button' => 'Use default',
-      ),
-      'relationship' => 'none',
-      'reduce_duplicates' => 0,
     ),
   ));
   $handler->override_option('title', 'The Team');

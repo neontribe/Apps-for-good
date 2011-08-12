@@ -782,7 +782,7 @@ function afg_group_media_views_default_views() {
     'tid' => array(
       'operator' => 'or',
       'value' => array(
-        '10' => '10',
+        '0' => '9',
       ),
       'group' => '0',
       'exposed' => FALSE,
@@ -790,11 +790,11 @@ function afg_group_media_views_default_views() {
         'operator' => FALSE,
         'label' => '',
       ),
-      'type' => 'select',
+      'type' => 'textfield',
       'limit' => TRUE,
       'limit_by' => 'vid',
-      'vid' => '3',
-      'module' => 'features_app_status',
+      'vid' => '5',
+      'module' => 'features_badges',
       'id' => 'tid',
       'table' => 'term_node',
       'field' => 'tid',
@@ -961,7 +961,7 @@ function afg_group_media_views_default_views() {
     'tid' => array(
       'operator' => 'or',
       'value' => array(
-        '9' => '9',
+        '10' => '10',
       ),
       'group' => '0',
       'exposed' => FALSE,
@@ -972,7 +972,7 @@ function afg_group_media_views_default_views() {
       'type' => 'select',
       'limit' => TRUE,
       'limit_by' => 'vid',
-      'vid' => '4',
+      'vid' => '6',
       'module' => 'features_badges',
       'id' => 'tid',
       'table' => 'term_node',
