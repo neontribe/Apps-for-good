@@ -14,6 +14,29 @@ function cdi_blog_ctools_plugin_api() {
 }
 
 /**
+ * Implementation of hook_imagecache_default_presets().
+ */
+function cdi_blog_imagecache_default_presets() {
+  $items = array(
+    'Carousel_Image' => array(
+      'presetname' => 'Carousel_Image',
+      'actions' => array(
+        '0' => array(
+          'weight' => '0',
+          'module' => 'imagecache',
+          'action' => 'imagecache_resize',
+          'data' => array(
+            'width' => '500',
+            'height' => '200',
+          ),
+        ),
+      ),
+    ),
+  );
+  return $items;
+}
+
+/**
  * Implementation of hook_node_info().
  */
 function cdi_blog_node_info() {
