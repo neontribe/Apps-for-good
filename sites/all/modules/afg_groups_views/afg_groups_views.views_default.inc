@@ -66,7 +66,7 @@ function afg_groups_views_views_default_views() {
     'separator' => '',
     'hide_empty' => 0,
   ));
-  $handler = $view->new_display('block', 'Block', 'block_1');
+  $handler = $view->new_display('block', 'App teams count', 'block_1');
   $handler->override_option('fields', array(
     'node_count' => array(
       'label' => '',
@@ -161,6 +161,7 @@ function afg_groups_views_views_default_views() {
       'relationship' => 'none',
     ),
   ));
+  $handler->override_option('title', 'App teams based here');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Supporter Count', 'block_2');
@@ -306,7 +307,8 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('block_caching', -1);
   $translatables['Counters'] = array(
     t('<a href="members/directory"><?php echo (afg_user_count()); ?> Supporters </a>'),
-    t('Block'),
+    t('App teams based here'),
+    t('App teams count'),
     t('Defaults'),
     t('Supporter Count'),
   );
