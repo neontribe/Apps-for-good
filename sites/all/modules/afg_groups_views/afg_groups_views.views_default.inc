@@ -34,6 +34,11 @@ function afg_groups_views_views_default_views() {
       'field' => 'term_node_tid',
       'relationship' => 'none',
     ),
+    'field_centre_ref_nid' => array(
+      'id' => 'field_centre_ref_nid',
+      'table' => 'node_data_field_centre_ref',
+      'field' => 'field_centre_ref_nid',
+    ),
   ));
   $handler->override_option('fields', array(
     'node_count' => array(
@@ -67,6 +72,40 @@ function afg_groups_views_views_default_views() {
     'hide_empty' => 0,
   ));
   $handler = $view->new_display('block', 'App teams count', 'block_1');
+  $handler->override_option('relationships', array(
+    'term_node_tid' => array(
+      'label' => 'term',
+      'required' => 0,
+      'vids' => array(
+        '7' => 7,
+        '2' => 0,
+        '8' => 0,
+        '5' => 0,
+        '1' => 0,
+        '6' => 0,
+        '4' => 0,
+      ),
+      'id' => 'term_node_tid',
+      'table' => 'node',
+      'field' => 'term_node_tid',
+      'relationship' => 'none',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+    ),
+    'field_centre_ref_nid' => array(
+      'label' => 'Parent Centre',
+      'required' => 0,
+      'delta' => -1,
+      'id' => 'field_centre_ref_nid',
+      'table' => 'node_data_field_centre_ref',
+      'field' => 'field_centre_ref_nid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+  ));
   $handler->override_option('fields', array(
     'node_count' => array(
       'label' => '',
@@ -138,6 +177,81 @@ function afg_groups_views_views_default_views() {
         'button' => 'Use default',
       ),
       'relationship' => 'term_node_tid',
+    ),
+  ));
+  $handler->override_option('arguments', array(
+    'nid' => array(
+      'default_action' => 'default',
+      'style_plugin' => 'default_summary',
+      'style_options' => array(),
+      'wildcard' => 'all',
+      'wildcard_substitution' => 'All',
+      'title' => '',
+      'breadcrumb' => '',
+      'default_argument_type' => 'og_group_node',
+      'default_argument' => '',
+      'validate_type' => 'none',
+      'validate_fail' => 'not found',
+      'break_phrase' => 0,
+      'not' => 0,
+      'id' => 'nid',
+      'table' => 'node',
+      'field' => 'nid',
+      'validate_user_argument_type' => 'uid',
+      'validate_user_roles' => array(
+        '2' => 0,
+        '3' => 0,
+        '6' => 0,
+        '4' => 0,
+        '5' => 0,
+      ),
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'field_centre_ref_nid',
+      'default_options_div_prefix' => '',
+      'default_argument_fixed' => '',
+      'default_argument_user' => 0,
+      'default_argument_php' => '',
+      'validate_argument_node_type' => array(
+        'blog' => 0,
+        'book' => 0,
+        'event' => 0,
+        'feed_ical' => 0,
+        'feed_ical_item' => 0,
+        'group' => 0,
+        'profile' => 0,
+        'shoutbox' => 0,
+        'group_media_image' => 0,
+        'group_media_video' => 0,
+        'request_for_help' => 0,
+        'cdi_blog' => 0,
+        'casetracker_basic_case' => 0,
+        'casetracker_basic_project' => 0,
+        'group_app_team' => 0,
+        'group_centre_school' => 0,
+      ),
+      'validate_argument_node_access' => 0,
+      'validate_argument_nid_type' => 'nid',
+      'validate_argument_vocabulary' => array(
+        '7' => 0,
+        '2' => 0,
+        '8' => 0,
+        '5' => 0,
+        '1' => 0,
+        '6' => 0,
+        '4' => 0,
+      ),
+      'validate_argument_type' => 'tid',
+      'validate_argument_transform' => 0,
+      'validate_user_restrict_roles' => 0,
+      'validate_argument_is_member' => 'OG_VIEWS_DO_NOT_VALIDATE_MEMBERSHIP',
+      'validate_argument_group_node_type' => array(
+        'group' => 0,
+        'group_app_team' => 0,
+        'group_centre_school' => 0,
+      ),
+      'validate_argument_php' => '',
     ),
   ));
   $handler->override_option('filters', array(

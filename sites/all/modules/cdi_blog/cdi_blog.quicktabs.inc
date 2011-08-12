@@ -16,7 +16,7 @@ function cdi_blog_quicktabs_default_quicktabs() {
   $quicktabs->tabs = array(
     0 => array(
       'vid' => 'Feature_Editorial',
-      'display' => 'page_1',
+      'display' => 'block_1',
       'args' => '',
       'get_displays' => 'vdisp_0',
       'title' => 'Homepage',
@@ -25,11 +25,20 @@ function cdi_blog_quicktabs_default_quicktabs() {
     ),
     1 => array(
       'vid' => 'Feature_Editorial',
-      'display' => 'page_1',
+      'display' => 'block_2',
       'args' => '',
       'get_displays' => 'vdisp_1',
       'title' => 'App Feature',
       'weight' => '-99',
+      'type' => 'view',
+    ),
+    2 => array(
+      'vid' => 'Feature_Editorial',
+      'display' => 'block_3',
+      'args' => '',
+      'get_displays' => 'vdisp_2',
+      'title' => 'Centre Feature',
+      'weight' => '-98',
       'type' => 'view',
     ),
   );
