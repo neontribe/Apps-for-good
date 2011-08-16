@@ -667,6 +667,29 @@ function afg_groups_views_views_default_views() {
       'field' => 'timestamp',
       'relationship' => 'none',
     ),
+    'comment' => array(
+      'operator' => '=',
+      'value' => '',
+      'group' => '0',
+      'exposed' => TRUE,
+      'expose' => array(
+        'use_operator' => FALSE,
+        'operator' => 'comment_op',
+        'identifier' => 'comment',
+        'label' => 'Comment: Body',
+        'remember' => FALSE,
+        'single' => TRUE,
+        'optional' => TRUE,
+      ),
+      'case' => 1,
+      'id' => 'comment',
+      'table' => 'comments',
+      'field' => 'comment',
+      'override' => array(
+        'button' => 'Override',
+      ),
+      'relationship' => 'none',
+    ),
   ));
   $handler->override_option('access', array(
     'type' => 'spaces_feature',
@@ -953,11 +976,108 @@ function afg_groups_views_views_default_views() {
     'name' => 'navigation',
   ));
   $handler = $view->new_display('block', 'Comments (shoutbox)', 'block_1');
+  $handler->override_option('filters', array(
+    'current' => array(
+      'operator' => '=',
+      'value' => '',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'current',
+      'table' => 'spaces',
+      'field' => 'current',
+      'override' => array(
+        'button' => 'Override',
+      ),
+      'relationship' => 'nid',
+    ),
+    'nid' => array(
+      'operator' => '=',
+      'value' => '',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'nid',
+      'table' => 'node_access',
+      'field' => 'nid',
+      'relationship' => 'nid',
+    ),
+    'status' => array(
+      'operator' => '=',
+      'value' => '1',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'nid',
+      'override' => array(
+        'button' => 'Override',
+      ),
+    ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'shoutbox' => 'shoutbox',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'nid',
+      'override' => array(
+        'button' => 'Override',
+      ),
+    ),
+    'timestamp' => array(
+      'operator' => '>=',
+      'value' => array(
+        'type' => 'offset',
+        'value' => '-1 year',
+        'min' => '',
+        'max' => '',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'timestamp',
+      'table' => 'comments',
+      'field' => 'timestamp',
+      'relationship' => 'none',
+    ),
+  ));
   $handler->override_option('title', 'Comments');
+  $handler->override_option('header', '<?php
+echo atrium_shoutbox_page();
+?>');
+  $handler->override_option('header_format', '6');
+  $handler->override_option('header_empty', 0);
   $handler->override_option('use_pager', '1');
+  $handler->override_option('exposed_block', FALSE);
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $translatables['comments_shoutbox'] = array(
+    t('<?php
+echo atrium_shoutbox_page();
+?>'),
     t('Comments'),
     t('Comments (shoutbox)'),
     t('Defaults'),

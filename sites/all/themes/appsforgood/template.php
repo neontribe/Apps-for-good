@@ -46,3 +46,20 @@ function afg_content_count($type) {
 $count_content = db_result(db_query("SELECT COUNT(*) FROM {node} WHERE type = '%s' AND status = 1", $type));
 return $count_content;
 }
+
+
+/**Comments shoutbox functions**/
+
+/**
+ * Page callback for spaces shoutbox feature.
+ */
+function afg_shoutbox_comments_block() {
+  $shoutbox = atrium_shoutbox_get_shoutbox();
+  if ($shoutbox && $shoutbox['node']) {
+    $view = views_get_view('comments_shoutbox');
+    $rendered = $view->execute_display('page_1');
+    return drupal_get_form('atrium_shoutbox_shoutform', $shoutbox['node'], $view, $rendered);
+  }
+  return $shoutbox ? $shoutbox['rendered'] : '';
+}
+
