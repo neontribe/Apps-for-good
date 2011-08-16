@@ -49,6 +49,7 @@ function afg_group_definitions_spaces_presets() {
       'spaces_dashboard_blocks' => array(
         'atrium_calendar-mini' => 1,
         'atrium_shoutbox-shoutbox' => 1,
+        'block-4' => 1,
         'quicktabs-app_media' => 1,
         'views-activity_listing-block_1' => 1,
         'views-activity_listing-block_2' => 1,
@@ -98,9 +99,9 @@ function afg_group_definitions_spaces_presets() {
             'region' => 'right',
             'weight' => 2,
           ),
-          'views-comments_shoutbox-block_1' => array(
-            'module' => 'views',
-            'delta' => 'comments_shoutbox-block_1',
+          'block-4' => array(
+            'module' => 'block',
+            'delta' => '4',
             'region' => 'right',
             'weight' => 3,
           ),
