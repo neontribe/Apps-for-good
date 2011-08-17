@@ -26,6 +26,26 @@ function afg_groups_views_default_fe_block_settings() {
 
   $export['appsforgood'] = $theme;
 
+  // cube
+  $theme = array();
+
+  $theme['views-shoutbox_shouts-block_1'] = array(
+    'module' => 'views',
+    'delta' => 'shoutbox_shouts-block_1',
+    'theme' => 'cube',
+    'status' => 0,
+    'weight' => '-53',
+    'region' => '',
+    'custom' => '0',
+    'throttle' => '0',
+    'visibility' => '0',
+    'pages' => '',
+    'title' => '',
+    'cache' => '-1',
+  );
+
+  $export['cube'] = $theme;
+
   $theme_default = variable_get('theme_default', 'garland');
   $themes = list_themes();
   foreach ($export as $theme_key => $settings) {

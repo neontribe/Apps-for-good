@@ -373,7 +373,7 @@ function afg_groups_views_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 1,
       'spaces' => array(
-        'frontpage' => 0,
+        'frontpage' => 1,
         'type' => 'spaces_og',
       ),
       'exclude' => 0,
