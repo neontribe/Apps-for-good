@@ -55,7 +55,6 @@ function afg_group_definitions_spaces_presets() {
         'views-activity_listing-block_2' => 1,
         'views-blog_comments-block_1' => 1,
         'views-blog_listing-block_2' => 1,
-        'views-comments_shoutbox-block_1' => 1,
         'views-groups_listing_app_team-block_3' => 1,
         'views-groups_listing_app_team-block_4' => 1,
         'views-groups_listing_app_team-block_5' => 1,

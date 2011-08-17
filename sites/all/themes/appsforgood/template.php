@@ -49,11 +49,11 @@ return $count_content;
 
 
 /**Shoutbox comment form**/
-
 function afg_shoutbox_comment_form() {
   $shoutbox = atrium_shoutbox_get_shoutbox();
   $view = views_get_view('shoutbox_shouts');
   $rendered = $view->execute_display('comment_block');
   return drupal_get_form('atrium_shoutbox_shoutform', $shoutbox['node'], $view, $rendered);
 }
+
 
