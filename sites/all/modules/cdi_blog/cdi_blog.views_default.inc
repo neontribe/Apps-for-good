@@ -177,6 +177,9 @@ function cdi_blog_views_default_views() {
   ));
   $handler->override_option('items_per_page', 1);
   $handler = $view->new_display('page', 'cdi Blog', 'page_1');
+  $handler->override_option('access', array(
+    'type' => 'none',
+  ));
   $handler->override_option('path', 'cdi-blog');
   $handler->override_option('menu', array(
     'type' => 'normal',
@@ -237,6 +240,9 @@ function cdi_blog_views_default_views() {
       'reduce_duplicates' => 0,
     ),
   ));
+  $handler->override_option('access', array(
+    'type' => 'none',
+  ));
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'cdi Blog block - Apps', 'block_2');
@@ -284,6 +290,9 @@ function cdi_blog_views_default_views() {
       'reduce_duplicates' => 0,
     ),
   ));
+  $handler->override_option('access', array(
+    'type' => 'none',
+  ));
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'cdi Blog block - Centres', 'block_3');
@@ -330,6 +339,9 @@ function cdi_blog_views_default_views() {
       'relationship' => 'none',
       'reduce_duplicates' => 0,
     ),
+  ));
+  $handler->override_option('access', array(
+    'type' => 'none',
   ));
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
