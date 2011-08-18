@@ -77,7 +77,7 @@ function afg_group_media_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 1,
       'label_type' => 'none',
-      'format' => 'image_nodelink',
+      'format' => 'Carousel_Image_default',
       'multiple' => array(
         'group' => TRUE,
         'multiple_number' => '',
@@ -89,6 +89,9 @@ function afg_group_media_views_default_views() {
       'table' => 'node_data_field_group_image',
       'field' => 'field_group_image_fid',
       'relationship' => 'none',
+      'override' => array(
+        'button' => 'Override',
+      ),
     ),
     'field_video_embed' => array(
       'label' => '',
@@ -244,40 +247,6 @@ function afg_group_media_views_default_views() {
   ));
   $handler = $view->new_display('block', 'Pitch Video', 'block_1');
   $handler->override_option('fields', array(
-    'title' => array(
-      'label' => '',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 1,
-        'path' => '[title]',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 0,
-        'ellipsis' => 0,
-        'html' => 0,
-        'strip_tags' => 0,
-      ),
-      'empty' => '',
-      'hide_empty' => 0,
-      'empty_zero' => 0,
-      'link_to_node' => 0,
-      'spaces' => array(
-        'frontpage' => 0,
-        'type' => 'spaces_og',
-      ),
-      'exclude' => 0,
-      'id' => 'title',
-      'table' => 'node',
-      'field' => 'title',
-      'relationship' => 'none',
-    ),
     'field_video_embed' => array(
       'label' => '',
       'alter' => array(
@@ -303,7 +272,7 @@ function afg_group_media_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 0,
       'label_type' => 'none',
-      'format' => 'video_replace_preview',
+      'format' => 'video_preview',
       'multiple' => array(
         'group' => TRUE,
         'multiple_number' => '',
@@ -315,6 +284,9 @@ function afg_group_media_views_default_views() {
       'table' => 'node_data_field_video',
       'field' => 'field_video_embed',
       'relationship' => 'none',
+      'override' => array(
+        'button' => 'Use default',
+      ),
     ),
     'comments_link' => array(
       'label' => '',
@@ -443,40 +415,6 @@ function afg_group_media_views_default_views() {
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Problem Video', 'block_2');
   $handler->override_option('fields', array(
-    'title' => array(
-      'label' => '',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 1,
-        'path' => '[title]',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 0,
-        'ellipsis' => 0,
-        'html' => 0,
-        'strip_tags' => 0,
-      ),
-      'empty' => '',
-      'hide_empty' => 0,
-      'empty_zero' => 0,
-      'link_to_node' => 0,
-      'spaces' => array(
-        'frontpage' => 0,
-        'type' => 'spaces_og',
-      ),
-      'exclude' => 0,
-      'id' => 'title',
-      'table' => 'node',
-      'field' => 'title',
-      'relationship' => 'none',
-    ),
     'field_video_embed' => array(
       'label' => '',
       'alter' => array(
@@ -502,7 +440,7 @@ function afg_group_media_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 0,
       'label_type' => 'none',
-      'format' => 'video_replace_preview',
+      'format' => 'video_preview',
       'multiple' => array(
         'group' => TRUE,
         'multiple_number' => '',
@@ -514,6 +452,9 @@ function afg_group_media_views_default_views() {
       'table' => 'node_data_field_video',
       'field' => 'field_video_embed',
       'relationship' => 'none',
+      'override' => array(
+        'button' => 'Use default',
+      ),
     ),
     'comments_link' => array(
       'label' => '',
@@ -628,40 +569,6 @@ function afg_group_media_views_default_views() {
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Logo', 'block_3');
   $handler->override_option('fields', array(
-    'title' => array(
-      'label' => '',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 1,
-        'path' => '[title]',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 0,
-        'ellipsis' => 0,
-        'html' => 0,
-        'strip_tags' => 0,
-      ),
-      'empty' => '',
-      'hide_empty' => 0,
-      'empty_zero' => 0,
-      'link_to_node' => 0,
-      'spaces' => array(
-        'frontpage' => 0,
-        'type' => 'spaces_og',
-      ),
-      'exclude' => 0,
-      'id' => 'title',
-      'table' => 'node',
-      'field' => 'title',
-      'relationship' => 'none',
-    ),
     'field_group_image_fid' => array(
       'label' => '',
       'alter' => array(
@@ -687,7 +594,7 @@ function afg_group_media_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 1,
       'label_type' => 'none',
-      'format' => 'image_nodelink',
+      'format' => 'Carousel_Image_default',
       'multiple' => array(
         'group' => TRUE,
         'multiple_number' => '',
@@ -699,6 +606,9 @@ function afg_group_media_views_default_views() {
       'table' => 'node_data_field_group_image',
       'field' => 'field_group_image_fid',
       'relationship' => 'none',
+      'override' => array(
+        'button' => 'Override',
+      ),
     ),
     'comments_link' => array(
       'label' => '',
@@ -847,36 +757,6 @@ function afg_group_media_views_default_views() {
       'field' => 'title',
       'relationship' => 'none',
     ),
-    'comments_link' => array(
-      'label' => '',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'html' => 0,
-        'strip_tags' => 0,
-      ),
-      'empty' => '',
-      'hide_empty' => 0,
-      'empty_zero' => 0,
-      'teaser' => 0,
-      'exclude' => 0,
-      'id' => 'comments_link',
-      'table' => 'node',
-      'field' => 'comments_link',
-      'relationship' => 'none',
-    ),
     'body' => array(
       'label' => '',
       'alter' => array(
@@ -907,6 +787,36 @@ function afg_group_media_views_default_views() {
       'override' => array(
         'button' => 'Use default',
       ),
+      'relationship' => 'none',
+    ),
+    'comments_link' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'teaser' => 0,
+      'exclude' => 0,
+      'id' => 'comments_link',
+      'table' => 'node',
+      'field' => 'comments_link',
       'relationship' => 'none',
     ),
   ));
