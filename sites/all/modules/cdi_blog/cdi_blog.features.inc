@@ -26,8 +26,8 @@ function cdi_blog_imagecache_default_presets() {
           'module' => 'imagecache',
           'action' => 'imagecache_resize',
           'data' => array(
-            'width' => '500',
-            'height' => '200',
+            'width' => '435',
+            'height' => '320',
           ),
         ),
       ),
