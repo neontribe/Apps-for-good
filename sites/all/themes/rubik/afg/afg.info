@@ -1,0 +1,83 @@
+; $Id: cube.info,v 1.1.2.1 2010/09/28 20:50:29 yhahn Exp $
+name = "AFG"
+description = "Spaces-aware front-end theme based on Rubik."
+base theme = "rubik"
+core = "6.x"
+engine = "phptemplate"
+
+stylesheets[screen][] = "style.css"
+styles[] = "videojs.css"
+
+scripts[] = "afg.js"
+
+; Regions
+regions[left] = "Left sidebar"
+regions[right] = "Right sidebar"
+regions[content] = "Content"
+regions[header] = "Header"
+regions[footer] = "Footer";
+regions[space_tools] = "Space tools"
+regions[page_tools] = "Page tools"
+regions[palette] = "Palette"
+
+features[] = ""
+
+; Designkit
+designkit[color][background][title] = "Background"
+designkit[color][background][description] = "Color for headers, other fills."
+designkit[color][background][default] = "#53BA47"
+designkit[image][logo][title] = "Logo"
+designkit[image][logo][description] = "Header logo."
+designkit[image][logo][imagecache] = "imagecache_scale:300x40"
+
+spaces_design_site = "#53BA47"
+spaces_design_og = "#53BA47"
+spaces_design_user = "#53BA47"
+
+; Default layout
+layouts[default][name] = "Default"
+layouts[default][description] = "Simple one column page."
+layouts[default][template] = "page"
+
+; 2/1
+layouts[sidebar][name] = "Sidebar"
+layouts[sidebar][description] = "Main content with sidebar."
+layouts[sidebar][stylesheet] = "layout-sidebar.css"
+layouts[sidebar][template] = "layout-sidebar"
+layouts[sidebar][regions][] = "content"
+layouts[sidebar][regions][] = "right"
+
+; 1/1
+layouts[split][name] = "Split"
+layouts[split][description] = "50/50 split."
+layouts[split][stylesheet] = "layout-split.css"
+layouts[split][template] = "layout-sidebar"
+layouts[split][regions][] = "content"
+layouts[split][regions][] = "right"
+
+; 1/1/1
+layouts[columns][name] = "Columns"
+layouts[columns][description] = "Three column layout."
+layouts[columns][stylesheet] = "layout-columns.css"
+layouts[columns][template] = "layout-columns"
+layouts[columns][regions][] = "header"
+layouts[columns][regions][] = "content"
+layouts[columns][regions][] = "left"
+layouts[columns][regions][] = "right"
+
+; 2/1/1
+layouts[offset][name] = "Offset sidebars"
+layouts[offset][description] = "Main content with two offset sidebars."
+layouts[offset][stylesheet] = "layout-offset.css"
+layouts[offset][template] = "layout-offset"
+layouts[offset][regions][] = "header"
+layouts[offset][regions][] = "content"
+layouts[offset][regions][] = "left"
+layouts[offset][regions][] = "right"
+
+; Information added by drupal.org packaging script on 2010-09-28
+version = "6.x-3.0-beta2"
+core = "6.x"
+project = "rubik"
+datestamp = "1285709466"
+

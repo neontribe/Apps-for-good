@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language ?>" lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
+  <head>
+    <?php print $head ?>
+    <?php print $styles ?>
+    <?php print $scripts ?>
+    <title><?php print $head_title ?></title>
+  </head>
+  <body <?php print drupal_attributes($attr) ?>>
+  
+  <div id='top'>
+    <div class='limiter clear-block'>
+    
+      <div id='header'>
+		  <?php if ($logo): ?>
+            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+              <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+            </a>
+          <?php endif; ?> 
+      
+          <div id='header-links'>
+            <?php print theme('links', $header_links); ?>
+          </div>
+          
+          <?php print $header ?>
+      </div>   
+      <div id='page-title' class='limiter clear-block'>
+        <!--<?php if ($help_toggler) print $help_toggler ?>-->
+        <h1 class='page-title <?php print $page_icon_class ?>'>
+          <?php if (!empty($page_icon_class)): ?><span class='icon'></span><?php endif; ?>
+          <?php if ($title) print $title ?>
+        </h1>
+        <span class='header-description'>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam felis tellus, mollis in euismod ac, consecteur
+          vel tortor. Curabitur interdum erat et nulla tincidunt imperdiet. Aliquam erat volutpat.
+        </span>
+      </div>
+      
+      <div id='primary-links'>
+        <?php if (isset($primary_links)) print theme('links', $primary_links) ?>
+		<?php if (isset($secondary_links)) print theme('links', $secondary_links, array('class' => 'links secondary-links')) ?>
+      </div>
+      
+    </div>
+  </div>
