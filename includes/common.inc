@@ -441,6 +441,9 @@ function drupal_access_denied() {
  *   status message, headers, data and redirect status.
  */
 function drupal_http_request($url, $headers = array(), $method = 'GET', $data = NULL, $retry = 3) {
+
+return;
+
   global $db_prefix;
 
   $result = new stdClass();
@@ -1692,6 +1695,8 @@ function drupal_eval($code) {
     $theme_path = dirname($theme_info->filename);
   }
 
+return;
+  
   ob_start();
   print eval('?>'. $code);
   $output = ob_get_contents();
