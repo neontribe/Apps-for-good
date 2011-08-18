@@ -250,6 +250,29 @@ text-shadow: 1px 2px 1px #000;
 /* Drupal/Atrium Blocks
 ======================================================== */
 
+#block-atrium-search { display: none; }
+
+#block-atrium-create  .block-title,
+#block-atrium-admin_links .block-title { display: none; }
+
+#block-atrium-create ,
+#block-atrium-admin_links { clear: both; }
+
+#block-atrium-create,
+#block-atrium-create .block-content,
+#block-atrium-admin_links,
+#block-atrium-admin_links .block-content { background: none !important; }
+
+#block-atrium-create ul a:link,
+#block-atrium-create ul a:visited,
+#block-atrium-admin_links ul a:link,
+#block-atrium-admin_links ul a:visited {
+color: #FFF;
+padding: 10px;
+margin: 0 5px 0 0;
+background: #CCC;
+}
+
 .block {
 border: 0;
 }
@@ -367,6 +390,7 @@ background: #FFF;
 #block-views-updates-block_4 .views-field-title {
 font-size: 2.3em;
 font-weight: bold;
+line-height: 1.1;
 text-transform: uppercase;
 }
 
