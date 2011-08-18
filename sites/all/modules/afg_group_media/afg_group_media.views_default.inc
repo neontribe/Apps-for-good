@@ -272,7 +272,7 @@ function afg_group_media_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 0,
       'label_type' => 'none',
-      'format' => 'video_replace',
+      'format' => 'video_preview',
       'multiple' => array(
         'group' => TRUE,
         'multiple_number' => '',
@@ -440,7 +440,7 @@ function afg_group_media_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 0,
       'label_type' => 'none',
-      'format' => 'video_replace',
+      'format' => 'video_preview',
       'multiple' => array(
         'group' => TRUE,
         'multiple_number' => '',
