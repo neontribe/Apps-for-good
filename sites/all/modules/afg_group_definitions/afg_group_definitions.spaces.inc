@@ -74,17 +74,11 @@ function afg_group_definitions_spaces_presets() {
             'region' => 'content',
             'weight' => 0,
           ),
-          'views-groups_listing_app_team-block_4' => array(
-            'module' => 'views',
-            'delta' => 'groups_listing_app_team-block_4',
-            'region' => 'content',
-            'weight' => 1,
-          ),
           'views-updates-block_4' => array(
             'module' => 'views',
             'delta' => 'updates-block_4',
             'region' => 'content',
-            'weight' => 2,
+            'weight' => 1,
           ),
           'views-updates-block_5' => array(
             'module' => 'views',

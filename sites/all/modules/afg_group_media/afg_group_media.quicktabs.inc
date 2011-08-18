@@ -51,7 +51,7 @@ function afg_group_media_quicktabs_default_quicktabs() {
       'type' => 'view',
     ),
   );
-  $quicktabs->style = 'default';
+  $quicktabs->style = 'Navlist-afg';
 
   $export['app_media'] = $quicktabs;
   return $export;

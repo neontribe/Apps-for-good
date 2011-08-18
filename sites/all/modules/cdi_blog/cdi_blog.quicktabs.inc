@@ -42,7 +42,7 @@ function cdi_blog_quicktabs_default_quicktabs() {
       'type' => 'view',
     ),
   );
-  $quicktabs->style = 'Basic';
+  $quicktabs->style = 'Navlist-afg';
 
   $export['cdi_features'] = $quicktabs;
   return $export;

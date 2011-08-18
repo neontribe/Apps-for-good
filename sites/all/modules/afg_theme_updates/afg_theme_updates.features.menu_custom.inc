@@ -10,10 +10,11 @@ function afg_theme_updates_menu_default_menu_custom() {
   $menus['menu-header-menu'] = array(
     'menu_name' => 'menu-header-menu',
     'title' => 'Header Menu',
-    'description' => '',
+    'description' => 'Apps for Good sitewide header links',
   );
   // Translatables
   // Included for use with string extractors like potx.
+  t('Apps for Good sitewide header links');
   t('Header Menu');
 
 
