@@ -1,0 +1,8 @@
+core = "6.x"
+dependencies[] = "block_rewrite"
+dependencies[] = "features"
+dependencies[] = "menu"
+description = "Updates for the Apps for Good theme"
+features[menu_custom][] = "menu-header-menu"
+name = "AFG Theme Updates"
+package = "Features"
