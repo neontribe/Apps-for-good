@@ -366,6 +366,9 @@ function cdi_blog_views_default_views() {
       ),
     ),
   ));
+  $handler->override_option('access', array(
+    'type' => 'none',
+  ));
   $handler->override_option('use_pager', '1');
   $handler->override_option('path', 'cdi-blog');
   $handler->override_option('menu', array(
