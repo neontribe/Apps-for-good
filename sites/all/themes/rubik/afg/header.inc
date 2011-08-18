@@ -31,8 +31,7 @@
           <?php if ($title) print $title ?>
         </h1>
         <span class='header-description'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam felis tellus, mollis in euismod ac, consecteur
-          vel tortor. Curabitur interdum erat et nulla tincidunt imperdiet. Aliquam erat volutpat.
+          <?php print $header_desc; ?>
         </span>
       </div>
       

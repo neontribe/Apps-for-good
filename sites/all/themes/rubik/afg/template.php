@@ -24,6 +24,18 @@ function afg_preprocess_page(&$vars) {
   
   // Logo path
   $vars['logo'] = base_path() . path_to_theme() . '/images/afg/logo.png';
+  
+  // Set page title to group name
+  $og = og_get_group_context();
+  if ($og) {
+	$nid = $og->nid;
+	$node = node_load($nid);
+  }
+  
+  if ($node) {
+	$vars['title'] = $node->title;
+	$vars['header_desc'] = $node->body;
+  }
 }
 
 /**
