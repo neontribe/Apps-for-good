@@ -125,7 +125,7 @@ function _atrium_block_account() {
  */
 function _atrium_block_admin_links() {
   if ($links = atrium_admin_links()) {
-	return array('subject' => "<span class='icon'></span> ". t('Settings'), 'content' => theme('links', $links));
+    return array('subject' => "<span class='icon'></span> ". t('Settings'), 'content' => theme('links', $links));
   }
 }
 
@@ -169,8 +169,7 @@ function _atrium_block_search() {
  */
 function _atrium_block_user_links() {
   if ($links = atrium_user_links()) {
-	$links['subscribe']['title'] = t('Follow');
-    return array('subject' => t('Membership'), 'content' => t('<p><em>Why to sign-up:</em> You will get the latest updates of this app</p>') . theme('links', $links));
+    return array('subject' => t('Membership'), 'content' => theme('links', $links));
   }
 }
 

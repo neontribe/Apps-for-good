@@ -29,12 +29,15 @@
  * @ingroup views_templates
  */
 ?>
+
 <div class="<?php print $classes; ?>">
   <?php if ($admin_links): ?>
     <div class="views-admin-links views-hide">
       <?php print $admin_links; ?>
     </div>
   <?php endif; ?>
+
+
   <?php if ($header): ?>
     <div class="view-header">
       <?php print $header; ?>
@@ -52,9 +55,10 @@
       <?php print $attachment_before; ?>
     </div>
   <?php endif; ?>
-<?php print atrium_shoutbox_page(); ?>
+
   <?php if ($rows): ?>
     <div class="view-content">
+      <?php print $rows; ?>
     </div>
   <?php elseif ($empty): ?>
     <div class="view-empty">

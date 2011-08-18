@@ -56,4 +56,3 @@ function afg_shoutbox_comment_form() {
   return drupal_get_form('atrium_shoutbox_shoutform', $shoutbox['node'], $view, $rendered);
 }
 
-
