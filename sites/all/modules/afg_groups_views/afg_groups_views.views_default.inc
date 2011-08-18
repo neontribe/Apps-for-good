@@ -2544,6 +2544,47 @@ function afg_groups_views_views_default_views() {
   ));
   $handler = $view->new_display('page', 'Page: Centre directory', 'page_2');
   $handler->override_option('fields', array(
+    'field_logo_fid' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'label_type' => 'none',
+      'format' => 'designkit-image-logo_default',
+      'multiple' => array(
+        'group' => TRUE,
+        'multiple_number' => '',
+        'multiple_from' => '',
+        'multiple_reversed' => FALSE,
+      ),
+      'exclude' => 0,
+      'id' => 'field_logo_fid',
+      'table' => 'node_data_field_logo',
+      'field' => 'field_logo_fid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
     'title' => array(
       'label' => '',
       'alter' => array(
@@ -2578,8 +2619,8 @@ function afg_groups_views_views_default_views() {
       'field' => 'title',
       'relationship' => 'none',
     ),
-    'member_count' => array(
-      'label' => 'Supporters',
+    'city' => array(
+      'label' => 'Located in',
       'alter' => array(
         'alter_text' => 0,
         'text' => '',
@@ -2601,48 +2642,13 @@ function afg_groups_views_views_default_views() {
       'empty' => '',
       'hide_empty' => 0,
       'empty_zero' => 0,
-      'set_precision' => FALSE,
-      'precision' => 0,
-      'decimal' => '.',
-      'separator' => ',',
-      'prefix' => '',
-      'suffix' => '',
       'exclude' => 0,
-      'id' => 'member_count',
-      'table' => 'og',
-      'field' => 'member_count',
+      'id' => 'city',
+      'table' => 'location',
+      'field' => 'city',
       'override' => array(
         'button' => 'Use default',
       ),
-      'relationship' => 'none',
-    ),
-    'postal_code' => array(
-      'label' => '',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'html' => 0,
-        'strip_tags' => 0,
-      ),
-      'empty' => '',
-      'hide_empty' => 0,
-      'empty_zero' => 0,
-      'exclude' => 0,
-      'id' => 'postal_code',
-      'table' => 'location',
-      'field' => 'postal_code',
       'relationship' => 'none',
     ),
     'province' => array(
@@ -2673,6 +2679,75 @@ function afg_groups_views_views_default_views() {
       'id' => 'province',
       'table' => 'location',
       'field' => 'province',
+      'relationship' => 'none',
+    ),
+    'postal_code' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'exclude' => 1,
+      'id' => 'postal_code',
+      'table' => 'location',
+      'field' => 'postal_code',
+      'relationship' => 'none',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+    ),
+    'title_1' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 1,
+        'text' => 'Read more ->',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 1,
+      'spaces' => array(
+        'frontpage' => 1,
+        'type' => 'spaces_og',
+      ),
+      'exclude' => 0,
+      'id' => 'title_1',
+      'table' => 'node',
+      'field' => 'title',
+      'override' => array(
+        'button' => 'Use default',
+      ),
       'relationship' => 'none',
     ),
   ));
@@ -2730,57 +2805,6 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('use_ajax', FALSE);
   $handler->override_option('items_per_page', 25);
   $handler->override_option('use_pager', '1');
-  $handler->override_option('style_plugin', 'table');
-  $handler->override_option('style_options', array(
-    'grouping' => '',
-    'override' => 1,
-    'sticky' => 0,
-    'order' => 'asc',
-    'columns' => array(
-      'private' => 'private',
-      'title' => 'title',
-      'description' => 'title',
-      'created' => 'created',
-      'member_count' => 'member_count',
-      'post_count' => 'post_count',
-      'selective' => 'selective',
-    ),
-    'info' => array(
-      'private' => array(
-        'sortable' => 0,
-        'separator' => '',
-      ),
-      'title' => array(
-        'sortable' => 0,
-        'separator' => '<br />',
-      ),
-      'description' => array(
-        'separator' => '',
-      ),
-      'created' => array(
-        'sortable' => 0,
-        'separator' => '',
-      ),
-      'member_count' => array(
-        'sortable' => 0,
-        'separator' => '',
-      ),
-      'post_count' => array(
-        'sortable' => 0,
-        'separator' => '',
-      ),
-      'selective' => array(
-        'separator' => '',
-      ),
-    ),
-    'default' => '-1',
-  ));
-  $handler->override_option('row_options', array(
-    'inline' => array(
-      'title' => 'title',
-    ),
-    'separator' => '',
-  ));
   $handler->override_option('path', 'centres/all');
   $handler->override_option('menu', array(
     'type' => 'default tab',
