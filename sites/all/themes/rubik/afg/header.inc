@@ -27,14 +27,18 @@
       <div id='page-title' class='limiter clear-block'>
         <!--<?php if ($help_toggler) print $help_toggler ?>-->
         <h1 class='page-title <?php print $page_icon_class ?>'>
-          <?php if (!empty($page_icon_class)): ?><span class='icon'></span><?php endif; ?>
           <?php if ($title) print $title ?>
         </h1>
         <span class='header-description'>
           <?php print $header_desc; ?>
         </span>
       </div>
-      
+<?php if ($space_tools): ?>
+      <div id='space-tools'><div class='dropdown-blocks toggle-blocks clear-block'><?php print $space_tools ?></div></div>
+<?php endif; ?>
+      <?php if ($context_links): ?><div class='context-links'><?php print $context_links ?></div><?php endif; ?>
+<?php if ($page_tools): ?><div class='dropdown-blocks toggle-blocks clear-block'><?php print $page_tools ?></div><?php endif; ?>
+ 
       <div id='primary-links'>
         <?php if (isset($primary_links)) print theme('links', $primary_links) ?>
 		<?php if (isset($secondary_links)) print theme('links', $secondary_links, array('class' => 'links secondary-links')) ?>
