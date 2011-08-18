@@ -339,6 +339,57 @@ color: #FFF;
 background: #0099FF;
 }
 
+#block-views-updates-block_4 .block-content {
+padding: 0;
+color: #FFF;
+background: #0099FF;
+}
+
+#block-views-updates-block_4 li {
+padding: 15px;
+}
+
+#block-views-updates-block_4 img,
+#block-views-updates-block_4 object {
+border: 6px solid #FFF;
+-moz-box-shadow: 0 0 6px 6px #0083DA;
+-webkit-box-shadow: 0 0 6px 6px #0083DA;
+box-shadow: 0 0 6px 6px #0083DA;
+margin: 0 20px 0 0;
+}
+
+#block-views-updates-block_4 img {
+height: auto;
+max-width: 100%;
+background: #FFF;
+}
+
+#block-views-updates-block_4 .views-field-title {
+font-size: 2.3em;
+font-weight: bold;
+text-transform: uppercase;
+}
+
+#block-views-updates-block_4 .view-empty { padding: 10px; }
+#block-views-updates-block_4 .block-content a:link { color: #FFF; }
+
+#block-views-updates-block_4 span.views-field-atrium-activity-timestamp,
+#block-views-updates-block_4 span.views-field-comment-count {
+margin: 0 15px 10px 0;
+display: block;
+float: left;
+}
+
+#block-views-updates-block_4 span.views-field-atrium-activity-timestamp {
+text-indent: 17px;
+background: url('images/afg/icon-timestamp.png') left no-repeat;
+}
+
+#block-views-updates-block_4 span.views-field-comment-count {
+text-indent: 26px;
+background: url('images/afg/icon-commentcount.png') left no-repeat;
+}
+
 /* Shoutbox */
 
 #block-views-shoutbox_shouts-block_1 {
