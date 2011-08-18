@@ -250,29 +250,6 @@ text-shadow: 1px 2px 1px #000;
 /* Drupal/Atrium Blocks
 ======================================================== */
 
-#block-atrium-search { display: none; }
-
-#block-atrium-create  .block-title,
-#block-atrium-admin_links .block-title { display: none; }
-
-#block-atrium-create ,
-#block-atrium-admin_links { clear: both; }
-
-#block-atrium-create,
-#block-atrium-create .block-content,
-#block-atrium-admin_links,
-#block-atrium-admin_links .block-content { background: none !important; }
-
-#block-atrium-create ul a:link,
-#block-atrium-create ul a:visited,
-#block-atrium-admin_links ul a:link,
-#block-atrium-admin_links ul a:visited {
-color: #FFF;
-padding: 10px;
-margin: 0 5px 0 0;
-background: #CCC;
-}
-
 .block {
 border: 0;
 }
@@ -354,6 +331,53 @@ display: block;
 
 #content-right .block-content ul li a:link { color: #2D2D2D; }
 #content-right .block-content ul li:hover a { color: #777; }
+
+/* Administration Block Menu's */
+
+#block-atrium-search { display: none; }
+
+#block-atrium-create  .block-title,
+#block-atrium-admin_links .block-title { display: none; }
+
+#block-atrium-create ,
+#block-atrium-admin_links {
+clear: both;
+padding: 0;
+margin: 0;
+}
+
+#block-atrium-admin_links { margin: 0 0 40px; }
+
+#block-atrium-create,
+#block-atrium-create .block-content,
+#block-atrium-admin_links,
+#block-atrium-admin_links .block-content { background: none !important; }
+
+#block-atrium-create ul a:link,
+#block-atrium-create ul a:visited,
+#block-atrium-admin_links ul a:link,
+#block-atrium-admin_links ul a:visited {
+color: #FFF;
+padding: 10px;
+margin: 0 5px 0 0;
+background: #0099FF;
+-moz-border-radius: 7px;
+-webkit-border-radius: 7px;
+border-radius: 7px;
+box-shadow: inset 3px 3px 4px #5BBDFF;
+}
+
+#block-atrium-admin_links ul a:link,
+#block-atrium-admin_links ul a:visited {
+background: #0073BF;
+box-shadow: inset 3px 3px 4px #00446a;
+}
+
+#block-atrium-create ul a:hover,
+#block-atrium-admin_links ul a:hover {
+background: #007CCF;
+box-shadow: none;
+}
 
 /* Updates Block */
 
