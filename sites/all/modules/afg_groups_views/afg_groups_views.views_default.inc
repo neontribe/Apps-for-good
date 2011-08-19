@@ -4722,7 +4722,6 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('distinct', 1);
   $handler->override_option('style_plugin', 'list');
   $handler = $view->new_display('block', 'Recent activity', 'block_1');
-  $handler->override_option('css_class', 'activity-updates');
   $handler->override_option('block_description', 'Recent activity');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Files', 'block_2');
@@ -5649,7 +5648,6 @@ function afg_groups_views_views_default_views() {
       'relationship' => 'none',
     ),
   ));
-  $handler->override_option('css_class', 'activity-updates');
   $handler->override_option('row_options', array(
     'inline' => array(
       'atrium_activity_timestamp' => 'atrium_activity_timestamp',
@@ -6257,7 +6255,6 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('title', 'Centre Recent Activity');
-  $handler->override_option('css_class', 'activity-updates');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Help this centre', 'block_7');
