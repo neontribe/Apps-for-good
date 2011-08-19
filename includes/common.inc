@@ -443,6 +443,8 @@ function drupal_access_denied() {
 function drupal_http_request($url, $headers = array(), $method = 'GET', $data = NULL, $retry = 3) {
   global $db_prefix;
 
+return;
+
   $result = new stdClass();
 
   // Parse the URL and make sure we can handle the schema.

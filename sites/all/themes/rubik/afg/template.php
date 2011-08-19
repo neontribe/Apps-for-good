@@ -5,6 +5,17 @@
  * Preprocessor for theme('page').
  */
 function afg_preprocess_page(&$vars) {
+
+  // Force using the correct template file
+  if(count($vars['template_files']) > 1) {
+    foreach($vars['template_files'] as $key => $template) {
+	  if(strcasecmp($template, 'page') === 0) {
+	    unset($vars['template_files'][$key]);
+	    break;
+	  }
+    }
+  }
+
   // Automatically adjust layout for page with right sidebar content if no
   // explicit layout has been set.
   $layout = module_exists('context_layouts') ? context_layouts_get_active_layout() : NULL;

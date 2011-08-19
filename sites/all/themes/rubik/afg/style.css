@@ -44,8 +44,8 @@ width: 100%;
 max-width: 1000px;
 }
 
-#top {
-color: #FFF;
+table, th, td {
+border: 0 !important;
 }
 
 h1.page-title {
@@ -142,6 +142,7 @@ margin-right: 0;
 }
 
 span.header-description {
+color: #FFF;
 font-size: 1.3em;
 }
 
@@ -247,6 +248,9 @@ padding: 0 0 40px;
 text-shadow: 1px 2px 1px #000;
 }
 
+.column-side { float: right; background: #EEE; }
+.column-side .column-wrapper { padding: 10px; }
+
 /* Drupal/Atrium Blocks
 ======================================================== */
 
@@ -293,7 +297,8 @@ border: 1px solid #B5B5B5;
 
 #content-right .block-content {
 padding: 0 20px;
-line-height: 1.3;
+font-size: 0.9em;
+line-height: 1.2;
 }
 
 #content-right .block-title {
@@ -302,6 +307,13 @@ background: none;
 
 #content-right .block-title h2 {
 font-size: 0.8em;
+}
+
+#content-right label {
+text-transform: uppercase;
+font-weight: 100;
+font-size: 0.8em;
+font-family: 'Paytone One', sans-serif;
 }
 
 #content-left .block-shadow {
@@ -384,83 +396,120 @@ background: #007CCF;
 box-shadow: none;
 }
 
-/* Updates Block */ 
+/* Centre Links Block */
+	
+	#block-menu-menu-centre-directory-links .block-content {
+	margin: 15px 0 0;
+	padding: 0;
+	background: none;
+	}
+	
+	#block-menu-menu-centre-directory-links .block-shadow {
+	display: none;
+	}
 
-/* MAKE A GENERIC CLASS */
+	#block-menu-menu-centre-directory-links ul li {
+	float: left;
+	min-height: 106px;
+	width: 171px;
+	background: #5B5B5B;
+	border: 0 !important;
+	margin: 0 25px 0 0;
+	}
+	
+	#block-menu-menu-centre-directory-links ul li:last-child {
+	margin-right: 0;
+	}
+	
+	#block-menu-menu-centre-directory-links ul li a:link,
+	#block-menu-menu-centre-directory-links ul li a:visited	{
+	color: #FFF;
+	font-size: 1.4em;
+	line-height: 1.2;
+	}
 
-.activity-updates {
-padding: 0;
-color: #FFF;
-background: #0099FF;
-}
+/* Updates Block */
 
-.activity-updates li {
-padding: 15px;
-}
+	#content-left .activity-updates {
+	padding: 0;
+	color: #FFF;
+	background: #0099FF;
+	}
 
-.activity-updates img,
-.activity-updates object {
-border: 6px solid #FFF;
--moz-box-shadow: 0 0 6px 6px #0083DA;
--webkit-box-shadow: 0 0 6px 6px #0083DA;
-box-shadow: 0 0 6px 6px #0083DA;
-margin: 0 20px 0 0;
-}
+	#content-left .activity-updates li {
+	padding: 15px;
+	}
 
-.activity-updates img {
-height: auto;
-max-width: 100%;
-background: #FFF;
-}
+	#content-left .activity-updates img,
+	#content-left .activity-updates object {
+	border: 6px solid #FFF;
+	-moz-box-shadow: 0 0 6px 6px #0083DA;
+	-webkit-box-shadow: 0 0 6px 6px #0083DA;
+	box-shadow: 0 0 6px 6px #0083DA;
+	margin: 0 20px 0 0;
+	}
 
-.activity-updates .views-field-title {
-font-size: 2.3em;
-font-weight: bold;
-line-height: 1.1;
-text-transform: uppercase;
-}
+	#content-left .activity-updates img {
+	height: auto;
+	max-width: 100%;
+	background: #FFF;
+	}
 
-.activity-updates .view-empty { padding: 10px; }
-.activity-updates a:link { color: #FFF; }
+	#content-left .activity-updates .views-field-title {
+	font-size: 2.3em;
+	font-weight: bold;
+	line-height: 1.1;
+	text-transform: uppercase;
+	}
 
-.activity-updates span.views-field-atrium-activity-timestamp,
-.activity-updates span.views-field-comment-count {
-margin: 0 15px 10px 0;
-display: block;
-float: left;
-}
+	#content-left .activity-updates .view-empty { padding: 10px; }
+	#content-left .activity-updates a:link { color: #FFF; }
 
-.activity-updates span.views-field-atrium-activity-timestamp {
-text-indent: 17px;
-background: url('images/afg/icon-timestamp.png') left no-repeat;
-}
+	#content-left .activity-updates span.views-field-atrium-activity-timestamp,
+	#content-left .activity-updates span.views-field-comment-count {
+	margin: 0 15px 10px 0;
+	display: block;
+	float: left;
+	}
 
-.activity-updates span.views-field-comment-count {
-text-indent: 26px;
-background: url('images/afg/icon-commentcount.png') left no-repeat;
-}
+	#content-left .activity-updates span.views-field-atrium-activity-timestamp {
+	text-indent: 17px;
+	background: url('images/afg/icon-timestamp.png') left no-repeat;
+	}
 
-/* MAKE A GENERIC CLASS */
+	#content-left .activity-updates span.views-field-comment-count {
+	text-indent: 26px;
+	background: url('images/afg/icon-commentcount.png') left no-repeat;
+	}
 
-	#content-left .view-groups-listing-centre-school .item-list li.views-row {
+	
+/* Group sListing Centre School */
+
+	#content-left .view-groups-listing-centre-school tr {
+	float: left;
+	background: #F68424 !important;
+	border-bottom: 1px solid #FFF;
+	margin: 0 !important;
+	}
+	
+	#content-left .view-groups-listing-centre-school td {
 	float: left;
 	min-height: 162px;
 	width: 304px;
 	padding: 0;
-	margin: 0 1px 0 0;
-	background: #F68424 !important;
 	position: relative;
+	border-right: 1px solid #FFF !important;
 	}
 	
-	#content-left .view-groups-listing-centre-school .item-list li.views-row:hover {
+	#content-left .view-groups-listing-centre-school td:hover {
 	background: #F99744 !important;
 	}
 
-	#content-left .view-groups-listing-centre-school .item-list li.views-row:nth-child(odd) {
+	#content-left .view-groups-listing-centre-school td:nth-child(odd) {
 	clear: both;
 	}
 
-	#content-left .view-groups-listing-centre-school .item-list img {
+	#content-left .view-groups-listing-centre-school img {
 	float: left;
 	height: auto;
 	width: 44px;
@@ -472,8 +521,8 @@ background: url('images/afg/icon-commentcount.png') left no-repeat;
 	}
 	
 	#content-left .view-groups-listing-centre-school,
-	#content-left .view-groups-listing-centre-school .item-list li.views-row a:link,
-	#content-left .view-groups-listing-centre-school .item-list li.views-row a:visited {
+	#content-left .view-groups-listing-centre-school a:link,
+	#content-left .view-groups-listing-centre-school a:visited {
 	color: #FFF;
 	}
 	
@@ -498,9 +547,9 @@ background: url('images/afg/icon-commentcount.png') left no-repeat;
 	margin-bottom: 60px;
 	}
 	
-	#content-left .view-groups-listing-centre-school .views-field-title,
+	#content-left .view-groups-listing-centre-school .views-field-title a:link,
 	#content-left .view-groups-listing-centre-school .views-field-city span {
-	font-size: 1.5em;
+	font-size: 1.7em;
 	font-weight: bold;
 	text-transform: uppercase;
 	line-height: 1;
@@ -512,10 +561,10 @@ background: url('images/afg/icon-commentcount.png') left no-repeat;
 	left: 20px;
 	background: #4A97A9 url('images/afg/gradient.png') 0 2px repeat-x;
 	letter-spacing: 1px;
-	padding: 5px 8px;
+	padding: 10px 12px;
 	text-shadow: 1px 1px 1px #222;
 	text-transform: uppercase;
-	font-size: 1.2em;
+	font-size: 1.5em;
 	-moz-box-shadow: 0 2px 1px #222;
 	-webkit-box-shadow: 0 2px 1px #222;
 	box-shadow: 0 2px 1px #222;
@@ -622,6 +671,12 @@ background: #FFF !important;
 -moz-box-shadow: 0 0 6px 6px #DEDEDE;
 -webkit-box-shadow: 0 0 6px 6px #DEDEDE;
 box-shadow: 0 0 6px 6px #DEDEDE;
+}
+
+.block-quicktabs .views-field-title a {
+color: #222;
+font-family: 'Paytone One', sans-serif;
+text-transform: uppercase;
 }
 
 /* Header - Drop Menu's
