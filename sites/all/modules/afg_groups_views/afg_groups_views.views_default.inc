@@ -2542,7 +2542,7 @@ function afg_groups_views_views_default_views() {
     'weight' => '0',
     'name' => 'navigation',
   ));
-  $handler = $view->new_display('page', 'centres-all', 'page_2');
+  $handler = $view->new_display('page', 'centres', 'page_2');
   $handler->override_option('fields', array(
     'field_logo_fid' => array(
       'label' => '',
@@ -2800,7 +2800,7 @@ function afg_groups_views_views_default_views() {
       'relationship' => 'none',
     ),
   ));
-  $handler->override_option('title', 'Directory');
+  $handler->override_option('title', 'centres');
   $handler->override_option('empty', '');
   $handler->override_option('use_ajax', FALSE);
   $handler->override_option('items_per_page', 25);
@@ -4468,7 +4468,6 @@ function afg_groups_views_views_default_views() {
     t('Centres'),
     t('Contact Centre'),
     t('Defaults'),
-    t('Directory'),
     t('My centres'),
     t('No archived groups found.'),
     t('No groups found.'),
@@ -4479,7 +4478,7 @@ function afg_groups_views_views_default_views() {
     t('This centre map'),
     t('User centres'),
     t('View more'),
-    t('centres-all'),
+    t('centres'),
   );
 
   $views[$view->name] = $view;
