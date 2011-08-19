@@ -44,8 +44,8 @@ function afg_preprocess_page(&$vars) {
 function afg_theme(){
   return array(
     'comment_form' => array(
-      'arguments' => array('form' => NULL),
-    ),
+      	'arguments' => array('form' => NULL),
+  	),
   );
 }
 
@@ -59,6 +59,9 @@ function afg_comment_form($form) {
  
   // Rename some of the form element labels.
   $form['comment_filter']['comment']['#title']  = t('Your message');
+  
+  $form['preview'] = NULL;
+
  
  
   return drupal_render($form);
