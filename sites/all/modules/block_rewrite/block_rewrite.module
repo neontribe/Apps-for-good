@@ -1,9 +1,11 @@
 <?php
 
 function block_rewrite_preprocess_block(&$vars, $hook) {
+  $max_len = 30;
   if ($hook == 'block') {
     if(strlen($vars['block']->subject) > 0) {
-		$vars['block']->subject = '<h2>' . $vars['block']->subject . '</h2>';
+		$append = (strlen($vars['block']->subject) > $max_len) ? '...' : '';
+		$vars['block']->subject = '<h2>' . substr($vars['block']->subject, 0, $max_len) . $append . '</h2>';
 	}
   }
 }
