@@ -2304,7 +2304,7 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'My centres');
+  $handler->override_option('title', 'Centres');
   $handler->override_option('empty', 'No groups found.');
   $handler->override_option('use_ajax', TRUE);
   $handler->override_option('items_per_page', 20);
@@ -2542,7 +2542,7 @@ function afg_groups_views_views_default_views() {
     'weight' => '0',
     'name' => 'navigation',
   ));
-  $handler = $view->new_display('page', 'Page: Centre directory', 'page_2');
+  $handler = $view->new_display('page', 'centres-all', 'page_2');
   $handler->override_option('fields', array(
     'field_logo_fid' => array(
       'label' => '',
@@ -2805,6 +2805,13 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('use_ajax', FALSE);
   $handler->override_option('items_per_page', 25);
   $handler->override_option('use_pager', '1');
+  $handler->override_option('style_plugin', 'grid');
+  $handler->override_option('style_options', array(
+    'grouping' => '',
+    'columns' => '2',
+    'alignment' => 'horizontal',
+    'fill_single_line' => 1,
+  ));
   $handler->override_option('path', 'centres/all');
   $handler->override_option('menu', array(
     'type' => 'default tab',
@@ -4458,6 +4465,7 @@ function afg_groups_views_views_default_views() {
     t('Block: My centres (sidebar)'),
     t('Block: User centres'),
     t('Centre Logo'),
+    t('Centres'),
     t('Contact Centre'),
     t('Defaults'),
     t('Directory'),
@@ -4466,12 +4474,12 @@ function afg_groups_views_views_default_views() {
     t('No groups found.'),
     t('Our Apps'),
     t('Page: Archived centres'),
-    t('Page: Centre directory'),
     t('Page: My centres'),
     t('Staff'),
     t('This centre map'),
     t('User centres'),
     t('View more'),
+    t('centres-all'),
   );
 
   $views[$view->name] = $view;
