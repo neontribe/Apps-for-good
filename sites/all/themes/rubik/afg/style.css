@@ -353,6 +353,11 @@ margin: 0;
 #block-atrium-admin_links,
 #block-atrium-admin_links .block-content { background: none !important; }
 
+#block-atrium-create li,
+#block-atrium-admin_links li {
+margin: 0 0 10px;
+}
+
 #block-atrium-create ul a:link,
 #block-atrium-create ul a:visited,
 #block-atrium-admin_links ul a:link,
@@ -379,25 +384,22 @@ background: #007CCF;
 box-shadow: none;
 }
 
-/* Updates Block */
+/* Updates Block */ 
 
-#block-views-updates-block_1 .block-content {
-color: #FFF;
-background: #0099FF;
-}
+/* MAKE A GENERIC CLASS */
 
-#block-views-updates-block_4 .block-content {
+.activity-updates {
 padding: 0;
 color: #FFF;
 background: #0099FF;
 }
 
-#block-views-updates-block_4 li {
+.activity-updates li {
 padding: 15px;
 }
 
-#block-views-updates-block_4 img,
-#block-views-updates-block_4 object {
+.activity-updates img,
+.activity-updates object {
 border: 6px solid #FFF;
 -moz-box-shadow: 0 0 6px 6px #0083DA;
 -webkit-box-shadow: 0 0 6px 6px #0083DA;
@@ -405,38 +407,126 @@ box-shadow: 0 0 6px 6px #0083DA;
 margin: 0 20px 0 0;
 }
 
-#block-views-updates-block_4 img {
+.activity-updates img {
 height: auto;
 max-width: 100%;
 background: #FFF;
 }
 
-#block-views-updates-block_4 .views-field-title {
+.activity-updates .views-field-title {
 font-size: 2.3em;
 font-weight: bold;
 line-height: 1.1;
 text-transform: uppercase;
 }
 
-#block-views-updates-block_4 .view-empty { padding: 10px; }
-#block-views-updates-block_4 .block-content a:link { color: #FFF; }
+.activity-updates .view-empty { padding: 10px; }
+.activity-updates a:link { color: #FFF; }
 
-#block-views-updates-block_4 span.views-field-atrium-activity-timestamp,
-#block-views-updates-block_4 span.views-field-comment-count {
+.activity-updates span.views-field-atrium-activity-timestamp,
+.activity-updates span.views-field-comment-count {
 margin: 0 15px 10px 0;
 display: block;
 float: left;
 }
 
-#block-views-updates-block_4 span.views-field-atrium-activity-timestamp {
+.activity-updates span.views-field-atrium-activity-timestamp {
 text-indent: 17px;
 background: url('images/afg/icon-timestamp.png') left no-repeat;
 }
 
-#block-views-updates-block_4 span.views-field-comment-count {
+.activity-updates span.views-field-comment-count {
 text-indent: 26px;
 background: url('images/afg/icon-commentcount.png') left no-repeat;
 }
+
+/* MAKE A GENERIC CLASS */
+
+	.view-groups-listing-centre-school .item-list li.views-row {
+	float: left;
+	min-height: 162px;
+	width: 304px;
+	padding: 0;
+	margin: 0 1px 0 0;
+	background: #F68424 !important;
+	position: relative;
+	}
+	
+	.view-groups-listing-centre-school .item-list li.views-row:hover {
+	background: #F99744 !important;
+	}
+
+	.view-groups-listing-centre-school .item-list li.views-row:nth-child(odd) {
+	clear: both;
+	}
+
+	.view-groups-listing-centre-school .item-list img {
+	float: left;
+	height: auto;
+	width: 44px;
+	border: 5px solid #FFF;
+	margin: 20px;
+	-moz-box-shadow: 0 0 4px 4px #D37626;
+	-webkit-box-shadow: 0 0 4px 4px #D37626;
+	box-shadow: 0 0 4px 4px #D37626;
+	}
+	
+	.view-groups-listing-centre-school,
+	.view-groups-listing-centre-school .item-list li.views-row a:link,
+	.view-groups-listing-centre-school .item-list li.views-row a:visited {
+	color: #FFF;
+	}
+	
+	.view-groups-listing-centre-school label {
+	font-weight: normal;
+	font-size: 0.9em;
+	}
+	
+	.view-groups-listing-centre-school .views-field-field-logo-fid {
+	display: inline;
+	}
+	
+	.view-groups-listing-centre-school .views-field-title,
+	.view-groups-listing-centre-school .views-field-city {
+	float: right;
+	width: 190px;
+	margin: 20px 20px 0 0;
+	}
+	
+	.view-groups-listing-centre-school .views-field-city {
+	margin-top: 2px;
+	margin-bottom: 60px;
+	}
+	
+	.view-groups-listing-centre-school .views-field-title,
+	.view-groups-listing-centre-school .views-field-city span {
+	font-size: 1.5em;
+	font-weight: bold;
+	text-transform: uppercase;
+	line-height: 1;
+	}
+	
+	.view-groups-listing-centre-school .views-field-title-1 {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	background: #4A97A9 url('images/afg/gradient.png') 0 2px repeat-x;
+	letter-spacing: 1px;
+	padding: 5px 8px;
+	text-shadow: 1px 1px 1px #222;
+	text-transform: uppercase;
+	font-size: 1.2em;
+	-moz-box-shadow: 0 2px 1px #222;
+	-webkit-box-shadow: 0 2px 1px #222;
+	box-shadow: 0 2px 1px #222;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	}
+	
+	.view-groups-listing-centre-school .views-field-title-1:hover {
+	background-position: 0 15px;
+	}
 
 /* Shoutbox */
 
