@@ -218,29 +218,23 @@ function afg_group_definitions_spaces_presets() {
     'context' => array(
       'spaces_dashboard-custom-1:reaction:block' => array(
         'blocks' => array(
-          'views-7a3971c58a24107b75cfdb9163cf5dc3' => array(
-            'module' => 'views',
-            'delta' => '7a3971c58a24107b75cfdb9163cf5dc3',
-            'region' => 'content',
-            'weight' => 0,
-          ),
           'views-4279d6353ce04c2723ce5268875465d0' => array(
             'module' => 'views',
             'delta' => '4279d6353ce04c2723ce5268875465d0',
             'region' => 'content',
-            'weight' => 1,
+            'weight' => 0,
           ),
           'views-updates-block_6' => array(
             'module' => 'views',
             'delta' => 'updates-block_6',
             'region' => 'content',
-            'weight' => 2,
+            'weight' => 1,
           ),
           'views-ed790d718541f2aaea81054dab60bd25' => array(
             'module' => 'views',
             'delta' => 'ed790d718541f2aaea81054dab60bd25',
             'region' => 'right',
-            'weight' => 0,
+            'weight' => 1,
           ),
           'views-updates-block_7' => array(
             'module' => 'views',
