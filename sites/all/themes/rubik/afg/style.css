@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Paytone+One);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 @font-face {
     font-family: 'LeckerliOneRegular';
@@ -26,19 +27,6 @@ a {
 	text-decoration: none;
 }
 
-	textarea {
-	background: #F5F1F2 !important;
-	border: 1px solid #BABABA !important;
-	padding: 5px !important;
-	-moz-box-shadow: inset 2px 2px 2px #CCC;
-	-webkit-box-shadow: inset 2px 2px 2px #CCC;
-	box-shadow: inset 2px 2px 2px #CCC;
-}
-
-textarea:focus {
-	background: #FFF !important;
-}
-
 table, th, td {
 	border: 0 !important;
 }
@@ -55,11 +43,21 @@ h1, h2, h3, .block-title {
 }
 
 textarea {
-	background: #F5F1F2;
+	background: #F5F1F2 !important;
+	border: 1px solid #BABABA !important;
+	padding: 5px !important;
+	margin: 0 0 0 -5px;
+	width: 100%;
+	-moz-box-shadow: inset 2px 2px 2px #CCC;
+	-webkit-box-shadow: inset 2px 2px 2px #CCC;
+	box-shadow: inset 2px 2px 2px #CCC;
 	-moz-border-radius: 15px;
 	-webkit-border-radius: 25px;
 	border-radius: 15px;
-	width: 100%;
+}
+
+textarea:focus {
+	background: #FFF !important;
 }
 
 em {
@@ -106,8 +104,8 @@ em {
 #primary-links .links li a {
 	color: #FFF;
 	font-size: 1.2em;
-	letter-spacing: 1px;
 	text-transform: uppercase;
+	font-family: 'Open Sans', sans-serif;
 }
 
 #primary-links .links li:hover,
@@ -123,6 +121,23 @@ em {
 	position: relative;
 }
 
+#page-title {
+	float: left;
+	width: 60%;
+	margin: 0 0 0 25px;
+	padding: 0 0 40px;	
+}
+
+.page-title {
+	text-shadow: 1px 2px 1px #000;
+}
+
+.header-description {
+	color: #FFF;
+	font-size: 1.3em;
+	line-height: 1.4;
+}
+
 #header-links {
 	float: right;
 	margin: 70px 0 0;
@@ -134,11 +149,11 @@ em {
 	font-size: 2em;
 	text-transform: capitalize;
 	background: #CCC url('images/afg/gradient.png') 0 12px repeat-x;
-	padding: 0 9px 5px 9px;
+	padding: 0px 9px 8px 9px;
 	margin: 0 12px 0 0;
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;
-	border-radius: 6px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
 	-moz-box-shadow: 0 2px #111;
 	-webkit-box-shadow: 0 2px #111;
 	box-shadow: 0 2px #111;
@@ -148,20 +163,18 @@ em {
 	margin-right: 0;
 }
 
-span.header-description {
-	color: #FFF;
-	font-size: 1.3em;
+#header-links li.active-trail a {
+	box-shadow: inset 0 2px 2px #111;
+}
+
+#header-links li:hover a {
+	box-shadow: 0 0 8px 5px rgba(255, 255, 255, .4);
 }
 
 #header-links .header-menu-apps { background-color: #42B3FF; }
 #header-links .header-menu-schools { background-color: #F9A35A; }
 #header-links .header-menu-supporters { background-color: #A842E3; }
 #header-links .header-menu-about { background-color: #9DBF68; }
-
-#header-links .header-menu-apps:hover { background-color: rgba(66, 179, 255, .8); }
-#header-links .header-menu-schools:hover { background-color: rgba(249, 163, 90, .8); }
-#header-links .header-menu-supporters:hover { background-color: rgba(168, 66, 227, .8); }
-#header-links .header-menu-about:hover { background-color: rgba(157, 191, 104, .8); }
 
 /* Footer
 ======================================================== */
@@ -242,14 +255,6 @@ span.header-description {
 	width: 29%;
 }
 
-#page-title {
-	float: left;
-	width: 60%;
-	margin: 0 0 0 25px;
-	padding: 0 0 40px;
-	text-shadow: 1px 2px 1px #000;
-}
-
 .column-side { float: right; background: #EEE; }
 .column-side .column-wrapper { padding: 10px; }
 
@@ -295,6 +300,9 @@ span.header-description {
 	min-height: 300px;
 	margin: 2px 0 0;
 	border: 1px solid #B5B5B5;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
 }
 
 #content-right .block-content {
@@ -304,7 +312,7 @@ span.header-description {
 }
 
 #content-right .block-title {
-background: none;
+	background: none;
 }
 
 #content-right .block-title h2 {
@@ -346,7 +354,8 @@ background: none;
 #content-right .block-content ul li a:link { color: #2D2D2D; }
 #content-right .block-content ul li:hover a { color: #777; }
 
-/* Administration Block Menu's */
+/* Administration Menus
+======================================================== */
 
 #block-atrium-search { display: none; }
 
@@ -377,28 +386,18 @@ background: none;
 #block-atrium-admin_links ul a:link,
 #block-atrium-admin_links ul a:visited {
 	color: #FFF;
-	padding: 10px;
+	padding: 5px;
 	margin: 0 5px 0 0;
 	background: #0099FF;
-	-moz-border-radius: 7px;
-	-webkit-border-radius: 7px;
-	border-radius: 7px;
-	box-shadow: inset 3px 3px 4px #5BBDFF;
 }
 
-#block-atrium-admin_links ul a:link,
-#block-atrium-admin_links ul a:visited {
-	background: #0073BF;
-	box-shadow: inset 3px 3px 4px #00446a;
+#block-atrium-create li:hover a,
+#block-atrium-admin_links li:hover a {
+	background: #1288C2;
 }
 
-#block-atrium-create ul a:hover,
-#block-atrium-admin_links ul a:hover {
-	background: #007CCF;
-	box-shadow: none;
-}
-
-/* Centre Links Block */
+/* Centre Links Block
+======================================================== */
 	
 #block-menu-menu-centre-directory-links .block-content {
 	margin: 15px 0 0;
@@ -430,7 +429,8 @@ background: none;
 	line-height: 1.2;
 }
 
-/* Updates Block */
+/* Updates Block
+======================================================== */
 
 #content-left .activity-updates {
 	padding: 0;
@@ -469,7 +469,6 @@ background: none;
 
 #content-left .activity-updates span.views-field-atrium-activity-timestamp,
 #content-left .activity-updates span.views-field-comment-count {
-	margin: 0 15px 10px 0;
 	display: block;
 	float: left;
 }
@@ -483,17 +482,29 @@ background: none;
 	text-indent: 26px;
 	background: url('images/afg/icon-commentcount.png') left no-repeat;
 }
-	
-/* Groups Listing Centre School */
 
-#content-left .view-groups-listing-centre-school tr {
+#content-left .activity-updates span.views-field-atrium-activity-timestamp,
+#content-left .activity-updates span.views-field-comment-count,
+#content-left .activity-updates .views-field-comments-link {
+	font-size: 0.9em;
+	margin: 6px 6px 10px 0;
+}
+
+#content-left .activity-updates span.views-field-atrium-activity-timestamp em {
+	font-weight: normal !important;
+}
+	
+/* Groups Listing Centre School
+======================================================== */
+
+#content-left .view-groups-listing-centre-school.view-display-id-page_2 tr {
 	float: left;
 	background: #F68424 !important;
 	border-bottom: 1px solid #FFF;
 	margin: 0 !important;
 }
 
-#content-left .view-groups-listing-centre-school td {
+#content-left .view-groups-listing-centre-school.view-display-id-page_2 td {
 	float: left;
 	min-height: 162px;
 	width: 304px;
@@ -502,11 +513,11 @@ background: none;
 	border-right: 1px solid #FFF !important;
 }
 
-#content-left .view-groups-listing-centre-school td:hover {
+#content-left .view-groups-listing-centre-school.view-display-id-page_2 td:hover {
 	background: #F99744 !important;
 }
 
-#content-left .view-groups-listing-centre-school td:nth-child(odd) {
+#content-left .view-groups-listing-centre-school.view-display-id-page_2 td:nth-child(odd) {
 	clear: both;
 }
 
@@ -515,6 +526,14 @@ background: none;
 	height: auto;
 	width: 44px;
 	border: 5px solid #FFF;
+	margin: 0 10px 10px 0;	
+}
+
+#content-left .view-groups-listing-centre-school li {
+	padding: 20px;
+}
+
+#content-left .view-groups-listing-centre-school.view-display-id-page_2 img {
 	margin: 20px;
 	-moz-box-shadow: 0 0 4px 4px #D37626;
 	-webkit-box-shadow: 0 0 4px 4px #D37626;
@@ -527,36 +546,36 @@ background: none;
 	color: #FFF;	
 }
 
-#content-left .view-groups-listing-centre-school label {
+#content-left .view-groups-listing-centre-school.view-display-id-page_2 label {
 	font-weight: normal;
 	font-size: 0.9em;
 }
 
-#content-left  .view-groups-listing-centre-school .views-field-field-logo-fid {
+#content-left  .view-groups-listing-centre-school.view-display-id-page_2 .views-field-field-logo-fid {
 	display: inline;
 }
 
-#content-left .view-groups-listing-centre-school .views-field-title,
-#content-left .view-groups-listing-centre-school .views-field-city {
+#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-title,
+#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-city {
 	float: right;
 	width: 190px;
 	margin: 20px 20px 0 0;
 }
 
-#content-left .view-groups-listing-centre-school .views-field-city {
+#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-city {
 	margin-top: 2px;
 	margin-bottom: 60px;
 }
 
-#content-left .view-groups-listing-centre-school .views-field-title a:link,
-#content-left .view-groups-listing-centre-school .views-field-city span {
+#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-title a:link,
+#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-city span {
 	font-size: 1.7em;
 	font-weight: bold;
 	text-transform: uppercase;
 	line-height: 1;
 }
 
-#content-left .view-groups-listing-centre-school .views-field-title-1 {
+#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-title-1 {
 	position: absolute;
 	bottom: 20px;
 	left: 20px;
@@ -574,11 +593,12 @@ background: none;
 	border-radius: 5px;
 }
 
-#content-left .view-groups-listing-centre-school .views-field-title-1:hover {
+#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-title-1:hover {
 	background-position: 0 15px;
 }
 
-/* Shoutbox */
+/* Shoutbox
+======================================================== */
 
 #block-views-shoutbox_shouts-block_1 {
 	border: 0px !important;
@@ -661,7 +681,27 @@ margin: 0 0 70px;
 .views-field-delete-comment:hover { background: #111; }
 .views-field-delete-comment:hover a { color: #FFF !important; }
 
-/* Home - Updates (using basic-afg quicktabs theme)  */
+/* CDI Features, Quicktabs
+======================================================== */
+
+#quicktabs-cdi_features img {
+	margin: 0 0 20px;
+}
+
+#quicktabs-cdi_features .views-field-title {
+	font-size: 1.5em;
+	margin: 0 0 8px;
+}
+
+#quicktabs-cdi_features .views-field-title a {
+	color: #FFF;
+	padding: 5px;
+	background: #0099FF;
+}
+
+/* Home - Updates, Quicktabs
+ * using basic-afg quicktabs theme.
+======================================================== */
 
 .quicktabs-style-basic-afg .view {
 	background: none !important;
@@ -688,7 +728,7 @@ margin: 0 0 70px;
 /* Header - Drop Menu's
 ======================================================== */
 
-#block-atrium-account { display: none; }
+#block-atrium-account,
 #block-atrium-user_links .block-title { display: none; }
 
 #block-atrium-user_links {
