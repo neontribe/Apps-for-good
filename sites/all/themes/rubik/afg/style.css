@@ -1,6 +1,30 @@
 @import url(http://fonts.googleapis.com/css?family=Paytone+One);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
+
+
+
+
+
+
+/* TEMPORARY, MUST REMOVE, DO NOT COMMIT -- */
+
+
+#block-views-activity_listing-block_1 { display: none; }
+
+
+/* END TEMPORARY -------------------------- */
+
+
+
+
+
+
+
+
+
+
+
 @font-face {
     font-family: 'LeckerliOneRegular';
     src: url('fonts/leckerlione-webfont.eot');
@@ -72,6 +96,9 @@ em {
 	width: 100%;
 	max-width: 1000px;
 }
+
+/* Maps
+======================================================== */
 
 .gmap {
 	width: 100% !important;
@@ -399,6 +426,10 @@ em {
 /* Centre Links Block
 ======================================================== */
 	
+#block-menu-menu-centre-directory-links {
+	margin: 0 0 40px;
+}
+
 #block-menu-menu-centre-directory-links .block-content {
 	margin: 15px 0 0;
 	padding: 0;
@@ -684,6 +715,10 @@ margin: 0 0 70px;
 /* CDI Features, Quicktabs
 ======================================================== */
 
+#block-quicktabs-cdi_features {
+	
+}
+
 #quicktabs-cdi_features img {
 	margin: 0 0 20px;
 }
@@ -699,26 +734,39 @@ margin: 0 0 70px;
 	background: #0099FF;
 }
 
-/* Home - Updates, Quicktabs
+/* Updates, Quicktabs
  * using basic-afg quicktabs theme.
 ======================================================== */
 
-.quicktabs-style-basic-afg .view {
-	background: none !important;
+.view-updates li {
+	background: #1B9BDA !important;
+	text-indent: 100px;
 }
 
-.quicktabs-style-basic-afg .views-field-title {
+.view-updates span.arrow {
+	position: absolute;
+	margin: 4px 0 0 20px;
+	height: 20px;
+	width: 37px;
+	background: url('images/afg/blue-arrow.png') bottom left no-repeat;
+}
+
+.view-updates li a {
+	color: #FFF;
+}
+
+.view-updates .views-field-title {
 	font-weight: normal;
-	font-size: 1em !important;
-	text-transform: none !important;
+	text-transform: capitalize !important;
 }
 
-.quicktabs-style-basic-afg .views-field-feature {
+.view-updates .views-field-feature {
+	color: #FFF;
 	font-size: 2.3em;
 	text-transform: uppercase;
 }
 
-.quicktabs-style-basic-afg .views-field-atrium-activity-timestamp {
+.view-updates .views-field-atrium-activity-timestamp {
 	float: right;
 	color: #61C7F7;
 	color: rgba(255, 255, 255, .5);
