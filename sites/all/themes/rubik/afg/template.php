@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Preprocessor for theme('page').
  */
