@@ -2640,7 +2640,7 @@ function afg_groups_views_views_default_views() {
         'strip_tags' => 0,
       ),
       'empty' => '',
-      'hide_empty' => 0,
+      'hide_empty' => 1,
       'empty_zero' => 0,
       'exclude' => 0,
       'id' => 'city',
@@ -2800,7 +2800,7 @@ function afg_groups_views_views_default_views() {
       'relationship' => 'none',
     ),
   ));
-  $handler->override_option('title', 'centres');
+  $handler->override_option('title', 'Browse Centres');
   $handler->override_option('empty', '');
   $handler->override_option('use_ajax', FALSE);
   $handler->override_option('items_per_page', 25);
@@ -4332,7 +4332,7 @@ function afg_groups_views_views_default_views() {
       'relationship' => 'none',
     ),
   ));
-  $handler->override_option('title', 'All centres');
+  $handler->override_option('title', '');
   $handler->override_option('header', '<a href=\'centres/all\'><?php echo afg_content_count(\'group_centre_school\'); ?> Schools</a>');
   $handler->override_option('header_format', '6');
   $handler->override_option('header_empty', 0);
@@ -4459,11 +4459,11 @@ function afg_groups_views_views_default_views() {
     t('About Centre'),
     t('About this Centre'),
     t('All Centres Map'),
-    t('All centres'),
     t('Apps at centre'),
     t('Archived centres'),
     t('Block: My centres (sidebar)'),
     t('Block: User centres'),
+    t('Browse Centres'),
     t('Centre Logo'),
     t('Centres'),
     t('Contact Centre'),
