@@ -2313,10 +2313,6 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('use_more_text', 'View more');
   $handler->override_option('link_display', 'page_1');
   $handler->override_option('style_plugin', 'list');
-  $handler->override_option('style_options', array(
-    'grouping' => '',
-    'type' => 'ul',
-  ));
   $handler->override_option('row_options', array(
     'inline' => array(),
     'separator' => '',
@@ -3516,6 +3512,10 @@ function afg_groups_views_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', '');
+  $handler->override_option('style_options', array(
+    'grouping' => '',
+    'type' => 'ul',
+  ));
   $handler->override_option('row_options', array(
     'inline' => array(
       'field_logo_fid' => 'field_logo_fid',
@@ -4337,7 +4337,6 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('header_format', '6');
   $handler->override_option('header_empty', 0);
   $handler->override_option('style_plugin', 'gmap');
-  $handler->override_option('style_options', array());
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'This centre map', 'block_9');
@@ -4451,7 +4450,6 @@ function afg_groups_views_views_default_views() {
   ));
   $handler->override_option('title', 'This centre map');
   $handler->override_option('style_plugin', 'gmap');
-  $handler->override_option('style_options', array());
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $translatables['groups_listing_centre_school'] = array(
