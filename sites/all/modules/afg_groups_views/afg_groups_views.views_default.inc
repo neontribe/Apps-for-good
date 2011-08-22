@@ -482,6 +482,11 @@ function afg_groups_views_views_default_views() {
       'field' => 'title',
       'relationship' => 'none',
     ),
+    'changed' => array(
+      'id' => 'changed',
+      'table' => 'node',
+      'field' => 'changed',
+    ),
   ));
   $handler->override_option('sorts', array(
     'title' => array(

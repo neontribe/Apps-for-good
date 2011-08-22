@@ -33,7 +33,7 @@ function afg_groups_views_quicktabs_default_quicktabs() {
       'type' => 'view',
     ),
   );
-  $quicktabs->style = 'Basic-afg';
+  $quicktabs->style = 'Basic';
 
   $export['homepage_recent_updates'] = $quicktabs;
   return $export;
