@@ -45,6 +45,34 @@ function afg_groups_views_context_default_contexts() {
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'app_directory_page';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'apps' => 'apps',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'quicktabs-app_directory' => array(
+          'module' => 'quicktabs',
+          'delta' => 'app_directory',
+          'region' => 'content',
+          'weight' => 0,
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  $export['app_directory_page'] = $context;
+  $context = new stdClass;
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'centre_directory_page';
   $context->description = 'blocks to appear on centre directory page';
   $context->tag = 'afg_custom';
