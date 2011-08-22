@@ -52,22 +52,13 @@ function afg_groups_views_quicktabs_default_quicktabs() {
   $quicktabs->ajax = 0;
   $quicktabs->hide_empty_tabs = 0;
   $quicktabs->default_tab = FALSE;
-  $quicktabs->title = 'Homepage recent updates';
+  $quicktabs->title = 'What\'s happening';
   $quicktabs->tabs = array(
     0 => array(
       'vid' => 'updates',
-      'display' => 'block_9',
-      'args' => '',
-      'get_displays' => 'vdisp_0',
-      'title' => 'Stuff you\'re following',
-      'weight' => '-100',
-      'type' => 'view',
-    ),
-    1 => array(
-      'vid' => 'updates',
       'display' => 'block_1',
       'args' => '',
-      'get_displays' => 'vdisp_1',
+      'get_displays' => 'vdisp_0',
       'title' => 'Recent Activity',
       'weight' => '-99',
       'type' => 'view',
