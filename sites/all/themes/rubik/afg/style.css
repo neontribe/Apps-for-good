@@ -738,12 +738,12 @@ margin: 0 0 70px;
  * using basic-afg quicktabs theme.
 ======================================================== */
 
-.view-updates li {
+#content-left .view-updates li {
 	background: #1B9BDA !important;
 	text-indent: 100px;
 }
 
-.view-updates span.arrow {
+#content-left .view-updates span.arrow {
 	position: absolute;
 	margin: 4px 0 0 20px;
 	height: 20px;
@@ -751,22 +751,22 @@ margin: 0 0 70px;
 	background: url('images/afg/blue-arrow.png') bottom left no-repeat;
 }
 
-.view-updates li a {
+#content-left .view-updates li a {
 	color: #FFF;
 }
 
-.view-updates .views-field-title {
+#content-left .view-updates .views-field-title {
 	font-weight: normal;
 	text-transform: capitalize !important;
 }
 
-.view-updates .views-field-feature {
+#content-left .view-updates .views-field-feature {
 	color: #FFF;
 	font-size: 2.3em;
 	text-transform: uppercase;
 }
 
-.view-updates .views-field-atrium-activity-timestamp {
+#content-left .view-updates .views-field-atrium-activity-timestamp {
 	float: right;
 	color: #61C7F7;
 	color: rgba(255, 255, 255, .5);
