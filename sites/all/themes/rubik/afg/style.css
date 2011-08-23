@@ -571,6 +571,10 @@ em {
 	clear: both;
 }
 
+#content-left .view-groups-listing-centre-school .views-field-title {
+	font-size: 1em;
+}
+
 #content-left .view-groups-listing-centre-school img {
 	float: left;
 	height: auto;
@@ -789,7 +793,10 @@ margin: 0 0 70px;
 
 #content-left .view-updates .views-field-field-icon-fid {
 	float: left;
+	/*background: #FFF;*/
 }
+
+#content-left .view-updates li div:after { content: '.'; height: 0; overflow: hidden; clear: both; }
 
 #content-left .view-updates .views-field-field-icon-fid img {
 	border: 6px solid #FFF !important;
