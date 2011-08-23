@@ -10,7 +10,10 @@
 /* TEMPORARY, MUST REMOVE, DO NOT COMMIT -- */
 
 
-#block-views-activity_listing-block_1 { display: none; }
+#block-views-activity_listing-block_1,
+#block-views-Counters-block_2 {
+	display: none;
+}
 
 
 /* END TEMPORARY -------------------------- */
@@ -897,5 +900,86 @@ margin: 0 0 70px;
 
 
 */
+
+
+
+
+
+#stats .item {
+	background: none;
+	border: 1px solid #222;
+	font-size: 2em;
+	position: relative;
+	z-index: 10;
+	background: #FFF;
+	text-align: center;
+
+	float: left;
+	height: 286px;
+	width: 30%;
+	margin-left: 4%;
+}
+
+#stats .item-arrow {
+	position: absolute;
+	top: 0;
+	right: -38px;
+	float: left;
+	height: 286px;
+	width: 38px;
+	background: url('images/afg/stats-arrow.png') no-repeat right;
+}
+
+#stats .item:last-child .item-arrow {
+	display: none;
+}
+
+#stats .item-content {
+	padding: 10px;
+}
+
+#stats .item span {
+	font-family: 'Paytone One', sans-serif;
+	z-index: 10;
+	text-shadow: 1px 1px #222;
+}
+
+#stats .item em {
+	line-height: 0.8;
+	font-weight: normal;
+	font-size: 3em;
+	display: block;	
+}
+
+#stats .item:first-child {
+	margin-left: 0;
+}
+
+#stats a {
+	display: block;
+	right: 10px;
+	font-weight: bold;
+	font-size: 0.5em;
+	position: absolute;
+	bottom: 10px;
+	color: #FFF;
+	background: #CCC;
+	line-height: 1;
+	padding: 8px 12px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 0 2px 1px #777;
+	-webkit-box-shadow: 0 2px 1px #777;
+	box-shadow: 0 2px 1px #777;
+}
+
+#stats .item-supporters { color: #0191D7; }
+#stats .item-schools { color: #CE8C00; }
+#stats .item-results { color: #165327; }
+
+#stats .item-supporters a { background: #0191D7; }
+#stats .item-schools a { background: #CE8C00; }
+#stats .item-results a { background: #165327; }
 
 
