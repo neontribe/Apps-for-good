@@ -47,7 +47,7 @@ function afg_groups_views_context_default_contexts() {
   $context->api_version = 3;
   $context->name = 'app_directory_page';
   $context->description = '';
-  $context->tag = '';
+  $context->tag = 'afg_custom';
   $context->conditions = array(
     'path' => array(
       'values' => array(
@@ -68,6 +68,10 @@ function afg_groups_views_context_default_contexts() {
     ),
   );
   $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('afg_custom');
 
   $export['app_directory_page'] = $context;
   $context = new stdClass;
@@ -121,5 +125,38 @@ function afg_groups_views_context_default_contexts() {
   t('blocks to appear on centre directory page');
 
   $export['centre_directory_page'] = $context;
+  $context = new stdClass;
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'join_group';
+  $context->description = 'Join this group block';
+  $context->tag = 'afg_custom';
+  $context->conditions = array(
+    'sitewide' => array(
+      'values' => array(
+        1 => 1,
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'atrium-user_links' => array(
+          'module' => 'atrium',
+          'delta' => 'user_links',
+          'region' => 'header',
+          'weight' => 0,
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Join this group block');
+  t('afg_custom');
+
+  $export['join_group'] = $context;
   return $export;
 }
