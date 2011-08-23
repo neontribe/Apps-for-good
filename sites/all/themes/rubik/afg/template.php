@@ -108,3 +108,21 @@ function afg_shoutbox_comment_form() {
   return drupal_get_form('atrium_shoutbox_shoutform', $shoutbox['node'], $view, $rendered);
 }
 
+/* User links block */
+
+/*
+function _atrium_block_user_links() {
+  if ($links = atrium_user_links()) {
+    return array('subject' => t('Membership'), 'content' => theme('links', $links));
+  }
+}
+*/
+
+function afg_block_user_links() {
+  if ($links = atrium_user_links()) {
+	$links['subscribe']['title'] = t('Follow');
+    return array('subject' => t('Membership'),
+				 'content' => t('<p><em>Why to sign-up:</em> You will get the latest updates of this app</p>') . theme('links', $links));
+  }
+}
+
