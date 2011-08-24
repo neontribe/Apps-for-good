@@ -1,6 +1,21 @@
 <?php
 
 /**
+ * is_front()
+ */
+function is_front() {
+  $is_frontpage = TRUE;
+  $frontpage_fragments = explode('/', variable_get('site_frontpage_path', 'frontpage'));
+  for($i = 0; $i < count($frontpage_fragments); $i++) {
+	  if(arg($i) != $frontpage_fragments[$i]) {
+		  $is_frontpage = FALSE;
+		  break;
+	  }
+  }
+  return $is_frontpage;
+}
+
+/**
  * Preprocessor for theme('page').
  */
 function afg_preprocess_page(&$vars) {
@@ -13,7 +28,13 @@ function afg_preprocess_page(&$vars) {
 	    break;
 	  }
     }
+	
   }
+  
+  // If frontpage use page front template
+  if(is_front()) {
+	  $vars['template_files'] = array('page-front');
+  }  
 
   // Automatically adjust layout for page with right sidebar content if no
   // explicit layout has been set.
