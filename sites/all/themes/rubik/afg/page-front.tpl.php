@@ -22,13 +22,9 @@
       <?php if (!empty($content)): ?>
         <div class='content-wrapper clear-block'><?php print $content ?></div>
       <?php endif; ?>
-      
-      
-      <?php
-	  
-	  
-	  
-	  ?>
+
+
+
       
       <!-- [begin] Stats -->
       
@@ -43,6 +39,19 @@
         
         <div class="item">
           <div class="item-content item-schools">
+            <?php
+			
+			//$view = views_get_view('groups_listing_centre_school');
+ 		    //list($a) = $view->execute_display('block_8');
+			//echo 'bye'; print $a; echo 'hi';
+			
+			/*
+			  $view = views_get_view('groups_listing_centre_school');
+			  $rendered = $view->execute_display('block_8');
+			  print $rendered['content'];
+			*/
+			
+			?>
             <span><em><?php print afg_content_count('group_centre_school'); ?></em>schools</span>
             <a href="#" title="Find out more">Find out more</a>
           </div>
@@ -59,6 +68,8 @@
       <div style="clear: both;"></div>
       
       <!-- [end] Stats -->
+      
+      
       
       
       <?php print $content_region ?>

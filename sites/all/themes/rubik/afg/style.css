@@ -107,6 +107,17 @@ em {
 	width: 100% !important;
 }
 
+#map-mask {
+	width:231px;
+	height:200px;
+	background:url(images/afg/vector-map.gif) repeat left top;
+	position:absolute;
+	z-index:99;
+}
+
+#gmap-auto1map-gmap0 span,
+#gmap-auto1map-gmap0 .gmnoprint { display: none; }
+
 /* Primary Navigation
 ======================================================== */
 
