@@ -4,23 +4,34 @@
  * is_front()
  */
 function is_front() {
+/*
   $is_frontpage = TRUE;
   $frontpage_fragments = explode('/', variable_get('site_frontpage_path', 'frontpage'));
+  
   for($i = 0; $i < count($frontpage_fragments); $i++) {
 	  if(arg($i) != $frontpage_fragments[$i]) {
 		  $is_frontpage = FALSE;
 		  break;
 	  }
   }
+  
   return $is_frontpage;
+*/
 }
 
 /**
  * Preprocessor for theme('page').
  */
 function afg_preprocess_page(&$vars) {
+dpm($_GET['q'], 'Q');
+dpm(drupal_is_front_page(), 'drupal_is_front_page()');
+dpm(drupal_get_path_alias($_GET["q"]), 'drupal_get_path_alias($_GET["q"])');
+
 
   // Force using the correct template file
+  
+  //print 'files= ' .dpm($vars['template_files']);
+  
   if(count($vars['template_files']) > 1) {
     foreach($vars['template_files'] as $key => $template) {
 	  if(strcasecmp($template, 'page') === 0) {
@@ -30,9 +41,10 @@ function afg_preprocess_page(&$vars) {
     }
 	
   }
+ //print 'files= ' .dpm($vars['template_files']);
   
   // If frontpage use page front template
-  if(is_front()) {
+  if(drupal_is_front_page()) {
 	  $vars['template_files'] = array('page-front');
   }  
 
