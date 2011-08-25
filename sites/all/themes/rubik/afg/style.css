@@ -107,6 +107,10 @@ em {
 	width: 100% !important;
 }
 
+#content-left .gmap {
+	height: 450px !important;
+}
+
 #map-mask {
 	width:231px;
 	height:200px;
