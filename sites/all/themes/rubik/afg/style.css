@@ -312,7 +312,7 @@ em {
 
 .block .block-title {
 	background: none;
-	font-size: 3em;
+	font-size: 3.2em;
 }
 
 #content-left .block-title {
@@ -330,9 +330,10 @@ em {
 	text-indent: 70px;
 	height: 88px;
 	background: #0099FF url('images/afg/title-right.png') no-repeat right bottom;
-	padding: 0 25px 0 0;
+	padding: 0 40px 0 0;
 	position: absolute;
 	bottom: 0;
+	text-shadow: #888 1px -1px 0;
 }
 
 #content-left .block-content {
