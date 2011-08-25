@@ -228,22 +228,48 @@ em {
 	margin: 60px 0;
 }
 
-#footer ul {
-	width: 22%;
-	margin: 0 3% 0 0;
+#footer ul.menu a {
+	color: #222;
+	text-transform: uppercase;
+}
+
+#footer ul.menu li {
+	width: 20%;
+	margin-right: 3%;
 	float: left;
+	border: 0;
 	border-top: 7px solid #2F2F2F;
 }
 
-#footer li {
-	font-family: Arial, Helvetica, sans-serif;
-	padding: 12px 0;
-	text-transform: uppercase;
-	border-bottom: 1px dashed #2F2F2F;
+#footer ul.menu li.last {
+	margin: 0;
 }
 
-#footer li a { color: #000; }
-#footer li:first-child a { font-weight: bold; }
+#footer ul.menu li a {
+	font-weight: bold;
+	padding: 10px 0;
+	display: block;
+}
+
+#footer ul.menu ul li {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+#footer ul.menu ul li {
+	border-top: 1px dashed #222;
+	
+}
+
+#footer ul.menu ul li a {
+	font-weight: normal;
+}
+
+#footer ul.menu ul li.last {
+	background: none;
+}
+
 
 /* Administration/Content Tabs
 ======================================================== */
