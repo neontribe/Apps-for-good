@@ -566,6 +566,20 @@ em {
 /* Groups Listing Centre School
 ======================================================== */
 
+.view-groups-listing-centre-school .views-field-mail a {
+	float: left;
+	padding: 5px;
+	background: #EAEAEA;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.view-groups-listing-centre-school .views-field-mail a:hover {
+	color: #FFF !important;
+	background: #1B9BDA;
+}
+
 #content-left .view-groups-listing-centre-school.view-display-id-page_2 tr {
 	float: left;
 	background: #F68424 !important;
