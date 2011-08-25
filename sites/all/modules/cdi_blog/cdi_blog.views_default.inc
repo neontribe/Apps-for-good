@@ -149,7 +149,9 @@ function cdi_blog_views_default_views() {
     ),
     'tid' => array(
       'operator' => 'or',
-      'value' => array(),
+      'value' => array(
+        '16' => '16',
+      ),
       'group' => '0',
       'exposed' => FALSE,
       'expose' => array(
@@ -165,6 +167,8 @@ function cdi_blog_views_default_views() {
       'table' => 'term_node',
       'field' => 'tid',
       'hierarchy' => 0,
+      'relationship' => 'none',
+      'reduce_duplicates' => 0,
     ),
     'status' => array(
       'operator' => '=',
