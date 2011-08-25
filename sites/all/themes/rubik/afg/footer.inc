@@ -2,7 +2,9 @@
   <div id='footer' class='limiter clear-block'>
 
 
-<!-- TEMP -->
+	<?php print $footer; ?>
+
+<!-- TEMP 
   <ul>
   	<li><a href="#" title="">Apps For Good</a></li>
     <li><a href="#" title="">Apps</a></li>
@@ -27,7 +29,7 @@
     <li><a href="#" title="">Contact Us</a></li>
     <li><a href="#" title="">Privacy Policy</a></li>
   </ul>
-<!-- [END] TEMP --> 
+[END] TEMP --> 
 
   
     <?php if ($feed_icons): ?>

@@ -107,6 +107,10 @@ em {
 	width: 100% !important;
 }
 
+#content-left .gmap {
+	height: 450px !important;
+}
+
 #map-mask {
 	width:231px;
 	height:200px;
@@ -224,22 +228,48 @@ em {
 	margin: 60px 0;
 }
 
-#footer ul {
-	width: 22%;
-	margin: 0 3% 0 0;
+#footer ul.menu a {
+	color: #222;
+	text-transform: uppercase;
+}
+
+#footer ul.menu li {
+	width: 20%;
+	margin-right: 3%;
 	float: left;
+	border: 0;
 	border-top: 7px solid #2F2F2F;
 }
 
-#footer li {
-	font-family: Arial, Helvetica, sans-serif;
-	padding: 12px 0;
-	text-transform: uppercase;
-	border-bottom: 1px dashed #2F2F2F;
+#footer ul.menu li.last {
+	margin: 0;
 }
 
-#footer li a { color: #000; }
-#footer li:first-child a { font-weight: bold; }
+#footer ul.menu li a {
+	font-weight: bold;
+	padding: 10px 0;
+	display: block;
+}
+
+#footer ul.menu ul li {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+#footer ul.menu ul li {
+	border-top: 1px dashed #222;
+	
+}
+
+#footer ul.menu ul li a {
+	font-weight: normal;
+}
+
+#footer ul.menu ul li.last {
+	background: none;
+}
+
 
 /* Administration/Content Tabs
 ======================================================== */
@@ -308,7 +338,7 @@ em {
 
 .block .block-title {
 	background: none;
-	font-size: 3em;
+	font-size: 3.2em;
 }
 
 #content-left .block-title {
@@ -326,9 +356,10 @@ em {
 	text-indent: 70px;
 	height: 88px;
 	background: #0099FF url('images/afg/title-right.png') no-repeat right bottom;
-	padding: 0 25px 0 0;
+	padding: 0 40px 0 0;
 	position: absolute;
 	bottom: 0;
+	text-shadow: #888 1px -1px 0;
 }
 
 #content-left .block-content {
@@ -338,7 +369,7 @@ em {
 }
 
 #content-right .block {
-	min-height: 300px;
+	min-height: 100px;
 	margin: 0;
 	border: 1px solid #B5B5B5;
 	border-bottom: 0;
@@ -370,7 +401,7 @@ em {
 }
 
 #content-right .block-content {
-	padding: 0 20px;
+	padding: 0 20px 20px 20px;
 	font-size: 0.9em;
 	line-height: 1.2;
 	background: none;
@@ -560,6 +591,20 @@ em {
 	
 /* Groups Listing Centre School
 ======================================================== */
+
+.view-groups-listing-centre-school .views-field-mail a {
+	float: left;
+	padding: 5px;
+	background: #EAEAEA;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.view-groups-listing-centre-school .views-field-mail a:hover {
+	color: #FFF !important;
+	background: #1B9BDA;
+}
 
 #content-left .view-groups-listing-centre-school.view-display-id-page_2 tr {
 	float: left;
@@ -817,6 +862,22 @@ margin: 0 0 70px;
 	-moz-box-shadow: 0 0 2px 2px #000;
 	-webkit-box-shadow: 0 0 2px 2px #000;
 	border-shadow: 0 0 2px 2px #000;
+}
+
+/* Badges
+======================================================== */
+
+.badges-empty {
+	text-align: center;
+}
+
+.badges-empty img {
+	margin: 0 0 10px; 
+}
+
+.badges-empty span {
+	display: block;
+	font-size: 1.2em;
 }
 
 /* Header - Drop Menu's

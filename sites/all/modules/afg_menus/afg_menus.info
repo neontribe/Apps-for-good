@@ -1,0 +1,8 @@
+core = "6.x"
+dependencies[] = "features"
+dependencies[] = "menu"
+description = "Menu's and links"
+features[menu_custom][] = "menu-footer-links"
+features[menu_links][] = "admin:admin/build/menu-customize/menu-footer-links"
+name = "afg_menus"
+package = "Features"

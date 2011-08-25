@@ -1386,7 +1386,7 @@ function afg_groups_views_views_default_views() {
       ),
     ),
   ));
-  $handler->override_option('title', 'Application Directory');
+  $handler->override_option('title', 'Applications');
   $handler->override_option('empty', '');
   $handler->override_option('use_ajax', FALSE);
   $handler->override_option('items_per_page', 25);
@@ -1450,7 +1450,7 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('path', 'apps/all');
   $handler->override_option('menu', array(
     'type' => 'default tab',
-    'title' => 'Application Directory',
+    'title' => 'Applications',
     'description' => '',
     'weight' => '0',
     'name' => 'navigation',
@@ -2451,7 +2451,7 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('block_caching', -1);
   $translatables['groups_listing_app_team'] = array(
     t('About this App'),
-    t('Application Directory'),
+    t('Applications'),
     t('Archived applications'),
     t('Block: My applications (sidebar)'),
     t('Block: User applications'),

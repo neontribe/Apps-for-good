@@ -168,10 +168,13 @@ function badges_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'Badges');
-  $handler->override_option('empty', 'No Badges awarded');
-  $handler->override_option('empty_format', '5');
+  $handler->override_option('empty', '<img src="<?php print base_path() . path_to_theme(); ?>/images/afg/badges/none.png" alt="No badges awarded"><span>No badges have been awarded</span>');
+  $handler->override_option('empty_format', '6');
   $handler->override_option('items_per_page', 0);
   $handler = $view->new_display('block', 'Group Badges', 'block_1');
+  $handler->override_option('empty', '<div class="badges-empty">
+<img src="<?php print base_path() . path_to_theme(); ?>/images/afg/badges/none.png" alt="No badges awarded"><span>No badges have been awarded</span>
+</div>');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'User Badges', 'block_2');
@@ -241,15 +244,19 @@ function badges_views_default_views() {
       'validate_argument_php' => '',
     ),
   ));
-  $handler->override_option('empty', 'No badges awarded');
+  $handler->override_option('empty', '<div class="badges-empty">
+<img src="<?php print base_path() . path_to_theme(); ?>/images/afg/badges/none.png" alt="No badges awarded"><span>No badges have been awarded</span>
+</div>');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $translatables['badges'] = array(
+    t('<div class="badges-empty">
+<img src="<?php print base_path() . path_to_theme(); ?>/images/afg/badges/none.png" alt="No badges awarded"><span>No badges have been awarded</span>
+</div>'),
+    t('<img src="<?php print base_path() . path_to_theme(); ?>/images/afg/badges/none.png" alt="No badges awarded"><span>No badges have been awarded</span>'),
     t('Badges'),
     t('Defaults'),
     t('Group Badges'),
-    t('No Badges awarded'),
-    t('No badges awarded'),
     t('User Badges'),
   );
 
