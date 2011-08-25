@@ -838,6 +838,22 @@ margin: 0 0 70px;
 	border-shadow: 0 0 2px 2px #000;
 }
 
+/* Badges
+======================================================== */
+
+.badges-empty {
+	text-align: center;
+}
+
+.badges-empty img {
+	margin: 0 0 10px; 
+}
+
+.badges-empty span {
+	display: block;
+	font-size: 1.2em;
+}
+
 /* Header - Drop Menu's
 ======================================================== */
 
