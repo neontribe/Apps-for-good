@@ -883,7 +883,47 @@ margin: 0 0 70px;
 /* Header - Drop Menu's
 ======================================================== */
 
-#block-atrium-account,
+#block-atrium-account .block-title {
+	background: none !important;
+}
+
+#block-atrium-account h3,
+#block-atrium-account a {
+	color: #000;
+	font-size: 0.6em;
+	font-family: "Open Sans", "Lucida", "Lucida Grande", "Trebuchet MS", Tahoma,Verdana, sans-serif;
+}
+
+#block-atrium-account .pane-left li {
+	font-size: 0.6em;
+	display: block;
+	width: 100%;
+}
+
+#block-atrium-account .pane-left h3 {
+	cursor: pointer;
+	font-size: 1em;
+}
+
+#block-atrium-account .pane-left,
+#block-atrium-account .pane-right {
+	float: left;
+}
+
+#block-atrium-account .pane-right li {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	line-height: 1;
+	font-size: 0.6em;
+}
+
+
+
+
+
+
+
 #block-atrium-user_links .block-title { display: none; }
 
 #block-atrium-user_links {

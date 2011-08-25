@@ -23,9 +23,9 @@ function is_front() {
  * Preprocessor for theme('page').
  */
 function afg_preprocess_page(&$vars) {
-dpm($_GET['q'], 'Q');
-dpm(drupal_is_front_page(), 'drupal_is_front_page()');
-dpm(drupal_get_path_alias($_GET["q"]), 'drupal_get_path_alias($_GET["q"])');
+//dpm($_GET['q'], 'Q');
+//dpm(drupal_is_front_page(), 'drupal_is_front_page()');
+//dpm(drupal_get_path_alias($_GET["q"]), 'drupal_get_path_alias($_GET["q"])');
 
 
   // Force using the correct template file
