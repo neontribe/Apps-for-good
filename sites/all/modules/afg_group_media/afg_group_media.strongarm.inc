@@ -309,6 +309,7 @@ function afg_group_media_strongarm() {
     'book' => '10',
     'attachments' => '30',
     'og_nodeapi' => '0',
+    'locations' => '0',
   );
 
   $export['content_extra_weights_request_for_help'] = $strongarm;
