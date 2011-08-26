@@ -4688,7 +4688,7 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('title', '');
-  $handler->override_option('header', '<a href=\'centres/all\'><?php echo afg_content_count(\'group_centre_school\'); ?> Schools</a>');
+  $handler->override_option('header', '<a href=\'centres/all\'><?php echo afg_content_count(\'group_centre_school\'); ?> Centres</a>');
   $handler->override_option('header_format', '6');
   $handler->override_option('header_empty', 0);
   $handler->override_option('style_plugin', 'gmap');
@@ -4808,7 +4808,7 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $translatables['groups_listing_centre_school'] = array(
-    t('<a href=\'centres/all\'><?php echo afg_content_count(\'group_centre_school\'); ?> Schools</a>'),
+    t('<a href=\'centres/all\'><?php echo afg_content_count(\'group_centre_school\'); ?> Centres</a>'),
     t('About Centre'),
     t('About this Centre'),
     t('All Centres Map'),

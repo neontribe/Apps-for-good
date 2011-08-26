@@ -8,10 +8,22 @@
   </head>
   <body <?php print drupal_attributes($attr) ?>>
   
+  <?php if ($help): ?>
+  <div id='page-help'><div class='limiter clear-block'>
+    <?php if ($help_toggler) print $help_toggler ?>
+    <?php if ($help) print $help ?>
+  </div></div>
+  <?php endif; ?>
+  
+  <?php print $skipnav ?>
+  
   <div id='top'>
     <div class='limiter clear-block'>
     
-      <div id='header'>
+      <!--<?php if ($help_toggler) print $help_toggler ?>-->
+    
+      <div id='header' class='dropdown-blocks toggle-blocks clear-block'>
+      
 		  <?php if ($logo): ?>
             <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
               <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
@@ -22,9 +34,17 @@
             <?php print theme('links', $header_links); ?>
           </div>
           
-          <?php print $header ?>
+          <div id='branding'><div class='limiter clear-block'>
+			<?php if ($user_links) print theme('links', $user_links) ?>
+          </div>
+          
+          <div id='header' class='dropdown-blocks toggle-blocks clear-block'>
+			<?php print $header ?>
+          </div>
+          
       </div>   
       <div id='page-title' class='limiter clear-block'>
+      
         <!--<?php if ($help_toggler) print $help_toggler ?>-->
         <h1 class='page-title <?php print $page_icon_class ?>'>
           <?php if ($title) print $title ?>
@@ -32,12 +52,13 @@
         <span class='header-description'>
           <?php print $header_desc; ?>
         </span>
+        
       </div>
 	  
-		<?php if ($space_tools): ?>
-			  <div id='space-tools'><div class='dropdown-blocks toggle-blocks clear-block'><?php print $space_tools ?></div></div>
-		<?php endif; ?>
-		<?php if ($page_tools): ?><div class='dropdown-blocks toggle-blocks clear-block'><?php print $page_tools ?></div><?php endif; ?>
+	  <?php if ($space_tools): ?>
+	    <div id='space-tools'><div class='dropdown-blocks toggle-blocks clear-block'><?php print $space_tools ?></div></div>
+	  <?php endif; ?>
+	  <?php if ($page_tools): ?><div class='dropdown-blocks toggle-blocks clear-block'><?php print $page_tools ?></div><?php endif; ?>
 		 
       <div id='primary-links'>
         <?php if (isset($primary_links)) print theme('links', $primary_links) ?>
