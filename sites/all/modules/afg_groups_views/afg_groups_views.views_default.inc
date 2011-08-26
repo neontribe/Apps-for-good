@@ -644,31 +644,23 @@ function afg_groups_views_views_default_views() {
       'field' => 'type',
       'relationship' => 'none',
     ),
-    'tid' => array(
-      'operator' => 'or',
-      'value' => array(
-        '11' => '11',
-      ),
+    'name' => array(
+      'operator' => '=',
+      'value' => 'Idea',
       'group' => '0',
       'exposed' => FALSE,
       'expose' => array(
         'operator' => FALSE,
         'label' => '',
       ),
-      'type' => 'select',
-      'limit' => TRUE,
-      'limit_by' => 'vid',
-      'vid' => '7',
-      'module' => 'features_app_status',
-      'id' => 'tid',
-      'table' => 'term_node',
-      'field' => 'tid',
-      'hierarchy' => 0,
+      'case' => 1,
+      'id' => 'name',
+      'table' => 'term_data',
+      'field' => 'name',
       'override' => array(
         'button' => 'Use default',
       ),
       'relationship' => 'none',
-      'reduce_duplicates' => 0,
     ),
   ));
   $handler->override_option('title', 'Ideas');
@@ -692,31 +684,23 @@ function afg_groups_views_views_default_views() {
       'field' => 'type',
       'relationship' => 'none',
     ),
-    'tid' => array(
-      'operator' => 'or',
-      'value' => array(
-        '12' => '12',
-      ),
+    'name' => array(
+      'operator' => '=',
+      'value' => 'Prototype',
       'group' => '0',
       'exposed' => FALSE,
       'expose' => array(
         'operator' => FALSE,
         'label' => '',
       ),
-      'type' => 'select',
-      'limit' => TRUE,
-      'limit_by' => 'vid',
-      'vid' => '7',
-      'module' => 'features_app_status',
-      'id' => 'tid',
-      'table' => 'term_node',
-      'field' => 'tid',
-      'hierarchy' => 0,
+      'case' => 1,
+      'id' => 'name',
+      'table' => 'term_data',
+      'field' => 'name',
       'override' => array(
         'button' => 'Use default',
       ),
       'relationship' => 'none',
-      'reduce_duplicates' => 0,
     ),
   ));
   $handler->override_option('title', 'Prototypes');
@@ -740,10 +724,34 @@ function afg_groups_views_views_default_views() {
       'field' => 'type',
       'relationship' => 'none',
     ),
-    'tid' => array(
-      'operator' => 'or',
+    'name' => array(
+      'operator' => '=',
+      'value' => 'Built',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'case' => 1,
+      'id' => 'name',
+      'table' => 'term_data',
+      'field' => 'name',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+  ));
+  $handler->override_option('title', 'Builds');
+  $handler->override_option('block_description', '');
+  $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'All', 'block_4');
+  $handler->override_option('filters', array(
+    'type' => array(
+      'operator' => 'in',
       'value' => array(
-        '13' => '13',
+        'group_app_team' => 'group_app_team',
       ),
       'group' => '0',
       'exposed' => FALSE,
@@ -751,26 +759,17 @@ function afg_groups_views_views_default_views() {
         'operator' => FALSE,
         'label' => '',
       ),
-      'type' => 'select',
-      'limit' => TRUE,
-      'limit_by' => 'vid',
-      'vid' => '7',
-      'module' => 'features_app_status',
-      'id' => 'tid',
-      'table' => 'term_node',
-      'field' => 'tid',
-      'hierarchy' => 0,
-      'override' => array(
-        'button' => 'Use default',
-      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
       'relationship' => 'none',
-      'reduce_duplicates' => 0,
     ),
   ));
-  $handler->override_option('title', 'Builds');
+  $handler->override_option('title', 'All');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $translatables['afg_app_directory'] = array(
+    t('All'),
     t('Builds'),
     t('Defaults'),
     t('Ideas'),
