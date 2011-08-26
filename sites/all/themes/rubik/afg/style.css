@@ -217,7 +217,7 @@ em {
 }
 
 #header-links .header-menu-apps { background-color: #42B3FF; }
-#header-links .header-menu-schools { background-color: #F9A35A; }
+#header-links .header-menu-centres { background-color: #F9A35A; }
 #header-links .header-menu-supporters { background-color: #A842E3; }
 #header-links .header-menu-about { background-color: #9DBF68; }
 
@@ -1084,7 +1084,7 @@ margin: 0 0 70px;
 #stats .item-results { color: #165327; }
 
 #stats .item-supporters a { background: #0191D7; }
-#stats .item-schools a { background: #CE8C00; }
+#stats .item-centres a { background: #CE8C00; }
 #stats .item-results a { background: #165327; }
 
 

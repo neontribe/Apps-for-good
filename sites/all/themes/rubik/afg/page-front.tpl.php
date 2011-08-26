@@ -38,7 +38,7 @@
         </div>
         
         <div class="item">
-          <div class="item-content item-schools">
+          <div class="item-content item-centres">
             <?php
 			
 			// SHOW MAP
