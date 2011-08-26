@@ -883,8 +883,14 @@ margin: 0 0 70px;
 /* Header - Drop Menu's
 ======================================================== */
 
+#block-atrium-account {
+	background: none !important;
+}
+
 #block-atrium-account .block-title {
 	background: none !important;
+	position: absolute;
+	z-index: 20;
 }
 
 #block-atrium-account h3,
@@ -894,8 +900,19 @@ margin: 0 0 70px;
 	font-family: "Open Sans", "Lucida", "Lucida Grande", "Trebuchet MS", Tahoma,Verdana, sans-serif;
 }
 
+#block-atrium-account .pane-left,
+#block-atrium-account .pane-right {
+	float: left;
+	width: 50%;
+}
+
 #block-atrium-account .pane-left li {
 	font-size: 0.6em;
+	display: block;
+	width: 100%;
+}
+
+#block-atrium-account .pane-right li {
 	display: block;
 	width: 100%;
 }
@@ -911,11 +928,6 @@ margin: 0 0 70px;
 #block-atrium-account .pane-left h3,
 #block-atrium-account .pane-right h3 {
 	font-size: 0.4em;
-}
-
-#block-atrium-account .pane-left,
-#block-atrium-account .pane-right {
-	float: left;
 }
 
 #block-atrium-account .pane-right li {
@@ -993,40 +1005,6 @@ margin: 0 0 70px;
 
 
 
-
-
-
-
-
-
-
-
-/*
-	HOMEPAGE - SUPPORTERS
-
-
-#block-views-Counters-block_2  {
-	width: 30%;
-}
-
-#block-views-Counters-block_2 .block-content {
-	height: 250px;
-	background: #FFF;
-	border: 1px solid #222;
-}
-
-#block-views-Counters-block_2 .view-header {
-	font-size: 2.1em;
-	font-weight: bold;
-}
-
-#block-views-Counters-block_2 .item-list,
-#block-views-Counters-block_2 .block-shadow {
-	display: none;
-}
-
-
-*/
 
 
 

@@ -34,13 +34,13 @@
             <?php print theme('links', $header_links); ?>
           </div>
           
-          <div id='branding'><div class='limiter clear-block'>
-			<?php if ($user_links) print theme('links', $user_links) ?>
-          </div>
+          <?php print $header ?>
           
-          <div id='header' class='dropdown-blocks toggle-blocks clear-block'>
-			<?php print $header ?>
+          <!--
+          <div id='branding'><div class='limiter clear-block'>
+			<?php //if ($user_links) print theme('links', $user_links) ?>
           </div>
+          -->
           
       </div>   
       <div id='page-title' class='limiter clear-block'>
@@ -59,11 +59,12 @@
 	    <div id='space-tools'><div class='dropdown-blocks toggle-blocks clear-block'><?php print $space_tools ?></div></div>
 	  <?php endif; ?>
 	  <?php if ($page_tools): ?><div class='dropdown-blocks toggle-blocks clear-block'><?php print $page_tools ?></div><?php endif; ?>
-		 
+
       <div id='primary-links'>
         <?php if (isset($primary_links)) print theme('links', $primary_links) ?>
 		<?php if (isset($secondary_links)) print theme('links', $secondary_links, array('class' => 'links secondary-links')) ?>
       </div>
+      
       
     </div>
   </div>
