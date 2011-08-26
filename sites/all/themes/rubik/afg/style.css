@@ -39,7 +39,6 @@
 	color: #666 !important;
 	text-indent: 10px;
 	padding: 8px 0;
-	
 	display: block !important;
 }
 
@@ -478,6 +477,30 @@ em {
 #content-right .block-content ul li a:link { color: #2D2D2D; }
 #content-right .block-content ul li:hover a { color: #777; }
 
+#content-right .views-field-body {
+	margin-bottom: 15px;
+}
+
+#content-right .views-field-mail a {
+	float: right;
+	padding: 8px 11px;
+	color: #FFF !important;
+	text-transform: uppercase;
+	font-size: 0.9em;
+	text-shadow: -1px 1px 1px 2px #555;
+	-moz-box-shadow: 0 2px 1px 2px #444;
+	-webkit-box-shadow: 0 2px 1px 2px #444;
+	box-shadow: 0 2px 1px #444;
+	background: #F7A35A url('images/afg/gradient.png');
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#content-right .views-field-mail a:after {
+	content: " \2192";
+}
+
 /* Administration Menus
 ======================================================== */
 
@@ -619,15 +642,6 @@ em {
 	
 /* Groups Listing Centre School
 ======================================================== */
-
-.view-groups-listing-centre-school .views-field-mail a {
-	float: left;
-	padding: 5px;
-	background: #EAEAEA;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-}
 
 .view-groups-listing-centre-school .views-field-mail a:hover {
 	color: #FFF !important;
