@@ -80,9 +80,9 @@ function cdi_blog_strongarm() {
     'options' => '25',
     'comment_settings' => '30',
     'menu' => '-2',
+    'taxonomy' => '-3',
     'book' => '10',
     'attachments' => '30',
-    'og_nodeapi' => '0',
   );
 
   $export['content_extra_weights_cdi_blog'] = $strongarm;
