@@ -41,6 +41,8 @@
           <div class="item-content item-schools">
             <?php
 			
+			// SHOW MAP
+			
 			//$view = views_get_view('groups_listing_centre_school');
  		    //list($a) = $view->execute_display('block_8');
 			//echo 'bye'; print $a; echo 'hi';
@@ -52,7 +54,7 @@
 			*/
 			
 			?>
-            <span><em><?php print afg_content_count('group_centre_school'); ?></em>schools</span>
+            <span><em><?php print afg_content_count('group_centre_school'); ?></em>centres</span>
             <a href="#" title="Find out more">Find out more</a>
           </div>
         </div>
