@@ -25,7 +25,7 @@
       <div id='header' class='dropdown-blocks toggle-blocks clear-block'>
       
 		  <?php if ($logo): ?>
-            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+            <a href="http://apps4good.neontribe.org/" title="<?php print t('Apps for Good Home'); ?>">
               <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
             </a>
           <?php endif; ?> 
