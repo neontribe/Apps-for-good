@@ -902,7 +902,15 @@ margin: 0 0 70px;
 
 #block-atrium-account .pane-left h3 {
 	cursor: pointer;
-	font-size: 1em;
+}
+
+#block-atrium-account .pane-right h3 {
+	display: none;
+}
+
+#block-atrium-account .pane-left h3,
+#block-atrium-account .pane-right h3 {
+	font-size: 0.4em;
 }
 
 #block-atrium-account .pane-left,
@@ -917,6 +925,13 @@ margin: 0 0 70px;
 	line-height: 1;
 	font-size: 0.6em;
 }
+
+#block-atrium-account .pane-left ul,
+#block-atrium-account .pane-right ul {
+	display: none;
+}
+
+
 
 
 
@@ -1087,7 +1102,7 @@ margin: 0 0 70px;
 }
 
 #stats .item-supporters { color: #0191D7; }
-#stats .item-schools { color: #CE8C00; }
+#stats .item-centres { color: #CE8C00; }
 #stats .item-results { color: #165327; }
 
 #stats .item-supporters a { background: #0191D7; }
