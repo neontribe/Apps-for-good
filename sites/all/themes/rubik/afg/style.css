@@ -18,6 +18,9 @@
 /* Emulate text field display - updates feed */
 
 .views-field-comments-link {
+	float: left;
+	display: block;
+	width: 100%;
 	border: 2px solid #EAEAEA;
 	padding: 0 !important;
 	background: #FFF;
@@ -39,7 +42,6 @@
 	color: #666 !important;
 	text-indent: 10px;
 	padding: 8px 0;
-	
 	display: block !important;
 }
 
@@ -118,6 +120,16 @@ textarea:focus {
 em {
 	font-weight: bold;
 	font-style: normal;
+}
+
+/* Clearfixes */
+
+#content-left .view-updates li:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
 }
 
 /* Generic Classes
@@ -478,6 +490,30 @@ em {
 #content-right .block-content ul li a:link { color: #2D2D2D; }
 #content-right .block-content ul li:hover a { color: #777; }
 
+#content-right .views-field-body {
+	margin-bottom: 15px;
+}
+
+#content-right .views-field-mail a {
+	float: right;
+	padding: 8px 11px;
+	color: #FFF !important;
+	text-transform: uppercase;
+	font-size: 0.9em;
+	text-shadow: -1px 1px 1px 2px #555;
+	-moz-box-shadow: 0 2px 1px 2px #444;
+	-webkit-box-shadow: 0 2px 1px 2px #444;
+	box-shadow: 0 2px 1px #444;
+	background: #F7A35A url('images/afg/gradient.png');
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#content-right .views-field-mail a:after {
+	content: " \2192";
+}
+
 /* Administration Menus
 ======================================================== */
 
@@ -573,6 +609,7 @@ em {
 	-webkit-box-shadow: 0 0 6px 6px #0083DA;
 	box-shadow: 0 0 6px 6px #0083DA;
 	margin: 0 20px 0 0;
+	overflow: hidden;
 }
 
 #content-left .view-updates img {
@@ -592,8 +629,11 @@ em {
 
 #content-left .activity-updates span.views-field-atrium-activity-timestamp,
 #content-left .activity-updates span.views-field-comment-count {
-	display: block;
 	float: left;
+}
+
+#content-left .activity-updates .views-field-fb-social-like {
+	clear: both;
 }
 
 #content-left .activity-updates span.views-field-atrium-activity-timestamp {
@@ -619,15 +659,6 @@ em {
 	
 /* Groups Listing Centre School
 ======================================================== */
-
-.view-groups-listing-centre-school .views-field-mail a {
-	float: left;
-	padding: 5px;
-	background: #EAEAEA;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-}
 
 .view-groups-listing-centre-school .views-field-mail a:hover {
 	color: #FFF !important;
@@ -844,16 +875,18 @@ margin: 0 0 70px;
  * using basic-afg quicktabs theme.
 ======================================================== */
 
-#content-left .view-updates li {
+#content-left .view-updates {
+	color: #FFF;
+}
+
+#content-left .view-updates .pager {
 	background: #1B9BDA !important;
 }
 
-#content-left .view-updates span.arrow {
-	position: absolute;
-	margin: 4px 0 0 20px;
-	height: 20px;
-	width: 37px;
-	background: url('images/afg/blue-arrow.png') bottom left no-repeat;
+#content-left .view-updates li {
+	background: #1B9BDA !important;
+	min-height: 60px;
+	padding: 10px;
 }
 
 #content-left .view-updates li a {
@@ -863,6 +896,7 @@ margin: 0 0 70px;
 #content-left .view-updates .views-field-title {
 	font-weight: normal;
 	text-transform: capitalize !important;
+	font-size: 1.5em;
 }
 
 #content-left .view-updates .views-field-feature {
@@ -880,16 +914,15 @@ margin: 0 0 70px;
 
 #content-left .view-updates .views-field-field-icon-fid {
 	float: left;
-	/*background: #FFF;*/
+	margin: 0 10px 0 0;
 }
 
-#content-left .view-updates li div:after { content: '.'; height: 0; overflow: hidden; clear: both; }
-
 #content-left .view-updates .views-field-field-icon-fid img {
+	background: #FFF;
 	border: 6px solid #FFF !important;
-	-moz-box-shadow: 0 0 2px 2px #000;
-	-webkit-box-shadow: 0 0 2px 2px #000;
-	border-shadow: 0 0 2px 2px #000;
+	-moz-box-shadow: 0 0 3px 2px #0B7ECF;
+	-webkit-box-shadow: 0 0 3px 2px #0B7ECF;
+	border-shadow: 0 0 3px 2px #0B7ECF;
 }
 
 /* Badges
