@@ -15,6 +15,34 @@
 	display: none;
 }
 
+/* Emulate text field display - updates feed */
+
+.views-field-comments-link {
+	border: 2px solid #EAEAEA;
+	padding: 0 !important;
+	background: #FFF;
+	height: 34px;
+}
+
+.views-field-comments-link ul,
+.views-field-comments-link li {
+	background: #FFF !important;
+	padding: 0 !important;
+}
+
+.views-field-comments-link ul {
+	width: 100% !important;
+}
+
+.views-field-comments-link li a {
+	background: #FFF url('images/afg/say-button.jpg') right no-repeat !important;
+	color: #666 !important;
+	text-indent: 10px;
+	padding: 8px 0;
+	
+	display: block !important;
+}
+
 
 /* END TEMPORARY -------------------------- */
 
