@@ -1,6 +1,7 @@
 <?php include('header.inc'); ?>
 
 <div id='page' class='clear-block limiter page-content'>
+
   <?php if ($show_messages && $messages): ?>
     <div id='console' class='clear-block'><?php print $messages; ?></div>
   <?php endif; ?>
