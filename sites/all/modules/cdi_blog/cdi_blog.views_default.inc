@@ -407,7 +407,7 @@ function cdi_blog_views_default_views() {
     'tid' => array(
       'operator' => 'or',
       'value' => array(
-        '16' => '16',
+        '15' => '15',
       ),
       'group' => '0',
       'exposed' => FALSE,
