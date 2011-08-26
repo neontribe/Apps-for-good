@@ -15,6 +15,34 @@
 	display: none;
 }
 
+/* Emulate text field display - updates feed */
+
+.views-field-comments-link {
+	border: 2px solid #EAEAEA;
+	padding: 0 !important;
+	background: #FFF;
+	height: 34px;
+}
+
+.views-field-comments-link ul,
+.views-field-comments-link li {
+	background: #FFF !important;
+	padding: 0 !important;
+}
+
+.views-field-comments-link ul {
+	width: 100% !important;
+}
+
+.views-field-comments-link li a {
+	background: #FFF url('images/afg/say-button.jpg') right no-repeat !important;
+	color: #666 !important;
+	text-indent: 10px;
+	padding: 8px 0;
+	
+	display: block !important;
+}
+
 
 /* END TEMPORARY -------------------------- */
 
@@ -217,7 +245,7 @@ em {
 }
 
 #header-links .header-menu-apps { background-color: #42B3FF; }
-#header-links .header-menu-schools { background-color: #F9A35A; }
+#header-links .header-menu-centres { background-color: #F9A35A; }
 #header-links .header-menu-supporters { background-color: #A842E3; }
 #header-links .header-menu-about { background-color: #9DBF68; }
 
@@ -883,8 +911,14 @@ margin: 0 0 70px;
 /* Header - Drop Menu's
 ======================================================== */
 
+#block-atrium-account {
+	background: none !important;
+}
+
 #block-atrium-account .block-title {
 	background: none !important;
+	position: absolute;
+	z-index: 20;
 }
 
 #block-atrium-account h3,
@@ -894,8 +928,19 @@ margin: 0 0 70px;
 	font-family: "Open Sans", "Lucida", "Lucida Grande", "Trebuchet MS", Tahoma,Verdana, sans-serif;
 }
 
+#block-atrium-account .pane-left,
+#block-atrium-account .pane-right {
+	float: left;
+	width: 50%;
+}
+
 #block-atrium-account .pane-left li {
 	font-size: 0.6em;
+	display: block;
+	width: 100%;
+}
+
+#block-atrium-account .pane-right li {
 	display: block;
 	width: 100%;
 }
@@ -911,11 +956,6 @@ margin: 0 0 70px;
 #block-atrium-account .pane-left h3,
 #block-atrium-account .pane-right h3 {
 	font-size: 0.4em;
-}
-
-#block-atrium-account .pane-left,
-#block-atrium-account .pane-right {
-	float: left;
 }
 
 #block-atrium-account .pane-right li {
@@ -998,40 +1038,6 @@ margin: 0 0 70px;
 
 
 
-
-
-
-/*
-	HOMEPAGE - SUPPORTERS
-
-
-#block-views-Counters-block_2  {
-	width: 30%;
-}
-
-#block-views-Counters-block_2 .block-content {
-	height: 250px;
-	background: #FFF;
-	border: 1px solid #222;
-}
-
-#block-views-Counters-block_2 .view-header {
-	font-size: 2.1em;
-	font-weight: bold;
-}
-
-#block-views-Counters-block_2 .item-list,
-#block-views-Counters-block_2 .block-shadow {
-	display: none;
-}
-
-
-*/
-
-
-
-
-
 #stats .item {
 	background: none;
 	border: 1px solid #222;
@@ -1106,7 +1112,7 @@ margin: 0 0 70px;
 #stats .item-results { color: #165327; }
 
 #stats .item-supporters a { background: #0191D7; }
-#stats .item-schools a { background: #CE8C00; }
+#stats .item-centres a { background: #CE8C00; }
 #stats .item-results a { background: #165327; }
 
 
