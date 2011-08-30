@@ -952,7 +952,8 @@ margin: 0 0 70px;
 #block-atrium-account .block-title {
 	background: none !important;
 	position: absolute;
-	z-index: 20;
+	right: 0;
+	z-index: 100;
 }
 
 #block-atrium-account h3,
@@ -960,6 +961,10 @@ margin: 0 0 70px;
 	color: #000;
 	font-size: 0.6em;
 	font-family: "Open Sans", "Lucida", "Lucida Grande", "Trebuchet MS", Tahoma,Verdana, sans-serif;
+}
+
+#block-atrium-account .pane-left h3 {
+	min-width: 90px;
 }
 
 #block-atrium-account .pane-left,
