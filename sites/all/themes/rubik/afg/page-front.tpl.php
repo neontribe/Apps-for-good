@@ -44,14 +44,8 @@
 			// SHOW MAP
 			
 			//$view = views_get_view('groups_listing_centre_school');
- 		    //list($a) = $view->execute_display('block_8');
-			//echo 'bye'; print $a; echo 'hi';
-			
-			/*
-			  $view = views_get_view('groups_listing_centre_school');
-			  $rendered = $view->execute_display('block_8');
-			  print $rendered['content'];
-			*/
+			//$rendered = $view->execute_display('block_8', $node->nid);
+			//print $rendered['content'];
 			
 			?>
             <span><em><?php print afg_content_count('group_centre_school'); ?></em>centres</span>
