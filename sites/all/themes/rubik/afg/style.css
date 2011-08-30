@@ -171,7 +171,7 @@ em {
 }
 
 #primary-links .links {
-	margin: 0 0 0 30px;
+	margin: 0 0 -10px 30px;
 }
 
 #primary-links .links li {
@@ -522,11 +522,12 @@ em {
 #block-atrium-create  .block-title,
 #block-atrium-admin_links .block-title { display: none; }
 
-#block-atrium-create ,
+#block-atrium-create,
 #block-atrium-admin_links {
 	clear: both;
 	padding: 0;
 	margin: 0;
+	font-size: 1.5em;
 }
 
 #block-atrium-admin_links { margin: 0 0 40px; }
@@ -957,6 +958,7 @@ margin: 0 0 70px;
 #block-atrium-account h3,
 #block-atrium-account a {
 	color: #000;
+	font-size: 0.6em;
 	font-family: "Open Sans", "Lucida", "Lucida Grande", "Trebuchet MS", Tahoma,Verdana, sans-serif;
 }
 
