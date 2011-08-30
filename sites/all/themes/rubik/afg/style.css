@@ -122,9 +122,11 @@ em {
 	font-style: normal;
 }
 
-/* Clearfixes */
+/* Clearing
+======================================================== */
 
-#content-left .view-updates li:after {
+#content-left .view-updates li:after,
+#content-left .view-afg-app-directory li:after {
     content: ".";
     display: block;
     height: 0;
@@ -894,7 +896,8 @@ margin: 0 0 70px;
 	color: #FFF;
 }
 
-#content-left .view-updates .views-field-title {
+#content-left .view-updates .views-field-title,
+#content-left .view-afg-app-directory  .views-field-title {
 	font-weight: normal;
 	text-transform: capitalize !important;
 	font-size: 1.5em;
@@ -906,7 +909,8 @@ margin: 0 0 70px;
 	text-transform: uppercase;
 }
 
-#content-left .view-updates .views-field-atrium-activity-timestamp {
+#content-left .view-updates .views-field-atrium-activity-timestamp,
+#content-left .view-afg-app-directory  .views-field-changed {
 	float: right;
 	color: #61C7F7;
 	color: rgba(255, 255, 255, .5);
@@ -914,13 +918,15 @@ margin: 0 0 70px;
 }
 
 #content-left .view-updates .views-field-field-icon-fid,
-#content-left .view-updates .views-field-field-logo-fid {
+#content-left .view-afg-app-directory .views-field-field-logo-fid {
 	float: left;
 	margin: 0 10px 0 0;
 }
 
 #content-left .view-updates .views-field-field-icon-fid img,
-#content-left .view-updates .views-field-field-logo-fid img {
+#content-left .view-afg-app-directory .views-field-field-logo-fid  img {
+	height: auto;
+	max-width: 50px;
 	background: #FFF;
 	border: 6px solid #FFF !important;
 	-moz-box-shadow: 0 0 3px 2px #0B7ECF;
