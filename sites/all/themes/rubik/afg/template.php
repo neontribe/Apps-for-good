@@ -1,36 +1,13 @@
 <?php
 
 /**
- * is_front()
- */
-function is_front() {
-/*
-  $is_frontpage = TRUE;
-  $frontpage_fragments = explode('/', variable_get('site_frontpage_path', 'frontpage'));
-  
-  for($i = 0; $i < count($frontpage_fragments); $i++) {
-	  if(arg($i) != $frontpage_fragments[$i]) {
-		  $is_frontpage = FALSE;
-		  break;
-	  }
-  }
-  
-  return $is_frontpage;
-*/
-}
-
-/**
  * Preprocessor for theme('page').
  */
 function afg_preprocess_page(&$vars) {
-//dpm($_GET['q'], 'Q');
-//dpm(drupal_is_front_page(), 'drupal_is_front_page()');
-//dpm(drupal_get_path_alias($_GET["q"]), 'drupal_get_path_alias($_GET["q"])');
-
 
   // Force using the correct template file
   
-  //print 'files= ' .dpm($vars['template_files']);
+  //dpm($vars['template_files']);
   
   if(count($vars['template_files']) > 1) {
     foreach($vars['template_files'] as $key => $template) {
@@ -39,14 +16,14 @@ function afg_preprocess_page(&$vars) {
 	    break;
 	  }
     }
-	
   }
- //print 'files= ' .dpm($vars['template_files']);
   
   // If frontpage use page front template
   if(drupal_is_front_page()) {
 	  $vars['template_files'] = array('page-front');
   }  
+  
+  //dpm($vars['template_files']);
 
   // Automatically adjust layout for page with right sidebar content if no
   // explicit layout has been set.
@@ -125,14 +102,6 @@ function afg_preprocess_box(&$vars, $hook) {
 // Moved to module afg_theme_updates to allow theme switching to work
 
 /* User links block */
-
-/*
-function _atrium_block_user_links() {
-  if ($links = atrium_user_links()) {
-    return array('subject' => t('Membership'), 'content' => theme('links', $links));
-  }
-}
-*/
 
 function afg_block_user_links() {
   if ($links = atrium_user_links()) {

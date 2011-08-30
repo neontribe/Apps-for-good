@@ -4,7 +4,6 @@ core = "6.x"
 atrium = "1.x"
 engine = "phptemplate"
 base theme = "ginkgo"
-
 stylesheets[screen][] = "appsforgood.css"
 
 regions[left] = "Left sidebar"

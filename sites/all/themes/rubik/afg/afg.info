@@ -6,7 +6,7 @@ core = "6.x"
 engine = "phptemplate"
 
 stylesheets[screen][] = "style.css"
-styles[] = "videojs.css"
+; styles[] = "videojs.css"
 
 scripts[] = "afg.js"
 
@@ -23,12 +23,12 @@ regions[palette] = "Palette"
 features[] = ""
 
 ; Designkit
-designkit[color][background][title] = "Background"
-designkit[color][background][description] = "Color for headers, other fills."
-designkit[color][background][default] = "#53BA47"
-designkit[image][logo][title] = "Logo"
-designkit[image][logo][description] = "Header logo."
-designkit[image][logo][imagecache] = "imagecache_scale:300x40"
+; designkit[color][background][title] = "Background"
+; designkit[color][background][description] = "Color for headers, other fills."
+; designkit[color][background][default] = "#53BA47"
+; designkit[image][logo][title] = "Logo"
+; designkit[image][logo][description] = "Header logo."
+; designkit[image][logo][imagecache] = "imagecache_scale:300x40"
 
 spaces_design_site = "#53BA47"
 spaces_design_og = "#53BA47"
