@@ -28,6 +28,7 @@
       
       <!-- [begin] Stats -->
       
+	  <!--
       <div id="stats">
       
       	<div class="item first">
@@ -62,6 +63,7 @@
         
       </div>
       <div style="clear: both;"></div>
+	  -->
       
       <!-- [end] Stats -->
       

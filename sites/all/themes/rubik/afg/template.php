@@ -104,6 +104,7 @@ function afg_preprocess_box(&$vars, $hook) {
 /* User links block */
 
 function afg_block_user_links() {
+	
   if ($links = atrium_user_links()) {
 	$links['subscribe']['title'] = t('Follow');
     return array('subject' => t('Membership'),
