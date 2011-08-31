@@ -179,7 +179,7 @@ em {
 }
 
 #primary-links .links {
-	margin: 0 0 -10px 30px;
+	margin: 0 0 0 30px;
 }
 
 #primary-links .links li {
@@ -526,18 +526,38 @@ em {
 /* Administration Menus
 ======================================================== */
 
-#block-atrium-search,
+#block-atrium-search {
+	display: none;
+}
+
+/* BLOCK CREATE */
 #block-atrium-create .block-title,
 #block-atrium-admin_links .block-title {
-	display: none;
+	color: #FFF;
 }
 
 #block-atrium-create,
 #block-atrium-admin_links {
-	clear: both;
-	padding: 0;
-	margin: 0;
+	float: right;
+	text-align: right;
 }
+
+#block-atrium-create h2,
+#block-atrium-admin_links h2 {
+	color: #FFF;
+	font-weight: bold;
+	font-size: 0.3em !important;
+	text-transform: uppercase;
+	border-bottom: 2px solid #CCC;
+	font-family: "Open Sans", "Lucida", "Lucida Grande", "Trebuchet MS", Tahoma,Verdana, sans-serif;
+}
+
+#block-atrium-create h2:hover,
+#block-atrium-admin_links h2:hover {
+	border-bottom-color: #FFF;
+}
+/* END */
+
 
 #block-atrium-admin_links {
 	margin: 0 0 40px;
@@ -1045,7 +1065,7 @@ body #header-top .account-menu-active a {
 
 #block-atrium-account .pane-left h3,
 #block-atrium-account .pane-right h3 {
-	cursor: pointer;
+	
 	color: #FFF !important;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -1055,6 +1075,8 @@ body #header-top .account-menu-active a {
 #block-atrium-account .pane-right h3 {
 	display: none;
 }
+
+
 
 
 

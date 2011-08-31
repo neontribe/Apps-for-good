@@ -4,8 +4,12 @@ function block_rewrite_preprocess_block(&$vars, $hook) {
   $max_len = 30;
   if ($hook == 'block') {
     if(strlen($vars['block']->subject) > 0) {
-		$append = (strlen($vars['block']->subject) > $max_len) ? '...' : '';
-		$vars['block']->subject = '<h2>' . substr($vars['block']->subject, 0, $max_len) . $append . '</h2>';
+		
+		// Trim and remove any unnecessary prepended tags
+		$title = trim(strip_tags($vars['block']->subject));
+		
+		$append = (strlen($title) > $max_len) ? '...' : '';
+		$vars['block']->subject = '<h2>' . substr($title, 0, $max_len) . $append . '</h2>';
 	}
   }
 }
