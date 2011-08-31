@@ -4505,7 +4505,7 @@ function afg_groups_views_views_default_views() {
       'label' => '',
       'alter' => array(
         'alter_text' => 1,
-        'text' => '<a href=\'[mail]\'>Contact Centre</a>',
+        'text' => '<a href=\'mailto:[mail]\'>Contact Centre</a>',
         'make_link' => 0,
         'path' => '',
         'link_class' => '',
@@ -4524,7 +4524,7 @@ function afg_groups_views_views_default_views() {
       'empty' => '',
       'hide_empty' => 1,
       'empty_zero' => 0,
-      'link_to_user' => 'mailto',
+      'link_to_user' => '0',
       'exclude' => 0,
       'id' => 'mail',
       'table' => 'users',

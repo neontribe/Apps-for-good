@@ -531,11 +531,6 @@ em {
 }
 
 /* BLOCK CREATE */
-#block-atrium-create .block-title,
-#block-atrium-admin_links .block-title {
-	color: #FFF;
-}
-
 #block-atrium-create,
 #block-atrium-admin_links {
 	float: right;
@@ -593,39 +588,10 @@ em {
 /* Centre Links Block
 ======================================================== */
 	
-#block-menu-menu-centre-directory-links {
-	margin: 0 0 40px;
-}
 
-#block-menu-menu-centre-directory-links .block-content {
-	margin: 15px 0 0;
-	padding: 0;
-	background: none;
-}
 
-#block-menu-menu-centre-directory-links .block-shadow {
-	display: none;
-}
 
-#block-menu-menu-centre-directory-links ul li {
-	float: left;
-	min-height: 106px;
-	width: 171px;
-	background: #5B5B5B;
-	border: 0 !important;
-	margin: 0 25px 5px 0;
-}
 
-#block-menu-menu-centre-directory-links ul li:last-child {
-	margin-right: 0;
-}
-
-#block-menu-menu-centre-directory-links ul li a:link,
-#block-menu-menu-centre-directory-links ul li a:visited	{
-	color: #FFF;
-	font-size: 1.4em;
-	line-height: 1.2;
-}
 
 /* Updates Block
 ======================================================== */
