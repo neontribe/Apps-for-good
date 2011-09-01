@@ -23,6 +23,14 @@ $(document).ready(function(){
 		}).css('cursor', 'pointer'); // Anchor affect on header element
 	});
 	
+	// CDI Features Carousel
+	var tabs = $('#block-quicktabs-cdi_features .quicktabs_tabs').children('li')
+	
+	for (var i = 0; i < tabs.length; i++){
+		var title = $('#block-quicktabs-cdi_features .quicktabs_tabpage').eq(i).find('.views-field-title .field-content a').text();
+		$('#block-quicktabs-cdi_features .quicktabs_tabs li a').eq(i).text( title );
+	}
+	
 });
 
 
