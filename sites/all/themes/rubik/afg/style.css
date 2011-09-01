@@ -515,7 +515,7 @@ background:#fff;
 }
 
 #content-right .block-content ul li a:link { color: #2D2D2D; }
-#content-right .block-content ul li:hover a { color: #777; }
+#content-right .block-content ul li a:hover { color: #777; }
 
 #content-right .views-field-body {
 	margin-bottom: 15px;
@@ -539,6 +539,12 @@ background:#fff;
 
 #content-right .views-field-mail a:after {
 	content: " \2192";
+}
+
+.views-field-created {
+	font-size: 0.8em;
+	text-transform: uppercase;
+	color: #0099FF;
 }
 
 /* Administration Menus

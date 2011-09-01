@@ -7,14 +7,7 @@
     <title><?php print $head_title ?></title>
   </head>
   <body <?php print drupal_attributes($attr) ?>>
-  
-  <?php if ($help): ?>
-  <div id='page-help'><div class='limiter clear-block'>
-    <?php //if ($help_toggler) print $help_toggler ?>
-    <?php //if ($help) print $help ?>
-  </div></div>
-  <?php endif; ?>
-  
+
   <?php //print $skipnav ?>
   
   <div id='top'>
@@ -23,11 +16,18 @@
 	  <?php //if ($help_toggler) print $help_toggler ?>
     
       <div id="header" class='dropdown-blocks toggle-blocks clear-block'>
-      
+
 		  <?php if ($logo): ?>
             <a href="<?php print base_path(); ?>" title="<?php print t('Apps for Good Home'); ?>">
               <img src="<?php print $logo ?>" alt="<?php print t('Home'); ?>" />
             </a>
+          <?php endif; ?>
+          
+          <?php if ($help): ?>
+          <div id='page-help'><div class='limiter clear-block'>
+            <?php //if ($help_toggler) print $help_toggler ?>
+            <?php //if ($help) print $help ?>
+          </div></div>
           <?php endif; ?>
 		  
           <div id="header-top">
