@@ -180,6 +180,8 @@ em {
 	-webkit-border-top-right-radius: 4px;
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
+	position: relative;
+	top: 9px;
 }
 
 #primary-links .links li a {
@@ -187,13 +189,28 @@ em {
 	font-size: 1.2em;
 	text-transform: uppercase;
 	font-family: 'Open Sans', sans-serif;
+	text-shadow: #666 2px 2px 0;
 }
 
-#primary-links .links li:hover,
-#primary-links .links .active { background: #FFF; }
+#primary-links .links li:hover {
+background:#fff;	
+}
 
 #primary-links .links li:hover a,
-#primary-links .links .active a { color: #000; }
+#primary-links .links .active {
+	background: #FFF;
+	text-shadow: #DDD 2px 2px 0;
+}
+
+#primary-links .links .active {
+	font-size: 1.3em;
+	top: 0;
+}
+
+#primary-links .links li:hover a,
+#primary-links .links .active a {
+	color: #000;
+}
 
 /* Header
 ======================================================== */
@@ -226,10 +243,11 @@ em {
 	font-family: 'Paytone One', sans-serif;
 }
 
+#get-involved,
 #header-links a {
 	color: #FFF;
 	font-size: 2em;
-	text-transform: capitalize;
+	text-transform: capitalize !important;
 	background: #CCC url('images/afg/gradient.png') 0 12px repeat-x;
 	padding: 0px 9px 8px 9px;
 	margin: 0 15px 0 0;
@@ -239,6 +257,18 @@ em {
 	-moz-box-shadow: 0 2px #111;
 	-webkit-box-shadow: 0 2px #111;
 	box-shadow: 0 2px #111;
+	font-family: 'Paytone One', sans-serif;
+}
+
+#header-top-links #get-involved {
+	position: relative;
+	top: -17px;
+	font-size: 1.4em;
+	font-weight: 100;
+	background-color: #999;
+	background-position: 0 -4px;
+	padding-bottom: 0;
+	line-height: 2.5;
 }
 
 #header-links li:last-child a {
@@ -937,7 +967,7 @@ margin: 0 0 70px;
 
 #header-top {
 	position: absolute;
-	top: 10px;
+	top: 0;
 	right: 0;
 }
 
