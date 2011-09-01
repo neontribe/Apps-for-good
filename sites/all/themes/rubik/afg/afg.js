@@ -27,7 +27,7 @@ $(document).ready(function(){
 	var tabs = $('#block-quicktabs-cdi_features .quicktabs_tabs').children('li')
 	
 	for (var i = 0; i < tabs.length; i++){
-		var title = $('#block-quicktabs-cdi_features .quicktabs_tabpage').eq(i).find('.views-field-title .field-content a').text();
+		var title = $('#block-quicktabs-cdi_features .quicktabs_tabpage').eq(i).find('#editorial-title-teaser h3 a').text();
 		$('#block-quicktabs-cdi_features .quicktabs_tabs li a').eq(i).text( title );
 	}
 	

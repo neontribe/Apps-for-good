@@ -49,15 +49,28 @@ ul.quicktabs_tabs.quicktabs-style-navlist-afg li.active a {
   background: #0099FF;
 }
 
+#quicktabs-cdi_features {
+position: relative;	
+}
+
+.views-field-field-carousel-image-fid span, .views-field-field-carousel-image-fid a {
+display:block;
+}
+
+.views-field-field-carousel-image-fid img {
+width:100% !important;	
+}
+
 .quicktabs_main.quicktabs-style-navlist-afg {
   float: left;
   /*border: 1px solid #BFD0FF;*/
   /*background: #F0F8FC;*/
   /*padding: 10px;*/
   min-height: 64px;
-  position: relative;
+  position: absolute;
+  top:0;
+  left:0;
   z-index: 1;
-  width: 70%;
-  
+  width: 100%;
   min-height: 320px;
 }
