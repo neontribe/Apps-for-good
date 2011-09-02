@@ -679,6 +679,7 @@ background:#fff;
 /* Groups Listing Centre School
 ---------------------------------------------------------- */
 
+.apps-at-centre,
 .view-groups-listing-centre-school .views-field-mail a:hover {
 	color: #FFF !important;
 	background: #1B9BDA;

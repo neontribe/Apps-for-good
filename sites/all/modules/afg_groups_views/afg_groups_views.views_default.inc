@@ -3866,6 +3866,7 @@ function afg_groups_views_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', '');
+  $handler->override_option('css_class', 'apps-at-centre');
   $handler->override_option('style_options', array(
     'grouping' => '',
     'type' => 'ul',
