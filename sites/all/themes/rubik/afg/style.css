@@ -1088,6 +1088,12 @@ margin: 0 0 70px;
 	background: #FFF !important;
 }
 
+body #header-top .account-menu-active {
+	top: 5px;
+	right: 5px;
+	border: 4px solid #222;
+}
+
 body #header-top .account-menu-active h3,
 body #header-top .account-menu-active a {
 	color: #222 !important;
