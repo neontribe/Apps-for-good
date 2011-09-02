@@ -6,9 +6,6 @@
 function afg_preprocess_page(&$vars) {
 
   // Force using the correct template file
-  
-  //dpm($vars['template_files']);
-  
   if(count($vars['template_files']) > 1) {
     foreach($vars['template_files'] as $key => $template) {
 	  if(strcasecmp($template, 'page') === 0) {
@@ -22,8 +19,6 @@ function afg_preprocess_page(&$vars) {
   if(drupal_is_front_page()) {
 	  $vars['template_files'] = array('page-front');
   }  
-  
-  //dpm($vars['template_files']);
 
   // Automatically adjust layout for page with right sidebar content if no
   // explicit layout has been set.
@@ -41,8 +36,6 @@ function afg_preprocess_page(&$vars) {
   }
   
   $vars['header_links'] = $links;
-  
-  // Logo path
   $vars['logo'] = base_path() . path_to_theme() . '/images/afg/logo.png';
   
   // Set page title to group name
@@ -68,6 +61,30 @@ function afg_theme(){
   	),
   );
 }
+
+/**
+ * Theme links
+ */
+function afg_links($links, $attributes = array('class' => 'links')) {
+	$suffix = '';
+	if(isset($links['subscribe'])) {
+		$title = $links['subscribe']['title'];
+		switch (strtolower($title)){
+			case 'cancel request to join':
+				$links['subscribe']['title'] = t('UnFollow');
+				$suffix = t('<p>You will not get any of the latest updates</p>');
+				break;
+			
+			default:
+				$links['subscribe']['title'] = t('Follow');
+				$suffix = t('<p><em>Why to sign-up:</em> You will get the latest updates of this app</p>');
+				break;
+		}
+	}
+	
+	return theme_links($links, $attributes) . $suffix;
+}
+
 
 /**
 * Theme the output of the comment_form.
@@ -100,15 +117,3 @@ function afg_preprocess_box(&$vars, $hook) {
 
 /**Shoutbox comment form**/
 // Moved to module afg_theme_updates to allow theme switching to work
-
-/* User links block */
-
-function afg_block_user_links() {
-	
-  if ($links = atrium_user_links()) {
-	$links['subscribe']['title'] = t('Follow');
-    return array('subject' => t('Membership'),
-				 'content' => t('<p><em>Why to sign-up:</em> You will get the latest updates of this app</p>') . theme('links', $links));
-  }
-}
-

@@ -33,10 +33,10 @@
           <div id="header-top">
 		  	<?php print $header ?>
           </div>
-		  
+          
           <div id='header-links'>
-            <?php print theme('links', $header_links); ?>
-          </div>
+              <?php print theme('links', $header_links); ?>
+            </div>
           
       </div>   
       <div id='page-title' class='limiter clear-block'>

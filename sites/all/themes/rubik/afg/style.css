@@ -1199,6 +1199,7 @@ body #header-top .account-menu-active a {
 	text-transform: uppercase;
 	border-radius: 4px;
 	position: absolute;
+	z-index: 20;
 	bottom: -16px;
 	left: 45px;
 	-moz-border-radius: 4px;
