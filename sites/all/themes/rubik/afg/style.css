@@ -82,10 +82,11 @@ table, th, td {
 	border: 0 !important;
 }
 
-h1.page-title {
+h1 {
 	color: #FFF;
 	font-size: 4.2em;
-	line-height: 80px;
+	line-height: 1;
+	margin: 0 0 15px;
 }
 
 h1, h2, h3, .block-title {
@@ -117,7 +118,7 @@ em {
 }
 
 /* Clearing
-======================================================== */
+---------------------------------------------------------- */
 
 #content-left .view-updates li:after,
 #content-left .view-afg-app-directory li:after {
@@ -129,7 +130,7 @@ em {
 }
 
 /* Generic Classes
-======================================================== */
+---------------------------------------------------------- */
 
 .limiter {
 	width: 100%;
@@ -137,7 +138,7 @@ em {
 }
 
 /* Maps
-======================================================== */
+---------------------------------------------------------- */
 
 .gmap {
 	width: 100% !important;
@@ -159,7 +160,7 @@ em {
 #gmap-auto1map-gmap0 .gmnoprint { display: none; }
 
 /* Primary Navigation
-======================================================== */
+---------------------------------------------------------- */
 
 #primary-links {
 	clear: both;
@@ -213,7 +214,7 @@ background:#fff;
 }
 
 /* Header
-======================================================== */
+---------------------------------------------------------- */
 
 #header {
 	position: relative;
@@ -291,7 +292,7 @@ background:#fff;
 #header-links .header-menu-about { background-color: #9DBF68; }
 
 /* Footer
-======================================================== */
+---------------------------------------------------------- */
 
 #footer {
 	margin: 60px 0;
@@ -341,7 +342,7 @@ background:#fff;
 
 
 /* Administration/Content Tabs
-======================================================== */
+---------------------------------------------------------- */
 
 #tabs .page-tabs {
 	margin: 0 0 10px;
@@ -370,7 +371,7 @@ background:#fff;
 }
 
 /* Page layout
-======================================================== */
+---------------------------------------------------------- */
 
 #page {
 	width: 100%;
@@ -399,7 +400,7 @@ background:#fff;
 .column-side .column-wrapper { padding: 10px; }
 
 /* Drupal/Atrium Blocks
-======================================================== */
+---------------------------------------------------------- */
 
 .block {
 	border: 0;
@@ -550,7 +551,7 @@ background:#fff;
 }
 
 /* Administration Menus
-======================================================== */
+---------------------------------------------------------- */
 
 #block-atrium-search {
 	display: none;
@@ -612,7 +613,7 @@ background:#fff;
 }
 
 /* Updates Block
-======================================================== */
+---------------------------------------------------------- */
 
 #content-left .activity-updates {
 	padding: 0;
@@ -676,7 +677,7 @@ background:#fff;
 }
 	
 /* Groups Listing Centre School
-======================================================== */
+---------------------------------------------------------- */
 
 .view-groups-listing-centre-school .views-field-mail a:hover {
 	color: #FFF !important;
@@ -788,7 +789,7 @@ background:#fff;
 }
 
 /* Shoutbox
-======================================================== */
+---------------------------------------------------------- */
 
 #block-views-shoutbox_shouts-block_1 {
 	border: 0px !important;
@@ -871,8 +872,8 @@ margin: 0 0 70px;
 .views-field-delete-comment:hover { background: #111; }
 .views-field-delete-comment:hover a { color: #FFF !important; }
 
-/* CDI Features, Quicktabs
-======================================================== */
+/* Quicktabs
+---------------------------------------------------------- */
 
 #quicktabs-cdi_features img {
 	margin: 0 0 20px;
@@ -890,35 +891,35 @@ margin: 0 0 70px;
 }
 
 #editorial-title-teaser {
-	position:absolute;
-	left:0;
-	bottom:0;
-	width:100%;
-	height:100px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
 	background: url('images/afg/blue-translucent.png');
-	overflow:hidden;
+	overflow: hidden;
 }
 
 #editorial-title-teaser > div {
-	padding:10px;
+	padding: 10px;
 }
 
 #editorial-title-teaser h3 a {
 	font-family: 'Open Sans', sans-serif;
-	font-size:1.2em;
-	color:#10435c;
+	font-size: 1.2em;
+	color: #10435C;
 }
 
 #editorial-title-teaser p {
-color:#fff;	
-width: 78%;
+	color: #FFF;	
+	width: 78%;
 }
 
 #editorial-title-teaser div > a {
-position:absolute;
-right:30px;
-top: 30px;
-color:#fff;
+	position: absolute;
+	right: 30px;
+	top: 30px;
+	color: #FFF;
 	background: #F9A35A url('images/afg/gradient.png') 0 2px repeat-x;
 	letter-spacing: 1px;
 	padding: 5px 12px;
@@ -934,15 +935,28 @@ color:#fff;
 }
 
 #editorial-title-teaser div > a:before {
-content: ' \2192 ';
-padding:0 5px 0 0;
-position:relative;
-top:-2px;
+	content: ' \2192 ';
+	padding: 0 5px 0 0;
+	position: relative;
+	top: -2px;
 }
+
+.quicktabs-style-navlist-afg {
+	position: relative;
+}
+
+.quicktabs-style-navlist-afg .quicktabs_tabs {
+	position: absolute !important;
+	right: 0 !important;
+	left: 100% !important;
+	z-index: 150 !important;
+	margin: 0 0 0 -125px  !important;
+}
+
 
 /* Updates, Quicktabs
  * using basic-afg quicktabs theme.
-======================================================== */
+---------------------------------------------------------- */
 
 #content-left .view-updates {
 	color: #FFF;
@@ -1001,7 +1015,7 @@ top:-2px;
 }
 
 /* Badges
-======================================================== */
+---------------------------------------------------------- */
 
 .badges-empty {
 	text-align: center;
@@ -1017,7 +1031,7 @@ top:-2px;
 }
 
 /* Header - Drop Menu's
-======================================================== */
+---------------------------------------------------------- */
 
 #header .block,
 #header .block-content {
