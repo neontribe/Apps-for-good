@@ -25,7 +25,7 @@ $(document).ready(function(){
 	
 	// CDI Features Carousel
 	var tabs = $('#block-quicktabs-cdi_features .quicktabs_tabs').children('li')
-	var max_title_chars = 25;
+	var max_title_chars = 17;
 	
 	for (var i = 0; i < tabs.length; i++){
 		var title = $('#block-quicktabs-cdi_features .quicktabs_tabpage').eq(i).find('#editorial-title-teaser h3 a').text().substring(0, max_title_chars);
