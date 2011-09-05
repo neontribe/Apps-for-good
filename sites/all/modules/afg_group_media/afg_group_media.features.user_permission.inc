@@ -10,7 +10,7 @@ function afg_group_media_user_default_permissions() {
   $permissions['create group_media_image content'] = array(
     'name' => 'create group_media_image content',
     'roles' => array(
-      '0' => 'administrator',
+      '0' => 'educator',
     ),
   );
 
@@ -18,7 +18,7 @@ function afg_group_media_user_default_permissions() {
   $permissions['create group_media_video content'] = array(
     'name' => 'create group_media_video content',
     'roles' => array(
-      '0' => 'administrator',
+      '0' => 'educator',
     ),
   );
 
@@ -26,7 +26,7 @@ function afg_group_media_user_default_permissions() {
   $permissions['create request_for_help content'] = array(
     'name' => 'create request_for_help content',
     'roles' => array(
-      '0' => 'administrator',
+      '0' => 'educator',
     ),
   );
 
@@ -34,7 +34,7 @@ function afg_group_media_user_default_permissions() {
   $permissions['delete any group_media_image content'] = array(
     'name' => 'delete any group_media_image content',
     'roles' => array(
-      '0' => 'administrator',
+      '0' => 'educator',
     ),
   );
 
@@ -42,7 +42,7 @@ function afg_group_media_user_default_permissions() {
   $permissions['delete any group_media_video content'] = array(
     'name' => 'delete any group_media_video content',
     'roles' => array(
-      '0' => 'administrator',
+      '0' => 'educator',
     ),
   );
 
@@ -50,7 +50,7 @@ function afg_group_media_user_default_permissions() {
   $permissions['delete any request_for_help content'] = array(
     'name' => 'delete any request_for_help content',
     'roles' => array(
-      '0' => 'administrator',
+      '0' => 'educator',
     ),
   );
 
@@ -58,7 +58,7 @@ function afg_group_media_user_default_permissions() {
   $permissions['edit any group_media_image content'] = array(
     'name' => 'edit any group_media_image content',
     'roles' => array(
-      '0' => 'administrator',
+      '0' => 'educator',
     ),
   );
 
@@ -66,7 +66,7 @@ function afg_group_media_user_default_permissions() {
   $permissions['edit any group_media_video content'] = array(
     'name' => 'edit any group_media_video content',
     'roles' => array(
-      '0' => 'administrator',
+      '0' => 'educator',
     ),
   );
 
@@ -74,7 +74,7 @@ function afg_group_media_user_default_permissions() {
   $permissions['edit any request_for_help content'] = array(
     'name' => 'edit any request_for_help content',
     'roles' => array(
-      '0' => 'administrator',
+      '0' => 'educator',
     ),
   );
 
