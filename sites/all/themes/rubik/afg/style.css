@@ -954,6 +954,10 @@ margin: 0 0 70px;
 	margin: 0 0 0 -125px  !important;
 }
 
+.quicktabs-style-basic-afg .views-field-title a {
+	color: #FFF;
+}
+
 
 /* Updates, Quicktabs
  * using basic-afg quicktabs theme.
