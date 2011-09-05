@@ -748,8 +748,7 @@ background:#fff;
 }
 
 #content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-title,
-#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-city,
-#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-province {
+#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-city {
 	float: right;
 	width: 190px;
 	margin: 20px 20px 0 0;
@@ -760,7 +759,8 @@ background:#fff;
 	margin-bottom: 60px;
 }
 
-#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-city span {
+#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-city span,
+#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-province {
 	font-size: 1.4em !important;
 }
 
