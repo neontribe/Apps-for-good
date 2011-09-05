@@ -4507,6 +4507,14 @@ function afg_groups_views_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'Staff');
+  $handler->override_option('row_options', array(
+    'inline' => array(
+      'name' => 'name',
+      'picture' => 'picture',
+    ),
+    'separator' => '',
+    'hide_empty' => 0,
+  ));
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Contact Centre', 'block_7');
