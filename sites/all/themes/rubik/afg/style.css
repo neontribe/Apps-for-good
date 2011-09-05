@@ -954,6 +954,10 @@ margin: 0 0 70px;
 	margin: 0 0 0 -125px  !important;
 }
 
+.quicktabs-style-basic-afg .views-field-title a {
+	color: #FFF;
+}
+
 
 /* Updates, Quicktabs
  * using basic-afg quicktabs theme.
@@ -1169,7 +1173,7 @@ body #header-top .account-menu-active a {
 	width: 237px;
 	background: url('images/afg/notes-background.png') no-repeat !important;
 	position: absolute;
-	top: 180px;
+	top: 300px;
 	right: 60px;
 }
 
