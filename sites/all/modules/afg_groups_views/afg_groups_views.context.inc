@@ -45,6 +45,44 @@ function afg_groups_views_context_default_contexts() {
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'anonymous_user_follow';
+  $context->description = '';
+  $context->tag = 'afg_custom';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'dashboard' => 'dashboard',
+        'dashboard/*' => 'dashboard/*',
+      ),
+    ),
+    'user' => array(
+      'values' => array(
+        'anonymous user' => 'anonymous user',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'block-5' => array(
+          'module' => 'block',
+          'delta' => 5,
+          'region' => 'header',
+          'weight' => 0,
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 1;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('afg_custom');
+
+  $export['anonymous_user_follow'] = $context;
+  $context = new stdClass;
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'app_directory_page';
   $context->description = '';
   $context->tag = 'afg_custom';
