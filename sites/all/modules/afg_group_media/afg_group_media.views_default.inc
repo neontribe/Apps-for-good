@@ -169,9 +169,12 @@ function afg_group_media_views_default_views() {
   ));
   $handler->override_option('sorts', array(
     'changed' => array(
+      'order' => 'DESC',
+      'granularity' => 'second',
       'id' => 'changed',
       'table' => 'node',
       'field' => 'changed',
+      'relationship' => 'none',
     ),
   ));
   $handler->override_option('filters', array(
