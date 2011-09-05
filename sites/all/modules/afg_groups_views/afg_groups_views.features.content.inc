@@ -361,6 +361,87 @@ function afg_groups_views_content_default_fields() {
     ),
   );
 
+  // Exported field: field_icon
+  $fields['group_centre_school-field_icon'] = array(
+    'field_name' => 'field_icon',
+    'type_name' => 'group_centre_school',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'filefield',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'filefield',
+    'active' => '1',
+    'list_field' => '0',
+    'list_default' => 1,
+    'description_field' => '0',
+    'widget' => array(
+      'file_extensions' => 'png gif jpg jpeg',
+      'file_path' => '',
+      'progress_indicator' => 'bar',
+      'max_filesize_per_file' => '',
+      'max_filesize_per_node' => '',
+      'max_resolution' => '0',
+      'min_resolution' => '0',
+      'alt' => '',
+      'custom_alt' => 0,
+      'title' => '',
+      'custom_title' => 0,
+      'title_type' => 'textfield',
+      'default_image' => array(
+        'filename' => 'video.png',
+        'filepath' => 'sites/default/files/imagefield_default_images/video.png',
+        'filemime' => 'image/png',
+        'source' => 'default_image_upload',
+        'destination' => 'sites/default/files/imagefield_default_images/video.png',
+        'filesize' => 2693,
+        'uid' => '1',
+        'status' => 1,
+        'timestamp' => 1314098849,
+        'fid' => '21',
+      ),
+      'use_default_image' => 1,
+      'label' => 'Icon',
+      'weight' => '15',
+      'description' => 'Video post type icon',
+      'type' => 'imagefield_widget',
+      'module' => 'imagefield',
+    ),
+  );
+
   // Exported field: field_logo
   $fields['group_centre_school-field_logo'] = array(
     'field_name' => 'field_logo',
@@ -601,6 +682,7 @@ function afg_groups_views_content_default_fields() {
   t('Centre Location');
   t('Centre logo');
   t('Centre website');
+  t('Icon');
   t('Parent Centre');
   t('Staff');
   t('logo');

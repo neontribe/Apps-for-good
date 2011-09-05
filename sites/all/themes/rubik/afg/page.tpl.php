@@ -5,7 +5,7 @@
   <?php if ($show_messages && $messages): ?>
     <div id='console' class='clear-block'><?php print $messages; ?></div>
   <?php endif; ?>
-
+   
   <div id='content'>
   
     <?php if ($tabs): ?>
