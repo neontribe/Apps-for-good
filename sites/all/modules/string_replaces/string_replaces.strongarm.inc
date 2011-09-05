@@ -14,8 +14,8 @@ function string_replaces_strongarm() {
     'Dashboard' => 'Profile',
     'Members' => 'Supporters',
     'Membership' => 'Following',
-    'Shout' => 'Send! ->',
     'Shoutbox' => 'Comments',
+    'Shout' => 'Send! ->',
   );
 
   $export['locale_custom_strings_en'] = $strongarm;

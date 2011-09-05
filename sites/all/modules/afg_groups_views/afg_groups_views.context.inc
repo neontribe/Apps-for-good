@@ -90,11 +90,17 @@ function afg_groups_views_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'menu-menu-centre-directory-links' => array(
+          'module' => 'menu',
+          'delta' => 'menu-centre-directory-links',
+          'region' => 'right',
+          'weight' => 0,
+        ),
         'views-updates-block_8' => array(
           'module' => 'views',
           'delta' => 'updates-block_8',
           'region' => 'right',
-          'weight' => 0,
+          'weight' => 1,
         ),
         'quicktabs-cdi_features' => array(
           'module' => 'quicktabs',
@@ -102,17 +108,11 @@ function afg_groups_views_context_default_contexts() {
           'region' => 'content',
           'weight' => 0,
         ),
-        'menu-menu-centre-directory-links' => array(
-          'module' => 'menu',
-          'delta' => 'menu-centre-directory-links',
-          'region' => 'content',
-          'weight' => 1,
-        ),
         'views-1ea07c98bfe3b712442d65a3d4fd9126' => array(
           'module' => 'views',
           'delta' => '1ea07c98bfe3b712442d65a3d4fd9126',
           'region' => 'content',
-          'weight' => 2,
+          'weight' => 1,
         ),
       ),
     ),

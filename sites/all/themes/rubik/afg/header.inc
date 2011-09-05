@@ -7,42 +7,59 @@
     <title><?php print $head_title ?></title>
   </head>
   <body <?php print drupal_attributes($attr) ?>>
+
+  <?php //print $skipnav ?>
   
   <div id='top'>
     <div class='limiter clear-block'>
     
-      <div id='header'>
+	  <?php //if ($help_toggler) print $help_toggler ?>
+    
+      <div id="header" class='dropdown-blocks toggle-blocks clear-block'>
+
 		  <?php if ($logo): ?>
-            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-              <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+            <a href="<?php print base_path(); ?>" title="<?php print t('Apps for Good Home'); ?>">
+              <img src="<?php print $logo ?>" alt="<?php print t('Home'); ?>" />
             </a>
-          <?php endif; ?> 
-      
-          <div id='header-links'>
-            <?php print theme('links', $header_links); ?>
+          <?php endif; ?>
+          
+          <?php if ($help): ?>
+          <div id='page-help'><div class='limiter clear-block'>
+            <?php //if ($help_toggler) print $help_toggler ?>
+            <?php //if ($help) print $help ?>
+          </div></div>
+          <?php endif; ?>
+		  
+          <div id="header-top">
+		  	<?php print $header ?>
           </div>
           
-          <?php print $header ?>
+          <div id='header-links'>
+              <?php print theme('links', $header_links); ?>
+            </div>
+          
       </div>   
       <div id='page-title' class='limiter clear-block'>
-        <!--<?php if ($help_toggler) print $help_toggler ?>-->
+        
         <h1 class='page-title <?php print $page_icon_class ?>'>
           <?php if ($title) print $title ?>
         </h1>
         <span class='header-description'>
-          <?php print $header_desc; ?>
+          <?php print $header_desc ?>
         </span>
+        
       </div>
 	  
-		<?php if ($space_tools): ?>
-			  <div id='space-tools'><div class='dropdown-blocks toggle-blocks clear-block'><?php print $space_tools ?></div></div>
-		<?php endif; ?>
-		<?php if ($page_tools): ?><div class='dropdown-blocks toggle-blocks clear-block'><?php print $page_tools ?></div><?php endif; ?>
-		 
+	  <?php if ($space_tools): ?>
+	    <div id='space-tools'><div class='dropdown-blocks toggle-blocks clear-block'><?php print $space_tools ?></div></div>
+	  <?php endif; ?>
+	  <?php if ($page_tools): ?><div class='dropdown-blocks toggle-blocks clear-block'><?php print $page_tools ?></div><?php endif; ?>
+
       <div id='primary-links'>
         <?php if (isset($primary_links)) print theme('links', $primary_links) ?>
 		<?php if (isset($secondary_links)) print theme('links', $secondary_links, array('class' => 'links secondary-links')) ?>
       </div>
+      
       
     </div>
   </div>

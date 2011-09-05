@@ -644,31 +644,23 @@ function afg_groups_views_views_default_views() {
       'field' => 'type',
       'relationship' => 'none',
     ),
-    'tid' => array(
-      'operator' => 'or',
-      'value' => array(
-        '11' => '11',
-      ),
+    'name' => array(
+      'operator' => '=',
+      'value' => 'Idea',
       'group' => '0',
       'exposed' => FALSE,
       'expose' => array(
         'operator' => FALSE,
         'label' => '',
       ),
-      'type' => 'select',
-      'limit' => TRUE,
-      'limit_by' => 'vid',
-      'vid' => '7',
-      'module' => 'features_app_status',
-      'id' => 'tid',
-      'table' => 'term_node',
-      'field' => 'tid',
-      'hierarchy' => 0,
+      'case' => 1,
+      'id' => 'name',
+      'table' => 'term_data',
+      'field' => 'name',
       'override' => array(
         'button' => 'Use default',
       ),
       'relationship' => 'none',
-      'reduce_duplicates' => 0,
     ),
   ));
   $handler->override_option('title', 'Ideas');
@@ -692,31 +684,23 @@ function afg_groups_views_views_default_views() {
       'field' => 'type',
       'relationship' => 'none',
     ),
-    'tid' => array(
-      'operator' => 'or',
-      'value' => array(
-        '12' => '12',
-      ),
+    'name' => array(
+      'operator' => '=',
+      'value' => 'Prototype',
       'group' => '0',
       'exposed' => FALSE,
       'expose' => array(
         'operator' => FALSE,
         'label' => '',
       ),
-      'type' => 'select',
-      'limit' => TRUE,
-      'limit_by' => 'vid',
-      'vid' => '7',
-      'module' => 'features_app_status',
-      'id' => 'tid',
-      'table' => 'term_node',
-      'field' => 'tid',
-      'hierarchy' => 0,
+      'case' => 1,
+      'id' => 'name',
+      'table' => 'term_data',
+      'field' => 'name',
       'override' => array(
         'button' => 'Use default',
       ),
       'relationship' => 'none',
-      'reduce_duplicates' => 0,
     ),
   ));
   $handler->override_option('title', 'Prototypes');
@@ -740,10 +724,34 @@ function afg_groups_views_views_default_views() {
       'field' => 'type',
       'relationship' => 'none',
     ),
-    'tid' => array(
-      'operator' => 'or',
+    'name' => array(
+      'operator' => '=',
+      'value' => 'Built',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'case' => 1,
+      'id' => 'name',
+      'table' => 'term_data',
+      'field' => 'name',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+  ));
+  $handler->override_option('title', 'Builds');
+  $handler->override_option('block_description', '');
+  $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'All', 'block_4');
+  $handler->override_option('filters', array(
+    'type' => array(
+      'operator' => 'in',
       'value' => array(
-        '13' => '13',
+        'group_app_team' => 'group_app_team',
       ),
       'group' => '0',
       'exposed' => FALSE,
@@ -751,26 +759,17 @@ function afg_groups_views_views_default_views() {
         'operator' => FALSE,
         'label' => '',
       ),
-      'type' => 'select',
-      'limit' => TRUE,
-      'limit_by' => 'vid',
-      'vid' => '7',
-      'module' => 'features_app_status',
-      'id' => 'tid',
-      'table' => 'term_node',
-      'field' => 'tid',
-      'hierarchy' => 0,
-      'override' => array(
-        'button' => 'Use default',
-      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
       'relationship' => 'none',
-      'reduce_duplicates' => 0,
     ),
   ));
-  $handler->override_option('title', 'Builds');
+  $handler->override_option('title', 'All');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $translatables['afg_app_directory'] = array(
+    t('All'),
     t('Builds'),
     t('Defaults'),
     t('Ideas'),
@@ -1386,7 +1385,7 @@ function afg_groups_views_views_default_views() {
       ),
     ),
   ));
-  $handler->override_option('title', 'Application Directory');
+  $handler->override_option('title', 'Applications');
   $handler->override_option('empty', '');
   $handler->override_option('use_ajax', FALSE);
   $handler->override_option('items_per_page', 25);
@@ -1450,7 +1449,7 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('path', 'apps/all');
   $handler->override_option('menu', array(
     'type' => 'default tab',
-    'title' => 'Application Directory',
+    'title' => 'Applications',
     'description' => '',
     'weight' => '0',
     'name' => 'navigation',
@@ -2451,7 +2450,7 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('block_caching', -1);
   $translatables['groups_listing_app_team'] = array(
     t('About this App'),
-    t('Application Directory'),
+    t('Applications'),
     t('Archived applications'),
     t('Block: My applications (sidebar)'),
     t('Block: User applications'),
@@ -3867,6 +3866,7 @@ function afg_groups_views_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', '');
+  $handler->override_option('css_class', 'apps-at-centre');
   $handler->override_option('style_options', array(
     'grouping' => '',
     'type' => 'ul',
@@ -4506,7 +4506,7 @@ function afg_groups_views_views_default_views() {
       'label' => '',
       'alter' => array(
         'alter_text' => 1,
-        'text' => '<a href=\'[mail]\'>Contact Centre</a>',
+        'text' => '<a href=\'mailto:[mail]\'>Contact Centre</a>',
         'make_link' => 0,
         'path' => '',
         'link_class' => '',
@@ -4525,7 +4525,7 @@ function afg_groups_views_views_default_views() {
       'empty' => '',
       'hide_empty' => 1,
       'empty_zero' => 0,
-      'link_to_user' => 'mailto',
+      'link_to_user' => '0',
       'exclude' => 0,
       'id' => 'mail',
       'table' => 'users',
@@ -4688,7 +4688,7 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('title', '');
-  $handler->override_option('header', '<a href=\'centres/all\'><?php echo afg_content_count(\'group_centre_school\'); ?> Schools</a>');
+  $handler->override_option('header', '<a href=\'centres/all\'><?php echo afg_content_count(\'group_centre_school\'); ?> Centres</a>');
   $handler->override_option('header_format', '6');
   $handler->override_option('header_empty', 0);
   $handler->override_option('style_plugin', 'gmap');
@@ -4808,7 +4808,7 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $translatables['groups_listing_centre_school'] = array(
-    t('<a href=\'centres/all\'><?php echo afg_content_count(\'group_centre_school\'); ?> Schools</a>'),
+    t('<a href=\'centres/all\'><?php echo afg_content_count(\'group_centre_school\'); ?> Centres</a>'),
     t('About Centre'),
     t('About this Centre'),
     t('All Centres Map'),
@@ -6307,6 +6307,41 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Help this team', 'block_5');
   $handler->override_option('fields', array(
+    'created' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'date_format' => 'custom',
+      'custom_date_format' => 'd.m.Y @i:s',
+      'reldate' => '0',
+      'exclude' => 0,
+      'id' => 'created',
+      'table' => 'node',
+      'field' => 'created',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
     'title' => array(
       'label' => '',
       'alter' => array(
@@ -6947,6 +6982,41 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('fields', array(
+    'created' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'date_format' => 'custom',
+      'custom_date_format' => 'd.m.Y @i:s',
+      'reldate' => '0',
+      'exclude' => 0,
+      'id' => 'created',
+      'table' => 'node',
+      'field' => 'created',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
     'title' => array(
       'label' => '',
       'alter' => array(
@@ -7020,7 +7090,7 @@ function afg_groups_views_views_default_views() {
       'relationship' => 'none',
     ),
     'title_1' => array(
-      'label' => 'App',
+      'label' => '',
       'alter' => array(
         'alter_text' => 0,
         'text' => '',
@@ -7286,6 +7356,41 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Help all', 'block_8');
   $handler->override_option('fields', array(
+    'created' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'date_format' => 'custom',
+      'custom_date_format' => 'd.m.Y @i:s',
+      'reldate' => '0',
+      'exclude' => 0,
+      'id' => 'created',
+      'table' => 'node',
+      'field' => 'created',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
     'title' => array(
       'label' => '',
       'alter' => array(
@@ -7309,7 +7414,7 @@ function afg_groups_views_views_default_views() {
       'empty' => '',
       'hide_empty' => 0,
       'empty_zero' => 0,
-      'link_to_node' => 0,
+      'link_to_node' => 1,
       'spaces' => array(
         'frontpage' => 0,
         'type' => 'spaces_og',
@@ -7319,7 +7424,7 @@ function afg_groups_views_views_default_views() {
       'table' => 'node',
       'field' => 'title',
       'override' => array(
-        'button' => 'Override',
+        'button' => 'Use default',
       ),
       'relationship' => 'none',
     ),
