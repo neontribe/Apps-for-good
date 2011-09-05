@@ -7010,7 +7010,7 @@ function afg_groups_views_views_default_views() {
       ),
     ),
   ));
-  $handler->override_option('title', 'Centre Recent Activity');
+  $handler->override_option('title', 'Recent Activity');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Help this centre', 'block_7');
@@ -7918,6 +7918,7 @@ function afg_groups_views_views_default_views() {
     t('Latest files'),
     t('No recent activity found.'),
     t('No recent files found.'),
+    t('Recent Activity'),
     t('Recent activity'),
     t('Stuff I\'m following'),
     t('Updates'),
