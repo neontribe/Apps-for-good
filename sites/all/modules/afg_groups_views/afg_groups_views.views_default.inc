@@ -647,7 +647,7 @@ function afg_groups_views_views_default_views() {
     'tid' => array(
       'operator' => 'or',
       'value' => array(
-        '11' => '11',
+        '18' => '18',
       ),
       'group' => '0',
       'exposed' => FALSE,
@@ -657,8 +657,8 @@ function afg_groups_views_views_default_views() {
       ),
       'type' => 'select',
       'limit' => TRUE,
-      'limit_by' => 'vid',
-      'vid' => '7',
+      'limit_by' => 'module',
+      'vid' => '6',
       'module' => 'features_app_status',
       'id' => 'tid',
       'table' => 'term_node',
@@ -695,7 +695,7 @@ function afg_groups_views_views_default_views() {
     'tid' => array(
       'operator' => 'or',
       'value' => array(
-        '12' => '12',
+        '19' => '19',
       ),
       'group' => '0',
       'exposed' => FALSE,
@@ -705,8 +705,8 @@ function afg_groups_views_views_default_views() {
       ),
       'type' => 'select',
       'limit' => TRUE,
-      'limit_by' => 'vid',
-      'vid' => '7',
+      'limit_by' => 'module',
+      'vid' => '6',
       'module' => 'features_app_status',
       'id' => 'tid',
       'table' => 'term_node',
@@ -743,7 +743,7 @@ function afg_groups_views_views_default_views() {
     'tid' => array(
       'operator' => 'or',
       'value' => array(
-        '13' => '13',
+        '17' => '17',
       ),
       'group' => '0',
       'exposed' => FALSE,
@@ -753,7 +753,7 @@ function afg_groups_views_views_default_views() {
       ),
       'type' => 'select',
       'limit' => TRUE,
-      'limit_by' => 'vid',
+      'limit_by' => 'module',
       'vid' => '7',
       'module' => 'features_app_status',
       'id' => 'tid',
@@ -770,7 +770,29 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('title', 'Builds');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'All', 'block_4');
+  $handler->override_option('filters', array(
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'group_app_team' => 'group_app_team',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'none',
+    ),
+  ));
+  $handler->override_option('block_description', '');
+  $handler->override_option('block_caching', -1);
   $translatables['afg_app_directory'] = array(
+    t('All'),
     t('Builds'),
     t('Defaults'),
     t('Ideas'),
