@@ -98,9 +98,9 @@ function afg_group_definitions_spaces_presets() {
             'region' => 'right',
             'weight' => 3,
           ),
-          'block-4' => array(
+          'block-1' => array(
             'module' => 'block',
-            'delta' => '4',
+            'delta' => '1',
             'region' => 'right',
             'weight' => 4,
           ),
