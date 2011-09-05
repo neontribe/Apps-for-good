@@ -4903,7 +4903,7 @@ function afg_groups_views_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 0,
       'label_type' => 'none',
-      'format' => 'designkit-image-logo_default',
+      'format' => 'badge-thumb_default',
       'multiple' => array(
         'group' => TRUE,
         'multiple_number' => '',
