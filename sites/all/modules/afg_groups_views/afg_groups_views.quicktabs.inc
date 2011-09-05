@@ -41,15 +41,6 @@ function afg_groups_views_quicktabs_default_quicktabs() {
       'weight' => '-98',
       'type' => 'view',
     ),
-    3 => array(
-      'vid' => 'afg_app_directory',
-      'display' => 'block_4',
-      'args' => '',
-      'get_displays' => 'vdisp_3',
-      'title' => 'All',
-      'weight' => '-97',
-      'type' => 'view',
-    ),
   );
   $quicktabs->style = 'Basic-afg';
 

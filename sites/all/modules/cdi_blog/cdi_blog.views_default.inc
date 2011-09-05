@@ -84,13 +84,13 @@ function cdi_blog_views_default_views() {
         'frontpage' => 0,
         'type' => 'spaces_og',
       ),
-      'exclude' => 0,
+      'exclude' => 1,
       'id' => 'title',
       'table' => 'node',
       'field' => 'title',
       'relationship' => 'none',
     ),
-    'teaser' => array(
+    'view_node' => array(
       'label' => '',
       'alter' => array(
         'alter_text' => 0,
@@ -113,10 +113,72 @@ function cdi_blog_views_default_views() {
       'empty' => '',
       'hide_empty' => 0,
       'empty_zero' => 0,
-      'exclude' => 0,
+      'text' => '',
+      'exclude' => 1,
+      'id' => 'view_node',
+      'table' => 'node',
+      'field' => 'view_node',
+      'relationship' => 'none',
+    ),
+    'teaser' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 1,
+        'max_length' => '210',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'exclude' => 1,
       'id' => 'teaser',
       'table' => 'node_revisions',
       'field' => 'teaser',
+      'relationship' => 'none',
+    ),
+    'nothing' => array(
+      'label' => '',
+      'alter' => array(
+        'text' => '<div id="editorial-title-teaser">
+<div>
+<h3>[title]</h3><p>[teaser]</p>[view_node]
+</div>
+</div>',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'exclude' => 0,
+      'id' => 'nothing',
+      'table' => 'views',
+      'field' => 'nothing',
       'relationship' => 'none',
     ),
   ));
@@ -587,11 +649,27 @@ function cdi_blog_views_default_views() {
   ));
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'cdi Blog block - Centres 2', 'block_4');
+  $handler->override_option('access', array(
+    'type' => 'none',
+  ));
+  $handler->override_option('offset', 1);
+  $handler->override_option('block_description', '');
+  $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'cdi Blog block - Centres 3', 'block_5');
+  $handler->override_option('access', array(
+    'type' => 'none',
+  ));
+  $handler->override_option('items_per_page', 2);
+  $handler->override_option('block_description', '');
+  $handler->override_option('block_caching', -1);
   $translatables['Feature_Editorial'] = array(
     t('Defaults'),
     t('cdi Blog'),
     t('cdi Blog block - Apps'),
     t('cdi Blog block - Centres'),
+    t('cdi Blog block - Centres 2'),
+    t('cdi Blog block - Centres 3'),
     t('cdi Blog block - homepage'),
   );
 
