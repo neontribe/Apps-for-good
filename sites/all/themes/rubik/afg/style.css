@@ -73,6 +73,7 @@ select {
 	background: url('images/afg/background.jpg');
 	line-height: 1.5;
 	color: #2A2A2A;
+	font-size:81.25%;
 }
 
 a {
@@ -87,7 +88,8 @@ table, th, td {
 h1 {
 	color: #FFF;
 	font-size: 4.2em;
-	margin: 0 0 15px;
+	margin:0.25em 0;
+	min-height:2.5em;
 }
 
 h1, h2, h3, .block-title {
@@ -1207,7 +1209,7 @@ body #header-top .account-menu-active a {
 	width: 237px;
 	background: url('images/afg/notes-background.png') no-repeat !important;
 	position: absolute;
-	top: 300px;
+	top: 200px;
 	right: 60px;
 }
 
