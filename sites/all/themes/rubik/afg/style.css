@@ -1361,10 +1361,9 @@ body #header-top .account-menu-active a {
     }
 
 #primary-links .links .active {
-    margin: 0 12px 0px 0;
     position: relative;
     bottom: 0;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 #header {
