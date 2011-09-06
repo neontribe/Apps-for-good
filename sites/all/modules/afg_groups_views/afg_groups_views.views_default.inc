@@ -4063,6 +4063,7 @@ function afg_groups_views_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'About this Centre');
+  $handler->override_option('css_class', 'centre-about');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Centre Logo', 'block_5');
