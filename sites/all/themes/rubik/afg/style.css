@@ -1047,6 +1047,7 @@ margin: 0 0 70px;
 	position: absolute;
 	top: 0;
 	right: 0;
+	width: 600px;
 }
 
 #header-top .block {
@@ -1415,7 +1416,6 @@ body #header-top .account-menu-active a {
     position: absolute;
     right: 260px;
     top: 5px;
-	width: 125px;
     color: white;
     font-size: 0.6em;
     text-transform: capitalize;
