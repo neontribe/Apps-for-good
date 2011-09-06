@@ -64,9 +64,9 @@ function afg_groups_views_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'block-5' => array(
+        'block-3' => array(
           'module' => 'block',
-          'delta' => 5,
+          'delta' => 3,
           'region' => 'header',
           'weight' => 0,
         ),
