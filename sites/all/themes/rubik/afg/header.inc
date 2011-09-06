@@ -18,7 +18,7 @@
       <div id="header" class='dropdown-blocks toggle-blocks clear-block'>
 
 		  <?php if ($logo): ?>
-            <a href="/" title="<?php print t('Apps for Good Home'); ?>">
+            <a href="<?php print base_path(); ?>" title="<?php print t('Apps for Good Home'); ?>">
               <img src="<?php print $logo ?>" alt="<?php print t('Home'); ?>" />
             </a>
           <?php endif; ?>

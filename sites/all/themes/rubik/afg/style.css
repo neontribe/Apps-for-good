@@ -250,7 +250,7 @@ background:#fff;
 	font-size: 2em;
 	text-transform: capitalize !important;
 	background: #CCC url('images/afg/gradient.png') 0 12px repeat-x;
-	padding: 0px 9px 4px 9px;
+	padding: 0px 9px 8px 9px;
 	margin: 0 15px 0 0;
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
@@ -1306,6 +1306,4 @@ body #header-top .account-menu-active a {
 #stats .item-centres a { background: #CE8C00; }
 #stats .item-results a { background: #165327; }
 
-.footer-message {
-	display: none;
-}
+
