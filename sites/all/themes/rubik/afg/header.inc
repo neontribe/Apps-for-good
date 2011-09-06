@@ -50,8 +50,7 @@
         </h1>
         <span class='header-description'>
           <?php print $header_desc ?>
-        </span>
-        
+       </span>
       </div>
 	  
 	  <?php if ($space_tools): ?>
