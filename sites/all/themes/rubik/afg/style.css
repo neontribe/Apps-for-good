@@ -527,9 +527,14 @@ background:#fff;
 	margin-bottom: 15px;
 }
 
+.views-field-field-website-url a:after {
+content: " \21D7";
+}
+
 #content-right .views-field-mail a {
-	float: right;
+	float: left;
 	padding: 8px 11px;
+	margin:10px 0 0;
 	color: #FFF !important;
 	text-transform: uppercase;
 	font-size: 0.9em;
@@ -546,6 +551,7 @@ background:#fff;
 #content-right .views-field-mail a:after {
 	content: " \2192";
 }
+
 
 .views-field-created {
 	font-size: 0.8em;
@@ -687,6 +693,8 @@ background:#fff;
 	color: #FFF !important;
 	background: #1B9BDA;
 }
+
+
 
 #content-left .view-groups-listing-centre-school.view-display-id-page_2 tr {
 	float: left;
