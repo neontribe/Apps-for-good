@@ -1078,6 +1078,16 @@ margin: 0 0 70px;
 	float: left;
 }
 
+#header-top .profile-image {
+	position: absolute;
+	top: 10px;
+	left: -120px;
+}
+
+#header-top span.user_name { /* Get value with js */
+	display: none;
+}
+
 #header-top-links {
 	float: right;
 	margin: 0 0 0 15px;
@@ -1133,7 +1143,7 @@ body #header-top .account-menu-active a {
 
 #block-atrium-account .pane-left h3,
 #block-atrium-account .pane-right h3 {
-	min-width: 100px;
+	min-width: 92px;
 }
 
 #block-atrium-account .pane-left,
