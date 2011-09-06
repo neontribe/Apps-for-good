@@ -437,6 +437,10 @@ background:#fff;
 	text-shadow: #888 1px -1px 0;
 }
 
+.centre-about p {
+color:#666;
+}
+
 #content-left .block-content {
 	margin: 15px 0 30px;
 	width: 95%;
