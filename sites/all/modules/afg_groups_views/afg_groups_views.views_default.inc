@@ -2424,7 +2424,7 @@ function afg_groups_views_views_default_views() {
     'tid' => array(
       'operator' => 'or',
       'value' => array(
-        '17' => '17',
+        '11' => '11',
       ),
       'group' => '0',
       'exposed' => FALSE,
@@ -2435,7 +2435,7 @@ function afg_groups_views_views_default_views() {
       'type' => 'select',
       'limit' => TRUE,
       'limit_by' => 'vid',
-      'vid' => '6',
+      'vid' => '4',
       'module' => 'features_app_status',
       'id' => 'tid',
       'table' => 'term_node',
@@ -2942,7 +2942,7 @@ function afg_groups_views_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 0,
       'label_type' => 'none',
-      'format' => 'designkit-image-logo_default',
+      'format' => 'badge-thumb_default',
       'multiple' => array(
         'group' => TRUE,
         'multiple_number' => '',
@@ -4507,6 +4507,14 @@ function afg_groups_views_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'Staff');
+  $handler->override_option('row_options', array(
+    'inline' => array(
+      'name' => 'name',
+      'picture' => 'picture',
+    ),
+    'separator' => '',
+    'hide_empty' => 0,
+  ));
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Contact Centre', 'block_7');
@@ -4525,6 +4533,47 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('fields', array(
+    'field_website_url' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'label_type' => 'none',
+      'format' => 'default',
+      'multiple' => array(
+        'group' => TRUE,
+        'multiple_number' => '',
+        'multiple_from' => '',
+        'multiple_reversed' => FALSE,
+      ),
+      'exclude' => 0,
+      'id' => 'field_website_url',
+      'table' => 'node_data_field_website',
+      'field' => 'field_website_url',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
     'mail' => array(
       'label' => '',
       'alter' => array(
@@ -4710,11 +4759,31 @@ function afg_groups_views_views_default_views() {
       'relationship' => 'none',
     ),
   ));
+  $handler->override_option('access', array(
+    'type' => 'none',
+  ));
   $handler->override_option('title', '');
   $handler->override_option('header', '<a href=\'centres/all\'><?php echo afg_content_count(\'group_centre_school\'); ?> Centres</a>');
   $handler->override_option('header_format', '6');
   $handler->override_option('header_empty', 0);
   $handler->override_option('style_plugin', 'gmap');
+  $handler->override_option('style_options', array(
+    'grouping' => '',
+    'macro' => '[gmap]',
+    'datasource' => 'location',
+    'latfield' => 'title',
+    'lonfield' => 'title',
+    'markers' => 'static',
+    'markerfield' => 'title',
+    'markertype' => 'drupal',
+    'center_on_nodearg' => 0,
+    'center_on_nodearg_arg' => '',
+    'highlight_nodearg' => 0,
+    'highlight_nodearg_arg' => '',
+    'highlight_nodearg_color' => '#FF0000',
+    'tooltipenabled' => 0,
+    'tooltipfield' => 'title',
+  ));
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'This centre map', 'block_9');
@@ -4825,6 +4894,9 @@ function afg_groups_views_views_default_views() {
       'field' => 'type',
       'relationship' => 'none',
     ),
+  ));
+  $handler->override_option('access', array(
+    'type' => 'none',
   ));
   $handler->override_option('title', 'This centre map');
   $handler->override_option('style_plugin', 'gmap');
@@ -5236,7 +5308,7 @@ function afg_groups_views_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 0,
       'label_type' => 'none',
-      'format' => 'designkit-image-logo_default',
+      'format' => 'badge-thumb_default',
       'multiple' => array(
         'group' => TRUE,
         'multiple_number' => '',
@@ -6482,7 +6554,7 @@ function afg_groups_views_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 0,
       'label_type' => 'none',
-      'format' => 'designkit-image-logo_default',
+      'format' => 'badge-thumb_default',
       'multiple' => array(
         'group' => TRUE,
         'multiple_number' => '',
@@ -6987,7 +7059,7 @@ function afg_groups_views_views_default_views() {
       ),
     ),
   ));
-  $handler->override_option('title', 'Centre Recent Activity');
+  $handler->override_option('title', 'Recent Activity');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Help this centre', 'block_7');
@@ -7576,7 +7648,7 @@ function afg_groups_views_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 0,
       'label_type' => 'none',
-      'format' => 'designkit-image-logo_default',
+      'format' => 'badge-thumb_default',
       'multiple' => array(
         'group' => TRUE,
         'multiple_number' => '',
@@ -7588,7 +7660,7 @@ function afg_groups_views_views_default_views() {
       'table' => 'node_data_field_icon',
       'field' => 'field_icon_fid',
       'override' => array(
-        'button' => 'Override',
+        'button' => 'Use default',
       ),
       'relationship' => 'none',
     ),
@@ -7895,6 +7967,7 @@ function afg_groups_views_views_default_views() {
     t('Latest files'),
     t('No recent activity found.'),
     t('No recent files found.'),
+    t('Recent Activity'),
     t('Recent activity'),
     t('Stuff I\'m following'),
     t('Updates'),

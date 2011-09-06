@@ -7,7 +7,6 @@ function afg_user_count() {
   return $count_users;
 }
 
-
 function afg_content_count($type) {
   $count_content = db_result(db_query("SELECT COUNT(*) FROM {node} WHERE type = '%s' AND status = 1", $type));
   return $count_content;
@@ -21,3 +20,18 @@ function afg_shoutbox_comment_form() {
   return drupal_get_form('atrium_shoutbox_shoutform', $shoutbox['node'], $view, $rendered);
 }
 
+/**User profile image**/
+function get_profile_image() {
+	global $user;
+  	$block = array();
+    
+    if ($user->uid) {
+		return theme('user_picture', $user);
+    }
+}
+
+/**User profile name**/
+function get_user_name() {
+	global $user;
+	return check_plain($user->name);
+}

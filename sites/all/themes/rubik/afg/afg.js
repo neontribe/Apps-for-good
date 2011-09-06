@@ -32,6 +32,9 @@ $(document).ready(function(){
 		$('#block-quicktabs-cdi_features .quicktabs_tabs li a').eq(i).text( title );
 	}
 	
+	// Get User's name from hidden span
+	$('.pane-left').children('h3').text( $('#header-top span.user_name').text() );
+	
 });
 
 

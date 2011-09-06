@@ -31,12 +31,16 @@
           <?php endif; ?>
 		  
           <div id="header-top">
+          	<div class="profile-image">
+              <?php print get_profile_image(); ?>
+              <span class="user_name"><?php print get_user_name(); ?></span>
+            </div>
 		  	<?php print $header ?>
           </div>
           
           <div id='header-links'>
-              <?php print theme('links', $header_links); ?>
-            </div>
+            <?php print theme('links', $header_links); ?>
+          </div>
           
       </div>   
       <div id='page-title' class='limiter clear-block'>
@@ -46,8 +50,7 @@
         </h1>
         <span class='header-description'>
           <?php print $header_desc ?>
-        </span>
-        
+       </span>
       </div>
 	  
 	  <?php if ($space_tools): ?>

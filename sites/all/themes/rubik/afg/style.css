@@ -11,6 +11,14 @@ THIS FILE REALLY NEEDS SOME CLEANING UP :|
 */
 
 
+/* TEMPORARY, MUST REMOVE-- */
+
+#block-views-activity_listing-block_1,
+#block-views-Counters-block_2 {
+	display: none;
+}
+
+/* Replicate the view of a text-field */
 li.comment_add {
 	display: block !important;
 	width: 100%;
@@ -37,13 +45,7 @@ li.comment_add a {
 
 
 
-/* TEMPORARY, MUST REMOVE, DO NOT COMMIT -- */
 
-
-#block-views-activity_listing-block_1,
-#block-views-Counters-block_2 {
-	display: none;
-}
 
 
 
@@ -121,7 +123,8 @@ em {
 ---------------------------------------------------------- */
 
 #content-left .view-updates li:after,
-#content-left .view-afg-app-directory li:after {
+#content-left .view-afg-app-directory li:after,
+#content-right .view-groups-listing-centre-school li:after {
     content: ".";
     display: block;
     height: 0;
@@ -759,6 +762,11 @@ background:#fff;
 	margin-bottom: 60px;
 }
 
+#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-city span,
+#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-province {
+	font-size: 1.4em !important;
+}
+
 #content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-title a:link,
 #content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-city span {
 	font-size: 1.7em;
@@ -787,6 +795,23 @@ background:#fff;
 
 #content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-title-1:hover {
 	background-position: 0 15px;
+}
+
+/* RHS / Centres staff members listing */
+
+#content-right .view-groups-listing-centre-school li {
+	position: relative;
+	min-height: 30px;
+}
+
+.view-groups-listing-centre-school .views-field-picture {
+	position: absolute;
+	left: 0;
+}
+
+.view-groups-listing-centre-school .views-field-name {
+	float: left;
+	margin: 0 0 0 40px;
 }
 
 /* Shoutbox
@@ -1053,6 +1078,16 @@ margin: 0 0 70px;
 	float: left;
 }
 
+#header-top .profile-image {
+	position: absolute;
+	top: 10px;
+	left: -120px;
+}
+
+#header-top span.user_name { /* Get value with js */
+	display: none;
+}
+
 #header-top-links {
 	float: right;
 	margin: 0 0 0 15px;
@@ -1108,7 +1143,7 @@ body #header-top .account-menu-active a {
 
 #block-atrium-account .pane-left h3,
 #block-atrium-account .pane-right h3 {
-	min-width: 100px;
+	min-width: 92px;
 }
 
 #block-atrium-account .pane-left,
