@@ -239,8 +239,8 @@ background:#fff;
 
 #header-links {
 	position: absolute;
-	top: 85px;
-	right: 10px;
+	top: 70px;
+	right: 0px;
 	font-family: 'Paytone One', sans-serif;
 }
 
@@ -1045,8 +1045,6 @@ margin: 0 0 70px;
 
 #header-top {
 	position: absolute;
-	top: 0;
-	right: 0;
 	width: 600px;
 }
 
