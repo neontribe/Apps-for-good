@@ -11,6 +11,14 @@ THIS FILE REALLY NEEDS SOME CLEANING UP :|
 */
 
 
+/* TEMPORARY, MUST REMOVE-- */
+
+#block-views-activity_listing-block_1,
+#block-views-Counters-block_2 {
+	display: none;
+}
+
+/* Replicate the view of a text-field */
 li.comment_add {
 	display: block !important;
 	width: 100%;
@@ -37,13 +45,7 @@ li.comment_add a {
 
 
 
-/* TEMPORARY, MUST REMOVE, DO NOT COMMIT -- */
 
-
-#block-views-activity_listing-block_1,
-#block-views-Counters-block_2 {
-	display: none;
-}
 
 
 
@@ -121,7 +123,8 @@ em {
 ---------------------------------------------------------- */
 
 #content-left .view-updates li:after,
-#content-left .view-afg-app-directory li:after {
+#content-left .view-afg-app-directory li:after,
+#content-right .view-groups-listing-centre-school li:after {
     content: ".";
     display: block;
     height: 0;
@@ -792,6 +795,23 @@ background:#fff;
 
 #content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-title-1:hover {
 	background-position: 0 15px;
+}
+
+/* RHS / Centres staff members listing */
+
+#content-right .view-groups-listing-centre-school li {
+	position: relative;
+	min-height: 30px;
+}
+
+.view-groups-listing-centre-school .views-field-picture {
+	position: absolute;
+	left: 0;
+}
+
+.view-groups-listing-centre-school .views-field-name {
+	float: left;
+	margin: 0 0 0 40px;
 }
 
 /* Shoutbox

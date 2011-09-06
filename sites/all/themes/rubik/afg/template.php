@@ -67,6 +67,7 @@ function afg_theme(){
  */
 function afg_links($links, $attributes = array('class' => 'links')) {
 	$suffix = '';
+    
 	if(isset($links['subscribe'])) {
 		$title = $links['subscribe']['title'];
 		switch (strtolower($title)){
