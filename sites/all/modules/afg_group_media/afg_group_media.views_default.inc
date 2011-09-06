@@ -470,7 +470,7 @@ function afg_group_media_views_default_views() {
       'relationship' => 'none',
     ),
   ));
-  $handler->override_option('path', 'media-gallery');
+  $handler->override_option('path', 'updates');
   $handler->override_option('menu', array(
     'type' => 'normal',
     'title' => 'Updates',

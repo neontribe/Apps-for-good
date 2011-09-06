@@ -73,6 +73,7 @@ select {
 	background: url('images/afg/background.jpg');
 	line-height: 1.5;
 	color: #2A2A2A;
+	font-size:81.25%;
 }
 
 a {
@@ -87,13 +88,14 @@ table, th, td {
 h1 {
 	color: #FFF;
 	font-size: 4.2em;
-	line-height: 1;
-	margin: 0 0 15px;
+	margin:0.25em 0;
+	min-height:2.5em;
 }
 
 h1, h2, h3, .block-title {
 	font-family: 'LeckerliOneRegular', cursive;
 	font-weight: 100;
+	line-height:1;
 }
 
 textarea {
@@ -527,9 +529,14 @@ background:#fff;
 	margin-bottom: 15px;
 }
 
+.views-field-field-website-url a:after {
+content: " \21D7";
+}
+
 #content-right .views-field-mail a {
-	float: right;
+	float: left;
 	padding: 8px 11px;
+	margin:10px 0 0;
 	color: #FFF !important;
 	text-transform: uppercase;
 	font-size: 0.9em;
@@ -546,6 +553,7 @@ background:#fff;
 #content-right .views-field-mail a:after {
 	content: " \2192";
 }
+
 
 .views-field-created {
 	font-size: 0.8em;
@@ -688,6 +696,8 @@ background:#fff;
 	background: #1B9BDA;
 }
 
+
+
 #content-left .view-groups-listing-centre-school.view-display-id-page_2 tr {
 	float: left;
 	background: #F68424 !important;
@@ -823,16 +833,7 @@ background:#fff;
 }
 
 .shoutbox-input .form-submit {
-	color: #FFF;
-	text-transform: lowercase;
-	background: #222 url('images/afg/gradient.png') repeat-x;
-	font-size: 1.6em;
-	padding: 4px 10px;
 	float: right;
-	border: 0;
-	-moz-border-radius: 8px;
-	-webkit-border-radius: 8px;
-	border-radius: 8px;
 }
 
 .view-shoutbox-shouts .shoutbox-input {
@@ -1208,7 +1209,7 @@ body #header-top .account-menu-active a {
 	width: 237px;
 	background: url('images/afg/notes-background.png') no-repeat !important;
 	position: absolute;
-	top: 300px;
+	top: 200px;
 	right: 60px;
 }
 
@@ -1230,7 +1231,7 @@ body #header-top .account-menu-active a {
 	transform: rotate(-3deg);
 }
 
-#block-atrium-user_links .block-content a {
+#block-atrium-user_links .block-content a, input[type='submit'] {
 	color: #FFF;
 	font-size: 1.4em;
 	padding: 10px 35px;
@@ -1241,13 +1242,19 @@ body #header-top .account-menu-active a {
 	z-index: 20;
 	bottom: -16px;
 	left: 45px;
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
 	text-shadow: 1px 1px 2px #444;
 	-moz-box-shadow: 0 2px #111;
 	-webkit-box-shadow: 0 2px #111;
 	box-shadow: 0 2px #111;
 	background: #F58322 url('images/afg/gradient.png');
+}
+
+input[type='submit'] {
+	position:static;
+        padding:5px 10px;
+        border:0;
 }
 
 #block-atrium-user_links .block-content a:after {
