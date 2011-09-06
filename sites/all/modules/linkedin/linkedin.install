@@ -1,0 +1,70 @@
+<?php
+
+/*
+ * @file : Installation hooks implementation for Linkedin module
+ */
+
+/**
+ * Implementation of hook_install().
+ */
+function linkedin_install() {
+  drupal_install_schema('linkedin');
+}
+
+/**
+ * Implementation of hook_schema().
+ */
+function linkedin_schema() {
+  $schema['linkedin_token'] = array(
+    'description' => t('Tokens for request and services accesses.'),
+    'fields' => array(
+      'uid' => array(
+        'description' => t('User ID from {user}.uid.'),
+        'type'        => 'int',
+        'unsigned'    => TRUE,
+        'not null'    => TRUE
+      ),
+      'token_key' => array(
+        'description' => t('Tokens for request and services accesses.'),
+        'type'        => 'varchar',
+        'length'      => 100,
+        'not null'    => TRUE
+      ),
+      'token_secret' => array(
+        'description' => t('Token "password".'),
+        'type'        => 'varchar',
+        'length'      => 100,
+        'not null'    => TRUE
+      ),
+      'type' => array(
+        'description' => t('Type of the token: request or access.'),
+        'type'        => 'varchar',
+        'length'      => 7,
+        'not null'    => TRUE
+      ),
+    ),
+   'primary key' => array('uid'),
+   'indexes' => array(
+      'token_key_type' => array('token_key'),
+    ),
+  );
+  return $schema;
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function linkedin_uninstall() {
+  drupal_uninstall_schema('linkedin');
+
+  // Delete variables 
+  variable_del('linkedin_consumer_key');
+  variable_del('linkedin_consumer_secret');
+  $types = node_get_types('names');
+  array_push($types, 'event_signup');
+  foreach ($types as $type) {
+    $type = strtolower($type);
+    variable_del('linkedin_enabled_'. $type);
+    variable_del('linkedin_default_format_'. $type);
+  }
+}
