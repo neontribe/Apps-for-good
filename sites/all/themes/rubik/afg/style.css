@@ -1159,8 +1159,8 @@ body #header-top .account-menu-active a {
 }
 
 #block-atrium-account .pane-left h3,
-#block-atrium-account .pane-right h3 {
-	
+#block-atrium-account .pane-right h3,
+#block-atrium-account .block-content a {
 	color: #FFF !important;
 	font-weight: bold;
 	text-transform: uppercase;
