@@ -1045,6 +1045,8 @@ margin: 0 0 70px;
 
 #header-top {
 	position: absolute;
+	top: 0;
+	right: 0;
 	width: 600px;
 }
 
