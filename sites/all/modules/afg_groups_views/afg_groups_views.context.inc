@@ -152,6 +152,12 @@ function afg_groups_views_context_default_contexts() {
           'region' => 'content',
           'weight' => 1,
         ),
+        'views-c302e58bb2a07adbcaf3913ac1fc611c' => array(
+          'module' => 'views',
+          'delta' => 'c302e58bb2a07adbcaf3913ac1fc611c',
+          'region' => 'content',
+          'weight' => 2,
+        ),
       ),
     ),
   );
