@@ -658,13 +658,12 @@ function afg_groups_views_content_default_fields() {
     ),
     'url' => 0,
     'title' => 'value',
-    'title_value' => 'Visit website',
+    'title_value' => 'Official website',
     'enable_tokens' => 0,
     'validate_url' => 1,
     'widget' => array(
       'default_value' => array(
         '0' => array(
-          'title' => '',
           'url' => '',
         ),
       ),

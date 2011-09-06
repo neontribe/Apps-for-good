@@ -46,11 +46,16 @@ function afg_preprocess_page(&$vars) {
   }
   
   if ($node) {
-	$vars['title'] = $node->title;
-	$vars['header_desc'] = $node->body;
+	  $vars['title'] = $node->title;
+	  $vars['header_desc'] = $node->body;
+ /**website variable not in use in page.tpl**/
+  //  if ($node->type == 'group_centre_school') {
+  //    $website = $node->field_website[0]['url'];
+  //  }
+  //  $vars['website'] = $website;
+  
   }
 }
-
 /**
 * Implementation of hook_theme().
 */
@@ -67,7 +72,6 @@ function afg_theme(){
  */
 function afg_links($links, $attributes = array('class' => 'links')) {
 	$suffix = '';
-    
 	if(isset($links['subscribe'])) {
 		$title = $links['subscribe']['title'];
 		switch (strtolower($title)){
