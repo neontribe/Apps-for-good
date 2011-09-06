@@ -1306,4 +1306,157 @@ body #header-top .account-menu-active a {
 #stats .item-centres a { background: #CE8C00; }
 #stats .item-results a { background: #165327; }
 
+/* ---------- dan ------------------------------ */
 
+#header #logo {
+    height: 170px;
+    float: left;
+}
+    #header #logo img {
+        margin-left: 8px;
+        width: 130px;
+    }
+        #header #logo:hover img {
+            margin-left: 0px;
+            width: 146px;
+        }
+    
+#primary-links .links .active,
+#primary-links .links li a {
+/*  font-family: Arial,Helvetica,sans-serif;    
+    display: block;
+    width: auto;
+    padding: 0px 5px 0px 10px;
+    line-height: 40px;
+    position: static;
+    float: left;
+    font-weight: normal;
+    font-size: 16px;
+    color: #333;
+*/
+    text-shadow: #666 2px 2px 0px;
+}
+
+#primary-links .links li:hover a, 
+#primary-links .links .active a {
+    font-family: 'Open Sans', sans-serif;
+    text-shadow: #ddd 2px 2px 0px;  
+}
+
+#primary-links .links {
+}
+
+#primary-links .links li {
+    margin: 0 12px 0 0;
+    position: relative;
+    bottom: -10px;
+}
+
+#primary-links .links li:hover {
+    background-color: #fff;
+}
+    #primary-links .links li.active:hover {
+        background-color: #fff;
+    }
+
+#primary-links .links .active {
+    margin: 0 12px 0px 0;
+    position: relative;
+    bottom: 0;
+    font-size: 1.5em;
+}
+
+#header {
+    position: relative;
+}
+
+#header #logo img {
+    margin-top: -10px;
+}
+    
+#header-links {
+    margin: 0;
+}
+
+#header-sec-links {
+    display: block;
+    text-align: right;
+    font-size: 1.2em;
+    margin: 0 0 40px 0;
+}
+    #header-sec-links ul li {
+        margin-top: 2px;
+        display: inline-block;
+    }
+        #header-sec-links ul li.link a {
+            margin-right: 10px;
+            color: #ccc;
+            text-decoration: underline;
+        }
+        #header-sec-links ul li img {
+            margin-left: 5px;
+            height: 22px; 
+            width: 22px; 
+            position: relative; 
+            top: .4em;
+            filter: alpha(opacity=70);
+            opacity: 0.7;
+        }   
+        #header-sec-links ul li a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+            #header-sec-links a:hover img {
+                filter: alpha(opacity=100);
+                opacity: 1;
+            }   
+
+#header-sec-links ul li#get-involved a {
+    position: absolute;
+    right: 260px;
+    top: 5px;
+	width: 125px;
+    color: white;
+    font-size: 0.6em;
+    text-transform: capitalize;
+    background: #999 url('http://apps4good.neontribe.org/sites/all/themes/rubik/afg/images/afg/gradient.png') 0 12px repeat-x;
+    padding: 20px 9px 4px 9px;
+    margin: -20px 12px 0 0;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    -moz-box-shadow: 0 2px #111;
+    -webkit-box-shadow: 0 2px #111;
+    box-shadow: 0 2px #111;
+    text-decoration: none;
+    font-family: 'Paytone One', sans-serif;
+}
+    #header-sec-links ul li#get-involved a:hover {
+        box-shadow: 0 0 8px 5px rgba(200, 200, 200, 1);
+        text-decoration: none;
+        padding-top: 30px;
+        top: 5px;
+    }
+
+#header-links li:hover a {
+    box-shadow: 0 0 8px 5px rgba(200, 200, 200, 1);
+}
+
+#prof-soc-widgets {
+    margin: 12px 0 0 0;
+}
+    #prof-soc-widgets div {
+        float: left; 
+    }
+    #prof-soc-tw {
+    }
+    #prof-soc-li {
+        margin-left: 5px;
+    }
+    #prof-soc-fb {
+        margin-left: 15px;
+    }
+
+#page-title h1 {
+    font-size: 6em;
+}

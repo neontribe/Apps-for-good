@@ -29,9 +29,20 @@
             <?php //if ($help) print $help ?>
           </div></div>
           <?php endif; ?>
-		  
+
           <div id="header-top">
-		  	<?php print $header ?>
+		  	<?php /* print $header */ ?>
+			<div id="header-sec-links">
+				<ul>
+					<li id="get-involved" class="first"><a href="/get-involved">Get involved!</a></li>
+					<li class="link"><a href="/about">Log in</a></li>
+					<li class="link"><a href="/about">About</a></li>
+					<li class="link"><a href="/blog">Blog</a></li>
+					<li class="icon"><a href="http://www.facebook.com/appsforgood" title="Like us on Facebook"><img src="<?php print base_path() . path_to_theme(); ?>/images/afg/facebook_32.png" alt="Facebook icon"></a></li>
+					<li class="icon"><a href="http://twitter.com/appsforgoodcdi"><img src="<?php print base_path() . path_to_theme(); ?>/images/afg/twitter_32.png" alt="Twitter icon" title="Follow us on Twitter"></a></li>
+					<li class="icon"><a href="http://www.linkedin.com/groups/Apps-Good-3606611" title="Join our group on LinkedIn"><img src="<?php print base_path() . path_to_theme(); ?>/images/afg/linkedin_32.png" alt="LinkedIN icon"></a></li>
+				</ul>
+			</div>
           </div>
           
           <div id='header-links'>
