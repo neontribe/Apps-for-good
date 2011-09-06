@@ -2606,6 +2606,11 @@ function afg_groups_views_views_default_views() {
       'field' => 'province',
       'relationship' => 'none',
     ),
+    'field_centre_loc_lid' => array(
+      'id' => 'field_centre_loc_lid',
+      'table' => 'node_data_field_centre_loc',
+      'field' => 'field_centre_loc_lid',
+    ),
   ));
   $handler->override_option('sorts', array(
     'title' => array(
@@ -2902,7 +2907,7 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('row_options', array());
   $handler->override_option('path', 'centres/my');
   $handler->override_option('menu', array(
-    'type' => 'tab',
+    'type' => 'none',
     'title' => 'My centres',
     'description' => '',
     'weight' => '1',
@@ -3185,13 +3190,13 @@ function afg_groups_views_views_default_views() {
     'alignment' => 'horizontal',
     'fill_single_line' => 1,
   ));
-  $handler->override_option('path', 'centres/all');
+  $handler->override_option('path', 'centres');
   $handler->override_option('menu', array(
-    'type' => 'default tab',
+    'type' => 'none',
     'title' => 'Centre Directory',
     'description' => '',
     'weight' => '0',
-    'name' => 'navigation',
+    'name' => 'menu-header-menu',
   ));
   $handler->override_option('tab_options', array(
     'type' => 'normal',
@@ -3418,7 +3423,7 @@ function afg_groups_views_views_default_views() {
   ));
   $handler->override_option('path', 'centres/archived');
   $handler->override_option('menu', array(
-    'type' => 'tab',
+    'type' => 'none',
     'title' => 'Centres Archived',
     'description' => '',
     'weight' => '2',
@@ -4769,7 +4774,7 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('style_plugin', 'gmap');
   $handler->override_option('style_options', array(
     'grouping' => '',
-    'macro' => '[gmap]',
+    'macro' => '[gmap ]',
     'datasource' => 'location',
     'latfield' => 'title',
     'lonfield' => 'title',
@@ -4788,6 +4793,107 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'This centre map', 'block_9');
   $handler->override_option('relationships', array());
+  $handler->override_option('fields', array(
+    'title' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 1,
+      'spaces' => array(
+        'frontpage' => 1,
+        'type' => 'spaces_og',
+      ),
+      'exclude' => 1,
+      'id' => 'title',
+      'table' => 'node',
+      'field' => 'title',
+      'relationship' => 'none',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+    ),
+    'postal_code' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'exclude' => 0,
+      'id' => 'postal_code',
+      'table' => 'location',
+      'field' => 'postal_code',
+      'relationship' => 'none',
+    ),
+    'province' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'style' => 'name',
+      'exclude' => 1,
+      'id' => 'province',
+      'table' => 'location',
+      'field' => 'province',
+      'relationship' => 'none',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+    ),
+  ));
   $handler->override_option('arguments', array(
     'nid' => array(
       'default_action' => 'default',
@@ -4899,7 +5005,10 @@ function afg_groups_views_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'This centre map');
-  $handler->override_option('style_plugin', 'gmap');
+  $handler->override_option('style_options', array(
+    'grouping' => '',
+    'type' => 'ul',
+  ));
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $translatables['groups_listing_centre_school'] = array(
