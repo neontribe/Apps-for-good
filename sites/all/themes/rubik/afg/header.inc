@@ -49,7 +49,7 @@
           <?php if ($title) print $title ?>
         </h1>
         <span class='header-description'>
-          <?php print $header_desc ?>
+          <//REMOVED todo add Location instead for centres ?php print $header_desc ?>
        </span>
       </div>
 	  
