@@ -124,6 +124,7 @@ em {
 /* Clearing
 ---------------------------------------------------------- */
 
+#content-left .browse-centres:after,
 #content-left .view-updates li:after,
 #content-left .view-afg-app-directory li:after,
 #content-right .view-groups-listing-centre-school li:after {
@@ -700,32 +701,6 @@ content: " \21D7";
 	background: #1B9BDA;
 }
 
-
-
-#content-left .view-groups-listing-centre-school.view-display-id-page_2 tr {
-	float: left;
-	background: #F68424 !important;
-	border-bottom: 1px solid #FFF;
-	margin: 0 !important;
-}
-
-#content-left .view-groups-listing-centre-school.view-display-id-page_2 td {
-	float: left;
-	min-height: 162px;
-	width: 304px;
-	padding: 0;
-	position: relative;
-	border-right: 1px solid #FFF !important;
-}
-
-#content-left .view-groups-listing-centre-school.view-display-id-page_2 td:hover {
-	background: #F99744 !important;
-}
-
-#content-left .view-groups-listing-centre-school.view-display-id-page_2 td:nth-child(odd) {
-	clear: both;
-}
-
 #content-left .view-groups-listing-centre-school .views-field-title {
 	font-size: 1em;
 }
@@ -742,73 +717,10 @@ content: " \21D7";
 	padding: 20px;
 }
 
-#content-left .view-groups-listing-centre-school.view-display-id-page_2 img {
-	margin: 20px;
-	-moz-box-shadow: 0 0 4px 4px #D37626;
-	-webkit-box-shadow: 0 0 4px 4px #D37626;
-	box-shadow: 0 0 4px 4px #D37626;
-}
-
 #content-left .view-groups-listing-centre-school,
 #content-left .view-groups-listing-centre-school a:link,
 #content-left .view-groups-listing-centre-school a:visited {
 	color: #FFF;	
-}
-
-#content-left .view-groups-listing-centre-school.view-display-id-page_2 label {
-	font-weight: normal;
-	font-size: 0.9em;
-}
-
-#content-left  .view-groups-listing-centre-school.view-display-id-page_2 .views-field-field-logo-fid {
-	display: inline;
-}
-
-#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-title,
-#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-city {
-	float: right;
-	width: 190px;
-	margin: 20px 20px 0 0;
-}
-
-#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-city {
-	margin-top: 2px;
-	margin-bottom: 60px;
-}
-
-#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-city span,
-#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-province {
-	font-size: 1.4em !important;
-}
-
-#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-title a:link,
-#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-city span {
-	font-size: 1.7em;
-	font-weight: bold;
-	text-transform: uppercase;
-	line-height: 1;
-}
-
-#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-title-1 {
-	position: absolute;
-	bottom: 20px;
-	left: 20px;
-	background: #4A97A9 url('images/afg/gradient.png') 0 2px repeat-x;
-	letter-spacing: 1px;
-	padding: 10px 12px;
-	text-shadow: 1px 1px 1px #222;
-	text-transform: uppercase;
-	font-size: 1.5em;
-	-moz-box-shadow: 0 2px 1px #222;
-	-webkit-box-shadow: 0 2px 1px #222;
-	box-shadow: 0 2px 1px #222;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-}
-
-#content-left .view-groups-listing-centre-school.view-display-id-page_2 .views-field-title-1:hover {
-	background-position: 0 15px;
 }
 
 /* RHS / Centres staff members listing */
@@ -1321,6 +1233,7 @@ input[type='submit'] {
 	margin-left: 0;
 }
 
+
 #stats a {
 	display: block;
 	right: 10px;
@@ -1417,7 +1330,15 @@ border-bottom: 1px solid #cbcbcb !important;
 padding:0 0 3px;
 }
 
+.browse-centres .item-list {
+padding:5px;
+}
+
 #content-left .item-list ul {
 clear:both;
-padding:10px 0 0;
+}
+
+.browse-centres, .browse-centres .item-list {
+background:#D8D6D7;
+border:0;
 }
