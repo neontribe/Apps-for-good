@@ -581,6 +581,13 @@ content: " \21D7";
 	max-width: 35%;
 }
 
+#block-atrium-create .links,
+#block-atrium-admin_links .links {
+	position: relative;
+	z-index: 10;
+	background: #333;
+}
+
 #block-atrium-create li,
 #block-atrium-admin_links li {
 	float: right;
@@ -608,8 +615,8 @@ content: " \21D7";
 }
 
 #block-atrium-create,
-#block-atrium-create .block-content,
 #block-atrium-admin_links,
+#block-atrium-create .block-content,
 #block-atrium-admin_links .block-content {
 	background: none !important;
 }
