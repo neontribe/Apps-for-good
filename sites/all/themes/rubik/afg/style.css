@@ -706,6 +706,10 @@ content: " \21D7";
 #content-left .activity-updates span.views-field-atrium-activity-timestamp em {
 	font-weight: normal !important;
 }
+
+#content-left .activity-updates .views-field-field-group-image-fid {
+        clear: both;
+}
 	
 /* Groups Listing Centre School
 ---------------------------------------------------------- */
