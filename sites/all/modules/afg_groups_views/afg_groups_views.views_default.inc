@@ -2606,10 +2606,10 @@ function afg_groups_views_views_default_views() {
       'field' => 'province',
       'relationship' => 'none',
     ),
-    'field_centre_loc_lid' => array(
-      'id' => 'field_centre_loc_lid',
-      'table' => 'node_data_field_centre_loc',
-      'field' => 'field_centre_loc_lid',
+    'tid' => array(
+      'id' => 'tid',
+      'table' => 'term_node',
+      'field' => 'tid',
     ),
   ));
   $handler->override_option('sorts', array(
@@ -2672,11 +2672,6 @@ function afg_groups_views_views_default_views() {
       'table' => 'node',
       'field' => 'type',
       'relationship' => 'none',
-    ),
-    'type_1' => array(
-      'id' => 'type_1',
-      'table' => 'node',
-      'field' => 'type',
     ),
   ));
   $handler->override_option('access', array(
@@ -2919,291 +2914,6 @@ function afg_groups_views_views_default_views() {
     'description' => '',
     'weight' => '0',
     'name' => 'navigation',
-  ));
-  $handler = $view->new_display('page', 'centres', 'page_2');
-  $handler->override_option('fields', array(
-    'field_logo_fid' => array(
-      'label' => '',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'html' => 0,
-        'strip_tags' => 0,
-      ),
-      'empty' => '',
-      'hide_empty' => 0,
-      'empty_zero' => 0,
-      'link_to_node' => 0,
-      'label_type' => 'none',
-      'format' => 'badge-thumb_default',
-      'multiple' => array(
-        'group' => TRUE,
-        'multiple_number' => '',
-        'multiple_from' => '',
-        'multiple_reversed' => FALSE,
-      ),
-      'exclude' => 0,
-      'id' => 'field_logo_fid',
-      'table' => 'node_data_field_logo',
-      'field' => 'field_logo_fid',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-      'relationship' => 'none',
-    ),
-    'title' => array(
-      'label' => '',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'html' => 0,
-        'strip_tags' => 0,
-      ),
-      'empty' => '',
-      'hide_empty' => 0,
-      'empty_zero' => 0,
-      'link_to_node' => 1,
-      'spaces' => array(
-        'frontpage' => 1,
-        'type' => 'spaces_og',
-      ),
-      'exclude' => 0,
-      'id' => 'title',
-      'table' => 'node',
-      'field' => 'title',
-      'relationship' => 'none',
-    ),
-    'city' => array(
-      'label' => 'Located in',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'html' => 0,
-        'strip_tags' => 0,
-      ),
-      'empty' => '',
-      'hide_empty' => 1,
-      'empty_zero' => 0,
-      'exclude' => 0,
-      'id' => 'city',
-      'table' => 'location',
-      'field' => 'city',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-      'relationship' => 'none',
-    ),
-    'province' => array(
-      'label' => '',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'html' => 0,
-        'strip_tags' => 0,
-      ),
-      'empty' => '',
-      'hide_empty' => 0,
-      'empty_zero' => 0,
-      'style' => 'name',
-      'exclude' => 0,
-      'id' => 'province',
-      'table' => 'location',
-      'field' => 'province',
-      'relationship' => 'none',
-    ),
-    'postal_code' => array(
-      'label' => '',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'html' => 0,
-        'strip_tags' => 0,
-      ),
-      'empty' => '',
-      'hide_empty' => 0,
-      'empty_zero' => 0,
-      'exclude' => 1,
-      'id' => 'postal_code',
-      'table' => 'location',
-      'field' => 'postal_code',
-      'relationship' => 'none',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-    ),
-    'title_1' => array(
-      'label' => '',
-      'alter' => array(
-        'alter_text' => 1,
-        'text' => 'Read more ->',
-        'make_link' => 0,
-        'path' => '',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'html' => 0,
-        'strip_tags' => 0,
-      ),
-      'empty' => '',
-      'hide_empty' => 0,
-      'empty_zero' => 0,
-      'link_to_node' => 1,
-      'spaces' => array(
-        'frontpage' => 1,
-        'type' => 'spaces_og',
-      ),
-      'exclude' => 0,
-      'id' => 'title_1',
-      'table' => 'node',
-      'field' => 'title',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-      'relationship' => 'none',
-    ),
-  ));
-  $handler->override_option('filters', array(
-    'type_groups_all' => array(
-      'operator' => '=',
-      'value' => '',
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type_groups_all',
-      'table' => 'og',
-      'field' => 'type_groups_all',
-      'relationship' => 'none',
-    ),
-    'status' => array(
-      'operator' => '=',
-      'value' => 1,
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'status',
-      'table' => 'node',
-      'field' => 'status',
-      'relationship' => 'none',
-    ),
-    'type' => array(
-      'operator' => 'in',
-      'value' => array(
-        'group_centre_school' => 'group_centre_school',
-      ),
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type',
-      'table' => 'node',
-      'field' => 'type',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-      'relationship' => 'none',
-    ),
-  ));
-  $handler->override_option('title', 'Browse Centres');
-  $handler->override_option('empty', '');
-  $handler->override_option('use_ajax', FALSE);
-  $handler->override_option('items_per_page', 25);
-  $handler->override_option('use_pager', '1');
-  $handler->override_option('style_plugin', 'grid');
-  $handler->override_option('style_options', array(
-    'grouping' => '',
-    'columns' => '2',
-    'alignment' => 'horizontal',
-    'fill_single_line' => 1,
-  ));
-  $handler->override_option('path', 'centres');
-  $handler->override_option('menu', array(
-    'type' => 'none',
-    'title' => 'Centre Directory',
-    'description' => '',
-    'weight' => '0',
-    'name' => 'menu-header-menu',
-  ));
-  $handler->override_option('tab_options', array(
-    'type' => 'normal',
-    'title' => 'Centres',
-    'description' => '',
-    'weight' => '0',
-    'name' => 'features',
   ));
   $handler = $view->new_display('page', 'Page: Archived centres', 'page_3');
   $handler->override_option('fields', array(
@@ -3893,8 +3603,10 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('access', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', '');
+  $handler->override_option('title', 'Apps');
   $handler->override_option('css_class', 'apps-at-centre');
+  $handler->override_option('empty', 'No apps yet.');
+  $handler->override_option('empty_format', '5');
   $handler->override_option('style_options', array(
     'grouping' => '',
     'type' => 'ul',
@@ -4011,52 +3723,6 @@ function afg_groups_views_views_default_views() {
         'group_centre_school' => 0,
       ),
       'validate_argument_php' => '',
-    ),
-  ));
-  $handler->override_option('filters', array(
-    'type_groups_all' => array(
-      'operator' => '=',
-      'value' => '',
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type_groups_all',
-      'table' => 'og',
-      'field' => 'type_groups_all',
-      'relationship' => 'none',
-    ),
-    'status' => array(
-      'operator' => '=',
-      'value' => 1,
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'status',
-      'table' => 'node',
-      'field' => 'status',
-      'relationship' => 'none',
-    ),
-    'type' => array(
-      'operator' => 'in',
-      'value' => array(
-        'group_centre_school' => 'group_centre_school',
-      ),
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type',
-      'table' => 'node',
-      'field' => 'type',
-      'relationship' => 'none',
     ),
   ));
   $handler->override_option('access', array(
@@ -4178,52 +3844,6 @@ function afg_groups_views_views_default_views() {
         'group_centre_school' => 0,
       ),
       'validate_argument_php' => '',
-    ),
-  ));
-  $handler->override_option('filters', array(
-    'type_groups_all' => array(
-      'operator' => '=',
-      'value' => '',
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type_groups_all',
-      'table' => 'og',
-      'field' => 'type_groups_all',
-      'relationship' => 'none',
-    ),
-    'status' => array(
-      'operator' => '=',
-      'value' => 1,
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'status',
-      'table' => 'node',
-      'field' => 'status',
-      'relationship' => 'none',
-    ),
-    'type' => array(
-      'operator' => 'in',
-      'value' => array(
-        'group_centre_school' => 'group_centre_school',
-      ),
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type',
-      'table' => 'node',
-      'field' => 'type',
-      'relationship' => 'none',
     ),
   ));
   $handler->override_option('access', array(
@@ -4420,52 +4040,6 @@ function afg_groups_views_views_default_views() {
         'group_centre_school' => 0,
       ),
       'validate_argument_php' => '',
-    ),
-  ));
-  $handler->override_option('filters', array(
-    'type_groups_all' => array(
-      'operator' => '=',
-      'value' => '',
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type_groups_all',
-      'table' => 'og',
-      'field' => 'type_groups_all',
-      'relationship' => 'none',
-    ),
-    'status' => array(
-      'operator' => '=',
-      'value' => 1,
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'status',
-      'table' => 'node',
-      'field' => 'status',
-      'relationship' => 'none',
-    ),
-    'type' => array(
-      'operator' => 'in',
-      'value' => array(
-        'group_centre_school' => 'group_centre_school',
-      ),
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type',
-      'table' => 'node',
-      'field' => 'type',
-      'relationship' => 'none',
     ),
   ));
   $handler->override_option('access', array(
@@ -4995,7 +4569,7 @@ function afg_groups_views_views_default_views() {
   ));
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
-  $handler = $view->new_display('block', 'Browse Centres', 'block_10');
+  $handler = $view->new_display('page', 'Browse Centres', 'page_2');
   $handler->override_option('fields', array(
     'tid' => array(
       'label' => '',
@@ -5230,64 +4804,32 @@ function afg_groups_views_views_default_views() {
       'relationship' => 'none',
     ),
   ));
-  $handler->override_option('filters', array(
-    'type_groups_all' => array(
-      'operator' => '=',
-      'value' => '',
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type_groups_all',
-      'table' => 'og',
-      'field' => 'type_groups_all',
-      'relationship' => 'none',
-    ),
-    'status' => array(
-      'operator' => '=',
-      'value' => 1,
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'status',
-      'table' => 'node',
-      'field' => 'status',
-      'relationship' => 'none',
-    ),
-    'type' => array(
-      'operator' => 'in',
-      'value' => array(
-        'group_centre_school' => 'group_centre_school',
-      ),
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type',
-      'table' => 'node',
-      'field' => 'type',
-      'relationship' => 'none',
-    ),
-  ));
-  $handler->override_option('title', 'Browse Centres');
+  $handler->override_option('css_class', 'browse-centres');
   $handler->override_option('style_options', array(
     'grouping' => 'tid',
     'type' => 'ul',
   ));
-  $handler->override_option('block_description', '');
-  $handler->override_option('block_caching', -1);
+  $handler->override_option('path', 'centres');
+  $handler->override_option('menu', array(
+    'type' => 'none',
+    'title' => '',
+    'description' => '',
+    'weight' => 0,
+    'name' => 'navigation',
+  ));
+  $handler->override_option('tab_options', array(
+    'type' => 'none',
+    'title' => '',
+    'description' => '',
+    'weight' => 0,
+    'name' => 'navigation',
+  ));
   $translatables['groups_listing_centre_school'] = array(
     t('<a href=\'centres/all\'><?php echo afg_content_count(\'group_centre_school\'); ?> Centres</a>'),
     t('About Centre'),
     t('About this Centre'),
     t('All Centres Map'),
+    t('Apps'),
     t('Apps at centre'),
     t('Archived centres'),
     t('Block: My centres (sidebar)'),
@@ -5298,6 +4840,7 @@ function afg_groups_views_views_default_views() {
     t('Contact Centre'),
     t('Defaults'),
     t('My centres'),
+    t('No apps yet.'),
     t('No archived groups found.'),
     t('No groups found.'),
     t('Our Apps'),
@@ -5307,7 +4850,6 @@ function afg_groups_views_views_default_views() {
     t('This centre map'),
     t('User centres'),
     t('View more'),
-    t('centres'),
   );
 
   $views[$view->name] = $view;
