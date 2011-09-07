@@ -1,0 +1,154 @@
+<?php
+
+/**
+ * @file
+ * Implement LinkedIn Authentication service for user login
+ */
+
+/**
+ * Implementation of hook_init()
+ */
+function linkedin_auth_init() {
+  module_load_include('pages.inc', 'linkedin_auth');
+  drupal_add_css(drupal_get_path('module', 'linkedin_auth') . '/linkedin_auth.css', 'module');
+}
+
+/*
+ * Implementation of hook_menu
+ */
+
+function linkedin_auth_menu() {
+
+  $items = array ();
+
+  //callback for oauth token request on linkedin API.
+  $items['linkedin/login/%user'] = array (
+      'type' => MENU_CALLBACK,
+      'page callback' => 'linkedin_access_token',
+      'page arguments' => array (2),
+      'access callback' => 'linkedin_auth_token_access',
+      'access arguments' => array (2),
+      'file' => 'linkedin.inc',
+      'file path' => drupal_get_path('module', 'linkedin'),
+  );
+
+  return $items;
+}
+
+/*
+ * Custom access callback for linkedin/login/%user
+ */
+
+function linkedin_auth_token_access($account) {
+  if (user_is_anonymous ()) {
+    return TRUE;
+  }
+  return FALSE;
+}
+
+/**
+ * Implementation of hook_theme()
+ */
+function linkedin_auth_theme($existing, $type, $theme, $path) {
+  return array (
+      'linkedin_auth_display_login_block_button' => array (
+          'arguments' => array ('path' => NULL, 'text' => NULL),
+          'file' => 'linkedin_auth.theme.inc',
+      ),
+  );
+}
+
+/**
+ * Implementation of hook_form_alter : adds LinkedIn login to the login forms.
+ */
+function linkedin_auth_form_alter(&$form, $form_state, $form_id) {
+
+  //add login link to the login form
+  if ($_SESSION['linkedin_not_linked'] != 1) {
+    if ($form_id == 'user_login_block' && variable_get('linkedin_auth_login_link_on_block', 0) == 1) {
+      $form['linkedin_auth_links'] = array (
+          '#value' => theme('linkedin_auth_display_login_block_button', 'drupal_login_block'),
+          '#weight' => 1,
+      );
+    }
+    elseif ($form_id == 'user_login' && variable_get('linkedin_auth_login_link_on_page', 0) == 1) {
+      $form['linkedin_auth_links'] = array (
+          '#value' => theme('linkedin_auth_display_login_block_button', 'drupal_login_page'),
+          '#weight' => 1,
+      );
+    }
+    return $form;
+  }
+}
+
+/**
+ * Implementation of hook_user()
+ */
+function linkedin_auth_user($op, &$edit, &$account, $category = NULL) {
+  switch ($op) {
+    case 'view':
+      if($_SESSION['linkedin_not_linked'] == 1){
+        global $user;
+        if($user->uid == $account->uid){
+          unset($_SESSION['linkedin_not_linked']);
+          drupal_goto('linkedin/token/' . $account->uid);
+        }
+      }
+  }
+}
+
+/**
+ * Implementation of hook_block()
+ */
+function linkedin_auth_block($op = 'list', $delta = 0, $edit = array ()) {
+  if (variable_get('linkedin_auth_login_block', 0) == 1) {
+    switch ($op) {
+
+      case 'list':
+        $blocks[0] = array (
+            'info' => t('Login using LinkedIn'),
+            'title' => t('LinkedIn Login'),
+        );
+        return $blocks;
+        break;
+
+      case 'configure':
+        return $form;
+        break;
+
+      case 'save':
+        break;
+
+      case 'view':
+        switch ($delta) {
+
+          case 0:
+            if (user_is_anonymous ()) {
+              $content = theme('linkedin_auth_display_login_block_button', 'linkedin_login_block');
+              $block['subject'] = t('Subject');
+              $block['content'] = $content;
+            }
+        }
+        return $block;
+    }
+  }
+}
+
+/*
+ * Implementation of hook_linkedin_external_login
+ */
+
+function linkedin_auth_linkedin_external_login($uid) {
+  $login_as = user_load($uid);
+  user_external_login($login_as);
+  drupal_goto();
+}
+
+/*
+ * Implementation of hook_linkedin_tie_external_login
+ */
+
+function linkedin_auth_linkedin_tie_external_login($uid, $token, $secret) {
+  $_SESSION['linkedin_not_linked'] = 1;
+  drupal_goto('linkedin/register/create', array('oauth_token' => $token, 'oauth_secret' => $secret));
+}
