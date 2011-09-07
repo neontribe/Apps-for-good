@@ -9,6 +9,7 @@ $(document).ready(function(){
 	
 	// Styling
 	$('#content-left .block').append('<div class="block-shadow"></div>');
+	$('.browse-centres').parent().append('<div class="block-shadow"></div>');
 	$('#content-left #stats .item').append('<span class="item-arrow"></span>');
 	
 	// Toggle Menus
