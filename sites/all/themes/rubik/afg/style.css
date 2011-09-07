@@ -1282,7 +1282,7 @@ background:none;
 
 #content-left .browse-centres li {
 padding:0 0 2px;
-width:49%;
+width:49.9%;
 float:left;
 margin:0 0 10px;
 border:0;
@@ -1345,4 +1345,12 @@ clear:both;
 .browse-centres, .browse-centres .item-list {
 background:#D8D6D7;
 border:0;
+}
+
+#content-left .browse-centres .views-field-member-count {
+display: block;
+float: left;
+padding: 0 14px 0 0;
+margin: 0 5px 0 0;
+background: url('images/afg/profile.jpg') right no-repeat;
 }
