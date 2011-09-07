@@ -578,6 +578,12 @@ content: " \21D7";
 #block-atrium-admin_links {
 	float: right;
 	text-align: right;
+	max-width: 35%;
+}
+
+#block-atrium-create li,
+#block-atrium-admin_links li {
+	float: right;
 }
 
 #block-atrium-create h2,
