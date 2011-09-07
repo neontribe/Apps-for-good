@@ -1330,6 +1330,10 @@ border-bottom: 1px solid #cbcbcb !important;
 padding:0 0 3px;
 }
 
+.browse-centre {
+width:98%;
+}
+
 .browse-centres .item-list {
 padding:5px;
 }
