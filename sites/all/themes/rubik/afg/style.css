@@ -587,6 +587,7 @@ content: " \21D7";
 #block-atrium-admin_links .links {
 	background: #333;
 	padding: 5px 0 0 0;
+	margin: -15px 0 0 0;
 }
 
 #block-atrium-create li,
