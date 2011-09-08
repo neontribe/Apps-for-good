@@ -1,0 +1,14 @@
+<?php
+
+function node_add_user_menu() {
+  $items = array();
+  $items['node/add/user'] = array(
+    'title' => t('User'),
+    'description' => t('Create a user'),
+    'access arguments' => array('create users'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ucreate_user_form'),
+    'type' => MENU_NORMAL_ITEM
+  );
+  return $items;
+}
