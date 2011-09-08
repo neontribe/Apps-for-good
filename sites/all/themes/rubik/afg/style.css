@@ -419,6 +419,10 @@ background:#fff;
 	font-size: 3.2em;
 }
 
+#content-left .block {
+margin-bottom: 0;
+}
+
 #content-left .block-title {
 	color: #FFF;
 	margin: 5px 0 0 -69px;
@@ -445,7 +449,7 @@ color:#666;
 }
 
 #content-left .block-content {
-	margin: 15px 0 30px;
+	margin: 15px 0 0;
 	width: 95%;
 	background: #D8D6D7;
 }
@@ -508,9 +512,8 @@ color:#666;
 	display: block;
 	height: 28px;
 	width: 98%;
-	margin: -30px auto 0;
+	margin: 0 auto 10px;
 	padding: 0;
-	float: left;
 	background: url('images/afg/left-content-shadow.png') center bottom no-repeat;
 }
 
@@ -1304,7 +1307,6 @@ input[type='submit'] {
 
 /* PLEASE MOVE */
 
-
 #content-left .browse-centres h3 {
 background: none;
 clear:both;
@@ -1356,6 +1358,7 @@ padding-left:10px;
 width:30px;
 height:auto;
 margin-bottom:0;
+box-shadow:0 0 6px 2px #A1A1A1;
 }
 
 #content-left .browse-centres h3 li {

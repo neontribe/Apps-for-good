@@ -8,7 +8,9 @@ $(document).ready(function(){
 	);
 	
 	// Styling
-	$('#content-left .block').append('<div class="block-shadow"></div>');
+	$('<div class="block-shadow"></div>').insertAfter('#block-quicktabs-cdi_features, #content-left .browse-centres, #block-quicktabs-app_directory, #block-quicktabs-app_media');
+	//.browse-centres
+	//$('#content-left .browse-centres').insertAfter('<div class="block-shadow"></div>');
 	$('#content-left #stats .item').append('<span class="item-arrow"></span>');
 	
 	// Toggle Menus
@@ -16,7 +18,7 @@ $(document).ready(function(){
 		// Hide menu by default
 		$('ul', menu).hide();
 		
-		$('h3, h2', menu).bind('click', function(evt){			
+		$('h3, h2', menu).bind('click', function(evt){
 			// Toggle menu state
 			$('.pane-right h3, ul', menu).toggle(); 
 			menu.toggleClass('account-menu-active');
