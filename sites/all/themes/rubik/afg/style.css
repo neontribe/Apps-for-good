@@ -124,6 +124,7 @@ em {
 /* Clearing
 ---------------------------------------------------------- */
 
+.view-id-Group_Media li:after,
 #content-left .browse-centres:after,
 #content-left .view-updates li:after,
 #content-left .view-afg-app-directory li:after,
@@ -530,6 +531,10 @@ color:#666;
 #content-right .block-content ul li a:link { color: #2D2D2D; }
 #content-right .block-content ul li a:hover { color: #777; }
 
+.views-field-body {
+clear:both;
+}
+
 #content-right .views-field-body {
 	margin-bottom: 15px;
 }
@@ -677,8 +682,9 @@ content: " \21D7";
 #content-left .activity-updates .view-empty { padding: 10px; }
 #content-left .activity-updates a:link { color: #FFF; }
 
+#content-left .view-id-Group_Media .views-field-changed,
 #content-left .activity-updates span.views-field-atrium-activity-timestamp,
-#content-left .activity-updates span.views-field-comment-count {
+#content-left .views-field-comment-count {
 	float: left;
 }
 
@@ -686,23 +692,30 @@ content: " \21D7";
 	clear: both;
 }
 
+#content-left .view-id-Group_Media .views-field-changed,
 #content-left .activity-updates span.views-field-atrium-activity-timestamp {
 	text-indent: 17px;
 	background: url('images/afg/icon-timestamp.png') left no-repeat;
 }
 
-#content-left .activity-updates span.views-field-comment-count {
-	text-indent: 26px;
-	background: url('images/afg/icon-commentcount.png') left no-repeat;
+#content-left .views-field-comment-count {
+	text-indent: 26px !important;
+	background: url('images/afg/icon-commentcount.png') left no-repeat !important;
 }
 
+#content-left .view-id-Group_Media .views-field-changed,
 #content-left .activity-updates span.views-field-atrium-activity-timestamp,
-#content-left .activity-updates span.views-field-comment-count,
-#content-left .activity-updates .views-field-comments-link {
+#content-left .views-field-comment-count,
+#content-left .views-field-comments-link {
 	font-size: 0.9em;
 	margin: 6px 6px 10px 0;
 }
 
+#content-left .view-id-Group_Media .views-field-comment-count {
+margin:0;
+}
+
+#content-left .view-id-Group_Media .views-field-changed em,
 #content-left .activity-updates span.views-field-atrium-activity-timestamp em {
 	font-weight: normal !important;
 }
@@ -786,8 +799,8 @@ content: " \21D7";
 	margin: 0 30px 0 0;
 }
 
+#content-left .view-id-Group_Media .views-field-changed,
 .view-shoutbox-shouts .views-field-timestamp {
-	color: #AAA;
 	font-size: 0.9em;
 	text-transform: uppercase;
 	margin: 0 0 5px;
@@ -956,10 +969,9 @@ margin: 0 0 70px;
 }
 
 #content-left .view-updates .views-field-atrium-activity-timestamp,
-#content-left .view-afg-app-directory  .views-field-changed {
+#content-left  .views-field-changed {
 	float: right;
 	color: #61C7F7;
-	color: rgba(255, 255, 255, .5);
 	text-transform: uppercase;
 }
 
@@ -1372,4 +1384,18 @@ float: left;
 padding: 0 14px 0 0;
 margin: 0 5px 0 0;
 background: url('images/afg/profile.jpg') right no-repeat;
+}
+
+
+.view-id-Group_Media li {
+color: #FFF;
+background: #1B9BDA;
+}
+
+#content-left .view-id-Group_Media .views-field-title {
+color: #FFF;
+font-weight: normal;
+font-size: 1.7em;
+margin: 0 0 7px;
+text-transform: capitalize;
 }
