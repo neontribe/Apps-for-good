@@ -98,6 +98,17 @@ h1, h2, h3, .block-title {
 	line-height:1;
 }
 
+.view-header h2 {
+font-size:2.5em;
+color:#222;
+margin-bottom:3px;
+}
+
+h3 {
+	color: #222;
+	font-size: 2.5em;
+}
+
 textarea {
 	background: #F5F1F2 !important;
 	border: 1px solid #BABABA !important;
@@ -908,8 +919,10 @@ width:99%;
 
 #editorial-title-teaser h3 a {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 1.2em;
+	font-size: 0.5em;
+	line-height: 1;
 	color: #10435C;
+	display: block;
 }
 
 #editorial-title-teaser p {
@@ -1385,7 +1398,6 @@ box-shadow:0 0 6px 2px #A1A1A1;
 
 #content-left .browse-centres h3 li {
 width:100%;
-font-size: 2.5em;
 border-bottom: 1px solid #cbcbcb !important;
 padding:0 0 3px;
 }
