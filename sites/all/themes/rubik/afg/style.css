@@ -128,7 +128,8 @@ em {
 #content-left .browse-centres:after,
 #content-left .view-updates li:after,
 #content-left .view-afg-app-directory li:after,
-#content-right .view-groups-listing-centre-school li:after {
+#content-right .view-groups-listing-centre-school li:after,
+.views-field-comment-count:after {
     content: ".";
     display: block;
     height: 0;
@@ -658,13 +659,16 @@ content: " \21D7";
 }
 
 #content-left .activity-updates img,
-#content-left .activity-updates object {
+#content-left .view-id-Group_Media img,
+#content-left .activity-updates object,
+#content-left .view-id-Group_Media object {
 	border: 6px solid #FFF;
 	-moz-box-shadow: 0 0 6px 6px #0083DA;
 	-webkit-box-shadow: 0 0 6px 6px #0083DA;
 	box-shadow: 0 0 6px 6px #0083DA;
 	margin: 0 20px 0 0;
 	overflow: hidden;
+	clear:both;
 }
 
 #content-left .view-updates img {
@@ -712,7 +716,7 @@ content: " \21D7";
 }
 
 #content-left .view-id-Group_Media .views-field-comment-count {
-margin:0;
+margin:0 0 0 6px;
 }
 
 #content-left .view-id-Group_Media .views-field-changed em,
@@ -1387,9 +1391,10 @@ background: url('images/afg/profile.jpg') right no-repeat;
 }
 
 
-.view-id-Group_Media li {
+.view-id-Group_Media ul li {
 color: #FFF;
 background: #1B9BDA;
+padding:10px;
 }
 
 #content-left .view-id-Group_Media .views-field-title {
@@ -1398,4 +1403,9 @@ font-weight: normal;
 font-size: 1.7em;
 margin: 0 0 7px;
 text-transform: capitalize;
+}
+
+.view-id-Group_Media .views-field-field-video-embed, .view-id-Group_Media .views-field-field-group-image-fid {
+clear:both;
+padding:2px 0 0;
 }
