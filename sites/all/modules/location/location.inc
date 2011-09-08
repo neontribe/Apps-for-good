@@ -345,9 +345,12 @@ function location_latlon_rough_default($location = array()) {
  * @ingroup Location
  */
 function location_latlon_exact($location = array()) {
+  // $fh = fopen('/tmp/delme', 'a'); fwrite($fh, var_export($location, true) . "\n\n"); fclose($fh);
   $country = $location['country'];
   location_standardize_country_code($country);
+  // $fh = fopen('/tmp/delme', 'a'); fwrite($fh, 'Country ' . $country . "\n\n"); fclose($fh);
   $service = variable_get('location_geocode_'. $country, 'none');
+  // $fh = fopen('/tmp/delme', 'a'); fwrite($fh, 'Service ' . $service . "\n\n"); fclose($fh);
   if (!empty($country) && $service != 'none') {
     // figure out what the exact function should be
     if (strpos($service, '|')) {
@@ -361,6 +364,7 @@ function location_latlon_exact($location = array()) {
       location_load_geocoder($service);
       $exact_latlon_function = $service .'_geocode_location';
     }
+    // $fh = fopen('/tmp/delme', 'a'); fwrite($fh, 'Service function ' . $exact_latlon_function . "\n\n"); fclose($fh);
     if (function_exists($exact_latlon_function)) {
       return $exact_latlon_function($location);
     }

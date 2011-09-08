@@ -51,7 +51,9 @@
         <span class='header-description'>
           <//REMOVED todo add Location instead for centres ?php print $header_desc ?>
        </span>
-      </div>
+        <span class='region'><h2> <?php if ($region) print $region ?> </h2></span>
+
+        </div>
 	  
 	  <?php if ($space_tools): ?>
 	    <div id='space-tools'><div class='dropdown-blocks toggle-blocks clear-block'><?php print $space_tools ?></div></div>
