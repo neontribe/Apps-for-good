@@ -1,5 +1,22 @@
 <?php
 
+
+/**
+* Implementation of hook_theme().
+*/
+function afg_theme(){
+  return array(
+    'comment_form' => array(
+      	'arguments' => array('form' => NULL),
+  	),
+    'user_register' => array(
+      'arguments' => array('form' => NULL),
+      'template' => 'user-register'
+    )
+  );
+}
+
+
 /**
  * Preprocessor for theme('page').
  */
@@ -66,16 +83,6 @@ function afg_preprocess_page(&$vars) {
     $vars['region'] = $region;
 
   }
-}
-/**
-* Implementation of hook_theme().
-*/
-function afg_theme(){
-  return array(
-    'comment_form' => array(
-      	'arguments' => array('form' => NULL),
-  	),
-  );
 }
 
 /**

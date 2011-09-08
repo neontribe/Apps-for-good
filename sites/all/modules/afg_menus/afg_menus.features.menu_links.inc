@@ -14,11 +14,11 @@ function afg_menus_menu_default_menu_links() {
     'link_title' => 'Applications',
     'options' => array(),
     'module' => 'system',
-    'hidden' => '0',
+    'hidden' => '1',
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '0',
+    'weight' => '-45',
   );
   // Exported menu link: features:centres
   $menu_links['features:centres'] = array(
@@ -28,11 +28,11 @@ function afg_menus_menu_default_menu_links() {
     'link_title' => 'Centres',
     'options' => array(),
     'module' => 'system',
-    'hidden' => '0',
+    'hidden' => '1',
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '0',
+    'weight' => '-44',
   );
   // Exported menu link: menu-footer-links:<front>
   $menu_links['menu-footer-links:<front>'] = array(
@@ -69,25 +69,6 @@ function afg_menus_menu_default_menu_links() {
     'has_children' => '0',
     'expanded' => '0',
     'weight' => '-50',
-    'parent_path' => '<front>',
-  );
-  // Exported menu link: menu-footer-links:centres
-  $menu_links['menu-footer-links:centres'] = array(
-    'menu_name' => 'menu-footer-links',
-    'link_path' => 'centres',
-    'router_path' => 'centres',
-    'link_title' => 'Centres',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Centres',
-      ),
-    ),
-    'module' => 'menu',
-    'hidden' => '0',
-    'external' => '0',
-    'has_children' => '0',
-    'expanded' => '0',
-    'weight' => '-49',
     'parent_path' => '<front>',
   );
   // Exported menu link: menu-footer-links:node/104

@@ -56,7 +56,7 @@ function cdi_blog_views_default_views() {
       'field' => 'field_carousel_image_fid',
       'relationship' => 'none',
     ),
-    'title' => array(
+    'nid' => array(
       'label' => '',
       'alter' => array(
         'alter_text' => 0,
@@ -79,7 +79,44 @@ function cdi_blog_views_default_views() {
       'empty' => '',
       'hide_empty' => 0,
       'empty_zero' => 0,
-      'link_to_node' => 1,
+      'link_to_node' => 0,
+      'spaces' => array(
+        'frontpage' => 0,
+        'type' => 'spaces_og',
+      ),
+      'exclude' => 1,
+      'id' => 'nid',
+      'table' => 'node',
+      'field' => 'nid',
+      'relationship' => 'none',
+      'override' => array(
+        'button' => 'Override',
+      ),
+    ),
+    'title' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 1,
+        'path' => 'cdi-group/node/[nid]',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
       'spaces' => array(
         'frontpage' => 0,
         'type' => 'spaces_og',
@@ -154,7 +191,7 @@ function cdi_blog_views_default_views() {
       'alter' => array(
         'text' => '<div id="editorial-title-teaser">
 <div>
-<h3>[title]</h3><p>[teaser]</p>[view_node]
+<h3>[title]</h3><p>[teaser]</p><a href=\'/cdi-group/node/[nid]\'>View</a>
 </div>
 </div>',
         'make_link' => 0,
@@ -180,6 +217,9 @@ function cdi_blog_views_default_views() {
       'table' => 'views',
       'field' => 'nothing',
       'relationship' => 'none',
+      'override' => array(
+        'button' => 'Override',
+      ),
     ),
   ));
   $handler->override_option('sorts', array(
@@ -660,7 +700,6 @@ function cdi_blog_views_default_views() {
   $handler->override_option('access', array(
     'type' => 'none',
   ));
-  $handler->override_option('items_per_page', 2);
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $translatables['Feature_Editorial'] = array(

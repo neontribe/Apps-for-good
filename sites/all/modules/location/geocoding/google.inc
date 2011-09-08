@@ -126,9 +126,9 @@ function google_geocode_location($location = array()) {
     'external' => TRUE,
   ));
 
-// $fh = fopen('/tmp/delme', 'a'); fwrite($fh, var_export($url, true) . "\n\n"); fclose($fh);
+$fh = fopen('/tmp/delme', 'a'); fwrite($fh, var_export($url, true) . "\n\n"); fclose($fh);
   $http_reply = drupal_http_request($url);
-// $fh = fopen('/tmp/delme', 'a'); fwrite($fh, var_export($http_reply, true) . "\n\n"); fclose($fh);
+$fh = fopen('/tmp/delme', 'a'); fwrite($fh, var_export($http_reply, true) . "\n\n"); fclose($fh);
 
   $status_code_match = array();
   preg_match('/<code>(.*)<\/code>/', $http_reply->data, $status_code_match);

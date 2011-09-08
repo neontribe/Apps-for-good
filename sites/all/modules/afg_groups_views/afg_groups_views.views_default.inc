@@ -2673,6 +2673,11 @@ function afg_groups_views_views_default_views() {
       'field' => 'type',
       'relationship' => 'none',
     ),
+    'vid' => array(
+      'id' => 'vid',
+      'table' => 'term_data',
+      'field' => 'vid',
+    ),
   ));
   $handler->override_option('access', array(
     'type' => 'spaces_feature',
@@ -4064,7 +4069,7 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('relationships', array(
     'field_staff_nid' => array(
       'label' => 'Staff',
-      'required' => 1,
+      'required' => 0,
       'delta' => '-1',
       'id' => 'field_staff_nid',
       'table' => 'node_data_field_staff',
@@ -4308,9 +4313,10 @@ function afg_groups_views_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', '');
-  $handler->override_option('header', '<a href=\'centres/all\'><?php echo afg_content_count(\'group_centre_school\'); ?> Centres</a>');
+  $handler->override_option('header', '<h2><?php echo afg_content_count(\'group_centre_school\'); ?> Centres </h2>');
   $handler->override_option('header_format', '6');
   $handler->override_option('header_empty', 0);
+  $handler->override_option('use_pager', '0');
   $handler->override_option('style_plugin', 'gmap');
   $handler->override_option('style_options', array(
     'grouping' => '',
@@ -4326,7 +4332,7 @@ function afg_groups_views_views_default_views() {
     'highlight_nodearg' => 0,
     'highlight_nodearg_arg' => '',
     'highlight_nodearg_color' => '#FF0000',
-    'tooltipenabled' => 0,
+    'tooltipenabled' => 1,
     'tooltipfield' => 'title',
   ));
   $handler->override_option('block_description', '');
@@ -4812,7 +4818,98 @@ function afg_groups_views_views_default_views() {
       'relationship' => 'none',
     ),
   ));
+  $handler->override_option('sorts', array(
+    'name' => array(
+      'order' => 'ASC',
+      'id' => 'name',
+      'table' => 'term_data',
+      'field' => 'name',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+    'title' => array(
+      'order' => 'ASC',
+      'id' => 'title',
+      'table' => 'node',
+      'field' => 'title',
+      'relationship' => 'none',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+    ),
+  ));
+  $handler->override_option('filters', array(
+    'type_groups_all' => array(
+      'operator' => '=',
+      'value' => '',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type_groups_all',
+      'table' => 'og',
+      'field' => 'type_groups_all',
+      'relationship' => 'none',
+    ),
+    'status' => array(
+      'operator' => '=',
+      'value' => 1,
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'group_centre_school' => 'group_centre_school',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'relationship' => 'none',
+    ),
+    'vid' => array(
+      'operator' => 'in',
+      'value' => array(
+        '9' => '9',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'vid',
+      'table' => 'term_data',
+      'field' => 'vid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+  ));
+  $handler->override_option('title', 'Browse Centres');
   $handler->override_option('css_class', 'browse-centres');
+  $handler->override_option('items_per_page', 0);
+  $handler->override_option('use_pager', '0');
+  $handler->override_option('distinct', 1);
   $handler->override_option('style_options', array(
     'grouping' => 'tid',
     'type' => 'ul',
@@ -4833,7 +4930,7 @@ function afg_groups_views_views_default_views() {
     'name' => 'navigation',
   ));
   $translatables['groups_listing_centre_school'] = array(
-    t('<a href=\'centres/all\'><?php echo afg_content_count(\'group_centre_school\'); ?> Centres</a>'),
+    t('<h2><?php echo afg_content_count(\'group_centre_school\'); ?> Centres </h2>'),
     t('A contact email will be added soon. For now, please leave a comment.'),
     t('About Centre'),
     t('About description unwritten.'),
@@ -5210,7 +5307,8 @@ function afg_groups_views_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'Updates');
-  $handler->override_option('empty', 'No recent activity found.');
+  $handler->override_option('empty', 'No updates for this centre yet..');
+  $handler->override_option('empty_format', '5');
   $handler->override_option('use_ajax', TRUE);
   $handler->override_option('items_per_page', 15);
   $handler->override_option('use_pager', 'mini');
@@ -5431,6 +5529,7 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('css_class', 'activity-updates');
+  $handler->override_option('empty', 'No recent activity found.');
   $handler->override_option('block_description', 'Recent activity');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Files', 'block_2');
@@ -5563,6 +5662,7 @@ function afg_groups_views_views_default_views() {
   ));
   $handler->override_option('title', 'Latest files');
   $handler->override_option('empty', 'No recent files found.');
+  $handler->override_option('empty_format', 0);
   $handler->override_option('style_plugin', 'table');
   $handler->override_option('style_options', array(
     'grouping' => '',
@@ -5611,6 +5711,43 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'User activity', 'block_3');
   $handler->override_option('fields', array(
+    'group_nid' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => FALSE,
+        'text' => '',
+        'make_link' => FALSE,
+        'path' => '',
+        'alt' => '',
+        'link_class' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'trim' => FALSE,
+        'max_length' => '',
+        'word_boundary' => TRUE,
+        'ellipsis' => TRUE,
+        'strip_tags' => FALSE,
+        'html' => FALSE,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'type' => 'separator',
+      'separator' => ', ',
+      'crayon' => array(
+        'enabled' => 'enabled',
+        'acronym' => 'acronym',
+      ),
+      'exclude' => 0,
+      'id' => 'group_nid',
+      'table' => 'og_ancestry',
+      'field' => 'group_nid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
     'feature' => array(
       'label' => '',
       'alter' => array(
@@ -5836,6 +5973,39 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('css_class', 'activity-updates');
+  $handler->override_option('empty', 'No user activity found.');
+  $handler->override_option('style_plugin', 'table');
+  $handler->override_option('style_options', array(
+    'grouping' => '',
+    'override' => 1,
+    'sticky' => 0,
+    'order' => 'asc',
+    'columns' => array(
+      'group_nid' => 'group_nid',
+      'feature' => 'feature',
+      'atrium_activity_timestamp' => 'atrium_activity_timestamp',
+      'atrium_activity' => 'atrium_activity',
+      'timestamp' => 'timestamp',
+    ),
+    'info' => array(
+      'group_nid' => array(
+        'separator' => '',
+      ),
+      'feature' => array(
+        'separator' => '',
+      ),
+      'atrium_activity_timestamp' => array(
+        'separator' => '',
+      ),
+      'atrium_activity' => array(
+        'separator' => '',
+      ),
+      'timestamp' => array(
+        'separator' => '',
+      ),
+    ),
+    'default' => '-1',
+  ));
   $handler->override_option('block_description', 'User\'s activity');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'App Updates', 'block_4');
@@ -6256,6 +6426,7 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('css_class', 'activity-updates');
+  $handler->override_option('empty', 'No app updates found yet.');
   $handler->override_option('row_options', array(
     'inline' => array(
       'atrium_activity_timestamp' => 'atrium_activity_timestamp',
@@ -6391,6 +6562,8 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('title', 'Help this team!');
+  $handler->override_option('empty', '<p><strong>No help needed right now :)</strong>
+Click follow above to receive updates & how to help.</p>');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Centre Recent Activity', 'block_6');
@@ -6927,7 +7100,6 @@ function afg_groups_views_views_default_views() {
   ));
   $handler->override_option('title', 'Recent Activity');
   $handler->override_option('empty', 'No updates for this centre yet.');
-  $handler->override_option('empty_format', '5');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Help this centre', 'block_7');
@@ -7315,8 +7487,8 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('title', 'Help Needed!');
-  $handler->override_option('empty', 'Click follow above to receive updates & how to help.');
-  $handler->override_option('empty_format', '5');
+  $handler->override_option('empty', '<p><strong>No help needed right now :)</strong>
+Click follow above to receive updates & how to help.</p>');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Help all', 'block_8');
@@ -7468,6 +7640,8 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('title', 'Help Needed!');
+  $handler->override_option('empty', '<p><strong>No help needed right now :)</strong>
+Click follow above to receive updates & how to help.</p>');
   $handler->override_option('row_options', array(
     'inline' => array(
       'title' => 'title',
@@ -7822,12 +7996,14 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('title', 'Stuff I\'m following');
+  $handler->override_option('empty', '');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $translatables['updates'] = array(
+    t('<p><strong>No help needed right now :)</strong>
+Click follow above to receive updates & how to help.</p>'),
     t('App Updates'),
     t('Centre Recent Activity'),
-    t('Click follow above to receive updates & how to help.'),
     t('Defaults'),
     t('Files'),
     t('Help Needed!'),
@@ -7836,9 +8012,12 @@ function afg_groups_views_views_default_views() {
     t('Help this team'),
     t('Help this team!'),
     t('Latest files'),
+    t('No app updates found yet.'),
     t('No recent activity found.'),
     t('No recent files found.'),
     t('No updates for this centre yet.'),
+    t('No updates for this centre yet..'),
+    t('No user activity found.'),
     t('Recent Activity'),
     t('Recent activity'),
     t('Stuff I\'m following'),

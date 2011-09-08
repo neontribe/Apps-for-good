@@ -165,9 +165,9 @@ function afg_groups_views_content_default_fields() {
     ),
   );
 
-  // Exported field: field_centre_location
-  $fields['group_centre_school-field_centre_location'] = array(
-    'field_name' => 'field_centre_location',
+  // Exported field: field_centre_loc_details
+  $fields['group_centre_school-field_centre_loc_details'] = array(
+    'field_name' => 'field_centre_loc_details',
     'type_name' => 'group_centre_school',
     'display_settings' => array(
       'label' => array(
@@ -255,16 +255,16 @@ function afg_groups_views_content_default_fields() {
       ),
       'display' => array(
         'hide' => array(
-          'name' => 0,
-          'street' => 0,
-          'additional' => 0,
+          'name' => 'name',
+          'street' => 'street',
+          'additional' => 'additional',
+          'province_name' => 'province_name',
+          'country_name' => 'country_name',
           'city' => 0,
           'province' => 0,
           'postal_code' => 0,
           'country' => 0,
           'locpick' => 0,
-          'province_name' => 0,
-          'country_name' => 0,
           'map_link' => 0,
           'coords' => 0,
         ),
@@ -322,8 +322,11 @@ function afg_groups_views_content_default_fields() {
                   'weight' => '14',
                 ),
                 'locpick' => array(
-                  'default' => FALSE,
-                  'collect' => 1,
+                  'default' => array(
+                    'user_latitude' => '',
+                    'user_longitude' => '',
+                  ),
+                  'collect' => '4',
                   'weight' => '20',
                   'nodiff' => TRUE,
                 ),
@@ -374,7 +377,7 @@ function afg_groups_views_content_default_fields() {
                             'user_latitude' => '',
                             'user_longitude' => '',
                           ),
-                          'collect' => '0',
+                          'collect' => '1',
                           'weight' => '20',
                           'nodiff' => TRUE,
                         ),
@@ -472,16 +475,16 @@ function afg_groups_views_content_default_fields() {
                     ),
                     'display' => array(
                       'hide' => array(
-                        'name' => 0,
-                        'street' => 0,
-                        'additional' => 0,
+                        'name' => 'name',
+                        'street' => 'street',
+                        'additional' => 'additional',
+                        'locpick' => 'locpick',
+                        'province_name' => 'province_name',
+                        'country_name' => 'country_name',
                         'city' => 0,
                         'province' => 0,
                         'postal_code' => 0,
                         'country' => 0,
-                        'locpick' => 0,
-                        'province_name' => 0,
-                        'country_name' => 0,
                         'map_link' => 0,
                         'coords' => 0,
                       ),
@@ -511,16 +514,16 @@ function afg_groups_views_content_default_fields() {
             ),
             'display' => array(
               'hide' => array(
-                'name' => 0,
-                'street' => 0,
-                'additional' => 0,
+                'name' => 'name',
+                'street' => 'street',
+                'additional' => 'additional',
+                'locpick' => 'locpick',
+                'province_name' => 'province_name',
+                'country_name' => 'country_name',
                 'city' => 0,
                 'province' => 0,
                 'postal_code' => 0,
                 'country' => 0,
-                'locpick' => 0,
-                'province_name' => 0,
-                'country_name' => 0,
                 'map_link' => 0,
                 'coords' => 0,
               ),
@@ -530,7 +533,7 @@ function afg_groups_views_content_default_fields() {
         ),
       ),
       'default_value_php' => NULL,
-      'label' => 'Centre Location',
+      'label' => 'Centre Located at',
       'weight' => '-2',
       'description' => '',
       'type' => 'location',
@@ -599,20 +602,20 @@ function afg_groups_views_content_default_fields() {
       'custom_title' => 0,
       'title_type' => 'textfield',
       'default_image' => array(
-        'filename' => 'afg_school-icon.png',
-        'filepath' => 'sites/default/files/imagefield_default_images/afg_school-icon.png',
-        'filemime' => 'image/png',
+        'filename' => 'afg_school-icon.gif',
+        'filepath' => 'sites/default/files/imagefield_default_images/afg_school-icon.gif',
+        'filemime' => 'image/gif',
         'source' => 'default_image_upload',
-        'destination' => 'sites/default/files/imagefield_default_images/afg_school-icon.png',
-        'filesize' => 3805,
+        'destination' => 'sites/default/files/imagefield_default_images/afg_school-icon.gif',
+        'filesize' => 1440,
         'uid' => '1',
         'status' => 1,
-        'timestamp' => 1315411832,
-        'fid' => '58',
+        'timestamp' => 1315483154,
+        'fid' => '60',
       ),
-      'use_default_image' => 0,
+      'use_default_image' => 1,
       'label' => 'Icon',
-      'weight' => '15',
+      'weight' => '14',
       'description' => 'Video post type icon',
       'type' => 'imagefield_widget',
       'module' => 'imagefield',
@@ -693,7 +696,7 @@ function afg_groups_views_content_default_fields() {
       ),
       'use_default_image' => 1,
       'label' => 'Centre logo',
-      'weight' => '-3',
+      'weight' => '-1',
       'description' => 'These images will be re-sized to a 50px x 50px thumbnail. Please upload at this size if possible.',
       'type' => 'imagefield_widget',
       'module' => 'imagefield',
@@ -855,7 +858,7 @@ function afg_groups_views_content_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Centre Location');
+  t('Centre Located at');
   t('Centre logo');
   t('Centre website');
   t('Icon');
