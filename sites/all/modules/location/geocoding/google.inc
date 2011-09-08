@@ -118,17 +118,22 @@ function google_geocode_location($location = array()) {
     'gl' => $location['country'],
     'q' => _google_geocode_flatten($location),
   );
+// $fh = fopen('/tmp/delme', 'a'); fwrite($fh, var_export($location, true) . "\n\n"); fclose($fh);
+// $fh = fopen('/tmp/delme', 'a'); fwrite($fh, var_export(_google_geocode_flatten($location), true) . "\n\n"); fclose($fh);
 
   $url = url('http://maps.google.com/maps/geo', array(
     'query' => $query,
     'external' => TRUE,
   ));
 
+// $fh = fopen('/tmp/delme', 'a'); fwrite($fh, var_export($url, true) . "\n\n"); fclose($fh);
   $http_reply = drupal_http_request($url);
+// $fh = fopen('/tmp/delme', 'a'); fwrite($fh, var_export($http_reply, true) . "\n\n"); fclose($fh);
 
   $status_code_match = array();
   preg_match('/<code>(.*)<\/code>/', $http_reply->data, $status_code_match);
   $status_code = $status_code_match[1];
+// $fh = fopen('/tmp/delme', 'a'); fwrite($fh, $status_code . "\n\n"); fclose($fh);
   if ($status_code != 200) {
     return NULL;
   }
@@ -136,6 +141,7 @@ function google_geocode_location($location = array()) {
   $accuracy_code_match = array();
   preg_match('/Accuracy="([0-9])"/', $http_reply->data, $accuracy_code_match);
   $accuracy_code = $accuracy_code_match[1];
+// $fh = fopen('/tmp/delme', 'a'); fwrite($fh, $accuracy_code . "\n\n"); fclose($fh);
   if ($accuracy_code < variable_get('location_geocode_' . $location['country'] . 'google_accuracy_code', variable_get('location_geocode_google_minimum_accuracy', '3'))) {
     return NULL;
   }
@@ -144,6 +150,7 @@ function google_geocode_location($location = array()) {
   preg_match('/<coordinates>(.*)<\/coordinates>/', $http_reply->data, $latlon_match);
 
   $latlon_exploded = explode(',', $latlon_match[1]);
+// $fh = fopen('/tmp/delme', 'a'); fwrite($fh, var_export($latlon_exploded, true) . "\n\n"); fclose($fh);
 
   return array('lat' => $latlon_exploded[1], 'lon' => $latlon_exploded[0]);
 }

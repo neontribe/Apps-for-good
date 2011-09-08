@@ -53,7 +53,18 @@ function afg_preprocess_page(&$vars) {
   //    $website = $node->field_website[0]['url'];
   //  }
   //  $vars['website'] = $website;
-  
+
+  //get region from taxonomy for group node
+    if ($node->type == 'group_centre_school') {
+      $q = 'select name from {term_node} tn inner join {term_data} td on tn.tid=td.tid where nid = %d and tn.vid = %d and td.vid = %d';
+      $nid = $node->nid;
+      $vid = $node->vid;
+      $res = db_query($q, $nid, $vid, 9);
+      $region = db_result($res);
+    
+    }
+    $vars['region'] = $region;
+
   }
 }
 /**
@@ -103,6 +114,8 @@ function afg_comment_form($form) {
   $form['comment_filter']['comment']['#title']  = t('Your message');
   
   $form['preview'] = NULL;
+
+
 
  
  
