@@ -1,0 +1,40 @@
+.quicktabs_main.quicktabs-style-basic-afg{
+  color:#FFF;
+  background-color:#1B9BDA;
+  border:1px solid #aaa;
+  border-top:none;
+  padding:10px;
+  clear:both;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul.quicktabs_tabs.quicktabs-style-basic-afg{
+  padding:0 5px 0 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  height:33px;
+  margin:0;
+}
+
+ul.quicktabs_tabs.quicktabs-style-basic-afg a{
+  font-size:1.4em;
+  text-decoration:none;
+  color:#344650;
+}
+
+ul.quicktabs_tabs.quicktabs-style-basic-afg li{
+  position:relative;
+  margin: 0 10px 0 0;
+  padding: 10px;
+  background: #AED4E9;
+}
+
+ul.quicktabs_tabs.quicktabs-style-basic-afg li:hover,
+ul.quicktabs_tabs.quicktabs-style-basic-afg li.active{
+  background: #1B9BDA;
+}
+
+ul.quicktabs_tabs.quicktabs-style-basic-afg li:hover a,
+ul.quicktabs_tabs.quicktabs-style-basic-afg li.active a{
+  color:#FFF;
+}

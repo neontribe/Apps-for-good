@@ -1,0 +1,870 @@
+<?php
+
+/**
+ * Implementation of hook_content_default_fields().
+ */
+function afg_groups_views_content_default_fields() {
+  $fields = array();
+
+  // Exported field: field_centre_ref
+  $fields['group_app_team-field_centre_ref'] = array(
+    'field_name' => 'field_centre_ref',
+    'type_name' => 'group_app_team',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'nodereference',
+    'required' => '1',
+    'multiple' => '0',
+    'module' => 'nodereference',
+    'active' => '1',
+    'referenceable_types' => array(
+      'group_centre_school' => 'group_centre_school',
+      'group_app_team' => 0,
+      'blog' => 0,
+      'book' => 0,
+      'casetracker_basic_case' => 0,
+      'event' => 0,
+      'group' => 0,
+      'profile' => 0,
+      'casetracker_basic_project' => 0,
+      'shoutbox' => 0,
+      'group_cdi' => 0,
+      'feed_ical_item' => 0,
+      'feed_ical' => 0,
+    ),
+    'advanced_view' => '--',
+    'advanced_view_args' => '',
+    'widget' => array(
+      'autocomplete_match' => 'contains',
+      'size' => 60,
+      'default_value' => array(
+        '0' => array(
+          'nid' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Parent Centre',
+      'weight' => '-4',
+      'description' => '',
+      'type' => 'nodereference_select',
+      'module' => 'nodereference',
+    ),
+  );
+
+  // Exported field: field_logo
+  $fields['group_app_team-field_logo'] = array(
+    'field_name' => 'field_logo',
+    'type_name' => 'group_app_team',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'filefield',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'filefield',
+    'active' => '1',
+    'list_field' => '0',
+    'list_default' => 1,
+    'description_field' => '0',
+    'widget' => array(
+      'file_extensions' => 'png gif jpg jpeg',
+      'file_path' => '',
+      'progress_indicator' => 'bar',
+      'max_filesize_per_file' => '',
+      'max_filesize_per_node' => '',
+      'max_resolution' => '0',
+      'min_resolution' => '0',
+      'alt' => '',
+      'custom_alt' => 0,
+      'title' => '',
+      'custom_title' => 0,
+      'title_type' => 'textfield',
+      'default_image' => array(
+        'filename' => 'logo.jpg',
+        'filepath' => 'sites/default/files/imagefield_default_images/logo.jpg',
+        'filemime' => 'image/jpeg',
+        'source' => 'default_image_upload',
+        'destination' => 'sites/default/files/imagefield_default_images/logo.jpg',
+        'filesize' => 848,
+        'uid' => '1',
+        'status' => 1,
+        'timestamp' => 1308653674,
+        'fid' => '3',
+      ),
+      'use_default_image' => 1,
+      'label' => 'logo',
+      'weight' => '-3',
+      'description' => 'These images will be re-sized to a 50px x 50px thumbnail. Please upload at this size if possible.',
+      'type' => 'imagefield_widget',
+      'module' => 'imagefield',
+    ),
+  );
+
+  // Exported field: field_centre_loc_details
+  $fields['group_centre_school-field_centre_loc_details'] = array(
+    'field_name' => 'field_centre_loc_details',
+    'type_name' => 'group_centre_school',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'location',
+    'required' => '1',
+    'multiple' => '0',
+    'module' => 'location_cck',
+    'active' => '1',
+    'location_settings' => array(
+      'form' => array(
+        'fields' => array(
+          'name' => array(
+            'collect' => '0',
+            'default' => '',
+            'weight' => '2',
+          ),
+          'street' => array(
+            'collect' => '0',
+            'default' => '',
+            'weight' => '4',
+          ),
+          'additional' => array(
+            'collect' => '0',
+            'default' => '',
+            'weight' => '6',
+          ),
+          'city' => array(
+            'collect' => '1',
+            'default' => '',
+            'weight' => '8',
+          ),
+          'province' => array(
+            'collect' => '1',
+            'default' => '',
+            'weight' => '10',
+          ),
+          'postal_code' => array(
+            'collect' => '2',
+            'default' => '',
+            'weight' => '12',
+          ),
+          'country' => array(
+            'collect' => '4',
+            'default' => 'uk',
+            'weight' => '14',
+          ),
+          'locpick' => array(
+            'collect' => '2',
+            'weight' => '20',
+          ),
+        ),
+      ),
+      'display' => array(
+        'hide' => array(
+          'name' => 'name',
+          'street' => 'street',
+          'additional' => 'additional',
+          'province_name' => 'province_name',
+          'country_name' => 'country_name',
+          'city' => 0,
+          'province' => 0,
+          'postal_code' => 0,
+          'country' => 0,
+          'locpick' => 0,
+          'map_link' => 0,
+          'coords' => 0,
+        ),
+      ),
+    ),
+    'gmap_macro' => '[gmap ]',
+    'gmap_marker' => 'drupal',
+    'widget' => array(
+      'default_value' => array(
+        '0' => array(
+          'city' => '',
+          'province' => '',
+          'postal_code' => '',
+          'locpick' => array(
+            'user_latitude' => '',
+            'user_longitude' => '',
+          ),
+          'cck_preview_in_progress' => TRUE,
+          'location_settings' => array(
+            'form' => array(
+              'fields' => array(
+                'name' => array(
+                  'default' => '',
+                  'collect' => '0',
+                  'weight' => '2',
+                ),
+                'street' => array(
+                  'default' => '',
+                  'collect' => '0',
+                  'weight' => '4',
+                ),
+                'additional' => array(
+                  'default' => '',
+                  'collect' => '0',
+                  'weight' => '6',
+                ),
+                'city' => array(
+                  'default' => '',
+                  'collect' => '1',
+                  'weight' => '8',
+                ),
+                'province' => array(
+                  'default' => '',
+                  'collect' => '1',
+                  'weight' => '10',
+                ),
+                'postal_code' => array(
+                  'default' => '',
+                  'collect' => 1,
+                  'weight' => '12',
+                ),
+                'country' => array(
+                  'default' => 'uk',
+                  'collect' => '4',
+                  'weight' => '14',
+                ),
+                'locpick' => array(
+                  'default' => array(
+                    'user_latitude' => '',
+                    'user_longitude' => '',
+                  ),
+                  'collect' => '4',
+                  'weight' => '20',
+                  'nodiff' => TRUE,
+                ),
+                'cck_preview_in_progress' => array(
+                  'default' => TRUE,
+                ),
+                'location_settings' => array(
+                  'default' => array(
+                    'form' => array(
+                      'fields' => array(
+                        'name' => array(
+                          'default' => '',
+                          'collect' => '0',
+                          'weight' => '2',
+                        ),
+                        'street' => array(
+                          'default' => '',
+                          'collect' => '0',
+                          'weight' => '4',
+                        ),
+                        'additional' => array(
+                          'default' => '',
+                          'collect' => '0',
+                          'weight' => '6',
+                        ),
+                        'city' => array(
+                          'default' => '',
+                          'collect' => '1',
+                          'weight' => '8',
+                        ),
+                        'province' => array(
+                          'default' => '',
+                          'collect' => '1',
+                          'weight' => '10',
+                        ),
+                        'postal_code' => array(
+                          'default' => '',
+                          'collect' => 1,
+                          'weight' => '12',
+                        ),
+                        'country' => array(
+                          'default' => 'uk',
+                          'collect' => '4',
+                          'weight' => '14',
+                        ),
+                        'locpick' => array(
+                          'default' => array(
+                            'user_latitude' => '',
+                            'user_longitude' => '',
+                          ),
+                          'collect' => '1',
+                          'weight' => '20',
+                          'nodiff' => TRUE,
+                        ),
+                        'cck_preview_in_progress' => array(
+                          'default' => TRUE,
+                        ),
+                        'location_settings' => array(
+                          'default' => array(
+                            'form' => array(
+                              'fields' => array(
+                                'lid' => array(
+                                  'default' => FALSE,
+                                ),
+                                'name' => array(
+                                  'default' => '',
+                                  'collect' => 1,
+                                  'weight' => 2,
+                                ),
+                                'street' => array(
+                                  'default' => '',
+                                  'collect' => 1,
+                                  'weight' => 4,
+                                ),
+                                'additional' => array(
+                                  'default' => '',
+                                  'collect' => 1,
+                                  'weight' => 6,
+                                ),
+                                'city' => array(
+                                  'default' => '',
+                                  'collect' => 0,
+                                  'weight' => 8,
+                                ),
+                                'province' => array(
+                                  'default' => '',
+                                  'collect' => 0,
+                                  'weight' => 10,
+                                ),
+                                'postal_code' => array(
+                                  'default' => '',
+                                  'collect' => 0,
+                                  'weight' => 12,
+                                ),
+                                'country' => array(
+                                  'default' => 'uk',
+                                  'collect' => 1,
+                                  'weight' => 14,
+                                ),
+                                'locpick' => array(
+                                  'default' => FALSE,
+                                  'collect' => 1,
+                                  'weight' => 20,
+                                  'nodiff' => TRUE,
+                                ),
+                                'latitude' => array(
+                                  'default' => 0,
+                                ),
+                                'longitude' => array(
+                                  'default' => 0,
+                                ),
+                                'source' => array(
+                                  'default' => 0,
+                                ),
+                                'is_primary' => array(
+                                  'default' => 0,
+                                ),
+                                'delete_location' => array(
+                                  'default' => FALSE,
+                                  'nodiff' => TRUE,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        'lid' => array(
+                          'default' => FALSE,
+                        ),
+                        'latitude' => array(
+                          'default' => 0,
+                        ),
+                        'longitude' => array(
+                          'default' => 0,
+                        ),
+                        'source' => array(
+                          'default' => 0,
+                        ),
+                        'is_primary' => array(
+                          'default' => 0,
+                        ),
+                        'delete_location' => array(
+                          'default' => FALSE,
+                          'nodiff' => TRUE,
+                        ),
+                      ),
+                    ),
+                    'display' => array(
+                      'hide' => array(
+                        'name' => 'name',
+                        'street' => 'street',
+                        'additional' => 'additional',
+                        'locpick' => 'locpick',
+                        'province_name' => 'province_name',
+                        'country_name' => 'country_name',
+                        'city' => 0,
+                        'province' => 0,
+                        'postal_code' => 0,
+                        'country' => 0,
+                        'map_link' => 0,
+                        'coords' => 0,
+                      ),
+                    ),
+                  ),
+                ),
+                'lid' => array(
+                  'default' => FALSE,
+                ),
+                'latitude' => array(
+                  'default' => 0,
+                ),
+                'longitude' => array(
+                  'default' => 0,
+                ),
+                'source' => array(
+                  'default' => 0,
+                ),
+                'is_primary' => array(
+                  'default' => 0,
+                ),
+                'delete_location' => array(
+                  'default' => FALSE,
+                  'nodiff' => TRUE,
+                ),
+              ),
+            ),
+            'display' => array(
+              'hide' => array(
+                'name' => 'name',
+                'street' => 'street',
+                'additional' => 'additional',
+                'locpick' => 'locpick',
+                'province_name' => 'province_name',
+                'country_name' => 'country_name',
+                'city' => 0,
+                'province' => 0,
+                'postal_code' => 0,
+                'country' => 0,
+                'map_link' => 0,
+                'coords' => 0,
+              ),
+            ),
+          ),
+          'country' => 'uk',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Centre Located at',
+      'weight' => '-2',
+      'description' => '',
+      'type' => 'location',
+      'module' => 'location_cck',
+    ),
+  );
+
+  // Exported field: field_icon
+  $fields['group_centre_school-field_icon'] = array(
+    'field_name' => 'field_icon',
+    'type_name' => 'group_centre_school',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'filefield',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'filefield',
+    'active' => '1',
+    'list_field' => '0',
+    'list_default' => 1,
+    'description_field' => '0',
+    'widget' => array(
+      'file_extensions' => 'png gif jpg jpeg',
+      'file_path' => '',
+      'progress_indicator' => 'bar',
+      'max_filesize_per_file' => '',
+      'max_filesize_per_node' => '',
+      'max_resolution' => '0',
+      'min_resolution' => '0',
+      'alt' => '',
+      'custom_alt' => 0,
+      'title' => '',
+      'custom_title' => 0,
+      'title_type' => 'textfield',
+      'default_image' => array(
+        'filename' => 'afg_school-icon.gif',
+        'filepath' => 'sites/default/files/imagefield_default_images/afg_school-icon.gif',
+        'filemime' => 'image/gif',
+        'source' => 'default_image_upload',
+        'destination' => 'sites/default/files/imagefield_default_images/afg_school-icon.gif',
+        'filesize' => 1440,
+        'uid' => '1',
+        'status' => 1,
+        'timestamp' => 1315483154,
+        'fid' => '60',
+      ),
+      'use_default_image' => 1,
+      'label' => 'Icon',
+      'weight' => '14',
+      'description' => 'Video post type icon',
+      'type' => 'imagefield_widget',
+      'module' => 'imagefield',
+    ),
+  );
+
+  // Exported field: field_logo
+  $fields['group_centre_school-field_logo'] = array(
+    'field_name' => 'field_logo',
+    'type_name' => 'group_centre_school',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'filefield',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'filefield',
+    'active' => '1',
+    'list_field' => '0',
+    'list_default' => 1,
+    'description_field' => '0',
+    'widget' => array(
+      'file_extensions' => 'png gif jpg jpeg',
+      'file_path' => '',
+      'progress_indicator' => 'bar',
+      'max_filesize_per_file' => '',
+      'max_filesize_per_node' => '',
+      'max_resolution' => '0',
+      'min_resolution' => '0',
+      'alt' => '',
+      'custom_alt' => 0,
+      'title' => '',
+      'custom_title' => 0,
+      'title_type' => 'textfield',
+      'default_image' => array(
+        'filename' => 'logo.jpg',
+        'filepath' => 'sites/default/files/imagefield_default_images/logo.jpg',
+        'filemime' => 'image/jpeg',
+        'source' => 'default_image_upload',
+        'destination' => 'sites/default/files/imagefield_default_images/logo.jpg',
+        'filesize' => 848,
+        'uid' => '1',
+        'status' => 1,
+        'timestamp' => 1308653674,
+        'fid' => '3',
+      ),
+      'use_default_image' => 1,
+      'label' => 'Centre logo',
+      'weight' => '-1',
+      'description' => 'These images will be re-sized to a 50px x 50px thumbnail. Please upload at this size if possible.',
+      'type' => 'imagefield_widget',
+      'module' => 'imagefield',
+    ),
+  );
+
+  // Exported field: field_staff
+  $fields['group_centre_school-field_staff'] = array(
+    'field_name' => 'field_staff',
+    'type_name' => 'group_centre_school',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'nodereference',
+    'required' => '0',
+    'multiple' => '1',
+    'module' => 'nodereference',
+    'active' => '1',
+    'referenceable_types' => array(
+      'profile' => 'profile',
+      'group_app_team' => 0,
+      'book' => 0,
+      'casetracker_basic_case' => 0,
+      'group_centre_school' => 0,
+      'event' => 0,
+      'group' => 0,
+      'group_media_image' => 0,
+      'casetracker_basic_project' => 0,
+      'request_for_help' => 0,
+      'shoutbox' => 0,
+      'blog' => 0,
+      'group_media_video' => 0,
+      'feed_ical_item' => 0,
+      'feed_ical' => 0,
+    ),
+    'advanced_view' => '--',
+    'advanced_view_args' => '',
+    'widget' => array(
+      'autocomplete_match' => 'contains',
+      'size' => 60,
+      'default_value' => array(
+        '0' => array(
+          'nid' => NULL,
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Staff',
+      'weight' => 0,
+      'description' => '',
+      'type' => 'nodereference_buttons',
+      'module' => 'nodereference',
+    ),
+  );
+
+  // Exported field: field_website
+  $fields['group_centre_school-field_website'] = array(
+    'field_name' => 'field_website',
+    'type_name' => 'group_centre_school',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'link',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'link',
+    'active' => '1',
+    'attributes' => array(
+      'target' => 'default',
+      'rel' => '',
+      'class' => '',
+      'title' => '',
+    ),
+    'display' => array(
+      'url_cutoff' => '80',
+    ),
+    'url' => 0,
+    'title' => 'value',
+    'title_value' => 'Official website',
+    'enable_tokens' => 0,
+    'validate_url' => 1,
+    'widget' => array(
+      'default_value' => array(
+        '0' => array(
+          'url' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Centre website',
+      'weight' => '1',
+      'description' => 'The url for Centre\'s website',
+      'type' => 'link',
+      'module' => 'link',
+    ),
+  );
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Centre Located at');
+  t('Centre logo');
+  t('Centre website');
+  t('Icon');
+  t('Parent Centre');
+  t('Staff');
+  t('logo');
+
+  return $fields;
+}

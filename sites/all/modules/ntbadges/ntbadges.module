@@ -1,0 +1,42 @@
+<?php
+
+function ntbadges_block($op = 'list', $delta = 0, $edit = array()) {
+  $blocks = array();
+  switch ($op) {
+    case 'list':
+      $blocks[0] = array(
+        'info' => t('Badges'),
+      );
+    break;
+    case 'configure':
+    break;
+    case 'save':
+    break;
+    case 'view':
+      $content = _ntbadges_block();
+      if (!$content) {
+        return NULL;
+      }
+      $blocks['subject'] = t('Badges');
+      $blocks['content'] = $content;
+    break;
+  }
+  return $blocks;
+}
+
+function _ntbadges_block() {
+  $og = og_get_group_context();
+  if ($og) {
+    $nid = $og->nid;
+    $node = node_load($nid);
+  }
+
+  if (!$node) {
+    return NULL;
+  }
+
+  $view = views_get_view('badges');
+  $built = $view->preview('Badges', array($node->nid));
+
+  return $built;
+}

@@ -244,8 +244,9 @@ function atrium_user_default_permissions() {
     'name' => 'view imagecache fileview',
     'roles' => array(
       '0' => 'administrator',
-      '1' => 'authenticated user',
-      '2' => 'manager',
+      '1' => 'anonymous user',
+      '2' => 'authenticated user',
+      '3' => 'manager',
     ),
   );
 
@@ -254,8 +255,9 @@ function atrium_user_default_permissions() {
     'name' => 'view imagecache user-m',
     'roles' => array(
       '0' => 'administrator',
-      '1' => 'authenticated user',
-      '2' => 'manager',
+      '1' => 'anonymous user',
+      '2' => 'authenticated user',
+      '3' => 'manager',
     ),
   );
 
@@ -264,8 +266,9 @@ function atrium_user_default_permissions() {
     'name' => 'view imagecache user-s',
     'roles' => array(
       '0' => 'administrator',
-      '1' => 'authenticated user',
-      '2' => 'manager',
+      '1' => 'anonymous user',
+      '2' => 'authenticated user',
+      '3' => 'manager',
     ),
   );
 

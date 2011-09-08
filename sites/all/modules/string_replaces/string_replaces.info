@@ -1,0 +1,8 @@
+core = "6.x"
+dependencies[] = "stringoverrides"
+dependencies[] = "strongarm"
+description = "This does custom word for word replacement"
+features[ctools][] = "strongarm:strongarm:1"
+features[variable][] = "locale_custom_strings_en"
+name = "String Replaces"
+package = "Features"
