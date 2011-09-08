@@ -3605,7 +3605,7 @@ function afg_groups_views_views_default_views() {
   ));
   $handler->override_option('title', 'Apps');
   $handler->override_option('css_class', 'apps-at-centre');
-  $handler->override_option('empty', 'No apps yet.');
+  $handler->override_option('empty', 'No app teams have been added for this centre yet.');
   $handler->override_option('empty_format', '5');
   $handler->override_option('style_options', array(
     'grouping' => '',
@@ -3730,6 +3730,8 @@ function afg_groups_views_views_default_views() {
   ));
   $handler->override_option('title', 'About this Centre');
   $handler->override_option('css_class', 'centre-about');
+  $handler->override_option('empty', 'About description unwritten.');
+  $handler->override_option('empty_format', '5');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Centre Logo', 'block_5');
@@ -4046,6 +4048,8 @@ function afg_groups_views_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'Staff');
+  $handler->override_option('empty', 'The teachers for this centre will be added soon.');
+  $handler->override_option('empty_format', '5');
   $handler->override_option('row_options', array(
     'inline' => array(
       'name' => 'name',
@@ -4223,6 +4227,8 @@ function afg_groups_views_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'Contact Centre');
+  $handler->override_option('empty', 'A contact email will be added soon. For now, please leave a comment.');
+  $handler->override_option('empty_format', '5');
   $handler->override_option('items_per_page', 1);
   $handler->override_option('use_pager', '0');
   $handler->override_option('block_description', '');
@@ -4542,6 +4548,8 @@ function afg_groups_views_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'This centre map');
+  $handler->override_option('empty', 'The map for this centre will be added soon.');
+  $handler->override_option('empty_format', '5');
   $handler->override_option('style_plugin', 'gmap');
   $handler->override_option('style_options', array(
     'grouping' => '',
@@ -4826,7 +4834,9 @@ function afg_groups_views_views_default_views() {
   ));
   $translatables['groups_listing_centre_school'] = array(
     t('<a href=\'centres/all\'><?php echo afg_content_count(\'group_centre_school\'); ?> Centres</a>'),
+    t('A contact email will be added soon. For now, please leave a comment.'),
     t('About Centre'),
+    t('About description unwritten.'),
     t('About this Centre'),
     t('All Centres Map'),
     t('Apps'),
@@ -4840,13 +4850,15 @@ function afg_groups_views_views_default_views() {
     t('Contact Centre'),
     t('Defaults'),
     t('My centres'),
-    t('No apps yet.'),
+    t('No app teams have been added for this centre yet.'),
     t('No archived groups found.'),
     t('No groups found.'),
     t('Our Apps'),
     t('Page: Archived centres'),
     t('Page: My centres'),
     t('Staff'),
+    t('The map for this centre will be added soon.'),
+    t('The teachers for this centre will be added soon.'),
     t('This centre map'),
     t('User centres'),
     t('View more'),
