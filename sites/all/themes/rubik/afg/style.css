@@ -302,6 +302,12 @@ background:#fff;
 #header-links .header-menu-supporters { background-color: #A842E3; }
 #header-links .header-menu-about { background-color: #9DBF68; }
 
+span.region h2 {
+	font-size: 3.2em;
+	color: #FFF;
+	text-shadow: 2px 2px 2px #222;
+}
+
 /* Footer
 ---------------------------------------------------------- */
 
