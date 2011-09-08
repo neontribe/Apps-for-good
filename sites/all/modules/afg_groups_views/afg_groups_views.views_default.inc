@@ -5198,8 +5198,7 @@ function afg_groups_views_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'Updates');
-  $handler->override_option('empty', 'No updates for this centre yet..');
-  $handler->override_option('empty_format', '5');
+  $handler->override_option('empty', 'No recent activity found.');
   $handler->override_option('use_ajax', TRUE);
   $handler->override_option('items_per_page', 15);
   $handler->override_option('use_pager', 'mini');
@@ -5420,7 +5419,6 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('css_class', 'activity-updates');
-  $handler->override_option('empty', 'No recent activity found.');
   $handler->override_option('block_description', 'Recent activity');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Files', 'block_2');
@@ -5553,7 +5551,6 @@ function afg_groups_views_views_default_views() {
   ));
   $handler->override_option('title', 'Latest files');
   $handler->override_option('empty', 'No recent files found.');
-  $handler->override_option('empty_format', 0);
   $handler->override_option('style_plugin', 'table');
   $handler->override_option('style_options', array(
     'grouping' => '',
@@ -5602,43 +5599,6 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'User activity', 'block_3');
   $handler->override_option('fields', array(
-    'group_nid' => array(
-      'label' => '',
-      'alter' => array(
-        'alter_text' => FALSE,
-        'text' => '',
-        'make_link' => FALSE,
-        'path' => '',
-        'alt' => '',
-        'link_class' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'trim' => FALSE,
-        'max_length' => '',
-        'word_boundary' => TRUE,
-        'ellipsis' => TRUE,
-        'strip_tags' => FALSE,
-        'html' => FALSE,
-      ),
-      'empty' => '',
-      'hide_empty' => 0,
-      'empty_zero' => 0,
-      'type' => 'separator',
-      'separator' => ', ',
-      'crayon' => array(
-        'enabled' => 'enabled',
-        'acronym' => 'acronym',
-      ),
-      'exclude' => 0,
-      'id' => 'group_nid',
-      'table' => 'og_ancestry',
-      'field' => 'group_nid',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-      'relationship' => 'none',
-    ),
     'feature' => array(
       'label' => '',
       'alter' => array(
@@ -5864,39 +5824,6 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('css_class', 'activity-updates');
-  $handler->override_option('empty', 'No user activity found.');
-  $handler->override_option('style_plugin', 'table');
-  $handler->override_option('style_options', array(
-    'grouping' => '',
-    'override' => 1,
-    'sticky' => 0,
-    'order' => 'asc',
-    'columns' => array(
-      'group_nid' => 'group_nid',
-      'feature' => 'feature',
-      'atrium_activity_timestamp' => 'atrium_activity_timestamp',
-      'atrium_activity' => 'atrium_activity',
-      'timestamp' => 'timestamp',
-    ),
-    'info' => array(
-      'group_nid' => array(
-        'separator' => '',
-      ),
-      'feature' => array(
-        'separator' => '',
-      ),
-      'atrium_activity_timestamp' => array(
-        'separator' => '',
-      ),
-      'atrium_activity' => array(
-        'separator' => '',
-      ),
-      'timestamp' => array(
-        'separator' => '',
-      ),
-    ),
-    'default' => '-1',
-  ));
   $handler->override_option('block_description', 'User\'s activity');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'App Updates', 'block_4');
@@ -6317,7 +6244,6 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('css_class', 'activity-updates');
-  $handler->override_option('empty', 'No app updates found yet.');
   $handler->override_option('row_options', array(
     'inline' => array(
       'atrium_activity_timestamp' => 'atrium_activity_timestamp',
@@ -6453,8 +6379,6 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('title', 'Help this team!');
-  $handler->override_option('empty', '<p><strong>No help needed right now :)</strong>
-Click follow above to receive updates & how to help.</p>');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Centre Recent Activity', 'block_6');
@@ -6991,6 +6915,7 @@ Click follow above to receive updates & how to help.</p>');
   ));
   $handler->override_option('title', 'Recent Activity');
   $handler->override_option('empty', 'No updates for this centre yet.');
+  $handler->override_option('empty_format', '5');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Help this centre', 'block_7');
@@ -7378,8 +7303,8 @@ Click follow above to receive updates & how to help.</p>');
     ),
   ));
   $handler->override_option('title', 'Help Needed!');
-  $handler->override_option('empty', '<p><strong>No help needed right now :)</strong>
-Click follow above to receive updates & how to help.</p>');
+  $handler->override_option('empty', 'Click follow above to receive updates & how to help.');
+  $handler->override_option('empty_format', '5');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Help all', 'block_8');
@@ -7531,8 +7456,6 @@ Click follow above to receive updates & how to help.</p>');
     ),
   ));
   $handler->override_option('title', 'Help Needed!');
-  $handler->override_option('empty', '<p><strong>No help needed right now :)</strong>
-Click follow above to receive updates & how to help.</p>');
   $handler->override_option('row_options', array(
     'inline' => array(
       'title' => 'title',
@@ -7887,14 +7810,12 @@ Click follow above to receive updates & how to help.</p>');
     ),
   ));
   $handler->override_option('title', 'Stuff I\'m following');
-  $handler->override_option('empty', '');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $translatables['updates'] = array(
-    t('<p><strong>No help needed right now :)</strong>
-Click follow above to receive updates & how to help.</p>'),
     t('App Updates'),
     t('Centre Recent Activity'),
+    t('Click follow above to receive updates & how to help.'),
     t('Defaults'),
     t('Files'),
     t('Help Needed!'),
@@ -7903,12 +7824,9 @@ Click follow above to receive updates & how to help.</p>'),
     t('Help this team'),
     t('Help this team!'),
     t('Latest files'),
-    t('No app updates found yet.'),
     t('No recent activity found.'),
     t('No recent files found.'),
     t('No updates for this centre yet.'),
-    t('No updates for this centre yet..'),
-    t('No user activity found.'),
     t('Recent Activity'),
     t('Recent activity'),
     t('Stuff I\'m following'),
