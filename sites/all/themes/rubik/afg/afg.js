@@ -9,8 +9,6 @@ $(document).ready(function(){
 	
 	// Styling
 	$('<div class="block-shadow"></div>').insertAfter('#block-quicktabs-cdi_features, #content-left .browse-centres, #block-quicktabs-app_directory, #block-quicktabs-app_media');
-	//.browse-centres
-	//$('#content-left .browse-centres').insertAfter('<div class="block-shadow"></div>');
 	$('#content-left #stats .item').append('<span class="item-arrow"></span>');
 	
 	// Toggle Menus

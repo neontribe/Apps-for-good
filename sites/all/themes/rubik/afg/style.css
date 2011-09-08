@@ -129,7 +129,10 @@ em {
 #content-left .view-updates li:after,
 #content-left .view-afg-app-directory li:after,
 #content-right .view-groups-listing-centre-school li:after,
-.views-field-comment-count:after {
+.views-field-comment-count:after,
+.form-submit:after,
+.views-field-delete-comment:after,
+#content-left .view-shoutbox-shouts li:after {
     content: ".";
     display: block;
     height: 0;
@@ -782,23 +785,26 @@ margin:0 0 0 6px;
 /* Shoutbox
 ---------------------------------------------------------- */
 
-#block-views-shoutbox_shouts-block_1 {
-	border: 0px !important;
-	padding: 20px 0 0;
+.shoutbox-list .item-list {
+	background:#1b9bda;
 }
 
 .shoutbox-input .form-submit {
 	float: right;
+	margin:0 0 10px;
+}
+
+.shoutbox-input .form-item {
+	border:0;
+	padding:0;	
+}
+
+.shoutbox-input .form-textarea {
+width:99%;	
 }
 
 .view-shoutbox-shouts .shoutbox-input {
 	margin: 0 0 15px;
-}
-
-.view-shoutbox-shouts .username {
-	font-weight: 600;
-	text-decoration: underline;
-	margin: 0 0 2px;
 }
 
 .view-shoutbox-shouts .picture {
@@ -815,21 +821,29 @@ margin:0 0 0 6px;
 
 .view-shoutbox-shouts .views-field-comment {
 	padding: 5px;
-	margin: 0 0 3px 60px;
-	max-width: 165px;
+	max-width: 80%;
 	background: #EEE;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
+	color:#222;
+	margin:0 0 15px 60px;
 }
 
-.view-shoutbox-shouts li {
-	margin: 0 0 35px;
-	border: 0 !important;
+#content-left .view-shoutbox-shouts li {
+	border-bottom:1px solid #fff;
+	padding:10px;
+	color:#fff;
+	margin:0;
+	background:#1b9bda;
 }
 
-.view-shoutbox-shouts li:last-child {
-margin: 0 0 70px;
+.view-shoutbox-shouts a.username {
+	color:#fff;
+	font-size:1.2em;
+	text-decoration:none;
+	text-transform:capitalize;
+	line-height:1;
 }
 
 .view-shoutbox-shouts li:hover .views-field-comment {
@@ -1358,6 +1372,8 @@ padding-left:10px;
 width:30px;
 height:auto;
 margin-bottom:0;
+-moz-box-shadow:0 0 6px 2px #A1A1A1;
+-webkit-box-shadow:0 0 6px 2px #A1A1A1;
 box-shadow:0 0 6px 2px #A1A1A1;
 }
 
