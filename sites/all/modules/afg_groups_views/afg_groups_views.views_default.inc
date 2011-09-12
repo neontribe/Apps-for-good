@@ -5412,7 +5412,7 @@ function afg_groups_views_views_default_views() {
       'empty' => '',
       'hide_empty' => 0,
       'empty_zero' => 0,
-      'link_to_node' => 1,
+      'link_to_node' => 0,
       'spaces' => array(
         'frontpage' => 0,
         'type' => 'spaces_og',
