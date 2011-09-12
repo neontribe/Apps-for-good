@@ -73,6 +73,7 @@ textarea {
 	border: 1px solid #BABABA !important;
 	padding: 5px !important;
 	margin: 0 0 0 -5px;
+	min-height: 70px;
 	width: 100%;
 	-moz-box-shadow: inset 2px 2px 2px #CCC;
 	-webkit-box-shadow: inset 2px 2px 2px #CCC;
@@ -923,7 +924,6 @@ h1 {
 
 .view-shoutbox-shouts .views-field-comment {
 	padding: 5px;
-	max-width: 80%;
 	color: #222;
 	margin: 0 0 15px 60px;
 	background: #EEE;
@@ -973,6 +973,10 @@ h1 {
 
 .views-field-delete-comment:hover a {
 	color: #FFF !important;
+}
+
+.page-shoutbox textarea {
+	min-height: 100px;
 }
 
 /* Quicktabs
@@ -1234,6 +1238,10 @@ body #header-top .account-menu-active a {
 	position: absolute;
 	top: 200px;
 	right: 60px;
+}
+
+#block-atrium-user_links li {
+	list-style: none;
 }
 
 #block-atrium-user_links .block-content {
