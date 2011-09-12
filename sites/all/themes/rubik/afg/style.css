@@ -211,6 +211,56 @@ h1 {
 	clear: both;
 }
 
+/* Buttons
+---------------------------------------------------------- */
+
+#block-atrium-user_links .block-content a,
+input[type='submit'] {
+	color: #FFF;
+	font-size: 1.4em;
+	padding: 10px 35px;
+	background: #EC7E1E;
+	text-transform: uppercase;
+	border-radius: 4px;
+	position: absolute;
+	z-index: 20;
+	bottom: -16px;
+	left: 45px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	text-shadow: 1px 1px 2px #444;
+	-moz-box-shadow: 0 2px #111;
+	-webkit-box-shadow: 0 2px #111;
+	box-shadow: 0 2px #111;
+	background: #F58322 url('images/afg/gradient.png');
+}
+
+input[type='submit'] {
+	position: static;
+    padding: 5px 10px;
+    border: 0;
+}
+
+#content-right .views-field-mail a {
+	float: left;
+	padding: 8px 11px;
+	margin:10px 0 0;
+	color: #FFF !important;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 2px #444;
+	-moz-box-shadow: 0 2px #111;
+	-webkit-box-shadow: 0 2px #111;
+	box-shadow: 0 2px #111;
+	background: #F58322 url('images/afg/gradient.png');
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+}
+
+#content-right .views-field-mail:hover a {
+	background-color: #999 !important;
+}
+
 /* Layout
 ---------------------------------------------------------- */
 
@@ -664,23 +714,6 @@ h1 {
 
 #content-right .views-field-body {
 	margin-bottom: 15px;
-}
-
-#content-right .views-field-mail a {
-	float: left;
-	padding: 8px 11px;
-	margin:10px 0 0;
-	color: #FFF !important;
-	text-transform: uppercase;
-	font-size: 0.9em;
-	text-shadow: -1px 1px 1px 2px #555;
-	-moz-box-shadow: 0 2px 1px 2px #444;
-	-webkit-box-shadow: 0 2px 1px 2px #444;
-	box-shadow: 0 2px 1px #444;
-	background: #F7A35A url('images/afg/gradient.png');
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
 }
 
 #content-right .views-field-mail a:after { content: " \2192"; }
@@ -1266,33 +1299,6 @@ body #header-top .account-menu-active a {
 	-moz-transform: rotate(-3deg);
 	-ms-transform: rotate(-3deg);
 	transform: rotate(-3deg);
-}
-
-#block-atrium-user_links .block-content a,
-input[type='submit'] {
-	color: #FFF;
-	font-size: 1.4em;
-	padding: 10px 35px;
-	background: #EC7E1E;
-	text-transform: uppercase;
-	border-radius: 4px;
-	position: absolute;
-	z-index: 20;
-	bottom: -16px;
-	left: 45px;
-	-moz-border-radius: 8px;
-	-webkit-border-radius: 8px;
-	text-shadow: 1px 1px 2px #444;
-	-moz-box-shadow: 0 2px #111;
-	-webkit-box-shadow: 0 2px #111;
-	box-shadow: 0 2px #111;
-	background: #F58322 url('images/afg/gradient.png');
-}
-
-input[type='submit'] {
-	position: static;
-    padding: 5px 10px;
-    border: 0;
 }
 
 #block-atrium-user_links .block-content a:after {
