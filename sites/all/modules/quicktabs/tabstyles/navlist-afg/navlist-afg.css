@@ -49,7 +49,7 @@ ul.quicktabs_tabs.quicktabs-style-navlist-afg li.active a {
 
 .views-field-field-carousel-image-fid img,
 .views-field-field-carousel-image-fid object {
-  width: 100% !important;
+  /* width: 100% !important; */
   /* height: auto; */
 }
 
