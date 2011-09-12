@@ -273,6 +273,10 @@ input[type='submit'] {
 	max-width: 1000px;
 }
 
+.links li {
+	list-style: none;
+}
+
 #page {
 	width: 100%;
 	max-width: 1000px;
@@ -382,10 +386,6 @@ input[type='submit'] {
 #primary-links .links li:hover a,
 #primary-links .links .active a {
 	color: #000;
-}
-
-.primary-tabs li {
-	list-style: none;
 }
 
 .primary-tabs li:hover {
@@ -1037,15 +1037,23 @@ input[type='submit'] {
 	padding: 0 0 0 20px;
 }
 
-.help .views-field-group-nid a {
+.help .views-field-group-nid a,
+.help .views-field-title-1 a {
 	background: url('images/afg/icons/afg_school-icon-s.gif') no-repeat left;
 	padding: 0 0 0 20px;
 }
 
 .help .views-field-title a,
-.help .views-field-group-nid a {
+.help .views-field-group-nid a,
+.help .views-field-title-1 a {
 	color: #1B9BDA !important;
 	margin: 0 0 3px;
+}
+
+.help .views-field-title a:hover,
+.help .views-field-group-nid a:hover,
+.help .views-field-title-1 a:hover {
+	color: #222 !important;
 }
 
 /* Quicktabs
