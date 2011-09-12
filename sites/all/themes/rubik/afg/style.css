@@ -100,6 +100,10 @@ ol li {
 	list-style: decimal;
 }
 
+.page-admin ul li {
+	list-style: none;
+}
+
 /* Headers & Spans
 ---------------------------------------------------------- */
 
@@ -810,8 +814,9 @@ input[type='submit'] {
 	line-height: 1.1;
 }
 
-#content-left .activity-updates .view-empty {
+#content-left .view-empty {
 	padding: 10px;
+	background: #1B9BDA;
 }
 
 #content-left .activity-updates a:link {
