@@ -21,6 +21,25 @@
 	display: none;
 }
 
+
+
+/* ------------------------------------------------------------------------------------- */
+.help .views-field-created {
+	margin: 0 0 3px;
+}
+
+.help .views-field-title a {
+	background: url('images/afg/icons/afg_help-icon-s.gif') no-repeat left;
+	padding: 0 0 0 20px;
+	margin: 0 0 3px;
+}
+
+.help .views-field-group-nid a {
+	background: url('images/afg/icons/afg_school-icon-s.gif') no-repeat left;
+	padding: 0 0 0 20px;
+}
+/* ------------------------------------------------------------------------------------- */
+
 /* TEMPORARY: Replicate text-field comment box */
 
 li.comment_add {
