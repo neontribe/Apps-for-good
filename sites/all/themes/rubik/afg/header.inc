@@ -51,7 +51,11 @@
         <span class='header-description'>
           <//REMOVED todo add Location instead for centres ?php print $header_desc ?>
        </span>
-        <span class='region'><h2> <?php if ($region) print $region ?> </h2></span>
+       <?php if ($region): ?>
+          <span class='region'>
+             <h2><?php print $region; ?></h2>
+          </span>
+       <?php endif; ?>
 
         </div>
 	  
