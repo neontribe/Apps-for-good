@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.1.41, for debian-linux-gnu (i486)
+-- MySQL dump 10.11
 --
--- Host: localhost    Database: atrium_apps4good
+-- Host: localhost    Database: dr_apps4good
 -- ------------------------------------------------------
--- Server version	5.1.41-3ubuntu12.10
+-- Server version	5.0.51a-3ubuntu5.8
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -20,16 +20,16 @@
 --
 
 DROP TABLE IF EXISTS `access`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `access` (
-  `aid` int(11) NOT NULL AUTO_INCREMENT,
-  `mask` varchar(255) NOT NULL DEFAULT '',
-  `type` varchar(255) NOT NULL DEFAULT '',
-  `status` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`aid`)
+  `aid` int(11) NOT NULL auto_increment,
+  `mask` varchar(255) NOT NULL default '',
+  `type` varchar(255) NOT NULL default '',
+  `status` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`aid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `access`
@@ -46,17 +46,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `actions`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `actions` (
-  `aid` varchar(255) NOT NULL DEFAULT '0',
-  `type` varchar(32) NOT NULL DEFAULT '',
-  `callback` varchar(255) NOT NULL DEFAULT '',
+  `aid` varchar(255) NOT NULL default '0',
+  `type` varchar(32) NOT NULL default '',
+  `callback` varchar(255) NOT NULL default '',
   `parameters` longtext NOT NULL,
-  `description` varchar(255) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`aid`)
+  `description` varchar(255) NOT NULL default '0',
+  PRIMARY KEY  (`aid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `actions`
@@ -84,13 +84,13 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `actions_aid`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `actions_aid` (
-  `aid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`aid`)
+  `aid` int(10) unsigned NOT NULL auto_increment,
+  PRIMARY KEY  (`aid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `actions_aid`
@@ -107,17 +107,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `authmap`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `authmap` (
-  `aid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `uid` int(11) NOT NULL DEFAULT '0',
-  `authname` varchar(128) NOT NULL DEFAULT '',
-  `module` varchar(128) NOT NULL DEFAULT '',
-  PRIMARY KEY (`aid`),
+  `aid` int(10) unsigned NOT NULL auto_increment,
+  `uid` int(11) NOT NULL default '0',
+  `authname` varchar(128) NOT NULL default '',
+  `module` varchar(128) NOT NULL default '',
+  PRIMARY KEY  (`aid`),
   UNIQUE KEY `authname` (`authname`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `authmap`
@@ -135,18 +135,18 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `autoload_registry`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `autoload_registry` (
-  `name` varchar(255) NOT NULL DEFAULT '',
-  `type` varchar(9) NOT NULL DEFAULT '',
+  `name` varchar(255) NOT NULL default '',
+  `type` varchar(9) NOT NULL default '',
   `filename` varchar(255) NOT NULL,
-  `module` varchar(255) NOT NULL DEFAULT '',
-  `weight` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`name`,`type`),
+  `module` varchar(255) NOT NULL default '',
+  `weight` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`name`,`type`),
   KEY `hook` (`type`,`weight`,`module`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `autoload_registry`
@@ -163,14 +163,14 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `autoload_registry_file`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `autoload_registry_file` (
   `filename` varchar(255) NOT NULL,
   `hash` varchar(64) NOT NULL,
-  PRIMARY KEY (`filename`)
+  PRIMARY KEY  (`filename`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `autoload_registry_file`
@@ -187,17 +187,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `batch`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `batch` (
-  `bid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `bid` int(10) unsigned NOT NULL auto_increment,
   `token` varchar(64) NOT NULL,
   `timestamp` int(11) NOT NULL,
   `batch` longtext,
-  PRIMARY KEY (`bid`),
+  PRIMARY KEY  (`bid`),
   KEY `token` (`token`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `batch`
@@ -214,27 +214,27 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `blocks`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `blocks` (
-  `bid` int(11) NOT NULL AUTO_INCREMENT,
-  `module` varchar(64) NOT NULL DEFAULT '',
-  `delta` varchar(32) NOT NULL DEFAULT '0',
-  `theme` varchar(64) NOT NULL DEFAULT '',
-  `status` tinyint(4) NOT NULL DEFAULT '0',
-  `weight` tinyint(4) NOT NULL DEFAULT '0',
-  `region` varchar(64) NOT NULL DEFAULT '',
-  `custom` tinyint(4) NOT NULL DEFAULT '0',
-  `throttle` tinyint(4) NOT NULL DEFAULT '0',
-  `visibility` tinyint(4) NOT NULL DEFAULT '0',
+  `bid` int(11) NOT NULL auto_increment,
+  `module` varchar(64) NOT NULL default '',
+  `delta` varchar(32) NOT NULL default '0',
+  `theme` varchar(64) NOT NULL default '',
+  `status` tinyint(4) NOT NULL default '0',
+  `weight` tinyint(4) NOT NULL default '0',
+  `region` varchar(64) NOT NULL default '',
+  `custom` tinyint(4) NOT NULL default '0',
+  `throttle` tinyint(4) NOT NULL default '0',
+  `visibility` tinyint(4) NOT NULL default '0',
   `pages` text NOT NULL,
-  `title` varchar(64) NOT NULL DEFAULT '',
-  `cache` tinyint(4) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`bid`),
+  `title` varchar(64) NOT NULL default '',
+  `cache` tinyint(4) NOT NULL default '1',
+  PRIMARY KEY  (`bid`),
   UNIQUE KEY `tmd` (`theme`,`module`,`delta`),
   KEY `list` (`theme`,`status`,`region`,`weight`,`module`)
 ) ENGINE=MyISAM AUTO_INCREMENT=330 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `blocks`
@@ -561,16 +561,16 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `blocks_roles`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `blocks_roles` (
   `module` varchar(64) NOT NULL,
   `delta` varchar(32) NOT NULL,
   `rid` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`module`,`delta`,`rid`),
+  PRIMARY KEY  (`module`,`delta`,`rid`),
   KEY `rid` (`rid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `blocks_roles`
@@ -587,17 +587,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `book`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `book` (
-  `mlid` int(10) unsigned NOT NULL DEFAULT '0',
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
-  `bid` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`mlid`),
+  `mlid` int(10) unsigned NOT NULL default '0',
+  `nid` int(10) unsigned NOT NULL default '0',
+  `bid` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`mlid`),
   UNIQUE KEY `nid` (`nid`),
   KEY `bid` (`bid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `book`
@@ -614,17 +614,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `box`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `box` (
   `delta` varchar(32) NOT NULL,
   `plugin_key` varchar(64) NOT NULL,
   `title` varchar(64) NOT NULL,
-  `description` varchar(255) DEFAULT '',
+  `description` varchar(255) default '',
   `options` longtext,
-  PRIMARY KEY (`delta`)
+  PRIMARY KEY  (`delta`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `box`
@@ -641,17 +641,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `boxes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `boxes` (
-  `bid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `bid` int(10) unsigned NOT NULL auto_increment,
   `body` longtext,
-  `info` varchar(128) NOT NULL DEFAULT '',
-  `format` smallint(6) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`bid`),
+  `info` varchar(128) NOT NULL default '',
+  `format` smallint(6) NOT NULL default '0',
+  PRIMARY KEY  (`bid`),
   UNIQUE KEY `info` (`info`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `boxes`
@@ -661,7 +661,7 @@ CREATE TABLE `boxes` (
 LOCK TABLES `boxes` WRITE;
 /*!40000 ALTER TABLE `boxes` DISABLE KEYS */;
 INSERT INTO `boxes` VALUES (1,'<?php\r\necho afg_shoutbox_comment_form();\r\n?>','afg group comment shoutbox',6);
-INSERT INTO `boxes` VALUES (2,'<div id=\"header-top-links\">\r\n<a id=\"get-involved\" href=\"<?php print base_path(); ?>\" title=\"\">Get Involved!</a>\r\n<span><a href=\"<?php print base_path(); ?>\" title=\"About\">About</a></span>\r\n<span><a href=\"http://apps4good.neontribe.org/cdi-group/cdi-blog\" title=\"Blog\">Blog</a></span>\r\n<a href=\"http://www.facebook.com/appsforgood\" title=\"\"><img src=\"<?php print base_path() . path_to_theme(); ?>/images/afg/fb-like.jpg\" /></a>\r\n<a href=\"http://twitter.com/appsforgoodCDI\" title=\"\"><img src=\"<?php print base_path() . path_to_theme(); ?>/images/afg/twitter.jpg\" /></a>\r\n</div>','Header Top Links',6);
+INSERT INTO `boxes` VALUES (2,'<div id=\"header-top-links\">\r\n<a id=\"get-involved\" href=\"<?php print base_path(); ?>\" title=\"\">Get Involved!</a>\r\n<span><a href=\"http://network.appsforgood.org/cdi-group/cdi-blog\" title=\"Blog\">Blog</a></span>\r\n<a href=\"http://www.facebook.com/appsforgood\" title=\"\"><img src=\"<?php print base_path() . path_to_theme(); ?>/images/afg/fb-like.jpg\" /></a>\r\n<a href=\"http://twitter.com/appsforgoodCDI\" title=\"\"><img src=\"<?php print base_path() . path_to_theme(); ?>/images/afg/twitter.jpg\" /></a>\r\n</div>','Header Top Links',6);
 INSERT INTO `boxes` VALUES (3,'<div id=\'block-atrium-user_links\'>\r\n<div class=\'block-content\'>\r\n<p>\r\nCreate an account and login to follow this group.\r\n</p>\r\n<a href=\'user/register\'>Follow</a>\r\n</div>\r\n</div>','anonymous_user_follow_block',6);
 /*!40000 ALTER TABLE `boxes` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -671,22 +671,22 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `casetracker_case`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `casetracker_case` (
-  `nid` int(11) NOT NULL DEFAULT '0',
-  `vid` int(11) NOT NULL DEFAULT '0',
-  `pid` int(11) NOT NULL DEFAULT '0',
-  `case_number` int(11) NOT NULL DEFAULT '0',
-  `assign_to` int(11) NOT NULL DEFAULT '0',
-  `case_priority_id` int(11) NOT NULL DEFAULT '0',
-  `case_type_id` int(11) NOT NULL DEFAULT '0',
-  `case_status_id` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`vid`),
+  `nid` int(11) NOT NULL default '0',
+  `vid` int(11) NOT NULL default '0',
+  `pid` int(11) NOT NULL default '0',
+  `case_number` int(11) NOT NULL default '0',
+  `assign_to` int(11) NOT NULL default '0',
+  `case_priority_id` int(11) NOT NULL default '0',
+  `case_type_id` int(11) NOT NULL default '0',
+  `case_status_id` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`vid`),
   KEY `nid` (`nid`),
   KEY `p_id` (`pid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `casetracker_case`
@@ -703,17 +703,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `casetracker_case_states`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `casetracker_case_states` (
-  `csid` tinyint(4) NOT NULL AUTO_INCREMENT,
-  `case_state_name` varchar(255) NOT NULL DEFAULT '',
-  `case_state_realm` varchar(255) NOT NULL DEFAULT '',
-  `weight` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`csid`),
+  `csid` tinyint(4) NOT NULL auto_increment,
+  `case_state_name` varchar(255) NOT NULL default '',
+  `case_state_realm` varchar(255) NOT NULL default '',
+  `weight` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`csid`),
   KEY `weight` (`weight`)
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `casetracker_case_states`
@@ -741,20 +741,20 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `casetracker_comment_status`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `casetracker_comment_status` (
-  `cid` int(11) NOT NULL DEFAULT '0',
-  `pid` int(11) NOT NULL DEFAULT '0',
-  `title` varchar(250) DEFAULT NULL,
-  `assign_to` int(11) NOT NULL DEFAULT '0',
-  `case_priority_id` int(11) NOT NULL DEFAULT '0',
-  `case_type_id` int(11) NOT NULL DEFAULT '0',
-  `case_status_id` int(11) NOT NULL DEFAULT '0',
-  `state` int(11) NOT NULL DEFAULT '0',
+  `cid` int(11) NOT NULL default '0',
+  `pid` int(11) NOT NULL default '0',
+  `title` varchar(250) default NULL,
+  `assign_to` int(11) NOT NULL default '0',
+  `case_priority_id` int(11) NOT NULL default '0',
+  `case_type_id` int(11) NOT NULL default '0',
+  `case_status_id` int(11) NOT NULL default '0',
+  `state` int(11) NOT NULL default '0',
   KEY `cid` (`cid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `casetracker_comment_status`
@@ -770,21 +770,21 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `comment_upload`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `comment_upload` (
-  `fid` int(10) unsigned NOT NULL DEFAULT '0',
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
-  `cid` int(10) unsigned NOT NULL DEFAULT '0',
-  `description` varchar(255) NOT NULL DEFAULT '',
-  `list` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `weight` tinyint(4) NOT NULL DEFAULT '0',
-  `legacy_fid` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`fid`),
+  `fid` int(10) unsigned NOT NULL default '0',
+  `nid` int(10) unsigned NOT NULL default '0',
+  `cid` int(10) unsigned NOT NULL default '0',
+  `description` varchar(255) NOT NULL default '',
+  `list` tinyint(3) unsigned NOT NULL default '0',
+  `weight` tinyint(4) NOT NULL default '0',
+  `legacy_fid` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`fid`),
   KEY `cid_fid` (`cid`,`fid`),
   KEY `nid` (`nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `comment_upload`
@@ -801,30 +801,30 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `comments`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `comments` (
-  `cid` int(11) NOT NULL AUTO_INCREMENT,
-  `pid` int(11) NOT NULL DEFAULT '0',
-  `nid` int(11) NOT NULL DEFAULT '0',
-  `uid` int(11) NOT NULL DEFAULT '0',
-  `subject` varchar(64) NOT NULL DEFAULT '',
+  `cid` int(11) NOT NULL auto_increment,
+  `pid` int(11) NOT NULL default '0',
+  `nid` int(11) NOT NULL default '0',
+  `uid` int(11) NOT NULL default '0',
+  `subject` varchar(64) NOT NULL default '',
   `comment` longtext NOT NULL,
-  `hostname` varchar(128) NOT NULL DEFAULT '',
-  `timestamp` int(11) NOT NULL DEFAULT '0',
-  `status` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `format` smallint(6) NOT NULL DEFAULT '0',
+  `hostname` varchar(128) NOT NULL default '',
+  `timestamp` int(11) NOT NULL default '0',
+  `status` tinyint(3) unsigned NOT NULL default '0',
+  `format` smallint(6) NOT NULL default '0',
   `thread` varchar(255) NOT NULL,
-  `name` varchar(60) DEFAULT NULL,
-  `mail` varchar(64) DEFAULT NULL,
-  `homepage` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`cid`),
+  `name` varchar(60) default NULL,
+  `mail` varchar(64) default NULL,
+  `homepage` varchar(255) default NULL,
+  PRIMARY KEY  (`cid`),
   KEY `pid` (`pid`),
   KEY `nid` (`nid`),
   KEY `status` (`status`),
   KEY `timestamp` (`timestamp`)
 ) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `comments`
@@ -852,17 +852,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `content_field_date`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `content_field_date` (
-  `vid` int(10) unsigned NOT NULL DEFAULT '0',
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
-  `field_date_value` varchar(20) DEFAULT NULL,
-  `field_date_value2` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`vid`),
+  `vid` int(10) unsigned NOT NULL default '0',
+  `nid` int(10) unsigned NOT NULL default '0',
+  `field_date_value` varchar(20) default NULL,
+  `field_date_value2` varchar(20) default NULL,
+  PRIMARY KEY  (`vid`),
   KEY `nid` (`nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `content_field_date`
@@ -879,18 +879,18 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `content_field_group_image`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `content_field_group_image` (
-  `vid` int(10) unsigned NOT NULL DEFAULT '0',
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
-  `field_group_image_fid` int(11) DEFAULT NULL,
-  `field_group_image_list` tinyint(4) DEFAULT NULL,
+  `vid` int(10) unsigned NOT NULL default '0',
+  `nid` int(10) unsigned NOT NULL default '0',
+  `field_group_image_fid` int(11) default NULL,
+  `field_group_image_list` tinyint(4) default NULL,
   `field_group_image_data` text,
-  PRIMARY KEY (`vid`),
+  PRIMARY KEY  (`vid`),
   KEY `nid` (`nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `content_field_group_image`
@@ -916,18 +916,18 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `content_field_icon`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `content_field_icon` (
-  `vid` int(10) unsigned NOT NULL DEFAULT '0',
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
-  `field_icon_fid` int(11) DEFAULT NULL,
-  `field_icon_list` tinyint(4) DEFAULT NULL,
+  `vid` int(10) unsigned NOT NULL default '0',
+  `nid` int(10) unsigned NOT NULL default '0',
+  `field_icon_fid` int(11) default NULL,
+  `field_icon_list` tinyint(4) default NULL,
   `field_icon_data` text,
-  PRIMARY KEY (`vid`),
+  PRIMARY KEY  (`vid`),
   KEY `nid` (`nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `content_field_icon`
@@ -986,18 +986,18 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `content_field_logo`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `content_field_logo` (
-  `vid` int(10) unsigned NOT NULL DEFAULT '0',
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
-  `field_logo_fid` int(11) DEFAULT NULL,
-  `field_logo_list` tinyint(4) DEFAULT NULL,
+  `vid` int(10) unsigned NOT NULL default '0',
+  `nid` int(10) unsigned NOT NULL default '0',
+  `field_logo_fid` int(11) default NULL,
+  `field_logo_list` tinyint(4) default NULL,
   `field_logo_data` text,
-  PRIMARY KEY (`vid`),
+  PRIMARY KEY  (`vid`),
   KEY `nid` (`nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `content_field_logo`
@@ -1054,18 +1054,18 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `content_field_staff`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `content_field_staff` (
-  `vid` int(10) unsigned NOT NULL DEFAULT '0',
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
-  `delta` int(10) unsigned NOT NULL DEFAULT '0',
-  `field_staff_nid` int(10) unsigned DEFAULT NULL,
-  PRIMARY KEY (`vid`,`delta`),
+  `vid` int(10) unsigned NOT NULL default '0',
+  `nid` int(10) unsigned NOT NULL default '0',
+  `delta` int(10) unsigned NOT NULL default '0',
+  `field_staff_nid` int(10) unsigned default NULL,
+  PRIMARY KEY  (`vid`,`delta`),
   KEY `nid` (`nid`),
   KEY `field_staff_nid` (`field_staff_nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `content_field_staff`
@@ -1120,22 +1120,22 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `content_node_field`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `content_node_field` (
-  `field_name` varchar(32) NOT NULL DEFAULT '',
-  `type` varchar(127) NOT NULL DEFAULT '',
+  `field_name` varchar(32) NOT NULL default '',
+  `type` varchar(127) NOT NULL default '',
   `global_settings` mediumtext NOT NULL,
-  `required` tinyint(4) NOT NULL DEFAULT '0',
-  `multiple` tinyint(4) NOT NULL DEFAULT '0',
-  `db_storage` tinyint(4) NOT NULL DEFAULT '1',
-  `module` varchar(127) NOT NULL DEFAULT '',
+  `required` tinyint(4) NOT NULL default '0',
+  `multiple` tinyint(4) NOT NULL default '0',
+  `db_storage` tinyint(4) NOT NULL default '1',
+  `module` varchar(127) NOT NULL default '',
   `db_columns` mediumtext NOT NULL,
-  `active` tinyint(4) NOT NULL DEFAULT '0',
-  `locked` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`field_name`)
+  `active` tinyint(4) NOT NULL default '0',
+  `locked` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`field_name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `content_node_field`
@@ -1145,7 +1145,6 @@ CREATE TABLE `content_node_field` (
 LOCK TABLES `content_node_field` WRITE;
 /*!40000 ALTER TABLE `content_node_field` DISABLE KEYS */;
 INSERT INTO `content_node_field` VALUES ('field_about_me','text','a:4:{s:15:\"text_processing\";s:1:\"0\";s:10:\"max_length\";s:0:\"\";s:14:\"allowed_values\";s:0:\"\";s:18:\"allowed_values_php\";s:0:\"\";}',0,0,1,'text','a:1:{s:5:\"value\";a:5:{s:4:\"type\";s:4:\"text\";s:4:\"size\";s:3:\"big\";s:8:\"not null\";b:0;s:8:\"sortable\";b:1;s:5:\"views\";b:1;}}',1,0);
-INSERT INTO `content_node_field` VALUES ('field_address','addresses_cck','a:33:{s:17:\"is_primary_select\";s:1:\"0\";s:15:\"is_primary_size\";s:0:\"\";s:16:\"is_primary_label\";s:0:\"\";s:15:\"is_primary_desc\";s:0:\"\";s:12:\"aname_select\";s:1:\"0\";s:10:\"aname_size\";s:0:\"\";s:11:\"aname_label\";s:0:\"\";s:10:\"aname_desc\";s:0:\"\";s:14:\"country_select\";s:1:\"0\";s:12:\"country_size\";s:0:\"\";s:13:\"country_label\";s:0:\"\";s:12:\"country_desc\";s:0:\"\";s:15:\"province_select\";s:1:\"0\";s:13:\"province_size\";s:0:\"\";s:14:\"province_label\";s:0:\"\";s:13:\"province_desc\";s:0:\"\";s:11:\"city_select\";s:1:\"1\";s:9:\"city_size\";s:0:\"\";s:10:\"city_label\";s:4:\"City\";s:9:\"city_desc\";s:0:\"\";s:13:\"street_select\";s:1:\"0\";s:11:\"street_size\";s:0:\"\";s:12:\"street_label\";s:0:\"\";s:11:\"street_desc\";s:0:\"\";s:17:\"additional_select\";s:1:\"0\";s:15:\"additional_size\";s:0:\"\";s:16:\"additional_label\";s:0:\"\";s:15:\"additional_desc\";s:0:\"\";s:18:\"postal_code_select\";s:1:\"1\";s:16:\"postal_code_size\";s:0:\"\";s:17:\"postal_code_label\";s:9:\"Post code\";s:16:\"postal_code_desc\";s:0:\"\";i:0;s:0:\"\";}',0,0,1,'addresses_cck','a:8:{s:10:\"is_primary\";a:8:{s:4:\"type\";s:3:\"int\";s:4:\"size\";s:4:\"tiny\";s:5:\"title\";s:24:\"Primary Address Checkbox\";s:11:\"description\";s:54:\"Mark it as the primary address or not (default is not)\";s:7:\"default\";i:0;s:7:\"display\";i:0;s:5:\"theme\";a:2:{s:5:\"plain\";s:57:\"\"False\" if the checkbox is not checked, otherwise \"True\".\";s:5:\"hcard\";s:59:\"An hcard/vcard html representation of the primary checkbox.\";}s:5:\"token\";s:17:\"addresses_general\";}s:5:\"aname\";a:8:{s:4:\"type\";s:7:\"varchar\";s:6:\"length\";i:75;s:5:\"title\";s:12:\"Address Name\";s:11:\"description\";s:72:\"The nickname of this address, like \"Home\", \"Office\", \"Anna\'s apartment.\"\";s:7:\"default\";s:0:\"\";s:7:\"display\";i:0;s:5:\"theme\";a:2:{s:5:\"plain\";s:17:\"The address name.\";s:5:\"hcard\";s:55:\"An hcard/vcard html representation of the address name.\";}s:5:\"token\";s:17:\"addresses_general\";}s:7:\"country\";a:8:{s:4:\"type\";s:7:\"varchar\";s:6:\"length\";i:2;s:5:\"title\";s:7:\"Country\";s:11:\"description\";s:58:\"The ISO alpha 3 code of each country (its a 2-digit code).\";s:7:\"default\";s:2:\"us\";s:7:\"display\";i:1;s:5:\"theme\";a:6:{s:4:\"name\";s:24:\"The name of the country.\";s:5:\"code2\";s:25:\"The 2-digit country code.\";s:5:\"code3\";s:25:\"The 3-digit country code.\";s:10:\"name_hcard\";s:50:\"An hcard/vcard representation of the country name.\";s:11:\"code2_hcard\";s:58:\"An hcard/vcard representation of the 2-digit country code.\";s:11:\"code3_hcard\";s:58:\"An hcard/vcard representation of the 3-digit country code.\";}s:5:\"token\";s:13:\"addresses_adr\";}s:8:\"province\";a:8:{s:4:\"type\";s:7:\"varchar\";s:6:\"length\";i:16;s:5:\"title\";s:8:\"Province\";s:11:\"description\";s:53:\"The name of the state, province, county or territory.\";s:7:\"default\";s:0:\"\";s:7:\"display\";i:1;s:5:\"theme\";a:4:{s:4:\"name\";s:18:\"The province name.\";s:4:\"code\";s:18:\"The province code.\";s:10:\"name_hcard\";s:51:\"An hcard/vcard representation of the province name.\";s:10:\"code_hcard\";s:51:\"An hcard/vcard representation of the province code.\";}s:5:\"token\";s:13:\"addresses_adr\";}s:4:\"city\";a:8:{s:4:\"type\";s:7:\"varchar\";s:6:\"length\";i:255;s:5:\"title\";s:4:\"City\";s:11:\"description\";s:21:\"The name of the city.\";s:7:\"default\";s:0:\"\";s:7:\"display\";i:1;s:5:\"theme\";a:2:{s:5:\"plain\";s:9:\"The city.\";s:5:\"hcard\";s:42:\"An hcard/vcard representation of the city.\";}s:5:\"token\";s:13:\"addresses_adr\";}s:6:\"street\";a:8:{s:4:\"type\";s:7:\"varchar\";s:6:\"length\";i:255;s:5:\"title\";s:6:\"Street\";s:11:\"description\";s:17:\"Street, number...\";s:7:\"default\";s:0:\"\";s:7:\"display\";i:1;s:5:\"theme\";a:2:{s:5:\"plain\";s:24:\"The street, number, etc.\";s:5:\"hcard\";s:44:\"An hcard/vcard representation of the street.\";}s:5:\"token\";s:13:\"addresses_adr\";}s:10:\"additional\";a:8:{s:4:\"type\";s:7:\"varchar\";s:6:\"length\";i:255;s:5:\"title\";s:10:\"Additional\";s:11:\"description\";s:81:\"Additional address information like apartment block, number or address reference.\";s:7:\"default\";s:0:\"\";s:7:\"display\";i:1;s:5:\"theme\";a:2:{s:5:\"plain\";s:31:\"Additional address information.\";s:5:\"hcard\";s:68:\"An hcard/vcard representation of the additional address information.\";}s:5:\"token\";s:13:\"addresses_adr\";}s:11:\"postal_code\";a:8:{s:4:\"type\";s:7:\"varchar\";s:6:\"length\";i:16;s:5:\"title\";s:11:\"Postal code\";s:11:\"description\";s:49:\"The address postal code (ZIP code for US people).\";s:7:\"default\";s:0:\"\";s:7:\"display\";i:1;s:5:\"theme\";a:2:{s:5:\"plain\";s:16:\"The postal code.\";s:5:\"hcard\";s:49:\"An hcard/vcard representation of the postal code.\";}s:5:\"token\";s:13:\"addresses_adr\";}}',1,0);
 INSERT INTO `content_node_field` VALUES ('field_carousel_image','filefield','a:3:{s:10:\"list_field\";s:1:\"0\";s:12:\"list_default\";i:1;s:17:\"description_field\";s:1:\"0\";}',1,0,1,'filefield','a:3:{s:3:\"fid\";a:3:{s:4:\"type\";s:3:\"int\";s:8:\"not null\";b:0;s:5:\"views\";b:1;}s:4:\"list\";a:4:{s:4:\"type\";s:3:\"int\";s:4:\"size\";s:4:\"tiny\";s:8:\"not null\";b:0;s:5:\"views\";b:1;}s:4:\"data\";a:3:{s:4:\"type\";s:4:\"text\";s:9:\"serialize\";b:1;s:5:\"views\";b:1;}}',1,0);
 INSERT INTO `content_node_field` VALUES ('field_centre_loc','location','a:3:{s:17:\"location_settings\";a:2:{s:4:\"form\";a:1:{s:6:\"fields\";a:8:{s:4:\"name\";a:3:{s:7:\"collect\";s:1:\"0\";s:7:\"default\";s:0:\"\";s:6:\"weight\";s:1:\"2\";}s:6:\"street\";a:3:{s:7:\"collect\";s:1:\"0\";s:7:\"default\";s:0:\"\";s:6:\"weight\";s:1:\"4\";}s:10:\"additional\";a:3:{s:7:\"collect\";s:1:\"0\";s:7:\"default\";s:0:\"\";s:6:\"weight\";s:1:\"6\";}s:4:\"city\";a:3:{s:7:\"collect\";s:1:\"1\";s:7:\"default\";s:0:\"\";s:6:\"weight\";s:1:\"8\";}s:8:\"province\";a:3:{s:7:\"collect\";s:1:\"1\";s:7:\"default\";s:0:\"\";s:6:\"weight\";s:2:\"10\";}s:11:\"postal_code\";a:3:{s:7:\"collect\";s:1:\"2\";s:7:\"default\";s:0:\"\";s:6:\"weight\";s:2:\"12\";}s:7:\"country\";a:3:{s:7:\"collect\";s:1:\"4\";s:7:\"default\";s:2:\"uk\";s:6:\"weight\";s:2:\"14\";}s:7:\"locpick\";a:2:{s:7:\"collect\";s:1:\"2\";s:6:\"weight\";s:2:\"20\";}}}s:7:\"display\";a:1:{s:4:\"hide\";a:12:{s:4:\"name\";i:0;s:6:\"street\";i:0;s:10:\"additional\";i:0;s:4:\"city\";i:0;s:8:\"province\";i:0;s:11:\"postal_code\";i:0;s:7:\"country\";i:0;s:7:\"locpick\";i:0;s:13:\"province_name\";i:0;s:12:\"country_name\";i:0;s:8:\"map_link\";i:0;s:6:\"coords\";i:0;}}}s:10:\"gmap_macro\";s:7:\"[gmap ]\";s:11:\"gmap_marker\";s:6:\"drupal\";}',1,0,1,'location_cck','a:1:{s:3:\"lid\";a:3:{s:4:\"type\";s:3:\"int\";s:8:\"unsigned\";b:1;s:8:\"not null\";b:0;}}',1,0);
 INSERT INTO `content_node_field` VALUES ('field_centre_loc_details','location','a:3:{s:17:\"location_settings\";a:2:{s:4:\"form\";a:1:{s:6:\"fields\";a:8:{s:4:\"name\";a:3:{s:7:\"collect\";s:1:\"0\";s:7:\"default\";s:0:\"\";s:6:\"weight\";s:1:\"2\";}s:6:\"street\";a:3:{s:7:\"collect\";s:1:\"0\";s:7:\"default\";s:0:\"\";s:6:\"weight\";s:1:\"4\";}s:10:\"additional\";a:3:{s:7:\"collect\";s:1:\"0\";s:7:\"default\";s:0:\"\";s:6:\"weight\";s:1:\"6\";}s:4:\"city\";a:3:{s:7:\"collect\";s:1:\"1\";s:7:\"default\";s:0:\"\";s:6:\"weight\";s:1:\"8\";}s:8:\"province\";a:3:{s:7:\"collect\";s:1:\"1\";s:7:\"default\";s:0:\"\";s:6:\"weight\";s:2:\"10\";}s:11:\"postal_code\";a:3:{s:7:\"collect\";s:1:\"2\";s:7:\"default\";s:0:\"\";s:6:\"weight\";s:2:\"12\";}s:7:\"country\";a:3:{s:7:\"collect\";s:1:\"4\";s:7:\"default\";s:2:\"uk\";s:6:\"weight\";s:2:\"14\";}s:7:\"locpick\";a:2:{s:7:\"collect\";s:1:\"2\";s:6:\"weight\";s:2:\"20\";}}}s:7:\"display\";a:1:{s:4:\"hide\";a:12:{s:4:\"name\";s:4:\"name\";s:6:\"street\";s:6:\"street\";s:10:\"additional\";s:10:\"additional\";s:13:\"province_name\";s:13:\"province_name\";s:12:\"country_name\";s:12:\"country_name\";s:4:\"city\";i:0;s:8:\"province\";i:0;s:11:\"postal_code\";i:0;s:7:\"country\";i:0;s:7:\"locpick\";i:0;s:8:\"map_link\";i:0;s:6:\"coords\";i:0;}}}s:10:\"gmap_macro\";s:7:\"[gmap ]\";s:11:\"gmap_marker\";s:6:\"drupal\";}',1,0,1,'location_cck','a:1:{s:3:\"lid\";a:3:{s:4:\"type\";s:3:\"int\";s:8:\"unsigned\";b:1;s:8:\"not null\";b:0;}}',1,0);
@@ -1156,7 +1155,7 @@ INSERT INTO `content_node_field` VALUES ('field_group_flickr','emvideo','a:0:{}'
 INSERT INTO `content_node_field` VALUES ('field_group_image','filefield','a:3:{s:10:\"list_field\";s:1:\"0\";s:12:\"list_default\";i:1;s:17:\"description_field\";s:1:\"0\";}',0,0,0,'filefield','a:3:{s:3:\"fid\";a:3:{s:4:\"type\";s:3:\"int\";s:8:\"not null\";b:0;s:5:\"views\";b:1;}s:4:\"list\";a:4:{s:4:\"type\";s:3:\"int\";s:4:\"size\";s:4:\"tiny\";s:8:\"not null\";b:0;s:5:\"views\";b:1;}s:4:\"data\";a:3:{s:4:\"type\";s:4:\"text\";s:9:\"serialize\";b:1;s:5:\"views\";b:1;}}',1,0);
 INSERT INTO `content_node_field` VALUES ('field_group_slideshare','emvideo','a:0:{}',0,0,1,'emvideo','a:9:{s:5:\"embed\";a:4:{s:4:\"type\";s:4:\"text\";s:4:\"size\";s:3:\"big\";s:8:\"not null\";b:0;s:8:\"sortable\";b:1;}s:5:\"value\";a:4:{s:4:\"type\";s:7:\"varchar\";s:6:\"length\";i:255;s:8:\"not null\";b:0;s:8:\"sortable\";b:1;}s:8:\"provider\";a:4:{s:4:\"type\";s:7:\"varchar\";s:6:\"length\";i:255;s:8:\"not null\";b:0;s:8:\"sortable\";b:1;}s:4:\"data\";a:4:{s:4:\"type\";s:4:\"text\";s:4:\"size\";s:3:\"big\";s:8:\"not null\";b:0;s:8:\"sortable\";b:0;}s:6:\"status\";a:5:{s:11:\"description\";s:38:\"The availability status of this media.\";s:4:\"type\";s:3:\"int\";s:8:\"unsigned\";s:4:\"TRUE\";s:8:\"not null\";b:1;s:7:\"default\";i:1;}s:7:\"version\";a:5:{s:11:\"description\";s:35:\"The version of the provider\'s data.\";s:4:\"type\";s:3:\"int\";s:8:\"unsigned\";b:1;s:8:\"not null\";b:1;s:7:\"default\";i:0;}s:5:\"title\";a:4:{s:4:\"type\";s:7:\"varchar\";s:6:\"length\";i:255;s:8:\"not null\";b:0;s:8:\"sortable\";b:1;}s:11:\"description\";a:4:{s:4:\"type\";s:7:\"varchar\";s:6:\"length\";i:255;s:8:\"not null\";b:0;s:8:\"sortable\";b:1;}s:8:\"duration\";a:5:{s:11:\"description\";s:41:\"Store the duration of a video in seconds.\";s:4:\"type\";s:3:\"int\";s:8:\"unsigned\";b:1;s:8:\"not null\";b:1;s:7:\"default\";i:0;}}',1,0);
 INSERT INTO `content_node_field` VALUES ('field_group_video','emvideo','a:0:{}',0,0,1,'emvideo','a:9:{s:5:\"embed\";a:4:{s:4:\"type\";s:4:\"text\";s:4:\"size\";s:3:\"big\";s:8:\"not null\";b:0;s:8:\"sortable\";b:1;}s:5:\"value\";a:4:{s:4:\"type\";s:7:\"varchar\";s:6:\"length\";i:255;s:8:\"not null\";b:0;s:8:\"sortable\";b:1;}s:8:\"provider\";a:4:{s:4:\"type\";s:7:\"varchar\";s:6:\"length\";i:255;s:8:\"not null\";b:0;s:8:\"sortable\";b:1;}s:4:\"data\";a:4:{s:4:\"type\";s:4:\"text\";s:4:\"size\";s:3:\"big\";s:8:\"not null\";b:0;s:8:\"sortable\";b:0;}s:6:\"status\";a:5:{s:11:\"description\";s:38:\"The availability status of this media.\";s:4:\"type\";s:3:\"int\";s:8:\"unsigned\";s:4:\"TRUE\";s:8:\"not null\";b:1;s:7:\"default\";i:1;}s:7:\"version\";a:5:{s:11:\"description\";s:35:\"The version of the provider\'s data.\";s:4:\"type\";s:3:\"int\";s:8:\"unsigned\";b:1;s:8:\"not null\";b:1;s:7:\"default\";i:0;}s:5:\"title\";a:4:{s:4:\"type\";s:7:\"varchar\";s:6:\"length\";i:255;s:8:\"not null\";b:0;s:8:\"sortable\";b:1;}s:11:\"description\";a:4:{s:4:\"type\";s:7:\"varchar\";s:6:\"length\";i:255;s:8:\"not null\";b:0;s:8:\"sortable\";b:1;}s:8:\"duration\";a:5:{s:11:\"description\";s:41:\"Store the duration of a video in seconds.\";s:4:\"type\";s:3:\"int\";s:8:\"unsigned\";b:1;s:8:\"not null\";b:1;s:7:\"default\";i:0;}}',1,0);
-INSERT INTO `content_node_field` VALUES ('field_icon','filefield','a:3:{s:10:\"list_field\";s:1:\"0\";s:12:\"list_default\";i:1;s:17:\"description_field\";s:1:\"0\";}',1,0,0,'filefield','a:3:{s:3:\"fid\";a:3:{s:4:\"type\";s:3:\"int\";s:8:\"not null\";b:0;s:5:\"views\";b:1;}s:4:\"list\";a:4:{s:4:\"type\";s:3:\"int\";s:4:\"size\";s:4:\"tiny\";s:8:\"not null\";b:0;s:5:\"views\";b:1;}s:4:\"data\";a:3:{s:4:\"type\";s:4:\"text\";s:9:\"serialize\";b:1;s:5:\"views\";b:1;}}',1,0);
+INSERT INTO `content_node_field` VALUES ('field_icon','filefield','a:3:{s:10:\"list_field\";s:1:\"0\";s:12:\"list_default\";i:1;s:17:\"description_field\";s:1:\"0\";}',0,0,0,'filefield','a:3:{s:3:\"fid\";a:3:{s:4:\"type\";s:3:\"int\";s:8:\"not null\";b:0;s:5:\"views\";b:1;}s:4:\"list\";a:4:{s:4:\"type\";s:3:\"int\";s:4:\"size\";s:4:\"tiny\";s:8:\"not null\";b:0;s:5:\"views\";b:1;}s:4:\"data\";a:3:{s:4:\"type\";s:4:\"text\";s:9:\"serialize\";b:1;s:5:\"views\";b:1;}}',1,0);
 INSERT INTO `content_node_field` VALUES ('field_location','addresses_cck','a:33:{s:17:\"is_primary_select\";s:1:\"0\";s:15:\"is_primary_size\";s:0:\"\";s:16:\"is_primary_label\";s:0:\"\";s:15:\"is_primary_desc\";s:0:\"\";s:12:\"aname_select\";s:1:\"0\";s:10:\"aname_size\";s:0:\"\";s:11:\"aname_label\";s:0:\"\";s:10:\"aname_desc\";s:0:\"\";s:14:\"country_select\";s:1:\"2\";s:12:\"country_size\";s:0:\"\";s:13:\"country_label\";s:7:\"Country\";s:12:\"country_desc\";s:0:\"\";s:15:\"province_select\";s:1:\"1\";s:13:\"province_size\";s:0:\"\";s:14:\"province_label\";s:6:\"County\";s:13:\"province_desc\";s:0:\"\";s:11:\"city_select\";s:1:\"1\";s:9:\"city_size\";s:0:\"\";s:10:\"city_label\";s:4:\"City\";s:9:\"city_desc\";s:0:\"\";s:13:\"street_select\";s:1:\"0\";s:11:\"street_size\";s:0:\"\";s:12:\"street_label\";s:0:\"\";s:11:\"street_desc\";s:0:\"\";s:17:\"additional_select\";s:1:\"0\";s:15:\"additional_size\";s:0:\"\";s:16:\"additional_label\";s:0:\"\";s:15:\"additional_desc\";s:0:\"\";s:18:\"postal_code_select\";s:1:\"0\";s:16:\"postal_code_size\";s:0:\"\";s:17:\"postal_code_label\";s:0:\"\";s:16:\"postal_code_desc\";s:0:\"\";i:0;s:0:\"\";}',0,0,1,'addresses_cck','a:8:{s:10:\"is_primary\";a:8:{s:4:\"type\";s:3:\"int\";s:4:\"size\";s:4:\"tiny\";s:5:\"title\";s:24:\"Primary Address Checkbox\";s:11:\"description\";s:54:\"Mark it as the primary address or not (default is not)\";s:7:\"default\";i:0;s:7:\"display\";i:0;s:5:\"theme\";a:2:{s:5:\"plain\";s:57:\"\"False\" if the checkbox is not checked, otherwise \"True\".\";s:5:\"hcard\";s:59:\"An hcard/vcard html representation of the primary checkbox.\";}s:5:\"token\";s:17:\"addresses_general\";}s:5:\"aname\";a:8:{s:4:\"type\";s:7:\"varchar\";s:6:\"length\";i:75;s:5:\"title\";s:12:\"Address Name\";s:11:\"description\";s:72:\"The nickname of this address, like \"Home\", \"Office\", \"Anna\'s apartment.\"\";s:7:\"default\";s:0:\"\";s:7:\"display\";i:0;s:5:\"theme\";a:2:{s:5:\"plain\";s:17:\"The address name.\";s:5:\"hcard\";s:55:\"An hcard/vcard html representation of the address name.\";}s:5:\"token\";s:17:\"addresses_general\";}s:7:\"country\";a:8:{s:4:\"type\";s:7:\"varchar\";s:6:\"length\";i:2;s:5:\"title\";s:7:\"Country\";s:11:\"description\";s:58:\"The ISO alpha 3 code of each country (its a 2-digit code).\";s:7:\"default\";s:2:\"us\";s:7:\"display\";i:1;s:5:\"theme\";a:6:{s:4:\"name\";s:24:\"The name of the country.\";s:5:\"code2\";s:25:\"The 2-digit country code.\";s:5:\"code3\";s:25:\"The 3-digit country code.\";s:10:\"name_hcard\";s:50:\"An hcard/vcard representation of the country name.\";s:11:\"code2_hcard\";s:58:\"An hcard/vcard representation of the 2-digit country code.\";s:11:\"code3_hcard\";s:58:\"An hcard/vcard representation of the 3-digit country code.\";}s:5:\"token\";s:13:\"addresses_adr\";}s:8:\"province\";a:8:{s:4:\"type\";s:7:\"varchar\";s:6:\"length\";i:16;s:5:\"title\";s:8:\"Province\";s:11:\"description\";s:53:\"The name of the state, province, county or territory.\";s:7:\"default\";s:0:\"\";s:7:\"display\";i:1;s:5:\"theme\";a:4:{s:4:\"name\";s:18:\"The province name.\";s:4:\"code\";s:18:\"The province code.\";s:10:\"name_hcard\";s:51:\"An hcard/vcard representation of the province name.\";s:10:\"code_hcard\";s:51:\"An hcard/vcard representation of the province code.\";}s:5:\"token\";s:13:\"addresses_adr\";}s:4:\"city\";a:8:{s:4:\"type\";s:7:\"varchar\";s:6:\"length\";i:255;s:5:\"title\";s:4:\"City\";s:11:\"description\";s:21:\"The name of the city.\";s:7:\"default\";s:0:\"\";s:7:\"display\";i:1;s:5:\"theme\";a:2:{s:5:\"plain\";s:9:\"The city.\";s:5:\"hcard\";s:42:\"An hcard/vcard representation of the city.\";}s:5:\"token\";s:13:\"addresses_adr\";}s:6:\"street\";a:8:{s:4:\"type\";s:7:\"varchar\";s:6:\"length\";i:255;s:5:\"title\";s:6:\"Street\";s:11:\"description\";s:17:\"Street, number...\";s:7:\"default\";s:0:\"\";s:7:\"display\";i:1;s:5:\"theme\";a:2:{s:5:\"plain\";s:24:\"The street, number, etc.\";s:5:\"hcard\";s:44:\"An hcard/vcard representation of the street.\";}s:5:\"token\";s:13:\"addresses_adr\";}s:10:\"additional\";a:8:{s:4:\"type\";s:7:\"varchar\";s:6:\"length\";i:255;s:5:\"title\";s:10:\"Additional\";s:11:\"description\";s:81:\"Additional address information like apartment block, number or address reference.\";s:7:\"default\";s:0:\"\";s:7:\"display\";i:1;s:5:\"theme\";a:2:{s:5:\"plain\";s:31:\"Additional address information.\";s:5:\"hcard\";s:68:\"An hcard/vcard representation of the additional address information.\";}s:5:\"token\";s:13:\"addresses_adr\";}s:11:\"postal_code\";a:8:{s:4:\"type\";s:7:\"varchar\";s:6:\"length\";i:16;s:5:\"title\";s:11:\"Postal code\";s:11:\"description\";s:49:\"The address postal code (ZIP code for US people).\";s:7:\"default\";s:0:\"\";s:7:\"display\";i:1;s:5:\"theme\";a:2:{s:5:\"plain\";s:16:\"The postal code.\";s:5:\"hcard\";s:49:\"An hcard/vcard representation of the postal code.\";}s:5:\"token\";s:13:\"addresses_adr\";}}',1,0);
 INSERT INTO `content_node_field` VALUES ('field_logo','filefield','a:3:{s:10:\"list_field\";s:1:\"0\";s:12:\"list_default\";i:1;s:17:\"description_field\";s:1:\"0\";}',0,0,0,'filefield','a:3:{s:3:\"fid\";a:3:{s:4:\"type\";s:3:\"int\";s:8:\"not null\";b:0;s:5:\"views\";b:1;}s:4:\"list\";a:4:{s:4:\"type\";s:3:\"int\";s:4:\"size\";s:4:\"tiny\";s:8:\"not null\";b:0;s:5:\"views\";b:1;}s:4:\"data\";a:3:{s:4:\"type\";s:4:\"text\";s:9:\"serialize\";b:1;s:5:\"views\";b:1;}}',1,0);
 INSERT INTO `content_node_field` VALUES ('field_profile_address','text','a:4:{s:15:\"text_processing\";i:1;s:10:\"max_length\";s:0:\"\";s:14:\"allowed_values\";s:0:\"\";s:18:\"allowed_values_php\";s:0:\"\";}',0,0,1,'text','a:2:{s:5:\"value\";a:5:{s:4:\"type\";s:4:\"text\";s:4:\"size\";s:3:\"big\";s:8:\"not null\";b:0;s:8:\"sortable\";b:1;s:5:\"views\";b:1;}s:6:\"format\";a:4:{s:4:\"type\";s:3:\"int\";s:8:\"unsigned\";b:1;s:8:\"not null\";b:0;s:5:\"views\";b:0;}}',1,0);
@@ -1175,22 +1174,22 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `content_node_field_instance`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `content_node_field_instance` (
-  `field_name` varchar(32) NOT NULL DEFAULT '',
-  `type_name` varchar(32) NOT NULL DEFAULT '',
-  `weight` int(11) NOT NULL DEFAULT '0',
-  `label` varchar(255) NOT NULL DEFAULT '',
-  `widget_type` varchar(32) NOT NULL DEFAULT '',
+  `field_name` varchar(32) NOT NULL default '',
+  `type_name` varchar(32) NOT NULL default '',
+  `weight` int(11) NOT NULL default '0',
+  `label` varchar(255) NOT NULL default '',
+  `widget_type` varchar(32) NOT NULL default '',
   `widget_settings` mediumtext NOT NULL,
   `display_settings` mediumtext NOT NULL,
   `description` mediumtext NOT NULL,
-  `widget_module` varchar(127) NOT NULL DEFAULT '',
-  `widget_active` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`field_name`,`type_name`)
+  `widget_module` varchar(127) NOT NULL default '',
+  `widget_active` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`field_name`,`type_name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `content_node_field_instance`
@@ -1200,7 +1199,6 @@ CREATE TABLE `content_node_field_instance` (
 LOCK TABLES `content_node_field_instance` WRITE;
 /*!40000 ALTER TABLE `content_node_field_instance` DISABLE KEYS */;
 INSERT INTO `content_node_field_instance` VALUES ('field_about_me','profile',-4,'About me','text_textarea','a:4:{s:4:\"rows\";s:1:\"5\";s:4:\"size\";i:60;s:13:\"default_value\";a:1:{i:0;a:2:{s:5:\"value\";s:0:\"\";s:14:\"_error_element\";s:46:\"default_value_widget][field_about_me][0][value\";}}s:17:\"default_value_php\";N;}','a:10:{s:6:\"weight\";s:2:\"-4\";s:6:\"parent\";s:0:\"\";s:5:\"label\";a:1:{s:6:\"format\";s:5:\"above\";}s:6:\"teaser\";a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}s:4:\"full\";a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}i:5;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}i:4;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}i:2;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}i:3;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}s:5:\"token\";a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}}','Please fill in a few details about your self.','text',1);
-INSERT INTO `content_node_field_instance` VALUES ('field_address','group_centre_school',-4,'Centre address','addresses_elements','a:2:{s:13:\"default_value\";a:1:{i:0;a:2:{s:11:\"postal_code\";s:0:\"\";s:4:\"city\";s:0:\"\";}}s:17:\"default_value_php\";N;}','a:8:{s:5:\"label\";a:2:{s:6:\"format\";s:5:\"above\";s:7:\"exclude\";i:0;}i:5;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}s:6:\"teaser\";a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}s:4:\"full\";a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}i:4;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}i:2;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}i:3;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}s:5:\"token\";a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}}','','addresses_cck',0);
 INSERT INTO `content_node_field_instance` VALUES ('field_carousel_image','cdi_blog',31,'Carousel image','imagefield_widget','a:14:{s:15:\"file_extensions\";s:16:\"png gif jpg jpeg\";s:9:\"file_path\";s:0:\"\";s:18:\"progress_indicator\";s:3:\"bar\";s:21:\"max_filesize_per_file\";s:0:\"\";s:21:\"max_filesize_per_node\";s:0:\"\";s:14:\"max_resolution\";s:1:\"0\";s:14:\"min_resolution\";s:1:\"0\";s:3:\"alt\";s:0:\"\";s:10:\"custom_alt\";i:0;s:5:\"title\";s:0:\"\";s:12:\"custom_title\";i:0;s:10:\"title_type\";s:9:\"textfield\";s:13:\"default_image\";N;s:17:\"use_default_image\";i:0;}','a:8:{s:5:\"label\";a:2:{s:6:\"format\";s:5:\"above\";s:7:\"exclude\";i:0;}i:5;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:6:\"teaser\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:4:\"full\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:4;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:2;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:3;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:5:\"token\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}}','','imagefield',1);
 INSERT INTO `content_node_field_instance` VALUES ('field_centre_loc_details','group_centre_school',-2,'Centre Located at','location','a:2:{s:13:\"default_value\";a:1:{i:0;a:7:{s:4:\"city\";s:0:\"\";s:8:\"province\";s:0:\"\";s:11:\"postal_code\";s:0:\"\";s:7:\"locpick\";a:2:{s:13:\"user_latitude\";s:0:\"\";s:14:\"user_longitude\";s:0:\"\";}s:23:\"cck_preview_in_progress\";b:1;s:17:\"location_settings\";a:2:{s:4:\"form\";a:1:{s:6:\"fields\";a:16:{s:4:\"name\";a:3:{s:7:\"default\";s:0:\"\";s:7:\"collect\";s:1:\"0\";s:6:\"weight\";s:1:\"2\";}s:6:\"street\";a:3:{s:7:\"default\";s:0:\"\";s:7:\"collect\";s:1:\"0\";s:6:\"weight\";s:1:\"4\";}s:10:\"additional\";a:3:{s:7:\"default\";s:0:\"\";s:7:\"collect\";s:1:\"0\";s:6:\"weight\";s:1:\"6\";}s:4:\"city\";a:3:{s:7:\"default\";s:0:\"\";s:7:\"collect\";s:1:\"1\";s:6:\"weight\";s:1:\"8\";}s:8:\"province\";a:3:{s:7:\"default\";s:0:\"\";s:7:\"collect\";s:1:\"1\";s:6:\"weight\";s:2:\"10\";}s:11:\"postal_code\";a:3:{s:7:\"default\";s:0:\"\";s:7:\"collect\";i:1;s:6:\"weight\";s:2:\"12\";}s:7:\"country\";a:3:{s:7:\"default\";s:2:\"uk\";s:7:\"collect\";s:1:\"4\";s:6:\"weight\";s:2:\"14\";}s:7:\"locpick\";a:4:{s:7:\"default\";a:2:{s:13:\"user_latitude\";s:0:\"\";s:14:\"user_longitude\";s:0:\"\";}s:7:\"collect\";s:1:\"4\";s:6:\"weight\";s:2:\"20\";s:6:\"nodiff\";b:1;}s:23:\"cck_preview_in_progress\";a:1:{s:7:\"default\";b:1;}s:17:\"location_settings\";a:1:{s:7:\"default\";a:2:{s:4:\"form\";a:1:{s:6:\"fields\";a:16:{s:4:\"name\";a:3:{s:7:\"default\";s:0:\"\";s:7:\"collect\";s:1:\"0\";s:6:\"weight\";s:1:\"2\";}s:6:\"street\";a:3:{s:7:\"default\";s:0:\"\";s:7:\"collect\";s:1:\"0\";s:6:\"weight\";s:1:\"4\";}s:10:\"additional\";a:3:{s:7:\"default\";s:0:\"\";s:7:\"collect\";s:1:\"0\";s:6:\"weight\";s:1:\"6\";}s:4:\"city\";a:3:{s:7:\"default\";s:0:\"\";s:7:\"collect\";s:1:\"1\";s:6:\"weight\";s:1:\"8\";}s:8:\"province\";a:3:{s:7:\"default\";s:0:\"\";s:7:\"collect\";s:1:\"1\";s:6:\"weight\";s:2:\"10\";}s:11:\"postal_code\";a:3:{s:7:\"default\";s:0:\"\";s:7:\"collect\";i:1;s:6:\"weight\";s:2:\"12\";}s:7:\"country\";a:3:{s:7:\"default\";s:2:\"uk\";s:7:\"collect\";s:1:\"4\";s:6:\"weight\";s:2:\"14\";}s:7:\"locpick\";a:4:{s:7:\"default\";a:2:{s:13:\"user_latitude\";s:0:\"\";s:14:\"user_longitude\";s:0:\"\";}s:7:\"collect\";s:1:\"1\";s:6:\"weight\";s:2:\"20\";s:6:\"nodiff\";b:1;}s:23:\"cck_preview_in_progress\";a:1:{s:7:\"default\";b:1;}s:17:\"location_settings\";a:1:{s:7:\"default\";a:1:{s:4:\"form\";a:1:{s:6:\"fields\";a:14:{s:3:\"lid\";a:1:{s:7:\"default\";b:0;}s:4:\"name\";a:3:{s:7:\"default\";s:0:\"\";s:7:\"collect\";i:1;s:6:\"weight\";i:2;}s:6:\"street\";a:3:{s:7:\"default\";s:0:\"\";s:7:\"collect\";i:1;s:6:\"weight\";i:4;}s:10:\"additional\";a:3:{s:7:\"default\";s:0:\"\";s:7:\"collect\";i:1;s:6:\"weight\";i:6;}s:4:\"city\";a:3:{s:7:\"default\";s:0:\"\";s:7:\"collect\";i:0;s:6:\"weight\";i:8;}s:8:\"province\";a:3:{s:7:\"default\";s:0:\"\";s:7:\"collect\";i:0;s:6:\"weight\";i:10;}s:11:\"postal_code\";a:3:{s:7:\"default\";s:0:\"\";s:7:\"collect\";i:0;s:6:\"weight\";i:12;}s:7:\"country\";a:3:{s:7:\"default\";s:2:\"uk\";s:7:\"collect\";i:1;s:6:\"weight\";i:14;}s:7:\"locpick\";a:4:{s:7:\"default\";b:0;s:7:\"collect\";i:1;s:6:\"weight\";i:20;s:6:\"nodiff\";b:1;}s:8:\"latitude\";a:1:{s:7:\"default\";i:0;}s:9:\"longitude\";a:1:{s:7:\"default\";i:0;}s:6:\"source\";a:1:{s:7:\"default\";i:0;}s:10:\"is_primary\";a:1:{s:7:\"default\";i:0;}s:15:\"delete_location\";a:2:{s:7:\"default\";b:0;s:6:\"nodiff\";b:1;}}}}}s:3:\"lid\";a:1:{s:7:\"default\";b:0;}s:8:\"latitude\";a:1:{s:7:\"default\";i:0;}s:9:\"longitude\";a:1:{s:7:\"default\";i:0;}s:6:\"source\";a:1:{s:7:\"default\";i:0;}s:10:\"is_primary\";a:1:{s:7:\"default\";i:0;}s:15:\"delete_location\";a:2:{s:7:\"default\";b:0;s:6:\"nodiff\";b:1;}}}s:7:\"display\";a:1:{s:4:\"hide\";a:12:{s:4:\"name\";s:4:\"name\";s:6:\"street\";s:6:\"street\";s:10:\"additional\";s:10:\"additional\";s:7:\"locpick\";s:7:\"locpick\";s:13:\"province_name\";s:13:\"province_name\";s:12:\"country_name\";s:12:\"country_name\";s:4:\"city\";i:0;s:8:\"province\";i:0;s:11:\"postal_code\";i:0;s:7:\"country\";i:0;s:8:\"map_link\";i:0;s:6:\"coords\";i:0;}}}}s:3:\"lid\";a:1:{s:7:\"default\";b:0;}s:8:\"latitude\";a:1:{s:7:\"default\";i:0;}s:9:\"longitude\";a:1:{s:7:\"default\";i:0;}s:6:\"source\";a:1:{s:7:\"default\";i:0;}s:10:\"is_primary\";a:1:{s:7:\"default\";i:0;}s:15:\"delete_location\";a:2:{s:7:\"default\";b:0;s:6:\"nodiff\";b:1;}}}s:7:\"display\";a:1:{s:4:\"hide\";a:12:{s:4:\"name\";s:4:\"name\";s:6:\"street\";s:6:\"street\";s:10:\"additional\";s:10:\"additional\";s:7:\"locpick\";s:7:\"locpick\";s:13:\"province_name\";s:13:\"province_name\";s:12:\"country_name\";s:12:\"country_name\";s:4:\"city\";i:0;s:8:\"province\";i:0;s:11:\"postal_code\";i:0;s:7:\"country\";i:0;s:8:\"map_link\";i:0;s:6:\"coords\";i:0;}}}s:7:\"country\";s:2:\"uk\";}}s:17:\"default_value_php\";N;}','a:8:{s:5:\"label\";a:2:{s:6:\"format\";s:5:\"above\";s:7:\"exclude\";i:0;}i:5;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}s:6:\"teaser\";a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}s:4:\"full\";a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}i:4;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}i:2;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}i:3;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}s:5:\"token\";a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}}','','location_cck',1);
 INSERT INTO `content_node_field_instance` VALUES ('field_centre_ref','group_app_team',-4,'Parent Centre','nodereference_select','a:4:{s:18:\"autocomplete_match\";s:8:\"contains\";s:4:\"size\";i:60;s:13:\"default_value\";a:1:{i:0;a:1:{s:3:\"nid\";s:0:\"\";}}s:17:\"default_value_php\";N;}','a:8:{s:5:\"label\";a:2:{s:6:\"format\";s:5:\"above\";s:7:\"exclude\";i:0;}i:5;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}s:6:\"teaser\";a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}s:4:\"full\";a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}i:4;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}i:2;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}i:3;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}s:5:\"token\";a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}}','','nodereference',1);
@@ -1212,9 +1210,9 @@ INSERT INTO `content_node_field_instance` VALUES ('field_group_image','group_ima
 INSERT INTO `content_node_field_instance` VALUES ('field_group_image','group_media_image',-4,'Image','imagefield_widget','a:14:{s:15:\"file_extensions\";s:16:\"png gif jpg jpeg\";s:9:\"file_path\";s:0:\"\";s:18:\"progress_indicator\";s:3:\"bar\";s:21:\"max_filesize_per_file\";s:0:\"\";s:21:\"max_filesize_per_node\";s:0:\"\";s:14:\"max_resolution\";s:1:\"0\";s:14:\"min_resolution\";s:1:\"0\";s:3:\"alt\";s:0:\"\";s:10:\"custom_alt\";i:0;s:5:\"title\";s:0:\"\";s:12:\"custom_title\";i:0;s:10:\"title_type\";s:9:\"textfield\";s:13:\"default_image\";N;s:17:\"use_default_image\";i:0;}','a:8:{s:5:\"label\";a:2:{s:6:\"format\";s:5:\"above\";s:7:\"exclude\";i:0;}i:5;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:6:\"teaser\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:4:\"full\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:4;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:2;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:3;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:5:\"token\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}}','Add an image','imagefield',1);
 INSERT INTO `content_node_field_instance` VALUES ('field_group_slideshare','group_image',-2,'Slideshare','emvideo_textfields','a:46:{s:11:\"video_width\";s:3:\"425\";s:12:\"video_height\";s:3:\"350\";s:14:\"video_autoplay\";i:0;s:13:\"preview_width\";s:3:\"250\";s:14:\"preview_height\";s:3:\"153\";s:16:\"preview_autoplay\";i:0;s:15:\"thumbnail_width\";s:3:\"120\";s:16:\"thumbnail_height\";s:2:\"90\";s:22:\"thumbnail_default_path\";s:0:\"\";s:20:\"thumbnail_link_title\";s:9:\"See video\";s:11:\"meta_fields\";a:2:{s:5:\"title\";s:5:\"title\";s:11:\"description\";s:11:\"description\";}s:9:\"providers\";a:3:{s:10:\"slideshare\";s:10:\"slideshare\";s:11:\"flickr_sets\";i:0;s:7:\"youtube\";i:0;}s:13:\"default_value\";a:1:{i:0;a:3:{s:5:\"embed\";s:0:\"\";s:5:\"value\";s:0:\"\";s:7:\"emvideo\";a:2:{s:5:\"title\";s:0:\"\";s:11:\"description\";s:0:\"\";}}}s:17:\"default_value_php\";N;s:28:\"media_flickr_ir_repeat_video\";s:4:\"list\";s:32:\"media_flickr_ir_rotatetime_video\";s:1:\"5\";s:36:\"media_flickr_ir_shownavigation_video\";i:1;s:31:\"media_flickr_ir_showicons_video\";i:1;s:29:\"media_flickr_ir_shuffle_video\";i:0;s:37:\"media_flickr_ir_allowfullscreen_video\";i:1;s:26:\"media_flickr_ir_logo_video\";s:0:\"\";s:32:\"media_flickr_ir_transition_video\";s:6:\"random\";s:25:\"media_flickr_player_video\";s:5:\"flash\";s:27:\"media_flickr_playlist_video\";s:5:\"right\";s:31:\"media_flickr_playlistsize_video\";s:2:\"86\";s:25:\"media_flickr_repeat_video\";s:4:\"list\";s:24:\"media_flickr_delay_video\";s:2:\"10\";s:29:\"media_flickr_controlbar_video\";s:4:\"none\";s:34:\"media_flickr_allowfullscreen_video\";i:1;s:23:\"media_flickr_logo_video\";s:0:\"\";s:30:\"media_flickr_ir_repeat_preview\";s:4:\"list\";s:34:\"media_flickr_ir_rotatetime_preview\";s:1:\"5\";s:38:\"media_flickr_ir_shownavigation_preview\";i:1;s:33:\"media_flickr_ir_showicons_preview\";i:1;s:31:\"media_flickr_ir_shuffle_preview\";i:0;s:39:\"media_flickr_ir_allowfullscreen_preview\";i:1;s:28:\"media_flickr_ir_logo_preview\";s:0:\"\";s:34:\"media_flickr_ir_transition_preview\";s:6:\"random\";s:27:\"media_flickr_player_preview\";s:5:\"flash\";s:29:\"media_flickr_playlist_preview\";s:5:\"right\";s:33:\"media_flickr_playlistsize_preview\";s:2:\"86\";s:27:\"media_flickr_repeat_preview\";s:4:\"list\";s:26:\"media_flickr_delay_preview\";s:2:\"10\";s:31:\"media_flickr_controlbar_preview\";s:4:\"none\";s:36:\"media_flickr_allowfullscreen_preview\";i:1;s:25:\"media_flickr_logo_preview\";s:0:\"\";}','a:8:{s:5:\"label\";a:2:{s:6:\"format\";s:5:\"above\";s:7:\"exclude\";i:0;}i:5;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}s:6:\"teaser\";a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}s:4:\"full\";a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}i:4;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}i:2;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}i:3;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}s:5:\"token\";a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}}','','emvideo',1);
 INSERT INTO `content_node_field_instance` VALUES ('field_group_video','group_image',-3,'Video','emvideo_textfields','a:46:{s:11:\"video_width\";s:3:\"425\";s:12:\"video_height\";s:3:\"350\";s:14:\"video_autoplay\";i:0;s:13:\"preview_width\";s:3:\"250\";s:14:\"preview_height\";s:3:\"153\";s:16:\"preview_autoplay\";i:0;s:15:\"thumbnail_width\";s:3:\"120\";s:16:\"thumbnail_height\";s:2:\"90\";s:22:\"thumbnail_default_path\";s:0:\"\";s:20:\"thumbnail_link_title\";s:9:\"See video\";s:11:\"meta_fields\";a:2:{s:5:\"title\";s:5:\"title\";s:11:\"description\";s:11:\"description\";}s:9:\"providers\";a:3:{s:7:\"youtube\";s:7:\"youtube\";s:11:\"flickr_sets\";i:0;s:10:\"slideshare\";i:0;}s:13:\"default_value\";a:1:{i:0;a:3:{s:5:\"embed\";s:0:\"\";s:5:\"value\";s:0:\"\";s:7:\"emvideo\";a:2:{s:5:\"title\";s:0:\"\";s:11:\"description\";s:0:\"\";}}}s:17:\"default_value_php\";N;s:28:\"media_flickr_ir_repeat_video\";s:4:\"list\";s:32:\"media_flickr_ir_rotatetime_video\";s:1:\"5\";s:36:\"media_flickr_ir_shownavigation_video\";i:1;s:31:\"media_flickr_ir_showicons_video\";i:1;s:29:\"media_flickr_ir_shuffle_video\";i:0;s:37:\"media_flickr_ir_allowfullscreen_video\";i:1;s:26:\"media_flickr_ir_logo_video\";s:0:\"\";s:32:\"media_flickr_ir_transition_video\";s:6:\"random\";s:25:\"media_flickr_player_video\";s:5:\"flash\";s:27:\"media_flickr_playlist_video\";s:5:\"right\";s:31:\"media_flickr_playlistsize_video\";s:2:\"86\";s:25:\"media_flickr_repeat_video\";s:4:\"list\";s:24:\"media_flickr_delay_video\";s:2:\"10\";s:29:\"media_flickr_controlbar_video\";s:4:\"none\";s:34:\"media_flickr_allowfullscreen_video\";i:1;s:23:\"media_flickr_logo_video\";s:0:\"\";s:30:\"media_flickr_ir_repeat_preview\";s:4:\"list\";s:34:\"media_flickr_ir_rotatetime_preview\";s:1:\"5\";s:38:\"media_flickr_ir_shownavigation_preview\";i:1;s:33:\"media_flickr_ir_showicons_preview\";i:1;s:31:\"media_flickr_ir_shuffle_preview\";i:0;s:39:\"media_flickr_ir_allowfullscreen_preview\";i:1;s:28:\"media_flickr_ir_logo_preview\";s:0:\"\";s:34:\"media_flickr_ir_transition_preview\";s:6:\"random\";s:27:\"media_flickr_player_preview\";s:5:\"flash\";s:29:\"media_flickr_playlist_preview\";s:5:\"right\";s:33:\"media_flickr_playlistsize_preview\";s:2:\"86\";s:27:\"media_flickr_repeat_preview\";s:4:\"list\";s:26:\"media_flickr_delay_preview\";s:2:\"10\";s:31:\"media_flickr_controlbar_preview\";s:4:\"none\";s:36:\"media_flickr_allowfullscreen_preview\";i:1;s:25:\"media_flickr_logo_preview\";s:0:\"\";}','a:8:{s:5:\"label\";a:2:{s:6:\"format\";s:5:\"above\";s:7:\"exclude\";i:0;}i:5;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}s:6:\"teaser\";a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}s:4:\"full\";a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}i:4;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}i:2;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}i:3;a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}s:5:\"token\";a:2:{s:6:\"format\";s:7:\"default\";s:7:\"exclude\";i:0;}}','','emvideo',1);
-INSERT INTO `content_node_field_instance` VALUES ('field_icon','blog',32,'Icon','imagefield_widget','a:14:{s:15:\"file_extensions\";s:16:\"png gif jpg jpeg\";s:9:\"file_path\";s:0:\"\";s:18:\"progress_indicator\";s:3:\"bar\";s:21:\"max_filesize_per_file\";s:0:\"\";s:21:\"max_filesize_per_node\";s:0:\"\";s:14:\"max_resolution\";s:1:\"0\";s:14:\"min_resolution\";s:1:\"0\";s:3:\"alt\";s:0:\"\";s:10:\"custom_alt\";i:0;s:5:\"title\";s:0:\"\";s:12:\"custom_title\";i:0;s:10:\"title_type\";s:9:\"textfield\";s:13:\"default_image\";a:10:{s:8:\"filename\";s:8:\"blog.png\";s:8:\"filepath\";s:56:\"sites/default/files/imagefield_default_images/blog_0.png\";s:8:\"filemime\";s:9:\"image/png\";s:6:\"source\";s:20:\"default_image_upload\";s:11:\"destination\";s:56:\"sites/default/files/imagefield_default_images/blog_0.png\";s:8:\"filesize\";i:2142;s:3:\"uid\";s:1:\"1\";s:6:\"status\";i:1;s:9:\"timestamp\";i:1314098811;s:3:\"fid\";s:2:\"20\";}s:17:\"use_default_image\";i:1;}','a:8:{s:5:\"label\";a:2:{s:6:\"format\";s:5:\"above\";s:7:\"exclude\";i:0;}i:5;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:6:\"teaser\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:4:\"full\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:4;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:2;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:3;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:5:\"token\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}}','Video post type icon','imagefield',0);
+INSERT INTO `content_node_field_instance` VALUES ('field_icon','blog',32,'Icon','imagefield_widget','a:14:{s:15:\"file_extensions\";s:16:\"png gif jpg jpeg\";s:9:\"file_path\";s:0:\"\";s:18:\"progress_indicator\";s:3:\"bar\";s:21:\"max_filesize_per_file\";s:0:\"\";s:21:\"max_filesize_per_node\";s:0:\"\";s:14:\"max_resolution\";s:1:\"0\";s:14:\"min_resolution\";s:1:\"0\";s:3:\"alt\";s:0:\"\";s:10:\"custom_alt\";i:0;s:5:\"title\";s:0:\"\";s:12:\"custom_title\";i:0;s:10:\"title_type\";s:9:\"textfield\";s:13:\"default_image\";a:10:{s:8:\"filename\";s:17:\"afg_icon-blog.png\";s:8:\"filepath\";s:63:\"sites/default/files/imagefield_default_images/afg_icon-blog.png\";s:8:\"filemime\";s:9:\"image/png\";s:6:\"source\";s:20:\"default_image_upload\";s:11:\"destination\";s:63:\"sites/default/files/imagefield_default_images/afg_icon-blog.png\";s:8:\"filesize\";i:3457;s:3:\"uid\";s:1:\"1\";s:6:\"status\";i:1;s:9:\"timestamp\";i:1315918217;s:3:\"fid\";s:3:\"130\";}s:17:\"use_default_image\";i:1;}','a:8:{s:5:\"label\";a:2:{s:6:\"format\";s:5:\"above\";s:7:\"exclude\";i:0;}i:5;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:6:\"teaser\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:4:\"full\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:4;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:2;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:3;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:5:\"token\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}}','Video post type icon','imagefield',1);
 INSERT INTO `content_node_field_instance` VALUES ('field_icon','cdi_blog',33,'Icon','imagefield_widget','a:14:{s:15:\"file_extensions\";s:16:\"png gif jpg jpeg\";s:9:\"file_path\";s:0:\"\";s:18:\"progress_indicator\";s:3:\"bar\";s:21:\"max_filesize_per_file\";s:0:\"\";s:21:\"max_filesize_per_node\";s:0:\"\";s:14:\"max_resolution\";s:1:\"0\";s:14:\"min_resolution\";s:1:\"0\";s:3:\"alt\";s:0:\"\";s:10:\"custom_alt\";i:0;s:5:\"title\";s:0:\"\";s:12:\"custom_title\";i:0;s:10:\"title_type\";s:9:\"textfield\";s:13:\"default_image\";a:10:{s:8:\"filename\";s:8:\"blog.png\";s:8:\"filepath\";s:56:\"sites/default/files/imagefield_default_images/blog_1.png\";s:8:\"filemime\";s:9:\"image/png\";s:6:\"source\";s:20:\"default_image_upload\";s:11:\"destination\";s:56:\"sites/default/files/imagefield_default_images/blog_1.png\";s:8:\"filesize\";i:2142;s:3:\"uid\";s:1:\"1\";s:6:\"status\";i:1;s:9:\"timestamp\";i:1314348993;s:3:\"fid\";s:2:\"26\";}s:17:\"use_default_image\";i:1;}','a:8:{s:5:\"label\";a:2:{s:6:\"format\";s:5:\"above\";s:7:\"exclude\";i:0;}i:5;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:6:\"teaser\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:4:\"full\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:4;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:2;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:3;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:5:\"token\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}}','Video post type icon','imagefield',0);
-INSERT INTO `content_node_field_instance` VALUES ('field_icon','group_app_team',13,'Icon','imagefield_widget','a:14:{s:15:\"file_extensions\";s:16:\"png gif jpg jpeg\";s:9:\"file_path\";s:0:\"\";s:18:\"progress_indicator\";s:3:\"bar\";s:21:\"max_filesize_per_file\";s:0:\"\";s:21:\"max_filesize_per_node\";s:0:\"\";s:14:\"max_resolution\";s:1:\"0\";s:14:\"min_resolution\";s:1:\"0\";s:3:\"alt\";s:0:\"\";s:10:\"custom_alt\";i:0;s:5:\"title\";s:0:\"\";s:12:\"custom_title\";i:0;s:10:\"title_type\";s:9:\"textfield\";s:13:\"default_image\";a:10:{s:8:\"filename\";s:7:\"app.png\";s:8:\"filepath\";s:53:\"sites/default/files/imagefield_default_images/app.png\";s:8:\"filemime\";s:9:\"image/png\";s:6:\"source\";s:20:\"default_image_upload\";s:11:\"destination\";s:53:\"sites/default/files/imagefield_default_images/app.png\";s:8:\"filesize\";i:4261;s:3:\"uid\";s:1:\"1\";s:6:\"status\";i:1;s:9:\"timestamp\";i:1314348834;s:3:\"fid\";s:2:\"25\";}s:17:\"use_default_image\";i:1;}','a:8:{s:5:\"label\";a:2:{s:6:\"format\";s:5:\"above\";s:7:\"exclude\";i:0;}i:5;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:6:\"teaser\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:4:\"full\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:4;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:2;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:3;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:5:\"token\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}}','Video post type icon','imagefield',0);
+INSERT INTO `content_node_field_instance` VALUES ('field_icon','group_app_team',32,'Icon','imagefield_widget','a:14:{s:15:\"file_extensions\";s:16:\"png gif jpg jpeg\";s:9:\"file_path\";s:0:\"\";s:18:\"progress_indicator\";s:3:\"bar\";s:21:\"max_filesize_per_file\";s:0:\"\";s:21:\"max_filesize_per_node\";s:0:\"\";s:14:\"max_resolution\";s:1:\"0\";s:14:\"min_resolution\";s:1:\"0\";s:3:\"alt\";s:0:\"\";s:10:\"custom_alt\";i:0;s:5:\"title\";s:0:\"\";s:12:\"custom_title\";i:0;s:10:\"title_type\";s:9:\"textfield\";s:13:\"default_image\";a:10:{s:8:\"filename\";s:16:\"afg_icon-app.png\";s:8:\"filepath\";s:62:\"sites/default/files/imagefield_default_images/afg_icon-app.png\";s:8:\"filemime\";s:9:\"image/png\";s:6:\"source\";s:20:\"default_image_upload\";s:11:\"destination\";s:62:\"sites/default/files/imagefield_default_images/afg_icon-app.png\";s:8:\"filesize\";i:3800;s:3:\"uid\";s:1:\"1\";s:6:\"status\";i:1;s:9:\"timestamp\";i:1315915745;s:3:\"fid\";s:3:\"129\";}s:17:\"use_default_image\";i:1;}','a:8:{s:5:\"label\";a:2:{s:6:\"format\";s:5:\"above\";s:7:\"exclude\";i:0;}i:5;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:6:\"teaser\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:4:\"full\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:4;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:2;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:3;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:5:\"token\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}}','Video post type icon','imagefield',1);
 INSERT INTO `content_node_field_instance` VALUES ('field_icon','group_centre_school',14,'Icon','imagefield_widget','a:14:{s:15:\"file_extensions\";s:16:\"png gif jpg jpeg\";s:9:\"file_path\";s:0:\"\";s:18:\"progress_indicator\";s:3:\"bar\";s:21:\"max_filesize_per_file\";s:0:\"\";s:21:\"max_filesize_per_node\";s:0:\"\";s:14:\"max_resolution\";s:1:\"0\";s:14:\"min_resolution\";s:1:\"0\";s:3:\"alt\";s:0:\"\";s:10:\"custom_alt\";i:0;s:5:\"title\";s:0:\"\";s:12:\"custom_title\";i:0;s:10:\"title_type\";s:9:\"textfield\";s:13:\"default_image\";a:10:{s:8:\"filename\";s:19:\"afg_school-icon.gif\";s:8:\"filepath\";s:65:\"sites/default/files/imagefield_default_images/afg_school-icon.gif\";s:8:\"filemime\";s:9:\"image/gif\";s:6:\"source\";s:20:\"default_image_upload\";s:11:\"destination\";s:65:\"sites/default/files/imagefield_default_images/afg_school-icon.gif\";s:8:\"filesize\";i:1440;s:3:\"uid\";s:1:\"1\";s:6:\"status\";i:1;s:9:\"timestamp\";i:1315483154;s:3:\"fid\";s:2:\"60\";}s:17:\"use_default_image\";i:1;}','a:8:{s:5:\"label\";a:2:{s:6:\"format\";s:5:\"above\";s:7:\"exclude\";i:0;}i:5;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:6:\"teaser\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:4:\"full\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:4;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:2;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:3;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:5:\"token\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}}','Video post type icon','imagefield',1);
 INSERT INTO `content_node_field_instance` VALUES ('field_icon','group_media_video',7,'Icon','imagefield_widget','a:14:{s:15:\"file_extensions\";s:16:\"png gif jpg jpeg\";s:9:\"file_path\";s:0:\"\";s:18:\"progress_indicator\";s:3:\"bar\";s:21:\"max_filesize_per_file\";s:0:\"\";s:21:\"max_filesize_per_node\";s:0:\"\";s:14:\"max_resolution\";s:1:\"0\";s:14:\"min_resolution\";s:1:\"0\";s:3:\"alt\";s:0:\"\";s:10:\"custom_alt\";i:0;s:5:\"title\";s:0:\"\";s:12:\"custom_title\";i:0;s:10:\"title_type\";s:9:\"textfield\";s:13:\"default_image\";a:10:{s:8:\"filename\";s:9:\"video.png\";s:8:\"filepath\";s:55:\"sites/default/files/imagefield_default_images/video.png\";s:8:\"filemime\";s:9:\"image/png\";s:6:\"source\";s:20:\"default_image_upload\";s:11:\"destination\";s:55:\"sites/default/files/imagefield_default_images/video.png\";s:8:\"filesize\";i:2693;s:3:\"uid\";s:1:\"1\";s:6:\"status\";i:1;s:9:\"timestamp\";i:1314098849;s:3:\"fid\";s:2:\"21\";}s:17:\"use_default_image\";i:1;}','a:8:{s:5:\"label\";a:2:{s:6:\"format\";s:5:\"above\";s:7:\"exclude\";i:0;}i:5;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:6:\"teaser\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:4:\"full\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:4;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:2;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:3;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:5:\"token\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}}','Video post type icon','imagefield',1);
 INSERT INTO `content_node_field_instance` VALUES ('field_icon','request_for_help',32,'Icon','imagefield_widget','a:14:{s:15:\"file_extensions\";s:16:\"png gif jpg jpeg\";s:9:\"file_path\";s:0:\"\";s:18:\"progress_indicator\";s:3:\"bar\";s:21:\"max_filesize_per_file\";s:0:\"\";s:21:\"max_filesize_per_node\";s:0:\"\";s:14:\"max_resolution\";s:1:\"0\";s:14:\"min_resolution\";s:1:\"0\";s:3:\"alt\";s:0:\"\";s:10:\"custom_alt\";i:0;s:5:\"title\";s:0:\"\";s:12:\"custom_title\";i:0;s:10:\"title_type\";s:9:\"textfield\";s:13:\"default_image\";a:10:{s:8:\"filename\";s:8:\"help.png\";s:8:\"filepath\";s:54:\"sites/default/files/imagefield_default_images/help.png\";s:8:\"filemime\";s:9:\"image/png\";s:6:\"source\";s:20:\"default_image_upload\";s:11:\"destination\";s:54:\"sites/default/files/imagefield_default_images/help.png\";s:8:\"filesize\";i:1624;s:3:\"uid\";s:1:\"1\";s:6:\"status\";i:1;s:9:\"timestamp\";i:1314098923;s:3:\"fid\";s:2:\"22\";}s:17:\"use_default_image\";i:1;}','a:8:{s:5:\"label\";a:2:{s:6:\"format\";s:5:\"above\";s:7:\"exclude\";i:0;}i:5;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:6:\"teaser\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:4:\"full\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:4;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:2;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}i:3;a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}s:5:\"token\";a:2:{s:6:\"format\";s:11:\"image_plain\";s:7:\"exclude\";i:0;}}','Help post type icon','imagefield',1);
@@ -1236,17 +1234,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `content_type_blog`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `content_type_blog` (
-  `vid` int(10) unsigned NOT NULL DEFAULT '0',
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
-  `field_referenced_book_page_nid` int(10) unsigned DEFAULT NULL,
-  PRIMARY KEY (`vid`),
+  `vid` int(10) unsigned NOT NULL default '0',
+  `nid` int(10) unsigned NOT NULL default '0',
+  `field_referenced_book_page_nid` int(10) unsigned default NULL,
+  PRIMARY KEY  (`vid`),
   KEY `nid` (`nid`),
   KEY `field_referenced_book_page_nid` (`field_referenced_book_page_nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `content_type_blog`
@@ -1265,18 +1263,18 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `content_type_cdi_blog`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `content_type_cdi_blog` (
-  `vid` int(10) unsigned NOT NULL DEFAULT '0',
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
-  `field_carousel_image_fid` int(11) DEFAULT NULL,
-  `field_carousel_image_list` tinyint(4) DEFAULT NULL,
+  `vid` int(10) unsigned NOT NULL default '0',
+  `nid` int(10) unsigned NOT NULL default '0',
+  `field_carousel_image_fid` int(11) default NULL,
+  `field_carousel_image_list` tinyint(4) default NULL,
   `field_carousel_image_data` text,
-  PRIMARY KEY (`vid`),
+  PRIMARY KEY  (`vid`),
   KEY `nid` (`nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `content_type_cdi_blog`
@@ -1299,15 +1297,15 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `content_type_event`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `content_type_event` (
-  `vid` int(10) unsigned NOT NULL DEFAULT '0',
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`vid`),
+  `vid` int(10) unsigned NOT NULL default '0',
+  `nid` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`vid`),
   KEY `nid` (`nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `content_type_event`
@@ -1324,15 +1322,15 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `content_type_feed_ical_item`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `content_type_feed_ical_item` (
-  `vid` int(10) unsigned NOT NULL DEFAULT '0',
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`vid`),
+  `vid` int(10) unsigned NOT NULL default '0',
+  `nid` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`vid`),
   KEY `nid` (`nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `content_type_feed_ical_item`
@@ -1349,17 +1347,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `content_type_group_app_team`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `content_type_group_app_team` (
-  `vid` int(10) unsigned NOT NULL DEFAULT '0',
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
-  `field_centre_ref_nid` int(10) unsigned DEFAULT NULL,
-  PRIMARY KEY (`vid`),
+  `vid` int(10) unsigned NOT NULL default '0',
+  `nid` int(10) unsigned NOT NULL default '0',
+  `field_centre_ref_nid` int(10) unsigned default NULL,
+  PRIMARY KEY  (`vid`),
   KEY `nid` (`nid`),
   KEY `field_centre_ref_nid` (`field_centre_ref_nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `content_type_group_app_team`
@@ -1378,19 +1376,19 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `content_type_group_centre_school`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `content_type_group_centre_school` (
-  `vid` int(10) unsigned NOT NULL DEFAULT '0',
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
-  `field_website_url` varchar(2048) DEFAULT NULL,
-  `field_website_title` varchar(255) DEFAULT NULL,
+  `vid` int(10) unsigned NOT NULL default '0',
+  `nid` int(10) unsigned NOT NULL default '0',
+  `field_website_url` varchar(2048) default NULL,
+  `field_website_title` varchar(255) default NULL,
   `field_website_attributes` mediumtext,
-  `field_centre_loc_details_lid` int(10) unsigned DEFAULT NULL,
-  PRIMARY KEY (`vid`),
+  `field_centre_loc_details_lid` int(10) unsigned default NULL,
+  PRIMARY KEY  (`vid`),
   KEY `nid` (`nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `content_type_group_centre_school`
@@ -1445,42 +1443,42 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `content_type_group_image`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `content_type_group_image` (
-  `vid` int(10) unsigned NOT NULL DEFAULT '0',
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
+  `vid` int(10) unsigned NOT NULL default '0',
+  `nid` int(10) unsigned NOT NULL default '0',
   `field_group_flickr_embed` longtext,
-  `field_group_flickr_value` varchar(255) DEFAULT NULL,
-  `field_group_flickr_provider` varchar(255) DEFAULT NULL,
+  `field_group_flickr_value` varchar(255) default NULL,
+  `field_group_flickr_provider` varchar(255) default NULL,
   `field_group_flickr_data` longtext,
-  `field_group_flickr_status` int(10) unsigned NOT NULL DEFAULT '1',
-  `field_group_flickr_version` int(10) unsigned NOT NULL DEFAULT '0',
-  `field_group_flickr_title` varchar(255) DEFAULT NULL,
-  `field_group_flickr_description` varchar(255) DEFAULT NULL,
-  `field_group_flickr_duration` int(10) unsigned NOT NULL DEFAULT '0',
+  `field_group_flickr_status` int(10) unsigned NOT NULL default '1',
+  `field_group_flickr_version` int(10) unsigned NOT NULL default '0',
+  `field_group_flickr_title` varchar(255) default NULL,
+  `field_group_flickr_description` varchar(255) default NULL,
+  `field_group_flickr_duration` int(10) unsigned NOT NULL default '0',
   `field_group_video_embed` longtext,
-  `field_group_video_value` varchar(255) DEFAULT NULL,
-  `field_group_video_provider` varchar(255) DEFAULT NULL,
+  `field_group_video_value` varchar(255) default NULL,
+  `field_group_video_provider` varchar(255) default NULL,
   `field_group_video_data` longtext,
-  `field_group_video_status` int(10) unsigned NOT NULL DEFAULT '1',
-  `field_group_video_version` int(10) unsigned NOT NULL DEFAULT '0',
-  `field_group_video_title` varchar(255) DEFAULT NULL,
-  `field_group_video_description` varchar(255) DEFAULT NULL,
-  `field_group_video_duration` int(10) unsigned NOT NULL DEFAULT '0',
+  `field_group_video_status` int(10) unsigned NOT NULL default '1',
+  `field_group_video_version` int(10) unsigned NOT NULL default '0',
+  `field_group_video_title` varchar(255) default NULL,
+  `field_group_video_description` varchar(255) default NULL,
+  `field_group_video_duration` int(10) unsigned NOT NULL default '0',
   `field_group_slideshare_embed` longtext,
-  `field_group_slideshare_value` varchar(255) DEFAULT NULL,
-  `field_group_slideshare_provider` varchar(255) DEFAULT NULL,
+  `field_group_slideshare_value` varchar(255) default NULL,
+  `field_group_slideshare_provider` varchar(255) default NULL,
   `field_group_slideshare_data` longtext,
-  `field_group_slideshare_status` int(10) unsigned NOT NULL DEFAULT '1',
-  `field_group_slideshare_version` int(10) unsigned NOT NULL DEFAULT '0',
-  `field_group_slideshare_title` varchar(255) DEFAULT NULL,
-  `field_group_slideshare_description` varchar(255) DEFAULT NULL,
-  `field_group_slideshare_duration` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`vid`),
+  `field_group_slideshare_status` int(10) unsigned NOT NULL default '1',
+  `field_group_slideshare_version` int(10) unsigned NOT NULL default '0',
+  `field_group_slideshare_title` varchar(255) default NULL,
+  `field_group_slideshare_description` varchar(255) default NULL,
+  `field_group_slideshare_duration` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`vid`),
   KEY `nid` (`nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `content_type_group_image`
@@ -1505,15 +1503,15 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `content_type_group_media_image`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `content_type_group_media_image` (
-  `vid` int(10) unsigned NOT NULL DEFAULT '0',
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`vid`),
+  `vid` int(10) unsigned NOT NULL default '0',
+  `nid` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`vid`),
   KEY `nid` (`nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `content_type_group_media_image`
@@ -1531,24 +1529,24 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `content_type_group_media_video`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `content_type_group_media_video` (
-  `vid` int(10) unsigned NOT NULL DEFAULT '0',
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
+  `vid` int(10) unsigned NOT NULL default '0',
+  `nid` int(10) unsigned NOT NULL default '0',
   `field_video_embed` longtext,
-  `field_video_value` varchar(255) DEFAULT NULL,
-  `field_video_provider` varchar(255) DEFAULT NULL,
+  `field_video_value` varchar(255) default NULL,
+  `field_video_provider` varchar(255) default NULL,
   `field_video_data` longtext,
-  `field_video_status` int(10) unsigned NOT NULL DEFAULT '1',
-  `field_video_version` int(10) unsigned NOT NULL DEFAULT '0',
-  `field_video_title` varchar(255) DEFAULT NULL,
-  `field_video_description` varchar(255) DEFAULT NULL,
-  `field_video_duration` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`vid`),
+  `field_video_status` int(10) unsigned NOT NULL default '1',
+  `field_video_version` int(10) unsigned NOT NULL default '0',
+  `field_video_title` varchar(255) default NULL,
+  `field_video_description` varchar(255) default NULL,
+  `field_video_duration` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`vid`),
   KEY `nid` (`nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `content_type_group_media_video`
@@ -1557,7 +1555,7 @@ CREATE TABLE `content_type_group_media_video` (
 
 LOCK TABLES `content_type_group_media_video` WRITE;
 /*!40000 ALTER TABLE `content_type_group_media_video` DISABLE KEYS */;
-INSERT INTO `content_type_group_media_video` VALUES (136,133,'http://www.youtube.com/watch?v=08ZAJZYGK0Y&feature=channel_video_title','08ZAJZYGK0Y','youtube','a:5:{s:20:\"emvideo_data_version\";i:5;s:23:\"emvideo_youtube_version\";i:5;s:8:\"duration\";i:0;s:8:\"playlist\";i:0;s:9:\"thumbnail\";a:1:{s:3:\"url\";s:43:\"http://img.youtube.com/vi/08ZAJZYGK0Y/0.jpg\";}}',1,5,NULL,NULL,0);
+INSERT INTO `content_type_group_media_video` VALUES (136,133,'http://www.youtube.com/watch?v=08ZAJZYGK0Y&feature=channel_video_title','08ZAJZYGK0Y','youtube','a:6:{s:20:\"emvideo_data_version\";i:5;s:23:\"emvideo_youtube_version\";i:5;s:8:\"duration\";i:319;s:8:\"playlist\";i:0;s:9:\"thumbnail\";a:1:{s:3:\"url\";s:43:\"http://img.youtube.com/vi/08ZAJZYGK0Y/0.jpg\";}s:5:\"flash\";a:3:{s:3:\"url\";s:32:\"http://youtube.com/v/08ZAJZYGK0Y\";s:4:\"size\";s:4:\"1109\";s:4:\"mime\";s:29:\"application/x-shockwave-flash\";}}',1,5,NULL,NULL,319);
 /*!40000 ALTER TABLE `content_type_group_media_video` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1566,30 +1564,30 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `content_type_profile`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `content_type_profile` (
-  `vid` int(10) unsigned NOT NULL DEFAULT '0',
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
+  `vid` int(10) unsigned NOT NULL default '0',
+  `nid` int(10) unsigned NOT NULL default '0',
   `field_profile_address_value` longtext,
-  `field_profile_address_format` int(10) unsigned DEFAULT NULL,
+  `field_profile_address_format` int(10) unsigned default NULL,
   `field_profile_organization_value` longtext,
   `field_profile_telephone_value` longtext,
   `field_profile_url_value` longtext,
   `field_about_me_value` longtext,
-  `field_location_is_primary` tinyint(4) DEFAULT '0',
-  `field_location_aname` varchar(75) DEFAULT '',
-  `field_location_country` varchar(2) DEFAULT 'us',
-  `field_location_province` varchar(16) DEFAULT '',
-  `field_location_city` varchar(255) DEFAULT '',
-  `field_location_street` varchar(255) DEFAULT '',
-  `field_location_additional` varchar(255) DEFAULT '',
-  `field_location_postal_code` varchar(16) DEFAULT '',
-  `field_email_email` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`vid`),
+  `field_location_is_primary` tinyint(4) default '0',
+  `field_location_aname` varchar(75) default '',
+  `field_location_country` varchar(2) default 'us',
+  `field_location_province` varchar(16) default '',
+  `field_location_city` varchar(255) default '',
+  `field_location_street` varchar(255) default '',
+  `field_location_additional` varchar(255) default '',
+  `field_location_postal_code` varchar(16) default '',
+  `field_email_email` varchar(255) default NULL,
+  PRIMARY KEY  (`vid`),
   KEY `nid` (`nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `content_type_profile`
@@ -1609,15 +1607,15 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `content_type_request_for_help`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `content_type_request_for_help` (
-  `vid` int(10) unsigned NOT NULL DEFAULT '0',
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`vid`),
+  `vid` int(10) unsigned NOT NULL default '0',
+  `nid` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`vid`),
   KEY `nid` (`nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `content_type_request_for_help`
@@ -1637,18 +1635,18 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `context`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `context` (
-  `name` varchar(255) NOT NULL DEFAULT '',
-  `description` varchar(255) NOT NULL DEFAULT '',
-  `tag` varchar(255) NOT NULL DEFAULT '',
+  `name` varchar(255) NOT NULL default '',
+  `description` varchar(255) NOT NULL default '',
+  `tag` varchar(255) NOT NULL default '',
   `conditions` text,
   `reactions` text,
-  `condition_mode` int(11) DEFAULT '0',
-  PRIMARY KEY (`name`)
+  `condition_mode` int(11) default '0',
+  PRIMARY KEY  (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `context`
@@ -1672,16 +1670,16 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `ctools_css_cache`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `ctools_css_cache` (
   `cid` varchar(128) NOT NULL,
-  `filename` varchar(255) DEFAULT NULL,
+  `filename` varchar(255) default NULL,
   `css` longtext,
-  `filter` tinyint(4) DEFAULT NULL,
-  PRIMARY KEY (`cid`)
+  `filter` tinyint(4) default NULL,
+  PRIMARY KEY  (`cid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `ctools_css_cache`
@@ -1698,18 +1696,18 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `ctools_object_cache`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `ctools_object_cache` (
   `sid` varchar(64) NOT NULL,
   `name` varchar(128) NOT NULL,
   `obj` varchar(32) NOT NULL,
-  `updated` int(10) unsigned NOT NULL DEFAULT '0',
+  `updated` int(10) unsigned NOT NULL default '0',
   `data` longtext,
-  PRIMARY KEY (`sid`,`obj`,`name`),
+  PRIMARY KEY  (`sid`,`obj`,`name`),
   KEY `updated` (`updated`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `ctools_object_cache`
@@ -1726,15 +1724,15 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `date_format_locale`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `date_format_locale` (
-  `format` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `format` varchar(100) character set utf8 collate utf8_bin NOT NULL,
   `type` varchar(200) NOT NULL,
   `language` varchar(12) NOT NULL,
-  PRIMARY KEY (`type`,`language`)
+  PRIMARY KEY  (`type`,`language`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `date_format_locale`
@@ -1751,15 +1749,15 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `date_format_types`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `date_format_types` (
   `type` varchar(200) NOT NULL,
   `title` varchar(255) NOT NULL,
-  `locked` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`type`)
+  `locked` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`type`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `date_format_types`
@@ -1783,17 +1781,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `date_formats`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `date_formats` (
-  `dfid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `format` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `dfid` int(10) unsigned NOT NULL auto_increment,
+  `format` varchar(100) character set utf8 collate utf8_bin NOT NULL,
   `type` varchar(200) NOT NULL,
-  `locked` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`dfid`),
+  `locked` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`dfid`),
   UNIQUE KEY `formats` (`format`,`type`)
 ) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `date_formats`
@@ -1857,17 +1855,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `devel_queries`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `devel_queries` (
-  `qid` int(11) NOT NULL AUTO_INCREMENT,
-  `function` varchar(255) NOT NULL DEFAULT '',
+  `qid` int(11) NOT NULL auto_increment,
+  `function` varchar(255) NOT NULL default '',
   `query` text NOT NULL,
-  `hash` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`hash`),
+  `hash` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`hash`),
   KEY `qid` (`qid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `devel_queries`
@@ -1884,16 +1882,16 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `devel_times`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `devel_times` (
-  `tid` int(11) NOT NULL AUTO_INCREMENT,
-  `qid` int(11) NOT NULL DEFAULT '0',
-  `time` float DEFAULT NULL,
-  PRIMARY KEY (`tid`),
+  `tid` int(11) NOT NULL auto_increment,
+  `qid` int(11) NOT NULL default '0',
+  `time` float default NULL,
+  PRIMARY KEY  (`tid`),
   KEY `qid` (`qid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `devel_times`
@@ -1910,14 +1908,14 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `fckeditor_role`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `fckeditor_role` (
-  `name` varchar(128) NOT NULL DEFAULT '',
-  `rid` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`name`,`rid`)
+  `name` varchar(128) NOT NULL default '',
+  `rid` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`name`,`rid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `fckeditor_role`
@@ -1936,14 +1934,14 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `fckeditor_settings`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `fckeditor_settings` (
-  `name` varchar(128) NOT NULL DEFAULT '',
+  `name` varchar(128) NOT NULL default '',
   `settings` text,
-  PRIMARY KEY (`name`)
+  PRIMARY KEY  (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `fckeditor_settings`
@@ -1963,15 +1961,15 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `fe_block_boxes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `fe_block_boxes` (
-  `bid` int(10) unsigned NOT NULL DEFAULT '0',
-  `machine_name` varchar(32) NOT NULL DEFAULT '',
-  PRIMARY KEY (`bid`),
+  `bid` int(10) unsigned NOT NULL default '0',
+  `machine_name` varchar(32) NOT NULL default '',
+  PRIMARY KEY  (`bid`),
   KEY `machine_name` (`machine_name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `fe_block_boxes`
@@ -1988,14 +1986,14 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `feeds_importer`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `feeds_importer` (
-  `id` varchar(128) NOT NULL DEFAULT '',
+  `id` varchar(128) NOT NULL default '',
   `config` text,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `feeds_importer`
@@ -2012,24 +2010,24 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `feeds_node_item`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `feeds_node_item` (
   `nid` int(10) unsigned NOT NULL,
-  `id` varchar(128) NOT NULL DEFAULT '',
+  `id` varchar(128) NOT NULL default '',
   `feed_nid` int(10) unsigned NOT NULL,
-  `imported` int(11) NOT NULL DEFAULT '0',
+  `imported` int(11) NOT NULL default '0',
   `url` text NOT NULL,
   `guid` text NOT NULL,
-  `hash` varchar(32) NOT NULL DEFAULT '',
-  PRIMARY KEY (`nid`),
+  `hash` varchar(32) NOT NULL default '',
+  PRIMARY KEY  (`nid`),
   KEY `id` (`id`),
   KEY `feed_nid` (`feed_nid`),
   KEY `imported` (`imported`),
   KEY `url` (`url`(255)),
   KEY `guid` (`guid`(255))
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `feeds_node_item`
@@ -2046,21 +2044,21 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `feeds_push_subscriptions`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `feeds_push_subscriptions` (
-  `domain` varchar(128) NOT NULL DEFAULT '',
-  `subscriber_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `timestamp` int(11) NOT NULL DEFAULT '0',
+  `domain` varchar(128) NOT NULL default '',
+  `subscriber_id` int(10) unsigned NOT NULL default '0',
+  `timestamp` int(11) NOT NULL default '0',
   `hub` text NOT NULL,
   `topic` text NOT NULL,
-  `secret` varchar(128) NOT NULL DEFAULT '',
-  `status` varchar(64) NOT NULL DEFAULT '',
+  `secret` varchar(128) NOT NULL default '',
+  `status` varchar(64) NOT NULL default '',
   `post_fields` text,
-  PRIMARY KEY (`domain`,`subscriber_id`),
+  PRIMARY KEY  (`domain`,`subscriber_id`),
   KEY `timestamp` (`timestamp`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `feeds_push_subscriptions`
@@ -2077,20 +2075,20 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `feeds_source`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `feeds_source` (
-  `id` varchar(128) NOT NULL DEFAULT '',
-  `feed_nid` int(10) unsigned NOT NULL DEFAULT '0',
+  `id` varchar(128) NOT NULL default '',
+  `feed_nid` int(10) unsigned NOT NULL default '0',
   `config` text,
   `source` text NOT NULL,
   `batch` longtext,
-  PRIMARY KEY (`id`,`feed_nid`),
+  PRIMARY KEY  (`id`,`feed_nid`),
   KEY `id` (`id`),
   KEY `feed_nid` (`feed_nid`),
   KEY `id_source` (`id`,`source`(128))
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `feeds_source`
@@ -2107,17 +2105,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `feeds_term_item`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `feeds_term_item` (
-  `tid` int(10) unsigned NOT NULL DEFAULT '0',
-  `id` varchar(128) NOT NULL DEFAULT '',
+  `tid` int(10) unsigned NOT NULL default '0',
+  `id` varchar(128) NOT NULL default '',
   `feed_nid` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`tid`),
+  PRIMARY KEY  (`tid`),
   KEY `id_feed_nid` (`id`,`feed_nid`),
   KEY `feed_nid` (`feed_nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `feeds_term_item`
@@ -2134,23 +2132,23 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `files`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `files` (
-  `fid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `uid` int(10) unsigned NOT NULL DEFAULT '0',
-  `filename` varchar(255) NOT NULL DEFAULT '',
-  `filepath` varchar(255) NOT NULL DEFAULT '',
-  `filemime` varchar(255) NOT NULL DEFAULT '',
-  `filesize` int(10) unsigned NOT NULL DEFAULT '0',
-  `status` int(11) NOT NULL DEFAULT '0',
-  `timestamp` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`fid`),
+  `fid` int(10) unsigned NOT NULL auto_increment,
+  `uid` int(10) unsigned NOT NULL default '0',
+  `filename` varchar(255) NOT NULL default '',
+  `filepath` varchar(255) NOT NULL default '',
+  `filemime` varchar(255) NOT NULL default '',
+  `filesize` int(10) unsigned NOT NULL default '0',
+  `status` int(11) NOT NULL default '0',
+  `timestamp` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`fid`),
   KEY `uid` (`uid`),
   KEY `status` (`status`),
   KEY `timestamp` (`timestamp`)
-) ENGINE=MyISAM AUTO_INCREMENT=129 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=MyISAM AUTO_INCREMENT=131 DEFAULT CHARSET=utf8;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `files`
@@ -2249,6 +2247,8 @@ INSERT INTO `files` VALUES (125,1,'afg_school-icon.gif','sites/default/files/afg
 INSERT INTO `files` VALUES (126,1,'afg_school-icon.gif','sites/default/files/afg_school-icon_56.gif','image/gif',1440,1,1315493270);
 INSERT INTO `files` VALUES (127,1,'afg_school-icon.gif','sites/default/files/afg_school-icon_57.gif','image/gif',1440,1,1315493273);
 INSERT INTO `files` VALUES (128,1,'afg_school-icon.gif','sites/default/files/afg_school-icon_58.gif','image/gif',1440,1,1315493277);
+INSERT INTO `files` VALUES (129,1,'afg_icon-app.png','sites/default/files/imagefield_default_images/afg_icon-app.png','image/png',3800,1,1315915745);
+INSERT INTO `files` VALUES (130,1,'afg_icon-blog.png','sites/default/files/imagefield_default_images/afg_icon-blog.png','image/png',3457,1,1315918217);
 /*!40000 ALTER TABLE `files` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2257,17 +2257,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `filter_formats`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `filter_formats` (
-  `format` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL DEFAULT '',
-  `roles` varchar(255) NOT NULL DEFAULT '',
-  `cache` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`format`),
+  `format` int(11) NOT NULL auto_increment,
+  `name` varchar(255) NOT NULL default '',
+  `roles` varchar(255) NOT NULL default '',
+  `cache` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`format`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `filter_formats`
@@ -2288,19 +2288,19 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `filters`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `filters` (
-  `fid` int(11) NOT NULL AUTO_INCREMENT,
-  `format` int(11) NOT NULL DEFAULT '0',
-  `module` varchar(64) NOT NULL DEFAULT '',
-  `delta` tinyint(4) NOT NULL DEFAULT '0',
-  `weight` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`fid`),
+  `fid` int(11) NOT NULL auto_increment,
+  `format` int(11) NOT NULL default '0',
+  `module` varchar(64) NOT NULL default '',
+  `delta` tinyint(4) NOT NULL default '0',
+  `weight` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`fid`),
   UNIQUE KEY `fmd` (`format`,`module`,`delta`),
   KEY `list` (`format`,`weight`,`module`,`delta`)
 ) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `filters`
@@ -2329,17 +2329,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `flood`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `flood` (
-  `fid` int(11) NOT NULL AUTO_INCREMENT,
-  `event` varchar(64) NOT NULL DEFAULT '',
-  `hostname` varchar(128) NOT NULL DEFAULT '',
-  `timestamp` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`fid`),
+  `fid` int(11) NOT NULL auto_increment,
+  `event` varchar(64) NOT NULL default '',
+  `hostname` varchar(128) NOT NULL default '',
+  `timestamp` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`fid`),
   KEY `allow` (`event`,`hostname`,`timestamp`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `flood`
@@ -2356,19 +2356,19 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `imagecache_action`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `imagecache_action` (
-  `actionid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `presetid` int(10) unsigned NOT NULL DEFAULT '0',
-  `weight` int(11) NOT NULL DEFAULT '0',
+  `actionid` int(10) unsigned NOT NULL auto_increment,
+  `presetid` int(10) unsigned NOT NULL default '0',
+  `weight` int(11) NOT NULL default '0',
   `module` varchar(255) NOT NULL,
   `action` varchar(255) NOT NULL,
   `data` longtext NOT NULL,
-  PRIMARY KEY (`actionid`),
+  PRIMARY KEY  (`actionid`),
   KEY `presetid` (`presetid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `imagecache_action`
@@ -2387,14 +2387,14 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `imagecache_preset`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `imagecache_preset` (
-  `presetid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `presetid` int(10) unsigned NOT NULL auto_increment,
   `presetname` varchar(255) NOT NULL,
-  PRIMARY KEY (`presetid`)
+  PRIMARY KEY  (`presetid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `imagecache_preset`
@@ -2413,23 +2413,23 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `job_schedule`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `job_schedule` (
-  `callback` varchar(128) NOT NULL DEFAULT '',
-  `type` varchar(128) NOT NULL DEFAULT '',
-  `id` int(10) unsigned NOT NULL DEFAULT '0',
-  `last` int(10) unsigned NOT NULL DEFAULT '0',
-  `period` int(10) unsigned NOT NULL DEFAULT '0',
-  `next` int(10) unsigned NOT NULL DEFAULT '0',
-  `periodic` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `scheduled` int(10) unsigned NOT NULL DEFAULT '0',
+  `callback` varchar(128) NOT NULL default '',
+  `type` varchar(128) NOT NULL default '',
+  `id` int(10) unsigned NOT NULL default '0',
+  `last` int(10) unsigned NOT NULL default '0',
+  `period` int(10) unsigned NOT NULL default '0',
+  `next` int(10) unsigned NOT NULL default '0',
+  `periodic` smallint(5) unsigned NOT NULL default '0',
+  `scheduled` int(10) unsigned NOT NULL default '0',
   KEY `callback_type_id` (`callback`,`type`,`id`),
   KEY `callback_type` (`callback`,`type`),
   KEY `next` (`next`),
   KEY `scheduled` (`scheduled`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `job_schedule`
@@ -2445,17 +2445,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `linkedin_token`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `linkedin_token` (
   `uid` int(10) unsigned NOT NULL,
   `token_key` varchar(100) NOT NULL,
   `token_secret` varchar(100) NOT NULL,
   `type` varchar(7) NOT NULL,
-  PRIMARY KEY (`uid`),
+  PRIMARY KEY  (`uid`),
   KEY `token_key_type` (`token_key`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `linkedin_token`
@@ -2473,24 +2473,24 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `location`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `location` (
-  `lid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL DEFAULT '',
-  `street` varchar(255) NOT NULL DEFAULT '',
-  `additional` varchar(255) NOT NULL DEFAULT '',
-  `city` varchar(255) NOT NULL DEFAULT '',
-  `province` varchar(16) NOT NULL DEFAULT '',
-  `postal_code` varchar(16) NOT NULL DEFAULT '',
-  `country` char(2) NOT NULL DEFAULT '',
-  `latitude` decimal(10,6) NOT NULL DEFAULT '0.000000',
-  `longitude` decimal(10,6) NOT NULL DEFAULT '0.000000',
-  `source` tinyint(4) NOT NULL DEFAULT '0',
-  `is_primary` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`lid`)
+  `lid` int(10) unsigned NOT NULL auto_increment,
+  `name` varchar(255) NOT NULL default '',
+  `street` varchar(255) NOT NULL default '',
+  `additional` varchar(255) NOT NULL default '',
+  `city` varchar(255) NOT NULL default '',
+  `province` varchar(16) NOT NULL default '',
+  `postal_code` varchar(16) NOT NULL default '',
+  `country` char(2) NOT NULL default '',
+  `latitude` decimal(10,6) NOT NULL default '0.000000',
+  `longitude` decimal(10,6) NOT NULL default '0.000000',
+  `source` tinyint(4) NOT NULL default '0',
+  `is_primary` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`lid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `location`
@@ -2545,21 +2545,21 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `location_instance`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `location_instance` (
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
-  `vid` int(10) unsigned NOT NULL DEFAULT '0',
-  `uid` int(10) unsigned NOT NULL DEFAULT '0',
-  `genid` varchar(255) NOT NULL DEFAULT '',
-  `lid` int(10) unsigned NOT NULL DEFAULT '0',
+  `nid` int(10) unsigned NOT NULL default '0',
+  `vid` int(10) unsigned NOT NULL default '0',
+  `uid` int(10) unsigned NOT NULL default '0',
+  `genid` varchar(255) NOT NULL default '',
+  `lid` int(10) unsigned NOT NULL default '0',
   KEY `nid` (`nid`),
   KEY `vid` (`vid`),
   KEY `uid` (`uid`),
   KEY `genid` (`genid`),
   KEY `lid` (`lid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `location_instance`
@@ -2613,17 +2613,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `media_flickr`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `media_flickr` (
-  `code` varchar(255) NOT NULL DEFAULT '',
-  `title` varchar(255) NOT NULL DEFAULT '',
-  `owner` varchar(255) NOT NULL DEFAULT '',
+  `code` varchar(255) NOT NULL default '',
+  `title` varchar(255) NOT NULL default '',
+  `owner` varchar(255) NOT NULL default '',
   `description` longtext NOT NULL,
-  `url` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`code`)
+  `url` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`code`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `media_flickr`
@@ -2685,18 +2685,18 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `media_flickr_node`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `media_flickr_node` (
   `nid` int(10) unsigned NOT NULL,
-  `field` varchar(255) NOT NULL DEFAULT '',
-  `delta` int(11) NOT NULL DEFAULT '0',
-  `photoset` varchar(255) NOT NULL DEFAULT '',
+  `field` varchar(255) NOT NULL default '',
+  `delta` int(11) NOT NULL default '0',
+  `photoset` varchar(255) NOT NULL default '',
   KEY `nid` (`nid`),
   KEY `field` (`field`),
   KEY `photoset` (`photoset`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `media_flickr_node`
@@ -2712,14 +2712,14 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `media_flickr_photoset_count`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `media_flickr_photoset_count` (
-  `photoset` varchar(255) NOT NULL DEFAULT '',
+  `photoset` varchar(255) NOT NULL default '',
   `instances` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`photoset`)
+  PRIMARY KEY  (`photoset`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `media_flickr_photoset_count`
@@ -2737,15 +2737,15 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `media_flickr_sets`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `media_flickr_sets` (
-  `photoset` varchar(255) NOT NULL DEFAULT '',
-  `code` varchar(255) NOT NULL DEFAULT '',
+  `photoset` varchar(255) NOT NULL default '',
+  `code` varchar(255) NOT NULL default '',
   KEY `photoset` (`photoset`),
   KEY `code` (`code`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `media_flickr_sets`
@@ -2806,17 +2806,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `media_flickr_sizes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `media_flickr_sizes` (
-  `code` varchar(255) NOT NULL DEFAULT '',
-  `size` int(11) NOT NULL DEFAULT '0',
+  `code` varchar(255) NOT NULL default '',
+  `size` int(11) NOT NULL default '0',
   `fid` int(10) unsigned NOT NULL,
   KEY `code` (`code`),
   KEY `fid` (`fid`),
   KEY `size` (`size`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `media_flickr_sizes`
@@ -2832,17 +2832,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `media_youtube_metadata`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `media_youtube_metadata` (
-  `value` varchar(255) NOT NULL DEFAULT '',
-  `status` int(10) unsigned NOT NULL DEFAULT '1',
-  `last_touched` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`value`),
+  `value` varchar(255) NOT NULL default '',
+  `status` int(10) unsigned NOT NULL default '1',
+  `last_touched` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`value`),
   KEY `status` (`status`),
   KEY `last_touched` (`last_touched`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `media_youtube_metadata`
@@ -2866,19 +2866,19 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `media_youtube_node_data`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `media_youtube_node_data` (
-  `value` varchar(255) DEFAULT NULL,
+  `value` varchar(255) default NULL,
   `vid` int(10) unsigned NOT NULL,
-  `field_name` varchar(255) NOT NULL DEFAULT '',
-  `delta` int(10) unsigned NOT NULL DEFAULT '0',
+  `field_name` varchar(255) NOT NULL default '',
+  `delta` int(10) unsigned NOT NULL default '0',
   KEY `value` (`value`),
   KEY `vid` (`vid`),
   KEY `field_name` (`field_name`),
   KEY `delta` (`delta`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `media_youtube_node_data`
@@ -2908,15 +2908,15 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `menu_custom`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `menu_custom` (
-  `menu_name` varchar(32) NOT NULL DEFAULT '',
-  `title` varchar(255) NOT NULL DEFAULT '',
+  `menu_name` varchar(32) NOT NULL default '',
+  `title` varchar(255) NOT NULL default '',
   `description` text,
-  PRIMARY KEY (`menu_name`)
+  PRIMARY KEY  (`menu_name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `menu_custom`
@@ -2942,41 +2942,41 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `menu_links`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `menu_links` (
-  `menu_name` varchar(32) NOT NULL DEFAULT '',
-  `mlid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `plid` int(10) unsigned NOT NULL DEFAULT '0',
-  `link_path` varchar(255) NOT NULL DEFAULT '',
-  `router_path` varchar(255) NOT NULL DEFAULT '',
-  `link_title` varchar(255) NOT NULL DEFAULT '',
+  `menu_name` varchar(32) NOT NULL default '',
+  `mlid` int(10) unsigned NOT NULL auto_increment,
+  `plid` int(10) unsigned NOT NULL default '0',
+  `link_path` varchar(255) NOT NULL default '',
+  `router_path` varchar(255) NOT NULL default '',
+  `link_title` varchar(255) NOT NULL default '',
   `options` text,
-  `module` varchar(255) NOT NULL DEFAULT 'system',
-  `hidden` smallint(6) NOT NULL DEFAULT '0',
-  `external` smallint(6) NOT NULL DEFAULT '0',
-  `has_children` smallint(6) NOT NULL DEFAULT '0',
-  `expanded` smallint(6) NOT NULL DEFAULT '0',
-  `weight` int(11) NOT NULL DEFAULT '0',
-  `depth` smallint(6) NOT NULL DEFAULT '0',
-  `customized` smallint(6) NOT NULL DEFAULT '0',
-  `p1` int(10) unsigned NOT NULL DEFAULT '0',
-  `p2` int(10) unsigned NOT NULL DEFAULT '0',
-  `p3` int(10) unsigned NOT NULL DEFAULT '0',
-  `p4` int(10) unsigned NOT NULL DEFAULT '0',
-  `p5` int(10) unsigned NOT NULL DEFAULT '0',
-  `p6` int(10) unsigned NOT NULL DEFAULT '0',
-  `p7` int(10) unsigned NOT NULL DEFAULT '0',
-  `p8` int(10) unsigned NOT NULL DEFAULT '0',
-  `p9` int(10) unsigned NOT NULL DEFAULT '0',
-  `updated` smallint(6) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`mlid`),
+  `module` varchar(255) NOT NULL default 'system',
+  `hidden` smallint(6) NOT NULL default '0',
+  `external` smallint(6) NOT NULL default '0',
+  `has_children` smallint(6) NOT NULL default '0',
+  `expanded` smallint(6) NOT NULL default '0',
+  `weight` int(11) NOT NULL default '0',
+  `depth` smallint(6) NOT NULL default '0',
+  `customized` smallint(6) NOT NULL default '0',
+  `p1` int(10) unsigned NOT NULL default '0',
+  `p2` int(10) unsigned NOT NULL default '0',
+  `p3` int(10) unsigned NOT NULL default '0',
+  `p4` int(10) unsigned NOT NULL default '0',
+  `p5` int(10) unsigned NOT NULL default '0',
+  `p6` int(10) unsigned NOT NULL default '0',
+  `p7` int(10) unsigned NOT NULL default '0',
+  `p8` int(10) unsigned NOT NULL default '0',
+  `p9` int(10) unsigned NOT NULL default '0',
+  `updated` smallint(6) NOT NULL default '0',
+  PRIMARY KEY  (`mlid`),
   KEY `path_menu` (`link_path`(128),`menu_name`),
   KEY `menu_plid_expand_child` (`menu_name`,`plid`,`expanded`,`has_children`),
   KEY `menu_parents` (`menu_name`,`p1`,`p2`,`p3`,`p4`,`p5`,`p6`,`p7`,`p8`,`p9`),
   KEY `router_path` (`router_path`(128))
-) ENGINE=MyISAM AUTO_INCREMENT=643 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=MyISAM AUTO_INCREMENT=645 DEFAULT CHARSET=utf8;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `menu_links`
@@ -3361,10 +3361,10 @@ INSERT INTO `menu_links` VALUES ('navigation',506,11,'node/add/cdi-blog','node/a
 INSERT INTO `menu_links` VALUES ('admin',507,101,'admin/content/node-type/cdi-blog','admin/content/node-type/cdi-blog','Cdi blog','a:0:{}','system',-1,0,0,0,0,3,0,97,101,507,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('admin',508,0,'admin/content/node-type/cdi-blog/delete','admin/content/node-type/cdi-blog/delete','Delete','a:0:{}','system',-1,0,0,0,0,1,0,508,0,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('admin',509,0,'admin/content/node-type/cdi-blog/fields/field_carousel_image/remove','admin/content/node-type/cdi-blog/fields/field_carousel_image/remove','Remove field','a:0:{}','system',-1,0,0,0,0,1,0,509,0,0,0,0,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('menu-header-menu',511,0,'http://apps4good.neontribe.org/apps','','Apps','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:21:\"Application directory\";}}','menu',0,1,0,0,0,1,1,511,0,0,0,0,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('menu-header-menu',512,0,'http://apps4good.neontribe.org/centres','','Centres','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:17:\"Centres Directory\";}}','menu',0,1,0,0,0,1,1,512,0,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('menu-header-menu',511,0,'http://network.appsforgood.org/apps','','Apps','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:21:\"Application directory\";}}','menu',0,1,0,0,0,1,1,511,0,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('menu-header-menu',512,0,'http:///network.appsforgood.org/centres','','Centres','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:17:\"Centres Directory\";}}','menu',0,1,0,0,0,1,1,512,0,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('menu-header-menu',513,0,'members','members','Supporters','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:16:\"Member Directory\";}}','menu',0,0,0,0,0,1,1,513,0,0,0,0,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('menu-header-menu',514,0,'<front>','','About','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:19:\"About Apps for Good\";}}','menu',0,1,0,0,5,1,1,514,0,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('menu-header-menu',514,0,'<front>','','About','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:19:\"About Apps for Good\";}}','menu',1,1,0,0,5,1,1,514,0,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('navigation',518,11,'node/add/page','node/add/page','Page','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:18:\"A static site page\";}}','system',0,0,0,0,0,2,0,11,518,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('admin',519,101,'admin/content/node-type/page','admin/content/node-type/page','Page','a:0:{}','system',-1,0,0,0,0,3,0,97,101,519,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('admin',520,0,'admin/content/node-type/page/delete','admin/content/node-type/page/delete','Delete','a:0:{}','system',-1,0,0,0,0,1,0,520,0,0,0,0,0,0,0,0,0);
@@ -3415,7 +3415,7 @@ INSERT INTO `menu_links` VALUES ('features',586,365,'centres/archived','centres/
 INSERT INTO `menu_links` VALUES ('admin',588,106,'admin/settings/email','admin/settings/email','CCK Email Contact Form Settings','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:57:\"Administer flood control settings for email contact forms\";}}','system',0,0,0,0,0,3,0,97,106,588,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('navigation',589,0,'email/%/%','email/%/%','Email Contact Form','a:0:{}','system',-1,0,0,0,0,1,0,589,0,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('admin',590,0,'admin/content/node-type/profile/fields/field_email/remove','admin/content/node-type/profile/fields/field_email/remove','Remove field','a:0:{}','system',-1,0,0,0,0,1,0,590,0,0,0,0,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('menu-header-menu',591,0,'http://apps4good.neontribe.org/supporters','','Supporters','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:27:\"Supporters of Apps for Good\";}}','menu',0,1,0,0,0,1,1,591,0,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('menu-header-menu',591,0,'http:///network.appsforgood.org/supporters','','Supporters','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:27:\"Supporters of Apps for Good\";}}','menu',0,1,0,0,0,1,1,591,0,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('features',592,0,'updates','updates','Updates','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:7:\"Updates\";}}','system',0,0,0,0,-43,1,1,592,0,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('features',593,0,'supporters','supporters','Supporters','a:0:{}','system',0,0,0,0,-49,1,1,593,0,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('navigation',597,0,'autoload/flush-cache','autoload/flush-cache','','a:0:{}','system',-1,0,0,0,0,1,0,597,0,0,0,0,0,0,0,0,0);
@@ -3437,6 +3437,8 @@ INSERT INTO `menu_links` VALUES ('admin',639,105,'admin/build/path','admin/build
 INSERT INTO `menu_links` VALUES ('admin',640,102,'admin/help/path','admin/help/path','path','a:0:{}','system',-1,0,0,0,0,3,0,97,102,640,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('admin',641,639,'admin/build/path/delete','admin/build/path/delete','Delete alias','a:0:{}','system',-1,0,0,0,0,4,0,97,105,639,641,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('admin',642,639,'admin/build/path/edit','admin/build/path/edit','Edit alias','a:0:{}','system',-1,0,0,0,0,4,0,97,105,639,642,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('admin',643,0,'admin/content/node-type/blog/fields/field_icon/remove','admin/content/node-type/blog/fields/field_icon/remove','Remove field','a:0:{}','system',-1,0,0,0,0,1,0,643,0,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('admin',644,0,'admin/content/node-type/group-app-team/fields/field_icon/remove','admin/content/node-type/group-app-team/fields/field_icon/remove','Remove field','a:0:{}','system',-1,0,0,0,0,1,0,644,0,0,0,0,0,0,0,0,0);
 /*!40000 ALTER TABLE `menu_links` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3445,35 +3447,35 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `menu_router`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `menu_router` (
-  `path` varchar(255) NOT NULL DEFAULT '',
+  `path` varchar(255) NOT NULL default '',
   `load_functions` text NOT NULL,
   `to_arg_functions` text NOT NULL,
-  `access_callback` varchar(255) NOT NULL DEFAULT '',
+  `access_callback` varchar(255) NOT NULL default '',
   `access_arguments` text,
-  `page_callback` varchar(255) NOT NULL DEFAULT '',
+  `page_callback` varchar(255) NOT NULL default '',
   `page_arguments` text,
-  `fit` int(11) NOT NULL DEFAULT '0',
-  `number_parts` smallint(6) NOT NULL DEFAULT '0',
-  `tab_parent` varchar(255) NOT NULL DEFAULT '',
-  `tab_root` varchar(255) NOT NULL DEFAULT '',
-  `title` varchar(255) NOT NULL DEFAULT '',
-  `title_callback` varchar(255) NOT NULL DEFAULT '',
-  `title_arguments` varchar(255) NOT NULL DEFAULT '',
-  `type` int(11) NOT NULL DEFAULT '0',
-  `block_callback` varchar(255) NOT NULL DEFAULT '',
+  `fit` int(11) NOT NULL default '0',
+  `number_parts` smallint(6) NOT NULL default '0',
+  `tab_parent` varchar(255) NOT NULL default '',
+  `tab_root` varchar(255) NOT NULL default '',
+  `title` varchar(255) NOT NULL default '',
+  `title_callback` varchar(255) NOT NULL default '',
+  `title_arguments` varchar(255) NOT NULL default '',
+  `type` int(11) NOT NULL default '0',
+  `block_callback` varchar(255) NOT NULL default '',
   `description` text NOT NULL,
-  `position` varchar(255) NOT NULL DEFAULT '',
-  `weight` int(11) NOT NULL DEFAULT '0',
+  `position` varchar(255) NOT NULL default '',
+  `weight` int(11) NOT NULL default '0',
   `file` mediumtext,
-  PRIMARY KEY (`path`),
+  PRIMARY KEY  (`path`),
   KEY `fit` (`fit`),
   KEY `tab_parent` (`tab_parent`),
   KEY `tab_root_weight_title` (`tab_root`(64),`weight`,`title`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `menu_router`
@@ -3648,6 +3650,8 @@ INSERT INTO `menu_router` VALUES ('admin/content/node-type/blog/display/search',
 INSERT INTO `menu_router` VALUES ('admin/content/node-type/blog/display/token','','','user_access','a:1:{i:0;s:24:\"administer content types\";}','drupal_get_form','a:3:{i:0;s:29:\"content_display_overview_form\";i:1;s:4:\"blog\";i:2;s:5:\"token\";}',63,6,'admin/content/node-type/blog/display','admin/content/node-type/blog','Token','t','',128,'','','',1,'profiles/openatrium/modules/contrib/cck/includes/content.admin.inc');
 INSERT INTO `menu_router` VALUES ('admin/content/node-type/blog/edit','','','user_access','a:1:{i:0;s:24:\"administer content types\";}','drupal_get_form','a:2:{i:0;s:14:\"node_type_form\";i:1;O:8:\"stdClass\":14:{s:4:\"type\";s:4:\"blog\";s:4:\"name\";s:10:\"Text entry\";s:6:\"module\";s:8:\"features\";s:11:\"description\";s:169:\"A blog is a regularly updated journal or diary made up of individual posts shown in reversed chronological order. Each member of the site may create and maintain a blog.\";s:4:\"help\";s:0:\"\";s:9:\"has_title\";s:1:\"1\";s:11:\"title_label\";s:5:\"Title\";s:8:\"has_body\";s:1:\"1\";s:10:\"body_label\";s:4:\"Body\";s:14:\"min_word_count\";s:1:\"0\";s:6:\"custom\";s:1:\"0\";s:8:\"modified\";s:1:\"1\";s:6:\"locked\";s:1:\"1\";s:9:\"orig_type\";s:4:\"blog\";}}',31,5,'admin/content/node-type/blog','admin/content/node-type/blog','Edit','t','',136,'','','',0,'modules/node/content_types.inc');
 INSERT INTO `menu_router` VALUES ('admin/content/node-type/blog/fields','','','user_access','a:1:{i:0;s:24:\"administer content types\";}','drupal_get_form','a:2:{i:0;s:27:\"content_field_overview_form\";i:1;s:4:\"blog\";}',31,5,'admin/content/node-type/blog','admin/content/node-type/blog','Manage fields','t','',128,'','','',1,'profiles/openatrium/modules/contrib/cck/includes/content.admin.inc');
+INSERT INTO `menu_router` VALUES ('admin/content/node-type/blog/fields/field_icon','','','user_access','a:1:{i:0;s:24:\"administer content types\";}','drupal_get_form','a:3:{i:0;s:23:\"content_field_edit_form\";i:1;s:4:\"blog\";i:2;s:10:\"field_icon\";}',63,6,'admin/content/node-type/blog/fields','admin/content/node-type/blog','Icon','t','',128,'','','',0,'profiles/openatrium/modules/contrib/cck/includes/content.admin.inc');
+INSERT INTO `menu_router` VALUES ('admin/content/node-type/blog/fields/field_icon/remove','','','user_access','a:1:{i:0;s:24:\"administer content types\";}','drupal_get_form','a:3:{i:0;s:25:\"content_field_remove_form\";i:1;s:4:\"blog\";i:2;s:10:\"field_icon\";}',127,7,'','admin/content/node-type/blog/fields/field_icon/remove','Remove field','t','',4,'','','',0,'profiles/openatrium/modules/contrib/cck/includes/content.admin.inc');
 INSERT INTO `menu_router` VALUES ('admin/content/node-type/blog/fields/field_referenced_book_page','','','user_access','a:1:{i:0;s:24:\"administer content types\";}','drupal_get_form','a:3:{i:0;s:23:\"content_field_edit_form\";i:1;s:4:\"blog\";i:2;s:26:\"field_referenced_book_page\";}',63,6,'admin/content/node-type/blog/fields','admin/content/node-type/blog','Referenced Page','t','',128,'','','',0,'profiles/openatrium/modules/contrib/cck/includes/content.admin.inc');
 INSERT INTO `menu_router` VALUES ('admin/content/node-type/blog/fields/field_referenced_book_page/remove','','','user_access','a:1:{i:0;s:24:\"administer content types\";}','drupal_get_form','a:3:{i:0;s:25:\"content_field_remove_form\";i:1;s:4:\"blog\";i:2;s:26:\"field_referenced_book_page\";}',127,7,'','admin/content/node-type/blog/fields/field_referenced_book_page/remove','Remove field','t','',4,'','','',0,'profiles/openatrium/modules/contrib/cck/includes/content.admin.inc');
 INSERT INTO `menu_router` VALUES ('admin/content/node-type/blog/form','','','user_access','a:1:{i:0;s:24:\"administer content types\";}','drupal_get_form','a:3:{i:0;s:31:\"nodeformcols_configuration_form\";i:1;s:4:\"blog\";i:2;i:5;}',31,5,'admin/content/node-type/blog','admin/content/node-type/blog','Manage form','t','',128,'','','',3,'profiles/openatrium/modules/contrib/nodeformcols/nodeformcols.admin.inc');
@@ -3747,6 +3751,8 @@ INSERT INTO `menu_router` VALUES ('admin/content/node-type/group-app-team/edit',
 INSERT INTO `menu_router` VALUES ('admin/content/node-type/group-app-team/fields','','','user_access','a:1:{i:0;s:24:\"administer content types\";}','drupal_get_form','a:2:{i:0;s:27:\"content_field_overview_form\";i:1;s:14:\"group_app_team\";}',31,5,'admin/content/node-type/group-app-team','admin/content/node-type/group-app-team','Manage fields','t','',128,'','','',1,'profiles/openatrium/modules/contrib/cck/includes/content.admin.inc');
 INSERT INTO `menu_router` VALUES ('admin/content/node-type/group-app-team/fields/field_centre_ref','','','user_access','a:1:{i:0;s:24:\"administer content types\";}','drupal_get_form','a:3:{i:0;s:23:\"content_field_edit_form\";i:1;s:14:\"group_app_team\";i:2;s:16:\"field_centre_ref\";}',63,6,'admin/content/node-type/group-app-team/fields','admin/content/node-type/group-app-team','Parent Centre','t','',128,'','','',0,'profiles/openatrium/modules/contrib/cck/includes/content.admin.inc');
 INSERT INTO `menu_router` VALUES ('admin/content/node-type/group-app-team/fields/field_centre_ref/remove','','','user_access','a:1:{i:0;s:24:\"administer content types\";}','drupal_get_form','a:3:{i:0;s:25:\"content_field_remove_form\";i:1;s:14:\"group_app_team\";i:2;s:16:\"field_centre_ref\";}',127,7,'','admin/content/node-type/group-app-team/fields/field_centre_ref/remove','Remove field','t','',4,'','','',0,'profiles/openatrium/modules/contrib/cck/includes/content.admin.inc');
+INSERT INTO `menu_router` VALUES ('admin/content/node-type/group-app-team/fields/field_icon','','','user_access','a:1:{i:0;s:24:\"administer content types\";}','drupal_get_form','a:3:{i:0;s:23:\"content_field_edit_form\";i:1;s:14:\"group_app_team\";i:2;s:10:\"field_icon\";}',63,6,'admin/content/node-type/group-app-team/fields','admin/content/node-type/group-app-team','Icon','t','',128,'','','',0,'profiles/openatrium/modules/contrib/cck/includes/content.admin.inc');
+INSERT INTO `menu_router` VALUES ('admin/content/node-type/group-app-team/fields/field_icon/remove','','','user_access','a:1:{i:0;s:24:\"administer content types\";}','drupal_get_form','a:3:{i:0;s:25:\"content_field_remove_form\";i:1;s:14:\"group_app_team\";i:2;s:10:\"field_icon\";}',127,7,'','admin/content/node-type/group-app-team/fields/field_icon/remove','Remove field','t','',4,'','','',0,'profiles/openatrium/modules/contrib/cck/includes/content.admin.inc');
 INSERT INTO `menu_router` VALUES ('admin/content/node-type/group-app-team/fields/field_logo','','','user_access','a:1:{i:0;s:24:\"administer content types\";}','drupal_get_form','a:3:{i:0;s:23:\"content_field_edit_form\";i:1;s:14:\"group_app_team\";i:2;s:10:\"field_logo\";}',63,6,'admin/content/node-type/group-app-team/fields','admin/content/node-type/group-app-team','logo','t','',128,'','','',0,'profiles/openatrium/modules/contrib/cck/includes/content.admin.inc');
 INSERT INTO `menu_router` VALUES ('admin/content/node-type/group-app-team/fields/field_logo/remove','','','user_access','a:1:{i:0;s:24:\"administer content types\";}','drupal_get_form','a:3:{i:0;s:25:\"content_field_remove_form\";i:1;s:14:\"group_app_team\";i:2;s:10:\"field_logo\";}',127,7,'','admin/content/node-type/group-app-team/fields/field_logo/remove','Remove field','t','',4,'','','',0,'profiles/openatrium/modules/contrib/cck/includes/content.admin.inc');
 INSERT INTO `menu_router` VALUES ('admin/content/node-type/group-app-team/form','','','user_access','a:1:{i:0;s:24:\"administer content types\";}','drupal_get_form','a:3:{i:0;s:31:\"nodeformcols_configuration_form\";i:1;s:14:\"group_app_team\";i:2;i:5;}',31,5,'admin/content/node-type/group-app-team','admin/content/node-type/group-app-team','Manage form','t','',128,'','','',3,'profiles/openatrium/modules/contrib/nodeformcols/nodeformcols.admin.inc');
@@ -4281,6 +4287,7 @@ INSERT INTO `menu_router` VALUES ('user/%/edit/account','a:1:{i:1;a:1:{s:18:\"us
 INSERT INTO `menu_router` VALUES ('user/%/edit/groups','a:1:{i:1;s:9:\"user_load\";}','','user_edit_access','a:1:{i:0;i:1;}','drupal_get_form','a:2:{i:0;s:26:\"spaces_og_user_groups_form\";i:1;i:1;}',11,4,'user/%/edit','user/%','Groups','t','',128,'','','',0,'profiles/openatrium/modules/contrib/spaces/spaces_og/spaces_og.pages.inc');
 INSERT INTO `menu_router` VALUES ('user/%/edit/picture','a:1:{i:1;a:1:{s:18:\"user_category_load\";a:2:{i:0;s:4:\"%map\";i:1;s:6:\"%index\";}}}','','user_edit_access','a:1:{i:0;i:1;}','drupal_get_form','a:3:{i:0;s:31:\"atrium_members_user_profile_tab\";i:1;i:1;i:2;s:7:\"picture\";}',11,4,'user/%/edit','user/%','','check_plain','a:1:{i:0;s:7:\"Picture\";}',128,'','','',10,'profiles/openatrium/modules/atrium_features/atrium_members/atrium_members.inc');
 INSERT INTO `menu_router` VALUES ('user/%/edit/profile','a:1:{i:1;a:1:{s:18:\"user_category_load\";a:2:{i:0;s:4:\"%map\";i:1;s:6:\"%index\";}}}','','content_profile_page_access','a:2:{i:0;s:7:\"profile\";i:1;i:1;}','content_profile_page_edit','a:2:{i:0;s:7:\"profile\";i:1;i:1;}',11,4,'user/%/edit','user/%','','check_plain','a:1:{i:0;s:7:\"Profile\";}',128,'','','',1,'modules/node/node.pages.inc');
+INSERT INTO `menu_router` VALUES ('user/%/edit/theme_select','a:1:{i:1;a:1:{s:18:\"user_category_load\";a:2:{i:0;s:4:\"%map\";i:1;s:6:\"%index\";}}}','','user_edit_access','a:1:{i:0;i:1;}','drupal_get_form','a:3:{i:0;s:31:\"atrium_members_user_profile_tab\";i:1;i:1;i:2;s:12:\"theme_select\";}',11,4,'user/%/edit','user/%','','check_plain','a:1:{i:0;s:14:\"Theme settings\";}',128,'','','',10,'profiles/openatrium/modules/atrium_features/atrium_members/atrium_members.inc');
 INSERT INTO `menu_router` VALUES ('user/%/features','a:1:{i:1;s:9:\"user_load\";}','','spaces_access_admin','a:0:{}','drupal_get_form','a:1:{i:0;s:20:\"spaces_features_form\";}',5,3,'user/%','user/%','Features','t','',128,'','Configure features for this space.','',0,'profiles/openatrium/modules/contrib/spaces/spaces.admin.inc');
 INSERT INTO `menu_router` VALUES ('user/%/features/atrium_book','a:1:{i:1;s:9:\"user_load\";}','','spaces_access_admin','a:0:{}','drupal_get_form','a:1:{i:0;s:20:\"atrium_book_settings\";}',11,4,'','user/%/features/atrium_book','Settings','t','',4,'','','',0,'profiles/openatrium/modules/atrium_features/atrium_book/atrium_book.pages.inc');
 INSERT INTO `menu_router` VALUES ('user/%/features/configure','a:1:{i:1;s:9:\"user_load\";}','','spaces_access_admin','a:0:{}','drupal_get_form','a:1:{i:0;s:20:\"spaces_features_form\";}',11,4,'user/%/features','user/%','Configure','t','',136,'','Configure features for this space.','',0,'/spaces.admin.inc');
@@ -4319,19 +4326,19 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `messaging_message_parts`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `messaging_message_parts` (
-  `type` varchar(100) NOT NULL DEFAULT '',
-  `method` varchar(50) NOT NULL DEFAULT '',
-  `msgkey` varchar(100) NOT NULL DEFAULT '',
-  `module` varchar(255) NOT NULL DEFAULT '',
+  `type` varchar(100) NOT NULL default '',
+  `method` varchar(50) NOT NULL default '',
+  `msgkey` varchar(100) NOT NULL default '',
+  `module` varchar(255) NOT NULL default '',
   `message` longtext NOT NULL,
   KEY `type` (`type`),
   KEY `method` (`method`),
   KEY `msgkey` (`msgkey`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `messaging_message_parts`
@@ -4347,28 +4354,28 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `messaging_store`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `messaging_store` (
-  `mqid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `uid` int(10) unsigned NOT NULL DEFAULT '0',
-  `sender` int(10) unsigned NOT NULL DEFAULT '0',
-  `method` varchar(255) NOT NULL DEFAULT '',
-  `destination` varchar(255) NOT NULL DEFAULT '',
-  `subject` varchar(255) NOT NULL DEFAULT '',
+  `mqid` int(10) unsigned NOT NULL auto_increment,
+  `uid` int(10) unsigned NOT NULL default '0',
+  `sender` int(10) unsigned NOT NULL default '0',
+  `method` varchar(255) NOT NULL default '',
+  `destination` varchar(255) NOT NULL default '',
+  `subject` varchar(255) NOT NULL default '',
   `body` longtext NOT NULL,
   `params` longtext NOT NULL,
-  `created` int(11) NOT NULL DEFAULT '0',
-  `sent` int(11) NOT NULL DEFAULT '0',
-  `cron` tinyint(4) NOT NULL DEFAULT '0',
-  `queue` tinyint(4) NOT NULL DEFAULT '0',
-  `log` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`mqid`),
+  `created` int(11) NOT NULL default '0',
+  `sent` int(11) NOT NULL default '0',
+  `cron` tinyint(4) NOT NULL default '0',
+  `queue` tinyint(4) NOT NULL default '0',
+  `log` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`mqid`),
   KEY `cron` (`cron`),
   KEY `queue` (`queue`),
   KEY `log` (`log`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `messaging_store`
@@ -4385,25 +4392,25 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `node`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `node` (
-  `nid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `vid` int(10) unsigned NOT NULL DEFAULT '0',
-  `type` varchar(32) NOT NULL DEFAULT '',
-  `language` varchar(12) NOT NULL DEFAULT '',
-  `title` varchar(255) NOT NULL DEFAULT '',
-  `uid` int(11) NOT NULL DEFAULT '0',
-  `status` int(11) NOT NULL DEFAULT '1',
-  `created` int(11) NOT NULL DEFAULT '0',
-  `changed` int(11) NOT NULL DEFAULT '0',
-  `comment` int(11) NOT NULL DEFAULT '0',
-  `promote` int(11) NOT NULL DEFAULT '0',
-  `moderate` int(11) NOT NULL DEFAULT '0',
-  `sticky` int(11) NOT NULL DEFAULT '0',
-  `tnid` int(10) unsigned NOT NULL DEFAULT '0',
-  `translate` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`nid`),
+  `nid` int(10) unsigned NOT NULL auto_increment,
+  `vid` int(10) unsigned NOT NULL default '0',
+  `type` varchar(32) NOT NULL default '',
+  `language` varchar(12) NOT NULL default '',
+  `title` varchar(255) NOT NULL default '',
+  `uid` int(11) NOT NULL default '0',
+  `status` int(11) NOT NULL default '1',
+  `created` int(11) NOT NULL default '0',
+  `changed` int(11) NOT NULL default '0',
+  `comment` int(11) NOT NULL default '0',
+  `promote` int(11) NOT NULL default '0',
+  `moderate` int(11) NOT NULL default '0',
+  `sticky` int(11) NOT NULL default '0',
+  `tnid` int(10) unsigned NOT NULL default '0',
+  `translate` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`nid`),
   UNIQUE KEY `vid` (`vid`),
   KEY `node_changed` (`changed`),
   KEY `node_created` (`created`),
@@ -4417,7 +4424,7 @@ CREATE TABLE `node` (
   KEY `translate` (`translate`),
   KEY `type_node` (`type`,`nid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=220 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `node`
@@ -4478,10 +4485,10 @@ INSERT INTO `node` VALUES (124,127,'shoutbox','','testing school number 1',0,1,1
 INSERT INTO `node` VALUES (126,129,'shoutbox','','Test School',0,1,1315398109,1315398109,0,0,0,0,0,0);
 INSERT INTO `node` VALUES (128,131,'shoutbox','','Post Code 101',0,1,1315472071,1315472071,0,0,0,0,0,0);
 INSERT INTO `node` VALUES (129,132,'blog','','First post!',14,1,1315474171,1315474171,2,0,0,0,0,0);
-INSERT INTO `node` VALUES (130,133,'group_media_image','','My first image!',14,1,1315474288,1315474288,2,1,0,0,0,0);
+INSERT INTO `node` VALUES (130,133,'group_media_image','','My first image!',14,1,1315474288,1315496295,2,1,0,0,0,0);
 INSERT INTO `node` VALUES (131,134,'request_for_help','','My first request for help!',14,1,1315474963,1315474963,2,1,0,0,0,0);
 INSERT INTO `node` VALUES (132,135,'request_for_help','','My second request for help!',14,1,1315475230,1315475230,2,1,0,0,0,0);
-INSERT INTO `node` VALUES (133,136,'group_media_video','','My first video',14,1,1315475283,1315484281,2,1,0,0,0,0);
+INSERT INTO `node` VALUES (133,136,'group_media_video','','My first video',14,1,1315475283,1315496514,2,1,0,0,0,0);
 INSERT INTO `node` VALUES (134,137,'blog','','My first text entry',14,1,1315475411,1315475411,2,0,0,0,0,0);
 INSERT INTO `node` VALUES (136,139,'shoutbox','','School 9001',0,1,1315476426,1315476426,0,0,0,0,0,0);
 INSERT INTO `node` VALUES (138,141,'shoutbox','','New Centre for Postcode',0,1,1315477846,1315477846,0,0,0,0,0,0);
@@ -4571,18 +4578,18 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `node_access`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `node_access` (
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
-  `gid` int(10) unsigned NOT NULL DEFAULT '0',
-  `realm` varchar(255) NOT NULL DEFAULT '',
-  `grant_view` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `grant_update` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `grant_delete` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`nid`,`gid`,`realm`)
+  `nid` int(10) unsigned NOT NULL default '0',
+  `gid` int(10) unsigned NOT NULL default '0',
+  `realm` varchar(255) NOT NULL default '',
+  `grant_view` tinyint(3) unsigned NOT NULL default '0',
+  `grant_update` tinyint(3) unsigned NOT NULL default '0',
+  `grant_delete` tinyint(3) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`nid`,`gid`,`realm`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `node_access`
@@ -5124,18 +5131,18 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `node_comment_statistics`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `node_comment_statistics` (
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
-  `last_comment_timestamp` int(11) NOT NULL DEFAULT '0',
-  `last_comment_name` varchar(60) DEFAULT NULL,
-  `last_comment_uid` int(11) NOT NULL DEFAULT '0',
-  `comment_count` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`nid`),
+  `nid` int(10) unsigned NOT NULL default '0',
+  `last_comment_timestamp` int(11) NOT NULL default '0',
+  `last_comment_name` varchar(60) default NULL,
+  `last_comment_uid` int(11) NOT NULL default '0',
+  `comment_count` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`nid`),
   KEY `node_comment_timestamp` (`last_comment_timestamp`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `node_comment_statistics`
@@ -5289,16 +5296,16 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `node_counter`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `node_counter` (
-  `nid` int(11) NOT NULL DEFAULT '0',
-  `totalcount` bigint(20) unsigned NOT NULL DEFAULT '0',
-  `daycount` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `timestamp` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`nid`)
+  `nid` int(11) NOT NULL default '0',
+  `totalcount` bigint(20) unsigned NOT NULL default '0',
+  `daycount` mediumint(8) unsigned NOT NULL default '0',
+  `timestamp` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `node_counter`
@@ -5315,23 +5322,23 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `node_revisions`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `node_revisions` (
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
-  `vid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `uid` int(11) NOT NULL DEFAULT '0',
-  `title` varchar(255) NOT NULL DEFAULT '',
+  `nid` int(10) unsigned NOT NULL default '0',
+  `vid` int(10) unsigned NOT NULL auto_increment,
+  `uid` int(11) NOT NULL default '0',
+  `title` varchar(255) NOT NULL default '',
   `body` longtext NOT NULL,
   `teaser` longtext NOT NULL,
   `log` longtext NOT NULL,
-  `timestamp` int(11) NOT NULL DEFAULT '0',
-  `format` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`vid`),
+  `timestamp` int(11) NOT NULL default '0',
+  `format` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`vid`),
   KEY `nid` (`nid`),
   KEY `uid` (`uid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=223 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `node_revisions`
@@ -5392,10 +5399,10 @@ INSERT INTO `node_revisions` VALUES (124,127,18,'testing school number 1','','',
 INSERT INTO `node_revisions` VALUES (126,129,1,'Test School','','','',1315398109,0);
 INSERT INTO `node_revisions` VALUES (128,131,1,'Post Code 101','','','',1315472071,0);
 INSERT INTO `node_revisions` VALUES (129,132,14,'First post!','<p>is here!</p>\r\n<p>&nbsp;</p>\r\n<p><strong>And bold!</strong></p>\r\n','<p>is here!</p>\r\n<p>&nbsp;</p>\r\n<p><strong>And bold!</strong></p>\r\n','',1315474171,5);
-INSERT INTO `node_revisions` VALUES (130,133,14,'My first image!','<p>..with some text...</p>\r\n','<p>..with some text...</p>\r\n','',1315474288,5);
+INSERT INTO `node_revisions` VALUES (130,133,1,'My first image!','<p>..with some text...</p>\r\n','<p>..with some text...</p>\r\n','',1315496295,5);
 INSERT INTO `node_revisions` VALUES (131,134,14,'My first request for help!','<p>Help!</p>\r\n','<p>Help!</p>\r\n','',1315474963,5);
 INSERT INTO `node_revisions` VALUES (132,135,14,'My second request for help!','<p>Is right here...</p>\r\n','<p>Is right here...</p>\r\n','',1315475230,5);
-INSERT INTO `node_revisions` VALUES (133,136,1,'My first video','','','',1315484281,5);
+INSERT INTO `node_revisions` VALUES (133,136,1,'My first video','','','',1315496514,5);
 INSERT INTO `node_revisions` VALUES (134,137,14,'My first text entry','<p>More testing here...</p>\r\n<p>Does bold work?</p>\r\n<p>&nbsp;</p>\r\n<p>Does italic work?</p>\r\n<p>&nbsp;</p>\r\n<ul>\r\n	<li>Does</li>\r\n	<li>A</li>\r\n	<li>Bulleted</li>\r\n	<li>List</li>\r\n	<li>Work?</li>\r\n</ul>\r\n<ol>\r\n	<li>How</li>\r\n	<li>about</li>\r\n	<li>numbered?</li>\r\n</ol>\r\n<p>A<a href=\"http://www.neontribe.co.uk\"> link?</a></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n','<p>More testing here...</p>\r\n<p>Does bold work?</p>\r\n<p>&nbsp;</p>\r\n<p>Does italic work?</p>\r\n<p>&nbsp;</p>\r\n<ul>\r\n	<li>Does</li>\r\n	<li>A</li>\r\n	<li>Bulleted</li>\r\n	<li>List</li>\r\n	<li>Work?</li>\r\n</ul>\r\n<ol>\r\n	<li>How</li>\r\n	<li>about</li>\r\n	<li>numbered?</li>\r\n</ol>\r\n<p>A<a href=\"http://www.neontribe.co.uk\"> link?</a></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n','',1315475411,5);
 INSERT INTO `node_revisions` VALUES (136,139,1,'School 9001','','','',1315476426,0);
 INSERT INTO `node_revisions` VALUES (138,141,1,'New Centre for Postcode','','','',1315477846,0);
@@ -5485,26 +5492,26 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `node_type`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `node_type` (
   `type` varchar(32) NOT NULL,
-  `name` varchar(255) NOT NULL DEFAULT '',
+  `name` varchar(255) NOT NULL default '',
   `module` varchar(255) NOT NULL,
   `description` mediumtext NOT NULL,
   `help` mediumtext NOT NULL,
   `has_title` tinyint(3) unsigned NOT NULL,
-  `title_label` varchar(255) NOT NULL DEFAULT '',
+  `title_label` varchar(255) NOT NULL default '',
   `has_body` tinyint(3) unsigned NOT NULL,
-  `body_label` varchar(255) NOT NULL DEFAULT '',
+  `body_label` varchar(255) NOT NULL default '',
   `min_word_count` smallint(5) unsigned NOT NULL,
-  `custom` tinyint(4) NOT NULL DEFAULT '0',
-  `modified` tinyint(4) NOT NULL DEFAULT '0',
-  `locked` tinyint(4) NOT NULL DEFAULT '0',
-  `orig_type` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`type`)
+  `custom` tinyint(4) NOT NULL default '0',
+  `modified` tinyint(4) NOT NULL default '0',
+  `locked` tinyint(4) NOT NULL default '0',
+  `orig_type` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`type`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `node_type`
@@ -5538,23 +5545,23 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `notifications`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `notifications` (
-  `sid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `sid` int(10) unsigned NOT NULL auto_increment,
   `uid` int(11) NOT NULL,
-  `type` varchar(255) DEFAULT NULL,
-  `event_type` varchar(255) DEFAULT NULL,
+  `type` varchar(255) default NULL,
+  `event_type` varchar(255) default NULL,
   `conditions` int(10) unsigned NOT NULL,
-  `send_interval` int(11) DEFAULT NULL,
+  `send_interval` int(11) default NULL,
   `send_method` varchar(255) NOT NULL,
-  `cron` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `module` varchar(255) DEFAULT NULL,
-  `status` int(11) NOT NULL DEFAULT '1',
-  `destination` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`sid`)
+  `cron` tinyint(3) unsigned NOT NULL default '0',
+  `module` varchar(255) default NULL,
+  `status` int(11) NOT NULL default '1',
+  `destination` varchar(255) default NULL,
+  PRIMARY KEY  (`sid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `notifications`
@@ -5571,22 +5578,22 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `notifications_event`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `notifications_event` (
-  `eid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `module` varchar(255) DEFAULT NULL,
-  `type` varchar(255) DEFAULT NULL,
-  `action` varchar(255) DEFAULT NULL,
-  `oid` int(10) unsigned NOT NULL DEFAULT '0',
-  `language` varchar(255) DEFAULT NULL,
-  `uid` int(11) DEFAULT NULL,
+  `eid` int(10) unsigned NOT NULL auto_increment,
+  `module` varchar(255) default NULL,
+  `type` varchar(255) default NULL,
+  `action` varchar(255) default NULL,
+  `oid` int(10) unsigned NOT NULL default '0',
+  `language` varchar(255) default NULL,
+  `uid` int(11) default NULL,
   `params` text,
-  `created` int(10) unsigned NOT NULL DEFAULT '0',
-  `counter` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`eid`)
-) ENGINE=MyISAM AUTO_INCREMENT=806 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `created` int(10) unsigned NOT NULL default '0',
+  `counter` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`eid`)
+) ENGINE=MyISAM AUTO_INCREMENT=808 DEFAULT CHARSET=utf8;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `notifications_event`
@@ -5603,16 +5610,16 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `notifications_fields`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `notifications_fields` (
   `sid` int(10) unsigned NOT NULL,
   `field` varchar(255) NOT NULL,
   `value` varchar(255) NOT NULL,
-  `intval` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`sid`,`field`)
+  `intval` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`sid`,`field`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `notifications_fields`
@@ -5629,26 +5636,26 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `notifications_queue`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `notifications_queue` (
-  `sqid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `eid` int(10) unsigned NOT NULL DEFAULT '0',
-  `sid` int(10) unsigned NOT NULL DEFAULT '0',
-  `uid` int(11) DEFAULT NULL,
-  `language` varchar(255) DEFAULT NULL,
-  `type` varchar(255) DEFAULT NULL,
-  `send_interval` int(11) DEFAULT NULL,
-  `send_method` varchar(255) DEFAULT NULL,
-  `sent` int(10) unsigned NOT NULL DEFAULT '0',
-  `created` int(10) unsigned NOT NULL DEFAULT '0',
-  `cron` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `conditions` int(10) unsigned NOT NULL DEFAULT '0',
-  `module` varchar(255) DEFAULT NULL,
-  `destination` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`sqid`)
+  `sqid` int(10) unsigned NOT NULL auto_increment,
+  `eid` int(10) unsigned NOT NULL default '0',
+  `sid` int(10) unsigned NOT NULL default '0',
+  `uid` int(11) default NULL,
+  `language` varchar(255) default NULL,
+  `type` varchar(255) default NULL,
+  `send_interval` int(11) default NULL,
+  `send_method` varchar(255) default NULL,
+  `sent` int(10) unsigned NOT NULL default '0',
+  `created` int(10) unsigned NOT NULL default '0',
+  `cron` tinyint(3) unsigned NOT NULL default '0',
+  `conditions` int(10) unsigned NOT NULL default '0',
+  `module` varchar(255) default NULL,
+  `destination` varchar(255) default NULL,
+  PRIMARY KEY  (`sqid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `notifications_queue`
@@ -5665,16 +5672,16 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `notifications_sent`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `notifications_sent` (
-  `uid` int(11) NOT NULL DEFAULT '0',
-  `send_interval` int(11) NOT NULL DEFAULT '0',
+  `uid` int(11) NOT NULL default '0',
+  `send_interval` int(11) NOT NULL default '0',
   `send_method` varchar(50) NOT NULL,
-  `sent` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`uid`,`send_interval`,`send_method`)
+  `sent` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`uid`,`send_interval`,`send_method`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `notifications_sent`
@@ -5691,18 +5698,18 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `oauth_common_consumer`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `oauth_common_consumer` (
-  `csid` int(11) NOT NULL AUTO_INCREMENT,
+  `csid` int(11) NOT NULL auto_increment,
   `key_hash` char(40) NOT NULL,
   `consumer_key` text NOT NULL,
   `secret` text NOT NULL,
   `configuration` longtext NOT NULL,
-  PRIMARY KEY (`csid`),
+  PRIMARY KEY  (`csid`),
   KEY `key_hash` (`key_hash`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `oauth_common_consumer`
@@ -5719,18 +5726,18 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `oauth_common_context`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `oauth_common_context` (
-  `cid` int(11) NOT NULL AUTO_INCREMENT,
+  `cid` int(11) NOT NULL auto_increment,
   `name` varchar(32) NOT NULL,
   `title` varchar(100) NOT NULL,
   `authorization_options` longtext NOT NULL,
   `authorization_levels` longtext NOT NULL,
-  PRIMARY KEY (`cid`),
+  PRIMARY KEY  (`cid`),
   UNIQUE KEY `context` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `oauth_common_context`
@@ -5747,16 +5754,16 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `oauth_common_nonce`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `oauth_common_nonce` (
   `nonce` varchar(255) NOT NULL,
   `timestamp` int(11) NOT NULL,
   `token_key` varchar(32) NOT NULL,
-  PRIMARY KEY (`nonce`),
+  PRIMARY KEY  (`nonce`),
   KEY `timekey` (`timestamp`,`token_key`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `oauth_common_nonce`
@@ -5773,22 +5780,22 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `oauth_common_provider_consumer`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `oauth_common_provider_consumer` (
-  `csid` int(10) unsigned DEFAULT '0',
+  `csid` int(10) unsigned default '0',
   `consumer_key` char(32) NOT NULL,
-  `created` int(11) NOT NULL DEFAULT '0',
-  `changed` int(11) NOT NULL DEFAULT '0',
+  `created` int(11) NOT NULL default '0',
+  `changed` int(11) NOT NULL default '0',
   `uid` int(10) unsigned NOT NULL,
   `name` varchar(128) NOT NULL,
-  `context` varchar(32) NOT NULL DEFAULT '',
+  `context` varchar(32) NOT NULL default '',
   `callback_url` varchar(255) NOT NULL,
-  PRIMARY KEY (`consumer_key`),
+  PRIMARY KEY  (`consumer_key`),
   UNIQUE KEY `csid` (`csid`),
   KEY `uid` (`uid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `oauth_common_provider_consumer`
@@ -5805,19 +5812,19 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `oauth_common_provider_token`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `oauth_common_provider_token` (
-  `tid` int(10) unsigned DEFAULT '0',
+  `tid` int(10) unsigned default '0',
   `token_key` char(32) NOT NULL,
-  `created` int(11) NOT NULL DEFAULT '0',
-  `changed` int(11) NOT NULL DEFAULT '0',
+  `created` int(11) NOT NULL default '0',
+  `changed` int(11) NOT NULL default '0',
   `services` text,
-  `authorized` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`token_key`),
+  `authorized` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`token_key`),
   UNIQUE KEY `tid` (`tid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `oauth_common_provider_token`
@@ -5834,21 +5841,21 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `oauth_common_token`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `oauth_common_token` (
-  `tid` int(11) NOT NULL AUTO_INCREMENT,
-  `csid` int(10) unsigned NOT NULL DEFAULT '0',
+  `tid` int(11) NOT NULL auto_increment,
+  `csid` int(10) unsigned NOT NULL default '0',
   `key_hash` char(40) NOT NULL,
   `token_key` text NOT NULL,
   `secret` text NOT NULL,
-  `expires` int(11) NOT NULL DEFAULT '0',
-  `type` tinyint(4) NOT NULL DEFAULT '1',
-  `uid` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`tid`),
+  `expires` int(11) NOT NULL default '0',
+  `type` tinyint(4) NOT NULL default '1',
+  `uid` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`tid`),
   KEY `key_hash` (`key_hash`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `oauth_common_token`
@@ -5865,20 +5872,20 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `og`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `og` (
   `nid` int(11) NOT NULL,
-  `og_selective` int(11) NOT NULL DEFAULT '0',
-  `og_description` varchar(255) DEFAULT NULL,
-  `og_theme` varchar(255) DEFAULT NULL,
-  `og_register` tinyint(4) NOT NULL DEFAULT '0',
-  `og_directory` tinyint(4) NOT NULL DEFAULT '0',
-  `og_language` varchar(12) NOT NULL DEFAULT '',
-  `og_private` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`nid`)
+  `og_selective` int(11) NOT NULL default '0',
+  `og_description` varchar(255) default NULL,
+  `og_theme` varchar(255) default NULL,
+  `og_register` tinyint(4) NOT NULL default '0',
+  `og_directory` tinyint(4) NOT NULL default '0',
+  `og_language` varchar(12) NOT NULL default '',
+  `og_private` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `og`
@@ -5938,14 +5945,14 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `og_access_post`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `og_access_post` (
   `nid` int(11) NOT NULL,
-  `og_public` tinyint(4) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`nid`)
+  `og_public` tinyint(4) NOT NULL default '1',
+  PRIMARY KEY  (`nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `og_access_post`
@@ -6042,14 +6049,14 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `og_ancestry`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `og_ancestry` (
   `nid` int(11) NOT NULL,
   `group_nid` int(11) NOT NULL,
-  PRIMARY KEY (`nid`,`group_nid`)
+  PRIMARY KEY  (`nid`,`group_nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `og_ancestry`
@@ -6146,19 +6153,19 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `og_uid`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `og_uid` (
   `nid` int(11) NOT NULL,
-  `og_role` tinyint(4) NOT NULL DEFAULT '0',
-  `is_active` tinyint(4) NOT NULL DEFAULT '0',
-  `is_admin` tinyint(4) NOT NULL DEFAULT '0',
+  `og_role` tinyint(4) NOT NULL default '0',
+  `is_active` tinyint(4) NOT NULL default '0',
+  `is_admin` tinyint(4) NOT NULL default '0',
   `uid` int(11) NOT NULL,
-  `created` int(11) DEFAULT '0',
-  `changed` int(11) DEFAULT '0',
-  PRIMARY KEY (`nid`,`uid`)
+  `created` int(11) default '0',
+  `changed` int(11) default '0',
+  PRIMARY KEY  (`nid`,`uid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `og_uid`
@@ -6225,19 +6232,19 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `openid_association`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `openid_association` (
-  `idp_endpoint_uri` varchar(255) DEFAULT NULL,
+  `idp_endpoint_uri` varchar(255) default NULL,
   `assoc_handle` varchar(255) NOT NULL,
-  `assoc_type` varchar(32) DEFAULT NULL,
-  `session_type` varchar(32) DEFAULT NULL,
-  `mac_key` varchar(255) DEFAULT NULL,
-  `created` int(11) NOT NULL DEFAULT '0',
-  `expires_in` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`assoc_handle`)
+  `assoc_type` varchar(32) default NULL,
+  `session_type` varchar(32) default NULL,
+  `mac_key` varchar(255) default NULL,
+  `created` int(11) NOT NULL default '0',
+  `expires_in` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`assoc_handle`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `openid_association`
@@ -6254,16 +6261,16 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `openid_nonce`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `openid_nonce` (
-  `idp_endpoint_uri` varchar(255) DEFAULT NULL,
-  `nonce` varchar(255) DEFAULT NULL,
-  `expires` int(11) NOT NULL DEFAULT '0',
+  `idp_endpoint_uri` varchar(255) default NULL,
+  `nonce` varchar(255) default NULL,
+  `expires` int(11) NOT NULL default '0',
   KEY `nonce` (`nonce`),
   KEY `expires` (`expires`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `openid_nonce`
@@ -6279,17 +6286,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `permission`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `permission` (
-  `pid` int(11) NOT NULL AUTO_INCREMENT,
-  `rid` int(10) unsigned NOT NULL DEFAULT '0',
+  `pid` int(11) NOT NULL auto_increment,
+  `rid` int(10) unsigned NOT NULL default '0',
   `perm` longtext,
-  `tid` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`pid`),
+  `tid` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`pid`),
   KEY `rid` (`rid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=425 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `permission`
@@ -6311,15 +6318,15 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `purl`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `purl` (
-  `value` varchar(255) NOT NULL DEFAULT '',
-  `provider` varchar(255) NOT NULL DEFAULT '',
-  `id` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`value`)
+  `value` varchar(255) NOT NULL default '',
+  `provider` varchar(255) NOT NULL default '',
+  `id` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`value`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `purl`
@@ -6379,19 +6386,19 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `quicktabs`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `quicktabs` (
   `machine_name` varchar(255) NOT NULL,
-  `ajax` int(10) unsigned NOT NULL DEFAULT '0',
-  `hide_empty_tabs` int(10) unsigned NOT NULL DEFAULT '0',
+  `ajax` int(10) unsigned NOT NULL default '0',
+  `hide_empty_tabs` int(10) unsigned NOT NULL default '0',
   `default_tab` tinyint(3) unsigned NOT NULL,
   `title` varchar(255) NOT NULL,
   `tabs` mediumtext NOT NULL,
   `style` varchar(255) NOT NULL,
-  PRIMARY KEY (`machine_name`)
+  PRIMARY KEY  (`machine_name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `quicktabs`
@@ -6412,15 +6419,15 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `role`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `role` (
-  `rid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(64) NOT NULL DEFAULT '',
-  PRIMARY KEY (`rid`),
+  `rid` int(10) unsigned NOT NULL auto_increment,
+  `name` varchar(64) NOT NULL default '',
+  PRIMARY KEY  (`rid`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `role`
@@ -6443,14 +6450,14 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `rules_rules`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `rules_rules` (
-  `name` varchar(255) NOT NULL DEFAULT '',
+  `name` varchar(255) NOT NULL default '',
   `data` longblob,
-  PRIMARY KEY (`name`)
+  PRIMARY KEY  (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `rules_rules`
@@ -6467,14 +6474,14 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `rules_sets`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `rules_sets` (
-  `name` varchar(255) NOT NULL DEFAULT '',
+  `name` varchar(255) NOT NULL default '',
   `data` longblob,
-  PRIMARY KEY (`name`)
+  PRIMARY KEY  (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `rules_sets`
@@ -6491,16 +6498,16 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `search_dataset`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `search_dataset` (
-  `sid` int(10) unsigned NOT NULL DEFAULT '0',
-  `type` varchar(16) DEFAULT NULL,
+  `sid` int(10) unsigned NOT NULL default '0',
+  `type` varchar(16) default NULL,
   `data` longtext NOT NULL,
-  `reindex` int(10) unsigned NOT NULL DEFAULT '0',
+  `reindex` int(10) unsigned NOT NULL default '0',
   UNIQUE KEY `sid_type` (`sid`,`type`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `search_dataset`
@@ -6560,18 +6567,18 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `search_index`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `search_index` (
-  `word` varchar(50) NOT NULL DEFAULT '',
-  `sid` int(10) unsigned NOT NULL DEFAULT '0',
-  `type` varchar(16) DEFAULT NULL,
-  `score` float DEFAULT NULL,
+  `word` varchar(50) NOT NULL default '',
+  `sid` int(10) unsigned NOT NULL default '0',
+  `type` varchar(16) default NULL,
+  `score` float default NULL,
   UNIQUE KEY `word_sid_type` (`word`,`sid`,`type`),
   KEY `sid_type` (`sid`,`type`),
   KEY `word` (`word`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `search_index`
@@ -8368,17 +8375,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `search_node_links`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `search_node_links` (
-  `sid` int(10) unsigned NOT NULL DEFAULT '0',
-  `type` varchar(16) NOT NULL DEFAULT '',
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
+  `sid` int(10) unsigned NOT NULL default '0',
+  `type` varchar(16) NOT NULL default '',
+  `nid` int(10) unsigned NOT NULL default '0',
   `caption` longtext,
-  PRIMARY KEY (`sid`,`type`,`nid`),
+  PRIMARY KEY  (`sid`,`type`,`nid`),
   KEY `nid` (`nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `search_node_links`
@@ -8395,14 +8402,14 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `search_total`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `search_total` (
-  `word` varchar(50) NOT NULL DEFAULT '',
-  `count` float DEFAULT NULL,
-  PRIMARY KEY (`word`)
+  `word` varchar(50) NOT NULL default '',
+  `count` float default NULL,
+  PRIMARY KEY  (`word`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `search_total`
@@ -9040,16 +9047,16 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `semaphore`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `semaphore` (
-  `name` varchar(255) NOT NULL DEFAULT '',
-  `value` varchar(255) NOT NULL DEFAULT '',
+  `name` varchar(255) NOT NULL default '',
+  `value` varchar(255) NOT NULL default '',
   `expire` double NOT NULL,
-  PRIMARY KEY (`name`),
+  PRIMARY KEY  (`name`),
   KEY `expire` (`expire`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `semaphore`
@@ -9066,8 +9073,8 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `spaces_overrides`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `spaces_overrides` (
   `type` varchar(64) NOT NULL,
   `id` varchar(255) NOT NULL,
@@ -9077,7 +9084,7 @@ CREATE TABLE `spaces_overrides` (
   KEY `space` (`type`,`id`),
   KEY `object` (`object_type`,`object_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `spaces_overrides`
@@ -9146,18 +9153,18 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `spaces_presets`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `spaces_presets` (
   `name` varchar(64) NOT NULL,
   `title` varchar(64) NOT NULL,
   `description` text,
   `space_type` varchar(64) NOT NULL,
   `value` text,
-  PRIMARY KEY (`name`),
+  PRIMARY KEY  (`name`),
   KEY `type` (`space_type`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `spaces_presets`
@@ -9176,25 +9183,25 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `system`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `system` (
-  `filename` varchar(255) NOT NULL DEFAULT '',
-  `name` varchar(255) NOT NULL DEFAULT '',
-  `type` varchar(255) NOT NULL DEFAULT '',
-  `owner` varchar(255) NOT NULL DEFAULT '',
-  `status` int(11) NOT NULL DEFAULT '0',
-  `throttle` tinyint(4) NOT NULL DEFAULT '0',
-  `bootstrap` int(11) NOT NULL DEFAULT '0',
-  `schema_version` smallint(6) NOT NULL DEFAULT '-1',
-  `weight` int(11) NOT NULL DEFAULT '0',
+  `filename` varchar(255) NOT NULL default '',
+  `name` varchar(255) NOT NULL default '',
+  `type` varchar(255) NOT NULL default '',
+  `owner` varchar(255) NOT NULL default '',
+  `status` int(11) NOT NULL default '0',
+  `throttle` tinyint(4) NOT NULL default '0',
+  `bootstrap` int(11) NOT NULL default '0',
+  `schema_version` smallint(6) NOT NULL default '-1',
+  `weight` int(11) NOT NULL default '0',
   `info` text,
-  PRIMARY KEY (`filename`),
+  PRIMARY KEY  (`filename`),
   KEY `modules` (`type`(12),`status`,`weight`,`filename`),
   KEY `bootstrap` (`type`(12),`status`,`bootstrap`,`weight`,`filename`),
   KEY `type_name` (`type`(12),`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `system`
@@ -9489,19 +9496,19 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `term_data`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `term_data` (
-  `tid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `vid` int(10) unsigned NOT NULL DEFAULT '0',
-  `name` varchar(255) NOT NULL DEFAULT '',
+  `tid` int(10) unsigned NOT NULL auto_increment,
+  `vid` int(10) unsigned NOT NULL default '0',
+  `name` varchar(255) NOT NULL default '',
   `description` longtext,
-  `weight` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`tid`),
+  `weight` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`tid`),
   KEY `taxonomy_tree` (`vid`,`weight`,`name`),
   KEY `vid_name` (`vid`,`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `term_data`
@@ -9542,15 +9549,15 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `term_hierarchy`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `term_hierarchy` (
-  `tid` int(10) unsigned NOT NULL DEFAULT '0',
-  `parent` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`tid`,`parent`),
+  `tid` int(10) unsigned NOT NULL default '0',
+  `parent` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`tid`,`parent`),
   KEY `parent` (`parent`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `term_hierarchy`
@@ -9591,14 +9598,14 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `term_image`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `term_image` (
   `tid` int(10) unsigned NOT NULL,
   `path` varchar(255) NOT NULL,
-  PRIMARY KEY (`tid`)
+  PRIMARY KEY  (`tid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `term_image`
@@ -9618,17 +9625,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `term_node`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `term_node` (
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
-  `vid` int(10) unsigned NOT NULL DEFAULT '0',
-  `tid` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`tid`,`vid`),
+  `nid` int(10) unsigned NOT NULL default '0',
+  `vid` int(10) unsigned NOT NULL default '0',
+  `tid` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`tid`,`vid`),
   KEY `vid` (`vid`),
   KEY `nid` (`nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `term_node`
@@ -9697,14 +9704,14 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `term_node_count`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `term_node_count` (
-  `tid` int(10) unsigned NOT NULL DEFAULT '0',
-  `node_count` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`tid`)
+  `tid` int(10) unsigned NOT NULL default '0',
+  `node_count` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`tid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `term_node_count`
@@ -9745,17 +9752,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `term_relation`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `term_relation` (
-  `trid` int(11) NOT NULL AUTO_INCREMENT,
-  `tid1` int(10) unsigned NOT NULL DEFAULT '0',
-  `tid2` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`trid`),
+  `trid` int(11) NOT NULL auto_increment,
+  `tid1` int(10) unsigned NOT NULL default '0',
+  `tid2` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`trid`),
   UNIQUE KEY `tid1_tid2` (`tid1`,`tid2`),
   KEY `tid2` (`tid2`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `term_relation`
@@ -9772,17 +9779,17 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `term_synonym`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `term_synonym` (
-  `tsid` int(11) NOT NULL AUTO_INCREMENT,
-  `tid` int(10) unsigned NOT NULL DEFAULT '0',
-  `name` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`tsid`),
+  `tsid` int(11) NOT NULL auto_increment,
+  `tid` int(10) unsigned NOT NULL default '0',
+  `name` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`tsid`),
   KEY `tid` (`tid`),
   KEY `name_tid` (`name`,`tid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `term_synonym`
@@ -9799,20 +9806,20 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `upload`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `upload` (
-  `fid` int(10) unsigned NOT NULL DEFAULT '0',
-  `nid` int(10) unsigned NOT NULL DEFAULT '0',
-  `vid` int(10) unsigned NOT NULL DEFAULT '0',
-  `description` varchar(255) NOT NULL DEFAULT '',
-  `list` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `weight` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`vid`,`fid`),
+  `fid` int(10) unsigned NOT NULL default '0',
+  `nid` int(10) unsigned NOT NULL default '0',
+  `vid` int(10) unsigned NOT NULL default '0',
+  `description` varchar(255) NOT NULL default '',
+  `list` tinyint(3) unsigned NOT NULL default '0',
+  `weight` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`vid`,`fid`),
   KEY `fid` (`fid`),
   KEY `nid` (`nid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `upload`
@@ -9829,18 +9836,18 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `url_alias`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `url_alias` (
-  `pid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `src` varchar(128) NOT NULL DEFAULT '',
-  `dst` varchar(128) NOT NULL DEFAULT '',
-  `language` varchar(12) NOT NULL DEFAULT '',
-  PRIMARY KEY (`pid`),
+  `pid` int(10) unsigned NOT NULL auto_increment,
+  `src` varchar(128) NOT NULL default '',
+  `dst` varchar(128) NOT NULL default '',
+  `language` varchar(12) NOT NULL default '',
+  PRIMARY KEY  (`pid`),
   UNIQUE KEY `dst_language_pid` (`dst`,`language`,`pid`),
   KEY `src_language_pid` (`src`,`language`,`pid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `url_alias`
@@ -9857,36 +9864,36 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `users` (
-  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(60) NOT NULL DEFAULT '',
-  `pass` varchar(32) NOT NULL DEFAULT '',
-  `mail` varchar(64) DEFAULT '',
-  `mode` tinyint(4) NOT NULL DEFAULT '0',
-  `sort` tinyint(4) DEFAULT '0',
-  `threshold` tinyint(4) DEFAULT '0',
-  `theme` varchar(255) NOT NULL DEFAULT '',
-  `signature` varchar(255) NOT NULL DEFAULT '',
-  `signature_format` smallint(6) NOT NULL DEFAULT '0',
-  `created` int(11) NOT NULL DEFAULT '0',
-  `access` int(11) NOT NULL DEFAULT '0',
-  `login` int(11) NOT NULL DEFAULT '0',
-  `status` tinyint(4) NOT NULL DEFAULT '0',
-  `timezone` varchar(8) DEFAULT NULL,
-  `language` varchar(12) NOT NULL DEFAULT '',
-  `picture` varchar(255) NOT NULL DEFAULT '',
-  `init` varchar(64) DEFAULT '',
+  `uid` int(10) unsigned NOT NULL auto_increment,
+  `name` varchar(60) NOT NULL default '',
+  `pass` varchar(32) NOT NULL default '',
+  `mail` varchar(64) default '',
+  `mode` tinyint(4) NOT NULL default '0',
+  `sort` tinyint(4) default '0',
+  `threshold` tinyint(4) default '0',
+  `theme` varchar(255) NOT NULL default '',
+  `signature` varchar(255) NOT NULL default '',
+  `signature_format` smallint(6) NOT NULL default '0',
+  `created` int(11) NOT NULL default '0',
+  `access` int(11) NOT NULL default '0',
+  `login` int(11) NOT NULL default '0',
+  `status` tinyint(4) NOT NULL default '0',
+  `timezone` varchar(8) default NULL,
+  `language` varchar(12) NOT NULL default '',
+  `picture` varchar(255) NOT NULL default '',
+  `init` varchar(64) default '',
   `data` longtext,
-  `timezone_name` varchar(50) NOT NULL DEFAULT '',
-  PRIMARY KEY (`uid`),
+  `timezone_name` varchar(50) NOT NULL default '',
+  PRIMARY KEY  (`uid`),
   UNIQUE KEY `name` (`name`),
   KEY `access` (`access`),
   KEY `created` (`created`),
   KEY `mail` (`mail`)
 ) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `users`
@@ -9896,7 +9903,7 @@ CREATE TABLE `users` (
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` VALUES (0,'','','',0,0,0,'','',0,0,0,0,0,NULL,'','','',NULL,'');
-INSERT INTO `users` VALUES (1,'superadmin','c6625b88666033caf5d080239dd459c0','matt@neontribe.co.uk',0,0,0,'','',0,1309171755,1315493384,1315486713,1,'3600','','','apps4good@neontribe.org','a:8:{s:17:\"messaging_default\";s:4:\"mail\";s:27:\"notifications_send_interval\";s:1:\"0\";s:29:\"taxonomy_image_disable_images\";i:0;s:14:\"picture_delete\";s:0:\"\";s:14:\"picture_upload\";s:0:\"\";s:18:\"spaces_preset_user\";s:21:\"atrium_members_simple\";s:13:\"form_build_id\";s:37:\"form-f1a35dc137937e225c9d3cd7076639e2\";s:16:\"comment_settings\";s:0:\"\";}','Europe/London');
+INSERT INTO `users` VALUES (1,'superadmin','c6625b88666033caf5d080239dd459c0','matt@neontribe.co.uk',0,0,0,'','',0,1309171755,1315918842,1315914403,1,'3600','','','apps4good@neontribe.org','a:8:{s:17:\"messaging_default\";s:4:\"mail\";s:27:\"notifications_send_interval\";s:1:\"0\";s:29:\"taxonomy_image_disable_images\";i:0;s:14:\"picture_delete\";s:0:\"\";s:14:\"picture_upload\";s:0:\"\";s:18:\"spaces_preset_user\";s:21:\"atrium_members_simple\";s:13:\"form_build_id\";s:37:\"form-f1a35dc137937e225c9d3cd7076639e2\";s:16:\"comment_settings\";s:0:\"\";}','Europe/London');
 INSERT INTO `users` VALUES (7,'Daniel Morris','5f4dcc3b5aa765d61d8327deb882cf99','daniel.morris@cdieurope.eu',0,0,0,'','',0,1309269044,1315476100,1315476100,1,'3600','','','','a:15:{s:12:\"mail_confirm\";s:7:\"dan@afg\";s:20:\"welcome_message_body\";s:0:\"\";s:2:\"op\";s:3:\"Add\";s:6:\"submit\";s:3:\"Add\";s:13:\"form_build_id\";s:37:\"form-505c8de5bea1b630b939f4687a343533\";s:10:\"form_token\";s:32:\"c1edb29d2dfada8666aadf464f63a6c4\";s:7:\"form_id\";s:17:\"ucreate_user_form\";s:11:\"og_register\";a:5:{i:1;i:0;i:22;i:0;i:21;i:0;i:18;i:0;i:20;i:0;}s:17:\"messaging_default\";s:4:\"mail\";s:27:\"notifications_send_interval\";s:1:\"0\";s:29:\"taxonomy_image_disable_images\";i:0;s:14:\"picture_delete\";s:0:\"\";s:14:\"picture_upload\";s:0:\"\";s:18:\"spaces_preset_user\";s:21:\"atrium_members_simple\";s:16:\"comment_settings\";s:0:\"\";}','Europe/London');
 INSERT INTO `users` VALUES (10,'Katja','5f4dcc3b5aa765d61d8327deb882cf99','katjamordaunt@gmail.com',0,0,0,'','',0,1309790616,1309790616,0,1,'3600','','','','a:16:{s:12:\"mail_confirm\";s:23:\"katjamordaunt@gmail.com\";s:20:\"welcome_message_body\";s:0:\"\";s:2:\"op\";s:3:\"Add\";s:6:\"submit\";s:3:\"Add\";s:13:\"form_build_id\";s:37:\"form-b234729f53a21c378a3897dfa3dc79d0\";s:10:\"form_token\";s:32:\"39b17838a0cf27f3ab0e9dc1357de88c\";s:7:\"form_id\";s:17:\"ucreate_user_form\";s:11:\"og_register\";a:5:{i:21;i:21;i:1;i:0;i:22;i:0;i:18;i:0;i:20;i:0;}s:23:\"ucreate_og_group_titles\";a:1:{i:0;s:11:\"Popstar App\";}s:17:\"messaging_default\";s:4:\"mail\";s:27:\"notifications_send_interval\";s:1:\"0\";s:29:\"taxonomy_image_disable_images\";i:0;s:14:\"picture_delete\";s:0:\"\";s:14:\"picture_upload\";s:0:\"\";s:18:\"spaces_preset_user\";s:21:\"atrium_members_simple\";s:16:\"comment_settings\";s:0:\"\";}','Europe/London');
 INSERT INTO `users` VALUES (12,'danpress','48d80ce90cdcd5941c0b515467172383','danieljohnmorris+atriumpress@gmail.com',0,0,0,'','',0,1311248520,1311248754,0,1,'3600','','','danieljohnmorris+atriumpress@gmail.com','a:2:{s:11:\"og_register\";a:14:{i:38;i:0;i:45;i:0;i:41;i:0;i:36;i:0;i:37;i:0;i:1;i:0;i:22;i:0;i:21;i:0;i:18;i:0;i:20;i:0;i:28;i:0;i:13;i:0;i:35;i:0;i:42;i:0;}s:13:\"form_build_id\";s:37:\"form-2ee130785c726c4221a750b1cc835d5b\";}','');
@@ -9918,15 +9925,15 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `users_roles`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `users_roles` (
-  `uid` int(10) unsigned NOT NULL DEFAULT '0',
-  `rid` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`uid`,`rid`),
+  `uid` int(10) unsigned NOT NULL default '0',
+  `rid` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`uid`,`rid`),
   KEY `rid` (`rid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `users_roles`
@@ -9949,14 +9956,14 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `variable`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `variable` (
-  `name` varchar(128) NOT NULL DEFAULT '',
+  `name` varchar(128) NOT NULL default '',
   `value` longtext NOT NULL,
-  PRIMARY KEY (`name`)
+  PRIMARY KEY  (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `variable`
@@ -10038,9 +10045,9 @@ INSERT INTO `variable` VALUES ('comment_upload_images_group_media_image','s:4:\"
 INSERT INTO `variable` VALUES ('comment_upload_images_group_media_video','s:4:\"none\";');
 INSERT INTO `variable` VALUES ('comment_upload_images_request_for_help','s:4:\"none\";');
 INSERT INTO `variable` VALUES ('comment_upload_request_for_help','s:1:\"0\";');
-INSERT INTO `variable` VALUES ('content_extra_weights_blog','a:11:{s:5:\"title\";s:2:\"-5\";s:10:\"body_field\";s:1:\"0\";s:20:\"revision_information\";s:2:\"20\";s:6:\"author\";s:2:\"20\";s:7:\"options\";s:2:\"25\";s:16:\"comment_settings\";s:2:\"30\";s:4:\"menu\";s:2:\"-2\";s:8:\"taxonomy\";s:2:\"-3\";s:4:\"book\";s:2:\"10\";s:11:\"attachments\";s:2:\"30\";s:10:\"og_nodeapi\";s:1:\"0\";}');
+INSERT INTO `variable` VALUES ('content_extra_weights_blog','a:12:{s:5:\"title\";s:2:\"-5\";s:10:\"body_field\";s:1:\"0\";s:20:\"revision_information\";s:2:\"20\";s:6:\"author\";s:2:\"20\";s:7:\"options\";s:2:\"25\";s:16:\"comment_settings\";s:2:\"30\";s:4:\"menu\";s:2:\"-2\";s:8:\"taxonomy\";s:2:\"-3\";s:4:\"book\";s:2:\"10\";s:4:\"path\";s:2:\"30\";s:11:\"attachments\";s:2:\"30\";s:10:\"og_nodeapi\";s:1:\"0\";}');
 INSERT INTO `variable` VALUES ('content_extra_weights_cdi_blog','a:10:{s:5:\"title\";s:2:\"-5\";s:10:\"body_field\";s:1:\"0\";s:20:\"revision_information\";s:2:\"20\";s:6:\"author\";s:2:\"20\";s:7:\"options\";s:2:\"25\";s:16:\"comment_settings\";s:2:\"30\";s:4:\"menu\";s:2:\"-2\";s:8:\"taxonomy\";s:2:\"-3\";s:4:\"book\";s:2:\"10\";s:11:\"attachments\";s:2:\"30\";}');
-INSERT INTO `variable` VALUES ('content_extra_weights_group_app_team','a:15:{s:5:\"title\";s:2:\"-5\";s:10:\"body_field\";s:1:\"1\";s:20:\"revision_information\";s:1:\"7\";s:6:\"author\";s:1:\"8\";s:7:\"options\";s:1:\"9\";s:16:\"comment_settings\";s:2:\"11\";s:4:\"menu\";s:1:\"0\";s:8:\"taxonomy\";s:2:\"-1\";s:4:\"book\";s:1:\"6\";s:11:\"attachments\";s:2:\"10\";s:14:\"og_description\";s:2:\"-2\";s:12:\"og_selective\";s:1:\"2\";s:11:\"og_register\";s:1:\"3\";s:12:\"og_directory\";s:1:\"4\";s:10:\"og_private\";s:1:\"5\";}');
+INSERT INTO `variable` VALUES ('content_extra_weights_group_app_team','a:16:{s:5:\"title\";s:2:\"-5\";s:10:\"body_field\";s:1:\"1\";s:20:\"revision_information\";s:1:\"7\";s:6:\"author\";s:1:\"8\";s:7:\"options\";s:1:\"9\";s:16:\"comment_settings\";s:2:\"11\";s:4:\"menu\";s:1:\"0\";s:8:\"taxonomy\";s:2:\"-1\";s:4:\"book\";s:1:\"6\";s:4:\"path\";s:2:\"30\";s:11:\"attachments\";s:2:\"10\";s:14:\"og_description\";s:2:\"-2\";s:12:\"og_selective\";s:1:\"2\";s:11:\"og_register\";s:1:\"3\";s:12:\"og_directory\";s:1:\"4\";s:10:\"og_private\";s:1:\"5\";}');
 INSERT INTO `variable` VALUES ('content_extra_weights_group_centre_school','a:15:{s:5:\"title\";s:2:\"-5\";s:10:\"body_field\";s:1:\"2\";s:20:\"revision_information\";s:1:\"9\";s:6:\"author\";s:2:\"10\";s:7:\"options\";s:2:\"11\";s:16:\"comment_settings\";s:2:\"13\";s:4:\"menu\";s:1:\"3\";s:8:\"taxonomy\";s:2:\"-3\";s:4:\"book\";s:1:\"8\";s:11:\"attachments\";s:2:\"12\";s:14:\"og_description\";s:2:\"-4\";s:12:\"og_selective\";s:1:\"4\";s:11:\"og_register\";s:1:\"5\";s:12:\"og_directory\";s:1:\"6\";s:10:\"og_private\";s:1:\"7\";}');
 INSERT INTO `variable` VALUES ('content_extra_weights_group_image','a:10:{s:5:\"title\";s:2:\"-5\";s:10:\"body_field\";s:1:\"2\";s:20:\"revision_information\";s:1:\"4\";s:6:\"author\";s:1:\"5\";s:7:\"options\";s:1:\"6\";s:16:\"comment_settings\";s:1:\"7\";s:4:\"menu\";s:1:\"0\";s:4:\"book\";s:1:\"3\";s:11:\"attachments\";s:1:\"8\";s:10:\"og_nodeapi\";s:1:\"1\";}');
 INSERT INTO `variable` VALUES ('content_extra_weights_profile','a:8:{s:5:\"title\";s:2:\"-5\";s:20:\"revision_information\";s:1:\"5\";s:6:\"author\";s:1:\"6\";s:7:\"options\";s:1:\"7\";s:16:\"comment_settings\";s:1:\"8\";s:4:\"menu\";s:2:\"-1\";s:8:\"taxonomy\";s:2:\"-2\";s:4:\"book\";s:1:\"4\";}');
@@ -10052,10 +10059,10 @@ INSERT INTO `variable` VALUES ('content_profile_use_group_media_image','i:0;');
 INSERT INTO `variable` VALUES ('content_profile_use_group_media_video','i:0;');
 INSERT INTO `variable` VALUES ('content_profile_use_request_for_help','i:0;');
 INSERT INTO `variable` VALUES ('content_schema_version','i:6009;');
-INSERT INTO `variable` VALUES ('context_block_rebuild_needed','b:1;');
+INSERT INTO `variable` VALUES ('context_block_rebuild_needed','b:0;');
 INSERT INTO `variable` VALUES ('context_status','a:1:{s:14:\"groups_listing\";b:0;}');
 INSERT INTO `variable` VALUES ('cron_last','i:1315317149;');
-INSERT INTO `variable` VALUES ('css_js_query_string','s:20:\"jERT69wD5IFu8YnvB4hb\";');
+INSERT INTO `variable` VALUES ('css_js_query_string','s:20:\"WeNfjERT69wD5IFu8Ynv\";');
 INSERT INTO `variable` VALUES ('ctools_last_cron','i:1315317148;');
 INSERT INTO `variable` VALUES ('date_api_version','s:3:\"5.2\";');
 INSERT INTO `variable` VALUES ('date_default_timezone','s:4:\"3600\";');
@@ -10098,7 +10105,7 @@ INSERT INTO `variable` VALUES ('fb_social_like_send_button','i:0;');
 INSERT INTO `variable` VALUES ('fb_social_like_show_faces','i:0;');
 INSERT INTO `variable` VALUES ('fb_social_like_verb','s:4:\"like\";');
 INSERT INTO `variable` VALUES ('fb_social_like_width','s:3:\"350\";');
-INSERT INTO `variable` VALUES ('features_codecache','a:24:{s:6:\"atrium\";a:9:{s:12:\"dependencies\";s:32:\"40d15bc35337b02af62f93b4e3b068db\";s:6:\"filter\";s:32:\"ab919da667f41b978a2b91b3f055c02b\";s:8:\"taxonomy\";s:32:\"3560400037de101046e9156ba57db7b4\";s:9:\"user_role\";s:32:\"a4c3a6c2ce87a5774e87c784f07e3ccd\";s:15:\"user_permission\";s:32:\"98100d3351082e56b9302ccbeaf36261\";s:8:\"variable\";s:32:\"727deb8e305373e3a6d8e206a3b59fb5\";s:7:\"context\";s:32:\"a3523b274aca8d95383654b0ff2e9bcd\";s:10:\"imagecache\";s:32:\"e71054a6c1629663ffc35395e42f1bae\";s:5:\"views\";s:32:\"29bb65e62e1b1edb59b76e866667670d\";}s:15:\"atrium_activity\";a:3:{s:12:\"dependencies\";s:32:\"b2779b2deaf680d13cdadebd807067ca\";s:7:\"context\";s:32:\"472519d31b4fb0359431f85522cf47ff\";s:5:\"views\";s:32:\"c87874c0a31a9f00abbc8ff5e291f404\";}s:11:\"atrium_blog\";a:7:{s:12:\"dependencies\";s:32:\"3816076bf81e7e3c3a0a67a6294a185f\";s:15:\"user_permission\";s:32:\"5e89e45dd200de0792cc8aa7b0df483b\";s:7:\"content\";s:32:\"8166503b90493cc6686b87a4366c0304\";s:8:\"variable\";s:32:\"1b0bde832a271cb79a21f1b084133c60\";s:4:\"node\";s:32:\"0aeffc5d9c130263e060a905702d6959\";s:7:\"context\";s:32:\"8d756ce0a22a0d4bbe88a94db9258bcc\";s:5:\"views\";s:32:\"35f0076556d3a5c189a49ec7fa128ffd\";}s:11:\"atrium_book\";a:6:{s:12:\"dependencies\";s:32:\"9b783abcf289971e0108d55db1bec761\";s:15:\"user_permission\";s:32:\"865902276ffae9eea7698ec57c69f3dd\";s:8:\"variable\";s:32:\"9cc94ec65623b4c2a6805fb07df07841\";s:4:\"node\";s:32:\"be03c63c256db33b879d21692fbc98f1\";s:7:\"context\";s:32:\"a5c914bdf39e5261252d4057974b4dfa\";s:5:\"views\";s:32:\"d6d433cfc4807f9765cae5b0f2450dc1\";}s:15:\"atrium_calendar\";a:8:{s:12:\"dependencies\";s:32:\"5a9ce296303790a8e5108cc96d854b3e\";s:15:\"user_permission\";s:32:\"89ed7a08bfbf8e13f71f63d3021e12e8\";s:7:\"content\";s:32:\"5271acaca9c742a9f2bb8c247331ee67\";s:8:\"variable\";s:32:\"c6ae1a122018a38eaa66953a36b66143\";s:4:\"node\";s:32:\"d347ebb402fe63aa3269e18c06d61d29\";s:7:\"context\";s:32:\"b9d78c501804662d7846e6d0d0142765\";s:14:\"feeds_importer\";s:32:\"969eb9b4c913a6426276c998a68b79c2\";s:5:\"views\";s:32:\"1248745745664d90ac8cbead72332cd3\";}s:18:\"atrium_casetracker\";a:6:{s:12:\"dependencies\";s:32:\"69f3cc46fd6bb2c690461526f40ebd93\";s:15:\"user_permission\";s:32:\"42cf1dc829440a637f586ecf2740f68c\";s:8:\"variable\";s:32:\"8f194ba0a81ee89dd78555c70429f1fe\";s:4:\"node\";s:32:\"5633af02044ef3fb7d2f81b8ad2e6c0b\";s:7:\"context\";s:32:\"a2d99564f7cd4a65d8817150b080acf8\";s:5:\"views\";s:32:\"bfcb8f16ad0d86374d9a783b3fbcc2ed\";}s:13:\"atrium_groups\";a:7:{s:12:\"dependencies\";s:32:\"7e9084c94ea17299f3af0f32e58ab91a\";s:15:\"user_permission\";s:32:\"941c08d1ef279dd917b4157d0d8efacd\";s:8:\"variable\";s:32:\"67059bd47dcbec008f68838fcc632037\";s:14:\"spaces_presets\";s:32:\"481d50d9ef7d08dcf07a5ed5b5919324\";s:4:\"node\";s:32:\"72dba56d0d6aeb9927f219d134e53888\";s:7:\"context\";s:32:\"1009bbcc089d40dad96cc7e8e831f1bf\";s:5:\"views\";s:32:\"5bd707974cb036aad95822f275746858\";}s:14:\"atrium_members\";a:6:{s:12:\"dependencies\";s:32:\"2ac0d0bd72a403e64fe4476ab1ac5f55\";s:15:\"user_permission\";s:32:\"da24f22ceb10e0c716b0be782f87d330\";s:8:\"variable\";s:32:\"1352e8f0923346ba2acfcf1624c4999c\";s:14:\"spaces_presets\";s:32:\"688607ebc0fd263921ce3024e95e0733\";s:7:\"context\";s:32:\"7ac04d0b18811bd06d16fb0a7e59d16c\";s:5:\"views\";s:32:\"6885e056a8b959ff51839cfaa05db902\";}s:14:\"atrium_profile\";a:6:{s:12:\"dependencies\";s:32:\"18e4199957846a68739f9e952fe50e53\";s:15:\"user_permission\";s:32:\"aa6f1bf3592e6d2dd2c129df461568e6\";s:7:\"content\";s:32:\"ce6a444b6940f142a8f9e82f7d4ae5ac\";s:8:\"variable\";s:32:\"f9b55e3b8a73909889c0a70b123e64d8\";s:4:\"node\";s:32:\"8b6d616b6ddd400e3baeb5b8a71eaf92\";s:5:\"views\";s:32:\"0dec18f96ccf55cda02ddc554c479fff\";}s:15:\"atrium_shoutbox\";a:6:{s:12:\"dependencies\";s:32:\"86c455b15dd8a8134855706aacb933ce\";s:15:\"user_permission\";s:32:\"675c816c86798b6b576e308932cf2632\";s:8:\"variable\";s:32:\"6fad4bd28f18a580c1d1ad1f24b162d9\";s:4:\"node\";s:32:\"39844487b4a27afc74887c126e06164f\";s:7:\"context\";s:32:\"b391ccfd47f04c41632e48ff18fc96b2\";s:5:\"views\";s:32:\"dda511c75c1104f75e4aad33a679e5cc\";}s:7:\"reldate\";a:2:{s:12:\"dependencies\";s:32:\"b8649c4bb804bfb9681a3688faf6c7f4\";s:8:\"variable\";s:32:\"65efb4034e99589430ec2f9a3016dac3\";}s:16:\"spaces_dashboard\";a:2:{s:12:\"dependencies\";s:32:\"8e2d04c24b26681f166ffa783f94a394\";s:7:\"context\";s:32:\"c1b803820e6ba95d5bb2e7e88bdb3f9a\";}s:16:\"afg_groups_views\";a:13:{s:12:\"dependencies\";s:32:\"dd9a44482cd2f6156966f7938b45117a\";s:8:\"taxonomy\";s:32:\"67c30ac6eed91133261fe7b9245145cc\";s:7:\"content\";s:32:\"efdd1f8ba91acbf8c6b88d871a675098\";s:8:\"variable\";s:32:\"acc962967d8e42964c24b504ee747a84\";s:4:\"node\";s:32:\"492f7ae7a81ce82bf0c2fd93cc5b3fd9\";s:7:\"context\";s:32:\"7d02d061334b52b14dbd066c3c396d1c\";s:5:\"views\";s:32:\"8dc457edbacb762303245b0ab4fb75e3\";s:9:\"user_role\";s:32:\"2deb60e508d5d0bd523c6639a2f7e003\";s:10:\"imagecache\";s:32:\"aeaa58e8eb145a5285737446bdbe2095\";s:9:\"quicktabs\";s:32:\"a63c729f6c8c8d5e3ead16570b10c2d8\";s:17:\"fe_block_settings\";s:32:\"5634ccf1af16d578a37f935bdc1763e7\";s:11:\"menu_custom\";s:32:\"cfcc1e297fe75cf9bcf27bee983c28ba\";s:10:\"menu_links\";b:0;}s:21:\"afg_group_definitions\";a:2:{s:12:\"dependencies\";s:32:\"4225663c5a151d2366d51f63dc70e506\";s:14:\"spaces_presets\";s:32:\"4470d35a9644517e169d22784151d9ff\";}s:11:\"afg_profile\";a:6:{s:12:\"dependencies\";s:32:\"bb3cc08438a24df727c7cc3c67d0498d\";s:9:\"user_role\";s:32:\"d0f7b8ad4dc90285e789cbe0d7931511\";s:7:\"content\";s:32:\"f541a726192839a548003439b983c6e5\";s:8:\"variable\";s:32:\"4cd4336e258815981623f52e66b0322b\";s:7:\"context\";s:32:\"217ef05ad9f4bdf2a0f91d58f613915f\";s:5:\"views\";s:32:\"ff4b4992adb0092cb2c9b4c324f17688\";}s:6:\"badges\";a:3:{s:12:\"dependencies\";s:32:\"ce9614f3a2bc756aac911c07826274c4\";s:8:\"variable\";s:32:\"b5a55a11d58dbd97934e33ea72e43714\";s:5:\"views\";s:32:\"a2c1326bc601972b280afcb3a5ed9adb\";}s:15:\"string_replaces\";a:2:{s:8:\"variable\";s:32:\"8727983ad91ea2bcb68c72170e6a070b\";s:12:\"dependencies\";s:32:\"eb918295f64fb9ad4ab7e4c35576de74\";}s:17:\"afg_facebook_like\";a:2:{s:12:\"dependencies\";s:32:\"bc1f88b3cb2573d24b604b47e46e0a62\";s:7:\"context\";s:32:\"9449c2865976f23aa5e1b414f8c36154\";}s:16:\"afg_group_images\";a:7:{s:10:\"menu_links\";s:32:\"8a10242517c4dcf2646c5a7c8b8a9688\";s:12:\"dependencies\";s:32:\"fa5b056df3f4d42137654e7227ca32f4\";s:7:\"content\";s:32:\"58315b9a1bd7cb4e8e4f348c41982435\";s:8:\"variable\";s:32:\"5fed30f95e29b3b925315bc45d167926\";s:4:\"node\";s:32:\"f5c8a2647090473adf3948b8f8d3a6d8\";s:10:\"imagecache\";s:32:\"c754f76f7c81c565b3f3fe95b3fa96a5\";s:5:\"views\";s:32:\"811477e3b1b60681794c1bb6cdbee39d\";}s:15:\"afg_group_media\";a:8:{s:12:\"dependencies\";s:32:\"30df2fe765a20df1b6b66faf16066cdd\";s:7:\"content\";s:32:\"a07e48e889c607ff0497d34fa57274a6\";s:8:\"variable\";s:32:\"a4c314ea6accfa540ce0b4b55509204f\";s:4:\"node\";s:32:\"5c2db2708e35129dbe174285120c6342\";s:5:\"views\";s:32:\"7cac42322fa733fe70ebf63922785e0f\";s:8:\"taxonomy\";s:32:\"79bdd95cad8832acd893cf664eee12df\";s:9:\"quicktabs\";s:32:\"c5130da73d6deae73eda2aa30ea84fef\";s:15:\"user_permission\";s:32:\"bdfdf64f3cffc01c8ff39bb3c9d308af\";}s:8:\"cdi_blog\";a:8:{s:12:\"dependencies\";s:32:\"6fd5c1a4baf81594da5f79561268d93d\";s:8:\"taxonomy\";s:32:\"9c3a2f88f539106ecb1cfb8f366d2ab0\";s:7:\"content\";s:32:\"3cd8363695f20e74c2beba943d33d4d5\";s:8:\"variable\";s:32:\"22c3b7aef8b449919f855391e14860b8\";s:4:\"node\";s:32:\"56e4ecd4991a3549f62f51968881fb3f\";s:9:\"quicktabs\";s:32:\"479edd20f6dc846b9418f81ec87cfd52\";s:5:\"views\";s:32:\"b0be73b8ff56eda44276e0207e35b6bc\";s:10:\"imagecache\";s:32:\"6b97c077f63bfb46ba57afb07d5709a0\";}s:17:\"afg_theme_updates\";a:2:{s:12:\"dependencies\";s:32:\"fb4cbc95ff4c3237a435305759a5a24d\";s:11:\"menu_custom\";s:32:\"0cbb589d5f3545a0814c3731e9ef1501\";}s:9:\"afg_menus\";a:3:{s:12:\"dependencies\";s:32:\"ef2d17dabeba968f79bc6270e446aafb\";s:11:\"menu_custom\";s:32:\"cd875f6cf95cfd216b44bb72ac0e7c28\";s:10:\"menu_links\";s:32:\"453019f11c03c7ad51c43ee15cc8141e\";}s:13:\"afg_fckeditor\";a:4:{s:12:\"dependencies\";s:32:\"d87ffba5a09f06969d3997d5bf795b9e\";s:15:\"user_permission\";s:32:\"b6d08f01c2e6e8a3837664bd486704dd\";s:8:\"variable\";s:32:\"54b7ec2eb891176290da2504635695fd\";s:7:\"wysiwyg\";s:32:\"dcea57ca6c7d86ccecf5f463ebbdd89e\";}}');
+INSERT INTO `variable` VALUES ('features_codecache','a:24:{s:6:\"atrium\";a:9:{s:12:\"dependencies\";s:32:\"40d15bc35337b02af62f93b4e3b068db\";s:6:\"filter\";s:32:\"ab919da667f41b978a2b91b3f055c02b\";s:8:\"taxonomy\";s:32:\"3560400037de101046e9156ba57db7b4\";s:9:\"user_role\";s:32:\"a4c3a6c2ce87a5774e87c784f07e3ccd\";s:15:\"user_permission\";s:32:\"98100d3351082e56b9302ccbeaf36261\";s:8:\"variable\";s:32:\"727deb8e305373e3a6d8e206a3b59fb5\";s:7:\"context\";s:32:\"a3523b274aca8d95383654b0ff2e9bcd\";s:10:\"imagecache\";s:32:\"e71054a6c1629663ffc35395e42f1bae\";s:5:\"views\";s:32:\"29bb65e62e1b1edb59b76e866667670d\";}s:15:\"atrium_activity\";a:3:{s:12:\"dependencies\";s:32:\"b2779b2deaf680d13cdadebd807067ca\";s:7:\"context\";s:32:\"472519d31b4fb0359431f85522cf47ff\";s:5:\"views\";s:32:\"c87874c0a31a9f00abbc8ff5e291f404\";}s:11:\"atrium_blog\";a:7:{s:12:\"dependencies\";s:32:\"3816076bf81e7e3c3a0a67a6294a185f\";s:15:\"user_permission\";s:32:\"5e89e45dd200de0792cc8aa7b0df483b\";s:7:\"content\";s:32:\"8166503b90493cc6686b87a4366c0304\";s:8:\"variable\";s:32:\"1b0bde832a271cb79a21f1b084133c60\";s:4:\"node\";s:32:\"0aeffc5d9c130263e060a905702d6959\";s:7:\"context\";s:32:\"8d756ce0a22a0d4bbe88a94db9258bcc\";s:5:\"views\";s:32:\"35f0076556d3a5c189a49ec7fa128ffd\";}s:11:\"atrium_book\";a:6:{s:12:\"dependencies\";s:32:\"9b783abcf289971e0108d55db1bec761\";s:15:\"user_permission\";s:32:\"865902276ffae9eea7698ec57c69f3dd\";s:8:\"variable\";s:32:\"9cc94ec65623b4c2a6805fb07df07841\";s:4:\"node\";s:32:\"be03c63c256db33b879d21692fbc98f1\";s:7:\"context\";s:32:\"a5c914bdf39e5261252d4057974b4dfa\";s:5:\"views\";s:32:\"d6d433cfc4807f9765cae5b0f2450dc1\";}s:15:\"atrium_calendar\";a:8:{s:12:\"dependencies\";s:32:\"5a9ce296303790a8e5108cc96d854b3e\";s:15:\"user_permission\";s:32:\"89ed7a08bfbf8e13f71f63d3021e12e8\";s:7:\"content\";s:32:\"5271acaca9c742a9f2bb8c247331ee67\";s:8:\"variable\";s:32:\"c6ae1a122018a38eaa66953a36b66143\";s:4:\"node\";s:32:\"d347ebb402fe63aa3269e18c06d61d29\";s:7:\"context\";s:32:\"b9d78c501804662d7846e6d0d0142765\";s:14:\"feeds_importer\";s:32:\"969eb9b4c913a6426276c998a68b79c2\";s:5:\"views\";s:32:\"1248745745664d90ac8cbead72332cd3\";}s:18:\"atrium_casetracker\";a:6:{s:12:\"dependencies\";s:32:\"69f3cc46fd6bb2c690461526f40ebd93\";s:15:\"user_permission\";s:32:\"42cf1dc829440a637f586ecf2740f68c\";s:8:\"variable\";s:32:\"8f194ba0a81ee89dd78555c70429f1fe\";s:4:\"node\";s:32:\"5633af02044ef3fb7d2f81b8ad2e6c0b\";s:7:\"context\";s:32:\"a2d99564f7cd4a65d8817150b080acf8\";s:5:\"views\";s:32:\"bfcb8f16ad0d86374d9a783b3fbcc2ed\";}s:13:\"atrium_groups\";a:7:{s:12:\"dependencies\";s:32:\"7e9084c94ea17299f3af0f32e58ab91a\";s:15:\"user_permission\";s:32:\"941c08d1ef279dd917b4157d0d8efacd\";s:8:\"variable\";s:32:\"67059bd47dcbec008f68838fcc632037\";s:14:\"spaces_presets\";s:32:\"481d50d9ef7d08dcf07a5ed5b5919324\";s:4:\"node\";s:32:\"72dba56d0d6aeb9927f219d134e53888\";s:7:\"context\";s:32:\"1009bbcc089d40dad96cc7e8e831f1bf\";s:5:\"views\";s:32:\"5bd707974cb036aad95822f275746858\";}s:14:\"atrium_members\";a:6:{s:12:\"dependencies\";s:32:\"2ac0d0bd72a403e64fe4476ab1ac5f55\";s:15:\"user_permission\";s:32:\"da24f22ceb10e0c716b0be782f87d330\";s:8:\"variable\";s:32:\"1352e8f0923346ba2acfcf1624c4999c\";s:14:\"spaces_presets\";s:32:\"688607ebc0fd263921ce3024e95e0733\";s:7:\"context\";s:32:\"7ac04d0b18811bd06d16fb0a7e59d16c\";s:5:\"views\";s:32:\"6885e056a8b959ff51839cfaa05db902\";}s:14:\"atrium_profile\";a:6:{s:12:\"dependencies\";s:32:\"18e4199957846a68739f9e952fe50e53\";s:15:\"user_permission\";s:32:\"aa6f1bf3592e6d2dd2c129df461568e6\";s:7:\"content\";s:32:\"ce6a444b6940f142a8f9e82f7d4ae5ac\";s:8:\"variable\";s:32:\"f9b55e3b8a73909889c0a70b123e64d8\";s:4:\"node\";s:32:\"8b6d616b6ddd400e3baeb5b8a71eaf92\";s:5:\"views\";s:32:\"0dec18f96ccf55cda02ddc554c479fff\";}s:15:\"atrium_shoutbox\";a:6:{s:12:\"dependencies\";s:32:\"86c455b15dd8a8134855706aacb933ce\";s:15:\"user_permission\";s:32:\"675c816c86798b6b576e308932cf2632\";s:8:\"variable\";s:32:\"6fad4bd28f18a580c1d1ad1f24b162d9\";s:4:\"node\";s:32:\"39844487b4a27afc74887c126e06164f\";s:7:\"context\";s:32:\"b391ccfd47f04c41632e48ff18fc96b2\";s:5:\"views\";s:32:\"dda511c75c1104f75e4aad33a679e5cc\";}s:7:\"reldate\";a:2:{s:12:\"dependencies\";s:32:\"b8649c4bb804bfb9681a3688faf6c7f4\";s:8:\"variable\";s:32:\"65efb4034e99589430ec2f9a3016dac3\";}s:16:\"spaces_dashboard\";a:2:{s:12:\"dependencies\";s:32:\"8e2d04c24b26681f166ffa783f94a394\";s:7:\"context\";s:32:\"c1b803820e6ba95d5bb2e7e88bdb3f9a\";}s:16:\"afg_groups_views\";a:13:{s:12:\"dependencies\";s:32:\"dd9a44482cd2f6156966f7938b45117a\";s:8:\"taxonomy\";s:32:\"67c30ac6eed91133261fe7b9245145cc\";s:7:\"content\";s:32:\"efdd1f8ba91acbf8c6b88d871a675098\";s:8:\"variable\";s:32:\"acc962967d8e42964c24b504ee747a84\";s:4:\"node\";s:32:\"492f7ae7a81ce82bf0c2fd93cc5b3fd9\";s:7:\"context\";s:32:\"7d02d061334b52b14dbd066c3c396d1c\";s:5:\"views\";s:32:\"8dc457edbacb762303245b0ab4fb75e3\";s:9:\"user_role\";s:32:\"2deb60e508d5d0bd523c6639a2f7e003\";s:10:\"imagecache\";s:32:\"aeaa58e8eb145a5285737446bdbe2095\";s:9:\"quicktabs\";s:32:\"a63c729f6c8c8d5e3ead16570b10c2d8\";s:17:\"fe_block_settings\";s:32:\"5634ccf1af16d578a37f935bdc1763e7\";s:11:\"menu_custom\";s:32:\"cfcc1e297fe75cf9bcf27bee983c28ba\";s:10:\"menu_links\";b:0;}s:21:\"afg_group_definitions\";a:2:{s:12:\"dependencies\";s:32:\"4225663c5a151d2366d51f63dc70e506\";s:14:\"spaces_presets\";s:32:\"4470d35a9644517e169d22784151d9ff\";}s:11:\"afg_profile\";a:6:{s:12:\"dependencies\";s:32:\"bb3cc08438a24df727c7cc3c67d0498d\";s:9:\"user_role\";s:32:\"d0f7b8ad4dc90285e789cbe0d7931511\";s:7:\"content\";s:32:\"f541a726192839a548003439b983c6e5\";s:8:\"variable\";s:32:\"4cd4336e258815981623f52e66b0322b\";s:7:\"context\";s:32:\"217ef05ad9f4bdf2a0f91d58f613915f\";s:5:\"views\";s:32:\"ff4b4992adb0092cb2c9b4c324f17688\";}s:6:\"badges\";a:3:{s:12:\"dependencies\";s:32:\"ce9614f3a2bc756aac911c07826274c4\";s:8:\"variable\";s:32:\"b5a55a11d58dbd97934e33ea72e43714\";s:5:\"views\";s:32:\"a2c1326bc601972b280afcb3a5ed9adb\";}s:15:\"string_replaces\";a:2:{s:8:\"variable\";s:32:\"8ac3450988dbd3896e6672a74a2a4d24\";s:12:\"dependencies\";s:32:\"eb918295f64fb9ad4ab7e4c35576de74\";}s:17:\"afg_facebook_like\";a:2:{s:12:\"dependencies\";s:32:\"bc1f88b3cb2573d24b604b47e46e0a62\";s:7:\"context\";s:32:\"9449c2865976f23aa5e1b414f8c36154\";}s:16:\"afg_group_images\";a:7:{s:10:\"menu_links\";s:32:\"8a10242517c4dcf2646c5a7c8b8a9688\";s:12:\"dependencies\";s:32:\"fa5b056df3f4d42137654e7227ca32f4\";s:7:\"content\";s:32:\"58315b9a1bd7cb4e8e4f348c41982435\";s:8:\"variable\";s:32:\"5fed30f95e29b3b925315bc45d167926\";s:4:\"node\";s:32:\"f5c8a2647090473adf3948b8f8d3a6d8\";s:10:\"imagecache\";s:32:\"c754f76f7c81c565b3f3fe95b3fa96a5\";s:5:\"views\";s:32:\"811477e3b1b60681794c1bb6cdbee39d\";}s:15:\"afg_group_media\";a:8:{s:12:\"dependencies\";s:32:\"30df2fe765a20df1b6b66faf16066cdd\";s:7:\"content\";s:32:\"a07e48e889c607ff0497d34fa57274a6\";s:8:\"variable\";s:32:\"a4c314ea6accfa540ce0b4b55509204f\";s:4:\"node\";s:32:\"5c2db2708e35129dbe174285120c6342\";s:5:\"views\";s:32:\"7cac42322fa733fe70ebf63922785e0f\";s:8:\"taxonomy\";s:32:\"79bdd95cad8832acd893cf664eee12df\";s:9:\"quicktabs\";s:32:\"c5130da73d6deae73eda2aa30ea84fef\";s:15:\"user_permission\";s:32:\"bdfdf64f3cffc01c8ff39bb3c9d308af\";}s:8:\"cdi_blog\";a:8:{s:12:\"dependencies\";s:32:\"6fd5c1a4baf81594da5f79561268d93d\";s:8:\"taxonomy\";s:32:\"9c3a2f88f539106ecb1cfb8f366d2ab0\";s:7:\"content\";s:32:\"3cd8363695f20e74c2beba943d33d4d5\";s:8:\"variable\";s:32:\"22c3b7aef8b449919f855391e14860b8\";s:4:\"node\";s:32:\"56e4ecd4991a3549f62f51968881fb3f\";s:9:\"quicktabs\";s:32:\"479edd20f6dc846b9418f81ec87cfd52\";s:5:\"views\";s:32:\"34a89e64ef0a3557a3159b7d2c6d76d2\";s:10:\"imagecache\";s:32:\"6b97c077f63bfb46ba57afb07d5709a0\";}s:17:\"afg_theme_updates\";a:2:{s:12:\"dependencies\";s:32:\"fb4cbc95ff4c3237a435305759a5a24d\";s:11:\"menu_custom\";s:32:\"0cbb589d5f3545a0814c3731e9ef1501\";}s:9:\"afg_menus\";a:3:{s:12:\"dependencies\";s:32:\"ef2d17dabeba968f79bc6270e446aafb\";s:11:\"menu_custom\";s:32:\"cd875f6cf95cfd216b44bb72ac0e7c28\";s:10:\"menu_links\";s:32:\"453019f11c03c7ad51c43ee15cc8141e\";}s:13:\"afg_fckeditor\";a:4:{s:12:\"dependencies\";s:32:\"d87ffba5a09f06969d3997d5bf795b9e\";s:15:\"user_permission\";s:32:\"b6d08f01c2e6e8a3837664bd486704dd\";s:8:\"variable\";s:32:\"54b7ec2eb891176290da2504635695fd\";s:7:\"wysiwyg\";s:32:\"dcea57ca6c7d86ccecf5f463ebbdd89e\";}}');
 INSERT INTO `variable` VALUES ('features_ignored_orphans','a:2:{s:13:\"media_youtube\";s:13:\"media_youtube\";s:9:\"quicktabs\";s:9:\"quicktabs\";}');
 INSERT INTO `variable` VALUES ('features_semaphore','a:0:{}');
 INSERT INTO `variable` VALUES ('feeds_reschedule','b:0;');
@@ -10116,7 +10123,7 @@ INSERT INTO `variable` VALUES ('gmap_node_map','a:4:{s:5:\"macro\";s:61:\"[gmap 
 INSERT INTO `variable` VALUES ('gmap_node_markers','a:17:{s:4:\"blog\";s:6:\"drupal\";s:4:\"book\";s:6:\"drupal\";s:5:\"event\";s:6:\"drupal\";s:9:\"feed_ical\";s:6:\"drupal\";s:14:\"feed_ical_item\";s:6:\"drupal\";s:5:\"group\";s:6:\"drupal\";s:7:\"profile\";s:6:\"drupal\";s:8:\"shoutbox\";s:6:\"drupal\";s:17:\"group_media_image\";s:6:\"drupal\";s:17:\"group_media_video\";s:6:\"drupal\";s:16:\"request_for_help\";s:6:\"drupal\";s:8:\"cdi_blog\";s:6:\"drupal\";s:22:\"casetracker_basic_case\";s:6:\"drupal\";s:25:\"casetracker_basic_project\";s:6:\"drupal\";s:14:\"group_app_team\";s:6:\"drupal\";s:19:\"group_centre_school\";s:6:\"drupal\";s:4:\"page\";s:6:\"drupal\";}');
 INSERT INTO `variable` VALUES ('gmap_role_markers','a:5:{i:2;s:6:\"drupal\";i:3;s:6:\"drupal\";i:6;s:6:\"drupal\";i:4;s:6:\"drupal\";i:5;s:6:\"drupal\";}');
 INSERT INTO `variable` VALUES ('gmap_user_map','a:4:{s:5:\"macro\";s:61:\"[gmap |id=usermap|center=40,0|zoom=4|width=100%|height=400px]\";s:6:\"header\";s:120:\"This map illustrates the extent of users of this website. Each marker indicates a user that has entered their locations.\";s:6:\"footer\";s:0:\"\";s:10:\"markermode\";s:1:\"1\";}');
-INSERT INTO `variable` VALUES ('googlemap_api_key','s:86:\"ABQIAAAAvV15LfoDTecHYF9z9vyAThSuvHJsVr_HieJv6r2LqXhEDzPpQhQOEdGQEhRS5ENina9LdMm7qjApsA\";');
+INSERT INTO `variable` VALUES ('googlemap_api_key','s:86:\"ABQIAAAAvV15LfoDTecHYF9z9vyAThSVYj45dkWs9T5DL21QB6NqzmBlExQBaJ1Tm2HP7XoSmNzf-gjSYPkWUQ\";');
 INSERT INTO `variable` VALUES ('install_profile','s:10:\"openatrium\";');
 INSERT INTO `variable` VALUES ('install_task','s:4:\"done\";');
 INSERT INTO `variable` VALUES ('install_time','i:1309171947;');
@@ -10428,14 +10435,44 @@ INSERT INTO `variable` VALUES ('taxonomy_super_select_vid_6','a:6:{s:5:\"types\"
 INSERT INTO `variable` VALUES ('taxonomy_super_select_vid_8','a:6:{s:5:\"types\";a:1:{s:8:\"cdi_blog\";s:8:\"cdi_blog\";}s:7:\"parents\";i:0;s:5:\"image\";i:0;s:11:\"collapsible\";i:0;s:14:\"terms_expanded\";i:0;s:7:\"compact\";i:0;}');
 INSERT INTO `variable` VALUES ('theme_default','s:3:\"afg\";');
 INSERT INTO `variable` VALUES ('ucreate_default_roles','a:4:{i:3;i:0;i:6;i:0;i:4;i:0;i:5;i:0;}');
-INSERT INTO `variable` VALUES ('update_last_check','i:1315321449;');
+INSERT INTO `variable` VALUES ('update_last_check','i:1315495433;');
 INSERT INTO `variable` VALUES ('upload_blog','s:1:\"1\";');
 INSERT INTO `variable` VALUES ('upload_group_centre_school','s:1:\"1\";');
 INSERT INTO `variable` VALUES ('upload_group_media_image','s:1:\"1\";');
 INSERT INTO `variable` VALUES ('upload_group_media_video','s:1:\"1\";');
 INSERT INTO `variable` VALUES ('upload_request_for_help','s:1:\"1\";');
-INSERT INTO `variable` VALUES ('user_email_verification','b:1;');
+INSERT INTO `variable` VALUES ('user_email_verification','i:1;');
+INSERT INTO `variable` VALUES ('user_mail_password_reset_body','s:419:\"!username,\r\n\r\nA request to reset the password for your account has been made at !site.\r\n\r\nYou may now log in to !uri_brief by clicking on this link or copying and pasting it in your browser:\r\n\r\n!login_url\r\n\r\nThis is a one-time login, so it can be used only once. It expires after one day and nothing will happen if it\'s not used.\r\n\r\nAfter logging in, you will be redirected to !edit_uri so you can change your password.\";');
+INSERT INTO `variable` VALUES ('user_mail_password_reset_subject','s:52:\"Replacement login information for !username at !site\";');
+INSERT INTO `variable` VALUES ('user_mail_register_admin_created_body','s:468:\"!username,\r\n\r\nA site administrator at !site has created an account for you. You may now log in to !login_uri using the following username and password:\r\n\r\nusername: !username\r\npassword: !password\r\n\r\nYou may also log in by clicking on this link or copying and pasting it in your browser:\r\n\r\n!login_url\r\n\r\nThis is a one-time login, so it can be used only once.\r\n\r\nAfter logging in, you will be redirected to !edit_uri so you can change your password.\r\n\r\n\r\n--  !site team\";');
+INSERT INTO `variable` VALUES ('user_mail_register_admin_created_subject','s:52:\"An administrator created an account for you at !site\";');
+INSERT INTO `variable` VALUES ('user_mail_register_no_approval_required_body','s:442:\"!username,\r\n\r\nThank you for registering at !site. You may now log in to !login_uri using the following username and password:\r\n\r\nusername: !username\r\npassword: !password\r\n\r\nYou may also log in by clicking on this link or copying and pasting it in your browser:\r\n\r\n!login_url\r\n\r\nThis is a one-time login, so it can be used only once.\r\n\r\nAfter logging in, you will be redirected to !edit_uri so you can change your password.\r\n\r\n\r\n--  !site team\";');
+INSERT INTO `variable` VALUES ('user_mail_register_no_approval_required_subject','s:38:\"Account details for !username at !site\";');
+INSERT INTO `variable` VALUES ('user_mail_register_pending_approval_body','s:273:\"!username,\r\n\r\nThank you for registering at !site. Your application for an account is currently pending approval. Once it has been approved, you will receive another e-mail containing information about how to log in, set your password, and other details.\r\n\r\n\r\n--  !site team\";');
+INSERT INTO `variable` VALUES ('user_mail_register_pending_approval_subject','s:63:\"Account details for !username at !site (pending admin approval)\";');
+INSERT INTO `variable` VALUES ('user_mail_status_activated_body','s:434:\"!username,\r\n\r\nYour account at !site has been activated.\r\n\r\nYou may now log in by clicking on this link or copying and pasting it in your browser:\r\n\r\n!login_url\r\n\r\nThis is a one-time login, so it can be used only once.\r\n\r\nAfter logging in, you will be redirected to !edit_uri so you can change your password.\r\n\r\nOnce you have set your own password, you will be able to log in to !login_uri in the future using:\r\n\r\nusername: !username\r\n\";');
+INSERT INTO `variable` VALUES ('user_mail_status_activated_notify','i:1;');
+INSERT INTO `variable` VALUES ('user_mail_status_activated_subject','s:49:\"Account details for !username at !site (approved)\";');
+INSERT INTO `variable` VALUES ('user_mail_status_blocked_body','s:53:\"!username,\r\n\r\nYour account on !site has been blocked.\";');
+INSERT INTO `variable` VALUES ('user_mail_status_blocked_notify','i:0;');
+INSERT INTO `variable` VALUES ('user_mail_status_blocked_subject','s:48:\"Account details for !username at !site (blocked)\";');
+INSERT INTO `variable` VALUES ('user_mail_status_deleted_body','s:53:\"!username,\r\n\r\nYour account on !site has been deleted.\";');
+INSERT INTO `variable` VALUES ('user_mail_status_deleted_notify','i:0;');
+INSERT INTO `variable` VALUES ('user_mail_status_deleted_subject','s:48:\"Account details for !username at !site (deleted)\";');
+INSERT INTO `variable` VALUES ('user_pictures','s:1:\"1\";');
+INSERT INTO `variable` VALUES ('user_picture_default','s:51:\"sites/default/files/pictures/afg_icon-supporter.png\";');
+INSERT INTO `variable` VALUES ('user_picture_dimensions','s:7:\"500x500\";');
+INSERT INTO `variable` VALUES ('user_picture_file_size','s:3:\"500\";');
+INSERT INTO `variable` VALUES ('user_picture_guidelines','s:0:\"\";');
+INSERT INTO `variable` VALUES ('user_picture_imagecache_comments','s:6:\"user-s\";');
+INSERT INTO `variable` VALUES ('user_picture_imagecache_profiles','s:6:\"user-s\";');
+INSERT INTO `variable` VALUES ('user_picture_imagecache_profiles_default','s:6:\"user-s\";');
+INSERT INTO `variable` VALUES ('user_picture_imagecache_profiles_min_height','s:2:\"60\";');
+INSERT INTO `variable` VALUES ('user_picture_imagecache_profiles_min_width','s:2:\"60\";');
+INSERT INTO `variable` VALUES ('user_picture_path','s:8:\"pictures\";');
 INSERT INTO `variable` VALUES ('user_register','s:1:\"1\";');
+INSERT INTO `variable` VALUES ('user_registration_help','s:0:\"\";');
+INSERT INTO `variable` VALUES ('user_signatures','b:0;');
 INSERT INTO `variable` VALUES ('views_block_hashes','a:9:{s:32:\"7ac8fa8ea620f2e3cbc056a7f16aa38d\";s:36:\"groups_listing_centre_school-block_2\";s:32:\"b49c13d4c7a17955c5c0f117f2eff413\";s:36:\"groups_listing_centre_school-block_1\";s:32:\"4279d6353ce04c2723ce5268875465d0\";s:36:\"groups_listing_centre_school-block_3\";s:32:\"7a3971c58a24107b75cfdb9163cf5dc3\";s:36:\"groups_listing_centre_school-block_4\";s:32:\"ed790d718541f2aaea81054dab60bd25\";s:36:\"groups_listing_centre_school-block_5\";s:32:\"436144bdc189eb30bee4a256ccd4eef6\";s:36:\"groups_listing_centre_school-block_6\";s:32:\"1242aa2838f5e0ae93853fa3f054df98\";s:36:\"groups_listing_centre_school-block_7\";s:32:\"1ea07c98bfe3b712442d65a3d4fd9126\";s:36:\"groups_listing_centre_school-block_8\";s:32:\"a50a359b31c058400bf060adc6d30a4e\";s:36:\"groups_listing_centre_school-block_9\";}');
 INSERT INTO `variable` VALUES ('views_defaults','a:27:{s:2:\"og\";b:1;s:5:\"og_my\";b:1;s:8:\"og_files\";b:1;s:10:\"og_ghp_ron\";b:1;s:12:\"og_mytracker\";b:1;s:9:\"og_search\";b:1;s:10:\"og_tracker\";b:1;s:19:\"og_recent_type_term\";b:1;s:9:\"og_unread\";b:1;s:10:\"og_members\";b:1;s:16:\"og_members_block\";b:1;s:16:\"og_members_faces\";b:1;s:28:\"casetracker_assignee_options\";b:1;s:25:\"casetracker_project_cases\";b:1;s:27:\"casetracker_project_options\";b:1;s:14:\"groups_listing\";b:1;s:15:\"profile_display\";b:1;s:12:\"book_listing\";b:1;s:12:\"book_current\";b:1;s:16:\"calendar_listing\";b:1;s:19:\"calendar_feed_items\";b:1;s:14:\"calendar_feeds\";b:1;s:17:\"calendar_upcoming\";b:1;s:17:\"casetracker_cases\";b:1;s:37:\"casetracker_override_assignee_options\";b:1;s:36:\"casetracker_override_project_options\";b:1;s:20:\"casetracker_projects\";b:1;}');
 INSERT INTO `variable` VALUES ('xref_links_group_centre_school','s:8:\"template\";');
@@ -10448,19 +10485,19 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `views_display`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `views_display` (
-  `vid` int(10) unsigned NOT NULL DEFAULT '0',
-  `id` varchar(64) NOT NULL DEFAULT '',
-  `display_title` varchar(64) NOT NULL DEFAULT '',
-  `display_plugin` varchar(64) NOT NULL DEFAULT '',
-  `position` int(11) DEFAULT '0',
+  `vid` int(10) unsigned NOT NULL default '0',
+  `id` varchar(64) NOT NULL default '',
+  `display_title` varchar(64) NOT NULL default '',
+  `display_plugin` varchar(64) NOT NULL default '',
+  `position` int(11) default '0',
   `display_options` longtext,
-  PRIMARY KEY (`vid`,`id`),
+  PRIMARY KEY  (`vid`,`id`),
   KEY `vid` (`vid`,`position`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `views_display`
@@ -10502,7 +10539,7 @@ INSERT INTO `views_display` VALUES (30,'block_3','Logo','block',5,'a:10:{s:6:\"f
 INSERT INTO `views_display` VALUES (30,'block_4','Biz Plan','block',6,'a:10:{s:6:\"fields\";a:3:{s:5:\"title\";a:12:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:1;s:4:\"path\";s:7:\"[title]\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:0;s:8:\"ellipsis\";i:0;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:12:\"link_to_node\";i:0;s:6:\"spaces\";a:2:{s:9:\"frontpage\";i:0;s:4:\"type\";s:9:\"spaces_og\";}s:7:\"exclude\";i:0;s:2:\"id\";s:5:\"title\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:5:\"title\";s:12:\"relationship\";s:4:\"none\";}s:4:\"body\";a:11:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:7:\"exclude\";i:0;s:2:\"id\";s:4:\"body\";s:5:\"table\";s:14:\"node_revisions\";s:5:\"field\";s:4:\"body\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}s:13:\"comments_link\";a:11:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:6:\"teaser\";i:0;s:7:\"exclude\";i:0;s:2:\"id\";s:13:\"comments_link\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:13:\"comments_link\";s:12:\"relationship\";s:4:\"none\";}}s:8:\"defaults\";a:7:{s:6:\"fields\";b:0;s:7:\"filters\";b:0;s:5:\"title\";b:0;s:14:\"items_per_page\";b:0;s:6:\"offset\";b:0;s:9:\"use_pager\";b:0;s:13:\"pager_element\";b:0;}s:7:\"filters\";a:4:{s:4:\"type\";a:10:{s:8:\"operator\";s:2:\"in\";s:5:\"value\";a:1:{s:4:\"blog\";s:4:\"blog\";}s:5:\"group\";s:1:\"0\";s:7:\"exposed\";b:0;s:6:\"expose\";a:2:{s:8:\"operator\";b:0;s:5:\"label\";s:0:\"\";}s:2:\"id\";s:4:\"type\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:4:\"type\";s:12:\"relationship\";s:4:\"none\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}}s:7:\"current\";a:9:{s:8:\"operator\";s:1:\"=\";s:5:\"value\";s:0:\"\";s:5:\"group\";s:1:\"0\";s:7:\"exposed\";b:0;s:6:\"expose\";a:2:{s:8:\"operator\";b:0;s:5:\"label\";s:0:\"\";}s:2:\"id\";s:7:\"current\";s:5:\"table\";s:6:\"spaces\";s:5:\"field\";s:7:\"current\";s:12:\"relationship\";s:4:\"none\";}s:6:\"status\";a:9:{s:8:\"operator\";s:1:\"=\";s:5:\"value\";s:1:\"1\";s:5:\"group\";s:1:\"0\";s:7:\"exposed\";b:0;s:6:\"expose\";a:2:{s:8:\"operator\";b:0;s:5:\"label\";s:0:\"\";}s:2:\"id\";s:6:\"status\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:6:\"status\";s:12:\"relationship\";s:4:\"none\";}s:3:\"tid\";a:17:{s:8:\"operator\";s:2:\"or\";s:5:\"value\";a:1:{i:10;s:2:\"10\";}s:5:\"group\";s:1:\"0\";s:7:\"exposed\";b:0;s:6:\"expose\";a:2:{s:8:\"operator\";b:0;s:5:\"label\";s:0:\"\";}s:4:\"type\";s:6:\"select\";s:5:\"limit\";b:1;s:8:\"limit_by\";s:3:\"vid\";s:3:\"vid\";s:1:\"6\";s:6:\"module\";s:15:\"features_badges\";s:2:\"id\";s:3:\"tid\";s:5:\"table\";s:9:\"term_node\";s:5:\"field\";s:3:\"tid\";s:9:\"hierarchy\";i:0;s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";s:17:\"reduce_duplicates\";i:0;}}s:5:\"title\";s:13:\"Business Plan\";s:14:\"items_per_page\";i:1;s:6:\"offset\";i:0;s:9:\"use_pager\";s:1:\"0\";s:13:\"pager_element\";i:0;s:17:\"block_description\";s:0:\"\";s:13:\"block_caching\";i:-1;}');
 INSERT INTO `views_display` VALUES (30,'default','Defaults','default',1,'a:14:{s:6:\"fields\";a:7:{s:5:\"title\";a:12:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:1;s:4:\"path\";s:7:\"[title]\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:0;s:8:\"ellipsis\";i:0;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:12:\"link_to_node\";i:0;s:6:\"spaces\";a:2:{s:9:\"frontpage\";i:0;s:4:\"type\";s:9:\"spaces_og\";}s:7:\"exclude\";i:1;s:2:\"id\";s:5:\"title\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:5:\"title\";s:12:\"relationship\";s:4:\"none\";}s:21:\"field_group_image_fid\";a:15:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:12:\"link_to_node\";i:1;s:10:\"label_type\";s:4:\"none\";s:6:\"format\";s:22:\"Carousel_Image_default\";s:8:\"multiple\";a:4:{s:5:\"group\";b:1;s:15:\"multiple_number\";s:0:\"\";s:13:\"multiple_from\";s:0:\"\";s:17:\"multiple_reversed\";b:0;}s:7:\"exclude\";i:0;s:2:\"id\";s:21:\"field_group_image_fid\";s:5:\"table\";s:27:\"node_data_field_group_image\";s:5:\"field\";s:21:\"field_group_image_fid\";s:12:\"relationship\";s:4:\"none\";s:8:\"override\";a:1:{s:6:\"button\";s:8:\"Override\";}}s:17:\"field_video_embed\";a:14:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:12:\"link_to_node\";i:0;s:10:\"label_type\";s:4:\"none\";s:6:\"format\";s:21:\"video_replace_preview\";s:8:\"multiple\";a:4:{s:5:\"group\";b:1;s:15:\"multiple_number\";s:0:\"\";s:13:\"multiple_from\";s:0:\"\";s:17:\"multiple_reversed\";b:0;}s:7:\"exclude\";i:0;s:2:\"id\";s:17:\"field_video_embed\";s:5:\"table\";s:21:\"node_data_field_video\";s:5:\"field\";s:17:\"field_video_embed\";s:12:\"relationship\";s:4:\"none\";}s:13:\"comments_link\";a:11:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:6:\"teaser\";i:0;s:7:\"exclude\";i:0;s:2:\"id\";s:13:\"comments_link\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:13:\"comments_link\";s:12:\"relationship\";s:4:\"none\";}s:4:\"body\";a:11:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:1;s:10:\"max_length\";s:3:\"210\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:7:\"exclude\";i:1;s:2:\"id\";s:4:\"body\";s:5:\"table\";s:14:\"node_revisions\";s:5:\"field\";s:4:\"body\";s:8:\"override\";a:1:{s:6:\"button\";s:8:\"Override\";}s:12:\"relationship\";s:4:\"none\";}s:6:\"teaser\";a:11:{s:5:\"label\";s:6:\"Teaser\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:7:\"exclude\";i:1;s:2:\"id\";s:6:\"teaser\";s:5:\"table\";s:14:\"node_revisions\";s:5:\"field\";s:6:\"teaser\";s:8:\"override\";a:1:{s:6:\"button\";s:8:\"Override\";}s:12:\"relationship\";s:4:\"none\";}s:9:\"view_node\";a:11:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:4:\"text\";s:0:\"\";s:7:\"exclude\";i:1;s:2:\"id\";s:9:\"view_node\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:9:\"view_node\";s:12:\"relationship\";s:4:\"none\";}}s:8:\"defaults\";a:13:{s:6:\"fields\";b:0;s:5:\"sorts\";b:0;s:7:\"filters\";b:0;s:6:\"access\";b:0;s:5:\"cache\";b:0;s:14:\"items_per_page\";b:0;s:6:\"offset\";b:0;s:9:\"use_pager\";b:0;s:13:\"pager_element\";b:0;s:12:\"style_plugin\";b:0;s:13:\"style_options\";b:0;s:10:\"row_plugin\";b:0;s:11:\"row_options\";b:0;}s:5:\"sorts\";a:1:{s:7:\"changed\";a:6:{s:5:\"order\";s:4:\"DESC\";s:11:\"granularity\";s:6:\"second\";s:2:\"id\";s:7:\"changed\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:7:\"changed\";s:12:\"relationship\";s:4:\"none\";}}s:7:\"filters\";a:3:{s:4:\"type\";a:10:{s:8:\"operator\";s:2:\"in\";s:5:\"value\";a:2:{s:17:\"group_media_image\";s:17:\"group_media_image\";s:17:\"group_media_video\";s:17:\"group_media_video\";}s:5:\"group\";s:1:\"0\";s:7:\"exposed\";b:0;s:6:\"expose\";a:2:{s:8:\"operator\";b:0;s:5:\"label\";s:0:\"\";}s:2:\"id\";s:4:\"type\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:4:\"type\";s:12:\"relationship\";s:4:\"none\";s:8:\"override\";a:1:{s:6:\"button\";s:8:\"Override\";}}s:7:\"current\";a:9:{s:8:\"operator\";s:1:\"=\";s:5:\"value\";s:0:\"\";s:5:\"group\";s:1:\"0\";s:7:\"exposed\";b:0;s:6:\"expose\";a:2:{s:8:\"operator\";b:0;s:5:\"label\";s:0:\"\";}s:2:\"id\";s:7:\"current\";s:5:\"table\";s:6:\"spaces\";s:5:\"field\";s:7:\"current\";s:12:\"relationship\";s:4:\"none\";}s:6:\"status\";a:9:{s:8:\"operator\";s:1:\"=\";s:5:\"value\";s:1:\"1\";s:5:\"group\";s:1:\"0\";s:7:\"exposed\";b:0;s:6:\"expose\";a:2:{s:8:\"operator\";b:0;s:5:\"label\";s:0:\"\";}s:2:\"id\";s:6:\"status\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:6:\"status\";s:12:\"relationship\";s:4:\"none\";}}s:6:\"access\";a:3:{s:4:\"type\";s:14:\"spaces_feature\";s:14:\"spaces_feature\";s:15:\"afg_group_media\";s:4:\"perm\";s:14:\"access content\";}s:5:\"cache\";a:1:{s:4:\"type\";s:4:\"none\";}s:14:\"items_per_page\";i:10;s:6:\"offset\";i:0;s:9:\"use_pager\";s:1:\"1\";s:13:\"pager_element\";i:0;s:12:\"style_plugin\";s:4:\"list\";s:13:\"style_options\";a:0:{}s:10:\"row_plugin\";s:6:\"fields\";s:11:\"row_options\";a:0:{}}');
 INSERT INTO `views_display` VALUES (30,'page_1','Group Content Updates','page',2,'a:6:{s:8:\"defaults\";a:2:{s:6:\"fields\";b:0;s:7:\"filters\";b:0;}s:7:\"filters\";a:3:{s:4:\"type\";a:10:{s:8:\"operator\";s:2:\"in\";s:5:\"value\";a:4:{s:4:\"blog\";s:4:\"blog\";s:17:\"group_media_image\";s:17:\"group_media_image\";s:17:\"group_media_video\";s:17:\"group_media_video\";s:16:\"request_for_help\";s:16:\"request_for_help\";}s:5:\"group\";s:1:\"0\";s:7:\"exposed\";b:0;s:6:\"expose\";a:2:{s:8:\"operator\";b:0;s:5:\"label\";s:0:\"\";}s:2:\"id\";s:4:\"type\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:4:\"type\";s:12:\"relationship\";s:4:\"none\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}}s:7:\"current\";a:9:{s:8:\"operator\";s:1:\"=\";s:5:\"value\";s:0:\"\";s:5:\"group\";s:1:\"0\";s:7:\"exposed\";b:0;s:6:\"expose\";a:2:{s:8:\"operator\";b:0;s:5:\"label\";s:0:\"\";}s:2:\"id\";s:7:\"current\";s:5:\"table\";s:6:\"spaces\";s:5:\"field\";s:7:\"current\";s:12:\"relationship\";s:4:\"none\";}s:6:\"status\";a:9:{s:8:\"operator\";s:1:\"=\";s:5:\"value\";s:1:\"1\";s:5:\"group\";s:1:\"0\";s:7:\"exposed\";b:0;s:6:\"expose\";a:2:{s:8:\"operator\";b:0;s:5:\"label\";s:0:\"\";}s:2:\"id\";s:6:\"status\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:6:\"status\";s:12:\"relationship\";s:4:\"none\";}}s:4:\"path\";s:7:\"updates\";s:4:\"menu\";a:5:{s:4:\"type\";s:6:\"normal\";s:5:\"title\";s:7:\"Updates\";s:11:\"description\";s:7:\"Updates\";s:6:\"weight\";s:1:\"0\";s:4:\"name\";s:8:\"features\";}s:11:\"tab_options\";a:5:{s:4:\"type\";s:4:\"none\";s:5:\"title\";s:0:\"\";s:11:\"description\";s:0:\"\";s:6:\"weight\";i:0;s:4:\"name\";s:10:\"navigation\";}s:6:\"fields\";a:7:{s:5:\"title\";a:13:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:7:\"[title]\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:0;s:8:\"ellipsis\";i:0;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:12:\"link_to_node\";i:0;s:6:\"spaces\";a:2:{s:9:\"frontpage\";i:0;s:4:\"type\";s:9:\"spaces_og\";}s:7:\"exclude\";i:0;s:2:\"id\";s:5:\"title\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:5:\"title\";s:12:\"relationship\";s:4:\"none\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}}s:7:\"changed\";a:14:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:11:\"date_format\";s:8:\"time ago\";s:18:\"custom_date_format\";s:0:\"\";s:7:\"reldate\";s:1:\"0\";s:7:\"exclude\";i:0;s:2:\"id\";s:7:\"changed\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:7:\"changed\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}s:13:\"comment_count\";a:17:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:1;s:4:\"text\";s:24:\"[comment_count] comments\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:13:\"set_precision\";b:0;s:9:\"precision\";i:0;s:7:\"decimal\";s:1:\".\";s:9:\"separator\";s:1:\",\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:7:\"exclude\";i:0;s:2:\"id\";s:13:\"comment_count\";s:5:\"table\";s:23:\"node_comment_statistics\";s:5:\"field\";s:13:\"comment_count\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}s:21:\"field_group_image_fid\";a:15:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:12:\"link_to_node\";i:1;s:10:\"label_type\";s:4:\"none\";s:6:\"format\";s:22:\"Carousel_Image_default\";s:8:\"multiple\";a:4:{s:5:\"group\";b:1;s:15:\"multiple_number\";s:0:\"\";s:13:\"multiple_from\";s:0:\"\";s:17:\"multiple_reversed\";b:0;}s:7:\"exclude\";i:0;s:2:\"id\";s:21:\"field_group_image_fid\";s:5:\"table\";s:27:\"node_data_field_group_image\";s:5:\"field\";s:21:\"field_group_image_fid\";s:12:\"relationship\";s:4:\"none\";s:8:\"override\";a:1:{s:6:\"button\";s:8:\"Override\";}}s:17:\"field_video_embed\";a:14:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:12:\"link_to_node\";i:0;s:10:\"label_type\";s:4:\"none\";s:6:\"format\";s:21:\"video_replace_preview\";s:8:\"multiple\";a:4:{s:5:\"group\";b:1;s:15:\"multiple_number\";s:0:\"\";s:13:\"multiple_from\";s:0:\"\";s:17:\"multiple_reversed\";b:0;}s:7:\"exclude\";i:0;s:2:\"id\";s:17:\"field_video_embed\";s:5:\"table\";s:21:\"node_data_field_video\";s:5:\"field\";s:17:\"field_video_embed\";s:12:\"relationship\";s:4:\"none\";}s:4:\"body\";a:11:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:1;s:10:\"max_length\";s:3:\"210\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:7:\"exclude\";i:0;s:2:\"id\";s:4:\"body\";s:5:\"table\";s:14:\"node_revisions\";s:5:\"field\";s:4:\"body\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}s:13:\"comments_link\";a:11:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:6:\"teaser\";i:0;s:7:\"exclude\";i:0;s:2:\"id\";s:13:\"comments_link\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:13:\"comments_link\";s:12:\"relationship\";s:4:\"none\";}}}');
-INSERT INTO `views_display` VALUES (32,'block_1','Recent activity','block',2,'a:8:{s:6:\"fields\";a:5:{s:14:\"field_icon_fid\";a:15:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:48:\"<div class=\'content-icon\'>[field_icon_fid]</div>\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:12:\"link_to_node\";i:0;s:10:\"label_type\";s:4:\"none\";s:6:\"format\";s:19:\"badge-thumb_default\";s:8:\"multiple\";a:4:{s:5:\"group\";b:1;s:15:\"multiple_number\";s:0:\"\";s:13:\"multiple_from\";s:0:\"\";s:17:\"multiple_reversed\";b:0;}s:7:\"exclude\";i:0;s:2:\"id\";s:14:\"field_icon_fid\";s:5:\"table\";s:20:\"node_data_field_icon\";s:5:\"field\";s:14:\"field_icon_fid\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}s:15:\"atrium_activity\";a:12:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:15:{s:10:\"alter_text\";b:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";b:0;s:4:\"path\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"trim\";b:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";b:1;s:8:\"ellipsis\";b:1;s:10:\"strip_tags\";b:0;s:4:\"html\";b:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:12:\"time_horizon\";s:2:\"30\";s:7:\"exclude\";i:0;s:2:\"id\";s:15:\"atrium_activity\";s:5:\"table\";s:8:\"comments\";s:5:\"field\";s:15:\"atrium_activity\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}s:5:\"title\";a:13:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:12:\"link_to_node\";i:1;s:6:\"spaces\";a:2:{s:9:\"frontpage\";i:0;s:4:\"type\";s:9:\"spaces_og\";}s:7:\"exclude\";i:0;s:2:\"id\";s:5:\"title\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:5:\"title\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}s:25:\"atrium_activity_timestamp\";a:14:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:15:{s:10:\"alter_text\";b:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";b:0;s:4:\"path\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"trim\";b:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";b:1;s:8:\"ellipsis\";b:1;s:10:\"strip_tags\";b:0;s:4:\"html\";b:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:11:\"date_format\";s:8:\"time ago\";s:18:\"custom_date_format\";s:0:\"\";s:7:\"reldate\";s:1:\"0\";s:7:\"exclude\";i:0;s:2:\"id\";s:25:\"atrium_activity_timestamp\";s:5:\"table\";s:8:\"comments\";s:5:\"field\";s:25:\"atrium_activity_timestamp\";s:12:\"relationship\";s:4:\"none\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}}s:7:\"title_1\";a:13:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:12:\"link_to_node\";i:1;s:6:\"spaces\";a:2:{s:9:\"frontpage\";i:1;s:4:\"type\";s:9:\"spaces_og\";}s:7:\"exclude\";i:0;s:2:\"id\";s:7:\"title_1\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:5:\"title\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:9:\"group_nid\";}}s:8:\"defaults\";a:5:{s:6:\"fields\";b:0;s:7:\"filters\";b:0;s:9:\"css_class\";b:0;s:5:\"empty\";b:0;s:12:\"empty_format\";b:0;}s:7:\"filters\";a:2:{s:6:\"status\";a:9:{s:8:\"operator\";s:1:\"=\";s:5:\"value\";i:1;s:5:\"group\";s:1:\"0\";s:7:\"exposed\";b:0;s:6:\"expose\";a:2:{s:8:\"operator\";b:0;s:5:\"label\";s:0:\"\";}s:2:\"id\";s:6:\"status\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:6:\"status\";s:12:\"relationship\";s:4:\"none\";}s:11:\"update_type\";a:9:{s:8:\"operator\";s:1:\"=\";s:5:\"value\";s:0:\"\";s:5:\"group\";s:1:\"0\";s:7:\"exposed\";b:0;s:6:\"expose\";a:2:{s:8:\"operator\";b:0;s:5:\"label\";s:0:\"\";}s:2:\"id\";s:11:\"update_type\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:11:\"update_type\";s:12:\"relationship\";s:4:\"none\";}}s:9:\"css_class\";s:16:\"activity-updates\";s:17:\"block_description\";s:15:\"Recent activity\";s:13:\"block_caching\";i:-1;s:5:\"empty\";s:25:\"No recent activity found.\";s:12:\"empty_format\";s:1:\"5\";}');
+INSERT INTO `views_display` VALUES (32,'block_1','Recent activity','block',2,'a:8:{s:6:\"fields\";a:5:{s:14:\"field_icon_fid\";a:15:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:48:\"<div class=\'content-icon\'>[field_icon_fid]</div>\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:12:\"link_to_node\";i:0;s:10:\"label_type\";s:4:\"none\";s:6:\"format\";s:19:\"badge-thumb_default\";s:8:\"multiple\";a:4:{s:5:\"group\";b:1;s:15:\"multiple_number\";s:0:\"\";s:13:\"multiple_from\";s:0:\"\";s:17:\"multiple_reversed\";b:0;}s:7:\"exclude\";i:0;s:2:\"id\";s:14:\"field_icon_fid\";s:5:\"table\";s:20:\"node_data_field_icon\";s:5:\"field\";s:14:\"field_icon_fid\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}s:15:\"atrium_activity\";a:12:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:15:{s:10:\"alter_text\";b:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";b:0;s:4:\"path\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"trim\";b:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";b:1;s:8:\"ellipsis\";b:1;s:10:\"strip_tags\";b:0;s:4:\"html\";b:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:12:\"time_horizon\";s:2:\"30\";s:7:\"exclude\";i:0;s:2:\"id\";s:15:\"atrium_activity\";s:5:\"table\";s:8:\"comments\";s:5:\"field\";s:15:\"atrium_activity\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}s:5:\"title\";a:13:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:12:\"link_to_node\";i:0;s:6:\"spaces\";a:2:{s:9:\"frontpage\";i:0;s:4:\"type\";s:9:\"spaces_og\";}s:7:\"exclude\";i:0;s:2:\"id\";s:5:\"title\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:5:\"title\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}s:25:\"atrium_activity_timestamp\";a:14:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:15:{s:10:\"alter_text\";b:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";b:0;s:4:\"path\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"trim\";b:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";b:1;s:8:\"ellipsis\";b:1;s:10:\"strip_tags\";b:0;s:4:\"html\";b:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:11:\"date_format\";s:8:\"time ago\";s:18:\"custom_date_format\";s:0:\"\";s:7:\"reldate\";s:1:\"0\";s:7:\"exclude\";i:0;s:2:\"id\";s:25:\"atrium_activity_timestamp\";s:5:\"table\";s:8:\"comments\";s:5:\"field\";s:25:\"atrium_activity_timestamp\";s:12:\"relationship\";s:4:\"none\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}}s:7:\"title_1\";a:13:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:12:\"link_to_node\";i:1;s:6:\"spaces\";a:2:{s:9:\"frontpage\";i:1;s:4:\"type\";s:9:\"spaces_og\";}s:7:\"exclude\";i:0;s:2:\"id\";s:7:\"title_1\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:5:\"title\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:9:\"group_nid\";}}s:8:\"defaults\";a:5:{s:6:\"fields\";b:0;s:7:\"filters\";b:0;s:9:\"css_class\";b:0;s:5:\"empty\";b:0;s:12:\"empty_format\";b:0;}s:7:\"filters\";a:2:{s:6:\"status\";a:9:{s:8:\"operator\";s:1:\"=\";s:5:\"value\";i:1;s:5:\"group\";s:1:\"0\";s:7:\"exposed\";b:0;s:6:\"expose\";a:2:{s:8:\"operator\";b:0;s:5:\"label\";s:0:\"\";}s:2:\"id\";s:6:\"status\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:6:\"status\";s:12:\"relationship\";s:4:\"none\";}s:11:\"update_type\";a:9:{s:8:\"operator\";s:1:\"=\";s:5:\"value\";s:0:\"\";s:5:\"group\";s:1:\"0\";s:7:\"exposed\";b:0;s:6:\"expose\";a:2:{s:8:\"operator\";b:0;s:5:\"label\";s:0:\"\";}s:2:\"id\";s:11:\"update_type\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:11:\"update_type\";s:12:\"relationship\";s:4:\"none\";}}s:9:\"css_class\";s:16:\"activity-updates\";s:17:\"block_description\";s:15:\"Recent activity\";s:13:\"block_caching\";i:-1;s:5:\"empty\";s:25:\"No recent activity found.\";s:12:\"empty_format\";s:1:\"5\";}');
 INSERT INTO `views_display` VALUES (32,'block_2','Files','block',3,'a:11:{s:6:\"fields\";a:4:{s:9:\"group_nid\";a:13:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:15:{s:10:\"alter_text\";b:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";b:0;s:4:\"path\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"trim\";b:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";b:1;s:8:\"ellipsis\";b:1;s:10:\"strip_tags\";b:0;s:4:\"html\";b:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:4:\"type\";s:9:\"separator\";s:9:\"separator\";s:2:\", \";s:7:\"exclude\";i:0;s:2:\"id\";s:9:\"group_nid\";s:5:\"table\";s:11:\"og_ancestry\";s:5:\"field\";s:9:\"group_nid\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}s:7:\"feature\";a:9:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:15:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:10:\"strip_tags\";i:0;s:4:\"html\";i:0;}s:12:\"link_to_node\";i:0;s:7:\"exclude\";i:0;s:2:\"id\";s:7:\"feature\";s:5:\"table\";s:11:\"spaces_node\";s:5:\"field\";s:7:\"feature\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}s:25:\"atrium_activity_timestamp\";a:15:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:15:{s:10:\"alter_text\";b:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";b:0;s:4:\"path\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"trim\";b:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";b:1;s:8:\"ellipsis\";b:1;s:10:\"strip_tags\";b:0;s:4:\"html\";b:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:11:\"date_format\";s:5:\"small\";s:18:\"custom_date_format\";s:0:\"\";s:7:\"reldate\";s:7:\"reldate\";s:7:\"exclude\";i:0;s:12:\"time_horizon\";i:30;s:2:\"id\";s:25:\"atrium_activity_timestamp\";s:5:\"table\";s:8:\"comments\";s:5:\"field\";s:25:\"atrium_activity_timestamp\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}s:22:\"atrium_activity_upload\";a:9:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:14:{s:10:\"alter_text\";b:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";b:0;s:4:\"path\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:4:\"trim\";b:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";b:1;s:8:\"ellipsis\";b:1;s:10:\"strip_tags\";b:0;s:4:\"html\";b:0;}s:12:\"time_horizon\";i:30;s:7:\"exclude\";i:0;s:2:\"id\";s:22:\"atrium_activity_upload\";s:5:\"table\";s:8:\"comments\";s:5:\"field\";s:22:\"atrium_activity_upload\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}}s:8:\"defaults\";a:8:{s:6:\"fields\";b:0;s:5:\"title\";b:0;s:5:\"empty\";b:0;s:12:\"empty_format\";b:0;s:12:\"style_plugin\";b:0;s:13:\"style_options\";b:0;s:10:\"row_plugin\";b:0;s:11:\"row_options\";b:0;}s:5:\"title\";s:12:\"Latest files\";s:5:\"empty\";s:22:\"No recent files found.\";s:12:\"empty_format\";i:0;s:12:\"style_plugin\";s:5:\"table\";s:13:\"style_options\";a:7:{s:8:\"grouping\";s:0:\"\";s:8:\"override\";i:0;s:6:\"sticky\";i:0;s:5:\"order\";s:4:\"desc\";s:7:\"columns\";a:7:{s:9:\"group_nid\";s:9:\"group_nid\";s:8:\"filemime\";s:8:\"filemime\";s:8:\"filename\";s:8:\"filemime\";s:10:\"filemime_1\";s:8:\"filemime\";s:10:\"filename_1\";s:8:\"filemime\";s:25:\"atrium_activity_timestamp\";s:25:\"atrium_activity_timestamp\";s:15:\"atrium_activity\";s:15:\"atrium_activity\";}s:4:\"info\";a:7:{s:9:\"group_nid\";a:1:{s:9:\"separator\";s:0:\"\";}s:8:\"filemime\";a:2:{s:8:\"sortable\";i:0;s:9:\"separator\";s:0:\"\";}s:8:\"filename\";a:2:{s:8:\"sortable\";i:0;s:9:\"separator\";s:5:\"<br/>\";}s:10:\"filemime_1\";a:2:{s:8:\"sortable\";i:0;s:9:\"separator\";s:0:\"\";}s:10:\"filename_1\";a:2:{s:8:\"sortable\";i:0;s:9:\"separator\";s:0:\"\";}s:25:\"atrium_activity_timestamp\";a:1:{s:9:\"separator\";s:0:\"\";}s:15:\"atrium_activity\";a:1:{s:9:\"separator\";s:0:\"\";}}s:7:\"default\";s:2:\"-1\";}s:10:\"row_plugin\";s:6:\"fields\";s:11:\"row_options\";a:0:{}s:17:\"block_description\";s:12:\"Latest files\";s:13:\"block_caching\";i:-1;}');
 INSERT INTO `views_display` VALUES (32,'block_3','User activity','block',4,'a:13:{s:6:\"fields\";a:5:{s:9:\"group_nid\";a:14:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:15:{s:10:\"alter_text\";b:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";b:0;s:4:\"path\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"trim\";b:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";b:1;s:8:\"ellipsis\";b:1;s:10:\"strip_tags\";b:0;s:4:\"html\";b:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:4:\"type\";s:9:\"separator\";s:9:\"separator\";s:2:\", \";s:6:\"crayon\";a:2:{s:7:\"enabled\";s:7:\"enabled\";s:7:\"acronym\";s:7:\"acronym\";}s:7:\"exclude\";i:0;s:2:\"id\";s:9:\"group_nid\";s:5:\"table\";s:11:\"og_ancestry\";s:5:\"field\";s:9:\"group_nid\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}s:7:\"feature\";a:9:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:15:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:10:\"strip_tags\";i:0;s:4:\"html\";i:0;}s:12:\"link_to_node\";i:0;s:7:\"exclude\";i:0;s:2:\"id\";s:7:\"feature\";s:5:\"table\";s:11:\"spaces_node\";s:5:\"field\";s:7:\"feature\";s:8:\"override\";a:1:{s:6:\"button\";s:8:\"Override\";}s:12:\"relationship\";s:4:\"none\";}s:25:\"atrium_activity_timestamp\";a:15:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:15:{s:10:\"alter_text\";b:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";b:0;s:4:\"path\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"trim\";b:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";b:1;s:8:\"ellipsis\";b:1;s:10:\"strip_tags\";b:0;s:4:\"html\";b:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:11:\"date_format\";s:5:\"small\";s:18:\"custom_date_format\";s:0:\"\";s:7:\"reldate\";s:7:\"reldate\";s:7:\"exclude\";i:0;s:12:\"time_horizon\";i:30;s:2:\"id\";s:25:\"atrium_activity_timestamp\";s:5:\"table\";s:8:\"comments\";s:5:\"field\";s:25:\"atrium_activity_timestamp\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}s:15:\"atrium_activity\";a:9:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:14:{s:10:\"alter_text\";b:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";b:0;s:4:\"path\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:4:\"trim\";b:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";b:1;s:8:\"ellipsis\";b:1;s:10:\"strip_tags\";b:0;s:4:\"html\";b:0;}s:12:\"time_horizon\";s:2:\"90\";s:7:\"exclude\";i:0;s:2:\"id\";s:15:\"atrium_activity\";s:5:\"table\";s:8:\"comments\";s:5:\"field\";s:15:\"atrium_activity\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}s:9:\"timestamp\";a:10:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:15:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:10:\"strip_tags\";i:0;s:4:\"html\";i:0;}s:12:\"link_to_node\";i:0;s:8:\"comments\";i:0;s:7:\"exclude\";i:0;s:2:\"id\";s:9:\"timestamp\";s:5:\"table\";s:12:\"history_user\";s:5:\"field\";s:9:\"timestamp\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}}s:8:\"defaults\";a:10:{s:6:\"fields\";b:0;s:9:\"arguments\";b:0;s:7:\"filters\";b:0;s:9:\"css_class\";b:0;s:12:\"style_plugin\";b:0;s:13:\"style_options\";b:0;s:10:\"row_plugin\";b:0;s:11:\"row_options\";b:0;s:5:\"empty\";b:0;s:12:\"empty_format\";b:0;}s:9:\"arguments\";a:1:{s:3:\"uid\";a:33:{s:14:\"default_action\";s:7:\"default\";s:12:\"style_plugin\";s:15:\"default_summary\";s:13:\"style_options\";a:0:{}s:8:\"wildcard\";s:3:\"all\";s:21:\"wildcard_substitution\";s:3:\"All\";s:5:\"title\";s:13:\"%1\'s activity\";s:10:\"breadcrumb\";s:0:\"\";s:21:\"default_argument_type\";s:4:\"user\";s:16:\"default_argument\";s:0:\"\";s:13:\"validate_type\";s:4:\"user\";s:13:\"validate_fail\";s:9:\"not found\";s:12:\"break_phrase\";i:0;s:3:\"not\";i:0;s:2:\"id\";s:3:\"uid\";s:5:\"table\";s:5:\"users\";s:5:\"field\";s:3:\"uid\";s:27:\"validate_user_argument_type\";s:3:\"uid\";s:19:\"validate_user_roles\";a:3:{i:2;i:0;i:3;i:0;i:4;i:0;}s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";s:26:\"default_options_div_prefix\";s:0:\"\";s:21:\"default_argument_user\";i:0;s:22:\"default_argument_fixed\";s:0:\"\";s:20:\"default_argument_php\";s:0:\"\";s:27:\"validate_argument_node_type\";a:15:{s:4:\"blog\";i:0;s:4:\"book\";i:0;s:5:\"event\";i:0;s:9:\"feed_ical\";i:0;s:14:\"feed_ical_item\";i:0;s:22:\"casetracker_basic_case\";i:0;s:25:\"casetracker_basic_project\";i:0;s:5:\"group\";i:0;s:7:\"profile\";i:0;s:8:\"shoutbox\";i:0;s:13:\"admin_message\";i:0;s:12:\"feedapi_node\";i:0;s:11:\"feed_reader\";i:0;s:8:\"imageset\";i:0;s:4:\"page\";i:0;}s:29:\"validate_argument_node_access\";i:0;s:26:\"validate_argument_nid_type\";s:3:\"nid\";s:28:\"validate_argument_vocabulary\";a:5:{i:5;i:0;i:1;i:0;i:2;i:0;i:6;i:0;i:4;i:0;}s:22:\"validate_argument_type\";s:3:\"tid\";s:27:\"validate_argument_transform\";i:0;s:28:\"validate_user_restrict_roles\";i:0;s:27:\"validate_argument_is_member\";i:0;s:21:\"validate_argument_php\";s:0:\"\";}}s:7:\"filters\";a:2:{s:6:\"status\";a:10:{s:8:\"operator\";s:1:\"=\";s:5:\"value\";s:1:\"1\";s:5:\"group\";s:1:\"0\";s:7:\"exposed\";b:0;s:6:\"expose\";a:2:{s:8:\"operator\";b:0;s:5:\"label\";s:0:\"\";}s:2:\"id\";s:6:\"status\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:6:\"status\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}s:11:\"update_type\";a:10:{s:8:\"operator\";s:1:\"=\";s:5:\"value\";s:0:\"\";s:5:\"group\";s:1:\"0\";s:7:\"exposed\";b:0;s:6:\"expose\";a:2:{s:8:\"operator\";b:0;s:5:\"label\";s:0:\"\";}s:2:\"id\";s:11:\"update_type\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:11:\"update_type\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}}s:9:\"css_class\";s:16:\"activity-updates\";s:12:\"style_plugin\";s:5:\"table\";s:13:\"style_options\";a:7:{s:8:\"grouping\";s:0:\"\";s:8:\"override\";i:1;s:6:\"sticky\";i:0;s:5:\"order\";s:3:\"asc\";s:7:\"columns\";a:5:{s:9:\"group_nid\";s:9:\"group_nid\";s:7:\"feature\";s:7:\"feature\";s:25:\"atrium_activity_timestamp\";s:25:\"atrium_activity_timestamp\";s:15:\"atrium_activity\";s:15:\"atrium_activity\";s:9:\"timestamp\";s:9:\"timestamp\";}s:4:\"info\";a:5:{s:9:\"group_nid\";a:1:{s:9:\"separator\";s:0:\"\";}s:7:\"feature\";a:1:{s:9:\"separator\";s:0:\"\";}s:25:\"atrium_activity_timestamp\";a:1:{s:9:\"separator\";s:0:\"\";}s:15:\"atrium_activity\";a:1:{s:9:\"separator\";s:0:\"\";}s:9:\"timestamp\";a:1:{s:9:\"separator\";s:0:\"\";}}s:7:\"default\";s:2:\"-1\";}s:10:\"row_plugin\";s:6:\"fields\";s:11:\"row_options\";a:0:{}s:17:\"block_description\";s:15:\"User\'s activity\";s:13:\"block_caching\";i:-1;s:5:\"empty\";s:23:\"No user activity found.\";s:12:\"empty_format\";s:1:\"5\";}');
 INSERT INTO `views_display` VALUES (32,'block_4','App Updates','block',5,'a:12:{s:6:\"fields\";a:10:{s:5:\"title\";a:13:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:12:\"link_to_node\";i:0;s:6:\"spaces\";a:2:{s:9:\"frontpage\";i:0;s:4:\"type\";s:9:\"spaces_og\";}s:7:\"exclude\";i:0;s:2:\"id\";s:5:\"title\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:5:\"title\";s:8:\"override\";a:1:{s:6:\"button\";s:8:\"Override\";}s:12:\"relationship\";s:4:\"none\";}s:25:\"atrium_activity_timestamp\";a:14:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:15:{s:10:\"alter_text\";b:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";b:0;s:4:\"path\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"trim\";b:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";b:1;s:8:\"ellipsis\";b:1;s:10:\"strip_tags\";b:0;s:4:\"html\";b:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:11:\"date_format\";s:8:\"time ago\";s:18:\"custom_date_format\";s:0:\"\";s:7:\"reldate\";s:1:\"0\";s:7:\"exclude\";i:0;s:2:\"id\";s:25:\"atrium_activity_timestamp\";s:5:\"table\";s:8:\"comments\";s:5:\"field\";s:25:\"atrium_activity_timestamp\";s:12:\"relationship\";s:4:\"none\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}}s:13:\"comment_count\";a:17:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:1;s:4:\"text\";s:24:\"[comment_count] comments\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:0;s:8:\"ellipsis\";i:0;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:13:\"set_precision\";b:0;s:9:\"precision\";i:0;s:7:\"decimal\";s:1:\".\";s:9:\"separator\";s:1:\",\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:7:\"exclude\";i:0;s:2:\"id\";s:13:\"comment_count\";s:5:\"table\";s:23:\"node_comment_statistics\";s:5:\"field\";s:13:\"comment_count\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}s:17:\"field_video_embed\";a:15:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:12:\"link_to_node\";i:0;s:10:\"label_type\";s:4:\"none\";s:6:\"format\";s:21:\"video_replace_preview\";s:8:\"multiple\";a:4:{s:5:\"group\";b:1;s:15:\"multiple_number\";s:0:\"\";s:13:\"multiple_from\";s:0:\"\";s:17:\"multiple_reversed\";b:0;}s:7:\"exclude\";i:0;s:2:\"id\";s:17:\"field_video_embed\";s:5:\"table\";s:21:\"node_data_field_video\";s:5:\"field\";s:17:\"field_video_embed\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}s:21:\"field_group_image_fid\";a:15:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:12:\"link_to_node\";i:0;s:10:\"label_type\";s:4:\"none\";s:6:\"format\";s:27:\"AttachmentThumbnail_default\";s:8:\"multiple\";a:4:{s:5:\"group\";b:1;s:15:\"multiple_number\";s:0:\"\";s:13:\"multiple_from\";s:0:\"\";s:17:\"multiple_reversed\";b:0;}s:7:\"exclude\";i:0;s:2:\"id\";s:21:\"field_group_image_fid\";s:5:\"table\";s:27:\"node_data_field_group_image\";s:5:\"field\";s:21:\"field_group_image_fid\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}s:9:\"group_nid\";a:15:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:15:{s:10:\"alter_text\";b:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";b:0;s:4:\"path\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"trim\";b:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";b:1;s:8:\"ellipsis\";b:1;s:10:\"strip_tags\";b:0;s:4:\"html\";b:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:4:\"type\";s:9:\"separator\";s:9:\"separator\";s:2:\", \";s:19:\"spaces_og_frontpage\";i:1;s:6:\"crayon\";a:2:{s:7:\"enabled\";i:0;s:7:\"acronym\";i:0;}s:7:\"exclude\";i:1;s:2:\"id\";s:9:\"group_nid\";s:5:\"table\";s:11:\"og_ancestry\";s:5:\"field\";s:9:\"group_nid\";s:12:\"relationship\";s:4:\"none\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}}s:15:\"atrium_activity\";a:12:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:15:{s:10:\"alter_text\";b:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";b:0;s:4:\"path\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"trim\";b:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";b:1;s:8:\"ellipsis\";b:1;s:10:\"strip_tags\";b:0;s:4:\"html\";b:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:12:\"time_horizon\";s:2:\"30\";s:7:\"exclude\";i:1;s:2:\"id\";s:15:\"atrium_activity\";s:5:\"table\";s:8:\"comments\";s:5:\"field\";s:15:\"atrium_activity\";s:12:\"relationship\";s:4:\"none\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}}s:9:\"timestamp\";a:13:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:12:\"link_to_node\";i:0;s:8:\"comments\";i:0;s:7:\"exclude\";i:1;s:2:\"id\";s:9:\"timestamp\";s:5:\"table\";s:12:\"history_user\";s:5:\"field\";s:9:\"timestamp\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}s:13:\"comments_link\";a:12:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:16:{s:10:\"alter_text\";i:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";i:0;s:4:\"path\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"help\";s:0:\"\";s:4:\"trim\";i:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";i:1;s:8:\"ellipsis\";i:1;s:4:\"html\";i:0;s:10:\"strip_tags\";i:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";i:0;s:10:\"empty_zero\";i:0;s:6:\"teaser\";i:1;s:7:\"exclude\";i:0;s:2:\"id\";s:13:\"comments_link\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:13:\"comments_link\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}s:14:\"fb_social_like\";a:19:{s:5:\"label\";s:0:\"\";s:5:\"alter\";a:15:{s:10:\"alter_text\";b:0;s:4:\"text\";s:0:\"\";s:9:\"make_link\";b:0;s:4:\"path\";s:0:\"\";s:3:\"alt\";s:0:\"\";s:10:\"link_class\";s:0:\"\";s:6:\"prefix\";s:0:\"\";s:6:\"suffix\";s:0:\"\";s:6:\"target\";s:0:\"\";s:4:\"trim\";b:0;s:10:\"max_length\";s:0:\"\";s:13:\"word_boundary\";b:1;s:8:\"ellipsis\";b:1;s:10:\"strip_tags\";b:0;s:4:\"html\";b:0;}s:5:\"empty\";s:0:\"\";s:10:\"hide_empty\";b:0;s:10:\"empty_zero\";b:0;s:12:\"link_to_node\";b:0;s:27:\"fb_social_like_layout_style\";s:12:\"button_count\";s:25:\"fb_social_like_show_faces\";i:0;s:20:\"fb_social_like_width\";s:3:\"350\";s:19:\"fb_social_like_verb\";s:4:\"like\";s:19:\"fb_social_like_font\";s:7:\"verdana\";s:20:\"fb_social_like_color\";s:4:\"dark\";s:7:\"exclude\";i:0;s:2:\"id\";s:14:\"fb_social_like\";s:5:\"table\";s:14:\"fb_social_like\";s:5:\"field\";s:14:\"fb_social_like\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";s:26:\"fb_social_like_send_button\";i:1;}}s:8:\"defaults\";a:9:{s:6:\"fields\";b:0;s:7:\"filters\";b:0;s:9:\"css_class\";b:0;s:12:\"style_plugin\";b:0;s:13:\"style_options\";b:0;s:10:\"row_plugin\";b:0;s:11:\"row_options\";b:0;s:5:\"empty\";b:0;s:12:\"empty_format\";b:0;}s:7:\"filters\";a:3:{s:6:\"status\";a:9:{s:8:\"operator\";s:1:\"=\";s:5:\"value\";i:1;s:5:\"group\";s:1:\"0\";s:7:\"exposed\";b:0;s:6:\"expose\";a:2:{s:8:\"operator\";b:0;s:5:\"label\";s:0:\"\";}s:2:\"id\";s:6:\"status\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:6:\"status\";s:12:\"relationship\";s:4:\"none\";}s:11:\"update_type\";a:9:{s:8:\"operator\";s:1:\"=\";s:5:\"value\";s:0:\"\";s:5:\"group\";s:1:\"0\";s:7:\"exposed\";b:0;s:6:\"expose\";a:2:{s:8:\"operator\";b:0;s:5:\"label\";s:0:\"\";}s:2:\"id\";s:11:\"update_type\";s:5:\"table\";s:4:\"node\";s:5:\"field\";s:11:\"update_type\";s:12:\"relationship\";s:4:\"none\";}s:7:\"current\";a:10:{s:8:\"operator\";s:1:\"=\";s:5:\"value\";s:0:\"\";s:5:\"group\";s:1:\"0\";s:7:\"exposed\";b:0;s:6:\"expose\";a:2:{s:8:\"operator\";b:0;s:5:\"label\";s:0:\"\";}s:2:\"id\";s:7:\"current\";s:5:\"table\";s:6:\"spaces\";s:5:\"field\";s:7:\"current\";s:8:\"override\";a:1:{s:6:\"button\";s:11:\"Use default\";}s:12:\"relationship\";s:4:\"none\";}}s:9:\"css_class\";s:16:\"activity-updates\";s:12:\"style_plugin\";s:4:\"list\";s:13:\"style_options\";a:0:{}s:10:\"row_plugin\";s:6:\"fields\";s:11:\"row_options\";a:3:{s:6:\"inline\";a:2:{s:25:\"atrium_activity_timestamp\";s:25:\"atrium_activity_timestamp\";s:13:\"comment_count\";s:13:\"comment_count\";}s:9:\"separator\";s:0:\"\";s:10:\"hide_empty\";i:0;}s:17:\"block_description\";s:0:\"\";s:13:\"block_caching\";i:-1;s:5:\"empty\";s:25:\"No app updates found yet.\";s:12:\"empty_format\";s:1:\"5\";}');
@@ -10533,18 +10570,18 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `views_object_cache`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `views_object_cache` (
-  `sid` varchar(64) DEFAULT NULL,
-  `name` varchar(32) DEFAULT NULL,
-  `obj` varchar(32) DEFAULT NULL,
-  `updated` int(10) unsigned NOT NULL DEFAULT '0',
+  `sid` varchar(64) default NULL,
+  `name` varchar(32) default NULL,
+  `obj` varchar(32) default NULL,
+  `updated` int(10) unsigned NOT NULL default '0',
   `data` longtext,
   KEY `sid_obj_name` (`sid`,`obj`,`name`),
   KEY `updated` (`updated`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `views_object_cache`
@@ -10562,20 +10599,20 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `views_view`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `views_view` (
-  `vid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(32) NOT NULL DEFAULT '',
-  `description` varchar(255) DEFAULT '',
-  `tag` varchar(255) DEFAULT '',
+  `vid` int(10) unsigned NOT NULL auto_increment,
+  `name` varchar(32) NOT NULL default '',
+  `description` varchar(255) default '',
+  `tag` varchar(255) default '',
   `view_php` blob,
-  `base_table` varchar(64) NOT NULL DEFAULT '',
-  `is_cacheable` tinyint(4) DEFAULT '0',
-  PRIMARY KEY (`vid`),
+  `base_table` varchar(64) NOT NULL default '',
+  `is_cacheable` tinyint(4) default '0',
+  PRIMARY KEY  (`vid`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `views_view`
@@ -10599,24 +10636,24 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `vocabulary`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `vocabulary` (
-  `vid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL DEFAULT '',
+  `vid` int(10) unsigned NOT NULL auto_increment,
+  `name` varchar(255) NOT NULL default '',
   `description` longtext,
-  `help` varchar(255) NOT NULL DEFAULT '',
-  `relations` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `hierarchy` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `multiple` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `required` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `tags` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `module` varchar(255) NOT NULL DEFAULT '',
-  `weight` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`vid`),
+  `help` varchar(255) NOT NULL default '',
+  `relations` tinyint(3) unsigned NOT NULL default '0',
+  `hierarchy` tinyint(3) unsigned NOT NULL default '0',
+  `multiple` tinyint(3) unsigned NOT NULL default '0',
+  `required` tinyint(3) unsigned NOT NULL default '0',
+  `tags` tinyint(3) unsigned NOT NULL default '0',
+  `module` varchar(255) NOT NULL default '',
+  `weight` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`vid`),
   KEY `list` (`weight`,`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `vocabulary`
@@ -10641,15 +10678,15 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `vocabulary_node_types`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `vocabulary_node_types` (
-  `vid` int(10) unsigned NOT NULL DEFAULT '0',
-  `type` varchar(32) NOT NULL DEFAULT '',
-  PRIMARY KEY (`type`,`vid`),
+  `vid` int(10) unsigned NOT NULL default '0',
+  `type` varchar(32) NOT NULL default '',
+  PRIMARY KEY  (`type`,`vid`),
   KEY `vid` (`vid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `vocabulary_node_types`
@@ -10680,15 +10717,15 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `wysiwyg`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `wysiwyg` (
-  `format` int(11) NOT NULL DEFAULT '0',
-  `editor` varchar(128) NOT NULL DEFAULT '',
+  `format` int(11) NOT NULL default '0',
+  `editor` varchar(128) NOT NULL default '',
   `settings` text,
-  PRIMARY KEY (`format`)
+  PRIMARY KEY  (`format`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `wysiwyg`
@@ -10709,16 +10746,16 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `wysiwyg_user`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `wysiwyg_user` (
-  `uid` int(10) unsigned NOT NULL DEFAULT '0',
-  `format` int(11) DEFAULT NULL,
-  `status` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `uid` int(10) unsigned NOT NULL default '0',
+  `format` int(11) default NULL,
+  `status` tinyint(3) unsigned NOT NULL default '0',
   KEY `uid` (`uid`),
   KEY `format` (`format`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `wysiwyg_user`
@@ -10734,24 +10771,24 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `zipcodes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
 CREATE TABLE `zipcodes` (
-  `zip` varchar(16) NOT NULL DEFAULT '0',
-  `city` varchar(30) NOT NULL DEFAULT '',
-  `state` varchar(30) NOT NULL DEFAULT '',
-  `latitude` decimal(10,6) NOT NULL DEFAULT '0.000000',
-  `longitude` decimal(10,6) NOT NULL DEFAULT '0.000000',
-  `timezone` tinyint(4) NOT NULL DEFAULT '0',
-  `dst` tinyint(4) NOT NULL DEFAULT '0',
-  `country` char(2) NOT NULL DEFAULT '',
+  `zip` varchar(16) NOT NULL default '0',
+  `city` varchar(30) NOT NULL default '',
+  `state` varchar(30) NOT NULL default '',
+  `latitude` decimal(10,6) NOT NULL default '0.000000',
+  `longitude` decimal(10,6) NOT NULL default '0.000000',
+  `timezone` tinyint(4) NOT NULL default '0',
+  `dst` tinyint(4) NOT NULL default '0',
+  `country` char(2) NOT NULL default '',
   KEY `pc` (`country`,`zip`),
   KEY `zip` (`zip`),
   KEY `latitude` (`latitude`),
   KEY `longitude` (`longitude`),
   KEY `country` (`country`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Dumping data for table `zipcodes`
@@ -10771,4 +10808,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2011-09-08 15:53:13
+-- Dump completed on 2011-09-13 13:03:03
