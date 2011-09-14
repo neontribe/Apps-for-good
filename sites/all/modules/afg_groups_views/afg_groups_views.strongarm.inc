@@ -208,6 +208,7 @@ function afg_groups_views_strongarm() {
     'menu' => '0',
     'taxonomy' => '-1',
     'book' => '6',
+    'path' => '30',
     'attachments' => '10',
     'og_description' => '-2',
     'og_selective' => '2',
