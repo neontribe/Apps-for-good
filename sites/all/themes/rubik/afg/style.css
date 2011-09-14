@@ -936,6 +936,10 @@ input[type='submit'] {
 	background: #1B9BDA;
 }
 
+.shoutbox-list .item-list li {
+	padding: 10px;
+}
+
 .shoutbox-input .form-submit {
 	float: right;
 	margin: 0 0 10px;
@@ -1509,4 +1513,8 @@ body #header-top .account-menu-active a {
 	padding: 0 17px 0 0;
 	margin: 0 5px;
 	background: url('images/afg/icons/afg_profile-icon-s.gif') right no-repeat;
+<<<<<<< HEAD:sites/all/themes/rubik/afg/style.css
 }
+=======
+}
+>>>>>>> 957756762bbc8a648e435e6acf79a8b2dc5168a8:sites/all/themes/rubik/afg/style.css
