@@ -101,7 +101,7 @@ ol li {
 }
 
 .page-admin ul li {
-	list-style: none;
+	list-style: none;s
 }
 
 /* Headers & Spans
@@ -280,8 +280,7 @@ input[type='submit'] {
 ---------------------------------------------------------- */
 
 .fieldset-content .form-option {
-	float: left;
-	width: 100%;
+	
 }
 
 .limiter {
