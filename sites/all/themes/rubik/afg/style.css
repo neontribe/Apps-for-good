@@ -1594,9 +1594,14 @@ body #header-top .account-menu-active a {
 	margin: 0 10px 0 0;
 }
 
-.end-node object {
+.end-node object,
+.end-node .field-items img {
 	border: 6px solid #FFF;
 	background: #EFEFEF;
+}
+
+.end-node .content-body {
+	margin: 0 0 15px;
 }
 
 .end-node h2 {
@@ -1605,11 +1610,6 @@ body #header-top .account-menu-active a {
 	line-height: 1.5;
 }
 
-.end-node h3 {
-	color: #444;
-	font-size: 1.5em;
-	line-height: 2;
-}
 
 .end-node .content-wrapper .node {
 	background: #1B9BDA;
@@ -1619,7 +1619,7 @@ body #header-top .account-menu-active a {
 
 .end-node .meta {
 	padding: 3px;
-	margin: 0 0 5px;
+	margin: 100px 0 5px;
 }
 
 .end-node .content {
@@ -1653,17 +1653,4 @@ body #header-top .account-menu-active a {
 	float: left;
 	background: url('images/afg/icon-timestamp.png') left no-repeat;
 	padding: 0 0 0 20px;
-}
-
-.end-node .groups {
-	margin: 15px 0 0;
-}
-
-.end-node .groups .links li {
-	background: url('images/afg/icons/afg_profile-icon-s.gif') left no-repeat;
-	padding: 0 0 0 25px;
-}
-
-.end-node .groups .links li a {
-	color: #FFF;
 }
