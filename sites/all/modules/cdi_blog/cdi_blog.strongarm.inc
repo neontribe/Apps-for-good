@@ -82,6 +82,7 @@ function cdi_blog_strongarm() {
     'menu' => '-2',
     'taxonomy' => '-3',
     'book' => '10',
+    'path' => '30',
     'attachments' => '30',
   );
 

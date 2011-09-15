@@ -11,19 +11,20 @@ function afg_group_media_content_default_fields() {
     'field_name' => 'field_group_image',
     'type_name' => 'group_media_image',
     'display_settings' => array(
+      'weight' => '-4',
+      'parent' => '',
       'label' => array(
-        'format' => 'above',
-        'exclude' => 0,
-      ),
-      '5' => array(
-        'format' => 'image_plain',
-        'exclude' => 0,
+        'format' => 'hidden',
       ),
       'teaser' => array(
         'format' => 'image_plain',
         'exclude' => 0,
       ),
       'full' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '5' => array(
         'format' => 'image_plain',
         'exclude' => 0,
       ),
@@ -217,9 +218,9 @@ function afg_group_media_content_default_fields() {
         'description' => 0,
       ),
       'providers' => array(
+        'flickr_sets' => 'flickr_sets',
+        'slideshare' => 'slideshare',
         'youtube' => 'youtube',
-        'flickr_sets' => 0,
-        'slideshare' => 0,
       ),
       'default_value' => array(
         '0' => array(
@@ -329,16 +330,16 @@ function afg_group_media_content_default_fields() {
       'custom_title' => 0,
       'title_type' => 'textfield',
       'default_image' => array(
-        'filename' => 'help.png',
-        'filepath' => 'sites/default/files/imagefield_default_images/help.png',
-        'filemime' => 'image/png',
+        'filename' => 'afg_help-icon.gif',
+        'filepath' => 'sites/default/files/imagefield_default_images/afg_help-icon.gif',
+        'filemime' => 'image/gif',
         'source' => 'default_image_upload',
-        'destination' => 'sites/default/files/imagefield_default_images/help.png',
-        'filesize' => 1624,
+        'destination' => 'sites/default/files/imagefield_default_images/afg_help-icon.gif',
+        'filesize' => 1369,
         'uid' => '1',
         'status' => 1,
-        'timestamp' => 1314098923,
-        'fid' => '22',
+        'timestamp' => 1316296284,
+        'fid' => '149',
       ),
       'use_default_image' => 1,
       'label' => 'Icon',

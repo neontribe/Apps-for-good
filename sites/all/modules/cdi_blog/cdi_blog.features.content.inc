@@ -70,7 +70,7 @@ function cdi_blog_content_default_fields() {
       'use_default_image' => 0,
       'label' => 'Carousel image',
       'weight' => '31',
-      'description' => '',
+      'description' => 'This image will be displayed in the carousel at 435px width x 320px Height. Please upload an image of this size. Otherwise, the image will scale to 320px high and not fill the carousel width.',
       'type' => 'imagefield_widget',
       'module' => 'imagefield',
     ),
