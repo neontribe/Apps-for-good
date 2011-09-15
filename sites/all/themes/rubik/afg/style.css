@@ -129,14 +129,14 @@ h1 {
 }
 
 .region h2 {
-	font-size: 2em;
+	font-size: 1.5em;
 	font-family: 'Open Sans', sans-serif;
 	text-transform: uppercase;
 	color: #FFF;
-	background: url('images/afg/map-pin.png') no-repeat left;
+	background: url('images/afg/pin.png') no-repeat left;
 	height: 56px;
 	line-height: 56px;
-	padding: 0 0 0 50px;
+	padding: 0 0 0 40px;
 }
 
 #content-left .block-title h2 {
@@ -202,7 +202,9 @@ h1 {
 #content-left .view-updates li:after,
 #content-left .view-afg-app-directory li:after,
 #content-right .view-groups-listing-centre-school li:after,
-#content-left .view-shoutbox-shouts li:after {
+#content-left .view-shoutbox-shouts li:after,
+.end-node .meta:after,
+.page-supporters #content-left .item-list:after {
     content: ".";
     display: block;
     height: 0;
@@ -245,10 +247,13 @@ input[type='submit'] {
     border: 0;
 }
 
+.page-supporters #content-left .views-field-managelinkadmin a,
+.page-supporters #content-left .views-field-managelink a,
 #content-right .views-field-mail a {
-	float: left;
+	/* float: left; */
 	padding: 8px 11px;
-	margin:10px 0 0;
+	margin: 10px 0 0;
+	position: relative;
 	color: #FFF !important;
 	text-transform: uppercase;
 	text-shadow: 1px 1px 2px #444;
@@ -261,12 +266,23 @@ input[type='submit'] {
 	border-radius: 8px;
 }
 
+#content-right .views-field-mail a {
+	float: left;	
+}
+
+.page-supporters #content-left .views-field-managelinkadmin:hover a,
+.page-supporters #content-left .views-field-managelink:hover a,
 #content-right .views-field-mail:hover a {
 	background-color: #999 !important;
 }
 
 /* Layout
 ---------------------------------------------------------- */
+
+.fieldset-content .form-option {
+	float: left;
+	width: 100%;
+}
 
 .limiter {
 	width: 100%;
@@ -1208,7 +1224,7 @@ input[type='submit'] {
 /* Supporters
 ---------------------------------------------------------- */
 
-.page-supporters .views-field-picture img {
+.page-supporters #content-left .views-field-picture img {
 	height: auto;
 	max-width: 50px;
 	background: #FFF;
@@ -1218,13 +1234,60 @@ input[type='submit'] {
 	border-shadow: 0 0 6px 1px #CCC;
 }
 
-.page-supporters td {
+.page-supporters #content-left li {
+	float: left !important;
 	text-align: center;
-	padding: 0 0 20px;
+	padding: 0 0 20px;	
+	background: #CCC;
+	width: 24%;
+	margin: 0 7px 7px 0;
+	min-height: 155px;
 }
 
-.page-supporters td:hover .views-field-name {
-	text-decoration: underline;
+.page-supporters #content-left li:hover {
+	background: #DDD;
+}
+
+.page-supporters #content-left li:last-child {
+	margin: 0 !important;
+}
+
+.page-supporters #content-left .item-list {
+	border: 0;
+}
+
+.page-supporters #content-left .views-field-picture {
+	margin: 15px 0 0;
+}
+
+.page-supporters #content-left .views-field-picture img {
+	-moz-box-shadow: 0 0 2px 3px #C0C0C0;
+	-webkit-box-shadow: 0 0 2px 3px #C0C0C0;
+	box-shadow: 0 0 2px 3px #C0C0C0;
+}
+
+.page-supporters #content-left .views-field-managelinkadmin a {
+	padding: 3px 6px;
+	top: 22px;
+}
+
+.page-supporters #content-left .views-field-managelink a {
+	padding: 3px 6px;
+	top: 10px;
+}
+
+.page-supporters #content-left .views-field-name a {
+	color: #222;
+	font-weight: bold;
+	border-bottom: 2px solid #222;
+	padding: 0 0 1px;
+	margin: 0 0 5px;
+	text-transform: uppercase;
+}
+
+.page-supporters #content-left .views-field-name a:hover {
+	color: #666;
+	border-bottom-color: #666;
 }
 
 /* Badges
@@ -1513,8 +1576,94 @@ body #header-top .account-menu-active a {
 	padding: 0 17px 0 0;
 	margin: 0 5px;
 	background: url('images/afg/icons/afg_profile-icon-s.gif') right no-repeat;
-<<<<<<< HEAD:sites/all/themes/rubik/afg/style.css
 }
-=======
+
+
+
+
+
+
+
+/* =============================================================== */
+.end-node .field-field-icon {
+	display: none;
 }
->>>>>>> 957756762bbc8a648e435e6acf79a8b2dc5168a8:sites/all/themes/rubik/afg/style.css
+
+.end-node .picture {
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.end-node object {
+	border: 6px solid #FFF;
+	background: #EFEFEF;
+}
+
+.end-node h2 {
+	color: #000;
+	font-size: 2em;
+	line-height: 1.5;
+}
+
+.end-node h3 {
+	color: #444;
+	font-size: 1.5em;
+	line-height: 2;
+}
+
+.end-node .content-wrapper .node {
+	background: #1B9BDA;
+	padding: 10px;
+	margin: 0 0 10px;
+}
+
+.end-node .meta {
+	padding: 3px;
+	margin: 0 0 5px;
+}
+
+.end-node .content {
+	color: #FFF;
+	margin: 0 0 20px;
+}
+
+.end-node .meta a {
+	color: #FFF;
+	border-bottom: 2px solid #FFF;
+	text-transform: capitalize;
+	padding: 0 0 2px;
+}
+
+.end-node .meta a:hover {
+	color: #000;
+	border-bottom-color: #000;
+}
+
+.end-node .meta {
+	margin: 0 0 5px;
+}
+
+.end-node .meta .byline {
+	float: left;
+	margin: 0 20px 0 0;
+}
+
+.end-node .meta .date {
+	color: #FFF;
+	float: left;
+	background: url('images/afg/icon-timestamp.png') left no-repeat;
+	padding: 0 0 0 20px;
+}
+
+.end-node .groups {
+	margin: 15px 0 0;
+}
+
+.end-node .groups .links li {
+	background: url('images/afg/icons/afg_profile-icon-s.gif') left no-repeat;
+	padding: 0 0 0 25px;
+}
+
+.end-node .groups .links li a {
+	color: #FFF;
+}
