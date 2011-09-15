@@ -1,4 +1,4 @@
-<?php include('header.inc'); ?>
+<?php include('header-directory.inc'); ?>
 
 <div id='page' class='clear-block limiter page-content'>
 
@@ -7,10 +7,6 @@
   <?php endif; ?>
    
   <div id='content'>
-  
-  	<?php
-	  dpm( get_defined_vars() );
-	?>
   
     <?php if ($tabs): ?>
       <div id='tabs'>
