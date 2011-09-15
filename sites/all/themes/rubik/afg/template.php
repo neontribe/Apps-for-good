@@ -93,7 +93,7 @@ function afg_links($links, $attributes = array('class' => 'links')) {
 	if(isset($links['subscribe'])) {
 		$title = $links['subscribe']['title'];
 		switch (strtolower($title)){
-			case 'cancel request to join':
+			case 'leave this group':
 				$links['subscribe']['title'] = t('UnFollow');
 				$suffix = t('<p>You will not get any of the latest updates</p>');
 				break;

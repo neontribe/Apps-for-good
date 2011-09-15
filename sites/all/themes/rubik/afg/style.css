@@ -194,6 +194,7 @@ h1 {
 /* Clearing
 ---------------------------------------------------------- */
 
+.fieldset-content .form-item:after,
 .view-id-Group_Media li:after,
 .views-field-comment-count:after,
 .form-submit:after,
@@ -278,10 +279,6 @@ input[type='submit'] {
 
 /* Layout
 ---------------------------------------------------------- */
-
-.fieldset-content .form-option {
-	
-}
 
 .limiter {
 	width: 100%;
