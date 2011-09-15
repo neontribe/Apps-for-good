@@ -1658,12 +1658,9 @@ body #header-top .account-menu-active a {
 	float: left;
 	background: url('images/afg/icon-commentcount.png') left no-repeat;
 	padding: 0 0 0 25px;
-<<<<<<< HEAD
 	margin: 0 0 0 20px;
-=======
 }
 
 .end-node .groups .links li a {
 	color: #FFF;
->>>>>>> 41c0b04f40952876a4459d55237a7c074c5bffc9
 }

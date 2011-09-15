@@ -8,10 +8,6 @@
    
   <div id='content'>
   
-  	<?php
-	  dpm( get_defined_vars() );
-	?>
-  
     <?php if ($tabs): ?>
       <div id='tabs'>
         <div class='page-tabs limiter clear-block'><?php print $tabs ?></div>
