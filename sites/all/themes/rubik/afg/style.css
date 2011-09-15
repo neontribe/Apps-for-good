@@ -1585,9 +1585,20 @@ body #header-top .account-menu-active a {
 	display: none;
 }
 
+.end-node a {
+	color: #FFF;
+	border-bottom: 2px solid #FFF;
+	padding: 0 0 1px;
+}
+
 .end-node .picture {
 	float: left;
 	margin: 0 10px 0 0;
+}
+
+.end-node .picture a {
+	border: 0;
+	padding: 0;
 }
 
 .end-node object,
@@ -1623,13 +1634,10 @@ body #header-top .account-menu-active a {
 }
 
 .end-node .meta a {
-	color: #FFF;
-	border-bottom: 2px solid #FFF;
 	text-transform: capitalize;
-	padding: 0 0 2px;
 }
 
-.end-node .meta a:hover {
+.end-node a:hover {
 	color: #000;
 	border-bottom-color: #000;
 }
