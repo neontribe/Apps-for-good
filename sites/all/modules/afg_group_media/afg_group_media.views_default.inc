@@ -632,7 +632,7 @@ function afg_group_media_views_default_views() {
       'relationship' => 'none',
     ),
   ));
-  $handler->override_option('empty', 'No updates for this centre yet.');
+  $handler->override_option('empty', 'No updates yet - check back soon.');
   $handler->override_option('empty_format', '5');
   $handler->override_option('path', 'updates');
   $handler->override_option('menu', array(
@@ -1237,7 +1237,7 @@ function afg_group_media_views_default_views() {
     t('Defaults'),
     t('Group Content Updates'),
     t('Logo'),
-    t('No updates for this centre yet.'),
+    t('No updates yet - check back soon.'),
     t('Pitch Video'),
     t('Problem Video'),
   );
