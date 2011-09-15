@@ -93,11 +93,11 @@ em {
 }
 
 ul li {
-	list-style: disc;
+	list-style: inside disc;
 }
 
 ol li {
-	list-style: decimal;
+	list-style: inside decimal;
 }
 
 .page-admin ul li {
@@ -278,6 +278,11 @@ input[type='submit'] {
 
 /* Layout
 ---------------------------------------------------------- */
+
+.fieldset-content .form-option {
+	float: left;
+	width: 100%;
+}
 
 .limiter {
 	width: 100%;
@@ -1580,26 +1585,29 @@ body #header-top .account-menu-active a {
 
 
 /* =============================================================== */
+.end-node .field-field-icon {
+	display: none;
+}
+
 .end-node .picture {
 	float: left;
 	margin: 0 10px 0 0;
 }
 
-.end-node object {
+.end-node object,
+.end-node .field-items img {
 	border: 6px solid #FFF;
 	background: #EFEFEF;
+}
+
+.end-node .content-body {
+	margin: 0 0 15px;
 }
 
 .end-node h2 {
 	color: #000;
 	font-size: 2em;
 	line-height: 1.5;
-}
-
-.end-node h3 {
-	color: #444;
-	font-size: 1.5em;
-	line-height: 2;
 }
 
 .end-node .content-wrapper .node {
@@ -1610,7 +1618,7 @@ body #header-top .account-menu-active a {
 
 .end-node .meta {
 	padding: 3px;
-	margin: 0 0 5px;
+	margin: 100px 0 5px;
 }
 
 .end-node .content {
@@ -1634,24 +1642,23 @@ body #header-top .account-menu-active a {
 	margin: 0 0 5px;
 }
 
-.end-node .meta .byline,
-.end-node .meta .date {
+.end-node .meta .byline {
 	float: left;
+	margin: 0 20px 0 0;
 }
 
 .end-node .meta .date {
 	color: #FFF;
+	float: left;
 	background: url('images/afg/icon-timestamp.png') left no-repeat;
 	padding: 0 0 0 20px;
 }
 
-.end-node .groups {
-	margin: 15px 0 0;
-}
-
-.end-node .groups .links li {
-	background: url('images/afg/icons/afg_profile-icon-s.gif') left no-repeat;
+.end-node .comment-count {
+	float: left;
+	background: url('images/afg/icon-commentcount.png') left no-repeat;
 	padding: 0 0 0 25px;
+	margin: 0 0 0 20px;
 }
 
 .end-node .groups .links li a {
