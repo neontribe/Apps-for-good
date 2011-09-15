@@ -1610,7 +1610,6 @@ body #header-top .account-menu-active a {
 	line-height: 1.5;
 }
 
-
 .end-node .content-wrapper .node {
 	background: #1B9BDA;
 	padding: 10px;
@@ -1653,4 +1652,11 @@ body #header-top .account-menu-active a {
 	float: left;
 	background: url('images/afg/icon-timestamp.png') left no-repeat;
 	padding: 0 0 0 20px;
+}
+
+.end-node .comment-count {
+	float: left;
+	background: url('images/afg/icon-commentcount.png') left no-repeat;
+	padding: 0 0 0 25px;
+	margin: 0 0 0 20px;
 }

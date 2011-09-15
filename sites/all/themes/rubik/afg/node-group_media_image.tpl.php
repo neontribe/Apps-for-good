@@ -60,7 +60,12 @@
 
 	<div class="meta"> 
       <span class="submitted">
-        <div class="date">Sep 8, 2011</div>
+        <div class="date">
+          <?php print $date; ?>
+        </div>
+        <div class="comment-count">
+          <?php print format_plural($node->comment_count, '1 comment', '@count comments'); ?>
+        </div>
       </span> 
     </div> 
     
@@ -81,4 +86,5 @@
   </div>
 
   <?php print $links; ?>
+  
 </div>
