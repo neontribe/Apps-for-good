@@ -48,14 +48,15 @@
         <h1 class='page-title <?php print $page_icon_class ?>'>
           <?php if ($title) print $title ?>
         </h1>
-        <span class='header-description'>
-          <//REMOVED todo add Location instead for centres ?php print $header_desc ?>
-       </span>
+
        <?php if ($region): ?>
           <span class='region'>
              <h2><?php print $region; ?></h2>
           </span>
        <?php endif; ?>
+        <span class='header-description'>
+          <?php print $header_desc ?>
+       </span>
 
         </div>
 	  
