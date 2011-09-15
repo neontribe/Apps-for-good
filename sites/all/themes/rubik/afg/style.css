@@ -93,11 +93,11 @@ em {
 }
 
 ul li {
-	list-style: disc;
+	list-style: inside disc;
 }
 
 ol li {
-	list-style: decimal;
+	list-style: inside decimal;
 }
 
 .page-admin ul li {
