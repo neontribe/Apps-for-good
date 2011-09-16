@@ -189,6 +189,7 @@ span.header-description {
 /* Clearing & Hiding
 ---------------------------------------------------------- */
 
+.apps-at-centre li.views-row:after,
 .fieldset-content .form-item:after,
 .view-id-Group_Media li:after,
 .views-field-comment-count:after,
@@ -988,6 +989,16 @@ input[type='submit'] {
 	
 /* Centres
 ---------------------------------------------------------- */
+
+.apps-at-centre span.views-field-title a {
+	font-weight: normal;
+	text-transform: capitalize !important;
+	font-size: 1.5em;
+}
+
+.apps-at-centre .views-field-body {
+	clear: none;
+}
 
 .apps-at-centre,
 .view-groups-listing-centre-school .views-field-mail a:hover {
