@@ -990,14 +990,45 @@ input[type='submit'] {
 /* Centres
 ---------------------------------------------------------- */
 
-.apps-at-centre span.views-field-title a {
+.apps-at-centre .views-field-title {
+	margin: 0 0 10px;
+}
+
+.apps-at-centre .views-field-title a {
 	font-weight: normal;
 	text-transform: capitalize !important;
 	font-size: 1.5em;
 }
 
+.apps-at-centre .views-field-tid {
+	margin: 0 0 15px;
+}
+
+.apps-at-centre .views-field-tid span {
+	display: inline;
+	background: url('images/afg/icons/afg_build-icon-s.gif') no-repeat left;
+	padding: 20px;
+}
+
 .apps-at-centre .views-field-body {
 	clear: none;
+}
+
+.apps-at-centre .views-field-tid-1 {
+	background: #0D84BE;
+	margin: 0 0 5px;
+}
+
+.apps-at-centre .views-field-tid-1 ul {
+	clear: none !important;
+	padding: 5px;
+}
+
+.apps-at-centre .views-field-tid-1 li {
+	padding: 0;
+	display: inline;
+	border: 0;
+	background: url('images/afg/icons/afg_badge-icon-s.gif') no-repeat left;
 }
 
 .apps-at-centre,
