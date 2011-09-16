@@ -8,6 +8,8 @@
    
   <div id='content'>
   
+  <?php print $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>
+  
     <?php if ($tabs): ?>
       <div id='tabs'>
         <div class='page-tabs limiter clear-block'><?php print $tabs ?></div>
