@@ -193,10 +193,26 @@ function quicktabs_render($quicktabs) {
     }
   }
 
-  $tabs_count = count($quicktabs['tabs']);
+
+
+  //REPLACED with tab count that discounts index 
+  //so empty block does not display	
+  //$tabs_count = count($quicktabs['tabs']);
+  //if ($tabs_count <= 0) {
+  //  return '';
+  // }
+
+  $tabs_count = 0;
+  foreach($quicktabs['tabs'] as $key=>$value) {
+    if($value) {
+       $tabs_count++;
+    }
+  }
+
   if ($tabs_count <= 0) {
     return '';
   }
+
 
   if ($quicktabs['style'] == 'default') {
     $quicktabs['style'] = variable_get('quicktabs_tabstyle', 'nostyle');
