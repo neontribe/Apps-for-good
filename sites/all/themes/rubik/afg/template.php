@@ -66,7 +66,7 @@ function afg_preprocess_page(&$vars) {
   //$trail = menu_get_active_trail();
   //$trail_path = $trail[1]['path'];
   
-  $path = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+  $path = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
   
   foreach ($links as $key => $link){
   	 // Add active state class
