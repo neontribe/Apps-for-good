@@ -58,9 +58,10 @@ function ntforms_form_alter(&$form, &$form_state, $form_id) {
     }
 
     // Preconfigure the group space
+    $form['spaces_preset']['#type'] = 'hidden';
     $form['spaces_preset']['spaces_preset_og']['#disabled'] = TRUE;
-    $form['spaces_preset']['spaces_preset_og']['#default_value']
-      = $forms[$form_id]['space'];
+    $form['spaces_preset']['spaces_preset_og']['#default_value'] = $forms[$form_id]['space'];
+
   }
 }
 
