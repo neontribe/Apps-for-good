@@ -62,7 +62,7 @@
 <!--detect if site home for social links-->
 <?php if ($base_path!==$front_page): ?>
 	   
-       <?php $soc_path = $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF']; ?>
+       <?php $soc_path = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>
        
 	   <div id="prof-soc-widgets">
 			<div id="prof-soc-tw">
