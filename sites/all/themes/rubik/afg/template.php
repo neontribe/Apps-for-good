@@ -21,8 +21,8 @@ function afg_theme(){
  */
 function afg_preprocess_page(&$vars) {
     
+    // Override default error message and prompt login
     $msg = trim(check_plain(strip_tags($vars['messages'])));
-    
     if (strcmp($msg, 'You are not authorized to post comments.') == 0) {
 		$nid = $vars['node']->nid;
         
