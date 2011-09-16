@@ -60,8 +60,21 @@ function afg_preprocess_page(&$vars) {
   
   // Header menu links
   $links = menu_navigation_links('menu-header-menu', 0);
+  
+  //$uri = $_SERVER['REQUEST_URI'];
+  //$curr_path = substr($uri, strpos($uri, '/') + 1);
+  //$trail = menu_get_active_trail();
+  //$trail_path = $trail[1]['path'];
+  
+  $path = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+  
   foreach ($links as $key => $link){
+  	 // Add active state class
+     $classes = (strcmp($path, $link['href']) == 0) ? ' header-menu-active' : '';
+     
+     // Apply classes
 	 $links[$key]['attributes']['class'] .= ' header-menu-' . strtolower($links[$key]['title']);
+     $links[$key]['attributes']['class'] .= $classes;
   }
   
   $vars['header_links'] = $links;
