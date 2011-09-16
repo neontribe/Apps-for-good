@@ -329,6 +329,7 @@ function afg_profile_views_default_views() {
       ),
     ),
   ));
+  $handler->override_option('css_class', 'profile-display');
   $handler->override_option('attachment_position', 'after');
   $handler->override_option('inherit_arguments', TRUE);
   $handler->override_option('inherit_exposed_filters', FALSE);
