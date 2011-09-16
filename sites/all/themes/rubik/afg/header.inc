@@ -74,9 +74,11 @@
 				<iframe src="http://www.facebook.com/plugins/like.php?app_id=260742727279643&amp;href&amp;send=false&amp;layout=button_count&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
 			</div>
 		</div>
+		
+<?php endif; ?> <!--END social links-->
 
         </div>
-	  <?php endif; ?> <!--END social links-->
+	  
 	  <?php if ($space_tools): ?>
 	    <div id='space-tools'><div class='dropdown-blocks toggle-blocks clear-block'><?php print $space_tools ?></div></div>
 	  <?php endif; ?>
