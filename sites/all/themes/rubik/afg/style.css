@@ -1115,20 +1115,25 @@ input[type='submit'] {
 
 .view-shoutbox-shouts .picture {
 	float: left;
-	margin: 0 30px 0 0;
+	margin: 0 7px;
 }
 
 .view-shoutbox-shouts .views-field-timestamp,
 #content-left .view-id-Group_Media .views-field-changed {
-	font-size: 0.9em;
+	display: inline;
+	color: #61C7F7;
+	font-size: 0.8em !important;
 	text-transform: uppercase;
-	margin: 0 0 5px;
+	padding: 0 0 0 17px;
+	background: url('images/afg/icon-timestamp.png') no-repeat left;
 }
 
 .view-shoutbox-shouts .views-field-comment {
+	clear: both;
 	padding: 5px;
 	color: #222;
-	margin: 0 0 15px 60px;
+	font-size: 0.8em;
+	margin: 10px 5px 0;
 	background: #EEE;
 	
 	-moz-border-radius: 5px;
@@ -1150,10 +1155,33 @@ input[type='submit'] {
 	text-decoration: none;
 	text-transform: capitalize;
 	line-height: 1;
+	padding: 0 10px 0 0;	
 }
 
-.view-shoutbox-shouts li:hover .views-field-comment {
-	background: #DDD !important;
+.page-shoutbox .view-shoutbox-shouts {
+	font-size: 1.2em;
+}
+
+.page-shoutbox .view-shoutbox-shouts .views-field-comment {
+	margin: 0 0 15px 60px;
+}
+
+.page-shoutbox .view-shoutbox-shouts .views-field-timestamp {
+	position: relative;
+	top: -5px;
+}
+
+.page-shoutbox .view-shoutbox-shouts .views-field-comment {
+	line-height: 2;
+	min-height: 22px;
+}
+
+.page-shoutbox .view-shoutbox-shouts .picture {
+	margin: 0 20px 0 0;
+}
+
+.view-shoutbox-shouts li:hover {
+	background: #1792CF !important;
 }
 
 .view-shoutbox-shouts .form-submit {
@@ -1173,7 +1201,7 @@ input[type='submit'] {
 }
 
 .views-field-delete-comment:hover {
-	background: #111
+	background: #F38121;
 }
 
 .views-field-delete-comment:hover a {
