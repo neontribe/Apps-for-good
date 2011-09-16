@@ -8,6 +8,7 @@
    
   <div id='content'>
   
+  
     <?php if ($tabs): ?>
       <div id='tabs'>
         <div class='page-tabs limiter clear-block'><?php print $tabs ?></div>
