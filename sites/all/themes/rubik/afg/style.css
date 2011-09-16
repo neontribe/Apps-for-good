@@ -794,7 +794,7 @@ input[type='submit'] {
 /* Specific
 ---------------------------------------------------------- */
 
-.centre-about p {
+.centre-about .field-content {
 	color: #666;
 }
 
