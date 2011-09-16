@@ -1804,12 +1804,18 @@ body #header-top .account-menu-active a {
 #content-left .browse-centres .views-field-member-count {
 	display: block;
 	float: left;
-	padding: 0 17px 0 0;
-	margin: 0 5px;
-	background: url('images/afg/icons/afg_profile-icon-s.gif') right no-repeat;
+	padding: 0 0 0 17px;
+	margin: 0 5px 0 0;
+	background: url('images/afg/icons/afg_profile-icon-s.gif') left no-repeat;
 }
 
-
+#content-left .browse-centres .views-field-field-app-count-value {
+	display: block;
+	float: left;
+	padding: 0 0 0 17px;
+	margin: 0 5px 0 0;
+	background: url('images/afg/icons/afg_app-icon-s.gif') left no-repeat;
+}
 
 /* End Nodes
 ---------------------------------------------------------- */
