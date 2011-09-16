@@ -15,6 +15,7 @@
 /* Temp: Replicate text-field comment box
 ---------------------------------------------------------- */
 
+.end-node .comment_add,
 .views-field-comments-link {
 	display: block;
 	width: 100%;
@@ -27,6 +28,7 @@
 	margin: 0 0 10px;
 }
 
+.end-node .comment_add a,
 .views-field-comments-link a {
 	background: #FFF url('images/afg/say-button.jpg') right no-repeat;
 	color: #666 !important;
@@ -778,7 +780,8 @@ input[type='submit'] {
 }
 
 #content-right ul li {
-	border-bottom: 1px solid #A8A8A8;
+	/*border-bottom: 1px solid #A8A8A8;*/
+	margin-bottom: 1px;
 	font-size: 1.4em;
 	padding: 8px 0;
 }
@@ -1871,12 +1874,13 @@ body #header-top .account-menu-active a {
 	float: left;
 	margin: 0 20px 0 0;
 }
-,
-.end-node .meta .date {
-	color: #FFF;
+
+.end-node .date {
 	float: left;
+	color: #61C7F7;
+	text-transform: uppercase;
 	background: url('images/afg/icon-timestamp.png') left no-repeat;
-	padding: 0 0 0 20px;
+	padding: 0 0 0 16px;
 }
 
 .end-node .comment-count {

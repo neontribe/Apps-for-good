@@ -66,7 +66,7 @@
        
 	   <div id="prof-soc-widgets">
 			<div id="prof-soc-tw">
-				<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-url="<?php print $soc_path; ?>" data-via="AppsForGoodCDI">Tweet</a>
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-url="http://<?php print $soc_path; ?>" data-via="AppsForGoodCDI">Tweet</a>
 				<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 			</div>
 			<div id="prof-soc-li">
