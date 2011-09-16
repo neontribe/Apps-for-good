@@ -1230,10 +1230,6 @@ input[type='submit'] {
 /* Quicktabs
 ---------------------------------------------------------- */
 
-#quicktabs-cdi_features img {
-	margin: 0 0 20px;
-}
-
 #quicktabs-cdi_features .views-field-title {
 	font-size: 1.5em;
 	margin: 0 0 8px;
