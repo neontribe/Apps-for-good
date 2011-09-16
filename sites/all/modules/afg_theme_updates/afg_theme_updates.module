@@ -44,3 +44,11 @@ function get_user_name() {
 	global $user;
 	return check_plain($user->name);
 }
+
+function afg_theme_updates_form_alter(&$form, &$form_state, $form_id) {
+	// Collapse 'Groups' fielset on create user form
+	if ($form_id == 'ucreate_user_form') {
+        $form['og_register']['#collapsible'] = TRUE;
+        $form['og_register']['#collapsed'] = TRUE;
+    }
+}
