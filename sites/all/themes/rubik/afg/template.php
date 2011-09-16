@@ -21,6 +21,8 @@ function afg_theme(){
  */
 function afg_preprocess_page(&$vars) {
 
+	//print '<pre>'; print_r(get_defined_vars()); print '</pre>';
+
   // Force using the correct template file
   if(count($vars['template_files']) > 1) {
     foreach($vars['template_files'] as $key => $template) {
