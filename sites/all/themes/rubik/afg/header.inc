@@ -80,8 +80,11 @@
 	  <?php if ($page_tools): ?><div class='dropdown-blocks toggle-blocks clear-block'><?php print $page_tools ?></div><?php endif; ?>
 
       <div id='primary-links'>
+<!--detect if site home -->
+<?php if ($base_path!==$front_page): ?>
         <?php if (isset($primary_links)) print theme('links', $primary_links) ?>
-		<?php if (isset($secondary_links)) print theme('links', $secondary_links, array('class' => 'links secondary-links')) ?>
+<?php endif; ?>
+	<?php if (isset($secondary_links)) print theme('links', $secondary_links, array('class' => 'links secondary-links')) ?>
       </div>
       
       
