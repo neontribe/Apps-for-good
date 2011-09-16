@@ -894,17 +894,19 @@ input[type='submit'] {
 #content-left .view-updates img,
 #content-left .view-updates object,
 #content-left .activity-updates img,
-#content-left .view-id-Group_Media img,
 #content-left .activity-updates object,
+#content-left .view-id-Group_Media img,
 #content-left .view-id-Group_Media object {
 	clear: both;
 	border: 6px solid #FFF;
 	margin: 0 20px 0 0;
 	overflow: hidden;
 	
+	/*
 	-moz-box-shadow: 0 0 6px 6px #0083DA;
 	-webkit-box-shadow: 0 0 6px 6px #0083DA;
 	box-shadow: 0 0 6px 6px #0083DA;
+	*/
 }
 
 #content-left .view-updates img {
@@ -992,10 +994,15 @@ input[type='submit'] {
 	text-transform: capitalize;
 }
 
-.views-field-field-video-embed,
+.views-field-field-video-embed {
+	margin: 10px 0;
+}
+
 .views-field-field-group-image-fid {
 	clear: both;
-	padding: 2px 0 0;
+	text-align: center;
+	margin: 5px 0;
+	background: #FFF;
 }
 	
 /* Centres
