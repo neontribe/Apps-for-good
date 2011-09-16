@@ -123,8 +123,7 @@ function afg_comment_form($form) {
   
   $form['preview'] = NULL;
 
-
-
+  unset($form['notifications']);
  
  
   return drupal_render($form);

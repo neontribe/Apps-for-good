@@ -2466,7 +2466,7 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('title', 'The Team');
-  $handler->override_option('empty', '');
+  $handler->override_option('empty', 'No team info yet.');
   $handler->override_option('empty_format', '5');
   $handler->override_option('items_per_page', 1);
   $handler->override_option('use_pager', '0');
@@ -2484,6 +2484,7 @@ function afg_groups_views_views_default_views() {
     t('My applications'),
     t('No archived groups found.'),
     t('No groups found.'),
+    t('No team info yet.'),
     t('Page: Application directory'),
     t('Page: Archived applications'),
     t('Page: My applications'),
@@ -5676,7 +5677,7 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('css_class', 'activity-updates recent-activity');
-  $handler->override_option('empty', 'No recent activity found.');
+  $handler->override_option('empty', 'No updates yet - check back soon.');
   $handler->override_option('use_pager', '1');
   $handler->override_option('block_description', 'Recent activity');
   $handler->override_option('block_caching', -1);
@@ -6684,7 +6685,7 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('css_class', 'activity-updates');
-  $handler->override_option('empty', 'No app updates found yet.');
+  $handler->override_option('empty', 'No updates yet - check back soon.');
   $handler->override_option('row_options', array(
     'inline' => array(
       'atrium_activity_timestamp' => 'atrium_activity_timestamp',
@@ -7505,7 +7506,7 @@ Click follow above to receive updates & how to help.</p>');
     ),
   ));
   $handler->override_option('title', 'Recent Activity');
-  $handler->override_option('empty', 'No updates for this centre yet.');
+  $handler->override_option('empty', 'No updates yet - check back soon.');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Help this centre', 'block_7');
@@ -8420,11 +8421,9 @@ Click follow above to receive updates & how to help.</p>'),
     t('Help this team'),
     t('Help this team!'),
     t('Latest files'),
-    t('No app updates found yet.'),
-    t('No recent activity found.'),
     t('No recent files found.'),
-    t('No updates for this centre yet.'),
     t('No updates for this centre yet..'),
+    t('No updates yet - check back soon.'),
     t('No user activity found.'),
     t('Recent Activity'),
     t('Recent activity'),
