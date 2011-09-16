@@ -58,6 +58,9 @@
         <span class='header-description'>
           <?php print $header_desc ?>
        </span>
+
+<!--detect if site home for social links-->
+<?php if ($base_path!==$front_page): ?>
 	   
 	   <div id="prof-soc-widgets">
 			<div id="prof-soc-tw">
@@ -73,7 +76,7 @@
 		</div>
 
         </div>
-	  
+	  <?php endif; ?> <!--END social links-->
 	  <?php if ($space_tools): ?>
 	    <div id='space-tools'><div class='dropdown-blocks toggle-blocks clear-block'><?php print $space_tools ?></div></div>
 	  <?php endif; ?>
