@@ -881,6 +881,18 @@ input[type='submit'] {
 /* Updates
 ---------------------------------------------------------- */
 
+#content-left .view-updates .views-field-body,
+#content-left .view-Group-Media .views-field-body {
+	margin: 0 0 10px;
+}
+
+#content-left .views-field-field-video-embed {
+	line-height: 1;
+}
+
+#content-left .views-field-field-group-image-fid { margin: 0 0 11px; }
+#content-left .views-field-field-video-embed { margin: 0 0 10px; }
+
 #content-left .view-id-Group_Media a {
 	color: #FFF;
 }
@@ -959,11 +971,10 @@ input[type='submit'] {
 	background: url('images/afg/icon-commentcount.png') left no-repeat !important;
 }
 
-#content-left .view-id-Group_Media .views-field-changed,
+#content-left .view-id-Group_Media .views-field-changedviews-field-change
 #content-left .activity-updates span.views-field-atrium-activity-timestamp,
 #content-left .views-field-comments-link {
 	font-size: 0.9em;
-	margin: 6px 6px 10px 0;
 }
 
 #content-left .views-field-comment-count,
@@ -971,9 +982,7 @@ input[type='submit'] {
 	margin: 0 0 0 6px;
 }
 
-#content-left .activity-updates .views-field-comment-count {
-	margin: 6px 6px 10px 0;
-}
+
 
 #content-left .view-id-Group_Media .views-field-changed em,
 #content-left .views-field-atrium-activity-timestamp em {
@@ -994,14 +1003,9 @@ input[type='submit'] {
 	text-transform: capitalize;
 }
 
-.views-field-field-video-embed {
-	margin: 5px 0 0 0;
-}
-
 .views-field-field-group-image-fid {
 	clear: both;
 	text-align: center;
-	margin: 5px 0;
 	background: #FFF;
 }
 	
@@ -1127,13 +1131,19 @@ input[type='submit'] {
 	margin: 0 7px;
 }
 
-.view-shoutbox-shouts .views-field-timestamp,
-#content-left .view-id-Group_Media .views-field-changed {
+.view-shoutbox-shouts .views-field-timestamp {
 	display: inline;
 	color: #61C7F7;
 	font-size: 0.8em !important;
 	text-transform: uppercase;
 	padding: 0 0 0 17px;
+	background: url('images/afg/icon-timestamp.png') no-repeat left;
+}
+
+#content-left .view-id-Group_Media .views-field-changed {
+	display: inline;
+	color: #61C7F7;
+	text-transform: uppercase;
 	background: url('images/afg/icon-timestamp.png') no-repeat left;
 }
 
@@ -1387,7 +1397,7 @@ input[type='submit'] {
 	clear: both;
 	background: #0D84BE;
 	padding: 3px 6px;
-	margin: 5px 0;
+	margin: 5px 0 10px;
 }
 
 #content-left .view-activity-listing .views-field-timestamp {
