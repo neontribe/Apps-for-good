@@ -82,7 +82,14 @@ function afg_preprocess_page(&$vars) {
     }
 	
     $vars['region'] = $region;
-	$vars['city'] = $node->field_centre_loc_details[0]['city'];
+	  $vars['city'] = $node->field_centre_loc_details[0]['city'];
+  }
+
+  if (strpos($vars['head_title'], 'Home') === 0) {
+    $og = og_get_group_context();
+    $title = $og->title;
+
+    $vars['head_title'] = str_replace('Home', $title, $vars['head_title']);
   }
 }
 
