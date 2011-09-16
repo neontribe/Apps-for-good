@@ -1,6 +1,5 @@
 <?php
 
-
 /**
 * Implementation of hook_theme().
 */
@@ -136,6 +135,16 @@ function afg_comment_form($form) {
   return drupal_render($form);
 }
 
+/**
+ * Hide filter tips
+ */
+function phptemplate_filter_tips($tips, $long = FALSE, $extra = '') {
+  return '';
+}
+
+function phptemplate_filter_tips_more_info() {
+  return '';
+}
 
 function afg_preprocess_box(&$vars, $hook) {
   switch($vars['title']) {
