@@ -6,7 +6,7 @@
     <div id='console' class='clear-block'><?php print $messages; ?></div>
   <?php endif; ?>
    
-  <div id='content'>
+  <div id='content'>  
   
     <?php if ($tabs): ?>
       <div id='tabs'>
