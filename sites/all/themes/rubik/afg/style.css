@@ -100,6 +100,11 @@ ol li { list-style: inside decimal; }
 	list-style: none;s
 }
 
+body .error a {
+	color: #996655;
+	border-bottom-color: #996655;
+}
+
 /* Headers & Spans
 ---------------------------------------------------------- */
 

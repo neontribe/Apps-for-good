@@ -20,8 +20,19 @@ function afg_theme(){
  * Preprocessor for theme('page').
  */
 function afg_preprocess_page(&$vars) {
-
-	//print '<pre>'; print_r(get_defined_vars()); print '</pre>';
+    
+    $msg = trim(check_plain(strip_tags($vars['messages'])));
+    
+    if (strcmp($msg, 'You are not authorized to post comments.') == 0) {
+		$nid = $vars['node']->nid;
+        
+        $m = '<div class="messages error">';
+        $m .= '<a href="/buzzerbuddiez/user/login?destination=node/'. $nid .'#comment-form">Login</a>';
+        $m .= ' or <a href="/buzzerbuddiez/user/register?destination=node/'. $nid .'#comment-form">register</a> to post comments</span>';
+        $m .= '</div>';
+        
+        $vars['messages'] = $m;
+    }
 
   // Force using the correct template file
   if(count($vars['template_files']) > 1) {
