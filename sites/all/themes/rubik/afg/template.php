@@ -31,7 +31,7 @@ function _afg_show_message(&$vars, $message, $success = TRUE) {
 /**
  * Displays a login/register message in a standard atrium message format.
  */
-function _afg_show_message_login(&$vars) {
+function _afg_override_login_message(&$vars) {
 	$msg = trim(check_plain(strip_tags($vars['messages'])));
     
     if (strcmp($msg, 'You are not authorized to post comments.') == 0) {
@@ -50,7 +50,7 @@ function _afg_show_message_login(&$vars) {
 function afg_preprocess_page(&$vars) {
     
   // Override default error message and prompt login
-  _afg_show_message_login($vars);
+  _afg_override_login_message($vars);
 
   // Force using the correct template file
   if(count($vars['template_files']) > 1) {
