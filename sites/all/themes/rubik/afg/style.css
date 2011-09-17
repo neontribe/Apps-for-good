@@ -251,7 +251,7 @@ span.header-description {
 	background: url('images/afg/tag-background.png') no-repeat left;
 }
 
-.taxonomy-terms li a {
+.taxonomy-terms li span {
 	padding: 3px 5px;
 	margin: 0 0 0 10px;
 	border: 0;
@@ -262,10 +262,6 @@ span.header-description {
 	-webkit-border-radius: 0px 3px 3px 0px;
 	border-radius: 0px 3px 3px 0px;
 	background: #374a59;
-}
-
-.taxonomy-terms li:hover a {
-	color: #FFF;
 }
 
 /* Comments

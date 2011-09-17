@@ -83,7 +83,17 @@
       </span>
     </div>
     
-    <?php print '<div class="taxonomy-terms">'. $terms .'</div>'; ?>
+    <?php
+    
+    print '<div class="taxonomy-terms"><ul>';
+    
+    foreach ($node->taxonomy as $tid => $args) {
+        print '<li><span>'. $args->name .'</span></li>';
+    }
+    
+    print '</ul></div>';
+    
+    ?>
     
   </div>
 
