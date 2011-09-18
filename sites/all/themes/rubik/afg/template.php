@@ -137,7 +137,8 @@ function afg_preprocess_page(&$vars) {
 	  $vars['city'] = $node->field_centre_loc_details[0]['city'];
   }
 
-  if (strpos($vars['head_title'], 'Home') === 0) {
+  // Rewrite the page titles to remove the Home
+  if (strpos($vars['head_title'], 'Home') === 0 && !drupal_is_front_page()) {
     $og = og_get_group_context();
     $title = $og->title;
 
@@ -234,15 +235,20 @@ function computed_field_field_activity_link_compute($node, $field, &$node_field)
 
 function afg_views_view_field__updates__block_1__atrium_activity($view, $handler, $obj) {
 
+$title_link = '<div class="views-field-title"><a href= "node/' . $obj->nid . '">'. $obj->node_title . '<a/></div>';
+
+
 switch($obj->node_type) {
     case 'group_app_team':
     case 'group_centre_school':
+    case 'page':
     if ($obj->comments_uid) {
 	$user = user_load($obj->comments_uid);
 	$username = $user->name;
-	$activity_update = $username . ' commented on ' . $obj->node_title;
+	//dpm($user);
+	$activity_update = $username . ' commented on ' . $title_link;
     } else {
-      $activity_update = $obj->node_title;
+      $activity_update = $title_link;
       if ($obj->node_changed > $obj->node_created) {
           $activity_update .= ' updated.';
       } else {
@@ -256,19 +262,24 @@ switch($obj->node_type) {
     case 'request_for_help':
     case 'blog':
     case 'group_media_video':
-    case 'page':
     if ($obj->comments_uid) {
         $user = user_load($obj->comments_uid);
         $username = $user->name;
-        $activity_update = $username . ' commented on ' . $obj->node_title;
+	//dpm($user);
+        $activity_update = $username . ' commented on ' . $title_link;
     } else {
-      $activity_update = $obj->node_og_ancestry_title;
+      $sql='SELECT value FROM {purl} where id=' . $obj->node_og_ancestry_nid;
+      $res = db_query($sql);
+      $row = db_fetch_array($res);
+      $nodepath = $row[value];
+      $urlslug = '<a href=' . $nodepath . '>';
+      $activity_update = $urlslug . $obj->node_og_ancestry_title . '</a>';
       if ($obj->node_changed > $obj->node_created) {
           $activity_update .= ' updated ';
       } else {
           $activity_update .= ' created ';
       }
-      $activity_update .= $obj->node_title;
+      $activity_update .= $title_link;
     }
     break;
     default:
@@ -279,6 +290,20 @@ switch($obj->node_type) {
   return $activity_update;
 } 
 
+<<<<<<< HEAD
+=======
+/*
+function afg_preprocess_gmap_view_gmap(&$vars) {
+  $fh = fopen('/tmp/a4g.log', 'a'); 
+  // fwrite($fh, var_export($vars, TRUE)); 
+  foreach ($vars['map_object']['markers'] as $k => $v) {
+    // fwrite($fh, str_pad($k, 15) . "=> " . var_export($v, TRUE) . "\n");
+  }
+  fclose($fh);
+}
+*/
+
+>>>>>>> 5dd2bd3e642fd0c625210f19cd27c33d6c41c666
 // function afg__gmap_views_marker_label($view, $fields, $entry) {
   // return "XXX";
 // }
@@ -288,3 +313,5 @@ switch($obj->node_type) {
 
 /**Shoutbox comment form**/
 // Moved to module afg_theme_updates to allow theme switching to work
+
+// vim: set filetype=php expandtab tabstop=2 shiftwidth=2 autoindent smartindent:

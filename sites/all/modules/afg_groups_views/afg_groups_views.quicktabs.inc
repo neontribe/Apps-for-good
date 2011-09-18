@@ -5,6 +5,7 @@
  */
 function afg_groups_views_quicktabs_default_quicktabs() {
   $export = array();
+
   $quicktabs = new stdClass;
   $quicktabs->disabled = FALSE; /* Edit this to true to make a default quicktabs disabled initially */
   $quicktabs->api_version = 1;
@@ -52,8 +53,8 @@ function afg_groups_views_quicktabs_default_quicktabs() {
     ),
   );
   $quicktabs->style = 'Basic-afg';
-
   $export['app_directory'] = $quicktabs;
+
   $quicktabs = new stdClass;
   $quicktabs->disabled = FALSE; /* Edit this to true to make a default quicktabs disabled initially */
   $quicktabs->api_version = 1;
@@ -83,7 +84,7 @@ function afg_groups_views_quicktabs_default_quicktabs() {
     ),
   );
   $quicktabs->style = 'Basic-afg';
-
   $export['homepage_recent_updates'] = $quicktabs;
+
   return $export;
 }

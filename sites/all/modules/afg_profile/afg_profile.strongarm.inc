@@ -5,6 +5,7 @@
  */
 function afg_profile_strongarm() {
   $export = array();
+
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
@@ -12,7 +13,7 @@ function afg_profile_strongarm() {
   $strongarm->value = array(
     'uk' => 'uk',
   );
-
   $export['addresses_country_list'] = $strongarm;
+
   return $export;
 }

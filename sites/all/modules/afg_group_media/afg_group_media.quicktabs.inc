@@ -5,6 +5,7 @@
  */
 function afg_group_media_quicktabs_default_quicktabs() {
   $export = array();
+
   $quicktabs = new stdClass;
   $quicktabs->disabled = FALSE; /* Edit this to true to make a default quicktabs disabled initially */
   $quicktabs->api_version = 1;
@@ -52,7 +53,7 @@ function afg_group_media_quicktabs_default_quicktabs() {
     ),
   );
   $quicktabs->style = 'Navlist-afg';
-
   $export['app_media'] = $quicktabs;
+
   return $export;
 }

@@ -230,6 +230,9 @@ function theme_gmap_location_user_page($header, $map, $footer) {
  *   If this is not set, or is null then all of the nodes will be drawn.
  */
 function gmap_location_node_page($nid = NULL) {
+$fh = fopen('/tmp/a4g.log', 'a'); 
+fwrite($fh, "gmap_location_node_page $nid \n");
+fclose($fh);
 
   $nodemap = variable_get('gmap_node_map', _gmap_location_node_map_defaults());
   $markertypes = variable_get('gmap_node_markers', array());

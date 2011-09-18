@@ -812,6 +812,80 @@ function afg_groups_views_content_default_fields() {
     ),
   );
 
+  // Exported field: field_facebook_account
+  $fields['group_centre_school-field_facebook_account'] = array(
+    'field_name' => 'field_facebook_account',
+    'type_name' => 'group_centre_school',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'link',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'link',
+    'active' => '1',
+    'attributes' => array(
+      'target' => 'default',
+      'rel' => 'nofollow',
+      'class' => '',
+      'title' => '',
+    ),
+    'display' => array(
+      'url_cutoff' => '80',
+    ),
+    'url' => 0,
+    'title' => 'none',
+    'title_value' => '',
+    'enable_tokens' => 0,
+    'validate_url' => 1,
+    'widget' => array(
+      'default_value' => array(
+        '0' => array(
+          'title' => '',
+          'url' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Facebook Account',
+      'weight' => '33',
+      'description' => 'Enter your Facebook account address',
+      'type' => 'link',
+      'module' => 'link',
+    ),
+  );
+
   // Exported field: field_icon
   $fields['group_centre_school-field_icon'] = array(
     'field_name' => 'field_icon',
@@ -1057,6 +1131,80 @@ function afg_groups_views_content_default_fields() {
     ),
   );
 
+  // Exported field: field_twitter_account
+  $fields['group_centre_school-field_twitter_account'] = array(
+    'field_name' => 'field_twitter_account',
+    'type_name' => 'group_centre_school',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'link',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'link',
+    'active' => '1',
+    'attributes' => array(
+      'target' => 'default',
+      'rel' => 'nofollow',
+      'class' => '',
+      'title' => '',
+    ),
+    'display' => array(
+      'url_cutoff' => '80',
+    ),
+    'url' => 0,
+    'title' => 'none',
+    'title_value' => '',
+    'enable_tokens' => 0,
+    'validate_url' => 1,
+    'widget' => array(
+      'default_value' => array(
+        '0' => array(
+          'title' => '',
+          'url' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Twitter Account',
+      'weight' => '34',
+      'description' => 'Enter your Twitter account address',
+      'type' => 'link',
+      'module' => 'link',
+    ),
+  );
+
   // Exported field: field_website
   $fields['group_centre_school-field_website'] = array(
     'field_name' => 'field_website',
@@ -1112,8 +1260,8 @@ function afg_groups_views_content_default_fields() {
       'url_cutoff' => '80',
     ),
     'url' => 0,
-    'title' => 'value',
-    'title_value' => 'Official website',
+    'title' => 'optional',
+    'title_value' => '',
     'enable_tokens' => 0,
     'validate_url' => 1,
     'widget' => array(
@@ -1202,9 +1350,11 @@ function afg_groups_views_content_default_fields() {
   t('Centre Located at');
   t('Centre logo');
   t('Centre website');
+  t('Facebook Account');
   t('Icon');
   t('Parent Centre');
   t('Staff');
+  t('Twitter Account');
   t('logo');
 
   return $fields;

@@ -5,6 +5,7 @@
  */
 function afg_profile_context_default_contexts() {
   $export = array();
+
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
@@ -43,8 +44,8 @@ function afg_profile_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Profile');
-
   $export['afg_activity_profile'] = $context;
+
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
@@ -102,7 +103,7 @@ function afg_profile_context_default_contexts() {
   // Included for use with string extractors like potx.
   t('Profile');
   t('display this user\'s groups and badges in a block for other users to see');
-
   $export['afg_profile_groups'] = $context;
+
   return $export;
 }
