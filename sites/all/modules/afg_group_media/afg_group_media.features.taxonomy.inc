@@ -10,7 +10,7 @@ function afg_group_media_taxonomy_default_vocabularies() {
       'description' => 'Tags to classify group images',
       'help' => '',
       'relations' => '1',
-      'hierarchy' => '1',
+      'hierarchy' => '0',
       'multiple' => '0',
       'required' => '0',
       'tags' => '0',
