@@ -290,8 +290,7 @@ switch($obj->node_type) {
   return $activity_update;
 } 
 
-<<<<<<< HEAD
-=======
+
 /*
 function afg_preprocess_gmap_view_gmap(&$vars) {
   $fh = fopen('/tmp/a4g.log', 'a'); 
@@ -303,7 +302,7 @@ function afg_preprocess_gmap_view_gmap(&$vars) {
 }
 */
 
->>>>>>> 5dd2bd3e642fd0c625210f19cd27c33d6c41c666
+
 // function afg__gmap_views_marker_label($view, $fields, $entry) {
   // return "XXX";
 // }
