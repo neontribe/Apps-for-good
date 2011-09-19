@@ -9,19 +9,25 @@ function afg_group_media_user_default_permissions() {
   // Exported permission: create group_media_image content
   $permissions['create group_media_image content'] = array(
     'name' => 'create group_media_image content',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'App team',
+    ),
   );
 
   // Exported permission: create group_media_video content
   $permissions['create group_media_video content'] = array(
     'name' => 'create group_media_video content',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'App team',
+    ),
   );
 
   // Exported permission: create request_for_help content
   $permissions['create request_for_help content'] = array(
     'name' => 'create request_for_help content',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'App team',
+    ),
   );
 
   // Exported permission: delete any group_media_image content

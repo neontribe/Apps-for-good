@@ -51,8 +51,8 @@ function afg_groups_views_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
+        '~dashboard/profile' => '~dashboard/profile',
         'dashboard' => 'dashboard',
-        'dashboard/*' => 'dashboard/*',
         'updates' => 'updates',
         'supporters' => 'supporters',
         'shoutbox' => 'shoutbox',
