@@ -2859,10 +2859,10 @@ function afg_groups_views_views_default_views() {
       'relationship' => 'field_centre_ref_nid',
     ),
     'province' => array(
-      'label' => 'Province',
+      'label' => '',
       'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
+        'alter_text' => 1,
+        'text' => ', [province]',
         'make_link' => 0,
         'path' => '',
         'link_class' => '',
@@ -3006,7 +3006,8 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('title', 'The Centre');
-  $handler->override_option('header', 'The team is based at:');
+  $handler->override_option('css_class', 'the-centre');
+  $handler->override_option('header', 'This team is based at:');
   $handler->override_option('header_format', '5');
   $handler->override_option('header_empty', 0);
   $handler->override_option('items_per_page', 1);
@@ -3042,8 +3043,8 @@ function afg_groups_views_views_default_views() {
     t('The App Team'),
     t('The Centre'),
     t('The Team'),
-    t('The team is based at:'),
     t('This App'),
+    t('This team is based at:'),
     t('User applications'),
     t('View more'),
   );
