@@ -2466,7 +2466,7 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('title', 'The Team');
-  $handler->override_option('empty', '');
+  $handler->override_option('empty', 'No team info yet.');
   $handler->override_option('empty_format', '5');
   $handler->override_option('items_per_page', 1);
   $handler->override_option('use_pager', '0');
@@ -2484,6 +2484,7 @@ function afg_groups_views_views_default_views() {
     t('My applications'),
     t('No archived groups found.'),
     t('No groups found.'),
+    t('No team info yet.'),
     t('Page: Application directory'),
     t('Page: Archived applications'),
     t('Page: My applications'),
