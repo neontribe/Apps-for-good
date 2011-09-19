@@ -85,7 +85,11 @@
 	  <?php if ($space_tools): ?>
 	    <div id='space-tools'><div class='dropdown-blocks toggle-blocks clear-block'><?php print $space_tools ?></div></div>
 	  <?php endif; ?>
-	  <?php if ($page_tools): ?><div id="page-tools" class='dropdown-blocks toggle-blocks clear-block'><?php print $page_tools; ?><div class="context-links"><?php print $context_links; ?></div></div><?php endif; ?>
+	  <?php if ($page_tools): ?>
+	    <div id="page-tools" class='dropdown-blocks toggle-blocks clear-block'>
+	      <?php print $page_tools; ?>
+	    </div>
+      <?php endif; ?>
 
       <div id='primary-links'>
 <!--detect if site home -->
