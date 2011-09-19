@@ -2518,7 +2518,7 @@ function afg_groups_views_views_default_views() {
       'override' => array(
         'button' => 'Use default',
       ),
-      'relationship' => 'none',
+      'relationship' => 'field_centre_ref_nid',
     ),
   ));
   $handler->override_option('arguments', array(
@@ -5441,7 +5441,7 @@ function afg_groups_views_views_default_views() {
   ));
   $handler->override_option('title', '');
   $handler->override_option('css_class', 'social-links');
-  $handler->override_option('empty', 'No social network links have been added.');
+  $handler->override_option('empty', '');
   $handler->override_option('empty_format', '5');
   $handler->override_option('items_per_page', 0);
   $handler->override_option('block_description', '');
@@ -5467,7 +5467,6 @@ function afg_groups_views_views_default_views() {
     t('No app teams have been added for this centre yet.'),
     t('No archived groups found.'),
     t('No groups found.'),
-    t('No social network links have been added.'),
     t('Our Apps'),
     t('Page: Archived centres'),
     t('Page: My centres'),
