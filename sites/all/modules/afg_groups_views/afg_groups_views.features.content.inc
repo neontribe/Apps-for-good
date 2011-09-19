@@ -249,6 +249,64 @@ function afg_groups_views_content_default_fields() {
     ),
   );
 
+  // Exported field: field_app_count
+  $fields['group_centre_school-field_app_count'] = array(
+    'field_name' => 'field_app_count',
+    'type_name' => 'group_centre_school',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'nodereference_count',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'nodereference_count',
+    'active' => '1',
+    'referenceable_fields' => array(
+      'field_centre_ref' => 'field_centre_ref',
+    ),
+    'widget' => array(
+      'default_value' => NULL,
+      'default_value_php' => NULL,
+      'label' => 'App count',
+      'weight' => '31',
+      'description' => '',
+      'type' => 'nodereference_count_widget',
+      'module' => 'nodereference_count',
+    ),
+  );
+
   // Exported field: field_centre_loc_details
   $fields['group_centre_school-field_centre_loc_details'] = array(
     'field_name' => 'field_centre_loc_details',
@@ -947,6 +1005,7 @@ function afg_groups_views_content_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('App count');
   t('Centre Located at');
   t('Centre logo');
   t('Centre website');

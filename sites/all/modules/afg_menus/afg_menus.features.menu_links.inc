@@ -52,25 +52,6 @@ function afg_menus_menu_default_menu_links() {
     'expanded' => '1',
     'weight' => '-50',
   );
-  // Exported menu link: menu-footer-links:apps
-  $menu_links['menu-footer-links:apps'] = array(
-    'menu_name' => 'menu-footer-links',
-    'link_path' => 'apps',
-    'router_path' => 'apps',
-    'link_title' => 'Apps',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Apps',
-      ),
-    ),
-    'module' => 'menu',
-    'hidden' => '0',
-    'external' => '0',
-    'has_children' => '0',
-    'expanded' => '0',
-    'weight' => '-50',
-    'parent_path' => '<front>',
-  );
   // Exported menu link: menu-footer-links:node/104
   $menu_links['menu-footer-links:node/104'] = array(
     'menu_name' => 'menu-footer-links',
@@ -94,7 +75,6 @@ function afg_menus_menu_default_menu_links() {
   // Included for use with string extractors like potx.
   t('About');
   t('Applications');
-  t('Apps');
   t('Apps for Good');
   t('Centres');
 

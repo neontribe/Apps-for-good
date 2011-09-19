@@ -1138,7 +1138,7 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('row_options', array());
   $handler->override_option('path', 'apps/my');
   $handler->override_option('menu', array(
-    'type' => 'tab',
+    'type' => 'none',
     'title' => 'My applications',
     'description' => '',
     'weight' => '1',
@@ -1469,9 +1469,9 @@ function afg_groups_views_views_default_views() {
     ),
     'separator' => '',
   ));
-  $handler->override_option('path', 'apps/all');
+  $handler->override_option('path', 'apps');
   $handler->override_option('menu', array(
-    'type' => 'default tab',
+    'type' => 'none',
     'title' => 'Application Directory',
     'description' => '',
     'weight' => '0',
@@ -1778,7 +1778,7 @@ function afg_groups_views_views_default_views() {
   ));
   $handler->override_option('path', 'apps/archived');
   $handler->override_option('menu', array(
-    'type' => 'tab',
+    'type' => 'none',
     'title' => 'Applications Archived',
     'description' => '',
     'weight' => '2',
@@ -3407,7 +3407,7 @@ function afg_groups_views_views_default_views() {
       'relationship' => 'none',
     ),
     'tid_1' => array(
-      'label' => 'Badges',
+      'label' => '',
       'alter' => array(
         'alter_text' => 0,
         'text' => '',
@@ -3435,18 +3435,22 @@ function afg_groups_views_views_default_views() {
       'limit' => 0,
       'limit_module' => 1,
       'vids' => array(
-        '7' => 0,
-        '2' => 0,
-        '5' => 0,
-        '1' => 0,
         '6' => 0,
+        '2' => 0,
+        '8' => 0,
+        '3' => 0,
+        '1' => 0,
+        '9' => 0,
         '4' => 0,
+        '5' => 0,
       ),
       'modules' => array(
         'features_badges' => 'features_badges',
         'features_app_status' => 0,
+        'features_feature_tags' => 0,
         'features_image_tags' => 0,
         'features_keywords' => 0,
+        'features_regions' => 0,
         'features_text_tags' => 0,
         'features_video_tags' => 0,
       ),
@@ -3460,7 +3464,7 @@ function afg_groups_views_views_default_views() {
       'relationship' => 'none',
     ),
     'body' => array(
-      'label' => 'Short Pitch',
+      'label' => '',
       'alter' => array(
         'alter_text' => 0,
         'text' => '',
@@ -4753,6 +4757,47 @@ function afg_groups_views_views_default_views() {
       'id' => 'member_count',
       'table' => 'og',
       'field' => 'member_count',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+    'field_app_count_value' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'label_type' => 'none',
+      'format' => 'nonzero',
+      'multiple' => array(
+        'group' => TRUE,
+        'multiple_number' => '',
+        'multiple_from' => '',
+        'multiple_reversed' => FALSE,
+      ),
+      'exclude' => 0,
+      'id' => 'field_app_count_value',
+      'table' => 'node_data_field_app_count',
+      'field' => 'field_app_count_value',
       'override' => array(
         'button' => 'Use default',
       ),
