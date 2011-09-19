@@ -1689,9 +1689,9 @@ function afg_group_media_views_default_views() {
       'relationship' => 'none',
     ),
     'tid' => array(
-      'operator' => 'or',
+      'operator' => 'and',
       'value' => array(
-        '10' => '10',
+        '33' => '33',
       ),
       'group' => '0',
       'exposed' => FALSE,
@@ -1702,7 +1702,7 @@ function afg_group_media_views_default_views() {
       'type' => 'select',
       'limit' => TRUE,
       'limit_by' => 'vid',
-      'vid' => '6',
+      'vid' => '4',
       'module' => 'features_badges',
       'id' => 'tid',
       'table' => 'term_node',
