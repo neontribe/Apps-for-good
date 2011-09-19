@@ -4780,7 +4780,7 @@ function afg_groups_views_views_default_views() {
       'empty' => '',
       'hide_empty' => 0,
       'empty_zero' => 0,
-      'exclude' => 0,
+      'exclude' => 1,
       'id' => 'city',
       'table' => 'location',
       'field' => 'city',
@@ -4792,8 +4792,8 @@ function afg_groups_views_views_default_views() {
     'province' => array(
       'label' => '',
       'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
+        'alter_text' => 1,
+        'text' => '[city], [province]',
         'make_link' => 0,
         'path' => '',
         'link_class' => '',
@@ -4818,6 +4818,9 @@ function afg_groups_views_views_default_views() {
       'table' => 'location',
       'field' => 'province',
       'relationship' => 'none',
+      'override' => array(
+        'button' => 'Use default',
+      ),
     ),
   ));
   $handler->override_option('sorts', array(
