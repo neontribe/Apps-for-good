@@ -1904,3 +1904,25 @@ body #header-top .account-menu-active a {
 	width: 99%;
 	margin-top: 5px;
 }
+
+/* Social Network Icons */
+
+#prof-soc-widgets {
+	margin: 12px 0 0;
+}
+
+#prof-soc-widgets div {
+	float: left;
+}
+
+#prof-soc-tw {
+
+}
+
+#prof-soc-li {
+	margin-left: 5px;
+}
+
+#prof-soc-fb {
+	margin-left: 15px;
+}

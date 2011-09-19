@@ -58,6 +58,19 @@
         <span class='header-description'>
           <?php print $header_desc ?>
        </span>
+	   
+	   <div id="prof-soc-widgets">
+			<div id="prof-soc-tw">
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-url="THISURL" data-via="AppsForGoodCDI">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+			</div>
+			<div id="prof-soc-li">
+				<script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
+				<script type="IN/Share" data-url="THISURL" data-counter="right"></script>
+			</div>
+			<div id="prof-soc-fb">
+				<iframe src="http://www.facebook.com/plugins/like.php?app_id=260742727279643&amp;href&amp;send=false&amp;layout=button_count&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
+			</div>
+		</div>
 
         </div>
 	  
