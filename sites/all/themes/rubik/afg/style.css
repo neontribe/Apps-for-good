@@ -2181,6 +2181,9 @@ body #header-top .account-menu-active a {
 
 
 
+.social-links  {
+	margin: 20px;
+}
 
 .social-links a {
 	color: #222;
