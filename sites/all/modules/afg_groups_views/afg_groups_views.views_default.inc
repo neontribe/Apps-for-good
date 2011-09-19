@@ -829,6 +829,11 @@ function afg_groups_views_views_default_views() {
       'table' => 'node_data_field_centre_ref',
       'field' => 'field_centre_ref_nid',
     ),
+    'field_staff_nid' => array(
+      'id' => 'field_staff_nid',
+      'table' => 'node_data_field_staff',
+      'field' => 'field_staff_nid',
+    ),
   ));
   $handler->override_option('fields', array(
     'changed' => array(
@@ -899,20 +904,6 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('filters', array(
-    'type_groups_all' => array(
-      'operator' => '=',
-      'value' => '',
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type_groups_all',
-      'table' => 'og',
-      'field' => 'type_groups_all',
-      'relationship' => 'none',
-    ),
     'status' => array(
       'operator' => '=',
       'value' => 1,
@@ -928,25 +919,9 @@ function afg_groups_views_views_default_views() {
       'relationship' => 'none',
     ),
     'type' => array(
-      'operator' => 'in',
-      'value' => array(
-        'group_app_team' => 'group_app_team',
-      ),
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
       'id' => 'type',
       'table' => 'node',
       'field' => 'type',
-      'relationship' => 'none',
-    ),
-    'current' => array(
-      'id' => 'current',
-      'table' => 'spaces',
-      'field' => 'current',
     ),
   ));
   $handler->override_option('access', array(
@@ -2394,212 +2369,6 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('link_display', 'page_2');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
-  $handler = $view->new_display('block', 'Social Links', 'block_6');
-  $handler->override_option('fields', array(
-    'field_facebook_account_url' => array(
-      'label' => '',
-      'alter' => array(
-        'alter_text' => 1,
-        'text' => '<a href="[field_facebook_account_url]" title="View our facebook account">
-  <img src="/sites/all/themes/rubik/afg/images/afg/icons/fb.png" alt="Facebook" />
-</a>',
-        'make_link' => 0,
-        'path' => '',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'html' => 0,
-        'strip_tags' => 0,
-      ),
-      'empty' => '',
-      'hide_empty' => 1,
-      'empty_zero' => 0,
-      'link_to_node' => 0,
-      'label_type' => 'none',
-      'format' => 'plain',
-      'multiple' => array(
-        'group' => TRUE,
-        'multiple_number' => '',
-        'multiple_from' => '',
-        'multiple_reversed' => FALSE,
-      ),
-      'exclude' => 0,
-      'id' => 'field_facebook_account_url',
-      'table' => 'node_data_field_facebook_account',
-      'field' => 'field_facebook_account_url',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-      'relationship' => 'none',
-    ),
-    'field_twitter_account_url' => array(
-      'label' => '',
-      'alter' => array(
-        'alter_text' => 1,
-        'text' => '<a href="[field_twitter_account_url]" title="View our twitter account">
-  <img src="/sites/all/themes/rubik/afg/images/afg/icons/tw.png" alt="Twitter" />
-</a>',
-        'make_link' => 0,
-        'path' => '',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'html' => 0,
-        'strip_tags' => 0,
-      ),
-      'empty' => '',
-      'hide_empty' => 1,
-      'empty_zero' => 0,
-      'link_to_node' => 0,
-      'label_type' => 'none',
-      'format' => 'plain',
-      'multiple' => array(
-        'group' => TRUE,
-        'multiple_number' => '',
-        'multiple_from' => '',
-        'multiple_reversed' => FALSE,
-      ),
-      'exclude' => 0,
-      'id' => 'field_twitter_account_url',
-      'table' => 'node_data_field_twitter_account',
-      'field' => 'field_twitter_account_url',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-      'relationship' => 'none',
-    ),
-  ));
-  $handler->override_option('arguments', array(
-    'nid' => array(
-      'default_action' => 'default',
-      'style_plugin' => 'default_summary',
-      'style_options' => array(),
-      'wildcard' => 'all',
-      'wildcard_substitution' => 'All',
-      'title' => '',
-      'breadcrumb' => '',
-      'default_argument_type' => 'og_group_node',
-      'default_argument' => '',
-      'validate_type' => 'none',
-      'validate_fail' => 'not found',
-      'break_phrase' => 0,
-      'not' => 0,
-      'id' => 'nid',
-      'table' => 'node',
-      'field' => 'nid',
-      'validate_user_argument_type' => 'uid',
-      'validate_user_roles' => array(
-        '2' => 0,
-        '4' => 0,
-        '6' => 0,
-        '3' => 0,
-        '5' => 0,
-      ),
-      'override' => array(
-        'button' => 'Use default',
-      ),
-      'relationship' => 'none',
-      'default_options_div_prefix' => '',
-      'default_argument_fixed' => '',
-      'default_argument_user' => 0,
-      'default_argument_php' => '',
-      'validate_argument_node_type' => array(
-        'blog' => 0,
-        'book' => 0,
-        'event' => 0,
-        'feed_ical' => 0,
-        'feed_ical_item' => 0,
-        'group' => 0,
-        'profile' => 0,
-        'shoutbox' => 0,
-        'group_media_image' => 0,
-        'group_media_video' => 0,
-        'request_for_help' => 0,
-        'cdi_blog' => 0,
-        'casetracker_basic_case' => 0,
-        'casetracker_basic_project' => 0,
-        'group_app_team' => 0,
-        'group_centre_school' => 0,
-        'page' => 0,
-      ),
-      'validate_argument_node_access' => 0,
-      'validate_argument_nid_type' => 'nid',
-      'validate_argument_vocabulary' => array(
-        '6' => 0,
-        '2' => 0,
-        '10' => 0,
-        '8' => 0,
-        '3' => 0,
-        '1' => 0,
-        '9' => 0,
-        '4' => 0,
-        '5' => 0,
-      ),
-      'validate_argument_type' => 'tid',
-      'validate_argument_transform' => 0,
-      'validate_user_restrict_roles' => 0,
-      'validate_argument_is_member' => 'OG_VIEWS_DO_NOT_VALIDATE_MEMBERSHIP',
-      'validate_argument_group_node_type' => array(
-        'group' => 0,
-        'group_app_team' => 0,
-        'group_centre_school' => 0,
-      ),
-      'validate_argument_php' => '',
-    ),
-  ));
-  $handler->override_option('filters', array(
-    'type_groups_all' => array(
-      'operator' => '=',
-      'value' => '',
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type_groups_all',
-      'table' => 'og',
-      'field' => 'type_groups_all',
-      'relationship' => 'none',
-    ),
-    'status' => array(
-      'operator' => '=',
-      'value' => 1,
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'status',
-      'table' => 'node',
-      'field' => 'status',
-      'relationship' => 'none',
-    ),
-  ));
-  $handler->override_option('access', array(
-    'type' => 'none',
-  ));
-  $handler->override_option('title', '');
-  $handler->override_option('css_class', 'social-links');
-  $handler->override_option('empty', '');
-  $handler->override_option('empty_format', '5');
-  $handler->override_option('block_description', '');
-  $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'App Links', 'block_7');
   $handler->override_option('fields', array(
     'field_android_market_url' => array(
@@ -2725,6 +2494,88 @@ function afg_groups_views_views_default_views() {
       ),
       'relationship' => 'none',
     ),
+    'field_facebook_account_url' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'label_type' => 'none',
+      'format' => 'default',
+      'multiple' => array(
+        'group' => TRUE,
+        'multiple_number' => '',
+        'multiple_from' => '',
+        'multiple_reversed' => FALSE,
+      ),
+      'exclude' => 0,
+      'id' => 'field_facebook_account_url',
+      'table' => 'node_data_field_facebook_account',
+      'field' => 'field_facebook_account_url',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+    'field_twitter_account_url' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'label_type' => 'none',
+      'format' => 'default',
+      'multiple' => array(
+        'group' => TRUE,
+        'multiple_number' => '',
+        'multiple_from' => '',
+        'multiple_reversed' => FALSE,
+      ),
+      'exclude' => 0,
+      'id' => 'field_twitter_account_url',
+      'table' => 'node_data_field_twitter_account',
+      'field' => 'field_twitter_account_url',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
   ));
   $handler->override_option('arguments', array(
     'nid' => array(
@@ -2819,13 +2670,356 @@ function afg_groups_views_views_default_views() {
       'field' => 'status',
       'relationship' => 'none',
     ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'group_app_team' => 'group_app_team',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
   ));
-  $handler->override_option('title', 'App Links');
-  $handler->override_option('css_class', 'app-links');
+  $handler->override_option('title', '');
+  $handler->override_option('css_class', 'social-links');
   $handler->override_option('empty', 'No app links added.');
   $handler->override_option('empty_format', '5');
   $handler->override_option('items_per_page', 6);
   $handler->override_option('use_pager', '0');
+  $handler->override_option('block_description', '');
+  $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'The Centre', 'block_8');
+  $handler->override_option('relationships', array(
+    'field_centre_ref_nid' => array(
+      'id' => 'field_centre_ref_nid',
+      'table' => 'node_data_field_centre_ref',
+      'field' => 'field_centre_ref_nid',
+    ),
+  ));
+  $handler->override_option('fields', array(
+    'field_activity_link_value' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'label_type' => 'none',
+      'format' => 'default',
+      'multiple' => array(
+        'group' => TRUE,
+        'multiple_number' => '',
+        'multiple_from' => '',
+        'multiple_reversed' => FALSE,
+      ),
+      'exclude' => 1,
+      'id' => 'field_activity_link_value',
+      'table' => 'node_data_field_activity_link',
+      'field' => 'field_activity_link_value',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'field_centre_ref_nid',
+    ),
+    'field_logo_fid' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 1,
+        'path' => '../[field_activity_link_value]',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'label_type' => 'none',
+      'format' => 'badge-thumb_default',
+      'multiple' => array(
+        'group' => TRUE,
+        'multiple_number' => '',
+        'multiple_from' => '',
+        'multiple_reversed' => FALSE,
+      ),
+      'exclude' => 0,
+      'id' => 'field_logo_fid',
+      'table' => 'node_data_field_logo',
+      'field' => 'field_logo_fid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'field_centre_ref_nid',
+    ),
+    'title' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 1,
+        'path' => '../[field_activity_link_value]',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'spaces' => array(
+        'frontpage' => 0,
+        'type' => 'spaces_og',
+      ),
+      'exclude' => 0,
+      'id' => 'title',
+      'table' => 'node',
+      'field' => 'title',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'field_centre_ref_nid',
+    ),
+    'city' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 1,
+      'empty_zero' => 0,
+      'exclude' => 0,
+      'id' => 'city',
+      'table' => 'location',
+      'field' => 'city',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'field_centre_ref_nid',
+    ),
+    'province' => array(
+      'label' => 'Province',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 1,
+      'empty_zero' => 0,
+      'style' => 'name',
+      'exclude' => 0,
+      'id' => 'province',
+      'table' => 'location',
+      'field' => 'province',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'field_centre_ref_nid',
+    ),
+  ));
+  $handler->override_option('arguments', array(
+    'nid' => array(
+      'default_action' => 'default',
+      'style_plugin' => 'default_summary',
+      'style_options' => array(),
+      'wildcard' => 'all',
+      'wildcard_substitution' => 'All',
+      'title' => '',
+      'breadcrumb' => '',
+      'default_argument_type' => 'og_group_node',
+      'default_argument' => '',
+      'validate_type' => 'none',
+      'validate_fail' => 'not found',
+      'break_phrase' => 0,
+      'not' => 0,
+      'id' => 'nid',
+      'table' => 'node',
+      'field' => 'nid',
+      'validate_user_argument_type' => 'uid',
+      'validate_user_roles' => array(
+        '2' => 0,
+        '4' => 0,
+        '6' => 0,
+        '3' => 0,
+        '5' => 0,
+      ),
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+      'default_options_div_prefix' => '',
+      'default_argument_fixed' => '',
+      'default_argument_user' => 0,
+      'default_argument_php' => '',
+      'validate_argument_node_type' => array(
+        'blog' => 0,
+        'book' => 0,
+        'event' => 0,
+        'feed_ical' => 0,
+        'feed_ical_item' => 0,
+        'group' => 0,
+        'profile' => 0,
+        'shoutbox' => 0,
+        'group_media_image' => 0,
+        'group_media_video' => 0,
+        'request_for_help' => 0,
+        'cdi_blog' => 0,
+        'casetracker_basic_case' => 0,
+        'casetracker_basic_project' => 0,
+        'group_app_team' => 0,
+        'group_centre_school' => 0,
+        'page' => 0,
+      ),
+      'validate_argument_node_access' => 0,
+      'validate_argument_nid_type' => 'nid',
+      'validate_argument_vocabulary' => array(
+        '6' => 0,
+        '2' => 0,
+        '10' => 0,
+        '8' => 0,
+        '3' => 0,
+        '1' => 0,
+        '9' => 0,
+        '4' => 0,
+        '5' => 0,
+      ),
+      'validate_argument_type' => 'tid',
+      'validate_argument_transform' => 0,
+      'validate_user_restrict_roles' => 0,
+      'validate_argument_is_member' => 'OG_VIEWS_DO_NOT_VALIDATE_MEMBERSHIP',
+      'validate_argument_group_node_type' => array(
+        'group' => 0,
+        'group_app_team' => 0,
+        'group_centre_school' => 0,
+      ),
+      'validate_argument_php' => '',
+    ),
+  ));
+  $handler->override_option('filters', array(
+    'status' => array(
+      'operator' => '=',
+      'value' => 1,
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'group_app_team' => 'group_app_team',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+  ));
+  $handler->override_option('title', 'The Centre');
+  $handler->override_option('header', 'The team is based at:');
+  $handler->override_option('header_format', '5');
+  $handler->override_option('header_empty', 0);
+  $handler->override_option('items_per_page', 1);
+  $handler->override_option('row_options', array(
+    'inline' => array(
+      'field_logo_fid' => 'field_logo_fid',
+      'title' => 'title',
+      'city' => 'city',
+      'province' => 'province',
+    ),
+    'separator' => '',
+    'hide_empty' => 0,
+  ));
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $translatables['groups_listing_app_team'] = array(
@@ -2845,9 +3039,10 @@ function afg_groups_views_views_default_views() {
     t('Page: Application directory'),
     t('Page: Archived applications'),
     t('Page: My applications'),
-    t('Social Links'),
     t('The App Team'),
+    t('The Centre'),
     t('The Team'),
+    t('The team is based at:'),
     t('This App'),
     t('User applications'),
     t('View more'),
@@ -5423,7 +5618,7 @@ function afg_groups_views_views_default_views() {
     'field_facebook_account_url' => array(
       'label' => '',
       'alter' => array(
-        'alter_text' => 1,
+        'alter_text' => 0,
         'text' => '<a href="[field_facebook_account_url]" title="View our facebook account">
   <img src="/sites/all/themes/rubik/afg/images/afg/icons/fb.png" alt="Facebook" />
 </a>',
@@ -5447,7 +5642,7 @@ function afg_groups_views_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 0,
       'label_type' => 'none',
-      'format' => 'plain',
+      'format' => 'default',
       'multiple' => array(
         'group' => TRUE,
         'multiple_number' => '',
@@ -5466,7 +5661,7 @@ function afg_groups_views_views_default_views() {
     'field_twitter_account_url' => array(
       'label' => '',
       'alter' => array(
-        'alter_text' => 1,
+        'alter_text' => 0,
         'text' => '<a href="[field_twitter_account_url]" title="View our twitter account">
   <img src="/sites/all/themes/rubik/afg/images/afg/icons/tw.png" alt="Twitter" />
 </a>',
@@ -5490,7 +5685,7 @@ function afg_groups_views_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 0,
       'label_type' => 'none',
-      'format' => 'plain',
+      'format' => 'default',
       'multiple' => array(
         'group' => TRUE,
         'multiple_number' => '',
@@ -5509,7 +5704,7 @@ function afg_groups_views_views_default_views() {
     'field_website_url' => array(
       'label' => '',
       'alter' => array(
-        'alter_text' => 1,
+        'alter_text' => 0,
         'text' => '<a href="[field_website_url]" title="Visit our website">
   <img src="/sites/all/themes/rubik/afg/images/afg/icons/website.png" alt="Website" />
 </a>',
@@ -5533,7 +5728,7 @@ function afg_groups_views_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 0,
       'label_type' => 'none',
-      'format' => 'plain',
+      'format' => 'default',
       'multiple' => array(
         'group' => TRUE,
         'multiple_number' => '',
