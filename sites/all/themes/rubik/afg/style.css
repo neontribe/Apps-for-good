@@ -2205,6 +2205,14 @@ body #header-top .account-menu-active a {
 	background: url('images/afg/icons/ios.png') 5px center no-repeat;
 }
 
+.app-links .views-field-field-facebook-account-url a {
+	background: url('images/afg/icons/facebook.png') 5px center no-repeat;
+}
+
+.app-links .views-field-field-twitter-account-url a {
+	background: url('images/afg/icons/twitter.png') 5px center no-repeat;
+}
+
 .app-links a:hover {
 	background-color: #EAEAEA;
 }
