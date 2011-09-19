@@ -2177,6 +2177,40 @@ body #header-top .account-menu-active a {
 }
 
 
+
+
+
+
+.app-links a {
+	color: #222;
+	font-size: 0.8em;
+	display: block;
+	border-bottom: 1px solid #CCC;
+	padding: 10px 5px 10px 30px;
+	line-height: 1.3;
+}
+
+.app-links li div:last-child a {
+	border-bottom: 0;
+}
+
+.app-links .views-field-field-android-market-url a {
+	background: url('images/afg/icons/android.png') 5px center no-repeat;
+}
+
+.app-links .views-field-field-blackberry-appworld-url a {
+	background: url('images/afg/icons/appworld.png') 5px center no-repeat;
+}
+
+.app-links .views-field-field-ios-app-store-url a {
+	background: url('images/afg/icons/ios.png') 5px center no-repeat;
+}
+
+.app-links a:hover {
+	background-color: #EAEAEA;
+}
+
+
 /* merge resolution.... */
 
 
