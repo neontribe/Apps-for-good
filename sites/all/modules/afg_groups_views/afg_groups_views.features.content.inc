@@ -69,6 +69,152 @@ function afg_groups_views_content_default_fields() {
     ),
   );
 
+  // Exported field: field_android_market
+  $fields['group_app_team-field_android_market'] = array(
+    'field_name' => 'field_android_market',
+    'type_name' => 'group_app_team',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'link',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'link',
+    'active' => '1',
+    'attributes' => array(
+      'target' => 'default',
+      'rel' => 'nofollow',
+      'class' => '',
+      'title' => '',
+    ),
+    'display' => array(
+      'url_cutoff' => '80',
+    ),
+    'url' => 0,
+    'title' => 'value',
+    'title_value' => 'Download on Android market',
+    'enable_tokens' => 0,
+    'validate_url' => 1,
+    'widget' => array(
+      'default_value' => array(
+        '0' => array(
+          'url' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Android Market Download',
+      'weight' => '40',
+      'description' => '',
+      'type' => 'link',
+      'module' => 'link',
+    ),
+  );
+
+  // Exported field: field_blackberry_appworld
+  $fields['group_app_team-field_blackberry_appworld'] = array(
+    'field_name' => 'field_blackberry_appworld',
+    'type_name' => 'group_app_team',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'link',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'link',
+    'active' => '1',
+    'attributes' => array(
+      'target' => 'default',
+      'rel' => 'nofollow',
+      'class' => '',
+      'title' => '',
+    ),
+    'display' => array(
+      'url_cutoff' => '80',
+    ),
+    'url' => 0,
+    'title' => 'value',
+    'title_value' => 'Download on Blackberry appworld',
+    'enable_tokens' => 0,
+    'validate_url' => 1,
+    'widget' => array(
+      'default_value' => array(
+        '0' => array(
+          'url' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Blackberry Appworld Download',
+      'weight' => '41',
+      'description' => '',
+      'type' => 'link',
+      'module' => 'link',
+    ),
+  );
+
   // Exported field: field_centre_ref
   $fields['group_app_team-field_centre_ref'] = array(
     'field_name' => 'field_centre_ref',
@@ -145,6 +291,79 @@ function afg_groups_views_content_default_fields() {
       'description' => '',
       'type' => 'nodereference_select',
       'module' => 'nodereference',
+    ),
+  );
+
+  // Exported field: field_facebook_account
+  $fields['group_app_team-field_facebook_account'] = array(
+    'field_name' => 'field_facebook_account',
+    'type_name' => 'group_app_team',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'link',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'link',
+    'active' => '1',
+    'attributes' => array(
+      'target' => 'default',
+      'rel' => 'nofollow',
+      'class' => '',
+      'title' => '',
+    ),
+    'display' => array(
+      'url_cutoff' => '80',
+    ),
+    'url' => 0,
+    'title' => 'none',
+    'title_value' => '',
+    'enable_tokens' => 0,
+    'validate_url' => 1,
+    'widget' => array(
+      'default_value' => array(
+        '0' => array(
+          'url' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Facebook Account',
+      'weight' => '36',
+      'description' => 'Enter your Facebook account address',
+      'type' => 'link',
+      'module' => 'link',
     ),
   );
 
@@ -230,6 +449,79 @@ function afg_groups_views_content_default_fields() {
     ),
   );
 
+  // Exported field: field_ios_app_store
+  $fields['group_app_team-field_ios_app_store'] = array(
+    'field_name' => 'field_ios_app_store',
+    'type_name' => 'group_app_team',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'link',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'link',
+    'active' => '1',
+    'attributes' => array(
+      'target' => 'default',
+      'rel' => 'nofollow',
+      'class' => '',
+      'title' => '',
+    ),
+    'display' => array(
+      'url_cutoff' => '80',
+    ),
+    'url' => 0,
+    'title' => 'value',
+    'title_value' => 'Download on IOS app store',
+    'enable_tokens' => 0,
+    'validate_url' => 1,
+    'widget' => array(
+      'default_value' => array(
+        '0' => array(
+          'url' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'iOS App Store Download',
+      'weight' => '39',
+      'description' => '',
+      'type' => 'link',
+      'module' => 'link',
+    ),
+  );
+
   // Exported field: field_logo
   $fields['group_app_team-field_logo'] = array(
     'field_name' => 'field_logo',
@@ -309,6 +601,79 @@ function afg_groups_views_content_default_fields() {
       'description' => 'These images will be re-sized to a 50px x 50px thumbnail. Please upload at this size if possible.',
       'type' => 'imagefield_widget',
       'module' => 'imagefield',
+    ),
+  );
+
+  // Exported field: field_twitter_account
+  $fields['group_app_team-field_twitter_account'] = array(
+    'field_name' => 'field_twitter_account',
+    'type_name' => 'group_app_team',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'link',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'link',
+    'active' => '1',
+    'attributes' => array(
+      'target' => 'default',
+      'rel' => 'nofollow',
+      'class' => '',
+      'title' => '',
+    ),
+    'display' => array(
+      'url_cutoff' => '80',
+    ),
+    'url' => 0,
+    'title' => 'none',
+    'title_value' => '',
+    'enable_tokens' => 0,
+    'validate_url' => 1,
+    'widget' => array(
+      'default_value' => array(
+        '0' => array(
+          'url' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Twitter Account',
+      'weight' => '38',
+      'description' => 'Enter your Twitter account address',
+      'type' => 'link',
+      'module' => 'link',
     ),
   );
 
@@ -1346,7 +1711,9 @@ function afg_groups_views_content_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Activity_link');
+  t('Android Market Download');
   t('App count');
+  t('Blackberry Appworld Download');
   t('Centre Located at');
   t('Centre logo');
   t('Centre website');
@@ -1355,6 +1722,7 @@ function afg_groups_views_content_default_fields() {
   t('Parent Centre');
   t('Staff');
   t('Twitter Account');
+  t('iOS App Store Download');
   t('logo');
 
   return $fields;
