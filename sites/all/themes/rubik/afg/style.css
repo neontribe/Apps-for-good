@@ -322,6 +322,7 @@ padding: 4px 9px;
 ---------------------------------------------------------- */
 
 input[type='submit'],
+#block-quicktabs-app_media .views-field-view-node-1 a,
 #block-quicktabs-app_media .views-field-view-node a,
 #block-atrium-user_links .block-content a {
 	color: #FFF;
@@ -1795,6 +1796,7 @@ body #header-top .account-menu-active a {
 	transform: rotate(-3deg);
 }
 
+#block-quicktabs-app_media .views-field-view-node-1 a:after,
 #block-quicktabs-app_media .views-field-view-node a:after,
 #block-atrium-user_links .block-content a:after {
 	content: " \2192";
