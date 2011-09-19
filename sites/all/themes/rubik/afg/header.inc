@@ -51,9 +51,10 @@
 
        <?php if ($region): ?>
           <span class='region'>
-             <h2><?php print $region; ?></h2>
+             <h2><?php print $region; if ($city) print ", $city"; ?></h2>
           </span>
        <?php endif; ?>
+       
         <span class='header-description'>
           <?php print $header_desc ?>
        </span>

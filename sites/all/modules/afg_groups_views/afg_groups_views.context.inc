@@ -99,6 +99,12 @@ function afg_groups_views_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'menu-menu-app-directory-links' => array(
+          'module' => 'menu',
+          'delta' => 'menu-app-directory-links',
+          'region' => 'right',
+          'weight' => 0,
+        ),
         'quicktabs-app_directory' => array(
           'module' => 'quicktabs',
           'delta' => 'app_directory',

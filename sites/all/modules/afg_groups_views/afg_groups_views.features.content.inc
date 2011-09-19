@@ -11,19 +11,20 @@ function afg_groups_views_content_default_fields() {
     'field_name' => 'field_centre_ref',
     'type_name' => 'group_app_team',
     'display_settings' => array(
+      'weight' => '-4',
+      'parent' => '',
       'label' => array(
-        'format' => 'above',
-        'exclude' => 0,
-      ),
-      '5' => array(
-        'format' => 'default',
-        'exclude' => 0,
+        'format' => 'hidden',
       ),
       'teaser' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
       'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '5' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
@@ -89,19 +90,20 @@ function afg_groups_views_content_default_fields() {
     'field_name' => 'field_icon',
     'type_name' => 'group_app_team',
     'display_settings' => array(
+      'weight' => '32',
+      'parent' => '',
       'label' => array(
-        'format' => 'above',
-        'exclude' => 0,
-      ),
-      '5' => array(
-        'format' => 'image_plain',
-        'exclude' => 0,
+        'format' => 'hidden',
       ),
       'teaser' => array(
         'format' => 'image_plain',
         'exclude' => 0,
       ),
       'full' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '5' => array(
         'format' => 'image_plain',
         'exclude' => 0,
       ),
@@ -145,16 +147,16 @@ function afg_groups_views_content_default_fields() {
       'custom_title' => 0,
       'title_type' => 'textfield',
       'default_image' => array(
-        'filename' => 'afg_icon-app.png',
-        'filepath' => 'sites/default/files/imagefield_default_images/afg_icon-app.png',
-        'filemime' => 'image/png',
+        'filename' => 'afg_app-icon.gif',
+        'filepath' => '/tmp/afg_app-icon_0.gif',
+        'filemime' => 'image/gif',
         'source' => 'default_image_upload',
-        'destination' => 'sites/default/files/imagefield_default_images/afg_icon-app.png',
-        'filesize' => 3800,
+        'destination' => '/tmp/afg_app-icon_0.gif',
+        'filesize' => 1483,
         'uid' => '1',
         'status' => 1,
-        'timestamp' => 1315915745,
-        'fid' => '129',
+        'timestamp' => 1316105674,
+        'fid' => '144',
       ),
       'use_default_image' => 1,
       'label' => 'Icon',
@@ -170,19 +172,20 @@ function afg_groups_views_content_default_fields() {
     'field_name' => 'field_logo',
     'type_name' => 'group_app_team',
     'display_settings' => array(
+      'weight' => '-3',
+      'parent' => '',
       'label' => array(
-        'format' => 'above',
-        'exclude' => 0,
-      ),
-      '5' => array(
-        'format' => 'image_plain',
-        'exclude' => 0,
+        'format' => 'hidden',
       ),
       'teaser' => array(
         'format' => 'image_plain',
         'exclude' => 0,
       ),
       'full' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '5' => array(
         'format' => 'image_plain',
         'exclude' => 0,
       ),
@@ -226,16 +229,16 @@ function afg_groups_views_content_default_fields() {
       'custom_title' => 0,
       'title_type' => 'textfield',
       'default_image' => array(
-        'filename' => 'logo.jpg',
-        'filepath' => 'sites/default/files/imagefield_default_images/logo.jpg',
-        'filemime' => 'image/jpeg',
+        'filename' => 'afg_app-icon.gif',
+        'filepath' => 'sites/default/files/imagefield_default_images/afg_app-icon.gif',
+        'filemime' => 'image/gif',
         'source' => 'default_image_upload',
-        'destination' => 'sites/default/files/imagefield_default_images/logo.jpg',
-        'filesize' => 848,
+        'destination' => 'sites/default/files/imagefield_default_images/afg_app-icon.gif',
+        'filesize' => 1483,
         'uid' => '1',
         'status' => 1,
-        'timestamp' => 1308653674,
-        'fid' => '3',
+        'timestamp' => 1316302312,
+        'fid' => '151',
       ),
       'use_default_image' => 1,
       'label' => 'logo',
@@ -251,19 +254,20 @@ function afg_groups_views_content_default_fields() {
     'field_name' => 'field_centre_loc_details',
     'type_name' => 'group_centre_school',
     'display_settings' => array(
+      'weight' => '-2',
+      'parent' => '',
       'label' => array(
-        'format' => 'above',
-        'exclude' => 0,
-      ),
-      '5' => array(
-        'format' => 'default',
-        'exclude' => 0,
+        'format' => 'hidden',
       ),
       'teaser' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
       'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '5' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
@@ -627,19 +631,20 @@ function afg_groups_views_content_default_fields() {
     'field_name' => 'field_icon',
     'type_name' => 'group_centre_school',
     'display_settings' => array(
+      'weight' => '14',
+      'parent' => '',
       'label' => array(
-        'format' => 'above',
-        'exclude' => 0,
-      ),
-      '5' => array(
-        'format' => 'image_plain',
-        'exclude' => 0,
+        'format' => 'hidden',
       ),
       'teaser' => array(
         'format' => 'image_plain',
         'exclude' => 0,
       ),
       'full' => array(
+        'format' => 'hidden',
+        'exclude' => 0,
+      ),
+      '5' => array(
         'format' => 'image_plain',
         'exclude' => 0,
       ),
@@ -708,19 +713,20 @@ function afg_groups_views_content_default_fields() {
     'field_name' => 'field_logo',
     'type_name' => 'group_centre_school',
     'display_settings' => array(
+      'weight' => '-1',
+      'parent' => '',
       'label' => array(
-        'format' => 'above',
-        'exclude' => 0,
-      ),
-      '5' => array(
-        'format' => 'image_plain',
-        'exclude' => 0,
+        'format' => 'hidden',
       ),
       'teaser' => array(
         'format' => 'image_plain',
         'exclude' => 0,
       ),
       'full' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '5' => array(
         'format' => 'image_plain',
         'exclude' => 0,
       ),
@@ -789,19 +795,20 @@ function afg_groups_views_content_default_fields() {
     'field_name' => 'field_staff',
     'type_name' => 'group_centre_school',
     'display_settings' => array(
+      'weight' => 0,
+      'parent' => '',
       'label' => array(
-        'format' => 'above',
-        'exclude' => 0,
-      ),
-      '5' => array(
-        'format' => 'default',
-        'exclude' => 0,
+        'format' => 'hidden',
       ),
       'teaser' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
       'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '5' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
@@ -869,19 +876,20 @@ function afg_groups_views_content_default_fields() {
     'field_name' => 'field_website',
     'type_name' => 'group_centre_school',
     'display_settings' => array(
+      'weight' => '1',
+      'parent' => '',
       'label' => array(
-        'format' => 'above',
-        'exclude' => 0,
-      ),
-      '5' => array(
-        'format' => 'default',
-        'exclude' => 0,
+        'format' => 'hidden',
       ),
       'teaser' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
       'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '5' => array(
         'format' => 'default',
         'exclude' => 0,
       ),

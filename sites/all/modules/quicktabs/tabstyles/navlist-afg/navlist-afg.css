@@ -47,17 +47,10 @@ ul.quicktabs_tabs.quicktabs-style-navlist-afg li.active a {
   display: block;
 }
 
-.views-field-field-carousel-image-fid img,
-.views-field-field-carousel-image-fid object {
-  /* width: 100% !important; */
-  /* height: auto; */
-}
-
 .quicktabs_main.quicktabs-style-navlist-afg {
   position: relative;
   top: 0;
   left: 0;
   z-index: 10;
   width: 100%;
-  min-height: 320px;
 }

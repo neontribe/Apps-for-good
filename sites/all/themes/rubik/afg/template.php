@@ -80,8 +80,9 @@ function afg_preprocess_page(&$vars) {
       $region = db_result($res);
     
     }
+	
     $vars['region'] = $region;
-
+	$vars['city'] = $node->field_centre_loc_details[0]['city'];
   }
 }
 
