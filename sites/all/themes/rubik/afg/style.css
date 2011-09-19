@@ -2218,6 +2218,10 @@ body #header-top .account-menu-active a {
 	background: url('images/afg/icons/twitter.png') 5px center no-repeat;
 }
 
+.social-links .views-field-field-website-url a {
+	background: url('images/afg/icons/site.png') 5px center no-repeat;
+}
+
 .social-links a:hover {
 	background-color: #EAEAEA;
 }
