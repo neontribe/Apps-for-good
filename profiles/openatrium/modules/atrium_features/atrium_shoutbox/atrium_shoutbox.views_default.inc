@@ -359,7 +359,6 @@ function atrium_shoutbox_views_default_views() {
   $handler->override_option('items_per_page', 5);
   $handler->override_option('use_pager', '0');
   $handler->override_option('style_plugin', 'list');
-  $handler->override_option('exposed_block', TRUE);
   $handler = $view->new_display('page', 'Shoutbox', 'page_1');
   $handler->override_option('fields', array(
     'picture' => array(
@@ -490,7 +489,7 @@ function atrium_shoutbox_views_default_views() {
         'strip_tags' => 0,
       ),
       'empty' => '',
-      'hide_empty' => 0,
+      'hide_empty' => 1,
       'empty_zero' => 0,
       'text' => '',
       'exclude' => 0,
@@ -519,20 +518,6 @@ function atrium_shoutbox_views_default_views() {
       'override' => array(
         'button' => 'Override',
       ),
-      'relationship' => 'nid',
-    ),
-    'nid' => array(
-      'operator' => '=',
-      'value' => '',
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'nid',
-      'table' => 'node_access',
-      'field' => 'nid',
       'relationship' => 'nid',
     ),
     'status' => array(
@@ -571,28 +556,6 @@ function atrium_shoutbox_views_default_views() {
         'button' => 'Override',
       ),
     ),
-    'comment' => array(
-      'operator' => 'contains',
-      'value' => '',
-      'group' => '0',
-      'exposed' => TRUE,
-      'expose' => array(
-        'use_operator' => 0,
-        'operator' => 'comment_op',
-        'identifier' => 'comment',
-        'label' => 'Search',
-        'optional' => 1,
-        'remember' => 0,
-      ),
-      'case' => 0,
-      'id' => 'comment',
-      'table' => 'comments',
-      'field' => 'comment',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-      'relationship' => 'none',
-    ),
     'timestamp' => array(
       'operator' => '>=',
       'value' => array(
@@ -612,8 +575,25 @@ function atrium_shoutbox_views_default_views() {
       'field' => 'timestamp',
       'relationship' => 'none',
     ),
+    'nid' => array(
+      'operator' => '=',
+      'value' => '',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'nid',
+      'table' => 'node_access',
+      'field' => 'nid',
+      'relationship' => 'nid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+    ),
   ));
-  $handler->override_option('title', 'Shoutbox');
+  $handler->override_option('title', 'Comments');
   $handler->override_option('items_per_page', 20);
   $handler->override_option('use_pager', '1');
   $handler->override_option('path', 'shoutbox/og');
@@ -631,9 +611,15 @@ function atrium_shoutbox_views_default_views() {
     'weight' => 0,
     'name' => 'navigation',
   ));
+  $handler = $view->new_display('block', 'Comments (shoutbox)', 'block_1');
+  $handler->override_option('block_description', 'comment_block');
+  $handler->override_option('block_caching', -1);
   $translatables['shoutbox_shouts'] = array(
+    t('Comments'),
+    t('Comments (shoutbox)'),
     t('Defaults'),
     t('Shoutbox'),
+    t('comment_block'),
   );
 
   $views[$view->name] = $view;
@@ -720,7 +706,7 @@ function atrium_shoutbox_views_default_views() {
     'alignment' => 'horizontal',
   ));
   $handler = $view->new_display('block', 'Block', 'block_1');
-  $handler->override_option('title', 'Members');
+  $handler->override_option('title', 'Supporters');
   $handler->override_option('items_per_page', 30);
   $handler->override_option('use_pager', 'mini');
   $handler->override_option('block_description', '');

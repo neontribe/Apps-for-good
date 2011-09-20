@@ -10,9 +10,9 @@ function atrium_book_user_default_permissions() {
   $permissions['add content to books'] = array(
     'name' => 'add content to books',
     'roles' => array(
-      '0' => 'administrator',
-      '1' => 'authenticated user',
-      '2' => 'manager',
+      '0' => 'App team',
+      '1' => 'CDI Employee',
+      '2' => 'Educator',
     ),
   );
 
@@ -20,7 +20,9 @@ function atrium_book_user_default_permissions() {
   $permissions['administer book outlines'] = array(
     'name' => 'administer book outlines',
     'roles' => array(
-      '0' => 'administrator',
+      '0' => 'App team',
+      '1' => 'CDI Employee',
+      '2' => 'Educator',
     ),
   );
 
@@ -28,9 +30,7 @@ function atrium_book_user_default_permissions() {
   $permissions['create book content'] = array(
     'name' => 'create book content',
     'roles' => array(
-      '0' => 'administrator',
-      '1' => 'authenticated user',
-      '2' => 'manager',
+      '0' => 'Educator',
     ),
   );
 
@@ -38,9 +38,9 @@ function atrium_book_user_default_permissions() {
   $permissions['create new books'] = array(
     'name' => 'create new books',
     'roles' => array(
-      '0' => 'administrator',
-      '1' => 'authenticated user',
-      '2' => 'manager',
+      '0' => 'App team',
+      '1' => 'CDI Employee',
+      '2' => 'Educator',
     ),
   );
 
@@ -48,8 +48,7 @@ function atrium_book_user_default_permissions() {
   $permissions['delete any book content'] = array(
     'name' => 'delete any book content',
     'roles' => array(
-      '0' => 'administrator',
-      '1' => 'manager',
+      '0' => 'Educator',
     ),
   );
 
@@ -57,9 +56,7 @@ function atrium_book_user_default_permissions() {
   $permissions['delete own book content'] = array(
     'name' => 'delete own book content',
     'roles' => array(
-      '0' => 'administrator',
-      '1' => 'authenticated user',
-      '2' => 'manager',
+      '0' => 'Educator',
     ),
   );
 
@@ -67,9 +64,7 @@ function atrium_book_user_default_permissions() {
   $permissions['edit any book content'] = array(
     'name' => 'edit any book content',
     'roles' => array(
-      '0' => 'administrator',
-      '1' => 'authenticated user',
-      '2' => 'manager',
+      '0' => 'Educator',
     ),
   );
 

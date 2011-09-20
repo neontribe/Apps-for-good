@@ -314,7 +314,22 @@ dpm($node);
 }
 
 
+//recent activity stream home page
 function afg_views_view_field__updates__block_1__atrium_activity($view, $handler, $obj) {
+	return afg_activity_title_rewrite($view, $handler, $obj);
+}
+
+
+//recent activity stream Profiles youre following tab (homepage)
+function afg_views_view_field__updates__block_9__atrium_activity($view, $handler, $obj) {
+        return afg_activity_title_rewrite($view, $handler, $obj);
+}
+
+
+
+
+//hook recent activity field and rewrite
+function afg_activity_title_rewrite($view, $handler, $obj) {
 
   $title_link = '<div class="views-field-title"><a href= "node/' . $obj->nid . '">'. $obj->node_title . '<a/></div>';
 
