@@ -862,26 +862,6 @@ input[type='submit'] {
 #content-right .views-field-mail a:after { content: " \2192"; }
 /*.views-field-field-website-url a:after { content: " \21D7"; }*/
 
-/*
-#content-right .social-links li > div,
-#content-right .social-links a {
-	display: inline;
-	
-}
-
-#content-right .social-links li > div {
-	margin: 0 10px 0 0;
-}
-
-#content-right .social-links li div:last-child {
-	margin-right: 0;
-}
-
-#content-right .social-links-container {
-	border: 0;
-}
-*/
-
 
 /* User Menu's:
  * Create & Admin Links
@@ -1411,6 +1391,16 @@ input[type='submit'] {
 	height: auto;
 	max-height: 357px;
 	max-width: 435px;
+	position: relative;
+}
+
+#block-quicktabs-app_media .views-field-field-group-image-fid {
+	background: #FFF;
+	text-align: center;
+	min-height: 370px;
+	max-height: 370px;
+	min-width: 447px;
+	max-width: 447px;
 }
 
 #block-quicktabs-cdi_features .views-field-field-carousel-image-fid {
@@ -1687,15 +1677,18 @@ li.tab-plan a {  background:url('images/afg/icons/afg_blog-icon.gif')  no-repeat
 /* Badges
 ---------------------------------------------------------- */
 
-.badges-empty {
+.badges-empty,
+.view-badges .view-empty {
 	text-align: center;
 }
 
-.badges-empty img {
+.badges-empty img,
+.view-badges .view-empty img {
 	margin: 0 0 10px; 
 }
 
-.badges-empty span {
+.badges-empty span,
+.view-badges .view-empty span {
 	display: block;
 }
 
@@ -2181,10 +2174,6 @@ body #header-top .account-menu-active a {
 /* Social Links
 ---------------------------------------------------------- */
 
-.social-links  {
-	margin: 20px;
-}
-
 .social-links a {
 	color: #222;
 	font-size: 0.8em;
@@ -2226,6 +2215,14 @@ body #header-top .account-menu-active a {
 	background-color: #EAEAEA;
 }
 
+#content-right .social-links-container {
+	border: 0;
+}
+
+#content-right .social-links-container .block-content {
+	padding: 0;
+}
+
 /* Recent Activity
 ---------------------------------------------------------- */
 
@@ -2243,15 +2240,19 @@ body #header-top .account-menu-active a {
 	margin: 0 8px 0 0;
 }
 
+#content-right .the-centre .views-field-title  {
+	display: block;
+}
+
 #content-right .the-centre .views-field-title a {
 	color: #000;
-	font-size: 0.9em;
+	font-size: 0.8em;
 	font-weight: bold;
 	display: inline;
 }
 
 #content-right .the-centre .views-field-title a:hover {
-	padding: 0 0 2px;
+	padding: 0 0 1px;
 	border-bottom: 2px solid #000;
 }
 
