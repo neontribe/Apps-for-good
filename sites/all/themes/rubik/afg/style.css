@@ -869,19 +869,19 @@ input[type='submit'] {
 	font-size: 0.8em;
 }
 
-#content-right #view-groups-listing li,
+#content-right .view-groups-listing li,
 #block-menu-menu-app-directory-links li,
 #block-menu-menu-centre-directory-links li {
 	border-bottom-color: #CCC;
 }
 
-#content-right #view-groups-listing li a,
+#content-right .view-groups-listing li a,
 #block-menu-menu-app-directory-links li a,
 #block-menu-menu-centre-directory-links li a {
 	font-size: 0.85em;
 }
 
-#content-right #view-groups-listing li a:hover,
+#content-right .view-groups-listing li a:hover,
 #block-menu-menu-app-directory-links li a:hover,
 #block-menu-menu-centre-directory-links li a:hover {
 	color: #333;
