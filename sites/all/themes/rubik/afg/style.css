@@ -207,25 +207,26 @@ span.header-description {
 
 
 #page-tools .context-links {
-border-left: 1px solid #CCC;
-padding: 7px 0px 7px 5px;
-height: 25px;
-line-height: 15px;
-overflow: hidden;
+	border-left: 1px solid #CCC;
+	padding: 7px 0px 7px 5px;
+	height: 25px;
+	line-height: 15px;
+	overflow: hidden;
 }
 
 .buttons a, #page-tools .context-links a {
-font-size: 11px;
-font-weight: bold;
-color: white;
-background: #666 url(images/sprite_bleeds.png) 0px -400px repeat-x;
-text-shadow: #444 0px 1px 0px;
-border: 1px solid #555;
-border-color: #555 #555 #333;
-margin-left: 5px;
-padding: 4px 9px;
--moz-border-radius: 5px;
--webkit-border-radius: 5px;
+	font-size: 11px;
+	font-weight: bold;
+	color: white;
+	background: #666 url('images/sprite_bleeds.png') 0px -400px repeat-x;
+	text-shadow: #444 0px 1px 0px;
+	border: 1px solid #555;
+	border-color: #555 #555 #333;
+	margin-left: 5px;
+	padding: 4px 9px;
+	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 }
 
 .apps-at-centre li.views-row:after,
@@ -1089,8 +1090,13 @@ input[type='submit'] {
 	text-indent: 70px;
 }
 
-#content-left .activity-updates-apps .activity-info {
+#content-left .activity-info {
 	top: -65px;
+}
+
+#quicktabs_tabpage_homepage_recent_updates_0 .activity-info {
+	top: 4px;
+	right: 4px;
 }
 	
 /* Centres
@@ -1655,7 +1661,7 @@ li.tab-plan a {  background:url('images/afg/icons/afg_blog-icon.gif')  no-repeat
 	padding: 5px 10px;
 }
 
-#content-left .view-updates .views-field-comment .field-content em {
+#content-left .view-updates .views-field-comment .field-content p {
 	font-size: 1.3em;
 	font-weight: normal;
 	font-style: italic;
