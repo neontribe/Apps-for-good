@@ -887,6 +887,15 @@ input[type='submit'] {
 	color: #333;
 }
 
+#content-right .view-empty {
+	font-size: 1.1em;
+	line-height: 1.5;
+}
+
+#content-right .view-empty  strong {
+	display: block;
+}
+
 /* User Menu's:
  * Create & Admin Links
 ---------------------------------------------------------- */
