@@ -5,3 +5,4 @@ sites/default/settings.php
 sites/default/files/css
 sites/default/files/js
 .htaccess
+backup
