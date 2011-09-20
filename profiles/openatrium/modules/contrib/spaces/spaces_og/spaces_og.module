@@ -542,3 +542,18 @@ function spaces_og_views_api() {
     'path' => drupal_get_path('module', 'spaces_og') .'/views',
   );
 }
+
+/**
+ * Implementation of hook_spaces_get_space_from_object().
+ */
+function spaces_og_spaces_get_space_from_object($type, $object) {
+  if ($type == 'node') {
+    if (og_is_group_type($object->type)) {
+      return spaces_load('og', $object->nid);
+    }
+    elseif (!empty($object->og_groups)) {
+      reset($object->og_groups);
+      return spaces_load('og', current($object->og_groups));
+    }
+  }
+}

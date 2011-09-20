@@ -1,5 +1,4 @@
 <?php
-// $Id: addresses.inc,v 1.65 2010/07/18 23:00:43 alexiswilke Exp $
 /**
  * @author Bruno Massa
  * @file
@@ -706,7 +705,7 @@ function theme_addresses($afields) {
 
   // Return the address with adr microformatting and hcard and vcard formatting
   return '<div class="vcard"><dl class="adr">'. $address_format .'</dl></div>';
-  }
+}
 
 /**
  * Print a formatted is_primary field.
@@ -741,13 +740,14 @@ function theme_addresses_is_primary($afields, $format = 'plain') {
  *   A formatted aname field.
  */
 function theme_addresses_aname($afields, $format = 'plain') {
-  $aname = check_plain($afields['aname']);
-  if (!empty($aname)) {
+  if (!empty($afields['aname'])) {
     switch ($format) {
-      case 'plain':
-        return $aname;
-      case 'hcard':
-        return '<span class="fn org">'. theme('placeholder', $aname) .'</span>';
+    case 'plain':
+      return check_plain($afields['aname']);
+
+    case 'hcard':
+      return '<span class="fn org">'. theme('placeholder', $afields['aname']) .'</span>';
+
     }
   }
 }
@@ -911,7 +911,7 @@ function theme_addresses_postal_code($afields, $format = 'plain') {
  * @ingroup themeable
  */
 function theme_addresses_address_singleline($afields) {
-  // Check if its a valied address
+  // Check if its a valid address
   if (empty($afields)) {
     return '';
   }
@@ -952,7 +952,7 @@ function theme_addresses_address_singleline($afields) {
     $output .= ', '. $afields['country'];
   }
 
-  return $output;
+  return check_plain($output);
 }
 
 // vim: ts=2 sw=2 et syntax=php

@@ -1,5 +1,4 @@
 <?php
-// $Id: addresses.settings.inc,v 1.50 2010/09/06 06:09:07 alexiswilke Exp $
 /**
  * @author Bruno Massa
  * @file
@@ -14,6 +13,7 @@
  */
 function _addresses_addressesfieldapi_form($fields = array(), $values = array()) {
   $field_weights = variable_get('addresses_field_weight', array());
+  $form = array();
 
   // Let users select if the address is the primary
   if (!empty($fields['is_primary'])) {
@@ -168,9 +168,16 @@ function _addresses_validate_top_countries($element, &$form_state) {
   else {
     $field_name = 'addresses';
   }
-  if ($form_state['values'][$field_name]['country'] == 'separator') {
+  if (isset($form_state['values'][$field_name]['0']['country']) && $form_state['values'][$field_name]['0']['country'] == 'separator') {
+    // the user selected the separator!
+    $form_state['values'][$field_name]['0']['country'] = '';
+  }
+  elseif ($form_state['values'][$field_name]['country'] == 'separator') {
     // the user selected the separator!
     $form_state['values'][$field_name]['country'] = '';
+  }
+  elseif (isset($form_state['values'][$field_name]['0']['country']) && substr($form_state['values'][$field_name]['0']['country'], 0, 4) == 'top_') {
+    $form_state['values'][$field_name]['0']['country'] = substr($form_state['values'][$field_name]['0']['country'], 4);
   }
   elseif (substr($form_state['values'][$field_name]['country'], 0, 4) == 'top_') {
     $form_state['values'][$field_name]['country'] = substr($form_state['values'][$field_name]['country'], 4);
@@ -276,6 +283,16 @@ function _addresses_country_valid($country) {
  *   JSON encoded province selection field.
  */
 function _addresses_province_ajax() {
+  global $language;
+
+  // Keep the same language between calls so that t() calls work as expected
+  if (!empty($_GET['language'])) {
+    $languages = language_list(); // get all languages
+    if (isset($languages[$_GET['language']])) {
+      $language = $languages[$_GET['language']];
+    }
+  }
+
   // ISO 3166-1 alpha-2 code of a country.
   $country = $_GET['country'];
   if (substr($country, 0, 4) == 'top_') {
@@ -289,6 +306,14 @@ function _addresses_province_ajax() {
   $passback = $_GET['passback'];
   // ISO-3166-2 code for the province or state to mark as selected.
   $province = $_GET['province'];
+  //JSON encoded list of field attributes;
+  $field_attributes = '';
+  $attributes = json_decode($_GET['attributes']);
+  if (is_object($attributes)) {
+    foreach ($attributes as $attr => $val) {
+      $field_attributes .= check_plain($attr) . "='" . check_plain($val) . "' ";
+    }
+  }
 
   // Check that required fields are supplied
   if (empty($field_id) || empty($field_name) || empty($passback)) {
@@ -315,10 +340,10 @@ function _addresses_province_ajax() {
   }
 
   // Generate province field HTML
-  $output .= '<label for="'. $field_id .'">'. t('State / Province: ') . '</label>';
-  $output .= '<select id="'. $field_id .'" name="'. $field_name
-    .'" class="addresses-province-field">'
-    . form_select_options($element) .'</select>';
+  $output .= '<label for="' . $field_id . '">' . t('State / Province: ') . '</label>';
+  $output .= '<select id="' . $field_id . '" name="' . $field_name
+    . '" class="addresses-province-field" ' . $field_attributes . '>'
+    . form_select_options($element) . '</select>';
 
   return drupal_json(array(
     'field' => $output,

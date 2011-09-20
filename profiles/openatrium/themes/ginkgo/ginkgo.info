@@ -84,16 +84,3 @@ designkit[color][background][default] = "#44aa55"
 designkit[image][logo][title] = "Logo"
 designkit[image][logo][description] = "Header logo."
 designkit[image][logo][imagecache] = "imagecache_scale:300x40"
-
-; Information added by fserver
-core = "6.x"
-datestamp = "1263337629"
-project = "ginkgo"
-project status url = "http://featureserver.phase2technology.com/fserver"
-version = "6.x-1.0-alpha1"
-; Information added by fserver
-core = "6.x"
-datestamp = ""
-project = "ginkgo"
-project status url = "http://featureserver.phase2technology.com/fserver"
-version = "6.x-1.0-alpha10"

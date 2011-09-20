@@ -5,6 +5,7 @@
  */
 function atrium_context_default_contexts() {
   $export = array();
+
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
@@ -83,8 +84,8 @@ function atrium_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Intranet');
-
   $export['global'] = $context;
+
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
@@ -103,8 +104,8 @@ function atrium_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Theme');
-
   $export['layout_login'] = $context;
+
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
@@ -134,8 +135,8 @@ function atrium_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Theme');
-
   $export['layout_wide'] = $context;
+
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
@@ -146,35 +147,23 @@ function atrium_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'quicktabs-cdi_features' => array(
-          'module' => 'quicktabs',
-          'delta' => 'cdi_features',
+        'atrium-welcome_admin' => array(
+          'module' => 'atrium',
+          'delta' => 'welcome_admin',
           'region' => 'content',
           'weight' => 0,
         ),
-        'views-Counters-block_2' => array(
+        'views-activity_listing-block_1' => array(
           'module' => 'views',
-          'delta' => 'Counters-block_2',
+          'delta' => 'activity_listing-block_1',
           'region' => 'content',
           'weight' => 1,
         ),
-        'quicktabs-homepage_recent_updates' => array(
-          'module' => 'quicktabs',
-          'delta' => 'homepage_recent_updates',
-          'region' => 'content',
-          'weight' => 2,
-        ),
-        'views-1ea07c98bfe3b712442d65a3d4fd9126' => array(
+        'views-groups_listing-block_2' => array(
           'module' => 'views',
-          'delta' => '1ea07c98bfe3b712442d65a3d4fd9126',
+          'delta' => 'groups_listing-block_2',
           'region' => 'right',
-          'weight' => 1,
-        ),
-        'views-updates-block_8' => array(
-          'module' => 'views',
-          'delta' => 'updates-block_8',
-          'region' => 'right',
-          'weight' => 2,
+          'weight' => 0,
         ),
       ),
     ),
@@ -184,8 +173,8 @@ function atrium_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Dashboard');
-
   $export['spaces_dashboard-custom-1'] = $context;
+
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
@@ -216,7 +205,7 @@ function atrium_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Intranet');
-
   $export['taxonomy_listing'] = $context;
+
   return $export;
 }

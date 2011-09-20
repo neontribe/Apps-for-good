@@ -1,5 +1,4 @@
 <?php
-// $Id: it.inc,v 1.12 2009/12/14 20:52:46 antoinesolutions Exp $
 
 /**
  * @file
@@ -78,7 +77,7 @@ function addresses_province_list_it() {
     'MI' => t('Milano'),
     'MO' => t('Modena'),
     'MB' => t('Monza e Brianza'),
-    'NA' => t('Naploli'),
+    'NA' => t('Napoli'),
     'NO' => t('Novara'),
     'NU' => t('Nuoro'),
     'OG' => t('Ogliastra'),

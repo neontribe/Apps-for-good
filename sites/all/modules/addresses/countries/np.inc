@@ -1,5 +1,4 @@
 <?php
-// $Id: np.inc,v 1.9 2008/11/17 16:01:57 alexiswilke Exp $
 
 /**
  * @file

@@ -1,5 +1,4 @@
 <?php
-// $Id: addresses_user.inc,v 1.30 2010/02/09 23:18:40 codycraven Exp $
 /**
  * @author Bruno Massa
  * @file
@@ -109,6 +108,8 @@ function _addresses_user_address($op = NULL, $aid = NULL) {
 
   // If the user has the permission to administer
   // other users, he can see others address pages too
+  // (i.e. if $access is TRUE, then arg(1) may be any UID,
+  // otherwise arg(1) == $uid, see permissions on menu)
   $access = user_access('administer users');
   if (!empty($access)) {
     $uid = arg(1);
@@ -145,7 +146,7 @@ function _addresses_user_address($op = NULL, $aid = NULL) {
       break;
 
     default:
-      $addresses = _addresses_user_address_get($user->uid);
+      $addresses = _addresses_user_address_get($uid);
       return theme('addresses_user_overview', $uid, $addresses);
   }
 }

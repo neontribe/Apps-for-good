@@ -2,6 +2,7 @@ core = "6.x"
 dependencies[] = "context"
 dependencies[] = "features"
 dependencies[] = "imagecache"
+dependencies[] = "spaces"
 dependencies[] = "strongarm"
 dependencies[] = "ucreate"
 dependencies[] = "views"
@@ -22,24 +23,3 @@ name = "Atrium Members"
 package = "Atrium"
 spaces[types][] = "site"
 spaces[types][] = "og"
-
-; Autodetected dependencies that are omitted: spaces
-
-; Information added by fserver
-core = "6.x"
-datestamp = "1263337299"
-project = "atrium_features"
-project status url = "http://featureserver.phase2technology.com/fserver"
-version = "6.x-1.0-alpha1"
-; Information added by fserver
-core = "6.x"
-datestamp = ""
-project = "atrium_features"
-project status url = "http://featureserver.phase2technology.com/fserver"
-version = "6.x-1.0-alpha10"
-; Information added by fserver
-core = "6.x"
-datestamp = "1294331332"
-project = "atrium_features"
-project status url = "http://featureserver.phase2technology.com/fserver"
-version = "6.x-1.0-alpha11"

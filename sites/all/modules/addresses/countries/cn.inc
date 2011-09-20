@@ -1,5 +1,4 @@
 <?php
-// $Id: cn.inc,v 1.12 2009/12/14 20:52:46 antoinesolutions Exp $
 
 /**
  * @file
