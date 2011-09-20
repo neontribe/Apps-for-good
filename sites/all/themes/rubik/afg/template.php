@@ -137,6 +137,45 @@ function afg_preprocess_box(&$vars, $hook) {
   }
 }
 
+function computed_field_field_activity_link_compute($node, $field, &$node_field) {
+  dpm($node);
+  dpm($field);
+  dpm($node_field);
+  dpm($node->purl['value']);
+  dpm($node->nid);
+  dpm($node->type);
+  $vals = array_values($node->og_groups);
+  $val = $vals[0];
+
+  switch($node->type) {
+    case 'group_app_team':
+    case 'group_centre_school':
+      //get group path
+      $afg_activity_link = $node->purl['value'];
+    break;
+    case 'group_media_image':
+    case 'cdi_blog':
+    case 'request_for_help':
+    case 'blog':
+    case 'group_media_video':
+    case 'page':
+      $afg_activity_link = ('node/' . $val  . '/node/' . $node->nid);
+
+    break;
+    default:
+      $afg_activity_link = ( 'default' . 'node/' . $node->nid);
+    break;
+  } 
+  $vals = array_values($node->og_groups);
+  $val = $vals[0];
+  dpm($val, 'val');
+  dpm($node->og_groups, 'og');
+  dpm($node->type, 'type');
+  dpm($afg_activity_link, 'al');
+  $node_field[0]['value'] = $afg_activity_link;
+}
+
+
 /*count funtions*/
 // Moved to module afg_theme_updates to allow theme switching to work
 
