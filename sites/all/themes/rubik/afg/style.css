@@ -869,6 +869,7 @@ input[type='submit'] {
 	font-size: 0.8em;
 }
 
+#content-right #view-groups-listing li,
 #block-menu-menu-app-directory-links li,
 #block-menu-menu-centre-directory-links li {
 	border-bottom-color: #CCC;
@@ -878,6 +879,12 @@ input[type='submit'] {
 #block-menu-menu-app-directory-links li a,
 #block-menu-menu-centre-directory-links li a {
 	font-size: 0.85em;
+}
+
+#content-right #view-groups-listing li a:hover,
+#block-menu-menu-app-directory-links li a:hover,
+#block-menu-menu-centre-directory-links li a:hover {
+	color: #333;
 }
 
 /* User Menu's:
