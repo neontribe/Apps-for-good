@@ -52,10 +52,13 @@ input,
 textarea,
 select {
 	font-family: "Open Sans", "Lucida", "Lucida Grande", "Trebuchet MS", Tahoma, Verdana, sans-serif;
-	background: url('images/afg/background.jpg');
 	line-height: 1.5;
 	color: #2A2A2A;
 	font-size: 81.25%;
+}
+
+body {
+	background: url('images/afg/background.jpg');
 }
 
 a {
@@ -670,6 +673,10 @@ input[type='submit'] {
 #block-atrium-account a {
 	color: #000;
 	font-family: "Open Sans", "Lucida", "Lucida Grande", "Trebuchet MS", Tahoma, Verdana, sans-serif;
+}
+
+#block-atrium-account.account-menu-active .block-content {
+	background: #FFF;
 }
 
 /* Page Footer
