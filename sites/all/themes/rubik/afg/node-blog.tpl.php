@@ -47,6 +47,7 @@
  * @see template_preprocess()
  * @see template_preprocess_node()
  */
+ 
 ?>
 <div id="node-<?php print $node->nid; ?>" class="node<?php if ($sticky) { print ' sticky'; } ?><?php if (!$status) { print ' node-unpublished'; } ?> clear-block">
 

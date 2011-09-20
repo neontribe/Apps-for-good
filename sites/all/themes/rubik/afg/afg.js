@@ -51,13 +51,48 @@ $(document).ready(function(){
 	// Get User's name from hidden span
 	$('.pane-left').children('h3').text( $('#header-top span.user_name').text() );
 	
-	
 	// Social Links
 	$('.social-links').parent().parent().addClass('social-links-container');
 	$('.social-links-container').children('.block-content').css('padding', '0');
+	
+	// Admin form tag active state
+	var tags = $('.page-node-form .fieldset-content').find('.form-option input');
+	
+	tags.each(function(){
+		var parent = $(this).parent();
+		
+		// Add active state
+		if ($(this).is(':checked')){	
+			parent.addClass('tag-active');
+			parent.contents().filter(function(){ return this.nodeType === 3; }).wrap('<span />');
+		}
+		
+		// Bind click event
+		$(this).bind('click', function(e){
+			// Remove any current active classes set
+			removeActiveTag();
+			
+			// Add active state
+			if ($(this).is(':checked')){	
+				parent.addClass('tag-active');
+				parent.contents().filter(function(){ return this.nodeType === 3; }).wrap('<span />');
+			}
+		});
+	});
+	
 });
 
-
+/**
+ * Removes the active tag state class from all input items
+ */
+function removeActiveTag(){
+	var tags = $('.page-node-form .fieldset-content').find('.form-option input');
+	
+	tags.each(function(){
+		var parent = $(this).parent();
+		parent.removeClass('tag-active');
+	});
+}
 
 
 //$(window).load(function() {

@@ -1,11 +1,11 @@
 <?php include('header.inc'); ?>
 
-<div id='page' class='end-node clear-block limiter page-content page-node-add'>
+<div id='page' class='end-node clear-block limiter page-content page-node-form page-node-add'>
 
   <?php if ($show_messages && $messages): ?>
     <div id='console' class='clear-block'><?php print $messages; ?></div>
   <?php endif; ?>
-   
+  
   <div id='content'>
   
     <?php if ($tabs): ?>
@@ -15,8 +15,7 @@
       </div>
     <?php endif; ?>
 	
-	<?php //dpm(get_defined_vars()); ?>
-	<h2><?php print $title; ?></h2>
+	<h2>Title here</h2>
 	
 	<?php if ($left): ?>
       <div id='left' class='clear-block'><?php print $left ?></div>

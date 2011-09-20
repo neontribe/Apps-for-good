@@ -61,19 +61,42 @@ function _set_form_field_globals(&$form) {
 	$form['og_register']['#collapsible'] = FALSE;
 	$form['og_register']['#collapsed'] = FALSE;
 	
-	$tax = $form['taxonomy'];
+	$form['notifications']['#collapsible'] = FALSE;
+	$form['notifications']['#collapsed'] = FALSE;
 	
+	$tax = $form['taxonomy'];
+	$tax['#title'] = t('Add a tag?');
+	
+	//NOTE: The following is getting overriden at a later date
 	if (isset($tax)) {
 		foreach ($tax as $key => $value) {
 			if (is_array($value)) {
+				
+				$title = $value['#title'];
+				
+				switch ($title)
+				{
+					case 'App Status':
+						$title = t('Add an app status?');
+						break;
+					
+					case 'Badges':
+						$title = t('Add a badge?');
+						break;
+					
+					default:
+						$title = t('Add ' + strtolower($title) + '?');
+						break;
+				}
+				
+				$value['#title'] = $title;
 				$value['#collapsible'] = FALSE;
 				$value['#collapsed'] = FALSE;
+				
 				$form['taxonomy'][$key] = $value;
 			}
 		}
 	}
-	
-	//$form['buttons']['save']['#value'] = t('Post');
 	
 	unset($form['spaces']);
 	unset($form['buttons']['preview']);
@@ -82,29 +105,14 @@ function _set_form_field_globals(&$form) {
 
 function afg_theme_updates_form_alter(&$form, &$form_state, $form_id) {
 	_set_form_field_globals($form);
-	
 	switch ($form_id) {
-		case 'ucreate_user_form':
-			//dpm(get_defined_vars());
-			break;
-		
-		// Create blog node form
-		case 'blog_node_form':
-		case 'request_for_help_node_form':
-		case 'group_media_video_node_form':
-			// 'Add a tag?' title
-			$tax = $form['taxonomy'];
-			
-			if (isset($tax)) {
-				foreach ($tax as $key => $value) {
-					if (is_array($value)) {
-						$value['#title'] = t('Add a tag?');
-						$form['taxonomy'][$key] = $value;
-					}
-				}
-			}
-			
-			break;
+		//case 'page_node_form':
+		//case 'blog_node_form':
+		//case 'request_for_help_node_form':
+		//case 'group_media_video_node_form':
+		//default:
+			//dpm($form, 'form');
+			//break;
 	}
 }
 
