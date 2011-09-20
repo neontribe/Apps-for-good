@@ -874,6 +874,7 @@ input[type='submit'] {
 	border-bottom-color: #CCC;
 }
 
+#content-right #view-groups-listing li a,
 #block-menu-menu-app-directory-links li a,
 #block-menu-menu-centre-directory-links li a {
 	font-size: 0.85em;
