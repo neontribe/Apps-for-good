@@ -1,0 +1,63 @@
+<?php
+
+
+
+/**
+ * Add a menu item to the content creation menu for a new user
+ */
+function afg_manage_group_users_menu() {
+  $items = array();
+    
+  $items['node/add/groupuser'] = array(
+    'title' => t('User'),
+    'description' => t('Add a new User to this Group'),
+    'access arguments' => array('create users'),
+    'page callback' => 'afg_manage_group_users_og_ucreate_redirect',
+    'type' => MENU_NORMAL_ITEM,
+  );
+  
+  return $items;
+}
+
+/**
+ * Push a "Manage User Roles" entry into the atrium settings menu"
+ */
+function afg_manage_group_users_atrium_admin_links_alter($links, $space) {
+    $item = menu_get_item("og/users/{$space->id}/roles");
+    if ($item && $item['access']) {
+        $links['roles'] = array(
+          'title' => t('Manage User Roles'),
+          'href' => $item['href'],
+        );
+      }   
+}
+
+/**
+ * Redirect user creation to the ucreate form in this space
+ *
+ * Send the browser to the role manager on success
+ */
+function afg_manage_group_users_og_ucreate_redirect() {
+    $space = !isset($space) ? spaces_get_space() : $space;
+    drupal_goto(
+      'og/users/' . $space->id  . '/ucreate',
+      'destination=og/users/' . $space->id  . '/roles'
+    );
+}
+
+function afg_manage_group_users_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'atrium_members_addform') {
+    
+    //Override atrium's JS behavior for this form
+    drupal_add_js(
+      drupal_get_path('module', 'afg_manage_group_users') .
+      '/afg_atrium_members_add.js',
+      'theme'
+    ); 
+    $space = !isset($space) ? spaces_get_space() : $space;
+    unset($form['add']['#ahah']);
+    $form['#redirect'] = "og/users/{$space->id}/roles";
+  }
+  
+  
+}

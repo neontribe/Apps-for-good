@@ -1,4 +1,0 @@
-name = Node Add User
-description = injects user add entry into the node/menu tree so admins can create users like they would content.
-core = 6.x
-dependencies[] = ucreate
