@@ -2161,9 +2161,11 @@ body #header-top .account-menu-active a {
 ---------------------------------------------------------- */
 
 #content-left .pager {
+	padding: 5px;
 	background: #1B9BDA !important;
 }
 
+#quicktabs-app_directory .pager li,
 #content-left .pager li {
 	background: #0D84BE !important;
 	margin: 0 2px 0 0;
@@ -2176,7 +2178,9 @@ body #header-top .account-menu-active a {
 	background: #61C7F7 !important;
 }
 
+#quicktabs-app_directory .pager li a,
 #content-left .pager li a {
+	color: #FFF;
 	display: block;
 }
 
@@ -2184,8 +2188,17 @@ body #header-top .account-menu-active a {
 	font-weight: bold;
 }
 
+#quicktabs-app_directory .pager,
 #content-left .view-activity-listing .pager {
 	padding: 5px;
+}
+
+#quicktabs-app_directory .pager {
+	margin: 10px 0 0;
+}
+
+#quicktabs-app_directory .pager li {
+	text-indent: 0;
 }
 
 /* Recent Activity
@@ -2575,9 +2588,8 @@ body #header-top .account-menu-active a {
 	background: #1B9BDA;
 }
 
-
-
 .tag-active {
+	float: left;
 	text-indent: 8px;
 	background: url('images/afg/tag-background.png') no-repeat left;
 	text-transform: uppercase !important;
