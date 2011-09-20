@@ -906,7 +906,7 @@ input[type='submit'] {
 #block-atrium-admin_links {
 	float: right;
 	text-align: right;
-	max-width: 35%;
+	width: 35%;
 	position: relative;
 	z-index: 25;
 }
