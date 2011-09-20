@@ -2589,7 +2589,7 @@ function afg_groups_views_views_default_views() {
       'breadcrumb' => '',
       'default_argument_type' => 'og_group_node',
       'default_argument' => '',
-      'validate_type' => 'none',
+      'validate_type' => 'php',
       'validate_fail' => 'not found',
       'break_phrase' => 0,
       'not' => 0,
@@ -2653,7 +2653,21 @@ function afg_groups_views_views_default_views() {
         'group_app_team' => 0,
         'group_centre_school' => 0,
       ),
-      'validate_argument_php' => '',
+      'validate_argument_php' => '$n = node_load($argument);
+
+if (isset($n))
+{
+    if (!isset($n->field_facebook_account[0][\'url\']) &&
+        !isset($n->field_twitter_account[0][\'url\']) &&
+        !isset($n->field_ios_app_store[0][\'url\']) &&
+        !isset($n->field_android_market[0][\'url\']) &&
+        !isset($n->field_blackberry_appworld[0][\'url\']))
+    {
+      return FALSE;
+    }
+}
+
+return TRUE;',
     ),
   ));
   $handler->override_option('filters', array(
@@ -5758,7 +5772,7 @@ function afg_groups_views_views_default_views() {
       'breadcrumb' => '',
       'default_argument_type' => 'og_group_node',
       'default_argument' => '',
-      'validate_type' => 'none',
+      'validate_type' => 'php',
       'validate_fail' => 'not found',
       'break_phrase' => 0,
       'not' => 0,
@@ -5822,7 +5836,19 @@ function afg_groups_views_views_default_views() {
         'group_app_team' => 0,
         'group_centre_school' => 0,
       ),
-      'validate_argument_php' => '',
+      'validate_argument_php' => '$n = node_load($argument);
+
+if (isset($n))
+{
+    if (!isset($n->field_website[0][\'url\']) &&
+        !isset($n->field_facebook_account[0][\'url\']) &&
+        !isset($n->field_twitter_account[0][\'url\']))
+    {
+      return FALSE;
+    }
+}
+
+return TRUE;',
     ),
   ));
   $handler->override_option('access', array(
