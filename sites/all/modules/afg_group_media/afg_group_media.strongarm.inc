@@ -269,7 +269,9 @@ function afg_group_media_strongarm() {
     'options' => '3',
     'comment_settings' => '5',
     'menu' => '-2',
+    'taxonomy' => '-3',
     'book' => '0',
+    'path' => '30',
     'attachments' => '4',
     'og_nodeapi' => '-1',
   );
@@ -289,6 +291,7 @@ function afg_group_media_strongarm() {
     'menu' => '-3',
     'taxonomy' => '-2',
     'book' => '1',
+    'path' => '30',
     'attachments' => '5',
     'og_nodeapi' => '0',
   );
@@ -307,9 +310,9 @@ function afg_group_media_strongarm() {
     'comment_settings' => '30',
     'menu' => '-2',
     'book' => '10',
+    'path' => '30',
     'attachments' => '30',
     'og_nodeapi' => '0',
-    'locations' => '0',
   );
 
   $export['content_extra_weights_request_for_help'] = $strongarm;

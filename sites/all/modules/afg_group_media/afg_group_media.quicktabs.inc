@@ -10,7 +10,7 @@ function afg_group_media_quicktabs_default_quicktabs() {
   $quicktabs->api_version = 1;
   $quicktabs->machine_name = 'app_media';
   $quicktabs->ajax = 0;
-  $quicktabs->hide_empty_tabs = 0;
+  $quicktabs->hide_empty_tabs = 1;
   $quicktabs->default_tab = FALSE;
   $quicktabs->title = 'App Media Tabbed';
   $quicktabs->tabs = array(
