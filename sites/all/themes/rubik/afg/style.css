@@ -174,7 +174,9 @@ h1 {
 	font-weight: bold;
 	font-size: 0.3em !important;
 	text-transform: uppercase;
-	padding: 0 0 4px;
+	padding: 5px 0 4px;
+	margin: 0 0 8px;
+	text-align: left;
 	border-bottom: 2px solid #CCC;
 	font-family: "Open Sans", "Lucida", "Lucida Grande", "Trebuchet MS", Tahoma,Verdana, sans-serif;
 }
@@ -911,14 +913,14 @@ input[type='submit'] {
 
 #block-atrium-create .links,
 #block-atrium-admin_links .links {
-	background: #333;
-	padding: 5px 0 0 0;
-	margin: -15px 0 0 0;
+	background: #DDD;
+	padding: 2px 0 0 0;
+	margin: -10px 0 0 0;
 }
 
 #block-atrium-create li,
 #block-atrium-admin_links li {
-	float: right;
+	float: left;
 }
 
 #block-atrium-admin_links {
@@ -929,12 +931,14 @@ input[type='submit'] {
 #block-atrium-admin_links,
 #block-atrium-create .block-content,
 #block-atrium-admin_links .block-content {
-	background: none !important;
+	background: none;
+	margin: 0;
+	padding: 4px;
 }
 
 #block-atrium-create li,
 #block-atrium-admin_links li {
-	margin: 0 0 10px;
+	margin: 0 0 10px 2px;
 }
 
 #block-atrium-create ul a:link,
@@ -942,9 +946,12 @@ input[type='submit'] {
 #block-atrium-admin_links ul a:link,
 #block-atrium-admin_links ul a:visited {
 	color: #FFF;
-	padding: 5px;
-	margin: 0 5px 0 0;
+	padding: 6px 15px 10px;
+	margin: 0 0 -8px;
 	background: #0099FF;
+	font-family: 'Paytone One', sans-serif;
+	text-transform: uppercase;
+	line-height: 1.7;
 }
 
 #block-atrium-create li:hover a,
@@ -1800,7 +1807,7 @@ li.tab-plan a {  background:url('images/afg/icons/afg_blog-icon.gif')  no-repeat
 ---------------------------------------------------------- */
 
 .account-menu-active {
-	background: #FFF !important;
+	background: #333 !important;
 }
 
 body #header-top .account-menu-active {
@@ -1884,7 +1891,7 @@ body #header-top .account-menu-active a {
 	width: 237px;
 	background: url('images/afg/notes-background.png') no-repeat !important;
 	position: absolute;
-	top: 200px;
+	top: 220px;
 	right: 60px;
 }
 
