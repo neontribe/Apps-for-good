@@ -1569,6 +1569,8 @@ li.tab-plan a {  background:url('images/afg/icons/afg_blog-icon.gif')  no-repeat
 #content-left .view-activity-listing li a,
 #content-left .view-updates li a {
 	color: #FFF;
+	position: relative;
+	z-index: 100;
 }
 
 #content-left .view-activity-listing .views-field-atrium-activity,
