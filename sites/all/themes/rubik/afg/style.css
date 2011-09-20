@@ -1056,11 +1056,20 @@ input[type='submit'] {
 
 /**Activity Updates Title fields**/
 #content-left .activity-info {
-	float: right;	
+	position: absolute !important;
+	top: 4px;
+	right: 4px;
+	width: 160px;
+	text-align: right;
+	
 }
 
 #content-left .activity-info .views-field-atrium-activity-timestamp {
 	float: right;
+}
+
+#content-left .views-field-nothing {
+	position: relative;
 }
 
 #content-left .activity-info .activity-group-comment {
@@ -1068,8 +1077,6 @@ input[type='submit'] {
 	display: block;
 	float: right;
 }
-
-
 
 	
 /* Centres
@@ -1592,6 +1599,11 @@ li.tab-plan a {  background:url('images/afg/icons/afg_blog-icon.gif')  no-repeat
 #content-left .view-afg-app-directory .views-field-field-logo-fid {
 	float: left;
 	margin: 0 10px 0 0;
+	
+	/* NEW */
+	position: relative;
+	top: 4px;
+	left: 4px;
 }
 
 #content-left .view-updates .views-field-field-icon-fid img,
@@ -1604,6 +1616,11 @@ li.tab-plan a {  background:url('images/afg/icons/afg_blog-icon.gif')  no-repeat
 	-moz-box-shadow: 0 0 3px 2px #0B7ECF;
 	-webkit-box-shadow: 0 0 3px 2px #0B7ECF;
 	border-shadow: 0 0 3px 2px #0B7ECF;
+	
+	/* NEW */
+	float: left;
+	position: absolute;
+	z-index: 100;
 }
 
 #content-left .view-afg-app-directory .views-field-changed {
@@ -1612,6 +1629,10 @@ li.tab-plan a {  background:url('images/afg/icons/afg_blog-icon.gif')  no-repeat
 
 #content-left .view-afg-app-directory .views-field-changed em {
 	font-weight: normal;
+}
+
+#content-left .view-updates .views-field-atrium-activity-timestamp {
+	float: right !important;
 }
 
 /* Profile
@@ -2164,7 +2185,23 @@ body #header-top .account-menu-active a {
 	display: block;
 	float: left;
 	margin-top: 0px;
-	width: 55%;
+	/*width: 55%;*/
+	
+	/* NEW */
+	width: 95%;
+}
+
+/* NEW */
+#content-left .view-updates .views-field-atrium-activity {
+	min-height: 50px;
+	position: relative;
+}
+
+/* NEW */
+#content-left .view-updates .views-field-atrium-activity .field-content {
+	display: block;
+	margin-left: 50px;
+	width: 350px;
 }
 
 /* Social Network Header
