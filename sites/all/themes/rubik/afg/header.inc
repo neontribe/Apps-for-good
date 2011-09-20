@@ -62,11 +62,12 @@
 <!--detect if site home for social links-->
 <?php if ($base_path!==$front_page): ?>
 	   
-       <?php $soc_path = $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF']; ?>
+       <?php $soc_path = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>
        
 	   <div id="prof-soc-widgets">
 			<div id="prof-soc-tw">
-				<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-url="<?php print $soc_path; ?>" data-via="AppsForGoodCDI">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-url="http://<?php print $soc_path; ?>" data-via="AppsForGoodCDI">Tweet</a>
+				<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 			</div>
 			<div id="prof-soc-li">
 				<script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>

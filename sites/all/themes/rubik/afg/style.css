@@ -15,8 +15,9 @@
 /* Temp: Replicate text-field comment box
 ---------------------------------------------------------- */
 
+.end-node .comment_add,
 .views-field-comments-link {
-	display: block;
+	display: block !important;
 	width: 100%;
 	border: 2px solid #EAEAEA;
 	padding: 0;
@@ -27,15 +28,21 @@
 	margin: 0 0 10px;
 }
 
+.end-node .comment_add a,
 .views-field-comments-link a {
+	display: block !important;
 	background: #FFF url('images/afg/say-button.jpg') right no-repeat;
 	color: #666 !important;
 	text-indent: 10px;
 	padding: 8px 0;
-	display: block;
 	text-align: left;
 	width: 100%;
 	float: left;
+}
+
+.end-node .comment_add a,
+.end-node .comment_add a:hover {
+	border: 0;
 }
 
 /* END: TEMPORARY */
@@ -778,7 +785,8 @@ input[type='submit'] {
 }
 
 #content-right ul li {
-	border-bottom: 1px solid #A8A8A8;
+	/*border-bottom: 1px solid #A8A8A8;*/
+	margin-bottom: 1px;
 	font-size: 1.4em;
 	padding: 8px 0;
 }
@@ -990,14 +998,45 @@ input[type='submit'] {
 /* Centres
 ---------------------------------------------------------- */
 
-.apps-at-centre span.views-field-title a {
+.apps-at-centre .views-field-title {
+	margin: 0 0 10px;
+}
+
+.apps-at-centre .views-field-title a {
 	font-weight: normal;
 	text-transform: capitalize !important;
 	font-size: 1.5em;
 }
 
+.apps-at-centre .views-field-tid {
+	margin: 0 0 15px;
+}
+
+.apps-at-centre .views-field-tid span {
+	display: inline;
+	background: url('images/afg/icons/afg_build-icon-s.gif') no-repeat left;
+	padding: 20px;
+}
+
 .apps-at-centre .views-field-body {
 	clear: none;
+}
+
+.apps-at-centre .views-field-tid-1 {
+	background: #0D84BE;
+	margin: 0 0 5px;
+}
+
+.apps-at-centre .views-field-tid-1 ul {
+	clear: none !important;
+	padding: 5px;
+}
+
+.apps-at-centre .views-field-tid-1 li {
+	padding: 0;
+	display: inline;
+	border: 0;
+	background: url('images/afg/icons/afg_badge-icon-s.gif') no-repeat left;
 }
 
 .apps-at-centre,
@@ -1151,6 +1190,10 @@ input[type='submit'] {
 	background: #EEE;
 	color: #222;
 	margin: 0 0 5px;
+}
+
+.help .views-field-created em {
+	font-weight: normal;
 }
 
 .help .views-field-title a {
@@ -1761,12 +1804,18 @@ body #header-top .account-menu-active a {
 #content-left .browse-centres .views-field-member-count {
 	display: block;
 	float: left;
-	padding: 0 17px 0 0;
-	margin: 0 5px;
-	background: url('images/afg/icons/afg_profile-icon-s.gif') right no-repeat;
+	padding: 0 0 0 17px;
+	margin: 0 5px 0 0;
+	background: url('images/afg/icons/afg_profile-icon-s.gif') left no-repeat;
 }
 
-
+#content-left .browse-centres .views-field-field-app-count-value {
+	display: block;
+	float: left;
+	padding: 0 0 0 17px;
+	margin: 0 5px 0 0;
+	background: url('images/afg/icons/afg_app-icon-s.gif') left no-repeat;
+}
 
 /* End Nodes
 ---------------------------------------------------------- */
@@ -1840,12 +1889,13 @@ body #header-top .account-menu-active a {
 	float: left;
 	margin: 0 20px 0 0;
 }
-,
-.end-node .meta .date {
-	color: #FFF;
+
+.end-node .date {
 	float: left;
+	color: #61C7F7;
+	text-transform: uppercase;
 	background: url('images/afg/icon-timestamp.png') left no-repeat;
-	padding: 0 0 0 20px;
+	padding: 0 0 0 16px;
 }
 
 .end-node .comment-count {
