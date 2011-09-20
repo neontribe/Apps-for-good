@@ -168,12 +168,13 @@ function computed_field_field_activity_link_compute($node, $field, &$node_field)
     case 'request_for_help':
     case 'blog':
     case 'group_media_video':
-    case 'page':
       $afg_activity_link = ('node/' . $val  . '/node/' . $node->nid);
-
+    break;
+    case 'page':
+      $afg_activity_link = ('node/' . $node->nid);
     break;
     default:
-      $afg_activity_link = ( 'default' . 'node/' . $node->nid);
+      $afg_activity_link = ('node/' . $node->nid);
     break;
   } 
   $node_field[0]['value'] = $afg_activity_link;
