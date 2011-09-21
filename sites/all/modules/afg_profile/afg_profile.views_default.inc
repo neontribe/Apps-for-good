@@ -249,7 +249,7 @@ function afg_profile_views_default_views() {
       ),
     ),
     'field_about_me_value' => array(
-      'label' => 'Background Info',
+      'label' => 'Background info',
       'alter' => array(
         'alter_text' => 0,
         'text' => '',
@@ -486,6 +486,101 @@ function afg_profile_views_default_views() {
       ),
     ),
   ));
+  $handler->override_option('arguments', array(
+    'uid' => array(
+      'default_action' => 'default',
+      'style_plugin' => 'default_summary',
+      'style_options' => array(),
+      'wildcard' => 'all',
+      'wildcard_substitution' => 'All',
+      'title' => '%1',
+      'breadcrumb' => '',
+      'default_argument_type' => 'user',
+      'default_argument' => '',
+      'validate_type' => 'none',
+      'validate_fail' => 'not found',
+      'break_phrase' => 0,
+      'not' => 0,
+      'id' => 'uid',
+      'table' => 'users',
+      'field' => 'uid',
+      'validate_user_argument_type' => 'uid',
+      'validate_user_roles' => array(
+        '2' => 0,
+        '13' => 0,
+        '9' => 0,
+        '10' => 0,
+        '11' => 0,
+        '14' => 0,
+        '12' => 0,
+      ),
+      'relationship' => 'none',
+      'default_options_div_prefix' => '',
+      'default_argument_user' => 0,
+      'default_argument_fixed' => '',
+      'default_argument_php' => '',
+      'validate_argument_node_type' => array(
+        'blog' => 0,
+        'book' => 0,
+        'event' => 0,
+        'feed_ical' => 0,
+        'feed_ical_item' => 0,
+        'group' => 0,
+        'profile' => 0,
+        'shoutbox' => 0,
+        'group_media_image' => 0,
+        'group_media_video' => 0,
+        'request_for_help' => 0,
+        'cdi_blog' => 0,
+        'casetracker_basic_case' => 0,
+        'casetracker_basic_project' => 0,
+        'group_app_team' => 0,
+        'group_centre_school' => 0,
+        'page' => 0,
+      ),
+      'validate_argument_node_access' => 0,
+      'validate_argument_nid_type' => 'nid',
+      'validate_argument_vocabulary' => array(
+        '6' => 0,
+        '2' => 0,
+        '10' => 0,
+        '8' => 0,
+        '3' => 0,
+        '1' => 0,
+        '9' => 0,
+        '4' => 0,
+        '5' => 0,
+      ),
+      'validate_argument_type' => 'tid',
+      'validate_argument_transform' => 0,
+      'validate_user_restrict_roles' => 0,
+      'validate_argument_is_member' => 'OG_VIEWS_DO_NOT_VALIDATE_MEMBERSHIP',
+      'validate_argument_php' => '$n = node_load($argument);
+
+if (isset($n))
+{
+    if (!isset($n->field_facebook_account[0][\'url\']) &&
+        !isset($n->field_twitter_account[0][\'url\']) &&
+        !isset($n->field_supporter_website[0][\'url\']) &&
+        !isset($n->field_linkedin_account[0][\'url\']))
+    {
+      return FALSE;
+    }
+}
+
+return TRUE;',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'validate_argument_group_node_type' => array(
+        'group' => 0,
+        'group_app_team' => 0,
+        'group_centre_school' => 0,
+      ),
+    ),
+  ));
+  $handler->override_option('css_class', 'social-links user-social-links');
+  $handler->override_option('style_plugin', 'list');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $translatables['afg_profile_display'] = array(

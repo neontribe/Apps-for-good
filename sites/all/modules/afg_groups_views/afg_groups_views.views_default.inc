@@ -1048,6 +1048,7 @@ function afg_groups_views_views_default_views() {
     'type' => 'perm',
     'perm' => 'access content',
   ));
+  $handler->override_option('empty_format', '5');
   $handler->override_option('items_per_page', 15);
   $handler->override_option('block_description', 'My applications');
   $handler->override_option('block_caching', -1);
@@ -2022,6 +2023,8 @@ function afg_groups_views_views_default_views() {
       'relationship' => 'none',
     ),
   ));
+  $handler->override_option('empty', 'No application teams are being followed.');
+  $handler->override_option('empty_format', '5');
   $handler->override_option('block_description', 'User applications');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Centre', 'block_3');
@@ -3187,6 +3190,7 @@ return TRUE;',
     t('Defaults'),
     t('My applications'),
     t('No app links added.'),
+    t('No application teams are being followed.'),
     t('No archived groups found.'),
     t('No groups found.'),
     t('No team details yet.'),
