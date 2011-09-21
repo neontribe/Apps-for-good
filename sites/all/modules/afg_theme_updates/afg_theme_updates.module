@@ -110,7 +110,7 @@ function afg_theme_updates_form_alter(&$form, &$form_state, $form_id) {
 	
 	switch ($form_id) {
 		case 'ucreate_user_form':
-			dpm($form);
+			//dpm($form);
 			break;
 	
 		//case 'atrium_shoutbox_shoutform':

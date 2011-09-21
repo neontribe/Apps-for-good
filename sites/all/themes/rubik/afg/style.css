@@ -2613,6 +2613,14 @@ body #header-top .account-menu-active a {
 	background: #D8D6D7;
 }
 
+.page-node .column-side input[type='file'] {
+	max-width: 240px;
+}
+
+.page-node .column-side .attachments fielset {
+	max-width: 340px;
+}
+
 .page-node  .column-side .description {
 	line-height: 2;
 }
