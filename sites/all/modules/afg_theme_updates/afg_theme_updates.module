@@ -109,23 +109,11 @@ function afg_theme_updates_form_alter(&$form, &$form_state, $form_id) {
 	_set_form_field_globals($form);
 	
 	switch ($form_id) {
-		case 'atrium_shoutbox_shoutform':
-			/*
-			if (!$user->uid) {
-				$form['anon']['comment'] = array(
-					'#type' => 'textfield',
-					'#title' => t('Your comment:'),
-					'#description' => t('Your comment:'),
-				);
-				
-				$form['anon']['submit'] = array(
-					'#type' => 'submit',
-					'#value' => t('Post'),
-				);
-			}
-			*/
+		case 'ucreate_user_form':
+			dpm($form);
 			break;
-		
+	
+		//case 'atrium_shoutbox_shoutform':
 		//case 'page_node_form':
 		//case 'blog_node_form':
 		//case 'request_for_help_node_form':
