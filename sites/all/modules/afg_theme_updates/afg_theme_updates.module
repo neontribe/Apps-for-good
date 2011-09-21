@@ -104,8 +104,28 @@ function _set_form_field_globals(&$form) {
 }
 
 function afg_theme_updates_form_alter(&$form, &$form_state, $form_id) {
+	global $user;
+	
 	_set_form_field_globals($form);
+	
 	switch ($form_id) {
+		case 'atrium_shoutbox_shoutform':
+			/*
+			if (!$user->uid) {
+				$form['anon']['comment'] = array(
+					'#type' => 'textfield',
+					'#title' => t('Your comment:'),
+					'#description' => t('Your comment:'),
+				);
+				
+				$form['anon']['submit'] = array(
+					'#type' => 'submit',
+					'#value' => t('Post'),
+				);
+			}
+			*/
+			break;
+		
 		//case 'page_node_form':
 		//case 'blog_node_form':
 		//case 'request_for_help_node_form':
@@ -114,11 +134,4 @@ function afg_theme_updates_form_alter(&$form, &$form_state, $form_id) {
 			//dpm($form, 'form');
 			//break;
 	}
-}
-
-function _override_form_settings(&$form, $title = '') {
-	// Set page title
-	//if (strlen($title)) {
-		//drupal_set_title($title);
-	//}
 }

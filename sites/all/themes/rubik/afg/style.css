@@ -246,6 +246,7 @@ span.header-description {
 .page-supporters #content-left .item-list:after,
 .views-field-comment-count:after,
 .views-field-nothing:after,
+.view-activity-listing li:after,
 #content-left .browse-centres:after,
 #content-left .view-updates li:after,
 #content-left .view-afg-app-directory li:after,
@@ -850,8 +851,17 @@ input[type='submit'] {
 	margin-bottom: 20px;
 }
 
+#content-right li {
+	border-bottom-color: #CCC;
+}
+
 #content-right ul li a {
 	display: block;
+	font-size: 0.85em;
+}
+
+#content-right li a:hover {
+	color: #333;
 }
 
 /* Specific
@@ -871,29 +881,12 @@ input[type='submit'] {
 	margin-bottom: 15px;
 }
 
-#content-right .views-field-mail a:after { content: " \2192"; }
-/*.views-field-field-website-url a:after { content: " \21D7"; }*/
+#content-right .views-field-mail a:after {
+	content: " \2192";
+}
 
 #content-right .view-groups-listing-app-team .views-field-body p {
 	font-size: 0.8em;
-}
-
-#content-right .view-groups-listing li,
-#block-menu-menu-app-directory-links li,
-#block-menu-menu-centre-directory-links li {
-	border-bottom-color: #CCC;
-}
-
-#content-right .view-groups-listing li a,
-#block-menu-menu-app-directory-links li a,
-#block-menu-menu-centre-directory-links li a {
-	font-size: 0.85em;
-}
-
-#content-right .view-groups-listing li a:hover,
-#block-menu-menu-app-directory-links li a:hover,
-#block-menu-menu-centre-directory-links li a:hover {
-	color: #333;
 }
 
 #content-right .view-empty {
@@ -905,8 +898,18 @@ input[type='submit'] {
 	display: block;
 }
 
-/* User Menu's:
- * Create & Admin Links
+/* Profile Display
+---------------------------------------------------------- */
+
+#content-left .view-afg-profile-display .views-field-title {
+	margin: 0 0 10px;
+}
+
+#content-left .view-afg-profile-display .view-content {
+	margin: 0 0 20px;
+}
+
+/* User Menu's: Create & Admin Links
 ---------------------------------------------------------- */
 
 #block-atrium-create,
@@ -1032,7 +1035,6 @@ input[type='submit'] {
 	color: #FFF;
 }
 
-#content-left .view-activity-listing .views-field-atrium-activity-timestamp,
 #content-left .view-id-Group_Media .views-field-changed,
 #content-left .activity-updates span.views-field-atrium-activity-timestamp,
 #content-left .view-updates .views-field-atrium-activity-timestamp,
@@ -1050,10 +1052,6 @@ input[type='submit'] {
 #content-left .view-activity-listing .views-field-atrium-activity-timestamp {
 	text-indent: 17px;
 	background: url('images/afg/icon-timestamp.png') left no-repeat;
-}
-
-#content-left .view-activity-listing .views-field-atrium-activity-timestamp {
-	margin: 0 0 5px;
 }
 
 #content-left .views-field-comment-count {
@@ -1617,23 +1615,10 @@ li.tab-plan a {  background:url('images/afg/icons/afg_blog-icon.gif')  no-repeat
 	z-index: 100;
 }
 
-#content-left .view-activity-listing .views-field-atrium-activity,
 #content-left .view-updates .views-field-atrium-activity {
 	background: #0D84BE;
 	padding: 5px 15px;
 	margin: 0px !important;
-}
-
-#content-left .view-activity-listing .views-field-timestamp {
-	background: #13709E;
-	display: inline;
-	padding: 1px 3px;
-	text-transform: uppercase;
-	position: relative;
-}
-
-#content-left .view-activity-listing .views-field-timestamp span {
-	color: #FFF;
 }
 
 #content-left .view-activity-listing .views-field-feature,
@@ -1659,6 +1644,7 @@ li.tab-plan a {  background:url('images/afg/icons/afg_blog-icon.gif')  no-repeat
 	text-transform: uppercase;
 }
 
+#content-left .view-activity-listing .views-field-field-icon-fid,
 #content-left .view-Group-Media .views-field-field-icon-fid,
 #content-left .view-updates .views-field-field-icon-fid,
 #content-left .view-afg-app-directory .views-field-field-logo-fid {
@@ -1669,6 +1655,7 @@ li.tab-plan a {  background:url('images/afg/icons/afg_blog-icon.gif')  no-repeat
 	left: 4px;
 }
 
+#content-left .view-activity-listing .views-field-field-icon-fid img,
 #content-left .view-updates .views-field-field-icon-fid img,
 #content-left .view-afg-app-directory .views-field-field-logo-fid  img {
 	height: auto;
@@ -2287,12 +2274,18 @@ body #header-top .account-menu-active a {
 	margin-bottom: 8px !important;
 }
 
+#content-left .view-activity-listing .views-field-atrium-activity {
+	display: block;
+	margin-bottom: 8px;
+}
+
 #content-left .view-updates .views-field-atrium-activity .field-content {
 	display: block;
 	margin-left: 50px;
 	width: 320px;
 }
 
+#content-left .view-activity-listing .views-field-feature,
 #content-left .activity-updates-apps .views-field-title {
 	background: #1D83C3;
 	min-height: 60px;
@@ -2327,9 +2320,12 @@ body #header-top .account-menu-active a {
 /* Social Links
 ---------------------------------------------------------- */
 
+.social-links {
+	font-size: 0.9em;
+}
+
 .social-links a {
 	color: #222;
-	font-size: 0.8em;
 	display: block;
 	border-bottom: 1px solid #CCC;
 	padding: 10px 5px 10px 30px;
