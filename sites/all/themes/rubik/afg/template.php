@@ -49,12 +49,14 @@ function _afg_override_login_message(&$vars) {
  */
 function afg_preprocess_page(&$vars) {
   // if we are displaying a node and the node has dashboard show that instead
-  $arg2 = arg(2);
+  $arg0 = arg(0);
   $arg1 = arg(1);
-  //dpm($arg1, 'arg1');
-  //dpm($arg2, 'arg2');
+  $arg2 = arg(2);
+  // dpm($arg0, 'arg0');
+  // dpm($arg1, 'arg1');
+  // dpm($arg2, 'arg2');
 
-  if (!$vars['is_front'] && empty($arg2) && $arg1 == 'node') {
+  if (!$vars['is_front'] && empty($arg2) && $arg0 == 'node') {
     $og = og_get_group_context();
     drupal_goto($og->purl);
   }
@@ -366,8 +368,7 @@ function afg_views_view_field__updates__block_3__atrium_activity($view, $handler
 
 //hook recent activity field and rewrite
 function afg_activity_title_rewrite($view, $handler, $obj) {
-
-  $title_link = '<div class="views-field-title"><a href= "node/' . $obj->nid . '">'. $obj->node_title . '<a/></div>';
+  $title_link = '<div class="views-field-title"><a href= "'. base_path()  .'node/' . $obj->nid . '">'. $obj->node_title . '<a/></div>';
 
   switch($obj->node_type) {
       case 'group_app_team':
