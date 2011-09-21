@@ -8122,7 +8122,7 @@ return TRUE;',
       'relationship' => 'none',
     ),
   ));
-  $handler->override_option('css_class', 'activity-updates recent-activity');
+  $handler->override_option('css_class', 'activity-updates recent-activity user-activity');
   $handler->override_option('empty', 'No user activity found.');
   $handler->override_option('block_description', 'User\'s activity');
   $handler->override_option('block_caching', -1);

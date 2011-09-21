@@ -27,18 +27,7 @@ function afg_profile_context_default_contexts() {
       ),
     ),
   );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'views-activity_listing-block_3' => array(
-          'module' => 'views',
-          'delta' => 'activity_listing-block_3',
-          'region' => 'content',
-          'weight' => 0,
-        ),
-      ),
-    ),
-  );
+  $context->reactions = array();
   $context->condition_mode = 0;
 
   // Translatables

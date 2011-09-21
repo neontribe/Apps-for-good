@@ -901,6 +901,12 @@ input[type='submit'] {
 /* Profile Display
 ---------------------------------------------------------- */
 
+.view-afg-profile-display .views-field-title {
+	color: #222;
+	font-family: 'LeckerliOneRegular', cursive;
+	font-weight: 100 !important;
+}
+
 #content-left .view-afg-profile-display .views-field-title {
 	margin: 0 0 10px;
 }
@@ -1136,6 +1142,7 @@ input[type='submit'] {
 	top: -65px;
 }
 
+#content-left .user-activity .activity-info,
 #quicktabs_tabpage_homepage_recent_updates_0 .activity-info {
 	top: 4px;
 	right: 4px;
@@ -1698,15 +1705,6 @@ li.tab-plan a {  background:url('images/afg/icons/afg_blog-icon.gif')  no-repeat
 	font-size: 1.3em;
 	font-weight: normal;
 	font-style: italic;
-}
-
-/* Profile
----------------------------------------------------------- */
-
-.view-afg-profile-display .views-field-title {
-	color: #222;
-	font-family: 'LeckerliOneRegular', cursive;
-	font-weight: 100 !important;
 }
 
 /* Supporters
