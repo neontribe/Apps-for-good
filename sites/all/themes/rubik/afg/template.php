@@ -15,24 +15,42 @@ function afg_theme(){
   );
 }
 
+/**
+ * Displays a standard atrium success or failure message.
+ */
+function _afg_show_message(&$vars, $message, $success = TRUE) {
+    if (!$message)
+    	return false;
+    
+    $class = ($success) ? 'success' : 'error';
+    $m = "<div class='messages $class'>$message</div>";
+    
+    $vars['messages'] = $m;
+}
+
+/**
+ * Displays a login/register message in a standard atrium message format.
+ */
+function _afg_override_login_message(&$vars) {
+	$msg = trim(check_plain(strip_tags($vars['messages'])));
+    
+    if (strcmp($msg, 'You are not authorized to post comments.') == 0) {
+    	$nid = $vars['node']->nid;
+        
+		$m = '<a href="/user/login?destination=node/'. $nid .'#comment-form">Login</a>';
+    	$m .= ' or <a href="/user/register?destination=node/'. $nid .'#comment-form">register</a> to post comments</span>';
+    
+		_afg_show_message($vars, $m, FALSE);
+    }
+}
 
 /**
  * Preprocessor for theme('page').
  */
 function afg_preprocess_page(&$vars) {
     
-    // Override default error message and prompt login
-    $msg = trim(check_plain(strip_tags($vars['messages'])));
-    if (strcmp($msg, 'You are not authorized to post comments.') == 0) {
-		$nid = $vars['node']->nid;
-        
-        $m = '<div class="messages error">';
-        $m .= '<a href="/buzzerbuddiez/user/login?destination=node/'. $nid .'#comment-form">Login</a>';
-        $m .= ' or <a href="/buzzerbuddiez/user/register?destination=node/'. $nid .'#comment-form">register</a> to post comments</span>';
-        $m .= '</div>';
-        
-        $vars['messages'] = $m;
-    }
+  // Override default error message and prompt login
+  _afg_override_login_message($vars);
 
   // Force using the correct template file
   if(count($vars['template_files']) > 1) {
@@ -60,8 +78,21 @@ function afg_preprocess_page(&$vars) {
   
   // Header menu links
   $links = menu_navigation_links('menu-header-menu', 0);
+  
+  //$uri = $_SERVER['REQUEST_URI'];
+  //$curr_path = substr($uri, strpos($uri, '/') + 1);
+  //$trail = menu_get_active_trail();
+  //$trail_path = $trail[1]['path'];
+  
+  $path = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+  
   foreach ($links as $key => $link){
+  	 // Add active state class
+     $classes = (strcmp($path, $link['href']) == 0) ? ' header-menu-active' : '';
+     
+     // Apply classes
 	 $links[$key]['attributes']['class'] .= ' header-menu-' . strtolower($links[$key]['title']);
+     $links[$key]['attributes']['class'] .= $classes;
   }
   
   $vars['header_links'] = $links;
