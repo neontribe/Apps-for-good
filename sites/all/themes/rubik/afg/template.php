@@ -192,6 +192,53 @@ function computed_field_field_activity_link_compute($node, $field, &$node_field)
 }
 
 
+function afg_views_view_field__updates__block_1__atrium_activity($view, $handler, $obj) {
+
+switch($obj->node_type) {
+    case 'group_app_team':
+    case 'group_centre_school':
+    if ($obj->comments_uid) {
+	$user = user_load($obj->comments_uid);
+	$username = $user->name;
+	$activity_update = $username . ' commented on ' . $obj->node_title;
+    } else {
+      $activity_update = $obj->node_title;
+      if ($obj->node_changed > $obj->node_created) {
+          $activity_update .= ' updated.';
+      } else {
+	  $activity_update .= ' created.';
+      }
+    }
+    break;
+
+    case 'group_media_image':
+    case 'cdi_blog':
+    case 'request_for_help':
+    case 'blog':
+    case 'group_media_video':
+    case 'page':
+    if ($obj->comments_uid) {
+        $user = user_load($obj->comments_uid);
+        $username = $user->name;
+        $activity_update = $username . ' commented on ' . $obj->node_title;
+    } else {
+      $activity_update = $obj->node_og_ancestry_title;
+      if ($obj->node_changed > $obj->node_created) {
+          $activity_update .= ' updated ';
+      } else {
+          $activity_update .= ' created ';
+      }
+      $activity_update .= $obj->node_title;
+    }
+    break;
+    default:
+      $activity_update = '';
+    break;
+
+}
+  return $activity_update;
+} 
+
 /*count funtions*/
 // Moved to module afg_theme_updates to allow theme switching to work
 
