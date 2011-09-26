@@ -1,5 +1,6 @@
 core = "6.x"
 dependencies[] = "addresses_cck"
+dependencies[] = "atrium"
 dependencies[] = "comment"
 dependencies[] = "computed_field"
 dependencies[] = "context"

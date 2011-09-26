@@ -537,7 +537,7 @@ function afg_group_media_views_default_views() {
         'strip_tags' => 0,
       ),
       'empty' => '',
-      'hide_empty' => 0,
+      'hide_empty' => 1,
       'empty_zero' => 0,
       'link_to_node' => 1,
       'label_type' => 'none',
@@ -578,11 +578,11 @@ function afg_group_media_views_default_views() {
         'strip_tags' => 0,
       ),
       'empty' => '',
-      'hide_empty' => 0,
+      'hide_empty' => 1,
       'empty_zero' => 0,
       'link_to_node' => 0,
       'label_type' => 'none',
-      'format' => 'video_replace_preview',
+      'format' => 'video_replace',
       'multiple' => array(
         'group' => TRUE,
         'multiple_number' => '',
@@ -594,6 +594,9 @@ function afg_group_media_views_default_views() {
       'table' => 'node_data_field_video',
       'field' => 'field_video_embed',
       'relationship' => 'none',
+      'override' => array(
+        'button' => 'Use default',
+      ),
     ),
     'body' => array(
       'label' => '',

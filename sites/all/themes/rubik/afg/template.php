@@ -270,6 +270,10 @@ switch($obj->node_type) {
   return $activity_update;
 } 
 
+// function afg__gmap_views_marker_label($view, $fields, $entry) {
+  // return "XXX";
+// }
+
 /*count funtions*/
 // Moved to module afg_theme_updates to allow theme switching to work
 

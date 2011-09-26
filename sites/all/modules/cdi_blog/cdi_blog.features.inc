@@ -24,10 +24,21 @@ function cdi_blog_imagecache_default_presets() {
         '0' => array(
           'weight' => '0',
           'module' => 'imagecache',
-          'action' => 'imagecache_resize',
+          'action' => 'imagecache_scale',
           'data' => array(
-            'width' => '435',
-            'height' => '320',
+            'width' => '',
+            'height' => '345',
+            'upscale' => 0,
+          ),
+        ),
+        '1' => array(
+          'weight' => '0',
+          'module' => 'imagecache',
+          'action' => 'imagecache_scale',
+          'data' => array(
+            'width' => '575',
+            'height' => '',
+            'upscale' => 0,
           ),
         ),
       ),
