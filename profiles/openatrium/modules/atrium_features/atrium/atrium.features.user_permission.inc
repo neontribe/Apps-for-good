@@ -14,6 +14,30 @@ function atrium_user_default_permissions() {
     ),
   );
 
+  // Exported permission: access comments
+  $permissions['access comments'] = array(
+    'name' => 'access comments',
+    'roles' => array(
+      '0' => 'authenticated user',
+    ),
+  );
+
+  // Exported permission: access content
+  $permissions['access content'] = array(
+    'name' => 'access content',
+    'roles' => array(
+      '0' => 'authenticated user',
+    ),
+  );
+
+  // Exported permission: access user profiles
+  $permissions['access user profiles'] = array(
+    'name' => 'access user profiles',
+    'roles' => array(
+      '0' => 'authenticated user',
+    ),
+  );
+
   // Exported permission: administer comments
   $permissions['administer comments'] = array(
     'name' => 'administer comments',
@@ -179,6 +203,16 @@ function atrium_user_default_permissions() {
     ),
   );
 
+  // Exported permission: subscribe other users
+  $permissions['subscribe other users'] = array(
+    'name' => 'subscribe other users',
+    'roles' => array(
+      '0' => 'administrator',
+      '1' => 'authenticated user',
+      '2' => 'manager',
+    ),
+  );
+
   // Exported permission: subscribe to author
   $permissions['subscribe to author'] = array(
     'name' => 'subscribe to author',
@@ -244,9 +278,8 @@ function atrium_user_default_permissions() {
     'name' => 'view imagecache fileview',
     'roles' => array(
       '0' => 'administrator',
-      '1' => 'anonymous user',
-      '2' => 'authenticated user',
-      '3' => 'manager',
+      '1' => 'authenticated user',
+      '2' => 'manager',
     ),
   );
 
@@ -255,9 +288,8 @@ function atrium_user_default_permissions() {
     'name' => 'view imagecache user-m',
     'roles' => array(
       '0' => 'administrator',
-      '1' => 'anonymous user',
-      '2' => 'authenticated user',
-      '3' => 'manager',
+      '1' => 'authenticated user',
+      '2' => 'manager',
     ),
   );
 
@@ -266,9 +298,16 @@ function atrium_user_default_permissions() {
     'name' => 'view imagecache user-s',
     'roles' => array(
       '0' => 'administrator',
-      '1' => 'anonymous user',
-      '2' => 'authenticated user',
-      '3' => 'manager',
+      '1' => 'authenticated user',
+      '2' => 'manager',
+    ),
+  );
+
+  // Exported permission: view revisions
+  $permissions['view revisions'] = array(
+    'name' => 'view revisions',
+    'roles' => array(
+      '0' => 'authenticated user',
     ),
   );
 
@@ -279,6 +318,15 @@ function atrium_user_default_permissions() {
       '0' => 'administrator',
       '1' => 'authenticated user',
       '2' => 'manager',
+    ),
+  );
+
+  // Exported permission: view users outside groups
+  $permissions['view users outside groups'] = array(
+    'name' => 'view users outside groups',
+    'roles' => array(
+      '0' => 'administrator',
+      '1' => 'manager',
     ),
   );
 

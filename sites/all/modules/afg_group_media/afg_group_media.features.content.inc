@@ -6,94 +6,89 @@
 function afg_group_media_content_default_fields() {
   $fields = array();
 
+  // Exported field: field_activity_link
+  $fields['group_media_image-field_activity_link'] = array(
+    'field_name' => 'field_activity_link',
+    'type_name' => 'group_media_image',
+    'display_settings' => array(
+      'weight' => '32',
+      'parent' => '',
+      'label' => array(
+        'format' => 'hidden',
+      ),
+      'teaser' => array(
+        'format' => 'hidden',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'hidden',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'computed',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'computed_field',
+    'active' => '1',
+    'code' => '$node_field[0][\'value\'] = "";',
+    'display_format' => '$display = $node_field_item[\'value\'];',
+    'store' => 1,
+    'data_type' => 'text',
+    'data_length' => '',
+    'data_not_NULL' => 0,
+    'data_default' => '',
+    'data_sortable' => 1,
+    'widget' => array(
+      'default_value' => NULL,
+      'default_value_php' => NULL,
+      'label' => 'Activity_link',
+      'weight' => '32',
+      'description' => '',
+      'type' => 'computed',
+      'module' => 'computed_field',
+    ),
+  );
+
   // Exported field: field_group_image
   $fields['group_media_image-field_group_image'] = array(
     'field_name' => 'field_group_image',
     'type_name' => 'group_media_image',
     'display_settings' => array(
-      'label' => array(
-        'format' => 'above',
-        'exclude' => 0,
-      ),
-      '5' => array(
-        'format' => 'image_plain',
-        'exclude' => 0,
-      ),
-      'teaser' => array(
-        'format' => 'image_plain',
-        'exclude' => 0,
-      ),
-      'full' => array(
-        'format' => 'image_plain',
-        'exclude' => 0,
-      ),
-      '4' => array(
-        'format' => 'image_plain',
-        'exclude' => 0,
-      ),
-      '2' => array(
-        'format' => 'image_plain',
-        'exclude' => 0,
-      ),
-      '3' => array(
-        'format' => 'image_plain',
-        'exclude' => 0,
-      ),
-      'token' => array(
-        'format' => 'image_plain',
-        'exclude' => 0,
-      ),
-    ),
-    'widget_active' => '1',
-    'type' => 'filefield',
-    'required' => '0',
-    'multiple' => '0',
-    'module' => 'filefield',
-    'active' => '1',
-    'list_field' => '0',
-    'list_default' => 1,
-    'description_field' => '0',
-    'widget' => array(
-      'file_extensions' => 'png gif jpg jpeg',
-      'file_path' => '',
-      'progress_indicator' => 'bar',
-      'max_filesize_per_file' => '',
-      'max_filesize_per_node' => '',
-      'max_resolution' => '0',
-      'min_resolution' => '0',
-      'alt' => '',
-      'custom_alt' => 0,
-      'title' => '',
-      'custom_title' => 0,
-      'title_type' => 'textfield',
-      'default_image' => NULL,
-      'use_default_image' => 0,
-      'label' => 'Image',
       'weight' => '-4',
-      'description' => 'Add an image',
-      'type' => 'imagefield_widget',
-      'module' => 'imagefield',
-    ),
-  );
-
-  // Exported field: field_icon
-  $fields['group_media_video-field_icon'] = array(
-    'field_name' => 'field_icon',
-    'type_name' => 'group_media_video',
-    'display_settings' => array(
+      'parent' => '',
       'label' => array(
-        'format' => 'above',
-        'exclude' => 0,
-      ),
-      '5' => array(
-        'format' => 'image_plain',
-        'exclude' => 0,
+        'format' => 'hidden',
       ),
       'teaser' => array(
-        'format' => 'image_plain',
+        'format' => 'image-node_linked',
         'exclude' => 0,
       ),
       'full' => array(
+        'format' => 'image-node_default',
+        'exclude' => 0,
+      ),
+      '5' => array(
         'format' => 'image_plain',
         'exclude' => 0,
       ),
@@ -137,16 +132,244 @@ function afg_group_media_content_default_fields() {
       'custom_title' => 0,
       'title_type' => 'textfield',
       'default_image' => array(
-        'filename' => 'video.png',
-        'filepath' => 'sites/default/files/imagefield_default_images/video.png',
-        'filemime' => 'image/png',
+        'filename' => 'afg_image-icon.gif',
+        'filepath' => 'sites/default/files/imagefield_default_images/afg_image-icon.gif',
+        'filemime' => 'image/gif',
         'source' => 'default_image_upload',
-        'destination' => 'sites/default/files/imagefield_default_images/video.png',
-        'filesize' => 2693,
+        'destination' => 'sites/default/files/imagefield_default_images/afg_image-icon.gif',
+        'filesize' => 1597,
         'uid' => '1',
         'status' => 1,
-        'timestamp' => 1314098849,
-        'fid' => '21',
+        'timestamp' => 1316594420,
+        'fid' => '151',
+      ),
+      'use_default_image' => 0,
+      'label' => 'Image',
+      'weight' => '-4',
+      'description' => 'Add an image',
+      'type' => 'imagefield_widget',
+      'module' => 'imagefield',
+    ),
+  );
+
+  // Exported field: field_icon
+  $fields['group_media_image-field_icon'] = array(
+    'field_name' => 'field_icon',
+    'type_name' => 'group_media_image',
+    'display_settings' => array(
+      'weight' => '7',
+      'parent' => '',
+      'label' => array(
+        'format' => 'hidden',
+      ),
+      'teaser' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'filefield',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'filefield',
+    'active' => '1',
+    'list_field' => '0',
+    'list_default' => 1,
+    'description_field' => '0',
+    'widget' => array(
+      'file_extensions' => 'png gif jpg jpeg',
+      'file_path' => '',
+      'progress_indicator' => 'bar',
+      'max_filesize_per_file' => '',
+      'max_filesize_per_node' => '',
+      'max_resolution' => '0',
+      'min_resolution' => '0',
+      'alt' => '',
+      'custom_alt' => 0,
+      'title' => '',
+      'custom_title' => 0,
+      'title_type' => 'textfield',
+      'default_image' => array(
+        'filename' => 'afg_image-icon.gif',
+        'filepath' => 'sites/default/files/imagefield_default_images/afg_image-icon_0.gif',
+        'filemime' => 'image/gif',
+        'source' => 'default_image_upload',
+        'destination' => 'sites/default/files/imagefield_default_images/afg_image-icon_0.gif',
+        'filesize' => 1597,
+        'uid' => '1',
+        'status' => 1,
+        'timestamp' => 1316596174,
+        'fid' => '152',
+      ),
+      'use_default_image' => 1,
+      'label' => 'Icon',
+      'weight' => '34',
+      'description' => 'Video post type icon',
+      'type' => 'imagefield_widget',
+      'module' => 'imagefield',
+    ),
+  );
+
+  // Exported field: field_activity_link
+  $fields['group_media_video-field_activity_link'] = array(
+    'field_name' => 'field_activity_link',
+    'type_name' => 'group_media_video',
+    'display_settings' => array(
+      'weight' => '32',
+      'parent' => '',
+      'label' => array(
+        'format' => 'hidden',
+      ),
+      'teaser' => array(
+        'format' => 'hidden',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'hidden',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'computed',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'computed_field',
+    'active' => '1',
+    'code' => '$node_field[0][\'value\'] = "";',
+    'display_format' => '$display = $node_field_item[\'value\'];',
+    'store' => 1,
+    'data_type' => 'text',
+    'data_length' => '',
+    'data_not_NULL' => 0,
+    'data_default' => '',
+    'data_sortable' => 1,
+    'widget' => array(
+      'default_value' => NULL,
+      'default_value_php' => NULL,
+      'label' => 'Activity_link',
+      'weight' => '32',
+      'description' => '',
+      'type' => 'computed',
+      'module' => 'computed_field',
+    ),
+  );
+
+  // Exported field: field_icon
+  $fields['group_media_video-field_icon'] = array(
+    'field_name' => 'field_icon',
+    'type_name' => 'group_media_video',
+    'display_settings' => array(
+      'weight' => '7',
+      'parent' => '',
+      'label' => array(
+        'format' => 'hidden',
+      ),
+      'teaser' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'filefield',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'filefield',
+    'active' => '1',
+    'list_field' => '0',
+    'list_default' => 1,
+    'description_field' => '0',
+    'widget' => array(
+      'file_extensions' => 'png gif jpg jpeg',
+      'file_path' => '',
+      'progress_indicator' => 'bar',
+      'max_filesize_per_file' => '',
+      'max_filesize_per_node' => '',
+      'max_resolution' => '0',
+      'min_resolution' => '0',
+      'alt' => '',
+      'custom_alt' => 0,
+      'title' => '',
+      'custom_title' => 0,
+      'title_type' => 'textfield',
+      'default_image' => array(
+        'filename' => 'afg_video-icon.gif',
+        'filepath' => 'sites/default/files/imagefield_default_images/afg_video-icon.gif',
+        'filemime' => 'image/gif',
+        'source' => 'default_image_upload',
+        'destination' => 'sites/default/files/imagefield_default_images/afg_video-icon.gif',
+        'filesize' => 1429,
+        'uid' => '1',
+        'status' => 1,
+        'timestamp' => 1316597075,
+        'fid' => '153',
       ),
       'use_default_image' => 1,
       'label' => 'Icon',
@@ -162,19 +385,20 @@ function afg_group_media_content_default_fields() {
     'field_name' => 'field_video',
     'type_name' => 'group_media_video',
     'display_settings' => array(
+      'weight' => '-4',
+      'parent' => '',
       'label' => array(
-        'format' => 'above',
-        'exclude' => 0,
-      ),
-      '5' => array(
-        'format' => 'default',
-        'exclude' => 0,
+        'format' => 'hidden',
       ),
       'teaser' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
       'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '5' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
@@ -202,8 +426,8 @@ function afg_group_media_content_default_fields() {
     'module' => 'emvideo',
     'active' => '1',
     'widget' => array(
-      'video_width' => '435',
-      'video_height' => '358',
+      'video_width' => '593',
+      'video_height' => '473',
       'video_autoplay' => 0,
       'preview_width' => '435',
       'preview_height' => '358',
@@ -217,9 +441,9 @@ function afg_group_media_content_default_fields() {
         'description' => 0,
       ),
       'providers' => array(
+        'flickr_sets' => 'flickr_sets',
+        'slideshare' => 'slideshare',
         'youtube' => 'youtube',
-        'flickr_sets' => 0,
-        'slideshare' => 0,
       ),
       'default_value' => array(
         '0' => array(
@@ -265,6 +489,69 @@ function afg_group_media_content_default_fields() {
       'description' => '',
       'type' => 'emvideo_textfields',
       'module' => 'emvideo',
+    ),
+  );
+
+  // Exported field: field_activity_link
+  $fields['request_for_help-field_activity_link'] = array(
+    'field_name' => 'field_activity_link',
+    'type_name' => 'request_for_help',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'computed',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'computed_field',
+    'active' => '1',
+    'code' => '$node_field[0][\'value\'] = "";',
+    'display_format' => '$display = $node_field_item[\'value\'];',
+    'store' => 1,
+    'data_type' => 'text',
+    'data_length' => '',
+    'data_not_NULL' => 0,
+    'data_default' => '',
+    'data_sortable' => 1,
+    'widget' => array(
+      'default_value' => NULL,
+      'default_value_php' => NULL,
+      'label' => 'Activity_link',
+      'weight' => '34',
+      'description' => '',
+      'type' => 'computed',
+      'module' => 'computed_field',
     ),
   );
 
@@ -329,16 +616,16 @@ function afg_group_media_content_default_fields() {
       'custom_title' => 0,
       'title_type' => 'textfield',
       'default_image' => array(
-        'filename' => 'help.png',
-        'filepath' => 'sites/default/files/imagefield_default_images/help.png',
-        'filemime' => 'image/png',
+        'filename' => 'afg_help-icon.gif',
+        'filepath' => 'sites/default/files/imagefield_default_images/afg_help-icon.gif',
+        'filemime' => 'image/gif',
         'source' => 'default_image_upload',
-        'destination' => 'sites/default/files/imagefield_default_images/help.png',
-        'filesize' => 1624,
+        'destination' => 'sites/default/files/imagefield_default_images/afg_help-icon.gif',
+        'filesize' => 1369,
         'uid' => '1',
         'status' => 1,
-        'timestamp' => 1314098923,
-        'fid' => '22',
+        'timestamp' => 1316427155,
+        'fid' => '149',
       ),
       'use_default_image' => 1,
       'label' => 'Icon',
@@ -351,6 +638,7 @@ function afg_group_media_content_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Activity_link');
   t('Icon');
   t('Image');
   t('Video');

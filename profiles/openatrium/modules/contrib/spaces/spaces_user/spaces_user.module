@@ -102,3 +102,13 @@ function spaces_user_form_spaces_features_form_alter(&$form, &$form_state) {
     unset($form['site_frontpage']);
   }
 }
+
+
+/**
+ * Implementation of hook_spaces_get_space_from_object().
+ */
+function spaces_user_spaces_get_space_from_object($type, $object) {
+  if ($type == 'user') {
+    return spaces_load('user', $object->uid);
+  }
+}

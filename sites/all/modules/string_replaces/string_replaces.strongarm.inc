@@ -14,7 +14,7 @@ function string_replaces_strongarm() {
     'Dashboard' => 'Profile',
     'Members' => 'Supporters',
     'Membership' => 'Following',
-    'Shout' => 'Send! ->',
+    'Shout' => 'Post →',
     'Shoutbox' => 'Comment Wall',
   );
 

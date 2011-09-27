@@ -613,7 +613,7 @@ function atrium_shoutbox_views_default_views() {
       'relationship' => 'none',
     ),
   ));
-  $handler->override_option('title', 'Comments');
+  $handler->override_option('title', 'Shoutbox');
   $handler->override_option('items_per_page', 20);
   $handler->override_option('use_pager', '1');
   $handler->override_option('path', 'shoutbox/og');
@@ -631,14 +631,9 @@ function atrium_shoutbox_views_default_views() {
     'weight' => 0,
     'name' => 'navigation',
   ));
-  $handler = $view->new_display('block', 'Comments (shoutbox)', 'block_1');
-  $handler->override_option('block_description', 'comment_block');
-  $handler->override_option('block_caching', -1);
   $translatables['shoutbox_shouts'] = array(
-    t('Comments (shoutbox)'),
     t('Defaults'),
     t('Shoutbox'),
-    t('comment_block'),
   );
 
   $views[$view->name] = $view;
@@ -725,7 +720,7 @@ function atrium_shoutbox_views_default_views() {
     'alignment' => 'horizontal',
   ));
   $handler = $view->new_display('block', 'Block', 'block_1');
-  $handler->override_option('title', 'Supporters');
+  $handler->override_option('title', 'Members');
   $handler->override_option('items_per_page', 30);
   $handler->override_option('use_pager', 'mini');
   $handler->override_option('block_description', '');

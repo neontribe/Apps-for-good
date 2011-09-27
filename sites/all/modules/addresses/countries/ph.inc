@@ -1,5 +1,4 @@
 <?php
-// $Id: ph.inc,v 1.11 2010/07/02 09:52:15 alexiswilke Exp $
 
 /**
  * @file

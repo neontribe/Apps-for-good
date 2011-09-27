@@ -5,6 +5,7 @@
  */
 function afg_groups_views_context_default_contexts() {
   $export = array();
+
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
@@ -40,8 +41,8 @@ function afg_groups_views_context_default_contexts() {
   // Included for use with string extractors like potx.
   t('afg_custom');
   t('context for add centre and add application buttons');
-
   $export['afg_custom_groups'] = $context;
+
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
@@ -51,8 +52,8 @@ function afg_groups_views_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
+        '~dashboard/profile' => '~dashboard/profile',
         'dashboard' => 'dashboard',
-        'dashboard/*' => 'dashboard/*',
         'updates' => 'updates',
         'supporters' => 'supporters',
         'shoutbox' => 'shoutbox',
@@ -81,8 +82,8 @@ function afg_groups_views_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('afg_custom');
-
   $export['anonymous_user_follow'] = $context;
+
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
@@ -99,6 +100,12 @@ function afg_groups_views_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'menu-menu-app-directory-links' => array(
+          'module' => 'menu',
+          'delta' => 'menu-app-directory-links',
+          'region' => 'right',
+          'weight' => 0,
+        ),
         'quicktabs-app_directory' => array(
           'module' => 'quicktabs',
           'delta' => 'app_directory',
@@ -113,8 +120,8 @@ function afg_groups_views_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('afg_custom');
-
   $export['app_directory_page'] = $context;
+
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
@@ -170,8 +177,8 @@ function afg_groups_views_context_default_contexts() {
   // Included for use with string extractors like potx.
   t('afg_custom');
   t('blocks to appear on centre directory page');
-
   $export['centre_directory_page'] = $context;
+
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
@@ -203,7 +210,7 @@ function afg_groups_views_context_default_contexts() {
   // Included for use with string extractors like potx.
   t('Join this group block');
   t('afg_custom');
-
   $export['join_group'] = $context;
+
   return $export;
 }

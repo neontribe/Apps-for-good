@@ -6,9 +6,9 @@
 function afg_groups_views_content_default_fields() {
   $fields = array();
 
-  // Exported field: field_centre_ref
-  $fields['group_app_team-field_centre_ref'] = array(
-    'field_name' => 'field_centre_ref',
+  // Exported field: field_activity_link
+  $fields['group_app_team-field_activity_link'] = array(
+    'field_name' => 'field_activity_link',
     'type_name' => 'group_app_team',
     'display_settings' => array(
       'label' => array(
@@ -24,6 +24,70 @@ function afg_groups_views_content_default_fields() {
         'exclude' => 0,
       ),
       'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'computed',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'computed_field',
+    'active' => '1',
+    'code' => '$node_field[0][\'value\'] = "";',
+    'display_format' => '$display = $node_field_item[\'value\'];',
+    'store' => 1,
+    'data_type' => 'text',
+    'data_length' => '',
+    'data_not_NULL' => 0,
+    'data_default' => '',
+    'data_sortable' => 1,
+    'widget' => array(
+      'default_value' => NULL,
+      'default_value_php' => NULL,
+      'label' => 'Activity_link',
+      'weight' => '34',
+      'description' => '',
+      'type' => 'computed',
+      'module' => 'computed_field',
+    ),
+  );
+
+  // Exported field: field_centre_ref
+  $fields['group_app_team-field_centre_ref'] = array(
+    'field_name' => 'field_centre_ref',
+    'type_name' => 'group_app_team',
+    'display_settings' => array(
+      'weight' => '-4',
+      'parent' => '',
+      'label' => array(
+        'format' => 'hidden',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '5' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
@@ -84,24 +148,25 @@ function afg_groups_views_content_default_fields() {
     ),
   );
 
-  // Exported field: field_logo
-  $fields['group_app_team-field_logo'] = array(
-    'field_name' => 'field_logo',
+  // Exported field: field_icon
+  $fields['group_app_team-field_icon'] = array(
+    'field_name' => 'field_icon',
     'type_name' => 'group_app_team',
     'display_settings' => array(
+      'weight' => '32',
+      'parent' => '',
       'label' => array(
-        'format' => 'above',
-        'exclude' => 0,
-      ),
-      '5' => array(
-        'format' => 'image_plain',
-        'exclude' => 0,
+        'format' => 'hidden',
       ),
       'teaser' => array(
         'format' => 'image_plain',
         'exclude' => 0,
       ),
       'full' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '5' => array(
         'format' => 'image_plain',
         'exclude' => 0,
       ),
@@ -145,16 +210,98 @@ function afg_groups_views_content_default_fields() {
       'custom_title' => 0,
       'title_type' => 'textfield',
       'default_image' => array(
-        'filename' => 'logo.jpg',
-        'filepath' => 'sites/default/files/imagefield_default_images/logo.jpg',
-        'filemime' => 'image/jpeg',
+        'filename' => 'afg_app-icon.gif',
+        'filepath' => 'sites/default/files/imagefield_default_images/afg_app-icon.gif',
+        'filemime' => 'image/gif',
         'source' => 'default_image_upload',
-        'destination' => 'sites/default/files/imagefield_default_images/logo.jpg',
-        'filesize' => 848,
+        'destination' => 'sites/default/files/imagefield_default_images/afg_app-icon.gif',
+        'filesize' => 1483,
         'uid' => '1',
         'status' => 1,
-        'timestamp' => 1308653674,
-        'fid' => '3',
+        'timestamp' => 1316423655,
+        'fid' => '145',
+      ),
+      'use_default_image' => 1,
+      'label' => 'Icon',
+      'weight' => '32',
+      'description' => 'Video post type icon',
+      'type' => 'imagefield_widget',
+      'module' => 'imagefield',
+    ),
+  );
+
+  // Exported field: field_logo
+  $fields['group_app_team-field_logo'] = array(
+    'field_name' => 'field_logo',
+    'type_name' => 'group_app_team',
+    'display_settings' => array(
+      'weight' => '-3',
+      'parent' => '',
+      'label' => array(
+        'format' => 'hidden',
+      ),
+      'teaser' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'filefield',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'filefield',
+    'active' => '1',
+    'list_field' => '0',
+    'list_default' => 1,
+    'description_field' => '0',
+    'widget' => array(
+      'file_extensions' => 'png gif jpg jpeg',
+      'file_path' => '',
+      'progress_indicator' => 'bar',
+      'max_filesize_per_file' => '',
+      'max_filesize_per_node' => '',
+      'max_resolution' => '0',
+      'min_resolution' => '0',
+      'alt' => '',
+      'custom_alt' => 0,
+      'title' => '',
+      'custom_title' => 0,
+      'title_type' => 'textfield',
+      'default_image' => array(
+        'filename' => 'afg_app-icon.gif',
+        'filepath' => 'sites/default/files/imagefield_default_images/afg_app-icon.gif',
+        'filemime' => 'image/gif',
+        'source' => 'default_image_upload',
+        'destination' => 'sites/default/files/imagefield_default_images/afg_app-icon.gif',
+        'filesize' => 1483,
+        'uid' => '1',
+        'status' => 1,
+        'timestamp' => 1316302312,
+        'fid' => '151',
       ),
       'use_default_image' => 1,
       'label' => 'logo',
@@ -165,24 +312,148 @@ function afg_groups_views_content_default_fields() {
     ),
   );
 
-  // Exported field: field_centre_loc_details
-  $fields['group_centre_school-field_centre_loc_details'] = array(
-    'field_name' => 'field_centre_loc_details',
+  // Exported field: field_activity_link
+  $fields['group_centre_school-field_activity_link'] = array(
+    'field_name' => 'field_activity_link',
     'type_name' => 'group_centre_school',
     'display_settings' => array(
+      'weight' => '32',
+      'parent' => '',
       'label' => array(
-        'format' => 'above',
+        'format' => 'hidden',
+      ),
+      'teaser' => array(
+        'format' => 'hidden',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'hidden',
         'exclude' => 0,
       ),
       '5' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'computed',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'computed_field',
+    'active' => '1',
+    'code' => '$node_field[0][\'value\'] = "";',
+    'display_format' => '$display = $node_field_item[\'value\'];',
+    'store' => 1,
+    'data_type' => 'text',
+    'data_length' => '',
+    'data_not_NULL' => 0,
+    'data_default' => '',
+    'data_sortable' => 1,
+    'widget' => array(
+      'default_value' => NULL,
+      'default_value_php' => NULL,
+      'label' => 'Activity_link',
+      'weight' => '32',
+      'description' => '',
+      'type' => 'computed',
+      'module' => 'computed_field',
+    ),
+  );
+
+  // Exported field: field_app_count
+  $fields['group_centre_school-field_app_count'] = array(
+    'field_name' => 'field_app_count',
+    'type_name' => 'group_centre_school',
+    'display_settings' => array(
+      'weight' => '31',
+      'parent' => '',
+      'label' => array(
+        'format' => 'above',
+      ),
       'teaser' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
       'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'nodereference_count',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'nodereference_count',
+    'active' => '1',
+    'referenceable_fields' => array(
+      'field_centre_ref' => 'field_centre_ref',
+    ),
+    'widget' => array(
+      'default_value' => NULL,
+      'default_value_php' => NULL,
+      'label' => 'App count',
+      'weight' => '31',
+      'description' => '',
+      'type' => 'nodereference_count_widget',
+      'module' => 'nodereference_count',
+    ),
+  );
+
+  // Exported field: field_centre_loc_details
+  $fields['group_centre_school-field_centre_loc_details'] = array(
+    'field_name' => 'field_centre_loc_details',
+    'type_name' => 'group_centre_school',
+    'display_settings' => array(
+      'weight' => '-2',
+      'parent' => '',
+      'label' => array(
+        'format' => 'hidden',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '5' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
@@ -546,19 +817,20 @@ function afg_groups_views_content_default_fields() {
     'field_name' => 'field_icon',
     'type_name' => 'group_centre_school',
     'display_settings' => array(
+      'weight' => '14',
+      'parent' => '',
       'label' => array(
-        'format' => 'above',
-        'exclude' => 0,
-      ),
-      '5' => array(
-        'format' => 'image_plain',
-        'exclude' => 0,
+        'format' => 'hidden',
       ),
       'teaser' => array(
         'format' => 'image_plain',
         'exclude' => 0,
       ),
       'full' => array(
+        'format' => 'hidden',
+        'exclude' => 0,
+      ),
+      '5' => array(
         'format' => 'image_plain',
         'exclude' => 0,
       ),
@@ -627,19 +899,20 @@ function afg_groups_views_content_default_fields() {
     'field_name' => 'field_logo',
     'type_name' => 'group_centre_school',
     'display_settings' => array(
+      'weight' => '-1',
+      'parent' => '',
       'label' => array(
-        'format' => 'above',
-        'exclude' => 0,
-      ),
-      '5' => array(
-        'format' => 'image_plain',
-        'exclude' => 0,
+        'format' => 'hidden',
       ),
       'teaser' => array(
         'format' => 'image_plain',
         'exclude' => 0,
       ),
       'full' => array(
+        'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      '5' => array(
         'format' => 'image_plain',
         'exclude' => 0,
       ),
@@ -708,19 +981,20 @@ function afg_groups_views_content_default_fields() {
     'field_name' => 'field_staff',
     'type_name' => 'group_centre_school',
     'display_settings' => array(
+      'weight' => 0,
+      'parent' => '',
       'label' => array(
-        'format' => 'above',
-        'exclude' => 0,
-      ),
-      '5' => array(
-        'format' => 'default',
-        'exclude' => 0,
+        'format' => 'hidden',
       ),
       'teaser' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
       'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '5' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
@@ -788,19 +1062,20 @@ function afg_groups_views_content_default_fields() {
     'field_name' => 'field_website',
     'type_name' => 'group_centre_school',
     'display_settings' => array(
+      'weight' => '1',
+      'parent' => '',
       'label' => array(
-        'format' => 'above',
-        'exclude' => 0,
-      ),
-      '5' => array(
-        'format' => 'default',
-        'exclude' => 0,
+        'format' => 'hidden',
       ),
       'teaser' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
       'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '5' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
@@ -856,8 +1131,74 @@ function afg_groups_views_content_default_fields() {
     ),
   );
 
+  // Exported field: field_activity_link
+  $fields['page-field_activity_link'] = array(
+    'field_name' => 'field_activity_link',
+    'type_name' => 'page',
+    'display_settings' => array(
+      'weight' => '32',
+      'parent' => '',
+      'label' => array(
+        'format' => 'hidden',
+      ),
+      'teaser' => array(
+        'format' => 'hidden',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'hidden',
+        'exclude' => 0,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'computed',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'computed_field',
+    'active' => '1',
+    'code' => '$node_field[0][\'value\'] = "";',
+    'display_format' => '$display = $node_field_item[\'value\'];',
+    'store' => 1,
+    'data_type' => 'text',
+    'data_length' => '',
+    'data_not_NULL' => 0,
+    'data_default' => '',
+    'data_sortable' => 1,
+    'widget' => array(
+      'default_value' => NULL,
+      'default_value_php' => NULL,
+      'label' => 'Activity_link',
+      'weight' => '32',
+      'description' => '',
+      'type' => 'computed',
+      'module' => 'computed_field',
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
+  t('Activity_link');
+  t('App count');
   t('Centre Located at');
   t('Centre logo');
   t('Centre website');

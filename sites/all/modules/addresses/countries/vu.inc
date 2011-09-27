@@ -1,5 +1,4 @@
 <?php
-// $Id: vu.inc,v 1.9 2008/11/17 16:01:58 alexiswilke Exp $
 
 /**
  * @file

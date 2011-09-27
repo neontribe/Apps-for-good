@@ -19,14 +19,14 @@ function atrium_calendar_context_default_contexts() {
         'feed_ical_item' => 'feed_ical_item',
       ),
       'options' => array(
-        'node_form' => 1,
+        'node_form' => '1',
       ),
     ),
     'views' => array(
       'values' => array(
-        'calendar_listing' => 'calendar_listing',
         'calendar_feed_items' => 'calendar_feed_items',
         'calendar_feeds' => 'calendar_feeds',
+        'calendar_listing' => 'calendar_listing',
         'calendar_upcoming' => 'calendar_upcoming',
       ),
     ),
@@ -34,6 +34,12 @@ function atrium_calendar_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'atrium_calendar-filters' => array(
+          'module' => 'atrium_calendar',
+          'delta' => 'filters',
+          'region' => 'right',
+          'weight' => 0,
+        ),
         'views-calendar_upcoming-block_1' => array(
           'module' => 'views',
           'delta' => 'calendar_upcoming-block_1',

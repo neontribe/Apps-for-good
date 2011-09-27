@@ -5,12 +5,13 @@
  */
 function afg_group_media_quicktabs_default_quicktabs() {
   $export = array();
+
   $quicktabs = new stdClass;
   $quicktabs->disabled = FALSE; /* Edit this to true to make a default quicktabs disabled initially */
   $quicktabs->api_version = 1;
   $quicktabs->machine_name = 'app_media';
   $quicktabs->ajax = 0;
-  $quicktabs->hide_empty_tabs = 0;
+  $quicktabs->hide_empty_tabs = 1;
   $quicktabs->default_tab = FALSE;
   $quicktabs->title = 'App Media Tabbed';
   $quicktabs->tabs = array(
@@ -52,7 +53,7 @@ function afg_group_media_quicktabs_default_quicktabs() {
     ),
   );
   $quicktabs->style = 'Navlist-afg';
-
   $export['app_media'] = $quicktabs;
+
   return $export;
 }

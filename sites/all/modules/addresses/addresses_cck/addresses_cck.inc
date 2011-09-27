@@ -1,5 +1,4 @@
 <?php
-// $Id: addresses_cck.inc,v 1.5 2010/07/17 23:03:19 alexiswilke Exp $
 /**
  * @author Bruno Massa
  * @file

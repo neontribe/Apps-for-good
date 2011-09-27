@@ -1,5 +1,4 @@
 <?php
-// $Id: addresses_phone.module,v 1.14 2010/07/02 09:52:15 alexiswilke Exp $
 /**
  * @author Bruno Massa
  * @file
@@ -46,6 +45,7 @@ function addresses_phone_addressesfieldapi($op, $fields = array(), $values = arr
     );
   }
   elseif ($op == 'form') {
+    $form = array();
     $field_weights = variable_get('addresses_field_weight', array());
 
     // Telephone number

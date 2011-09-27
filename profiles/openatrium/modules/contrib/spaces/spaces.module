@@ -445,7 +445,7 @@ function spaces_features($type = NULL, $reset = FALSE) {
  */
 function spaces_access_space($account = NULL) {
   $space = spaces_get_space();
-  return $space ? $space->access_space() : TRUE;
+  return $space ? $space->access_space($account) : TRUE;
 }
 
 /**
@@ -693,18 +693,19 @@ function spaces_menu_access() {
     }
     else {
       foreach (array_filter($args, 'is_object') as $object) {
-        if (isset($object->nid)) {
-          spaces_router('node', $object);
-          $feature = !empty($map[$object->type]) ? reset($map[$object->type]) : NULL;
-          if ($feature) {
-            return spaces_access_feature('view', $feature);
+        $type = isset($object->nid) ? 'node' : (isset($object->uid) ? 'user' : NULL);
+        if ($type && spaces_is_spaces_object($type, $object)) {
+          if ($type == 'node') {
+            $feature = !empty($map[$object->type]) ? reset($map[$object->type]) : NULL;
+            if ($feature) {
+              return spaces_access_feature('view', $feature);
+            }
           }
+          elseif ($type == 'user') {
+            return spaces_access_user('view', $object);
+          }
+          break;
         }
-        elseif (isset($object->uid)) {
-          spaces_router('user', $object);
-          return spaces_access_user('view', $object);
-        }
-        break;
       }
     }
     return TRUE;
@@ -778,6 +779,37 @@ function spaces_init() {
     menu_set_active_item('spaces-access-denied');
   }
   spaces_router('init');
+
+  /**
+   * If the current menu object is not part of the space, this will
+   * redirect it to the correct space.
+   *
+   * Since the menu returns TRUE in the cases a redirect is needed if
+   * the user has access to the item, the object will be stored in the
+   * menu for this to fetch and redirect.
+   */
+
+  // Can't call menu_get_item in hook_init without this.
+  if (variable_get('menu_rebuild_needed', FALSE) || !variable_get('menu_masks', array())) {
+    menu_rebuild();
+  }
+
+  // Simplist case, get the node.
+  if ($object = menu_get_object()) {
+    $type = 'node';
+  }
+  // user has various load functions
+  elseif (($item = menu_get_item()) && isset($item['map'])) {
+    foreach (array_filter($item['map'], 'is_object') as $object) {
+      $type = isset($object->nid) ? 'node' : (isset($object->uid) ? 'user' : NULL);;
+      break;
+    }
+  }
+
+  // If the space is incorrect, reroute.
+  if ($type && !spaces_is_spaces_object($type, $object)) {
+    spaces_router($type, $object);
+  }
 }
 
 /**
@@ -975,4 +1007,37 @@ function _spaces_json_decode($json) {
   }
   eval($out . ';');
   return $x;
+}
+
+/**
+ * Get the space that an $object is in.
+ */
+function spaces_get_space_from_object($type, $object) {
+  static $spaces;
+  $id = $type == 'node' ? $object->nid : $object->uid;
+  if (!isset($spaces[$type][$id])) {
+    $spaces = module_invoke_all('spaces_get_space_from_object', $type, $object);
+    if ($space = current($spaces)) {
+      $spaces[$type][$id] = array('type' => $space->type, 'id' => $space->id);
+    }
+    else {
+      $spaces[$type][$id] = FALSE;
+    }
+  }
+  return $spaces[$type][$id] ? spaces_load($spaces[$type][$id]['type'], $spaces[$type][$id]['id']) : FALSE;
+}
+
+/**
+ * Tests whether the object is part of the current space.
+ */
+function spaces_is_spaces_object($type, $object) {
+  if ($object_space = spaces_get_space_from_object($type, $object)) {
+    if (($current_space = spaces_get_space())) {
+      return $object_space->id == $current_space->id && $object_space->type == $current_space->type;
+    }
+    else {
+      return FALSE;
+    }
+  }
+  return TRUE;
 }

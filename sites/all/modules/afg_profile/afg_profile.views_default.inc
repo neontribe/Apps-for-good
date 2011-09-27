@@ -174,7 +174,7 @@ function afg_profile_views_default_views() {
   ));
   $handler->override_option('fields', array(
     'title' => array(
-      'label' => 'Full name',
+      'label' => '',
       'alter' => array(
         'alter_text' => 0,
         'text' => '',
@@ -184,15 +184,23 @@ function afg_profile_views_default_views() {
         'alt' => '',
         'prefix' => '',
         'suffix' => '',
+        'target' => '',
         'help' => '',
         'trim' => 0,
         'max_length' => '',
         'word_boundary' => 1,
         'ellipsis' => 1,
-        'strip_tags' => 0,
         'html' => 0,
+        'strip_tags' => 0,
       ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
       'link_to_node' => 0,
+      'spaces' => array(
+        'frontpage' => 0,
+        'type' => 'spaces_og',
+      ),
       'exclude' => 0,
       'id' => 'title',
       'table' => 'node',
@@ -321,6 +329,7 @@ function afg_profile_views_default_views() {
       ),
     ),
   ));
+  $handler->override_option('css_class', 'profile-display');
   $handler->override_option('attachment_position', 'after');
   $handler->override_option('inherit_arguments', TRUE);
   $handler->override_option('inherit_exposed_filters', FALSE);

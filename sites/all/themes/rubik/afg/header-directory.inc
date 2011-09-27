@@ -51,6 +51,7 @@
         <span class='header-description'>
           <?php print $header_desc ?>
        </span>
+	   
       </div>
 	  
 	  <?php if ($space_tools): ?>

@@ -1,6 +1,5 @@
 <?php
 
-
 /**
 * Implementation of hook_theme().
 */
@@ -16,11 +15,42 @@ function afg_theme(){
   );
 }
 
+/**
+ * Displays a standard atrium success or failure message.
+ */
+function _afg_show_message(&$vars, $message, $success = TRUE) {
+    if (!$message)
+    	return false;
+    
+    $class = ($success) ? 'success' : 'error';
+    $m = "<div class='messages $class'>$message</div>";
+    
+    $vars['messages'] = $m;
+}
+
+/**
+ * Displays a login/register message in a standard atrium message format.
+ */
+function _afg_override_login_message(&$vars) {
+	$msg = trim(check_plain(strip_tags($vars['messages'])));
+    
+    if (strcmp($msg, 'You are not authorized to post comments.') == 0) {
+    	$nid = $vars['node']->nid;
+        
+		$m = '<a href="/user/login?destination=node/'. $nid .'#comment-form">Login</a>';
+    	$m .= ' or <a href="/user/register?destination=node/'. $nid .'#comment-form">register</a> to post comments</span>';
+    
+		_afg_show_message($vars, $m, FALSE);
+    }
+}
 
 /**
  * Preprocessor for theme('page').
  */
 function afg_preprocess_page(&$vars) {
+    
+  // Override default error message and prompt login
+  _afg_override_login_message($vars);
 
   // Force using the correct template file
   if(count($vars['template_files']) > 1) {
@@ -48,8 +78,21 @@ function afg_preprocess_page(&$vars) {
   
   // Header menu links
   $links = menu_navigation_links('menu-header-menu', 0);
+  
+  //$uri = $_SERVER['REQUEST_URI'];
+  //$curr_path = substr($uri, strpos($uri, '/') + 1);
+  //$trail = menu_get_active_trail();
+  //$trail_path = $trail[1]['path'];
+  
+  $path = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+  
   foreach ($links as $key => $link){
+  	 // Add active state class
+     $classes = (strcmp($path, $link['href']) == 0) ? ' header-menu-active' : '';
+     
+     // Apply classes
 	 $links[$key]['attributes']['class'] .= ' header-menu-' . strtolower($links[$key]['title']);
+     $links[$key]['attributes']['class'] .= $classes;
   }
   
   $vars['header_links'] = $links;
@@ -80,8 +123,16 @@ function afg_preprocess_page(&$vars) {
       $region = db_result($res);
     
     }
+	
     $vars['region'] = $region;
+	  $vars['city'] = $node->field_centre_loc_details[0]['city'];
+  }
 
+  if (strpos($vars['head_title'], 'Home') === 0) {
+    $og = og_get_group_context();
+    $title = $og->title;
+
+    $vars['head_title'] = str_replace('Home', $title, $vars['head_title']);
   }
 }
 
@@ -93,7 +144,7 @@ function afg_links($links, $attributes = array('class' => 'links')) {
 	if(isset($links['subscribe'])) {
 		$title = $links['subscribe']['title'];
 		switch (strtolower($title)){
-			case 'cancel request to join':
+			case 'leave this group':
 				$links['subscribe']['title'] = t('UnFollow');
 				$suffix = t('<p>You will not get any of the latest updates</p>');
 				break;
@@ -122,13 +173,22 @@ function afg_comment_form($form) {
   
   $form['preview'] = NULL;
 
-
-
+  unset($form['notifications']);
  
  
   return drupal_render($form);
 }
 
+/**
+ * Hide filter tips
+ */
+function phptemplate_filter_tips($tips, $long = FALSE, $extra = '') {
+  return '';
+}
+
+function phptemplate_filter_tips_more_info() {
+  return '';
+}
 
 function afg_preprocess_box(&$vars, $hook) {
   switch($vars['title']) {
@@ -136,6 +196,83 @@ function afg_preprocess_box(&$vars, $hook) {
     $vars['title'] = t('Leave a comment or feedback...');
   }
 }
+
+function computed_field_field_activity_link_compute($node, $field, &$node_field) {
+  //get group id not necessary node have unique num already
+  //$vals = array_values($node->og_groups);
+  //$val = $vals[0];
+  switch($node->type) {
+    case 'group_app_team':
+    case 'group_centre_school':
+      //get group path
+      $afg_activity_link = $node->purl['value'];
+    break;
+    case 'group_media_image':
+    case 'cdi_blog':
+    case 'request_for_help':
+    case 'blog':
+    case 'group_media_video':
+    case 'page':
+      $afg_activity_link = ('node/' . $node->nid);
+    break;
+    default:
+      $afg_activity_link = ('node/' . $node->nid);
+    break;
+  } 
+  $node_field[0]['value'] = $afg_activity_link;
+}
+
+
+function afg_views_view_field__updates__block_1__atrium_activity($view, $handler, $obj) {
+
+switch($obj->node_type) {
+    case 'group_app_team':
+    case 'group_centre_school':
+    if ($obj->comments_uid) {
+	$user = user_load($obj->comments_uid);
+	$username = $user->name;
+	$activity_update = $username . ' commented on ' . $obj->node_title;
+    } else {
+      $activity_update = $obj->node_title;
+      if ($obj->node_changed > $obj->node_created) {
+          $activity_update .= ' updated.';
+      } else {
+	  $activity_update .= ' created.';
+      }
+    }
+    break;
+
+    case 'group_media_image':
+    case 'cdi_blog':
+    case 'request_for_help':
+    case 'blog':
+    case 'group_media_video':
+    case 'page':
+    if ($obj->comments_uid) {
+        $user = user_load($obj->comments_uid);
+        $username = $user->name;
+        $activity_update = $username . ' commented on ' . $obj->node_title;
+    } else {
+      $activity_update = $obj->node_og_ancestry_title;
+      if ($obj->node_changed > $obj->node_created) {
+          $activity_update .= ' updated ';
+      } else {
+          $activity_update .= ' created ';
+      }
+      $activity_update .= $obj->node_title;
+    }
+    break;
+    default:
+      $activity_update = '';
+    break;
+
+}
+  return $activity_update;
+} 
+
+// function afg__gmap_views_marker_label($view, $fields, $entry) {
+  // return "XXX";
+// }
 
 /*count funtions*/
 // Moved to module afg_theme_updates to allow theme switching to work

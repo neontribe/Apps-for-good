@@ -41,3 +41,10 @@ files[] = tests/block.test
 ; files[] = tests/theme.test
 ; files[] = tests/unicode.test
 ; files[] = tests/xmlrpc.test
+
+; Information added by drupal.org packaging script on 2010-10-07
+version = "6.x-2.11"
+core = "6.x"
+project = "simpletest"
+datestamp = "1286493665"
+
