@@ -228,6 +228,7 @@ function afg_views_view_field__updates__block_1__atrium_activity($view, $handler
 switch($obj->node_type) {
     case 'group_app_team':
     case 'group_centre_school':
+    case 'page':
     if ($obj->comments_uid) {
 	$user = user_load($obj->comments_uid);
 	$username = $user->name;
@@ -247,7 +248,6 @@ switch($obj->node_type) {
     case 'request_for_help':
     case 'blog':
     case 'group_media_video':
-    case 'page':
     if ($obj->comments_uid) {
         $user = user_load($obj->comments_uid);
         $username = $user->name;
