@@ -1260,8 +1260,8 @@ function afg_groups_views_content_default_fields() {
       'url_cutoff' => '80',
     ),
     'url' => 0,
-    'title' => 'value',
-    'title_value' => 'Official website',
+    'title' => 'optional',
+    'title_value' => '',
     'enable_tokens' => 0,
     'validate_url' => 1,
     'widget' => array(

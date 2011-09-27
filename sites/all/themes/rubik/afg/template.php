@@ -225,6 +225,9 @@ function computed_field_field_activity_link_compute($node, $field, &$node_field)
 
 function afg_views_view_field__updates__block_1__atrium_activity($view, $handler, $obj) {
 
+$title_link = '<div class="views-field-title"><a href= "node/' . $obj->nid . '">'. $obj->node_title . '<a/></div>';
+
+
 switch($obj->node_type) {
     case 'group_app_team':
     case 'group_centre_school':
@@ -232,9 +235,10 @@ switch($obj->node_type) {
     if ($obj->comments_uid) {
 	$user = user_load($obj->comments_uid);
 	$username = $user->name;
-	$activity_update = $username . ' commented on ' . $obj->node_title;
+	//dpm($user);
+	$activity_update = $username . ' commented on ' . $title_link;
     } else {
-      $activity_update = $obj->node_title;
+      $activity_update = $title_link;
       if ($obj->node_changed > $obj->node_created) {
           $activity_update .= ' updated.';
       } else {
@@ -251,7 +255,8 @@ switch($obj->node_type) {
     if ($obj->comments_uid) {
         $user = user_load($obj->comments_uid);
         $username = $user->name;
-        $activity_update = $username . ' commented on ' . $obj->node_title;
+	//dpm($user);
+        $activity_update = $username . ' commented on ' . $title_link;
     } else {
       $sql='SELECT value FROM {purl} where id=' . $obj->node_og_ancestry_nid;
       $res = db_query($sql);
@@ -264,7 +269,7 @@ switch($obj->node_type) {
       } else {
           $activity_update .= ' created ';
       }
-      $activity_update .= $obj->node_title;
+      $activity_update .= $title_link;
     }
     break;
     default:
