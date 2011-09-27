@@ -1,6 +1,8 @@
+sites/default/dbdump/dump.sql
 sites/default/files/imagefield_thumbs
 sites/default/files/imagecache
 sites/default/settings.php
 sites/default/files/css
 sites/default/files/js
 .htaccess
+backup
