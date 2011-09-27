@@ -253,7 +253,12 @@ switch($obj->node_type) {
         $username = $user->name;
         $activity_update = $username . ' commented on ' . $obj->node_title;
     } else {
-      $activity_update = $obj->node_og_ancestry_title;
+      $sql='SELECT value FROM {purl} where id=' . $obj->node_og_ancestry_nid;
+      $res = db_query($sql);
+      $row = db_fetch_array($res);
+      $nodepath = $row[value];
+      $urlslug = '<a href=' . $nodepath . '>';
+      $activity_update = $urlslug . $obj->node_og_ancestry_title . '</a>';
       if ($obj->node_changed > $obj->node_created) {
           $activity_update .= ' updated ';
       } else {
