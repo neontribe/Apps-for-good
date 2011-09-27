@@ -2628,6 +2628,16 @@ function afg_groups_views_views_default_views() {
       'table' => 'term_node',
       'field' => 'tid',
     ),
+    'field_facebook_account_url' => array(
+      'id' => 'field_facebook_account_url',
+      'table' => 'node_data_field_facebook_account',
+      'field' => 'field_facebook_account_url',
+    ),
+    'field_twitter_account_url' => array(
+      'id' => 'field_twitter_account_url',
+      'table' => 'node_data_field_twitter_account',
+      'field' => 'field_twitter_account_url',
+    ),
   ));
   $handler->override_option('sorts', array(
     'title' => array(
@@ -5022,6 +5032,183 @@ function afg_groups_views_views_default_views() {
     'weight' => 0,
     'name' => 'navigation',
   ));
+  $handler = $view->new_display('block', 'Social Links', 'block_10');
+  $handler->override_option('fields', array(
+    'field_facebook_account_url' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 1,
+        'text' => '<a href="[field_facebook_account_url]" title="View our facebook account">
+  <img src="/sites/all/themes/rubik/afg/images/afg/icons/fb.png" alt="Facebook" />
+</a>',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 1,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'label_type' => 'none',
+      'format' => 'plain',
+      'multiple' => array(
+        'group' => TRUE,
+        'multiple_number' => '',
+        'multiple_from' => '',
+        'multiple_reversed' => FALSE,
+      ),
+      'exclude' => 0,
+      'id' => 'field_facebook_account_url',
+      'table' => 'node_data_field_facebook_account',
+      'field' => 'field_facebook_account_url',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+    'field_twitter_account_url' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 1,
+        'text' => '<a href="[field_twitter_account_url]" title="View our twitter account">
+  <img src="/sites/all/themes/rubik/afg/images/afg/icons/tw.png" alt="Twitter" />
+</a>',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 1,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'label_type' => 'none',
+      'format' => 'plain',
+      'multiple' => array(
+        'group' => TRUE,
+        'multiple_number' => '',
+        'multiple_from' => '',
+        'multiple_reversed' => FALSE,
+      ),
+      'exclude' => 0,
+      'id' => 'field_twitter_account_url',
+      'table' => 'node_data_field_twitter_account',
+      'field' => 'field_twitter_account_url',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+  ));
+  $handler->override_option('arguments', array(
+    'nid' => array(
+      'default_action' => 'default',
+      'style_plugin' => 'default_summary',
+      'style_options' => array(),
+      'wildcard' => 'all',
+      'wildcard_substitution' => 'All',
+      'title' => '',
+      'breadcrumb' => '',
+      'default_argument_type' => 'og_group_node',
+      'default_argument' => '',
+      'validate_type' => 'none',
+      'validate_fail' => 'not found',
+      'break_phrase' => 0,
+      'not' => 0,
+      'id' => 'nid',
+      'table' => 'node',
+      'field' => 'nid',
+      'validate_user_argument_type' => 'uid',
+      'validate_user_roles' => array(
+        '2' => 0,
+        '4' => 0,
+        '6' => 0,
+        '3' => 0,
+        '5' => 0,
+      ),
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+      'default_options_div_prefix' => '',
+      'default_argument_fixed' => '',
+      'default_argument_user' => 0,
+      'default_argument_php' => '',
+      'validate_argument_node_type' => array(
+        'blog' => 0,
+        'book' => 0,
+        'event' => 0,
+        'feed_ical' => 0,
+        'feed_ical_item' => 0,
+        'group' => 0,
+        'profile' => 0,
+        'shoutbox' => 0,
+        'group_media_image' => 0,
+        'group_media_video' => 0,
+        'request_for_help' => 0,
+        'cdi_blog' => 0,
+        'casetracker_basic_case' => 0,
+        'casetracker_basic_project' => 0,
+        'group_app_team' => 0,
+        'group_centre_school' => 0,
+        'page' => 0,
+      ),
+      'validate_argument_node_access' => 0,
+      'validate_argument_nid_type' => 'nid',
+      'validate_argument_vocabulary' => array(
+        '6' => 0,
+        '2' => 0,
+        '10' => 0,
+        '8' => 0,
+        '3' => 0,
+        '1' => 0,
+        '9' => 0,
+        '4' => 0,
+        '5' => 0,
+      ),
+      'validate_argument_type' => 'tid',
+      'validate_argument_transform' => 0,
+      'validate_user_restrict_roles' => 0,
+      'validate_argument_is_member' => 'OG_VIEWS_DO_NOT_VALIDATE_MEMBERSHIP',
+      'validate_argument_group_node_type' => array(
+        'group' => 0,
+        'group_app_team' => 0,
+        'group_centre_school' => 0,
+      ),
+      'validate_argument_php' => '',
+    ),
+  ));
+  $handler->override_option('access', array(
+    'type' => 'none',
+  ));
+  $handler->override_option('title', '');
+  $handler->override_option('css_class', 'social-links');
+  $handler->override_option('empty', 'No social network links have been added.');
+  $handler->override_option('empty_format', '5');
+  $handler->override_option('items_per_page', 0);
+  $handler->override_option('block_description', '');
+  $handler->override_option('block_caching', -1);
   $translatables['groups_listing_centre_school'] = array(
     t('<h2><?php echo afg_content_count(\'group_centre_school\'); ?> Centres </h2>'),
     t('A contact email will be added soon. For now, please leave a comment.'),
@@ -5043,9 +5230,11 @@ function afg_groups_views_views_default_views() {
     t('No app teams have been added for this centre yet.'),
     t('No archived groups found.'),
     t('No groups found.'),
+    t('No social network links have been added.'),
     t('Our Apps'),
     t('Page: Archived centres'),
     t('Page: My centres'),
+    t('Social Links'),
     t('Staff'),
     t('The map for this centre will be added soon.'),
     t('The teachers for this centre will be added soon.'),

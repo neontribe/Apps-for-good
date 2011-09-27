@@ -421,11 +421,6 @@ input[type='submit'] {
 	z-index: 99;
 }
 
-#gmap-auto1map-gmap0 span,
-#gmap-auto1map-gmap0 .gmnoprint {
-	display: none;
-}
-
 /* Primary Navigation
 ---------------------------------------------------------- */
 
