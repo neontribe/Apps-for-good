@@ -32,9 +32,34 @@ $(document).ready(function(){
 		$('#block-quicktabs-cdi_features .quicktabs_tabs li a').eq(i).text( title );
 	}
 	
+	// App Media Carousel
+	var tabs = $('#block-quicktabs-app_media .quicktabs_tabs').children('li');
+	$.each(tabs, function(){
+		var $this = $(this);
+		
+		// Add span for background image
+		$this.children('a').wrapInner('<span class="tab-text" />');
+		
+		// Add media type class
+		var text = $this.text();
+		var words = text.split(' ');
+		var last = words[words.length - 1].toLowerCase();
+		var tabclass = 'tab-' + last;
+		$this.addClass(tabclass);
+		
+		// Active state arrow
+		if ($this.hasClass('active')) {
+			$('<span class="active-arrow" />').appendTo($this);
+		}
+	});
+	
 	// Get User's name from hidden span
 	$('.pane-left').children('h3').text( $('#header-top span.user_name').text() );
 	
+	
+	// Social Links
+	$('.social-links').parent().parent().addClass('social-links-container');
+	$('.social-links-container').children('.block-content').css('padding', '0');
 });
 
 

@@ -11,7 +11,7 @@ function afg_theme(){
     'user_register' => array(
       'arguments' => array('form' => NULL),
       'template' => 'user-register'
-    )
+    ),
   );
 }
 
@@ -65,7 +65,7 @@ function afg_preprocess_page(&$vars) {
   // If frontpage use page front template
   if(drupal_is_front_page()) {
 	  $vars['template_files'] = array('page-front');
-  }  
+  }
 
   // Automatically adjust layout for page with right sidebar content if no
   // explicit layout has been set.
@@ -75,6 +75,15 @@ function afg_preprocess_page(&$vars) {
     $css = array('screen' => array('theme' => array(drupal_get_path('theme', 'cube') . '/layout-sidebar.css' => TRUE)));
     $vars['styles'] .= drupal_get_css($css);
   }
+  
+  // Admin form template
+  //if (arg(0) != 'admin' && empty($vars['right']) && $vars['template_files'][] = 'page-node') {
+    //aray_unshift($vars['template_files'], 'page-admin-form');
+	//$vars['template_files'][] = 'page-admin-form';
+	
+	//dpm('a');
+  //}
+  //dpm($vars);
   
   // Header menu links
   $links = menu_navigation_links('menu-header-menu', 0);
@@ -292,6 +301,7 @@ function afg_preprocess_form_confirm(&$vars) {
 }
 */
 
+
 /*
 function afg_preprocess_gmap_view_gmap(&$vars) {
   $fh = fopen('/tmp/a4g.log', 'a'); 
@@ -302,6 +312,7 @@ function afg_preprocess_gmap_view_gmap(&$vars) {
   fclose($fh);
 }
 */
+
 
 // function afg__gmap_views_marker_label($view, $fields, $entry) {
   // return "XXX";

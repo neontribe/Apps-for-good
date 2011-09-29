@@ -45,10 +45,72 @@ function get_user_name() {
 	return check_plain($user->name);
 }
 
+function _set_form_field_globals(&$form) {
+	$form['taxonomy']['#collapsible'] = FALSE;
+	$form['taxonomy']['#collapsed'] = FALSE;
+	
+	$form['comment_settings']['#collapsible'] = FALSE;
+	$form['comment_settings']['#collapsed'] = FALSE;
+	
+	$form['path']['#collapsible'] = FALSE;
+	$form['path']['#collapsed'] = FALSE;
+	
+	$form['menu']['#collapsible'] = FALSE;
+	$form['menu']['#collapsed'] = FALSE;
+	
+	$form['og_register']['#collapsible'] = FALSE;
+	$form['og_register']['#collapsed'] = FALSE;
+	
+	$tax = $form['taxonomy'];
+	
+	if (isset($tax)) {
+		foreach ($tax as $key => $value) {
+			if (is_array($value)) {
+				$value['#collapsible'] = FALSE;
+				$value['#collapsed'] = FALSE;
+				$form['taxonomy'][$key] = $value;
+			}
+		}
+	}
+	
+	//$form['buttons']['save']['#value'] = t('Post');
+	
+	unset($form['spaces']);
+	unset($form['buttons']['preview']);
+	unset($form['attachments']['#description']);
+}
+
 function afg_theme_updates_form_alter(&$form, &$form_state, $form_id) {
-	// Collapse 'Groups' fielset on create user form
-	if ($form_id == 'ucreate_user_form') {
-        $form['og_register']['#collapsible'] = TRUE;
-        $form['og_register']['#collapsed'] = TRUE;
-    }
+	_set_form_field_globals($form);
+	
+	switch ($form_id) {
+		case 'ucreate_user_form':
+			//dpm(get_defined_vars());
+			break;
+		
+		// Create blog node form
+		case 'blog_node_form':
+		case 'request_for_help_node_form':
+		case 'group_media_video_node_form':
+			// 'Add a tag?' title
+			$tax = $form['taxonomy'];
+			
+			if (isset($tax)) {
+				foreach ($tax as $key => $value) {
+					if (is_array($value)) {
+						$value['#title'] = t('Add a tag?');
+						$form['taxonomy'][$key] = $value;
+					}
+				}
+			}
+			
+			break;
+	}
+}
+
+function _override_form_settings(&$form, $title = '') {
+	// Set page title
+	//if (strlen($title)) {
+		//drupal_set_title($title);
+	//}
 }
