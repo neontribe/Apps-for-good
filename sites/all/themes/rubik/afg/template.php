@@ -129,11 +129,12 @@ function afg_preprocess_page(&$vars) {
   }
 
   // Rewrite the page titles to remove the Home
-  if (strpos($vars['head_title'], 'Home') === 0 && !drupal_is_front_page()) {
+  if (strpos($vars['head_title'], 'Home') === 0) {
     $og = og_get_group_context();
     $title = $og->title;
-
-    $vars['head_title'] = str_replace('Home', $title, $vars['head_title']);
+    if (!empty($title)) {
+      $vars['head_title'] = str_replace('Home', $title, $vars['head_title']);
+    }
   }
 }
 
@@ -280,6 +281,16 @@ switch($obj->node_type) {
 }
   return $activity_update;
 } 
+
+// function afg_markup($element) {
+  // dpm($element, 'element');
+// }
+
+/*
+function afg_preprocess_form_confirm(&$vars) {
+  dpm($vars, 'VARS');
+}
+*/
 
 /*
 function afg_preprocess_gmap_view_gmap(&$vars) {
