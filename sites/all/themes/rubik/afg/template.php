@@ -128,7 +128,8 @@ function afg_preprocess_page(&$vars) {
 	  $vars['city'] = $node->field_centre_loc_details[0]['city'];
   }
 
-  if (strpos($vars['head_title'], 'Home') === 0) {
+  // Rewrite the page titles to remove the Home
+  if (strpos($vars['head_title'], 'Home') === 0 && !drupal_is_front_page()) {
     $og = og_get_group_context();
     $title = $og->title;
 
