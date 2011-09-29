@@ -1,0 +1,10 @@
+name = Neontribe GMap Customisation
+description = Custom functions on the GMap module
+
+dependencies[] = gmap
+
+package = Neontribe
+
+core = 6.x
+php = 5.0
+
