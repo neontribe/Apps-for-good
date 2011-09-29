@@ -409,6 +409,17 @@ input[type='submit'] {
 	width: 100% !important;
 }
 
+.gmap-popup a {
+	color: black;
+} 
+/*
+  <div class='views-field-title'>
+    <div class="views-field-title">
+      <span class="field-content">
+        <a href="/apps-for-good-sprint3/node/196">
+          City Academy Norwich
+ */
+
 #content-left .gmap {
 	height: 450px !important;
 }
