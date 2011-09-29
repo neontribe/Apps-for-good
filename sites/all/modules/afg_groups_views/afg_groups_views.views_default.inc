@@ -634,6 +634,7 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
+  $handler->override_option('title', 'Browse Apps');
   $handler->override_option('style_plugin', 'list');
   $handler = $view->new_display('block', 'Ideas', 'block_1');
   $handler->override_option('filters', array(
@@ -802,6 +803,7 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('block_caching', -1);
   $translatables['afg_app_directory'] = array(
     t('All'),
+    t('Browse Apps'),
     t('Builds'),
     t('Defaults'),
     t('Ideas'),
@@ -4263,7 +4265,7 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('relationships', array());
   $handler->override_option('fields', array(
     'title' => array(
-      'label' => 'LABEL HERE',
+      'label' => '',
       'alter' => array(
         'alter_text' => 0,
         'text' => '',
@@ -4287,7 +4289,7 @@ function afg_groups_views_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 1,
       'spaces' => array(
-        'frontpage' => 1,
+        'frontpage' => 0,
         'type' => 'spaces_og',
       ),
       'exclude' => 0,
@@ -4298,6 +4300,43 @@ function afg_groups_views_views_default_views() {
       'override' => array(
         'button' => 'Use default',
       ),
+    ),
+    'nid' => array(
+      'label' => 'Nid',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'spaces' => array(
+        'frontpage' => 0,
+        'type' => 'spaces_og',
+      ),
+      'exclude' => 0,
+      'id' => 'nid',
+      'table' => 'node',
+      'field' => 'nid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
     ),
   ));
   $handler->override_option('arguments', array());
@@ -4341,16 +4380,16 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('header_format', '6');
   $handler->override_option('header_empty', 0);
   $handler->override_option('use_pager', '0');
-  $handler->override_option('style_plugin', 'gmap');
+  $handler->override_option('style_plugin', 'ntgmap');
   $handler->override_option('style_options', array(
     'grouping' => '',
     'macro' => '[gmap ]',
     'datasource' => 'location',
     'latfield' => 'title',
     'lonfield' => 'title',
-    'markers' => 'nodetype',
+    'markers' => 'static',
     'markerfield' => 'title',
-    'markertype' => 'small white',
+    'markertype' => 'small pblue',
     'center_on_nodearg' => 0,
     'center_on_nodearg_arg' => '',
     'highlight_nodearg' => 0,

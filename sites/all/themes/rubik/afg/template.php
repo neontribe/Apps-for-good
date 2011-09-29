@@ -280,6 +280,17 @@ switch($obj->node_type) {
   return $activity_update;
 } 
 
+/*
+function afg_preprocess_gmap_view_gmap(&$vars) {
+  $fh = fopen('/tmp/a4g.log', 'a'); 
+  // fwrite($fh, var_export($vars, TRUE)); 
+  foreach ($vars['map_object']['markers'] as $k => $v) {
+    // fwrite($fh, str_pad($k, 15) . "=> " . var_export($v, TRUE) . "\n");
+  }
+  fclose($fh);
+}
+*/
+
 // function afg__gmap_views_marker_label($view, $fields, $entry) {
   // return "XXX";
 // }
@@ -289,3 +300,5 @@ switch($obj->node_type) {
 
 /**Shoutbox comment form**/
 // Moved to module afg_theme_updates to allow theme switching to work
+
+// vim: set filetype=php expandtab tabstop=2 shiftwidth=2 autoindent smartindent:
