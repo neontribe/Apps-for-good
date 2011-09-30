@@ -287,7 +287,6 @@ function afg_views_view_field__updates__block_1__atrium_activity($view, $handler
   }
   return $activity_update;
 } 
-
 /*count funtions*/
 // Moved to module afg_theme_updates to allow theme switching to work
 
