@@ -304,6 +304,14 @@ function afg_menu_item_link($link) {
   return theme_menu_item_link($link);
 }
 
+function afg_markup($element) {
+  if (strpos($element['#value'], 'og/users')) {
+    $og = og_get_group_context();
+    $element['#value'] = l('Cancel', $og->purl . '/supporters');
+  }
+  return theme_markup($element);
+}
+
 /*count funtions*/
 // Moved to module afg_theme_updates to allow theme switching to work
 
