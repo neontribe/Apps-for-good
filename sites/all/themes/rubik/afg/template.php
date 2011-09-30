@@ -6,8 +6,8 @@
 function afg_theme(){
   return array(
     'comment_form' => array(
-      	'arguments' => array('form' => NULL),
-  	),
+        'arguments' => array('form' => NULL),
+    ),
     'user_register' => array(
       'arguments' => array('form' => NULL),
       'template' => 'user-register'
@@ -20,7 +20,7 @@ function afg_theme(){
  */
 function _afg_show_message(&$vars, $message, $success = TRUE) {
     if (!$message)
-    	return false;
+      return false;
     
     $class = ($success) ? 'success' : 'error';
     $m = "<div class='messages $class'>$message</div>";
@@ -32,15 +32,15 @@ function _afg_show_message(&$vars, $message, $success = TRUE) {
  * Displays a login/register message in a standard atrium message format.
  */
 function _afg_override_login_message(&$vars) {
-	$msg = trim(check_plain(strip_tags($vars['messages'])));
+  $msg = trim(check_plain(strip_tags($vars['messages'])));
     
     if (strcmp($msg, 'You are not authorized to post comments.') == 0) {
-    	$nid = $vars['node']->nid;
+      $nid = $vars['node']->nid;
         
-		$m = '<a href="/user/login?destination=node/'. $nid .'#comment-form">Login</a>';
-    	$m .= ' or <a href="/user/register?destination=node/'. $nid .'#comment-form">register</a> to post comments</span>';
+    $m = '<a href="/user/login?destination=node/'. $nid .'#comment-form">Login</a>';
+      $m .= ' or <a href="/user/register?destination=node/'. $nid .'#comment-form">register</a> to post comments</span>';
     
-		_afg_show_message($vars, $m, FALSE);
+    _afg_show_message($vars, $m, FALSE);
     }
 }
 
@@ -55,16 +55,16 @@ function afg_preprocess_page(&$vars) {
   // Force using the correct template file
   if(count($vars['template_files']) > 1) {
     foreach($vars['template_files'] as $key => $template) {
-	  if(strcasecmp($template, 'page') === 0) {
-	    unset($vars['template_files'][$key]);
-	    break;
-	  }
+    if(strcasecmp($template, 'page') === 0) {
+      unset($vars['template_files'][$key]);
+      break;
+    }
     }
   }
   
   // If frontpage use page front template
   if(drupal_is_front_page()) {
-	  $vars['template_files'] = array('page-front');
+    $vars['template_files'] = array('page-front');
   }
 
   // Automatically adjust layout for page with right sidebar content if no
@@ -79,9 +79,9 @@ function afg_preprocess_page(&$vars) {
   // Admin form template
   //if (arg(0) != 'admin' && empty($vars['right']) && $vars['template_files'][] = 'page-node') {
     //aray_unshift($vars['template_files'], 'page-admin-form');
-	//$vars['template_files'][] = 'page-admin-form';
-	
-	//dpm('a');
+  //$vars['template_files'][] = 'page-admin-form';
+  
+  //dpm('a');
   //}
   //dpm($vars);
   
@@ -96,11 +96,11 @@ function afg_preprocess_page(&$vars) {
   $path = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
   
   foreach ($links as $key => $link){
-  	 // Add active state class
+     // Add active state class
      $classes = (strcmp($path, $link['href']) == 0) ? ' header-menu-active' : '';
      
      // Apply classes
-	 $links[$key]['attributes']['class'] .= ' header-menu-' . strtolower($links[$key]['title']);
+   $links[$key]['attributes']['class'] .= ' header-menu-' . strtolower($links[$key]['title']);
      $links[$key]['attributes']['class'] .= $classes;
   }
   
@@ -110,13 +110,13 @@ function afg_preprocess_page(&$vars) {
   // Set page title to group name
   $og = og_get_group_context();
   if ($og) {
-	$nid = $og->nid;
-	$node = node_load($nid);
+  $nid = $og->nid;
+  $node = node_load($nid);
   }
   
   if ($node) {
-	  $vars['title'] = $node->title;
-	  $vars['header_desc'] = $node->body;
+    $vars['title'] = $node->title;
+    $vars['header_desc'] = $node->body;
  /**website variable not in use in page.tpl**/
   //  if ($node->type == 'group_centre_school') {
   //    $website = $node->field_website[0]['url'];
@@ -132,9 +132,9 @@ function afg_preprocess_page(&$vars) {
       $region = db_result($res);
     
     }
-	
+  
     $vars['region'] = $region;
-	  $vars['city'] = $node->field_centre_loc_details[0]['city'];
+    $vars['city'] = $node->field_centre_loc_details[0]['city'];
   }
 
   // Rewrite the page titles to remove the Home
@@ -151,23 +151,23 @@ function afg_preprocess_page(&$vars) {
  * Theme links
  */
 function afg_links($links, $attributes = array('class' => 'links')) {
-	$suffix = '';
-	if(isset($links['subscribe'])) {
-		$title = $links['subscribe']['title'];
-		switch (strtolower($title)){
-			case 'leave this group':
-				$links['subscribe']['title'] = t('UnFollow');
-				$suffix = t('<p>You will not get any of the latest updates</p>');
-				break;
-			
-			default:
-				$links['subscribe']['title'] = t('Follow');
-				$suffix = t('<p><em>Why to sign-up:</em> You will get the latest updates of this app</p>');
-				break;
-		}
-	}
-	
-	return theme_links($links, $attributes) . $suffix;
+  $suffix = '';
+  if(isset($links['subscribe'])) {
+    $title = $links['subscribe']['title'];
+    switch (strtolower($title)){
+      case 'leave this group':
+        $links['subscribe']['title'] = t('UnFollow');
+        $suffix = t('<p>You will not get any of the latest updates</p>');
+        break;
+      
+      default:
+        $links['subscribe']['title'] = t('Follow');
+        $suffix = t('<p><em>Why to sign-up:</em> You will get the latest updates of this app</p>');
+        break;
+    }
+  }
+
+  return theme_links($links, $attributes) . $suffix;
 }
 
 
@@ -236,87 +236,57 @@ function computed_field_field_activity_link_compute($node, $field, &$node_field)
 
 function afg_views_view_field__updates__block_1__atrium_activity($view, $handler, $obj) {
 
-$title_link = '<div class="views-field-title"><a href= "node/' . $obj->nid . '">'. $obj->node_title . '<a/></div>';
+  $title_link = '<div class="views-field-title"><a href= "node/' . $obj->nid . '">'. $obj->node_title . '<a/></div>';
 
-
-switch($obj->node_type) {
-    case 'group_app_team':
-    case 'group_centre_school':
-    case 'page':
-    if ($obj->comments_uid) {
-	$user = user_load($obj->comments_uid);
-	$username = $user->name;
-	//dpm($user);
-	$activity_update = $username . ' commented on ' . $title_link;
-    } else {
-      $activity_update = $title_link;
-      if ($obj->node_changed > $obj->node_created) {
-          $activity_update .= ' updated.';
+  switch($obj->node_type) {
+      case 'group_app_team':
+      case 'group_centre_school':
+      case 'page':
+      if ($obj->comments_uid) {
+    $user = user_load($obj->comments_uid);
+    $username = $user->name;
+    //dpm($user);
+    $activity_update = $username . ' commented on ' . $title_link;
       } else {
-	  $activity_update .= ' created.';
+        $activity_update = $title_link;
+        if ($obj->node_changed > $obj->node_created) {
+            $activity_update .= ' updated.';
+        } else {
+      $activity_update .= ' created.';
+        }
       }
-    }
-    break;
-
-    case 'group_media_image':
-    case 'cdi_blog':
-    case 'request_for_help':
-    case 'blog':
-    case 'group_media_video':
-    if ($obj->comments_uid) {
-        $user = user_load($obj->comments_uid);
-        $username = $user->name;
-	//dpm($user);
-        $activity_update = $username . ' commented on ' . $title_link;
-    } else {
-      $sql='SELECT value FROM {purl} where id=' . $obj->node_og_ancestry_nid;
-      $res = db_query($sql);
-      $row = db_fetch_array($res);
-      $nodepath = $row[value];
-      $urlslug = '<a href=' . $nodepath . '>';
-      $activity_update = $urlslug . $obj->node_og_ancestry_title . '</a>';
-      if ($obj->node_changed > $obj->node_created) {
-          $activity_update .= ' updated ';
+      break;
+  
+      case 'group_media_image':
+      case 'cdi_blog':
+      case 'request_for_help':
+      case 'blog':
+      case 'group_media_video':
+      if ($obj->comments_uid) {
+          $user = user_load($obj->comments_uid);
+          $username = $user->name;
+          $activity_update = $username . ' commented on ' . $title_link;
       } else {
-          $activity_update .= ' created ';
+        $sql='SELECT value FROM {purl} where id=' . $obj->node_og_ancestry_nid;
+        $res = db_query($sql);
+        $row = db_fetch_array($res);
+        $nodepath = $row[value];
+        $urlslug = '<a href=' . $nodepath . '>';
+        $activity_update = $urlslug . $obj->node_og_ancestry_title . '</a>';
+        if ($obj->node_changed > $obj->node_created) {
+            $activity_update .= ' updated ';
+        } else {
+            $activity_update .= ' created ';
+        }
+        $activity_update .= $title_link;
       }
-      $activity_update .= $title_link;
-    }
-    break;
-    default:
-      $activity_update = '';
-    break;
-
-}
+      break;
+      default:
+        $activity_update = '';
+      break;
+  }
   return $activity_update;
 } 
-
-// function afg_markup($element) {
-  // dpm($element, 'element');
-// }
-
-/*
-function afg_preprocess_form_confirm(&$vars) {
-  dpm($vars, 'VARS');
-}
-*/
-
-
-/*
-function afg_preprocess_gmap_view_gmap(&$vars) {
-  $fh = fopen('/tmp/a4g.log', 'a'); 
-  // fwrite($fh, var_export($vars, TRUE)); 
-  foreach ($vars['map_object']['markers'] as $k => $v) {
-    // fwrite($fh, str_pad($k, 15) . "=> " . var_export($v, TRUE) . "\n");
-  }
-  fclose($fh);
-}
-*/
-
-
-// function afg__gmap_views_marker_label($view, $fields, $entry) {
-  // return "XXX";
-// }
 
 /*count funtions*/
 // Moved to module afg_theme_updates to allow theme switching to work
