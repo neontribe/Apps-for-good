@@ -862,6 +862,7 @@ input[type='submit'] {
 #content-right .views-field-mail a:after { content: " \2192"; }
 /*.views-field-field-website-url a:after { content: " \21D7"; }*/
 
+/*
 #content-right .social-links li > div,
 #content-right .social-links a {
 	display: inline;
@@ -879,6 +880,7 @@ input[type='submit'] {
 #content-right .social-links-container {
 	border: 0;
 }
+*/
 
 
 /* User Menu's:
@@ -2179,8 +2181,11 @@ body #header-top .account-menu-active a {
 
 
 
+.social-links  {
+	margin: 20px;
+}
 
-.app-links a {
+.social-links a {
 	color: #222;
 	font-size: 0.8em;
 	display: block;
@@ -2189,31 +2194,31 @@ body #header-top .account-menu-active a {
 	line-height: 1.3;
 }
 
-.app-links li div:last-child a {
+.social-links li div:last-child a {
 	border-bottom: 0;
 }
 
-.app-links .views-field-field-android-market-url a {
+.social-links .views-field-field-android-market-url a {
 	background: url('images/afg/icons/android.png') 5px center no-repeat;
 }
 
-.app-links .views-field-field-blackberry-appworld-url a {
+.social-links .views-field-field-blackberry-appworld-url a {
 	background: url('images/afg/icons/appworld.png') 5px center no-repeat;
 }
 
-.app-links .views-field-field-ios-app-store-url a {
+.social-links .views-field-field-ios-app-store-url a {
 	background: url('images/afg/icons/ios.png') 5px center no-repeat;
 }
 
-.app-links .views-field-field-facebook-account-url a {
+.social-links .views-field-field-facebook-account-url a {
 	background: url('images/afg/icons/facebook.png') 5px center no-repeat;
 }
 
-.app-links .views-field-field-twitter-account-url a {
+.social-links .views-field-field-twitter-account-url a {
 	background: url('images/afg/icons/twitter.png') 5px center no-repeat;
 }
 
-.app-links a:hover {
+.social-links a:hover {
 	background-color: #EAEAEA;
 }
 
