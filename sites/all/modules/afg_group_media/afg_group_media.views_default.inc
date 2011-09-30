@@ -817,7 +817,7 @@ function afg_group_media_views_default_views() {
       'label' => '',
       'alter' => array(
         'alter_text' => 1,
-        'text' => '<a href="[comments_link]/node/[nid]#comment-form" title="Make a comment">
+        'text' => '<a href="/node/[nid]#comment-form" title="Make a comment">
   <img src="/sites/all/themes/rubik/afg/images/afg/icons/carousel-comment.png" alt="Make a comment" />
 </a>',
         'make_link' => 0,
@@ -1059,7 +1059,7 @@ function afg_group_media_views_default_views() {
       'label' => '',
       'alter' => array(
         'alter_text' => 1,
-        'text' => '<a href="[comments_link]/node/[nid]#comment-form" title="Make a comment">
+        'text' => '<a href="/node/[nid]#comment-form" title="Make a comment">
   <img src="/sites/all/themes/rubik/afg/images/afg/icons/carousel-comment.png" alt="Make a comment" />
 </a>',
         'make_link' => 0,
@@ -1321,7 +1321,7 @@ function afg_group_media_views_default_views() {
       'label' => '',
       'alter' => array(
         'alter_text' => 1,
-        'text' => '<a href="[comments_link]/node/[nid]#comment-form" title="Make a comment">
+        'text' => '<a href="/node/[nid]#comment-form" title="Make a comment">
   <img src="/sites/all/themes/rubik/afg/images/afg/icons/carousel-comment.png" alt="Make a comment" />
 </a>',
         'make_link' => 0,
@@ -1575,7 +1575,7 @@ function afg_group_media_views_default_views() {
       'label' => '',
       'alter' => array(
         'alter_text' => 1,
-        'text' => '<a href="[comments_link]" title="Make a comment">
+        'text' => '<a href="/node/[nid]" title="Make a comment">
   <img src="/sites/all/themes/rubik/afg/images/afg/icons/carousel-comment.png" alt="Make a comment" />
 </a>',
         'make_link' => 0,
