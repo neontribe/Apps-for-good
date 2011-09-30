@@ -817,7 +817,7 @@ function afg_group_media_views_default_views() {
       'label' => '',
       'alter' => array(
         'alter_text' => 1,
-        'text' => '<a href="[comments_link]" title="Make a comment">
+        'text' => '<a href="[comments_link]/node/[nid]#comment-form" title="Make a comment">
   <img src="/sites/all/themes/rubik/afg/images/afg/icons/carousel-comment.png" alt="Make a comment" />
 </a>',
         'make_link' => 0,
@@ -977,6 +977,43 @@ function afg_group_media_views_default_views() {
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Problem Video', 'block_2');
   $handler->override_option('fields', array(
+    'nid' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'spaces' => array(
+        'frontpage' => 0,
+        'type' => 'spaces_og',
+      ),
+      'exclude' => 1,
+      'id' => 'nid',
+      'table' => 'node',
+      'field' => 'nid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
     'field_video_embed' => array(
       'label' => '',
       'alter' => array(
@@ -1022,7 +1059,7 @@ function afg_group_media_views_default_views() {
       'label' => '',
       'alter' => array(
         'alter_text' => 1,
-        'text' => '<a href="[comments_link]" title="Make a comment">
+        'text' => '<a href="[comments_link]/node/[nid]#comment-form" title="Make a comment">
   <img src="/sites/all/themes/rubik/afg/images/afg/icons/carousel-comment.png" alt="Make a comment" />
 </a>',
         'make_link' => 0,
@@ -1053,7 +1090,7 @@ function afg_group_media_views_default_views() {
       ),
       'relationship' => 'none',
     ),
-    'view_node' => array(
+    'view_node_1' => array(
       'label' => '',
       'alter' => array(
         'alter_text' => 0,
@@ -1078,7 +1115,7 @@ function afg_group_media_views_default_views() {
       'empty_zero' => 0,
       'text' => '',
       'exclude' => 0,
-      'id' => 'view_node',
+      'id' => 'view_node_1',
       'table' => 'node',
       'field' => 'view_node',
       'override' => array(
@@ -1169,6 +1206,43 @@ function afg_group_media_views_default_views() {
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Logo', 'block_3');
   $handler->override_option('fields', array(
+    'nid' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'spaces' => array(
+        'frontpage' => 0,
+        'type' => 'spaces_og',
+      ),
+      'exclude' => 1,
+      'id' => 'nid',
+      'table' => 'node',
+      'field' => 'nid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
     'field_group_image_fid' => array(
       'label' => '',
       'alter' => array(
@@ -1247,7 +1321,7 @@ function afg_group_media_views_default_views() {
       'label' => '',
       'alter' => array(
         'alter_text' => 1,
-        'text' => '<a href="[path]#comments" title="Make a comment">
+        'text' => '<a href="[comments_link]/node/[nid]#comment-form" title="Make a comment">
   <img src="/sites/all/themes/rubik/afg/images/afg/icons/carousel-comment.png" alt="Make a comment" />
 </a>',
         'make_link' => 0,
@@ -1394,6 +1468,43 @@ function afg_group_media_views_default_views() {
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Biz Plan', 'block_4');
   $handler->override_option('fields', array(
+    'nid' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'spaces' => array(
+        'frontpage' => 0,
+        'type' => 'spaces_og',
+      ),
+      'exclude' => 1,
+      'id' => 'nid',
+      'table' => 'node',
+      'field' => 'nid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
     'title' => array(
       'label' => '',
       'alter' => array(
