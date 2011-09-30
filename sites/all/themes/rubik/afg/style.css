@@ -1354,6 +1354,7 @@ input[type='submit'] {
 	bottom:20px;
 }
 
+#block-quicktabs-app_media .views-field-view-node-1 a,
 #block-quicktabs-app_media .views-field-view-node a {
 position:absolute;
 	padding-left: 14px;
