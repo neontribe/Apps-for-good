@@ -288,6 +288,22 @@ function afg_views_view_field__updates__block_1__atrium_activity($view, $handler
   return $activity_update;
 } 
 
+function afg_menu_item_link($link) {
+  if (
+    in_array(
+      $link['path'],
+      array(
+        'user/%/dashboard',
+        'user/%/edit/groups'
+      )
+    )
+  ) {
+    return '';
+  }
+  
+  return theme_menu_item_link($link);
+}
+
 /*count funtions*/
 // Moved to module afg_theme_updates to allow theme switching to work
 
