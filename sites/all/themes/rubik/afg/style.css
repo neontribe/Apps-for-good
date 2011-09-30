@@ -1366,7 +1366,7 @@ input[type='submit'] {
 	bottom: 20px;
 }
 
-#block-quicktabs-cdi_features .views-field-view-node,
+#block-quicktabs-cdi_features .views-field-view-node a,
 #block-quicktabs-app_media .views-field-view-node-1 a,
 #block-quicktabs-app_media .views-field-view-node a {
 	position: absolute;
@@ -1386,6 +1386,7 @@ input[type='submit'] {
 
 #block-quicktabs-cdi_features  ul.quicktabs_tabs.quicktabs-style-navlist-afg li a {
 	/* padding: 3px 0 8px; */
+	color: #666;
 	padding: 6px 0 12px;
 }
 
