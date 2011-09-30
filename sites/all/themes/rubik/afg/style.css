@@ -861,15 +861,17 @@ input[type='submit'] {
 #content-right .views-field-mail a:after { content: " \2192"; }
 /*.views-field-field-website-url a:after { content: " \21D7"; }*/
 
+#content-right .social-links li > div,
 #content-right .social-links a {
 	display: inline;
+	
 }
 
-#content-right .social-links .views-row span {
+#content-right .social-links li > div {
 	margin: 0 10px 0 0;
 }
 
-#content-right .social-links .views-row span:last-child {
+#content-right .social-links li div:last-child {
 	margin-right: 0;
 }
 

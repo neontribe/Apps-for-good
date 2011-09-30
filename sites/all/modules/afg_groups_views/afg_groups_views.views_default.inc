@@ -952,7 +952,6 @@ function afg_groups_views_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'My applications');
-  $handler->override_option('css_class', 'social-links');
   $handler->override_option('empty', 'No groups found.');
   $handler->override_option('use_ajax', TRUE);
   $handler->override_option('items_per_page', 20);
@@ -2634,6 +2633,9 @@ function afg_groups_views_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', '');
+  $handler->override_option('css_class', 'social-links');
+  $handler->override_option('empty', '');
+  $handler->override_option('empty_format', '5');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $translatables['groups_listing_app_team'] = array(
@@ -5307,6 +5309,49 @@ function afg_groups_views_views_default_views() {
       'id' => 'field_twitter_account_url',
       'table' => 'node_data_field_twitter_account',
       'field' => 'field_twitter_account_url',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+    'field_website_url' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 1,
+        'text' => '<a href="[field_website_url]" title="Visit our website">
+  <img src="/sites/all/themes/rubik/afg/images/afg/icons/website.png" alt="Website" />
+</a>',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 0,
+      'label_type' => 'none',
+      'format' => 'plain',
+      'multiple' => array(
+        'group' => TRUE,
+        'multiple_number' => '',
+        'multiple_from' => '',
+        'multiple_reversed' => FALSE,
+      ),
+      'exclude' => 0,
+      'id' => 'field_website_url',
+      'table' => 'node_data_field_website',
+      'field' => 'field_website_url',
       'override' => array(
         'button' => 'Use default',
       ),
