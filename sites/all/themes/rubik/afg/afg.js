@@ -46,11 +46,6 @@ $(document).ready(function(){
 		var last = words[words.length - 1].toLowerCase();
 		var tabclass = 'tab-' + last;
 		$this.addClass(tabclass);
-		
-		// Active state arrow
-		if ($this.hasClass('active')) {
-			$('<span class="active-arrow" />').appendTo($this);
-		}
 	});
 	
 	// Get User's name from hidden span
