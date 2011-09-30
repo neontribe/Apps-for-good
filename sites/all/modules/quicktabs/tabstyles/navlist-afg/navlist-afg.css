@@ -11,6 +11,7 @@ ul.quicktabs_tabs.quicktabs-style-navlist-afg li {
   padding: 0;
   margin-right: 9px;
 }
+
 ul.quicktabs_tabs.quicktabs-style-navlist-afg li a {
   display: block;
   text-align: right;
@@ -29,7 +30,7 @@ ul.quicktabs_tabs.quicktabs-style-navlist-afg li a {
   padding: 54px 0 0;
 }
 
-ul.quicktabs_tabs.quicktabs-style-navlist-afg li a span {
+#block-quicktabs-app_media ul.quicktabs_tabs.quicktabs-style-navlist-afg li a span {
 	background: #EEE;
 	display: block;
 	color: #858585;
@@ -37,15 +38,15 @@ ul.quicktabs_tabs.quicktabs-style-navlist-afg li a span {
 	line-height: 17px;
 }
 
-ul.quicktabs_tabs.quicktabs-style-navlist-afg li a:hover {
+#block-quicktabs-app_media ul.quicktabs_tabs.quicktabs-style-navlist-afg li a:hover {
   background-color: #EEE;
 }
-ul.quicktabs_tabs.quicktabs-style-navlist-afg li.active a {
+#block-quicktabs-app_media ul.quicktabs_tabs.quicktabs-style-navlist-afg li.active a {
   color: #FFF;
   background-color: #EEE;
 }
 
-ul.quicktabs_tabs.quicktabs-style-navlist-afg li.active a .tab-text {
+#block-quicktabs-app_media ul.quicktabs_tabs.quicktabs-style-navlist-afg li.active a .tab-text {
 	background: #635f5c;
 	color: #EEE
 }
