@@ -116,7 +116,10 @@ function afg_roles_user_default_permissions() {
   // Exported permission: administer organic groups
   $permissions['administer organic groups'] = array(
     'name' => 'administer organic groups',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'CDI Employee',
+      '1' => 'Educator',
+    ),
   );
 
   // Exported permission: administer quicktabs
@@ -152,9 +155,7 @@ function afg_roles_user_default_permissions() {
   // Exported permission: assign user roles
   $permissions['assign user roles'] = array(
     'name' => 'assign user roles',
-    'roles' => array(
-      '0' => 'CDI Employee',
-    ),
+    'roles' => array(),
   );
 
   // Exported permission: can disable taxonomy images
@@ -187,7 +188,11 @@ function afg_roles_user_default_permissions() {
   // Exported permission: create cdi_blog content
   $permissions['create cdi_blog content'] = array(
     'name' => 'create cdi_blog content',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'App team',
+      '1' => 'CDI Employee',
+      '2' => 'Educator',
+    ),
   );
 
   // Exported permission: create group_app_team content
@@ -469,7 +474,9 @@ function afg_roles_user_default_permissions() {
   // Exported permission: edit own book content
   $permissions['edit own book content'] = array(
     'name' => 'edit own book content',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'Educator',
+    ),
   );
 
   // Exported permission: edit own cdi_blog content
