@@ -2174,7 +2174,8 @@ body #header-top .account-menu-active a {
 	width: 55%;
 }
 
-/* Social Network Icons */
+/* Social Network Header
+---------------------------------------------------------- */
 
 #prof-soc-widgets {
 	margin: 12px 0 0;
@@ -2196,9 +2197,8 @@ body #header-top .account-menu-active a {
 	margin-left: 15px;
 }
 
-
-
-
+/* Social Links
+---------------------------------------------------------- */
 
 .social-links  {
 	margin: 20px;
@@ -2245,9 +2245,48 @@ body #header-top .account-menu-active a {
 	background-color: #EAEAEA;
 }
 
+/* Recent Activity
+---------------------------------------------------------- */
 
-/* merge resolution.... */
+#content-right .the-centre .view-header {
+	margin: 5px 0 20px;
+}
 
+#content-right .the-centre .view-header p {
+	color: #555;
+	font-size: 1.1em;
+}
+
+#content-right .the-centre .views-field-field-logo-fid a {
+	float: left;
+	margin: 0 8px 0 0;
+}
+
+#content-right .the-centre .views-field-title a {
+	color: #000;
+	font-size: 0.9em;
+	font-weight: bold;
+	display: inline;
+}
+
+#content-right .the-centre .views-field-title a:hover {
+	padding: 0 0 2px;
+	border-bottom: 2px solid #000;
+}
+
+#content-right .the-centre .views-field-city,
+#content-right .the-centre .views-field-province {
+	color: #555;
+	font-size: 0.8em;
+	word-wrap: break-word;
+}
+
+#content-right .the-centre .views-field-city {
+	margin: 0 -5px 0 0;
+}
+
+/* Admin Forms - Adding
+---------------------------------------------------------- */
 
 .page-node-add  h2 {
 	margin: 0 0 10px;

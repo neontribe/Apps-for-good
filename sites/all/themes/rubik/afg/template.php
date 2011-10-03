@@ -48,6 +48,12 @@ function _afg_override_login_message(&$vars) {
  * Preprocessor for theme('page').
  */
 function afg_preprocess_page(&$vars) {
+  // if we are displaying a node and the node has dashboard show that instead
+  $arg2 = arg(2);
+  if (!$vars['is_front'] && empty($arg2)) {
+    $og = og_get_group_context();
+    drupal_goto($og->purl);
+  }
     
   // Override default error message and prompt login
   _afg_override_login_message($vars);
