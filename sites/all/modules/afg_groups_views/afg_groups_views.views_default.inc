@@ -635,7 +635,7 @@ function afg_groups_views_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'Browse Apps');
-  $handler->override_option('use_pager', 'mini');
+  $handler->override_option('use_pager', '1');
   $handler->override_option('style_plugin', 'list');
   $handler = $view->new_display('block', 'Ideas', 'block_1');
   $handler->override_option('filters', array(
