@@ -240,6 +240,72 @@ function computed_field_field_activity_link_compute($node, $field, &$node_field)
   $node_field[0]['value'] = $afg_activity_link;
 }
 
+//NOT in use node cannot detect if the view is displaying it's content
+function computed_field_field_activity_update_title_compute($node, $field, &$node_field) {
+$title_link = '<div class="views-field-title"><a href= "node/' . $node->nid . '">'. $node->title . '<a/></div>';
+
+//TODO Comment case
+
+//get group number
+$vals = array_values($node->og_groups);
+$group_num = $vals[0];
+
+  switch($node->type) {
+      case 'group_app_team':
+      case 'group_centre_school':
+      case 'page':
+      if ($node->comments_uid) {
+    $user = user_load($node->comments_uid);
+    $username = $user->name;
+    //dpm($user);
+    $activity_update = $username . ' commented on ' . $title_link;
+      } else {
+        $activity_update = $title_link;
+        if ($node->changed > $node->created) {
+            $activity_update .= ' updated.';
+        } else {
+      $activity_update .= ' created.';
+        }
+      }
+      break;
+
+      case 'group_media_image':
+      case 'cdi_blog':
+      case 'request_for_help':
+      case 'blog':
+      case 'group_media_video':
+dpm($node);
+      if ($node->comments_uid) {
+          $user = user_load($node->comments_uid);
+          $username = $user->name;
+          $activity_update = $username . ' commented on ' . $title_link;
+      } else {
+        $sql='SELECT value FROM {purl} where id=' . $group_num;
+        $res = db_query($sql);
+        $row = db_fetch_array($res);
+        $nodepath = $row[value];
+        $sql = 'SELECT title FROM {node} where nid=' . $group_num;
+	$res = db_query($sql);
+	$row = db_fetch_array($res);
+	$group_name = $row[title];
+        $urlslug = '<a href=' . $nodepath . '>';
+        $activity_update = $urlslug . $group_name . '</a>';
+        if ($node->changed > $node->created) {
+            $activity_update .= ' updated ';
+        } else {
+            $activity_update .= ' created ';
+        }
+        $activity_update .= $title_link;
+      }
+      break;
+      default:
+        $activity_update = '';
+      break;
+  }
+  dpm($activity_update);
+  $node_field[0]['value'] = $activity_update;
+}
+
 
 function afg_views_view_field__updates__block_1__atrium_activity($view, $handler, $obj) {
 

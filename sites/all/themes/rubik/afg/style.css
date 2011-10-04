@@ -241,8 +241,9 @@ padding: 4px 9px;
 #content-left .view-updates li:after,
 #content-left .view-afg-app-directory li:after,
 #content-right .view-groups-listing-centre-school li:after,
-#content-left .view-activity-listing li:after,
-#content-left .view-shoutbox-shouts li:after {
+/** #content-left .view-activity-listing li:after */
+#content-left .view-shoutbox-shouts li:after,
+#content-left .activity-info li:after {
     content: ".";
     display: block;
     height: 0;
@@ -1071,6 +1072,25 @@ input[type='submit'] {
 	text-align: center;
 	background: #FFF;
 }
+
+
+/**Activity Updates Title fields**/
+#content-left .activity-info {
+	float: right;	
+}
+
+#content-left .activity-info .views-field-atrium-activity-timestamp {
+	float: right;
+}
+
+#content-left .activity-info .activity-group-comment {
+	clear: both;
+	display: block;
+	float: right;
+}
+
+
+
 	
 /* Centres
 ---------------------------------------------------------- */
@@ -1537,10 +1557,9 @@ li.tab-plan a {  background:url('images/afg/icons/afg_blog-icon.gif')  no-repeat
 
 #content-left .view-activity-listing .views-field-atrium-activity,
 #content-left .view-updates .views-field-atrium-activity {
-	clear: both;
 	background: #0D84BE;
-	padding: 3px 6px;
-	margin: 5px 0 10px;
+	padding: 5px 15px;
+	margin: 0px !important;
 }
 
 #content-left .view-activity-listing .views-field-timestamp {
@@ -2151,8 +2170,8 @@ body #header-top .account-menu-active a {
 #content-left .recent-activity .views-field-atrium-activity {
 	display: block;
 	float: left;
-	width: 99%;
-	margin-top: 5px;
+	margin-top: 0px;
+	width: 55%;
 }
 
 /* Social Network Header
