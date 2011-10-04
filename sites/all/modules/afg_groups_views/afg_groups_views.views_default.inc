@@ -634,7 +634,6 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'Browse Apps');
   $handler->override_option('use_pager', '1');
   $handler->override_option('style_plugin', 'list');
   $handler = $view->new_display('block', 'Ideas', 'block_1');
@@ -804,7 +803,6 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('block_caching', -1);
   $translatables['afg_app_directory'] = array(
     t('All'),
-    t('Browse Apps'),
     t('Builds'),
     t('Defaults'),
     t('Ideas'),
@@ -1397,7 +1395,7 @@ function afg_groups_views_views_default_views() {
       ),
     ),
   ));
-  $handler->override_option('title', 'Applications');
+  $handler->override_option('title', 'Browse Apps');
   $handler->override_option('empty', '');
   $handler->override_option('use_ajax', FALSE);
   $handler->override_option('items_per_page', 25);
@@ -3041,10 +3039,10 @@ return TRUE;',
   $translatables['groups_listing_app_team'] = array(
     t('About this App'),
     t('App Links'),
-    t('Applications'),
     t('Archived applications'),
     t('Block: My applications (sidebar)'),
     t('Block: User applications'),
+    t('Browse Apps'),
     t('Centre'),
     t('Defaults'),
     t('My applications'),
