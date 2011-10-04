@@ -129,7 +129,7 @@ function afg_profile_content_default_fields() {
     ),
     'url' => 0,
     'title' => 'value',
-    'title_value' => 'Facebook',
+    'title_value' => 'Facebook profile',
     'enable_tokens' => 0,
     'validate_url' => 1,
     'widget' => array(
@@ -203,13 +203,12 @@ function afg_profile_content_default_fields() {
     ),
     'url' => 0,
     'title' => 'value',
-    'title_value' => 'LinkedIn',
+    'title_value' => 'LinkedIn profile',
     'enable_tokens' => 0,
     'validate_url' => 1,
     'widget' => array(
       'default_value' => array(
         '0' => array(
-          'title' => '',
           'url' => '',
         ),
       ),
@@ -730,7 +729,7 @@ function afg_profile_content_default_fields() {
     ),
     'url' => 0,
     'title' => 'value',
-    'title_value' => 'Twitter',
+    'title_value' => 'Twitter profile',
     'enable_tokens' => 0,
     'validate_url' => 1,
     'widget' => array(
