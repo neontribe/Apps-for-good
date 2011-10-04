@@ -1,0 +1,8 @@
+core = "6.x"
+dependencies[] = "afg_group_definitions"
+dependencies[] = "afg_roles"
+dependencies[] = "og_user_roles"
+dependencies[] = "spaces_user"
+description = "Menu item for AFG Group User Management"
+name = "afg_manage_group_users"
+package = "Features"

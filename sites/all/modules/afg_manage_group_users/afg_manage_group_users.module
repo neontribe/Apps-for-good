@@ -1,0 +1,25 @@
+<?php
+
+function afg_manage_group_users_menu() {
+  $items = array();
+    
+  $items['node/add/groupuser'] = array(
+    'title' => t('Member'),
+    'description' => t('Add A Group Member'),
+    'access arguments' => array('create users'),
+    'page callback' => 'afg_manage_group_users_ogredirect',
+    'type' => MENU_NORMAL_ITEM,
+  );
+  
+   
+  
+  return $items;
+}
+
+function afg_manage_group_users_og_ucreate_redirect() {
+    $space = !isset($space) ? spaces_get_space() : $space;
+    drupal_goto(
+      'og/users/' . $space->id  . '/ucreate',
+      'destination=og/users/' . $space->id  . '/roles'
+    );
+}
