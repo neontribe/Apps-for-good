@@ -403,9 +403,10 @@ function afg_profile_content_default_fields() {
       'field_name' => 'field_profile_organization',
       'type_name' => 'profile',
       'display_settings' => array(
+        'weight' => 0,
+        'parent' => '',
         'label' => array(
           'format' => 'above',
-          'exclude' => 0,
         ),
         'teaser' => array(
           'format' => 'default',
@@ -431,7 +432,6 @@ function afg_profile_content_default_fields() {
           'format' => 'default',
           'exclude' => 0,
         ),
-        'weight' => 0,
       ),
       'widget_active' => '1',
       'type' => 'text',
@@ -468,9 +468,10 @@ function afg_profile_content_default_fields() {
       'field_name' => 'field_profile_telephone',
       'type_name' => 'profile',
       'display_settings' => array(
+        'weight' => 0,
+        'parent' => '',
         'label' => array(
           'format' => 'above',
-          'exclude' => 0,
         ),
         'teaser' => array(
           'format' => 'default',
@@ -496,7 +497,6 @@ function afg_profile_content_default_fields() {
           'format' => 'default',
           'exclude' => 0,
         ),
-        'weight' => 0,
       ),
       'widget_active' => '1',
       'type' => 'text',
@@ -719,19 +719,20 @@ function afg_profile_content_default_fields() {
       'field_name' => 'field_linkedin_account',
       'type_name' => 'profile',
       'display_settings' => array(
+        'weight' => '35',
+        'parent' => '',
         'label' => array(
           'format' => 'above',
-          'exclude' => 0,
-        ),
-        '5' => array(
-          'format' => 'default',
-          'exclude' => 0,
         ),
         'teaser' => array(
           'format' => 'default',
           'exclude' => 0,
         ),
         'full' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '5' => array(
           'format' => 'default',
           'exclude' => 0,
         ),
@@ -812,19 +813,20 @@ function afg_profile_content_default_fields() {
       'field_name' => 'field_supporter_website',
       'type_name' => 'profile',
       'display_settings' => array(
+        'weight' => '38',
+        'parent' => '',
         'label' => array(
           'format' => 'above',
-          'exclude' => 0,
-        ),
-        '5' => array(
-          'format' => 'default',
-          'exclude' => 0,
         ),
         'teaser' => array(
           'format' => 'default',
           'exclude' => 0,
         ),
         'full' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '5' => array(
           'format' => 'default',
           'exclude' => 0,
         ),
@@ -905,19 +907,20 @@ function afg_profile_content_default_fields() {
       'field_name' => 'field_supporter_location',
       'type_name' => 'profile',
       'display_settings' => array(
+        'weight' => '39',
+        'parent' => '',
         'label' => array(
           'format' => 'above',
-          'exclude' => 0,
-        ),
-        '5' => array(
-          'format' => 'default',
-          'exclude' => 0,
         ),
         'teaser' => array(
           'format' => 'default',
-          'exclude' => 0,
+          'exclude' => 1,
         ),
         'full' => array(
+          'format' => 'default',
+          'exclude' => 1,
+        ),
+        '5' => array(
           'format' => 'default',
           'exclude' => 0,
         ),
@@ -3224,9 +3227,10 @@ function afg_profile_content_default_fields() {
       'field_name' => 'field_profile_organization',
       'type_name' => 'profile',
       'display_settings' => array(
+        'weight' => 0,
+        'parent' => '',
         'label' => array(
           'format' => 'above',
-          'exclude' => 0,
         ),
         'teaser' => array(
           'format' => 'default',
@@ -3252,7 +3256,6 @@ function afg_profile_content_default_fields() {
           'format' => 'default',
           'exclude' => 0,
         ),
-        'weight' => 0,
       ),
       'widget_active' => '1',
       'type' => 'text',
@@ -3289,9 +3292,10 @@ function afg_profile_content_default_fields() {
       'field_name' => 'field_profile_telephone',
       'type_name' => 'profile',
       'display_settings' => array(
+        'weight' => 0,
+        'parent' => '',
         'label' => array(
           'format' => 'above',
-          'exclude' => 0,
         ),
         'teaser' => array(
           'format' => 'default',
@@ -3317,7 +3321,6 @@ function afg_profile_content_default_fields() {
           'format' => 'default',
           'exclude' => 0,
         ),
-        'weight' => 0,
       ),
       'widget_active' => '1',
       'type' => 'text',
@@ -3540,19 +3543,20 @@ function afg_profile_content_default_fields() {
       'field_name' => 'field_linkedin_account',
       'type_name' => 'profile',
       'display_settings' => array(
+        'weight' => '35',
+        'parent' => '',
         'label' => array(
           'format' => 'above',
-          'exclude' => 0,
-        ),
-        '5' => array(
-          'format' => 'default',
-          'exclude' => 0,
         ),
         'teaser' => array(
           'format' => 'default',
           'exclude' => 0,
         ),
         'full' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '5' => array(
           'format' => 'default',
           'exclude' => 0,
         ),
@@ -3633,19 +3637,20 @@ function afg_profile_content_default_fields() {
       'field_name' => 'field_supporter_website',
       'type_name' => 'profile',
       'display_settings' => array(
+        'weight' => '38',
+        'parent' => '',
         'label' => array(
           'format' => 'above',
-          'exclude' => 0,
-        ),
-        '5' => array(
-          'format' => 'default',
-          'exclude' => 0,
         ),
         'teaser' => array(
           'format' => 'default',
           'exclude' => 0,
         ),
         'full' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '5' => array(
           'format' => 'default',
           'exclude' => 0,
         ),
@@ -3726,19 +3731,20 @@ function afg_profile_content_default_fields() {
       'field_name' => 'field_supporter_location',
       'type_name' => 'profile',
       'display_settings' => array(
+        'weight' => '39',
+        'parent' => '',
         'label' => array(
           'format' => 'above',
-          'exclude' => 0,
-        ),
-        '5' => array(
-          'format' => 'default',
-          'exclude' => 0,
         ),
         'teaser' => array(
           'format' => 'default',
-          'exclude' => 0,
+          'exclude' => 1,
         ),
         'full' => array(
+          'format' => 'default',
+          'exclude' => 1,
+        ),
+        '5' => array(
           'format' => 'default',
           'exclude' => 0,
         ),
