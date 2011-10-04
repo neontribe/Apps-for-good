@@ -45,7 +45,7 @@ function afg_group_media_node_info() {
     'group_media_image' => array(
       'name' => t('Image'),
       'module' => 'features',
-      'description' => t('An Image attched to a group.'),
+      'description' => t('An Image attached to a group.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'has_body' => '1',

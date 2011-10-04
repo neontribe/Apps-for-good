@@ -59,7 +59,7 @@ function afg_group_media_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_controls_request_for_help';
-  $strongarm->value = '1';
+  $strongarm->value = '3';
   $export['comment_controls_request_for_help'] = $strongarm;
 
   $strongarm = new stdClass;
@@ -150,7 +150,7 @@ function afg_group_media_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_group_media_image';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['comment_form_location_group_media_image'] = $strongarm;
 
   $strongarm = new stdClass;
@@ -199,7 +199,7 @@ function afg_group_media_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_group_media_image';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['comment_preview_group_media_image'] = $strongarm;
 
   $strongarm = new stdClass;
@@ -220,7 +220,7 @@ function afg_group_media_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_request_for_help';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['comment_preview_request_for_help'] = $strongarm;
 
   $strongarm = new stdClass;
@@ -234,7 +234,7 @@ function afg_group_media_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_group_media_image';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['comment_subject_field_group_media_image'] = $strongarm;
 
   $strongarm = new stdClass;
@@ -248,14 +248,14 @@ function afg_group_media_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_group_media_video';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['comment_subject_field_group_media_video'] = $strongarm;
 
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_request_for_help';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['comment_subject_field_request_for_help'] = $strongarm;
 
   $strongarm = new stdClass;
