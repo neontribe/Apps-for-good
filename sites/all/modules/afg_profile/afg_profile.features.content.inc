@@ -529,12 +529,16 @@ function afg_profile_content_default_fields() {
         'module' => 'text',
       ),
     ),
-    'field_profile_url' => array(
-      'field_name' => 'field_profile_url',
-      'type_name' => 'profile',
+    'field_twitter_account' => array(
+      'field_name' => 'field_twitter_account',
+      'type_name' => 'group_centre_school',
       'display_settings' => array(
         'label' => array(
           'format' => 'above',
+          'exclude' => 0,
+        ),
+        '5' => array(
+          'format' => 'default',
           'exclude' => 0,
         ),
         'teaser' => array(
@@ -561,45 +565,73 @@ function afg_profile_content_default_fields() {
           'format' => 'default',
           'exclude' => 0,
         ),
-        'weight' => 0,
       ),
       'widget_active' => '1',
-      'type' => 'text',
+      'type' => 'link',
       'required' => '0',
       'multiple' => '0',
-      'db_storage' => '1',
-      'module' => 'text',
+      'db_storage' => '0',
+      'module' => 'link',
       'active' => '1',
       'locked' => '0',
       'columns' => array(
-        'value' => array(
-          'type' => 'text',
-          'size' => 'big',
+        'url' => array(
+          'type' => 'varchar',
+          'length' => 2048,
           'not null' => FALSE,
           'sortable' => TRUE,
-          'views' => TRUE,
+        ),
+        'title' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'attributes' => array(
+          'type' => 'text',
+          'size' => 'medium',
+          'not null' => FALSE,
         ),
       ),
-      'text_processing' => 0,
-      'max_length' => '',
-      'allowed_values' => '',
-      'allowed_values_php' => '',
+      'attributes' => array(
+        'target' => 'default',
+        'rel' => 'nofollow',
+        'class' => '',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => '80',
+      ),
+      'url' => 0,
+      'title' => 'value',
+      'title_value' => 'Twitter',
+      'enable_tokens' => 0,
+      'validate_url' => 1,
       'widget' => array(
-        'rows' => NULL,
-        'size' => NULL,
-        'label' => 'URL',
-        'weight' => '9',
-        'description' => '',
-        'type' => 'text_textfield',
-        'module' => 'text',
+        'default_value' => array(
+          '0' => array(
+            'title' => '',
+            'url' => '',
+          ),
+        ),
+        'default_value_php' => NULL,
+        'label' => 'Twitter Account',
+        'weight' => '34',
+        'description' => 'Enter your Twitter account address',
+        'type' => 'link',
+        'module' => 'link',
       ),
     ),
-    'field_profile_address' => array(
-      'field_name' => 'field_profile_address',
-      'type_name' => 'profile',
+    'field_facebook_account' => array(
+      'field_name' => 'field_facebook_account',
+      'type_name' => 'group_centre_school',
       'display_settings' => array(
         'label' => array(
           'format' => 'above',
+          'exclude' => 0,
+        ),
+        '5' => array(
+          'format' => 'default',
           'exclude' => 0,
         ),
         'teaser' => array(
@@ -626,47 +658,65 @@ function afg_profile_content_default_fields() {
           'format' => 'default',
           'exclude' => 0,
         ),
-        'weight' => 0,
       ),
       'widget_active' => '1',
-      'type' => 'text',
+      'type' => 'link',
       'required' => '0',
       'multiple' => '0',
-      'db_storage' => '1',
-      'module' => 'text',
+      'db_storage' => '0',
+      'module' => 'link',
       'active' => '1',
       'locked' => '0',
       'columns' => array(
-        'value' => array(
-          'type' => 'text',
-          'size' => 'big',
+        'url' => array(
+          'type' => 'varchar',
+          'length' => 2048,
           'not null' => FALSE,
           'sortable' => TRUE,
-          'views' => TRUE,
         ),
-        'format' => array(
-          'type' => 'int',
-          'unsigned' => TRUE,
+        'title' => array(
+          'type' => 'varchar',
+          'length' => 255,
           'not null' => FALSE,
-          'views' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'attributes' => array(
+          'type' => 'text',
+          'size' => 'medium',
+          'not null' => FALSE,
         ),
       ),
-      'text_processing' => 1,
-      'max_length' => '',
-      'allowed_values' => '',
-      'allowed_values_php' => '',
+      'attributes' => array(
+        'target' => 'default',
+        'rel' => 'nofollow',
+        'class' => '',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => '80',
+      ),
+      'url' => 0,
+      'title' => 'value',
+      'title_value' => 'Facebook',
+      'enable_tokens' => 0,
+      'validate_url' => 1,
       'widget' => array(
-        'rows' => NULL,
-        'size' => NULL,
-        'label' => 'Address',
-        'weight' => '10',
-        'description' => '',
-        'type' => 'text_textarea',
-        'module' => 'text',
+        'default_value' => array(
+          '0' => array(
+            'title' => '',
+            'url' => '',
+          ),
+        ),
+        'default_value_php' => NULL,
+        'label' => 'Facebook Account',
+        'weight' => '33',
+        'description' => 'Enter your Facebook account address',
+        'type' => 'link',
+        'module' => 'link',
       ),
     ),
-    'field_email' => array(
-      'field_name' => 'field_email',
+    'field_linkedin_account' => array(
+      'field_name' => 'field_linkedin_account',
       'type_name' => 'profile',
       'display_settings' => array(
         'label' => array(
@@ -703,34 +753,535 @@ function afg_profile_content_default_fields() {
         ),
       ),
       'widget_active' => '1',
-      'type' => 'email',
+      'type' => 'link',
       'required' => '0',
       'multiple' => '0',
       'db_storage' => '1',
-      'module' => 'email',
+      'module' => 'link',
       'active' => '1',
       'locked' => '0',
       'columns' => array(
-        'email' => array(
+        'url' => array(
+          'type' => 'varchar',
+          'length' => 2048,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'title' => array(
           'type' => 'varchar',
           'length' => 255,
           'not null' => FALSE,
           'sortable' => TRUE,
         ),
+        'attributes' => array(
+          'type' => 'text',
+          'size' => 'medium',
+          'not null' => FALSE,
+        ),
       ),
+      'attributes' => array(
+        'target' => 'default',
+        'rel' => 'nofollow',
+        'class' => '',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => '80',
+      ),
+      'url' => 0,
+      'title' => 'value',
+      'title_value' => 'LinkedIn',
+      'enable_tokens' => 0,
+      'validate_url' => 1,
       'widget' => array(
-        'size' => '60',
         'default_value' => array(
           '0' => array(
-            'email' => '',
+            'title' => '',
+            'url' => '',
           ),
         ),
         'default_value_php' => NULL,
-        'label' => 'email',
-        'weight' => '11',
-        'description' => '',
-        'type' => 'email_textfield',
-        'module' => 'email',
+        'label' => 'Linked In Account',
+        'weight' => '35',
+        'description' => 'Enter your LinkedIn public profile url.',
+        'type' => 'link',
+        'module' => 'link',
+      ),
+    ),
+    'field_supporter_website' => array(
+      'field_name' => 'field_supporter_website',
+      'type_name' => 'profile',
+      'display_settings' => array(
+        'label' => array(
+          'format' => 'above',
+          'exclude' => 0,
+        ),
+        '5' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'teaser' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'full' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '4' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '2' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '3' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'token' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+      ),
+      'widget_active' => '1',
+      'type' => 'link',
+      'required' => '0',
+      'multiple' => '0',
+      'db_storage' => '1',
+      'module' => 'link',
+      'active' => '1',
+      'locked' => '0',
+      'columns' => array(
+        'url' => array(
+          'type' => 'varchar',
+          'length' => 2048,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'title' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'attributes' => array(
+          'type' => 'text',
+          'size' => 'medium',
+          'not null' => FALSE,
+        ),
+      ),
+      'attributes' => array(
+        'target' => 'default',
+        'rel' => 'nofollow',
+        'class' => '',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => '80',
+      ),
+      'url' => 0,
+      'title' => 'value',
+      'title_value' => 'Website',
+      'enable_tokens' => 0,
+      'validate_url' => 1,
+      'widget' => array(
+        'default_value' => array(
+          '0' => array(
+            'title' => '',
+            'url' => '',
+          ),
+        ),
+        'default_value_php' => NULL,
+        'label' => 'Website',
+        'weight' => '38',
+        'description' => 'Enter your website url.',
+        'type' => 'link',
+        'module' => 'link',
+      ),
+    ),
+    'field_supporter_location' => array(
+      'field_name' => 'field_supporter_location',
+      'type_name' => 'profile',
+      'display_settings' => array(
+        'label' => array(
+          'format' => 'above',
+          'exclude' => 0,
+        ),
+        '5' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'teaser' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'full' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '4' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '2' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '3' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'token' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+      ),
+      'widget_active' => '1',
+      'type' => 'location',
+      'required' => '0',
+      'multiple' => '0',
+      'db_storage' => '1',
+      'module' => 'location_cck',
+      'active' => '1',
+      'locked' => '0',
+      'columns' => array(
+        'lid' => array(
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => FALSE,
+        ),
+      ),
+      'location_settings' => array(
+        'form' => array(
+          'fields' => array(
+            'name' => array(
+              'collect' => '0',
+              'default' => '',
+              'weight' => '2',
+            ),
+            'street' => array(
+              'collect' => '0',
+              'default' => '',
+              'weight' => '4',
+            ),
+            'additional' => array(
+              'collect' => '0',
+              'default' => '',
+              'weight' => '6',
+            ),
+            'city' => array(
+              'collect' => '1',
+              'default' => '',
+              'weight' => '8',
+            ),
+            'province' => array(
+              'collect' => '1',
+              'default' => '',
+              'weight' => '10',
+            ),
+            'postal_code' => array(
+              'collect' => '1',
+              'default' => '',
+              'weight' => '12',
+            ),
+            'country' => array(
+              'collect' => '1',
+              'default' => 'uk',
+              'weight' => '14',
+            ),
+            'locpick' => array(
+              'collect' => '4',
+              'weight' => '20',
+            ),
+          ),
+        ),
+        'display' => array(
+          'hide' => array(
+            'name' => 'name',
+            'street' => 'street',
+            'additional' => 'additional',
+            'locpick' => 'locpick',
+            'map_link' => 'map_link',
+            'coords' => 'coords',
+            'city' => 0,
+            'province' => 0,
+            'postal_code' => 0,
+            'country' => 0,
+            'province_name' => 0,
+            'country_name' => 0,
+          ),
+        ),
+      ),
+      'gmap_macro' => '[gmap ]',
+      'gmap_marker' => 'drupal',
+      'widget' => array(
+        'default_value' => array(
+          '0' => array(
+            'city' => '',
+            'province' => '',
+            'postal_code' => '',
+            'country' => 'uk',
+            'locpick' => array(
+              'user_latitude' => '',
+              'user_longitude' => '',
+            ),
+            'cck_preview_in_progress' => TRUE,
+            'location_settings' => array(
+              'form' => array(
+                'fields' => array(
+                  'name' => array(
+                    'default' => '',
+                    'collect' => '0',
+                    'weight' => '2',
+                  ),
+                  'street' => array(
+                    'default' => '',
+                    'collect' => '0',
+                    'weight' => '4',
+                  ),
+                  'additional' => array(
+                    'default' => '',
+                    'collect' => '0',
+                    'weight' => '6',
+                  ),
+                  'city' => array(
+                    'default' => '',
+                    'collect' => '1',
+                    'weight' => '8',
+                  ),
+                  'province' => array(
+                    'default' => '',
+                    'collect' => '1',
+                    'weight' => '10',
+                  ),
+                  'postal_code' => array(
+                    'default' => '',
+                    'collect' => '1',
+                    'weight' => '12',
+                  ),
+                  'country' => array(
+                    'default' => 'uk',
+                    'collect' => '1',
+                    'weight' => '14',
+                  ),
+                  'locpick' => array(
+                    'default' => array(
+                      'user_latitude' => '',
+                      'user_longitude' => '',
+                    ),
+                    'collect' => '4',
+                    'weight' => '20',
+                    'nodiff' => TRUE,
+                  ),
+                  'cck_preview_in_progress' => array(
+                    'default' => TRUE,
+                  ),
+                  'location_settings' => array(
+                    'default' => array(
+                      'form' => array(
+                        'fields' => array(
+                          'name' => array(
+                            'default' => '',
+                            'collect' => '1',
+                            'weight' => '2',
+                          ),
+                          'street' => array(
+                            'default' => '',
+                            'collect' => '1',
+                            'weight' => '4',
+                          ),
+                          'additional' => array(
+                            'default' => '',
+                            'collect' => '1',
+                            'weight' => '6',
+                          ),
+                          'city' => array(
+                            'default' => '',
+                            'collect' => '1',
+                            'weight' => '8',
+                          ),
+                          'province' => array(
+                            'default' => '',
+                            'collect' => '1',
+                            'weight' => '10',
+                          ),
+                          'postal_code' => array(
+                            'default' => '',
+                            'collect' => '1',
+                            'weight' => '12',
+                          ),
+                          'country' => array(
+                            'default' => 'uk',
+                            'collect' => '1',
+                            'weight' => '14',
+                          ),
+                          'locpick' => array(
+                            'default' => array(
+                              'user_latitude' => '',
+                              'user_longitude' => '',
+                            ),
+                            'collect' => '4',
+                            'weight' => '20',
+                            'nodiff' => TRUE,
+                          ),
+                          'cck_preview_in_progress' => array(
+                            'default' => TRUE,
+                          ),
+                          'location_settings' => array(
+                            'default' => array(
+                              'form' => array(
+                                'fields' => array(
+                                  'lid' => array(
+                                    'default' => FALSE,
+                                  ),
+                                  'name' => array(
+                                    'default' => '',
+                                    'collect' => 1,
+                                    'weight' => 2,
+                                  ),
+                                  'street' => array(
+                                    'default' => '',
+                                    'collect' => 1,
+                                    'weight' => 4,
+                                  ),
+                                  'additional' => array(
+                                    'default' => '',
+                                    'collect' => 1,
+                                    'weight' => 6,
+                                  ),
+                                  'city' => array(
+                                    'default' => '',
+                                    'collect' => 0,
+                                    'weight' => 8,
+                                  ),
+                                  'province' => array(
+                                    'default' => '',
+                                    'collect' => 0,
+                                    'weight' => 10,
+                                  ),
+                                  'postal_code' => array(
+                                    'default' => '',
+                                    'collect' => 0,
+                                    'weight' => 12,
+                                  ),
+                                  'country' => array(
+                                    'default' => 'uk',
+                                    'collect' => 1,
+                                    'weight' => 14,
+                                  ),
+                                  'locpick' => array(
+                                    'default' => FALSE,
+                                    'collect' => 1,
+                                    'weight' => 20,
+                                    'nodiff' => TRUE,
+                                  ),
+                                  'latitude' => array(
+                                    'default' => 0,
+                                  ),
+                                  'longitude' => array(
+                                    'default' => 0,
+                                  ),
+                                  'source' => array(
+                                    'default' => 0,
+                                  ),
+                                  'is_primary' => array(
+                                    'default' => 0,
+                                  ),
+                                  'delete_location' => array(
+                                    'default' => FALSE,
+                                    'nodiff' => TRUE,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'lid' => array(
+                            'default' => FALSE,
+                          ),
+                          'latitude' => array(
+                            'default' => 0,
+                          ),
+                          'longitude' => array(
+                            'default' => 0,
+                          ),
+                          'source' => array(
+                            'default' => 0,
+                          ),
+                          'is_primary' => array(
+                            'default' => 0,
+                          ),
+                          'delete_location' => array(
+                            'default' => FALSE,
+                            'nodiff' => TRUE,
+                          ),
+                        ),
+                      ),
+                      'display' => array(
+                        'hide' => array(
+                          'locpick' => 'locpick',
+                          'map_link' => 'map_link',
+                          'coords' => 'coords',
+                          'name' => 0,
+                          'street' => 0,
+                          'additional' => 0,
+                          'city' => 0,
+                          'province' => 0,
+                          'postal_code' => 0,
+                          'country' => 0,
+                          'province_name' => 0,
+                          'country_name' => 0,
+                        ),
+                      ),
+                    ),
+                  ),
+                  'lid' => array(
+                    'default' => FALSE,
+                  ),
+                  'latitude' => array(
+                    'default' => 0,
+                  ),
+                  'longitude' => array(
+                    'default' => 0,
+                  ),
+                  'source' => array(
+                    'default' => 0,
+                  ),
+                  'is_primary' => array(
+                    'default' => 0,
+                  ),
+                  'delete_location' => array(
+                    'default' => FALSE,
+                    'nodiff' => TRUE,
+                  ),
+                ),
+              ),
+              'display' => array(
+                'hide' => array(
+                  'locpick' => 'locpick',
+                  'map_link' => 'map_link',
+                  'coords' => 'coords',
+                  'name' => 0,
+                  'street' => 0,
+                  'additional' => 0,
+                  'city' => 0,
+                  'province' => 0,
+                  'postal_code' => 0,
+                  'country' => 0,
+                  'province_name' => 0,
+                  'country_name' => 0,
+                ),
+              ),
+            ),
+          ),
+        ),
+        'default_value_php' => NULL,
+        'label' => 'Location',
+        'weight' => '39',
+        'description' => 'Enter your location details.',
+        'type' => 'location',
+        'module' => 'location_cck',
       ),
     ),
     'field_group_image' => array(
@@ -1364,6 +1915,282 @@ function afg_profile_content_default_fields() {
         'module' => 'imagefield',
       ),
     ),
+    'field_ios_app_store' => array(
+      'field_name' => 'field_ios_app_store',
+      'type_name' => 'group_app_team',
+      'display_settings' => array(
+        'label' => array(
+          'format' => 'above',
+          'exclude' => 0,
+        ),
+        '5' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'teaser' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'full' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '4' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '2' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '3' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'token' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+      ),
+      'widget_active' => '1',
+      'type' => 'link',
+      'required' => '0',
+      'multiple' => '0',
+      'db_storage' => '1',
+      'module' => 'link',
+      'active' => '1',
+      'locked' => '0',
+      'columns' => array(
+        'url' => array(
+          'type' => 'varchar',
+          'length' => 2048,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'title' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'attributes' => array(
+          'type' => 'text',
+          'size' => 'medium',
+          'not null' => FALSE,
+        ),
+      ),
+      'attributes' => array(
+        'target' => 'default',
+        'rel' => 'nofollow',
+        'class' => '',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => '80',
+      ),
+      'url' => 0,
+      'title' => 'value',
+      'title_value' => 'Download on IOS app store',
+      'enable_tokens' => 0,
+      'validate_url' => 1,
+      'widget' => array(
+        'default_value' => array(
+          '0' => array(
+            'url' => '',
+          ),
+        ),
+        'default_value_php' => NULL,
+        'label' => 'iOS App Store Download',
+        'weight' => '39',
+        'description' => '',
+        'type' => 'link',
+        'module' => 'link',
+      ),
+    ),
+    'field_android_market' => array(
+      'field_name' => 'field_android_market',
+      'type_name' => 'group_app_team',
+      'display_settings' => array(
+        'label' => array(
+          'format' => 'above',
+          'exclude' => 0,
+        ),
+        '5' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'teaser' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'full' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '4' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '2' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '3' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'token' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+      ),
+      'widget_active' => '1',
+      'type' => 'link',
+      'required' => '0',
+      'multiple' => '0',
+      'db_storage' => '1',
+      'module' => 'link',
+      'active' => '1',
+      'locked' => '0',
+      'columns' => array(
+        'url' => array(
+          'type' => 'varchar',
+          'length' => 2048,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'title' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'attributes' => array(
+          'type' => 'text',
+          'size' => 'medium',
+          'not null' => FALSE,
+        ),
+      ),
+      'attributes' => array(
+        'target' => 'default',
+        'rel' => 'nofollow',
+        'class' => '',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => '80',
+      ),
+      'url' => 0,
+      'title' => 'value',
+      'title_value' => 'Download on Android market',
+      'enable_tokens' => 0,
+      'validate_url' => 1,
+      'widget' => array(
+        'default_value' => array(
+          '0' => array(
+            'url' => '',
+          ),
+        ),
+        'default_value_php' => NULL,
+        'label' => 'Android Market Download',
+        'weight' => '40',
+        'description' => '',
+        'type' => 'link',
+        'module' => 'link',
+      ),
+    ),
+    'field_blackberry_appworld' => array(
+      'field_name' => 'field_blackberry_appworld',
+      'type_name' => 'group_app_team',
+      'display_settings' => array(
+        'label' => array(
+          'format' => 'above',
+          'exclude' => 0,
+        ),
+        '5' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'teaser' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'full' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '4' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '2' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '3' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'token' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+      ),
+      'widget_active' => '1',
+      'type' => 'link',
+      'required' => '0',
+      'multiple' => '0',
+      'db_storage' => '1',
+      'module' => 'link',
+      'active' => '1',
+      'locked' => '0',
+      'columns' => array(
+        'url' => array(
+          'type' => 'varchar',
+          'length' => 2048,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'title' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'attributes' => array(
+          'type' => 'text',
+          'size' => 'medium',
+          'not null' => FALSE,
+        ),
+      ),
+      'attributes' => array(
+        'target' => 'default',
+        'rel' => 'nofollow',
+        'class' => '',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => '80',
+      ),
+      'url' => 0,
+      'title' => 'value',
+      'title_value' => 'Download on Blackberry appworld',
+      'enable_tokens' => 0,
+      'validate_url' => 1,
+      'widget' => array(
+        'default_value' => array(
+          '0' => array(
+            'url' => '',
+          ),
+        ),
+        'default_value_php' => NULL,
+        'label' => 'Blackberry Appworld Download',
+        'weight' => '41',
+        'description' => '',
+        'type' => 'link',
+        'module' => 'link',
+      ),
+    ),
     'field_centre_loc_details' => array(
       'field_name' => 'field_centre_loc_details',
       'type_name' => 'group_centre_school',
@@ -1912,13 +2739,14 @@ function afg_profile_content_default_fields() {
         'url_cutoff' => '80',
       ),
       'url' => 0,
-      'title' => 'optional',
-      'title_value' => '',
+      'title' => 'value',
+      'title_value' => 'Visit Our Website',
       'enable_tokens' => 0,
       'validate_url' => 1,
       'widget' => array(
         'default_value' => array(
           '0' => array(
+            'title' => '',
             'url' => '',
           ),
         ),
@@ -1995,192 +2823,6 @@ function afg_profile_content_default_fields() {
         'description' => '',
         'type' => 'nodereference_count_widget',
         'module' => 'nodereference_count',
-      ),
-    ),
-    'field_facebook_account' => array(
-      'field_name' => 'field_facebook_account',
-      'type_name' => 'group_centre_school',
-      'display_settings' => array(
-        'label' => array(
-          'format' => 'above',
-          'exclude' => 0,
-        ),
-        '5' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        'teaser' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        'full' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        '4' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        '2' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        '3' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        'token' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-      ),
-      'widget_active' => '1',
-      'type' => 'link',
-      'required' => '0',
-      'multiple' => '0',
-      'db_storage' => '1',
-      'module' => 'link',
-      'active' => '1',
-      'locked' => '0',
-      'columns' => array(
-        'url' => array(
-          'type' => 'varchar',
-          'length' => 2048,
-          'not null' => FALSE,
-          'sortable' => TRUE,
-        ),
-        'title' => array(
-          'type' => 'varchar',
-          'length' => 255,
-          'not null' => FALSE,
-          'sortable' => TRUE,
-        ),
-        'attributes' => array(
-          'type' => 'text',
-          'size' => 'medium',
-          'not null' => FALSE,
-        ),
-      ),
-      'attributes' => array(
-        'target' => 'default',
-        'rel' => 'nofollow',
-        'class' => '',
-        'title' => '',
-      ),
-      'display' => array(
-        'url_cutoff' => '80',
-      ),
-      'url' => 0,
-      'title' => 'none',
-      'title_value' => '',
-      'enable_tokens' => 0,
-      'validate_url' => 1,
-      'widget' => array(
-        'default_value' => array(
-          '0' => array(
-            'title' => '',
-            'url' => '',
-          ),
-        ),
-        'default_value_php' => NULL,
-        'label' => 'Facebook Account',
-        'weight' => '33',
-        'description' => 'Enter your Facebook account address',
-        'type' => 'link',
-        'module' => 'link',
-      ),
-    ),
-    'field_twitter_account' => array(
-      'field_name' => 'field_twitter_account',
-      'type_name' => 'group_centre_school',
-      'display_settings' => array(
-        'label' => array(
-          'format' => 'above',
-          'exclude' => 0,
-        ),
-        '5' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        'teaser' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        'full' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        '4' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        '2' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        '3' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        'token' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-      ),
-      'widget_active' => '1',
-      'type' => 'link',
-      'required' => '0',
-      'multiple' => '0',
-      'db_storage' => '1',
-      'module' => 'link',
-      'active' => '1',
-      'locked' => '0',
-      'columns' => array(
-        'url' => array(
-          'type' => 'varchar',
-          'length' => 2048,
-          'not null' => FALSE,
-          'sortable' => TRUE,
-        ),
-        'title' => array(
-          'type' => 'varchar',
-          'length' => 255,
-          'not null' => FALSE,
-          'sortable' => TRUE,
-        ),
-        'attributes' => array(
-          'type' => 'text',
-          'size' => 'medium',
-          'not null' => FALSE,
-        ),
-      ),
-      'attributes' => array(
-        'target' => 'default',
-        'rel' => 'nofollow',
-        'class' => '',
-        'title' => '',
-      ),
-      'display' => array(
-        'url_cutoff' => '80',
-      ),
-      'url' => 0,
-      'title' => 'none',
-      'title_value' => '',
-      'enable_tokens' => 0,
-      'validate_url' => 1,
-      'widget' => array(
-        'default_value' => array(
-          '0' => array(
-            'title' => '',
-            'url' => '',
-          ),
-        ),
-        'default_value_php' => NULL,
-        'label' => 'Twitter Account',
-        'weight' => '34',
-        'description' => 'Enter your Twitter account address',
-        'type' => 'link',
-        'module' => 'link',
       ),
     ),
   );
@@ -2708,12 +3350,16 @@ function afg_profile_content_default_fields() {
         'module' => 'text',
       ),
     ),
-    'field_profile_url' => array(
-      'field_name' => 'field_profile_url',
-      'type_name' => 'profile',
+    'field_twitter_account' => array(
+      'field_name' => 'field_twitter_account',
+      'type_name' => 'group_centre_school',
       'display_settings' => array(
         'label' => array(
           'format' => 'above',
+          'exclude' => 0,
+        ),
+        '5' => array(
+          'format' => 'default',
           'exclude' => 0,
         ),
         'teaser' => array(
@@ -2740,45 +3386,73 @@ function afg_profile_content_default_fields() {
           'format' => 'default',
           'exclude' => 0,
         ),
-        'weight' => 0,
       ),
       'widget_active' => '1',
-      'type' => 'text',
+      'type' => 'link',
       'required' => '0',
       'multiple' => '0',
-      'db_storage' => '1',
-      'module' => 'text',
+      'db_storage' => '0',
+      'module' => 'link',
       'active' => '1',
       'locked' => '0',
       'columns' => array(
-        'value' => array(
-          'type' => 'text',
-          'size' => 'big',
+        'url' => array(
+          'type' => 'varchar',
+          'length' => 2048,
           'not null' => FALSE,
           'sortable' => TRUE,
-          'views' => TRUE,
+        ),
+        'title' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'attributes' => array(
+          'type' => 'text',
+          'size' => 'medium',
+          'not null' => FALSE,
         ),
       ),
-      'text_processing' => 0,
-      'max_length' => '',
-      'allowed_values' => '',
-      'allowed_values_php' => '',
+      'attributes' => array(
+        'target' => 'default',
+        'rel' => 'nofollow',
+        'class' => '',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => '80',
+      ),
+      'url' => 0,
+      'title' => 'value',
+      'title_value' => 'Twitter',
+      'enable_tokens' => 0,
+      'validate_url' => 1,
       'widget' => array(
-        'rows' => NULL,
-        'size' => NULL,
-        'label' => 'URL',
-        'weight' => '9',
-        'description' => '',
-        'type' => 'text_textfield',
-        'module' => 'text',
+        'default_value' => array(
+          '0' => array(
+            'title' => '',
+            'url' => '',
+          ),
+        ),
+        'default_value_php' => NULL,
+        'label' => 'Twitter Account',
+        'weight' => '34',
+        'description' => 'Enter your Twitter account address',
+        'type' => 'link',
+        'module' => 'link',
       ),
     ),
-    'field_profile_address' => array(
-      'field_name' => 'field_profile_address',
-      'type_name' => 'profile',
+    'field_facebook_account' => array(
+      'field_name' => 'field_facebook_account',
+      'type_name' => 'group_centre_school',
       'display_settings' => array(
         'label' => array(
           'format' => 'above',
+          'exclude' => 0,
+        ),
+        '5' => array(
+          'format' => 'default',
           'exclude' => 0,
         ),
         'teaser' => array(
@@ -2805,47 +3479,65 @@ function afg_profile_content_default_fields() {
           'format' => 'default',
           'exclude' => 0,
         ),
-        'weight' => 0,
       ),
       'widget_active' => '1',
-      'type' => 'text',
+      'type' => 'link',
       'required' => '0',
       'multiple' => '0',
-      'db_storage' => '1',
-      'module' => 'text',
+      'db_storage' => '0',
+      'module' => 'link',
       'active' => '1',
       'locked' => '0',
       'columns' => array(
-        'value' => array(
-          'type' => 'text',
-          'size' => 'big',
+        'url' => array(
+          'type' => 'varchar',
+          'length' => 2048,
           'not null' => FALSE,
           'sortable' => TRUE,
-          'views' => TRUE,
         ),
-        'format' => array(
-          'type' => 'int',
-          'unsigned' => TRUE,
+        'title' => array(
+          'type' => 'varchar',
+          'length' => 255,
           'not null' => FALSE,
-          'views' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'attributes' => array(
+          'type' => 'text',
+          'size' => 'medium',
+          'not null' => FALSE,
         ),
       ),
-      'text_processing' => 1,
-      'max_length' => '',
-      'allowed_values' => '',
-      'allowed_values_php' => '',
+      'attributes' => array(
+        'target' => 'default',
+        'rel' => 'nofollow',
+        'class' => '',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => '80',
+      ),
+      'url' => 0,
+      'title' => 'value',
+      'title_value' => 'Facebook',
+      'enable_tokens' => 0,
+      'validate_url' => 1,
       'widget' => array(
-        'rows' => NULL,
-        'size' => NULL,
-        'label' => 'Address',
-        'weight' => '10',
-        'description' => '',
-        'type' => 'text_textarea',
-        'module' => 'text',
+        'default_value' => array(
+          '0' => array(
+            'title' => '',
+            'url' => '',
+          ),
+        ),
+        'default_value_php' => NULL,
+        'label' => 'Facebook Account',
+        'weight' => '33',
+        'description' => 'Enter your Facebook account address',
+        'type' => 'link',
+        'module' => 'link',
       ),
     ),
-    'field_email' => array(
-      'field_name' => 'field_email',
+    'field_linkedin_account' => array(
+      'field_name' => 'field_linkedin_account',
       'type_name' => 'profile',
       'display_settings' => array(
         'label' => array(
@@ -2882,34 +3574,535 @@ function afg_profile_content_default_fields() {
         ),
       ),
       'widget_active' => '1',
-      'type' => 'email',
+      'type' => 'link',
       'required' => '0',
       'multiple' => '0',
       'db_storage' => '1',
-      'module' => 'email',
+      'module' => 'link',
       'active' => '1',
       'locked' => '0',
       'columns' => array(
-        'email' => array(
+        'url' => array(
+          'type' => 'varchar',
+          'length' => 2048,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'title' => array(
           'type' => 'varchar',
           'length' => 255,
           'not null' => FALSE,
           'sortable' => TRUE,
         ),
+        'attributes' => array(
+          'type' => 'text',
+          'size' => 'medium',
+          'not null' => FALSE,
+        ),
       ),
+      'attributes' => array(
+        'target' => 'default',
+        'rel' => 'nofollow',
+        'class' => '',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => '80',
+      ),
+      'url' => 0,
+      'title' => 'value',
+      'title_value' => 'LinkedIn',
+      'enable_tokens' => 0,
+      'validate_url' => 1,
       'widget' => array(
-        'size' => '60',
         'default_value' => array(
           '0' => array(
-            'email' => '',
+            'title' => '',
+            'url' => '',
           ),
         ),
         'default_value_php' => NULL,
-        'label' => 'email',
-        'weight' => '11',
-        'description' => '',
-        'type' => 'email_textfield',
-        'module' => 'email',
+        'label' => 'Linked In Account',
+        'weight' => '35',
+        'description' => 'Enter your LinkedIn public profile url.',
+        'type' => 'link',
+        'module' => 'link',
+      ),
+    ),
+    'field_supporter_website' => array(
+      'field_name' => 'field_supporter_website',
+      'type_name' => 'profile',
+      'display_settings' => array(
+        'label' => array(
+          'format' => 'above',
+          'exclude' => 0,
+        ),
+        '5' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'teaser' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'full' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '4' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '2' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '3' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'token' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+      ),
+      'widget_active' => '1',
+      'type' => 'link',
+      'required' => '0',
+      'multiple' => '0',
+      'db_storage' => '1',
+      'module' => 'link',
+      'active' => '1',
+      'locked' => '0',
+      'columns' => array(
+        'url' => array(
+          'type' => 'varchar',
+          'length' => 2048,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'title' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'attributes' => array(
+          'type' => 'text',
+          'size' => 'medium',
+          'not null' => FALSE,
+        ),
+      ),
+      'attributes' => array(
+        'target' => 'default',
+        'rel' => 'nofollow',
+        'class' => '',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => '80',
+      ),
+      'url' => 0,
+      'title' => 'value',
+      'title_value' => 'Website',
+      'enable_tokens' => 0,
+      'validate_url' => 1,
+      'widget' => array(
+        'default_value' => array(
+          '0' => array(
+            'title' => '',
+            'url' => '',
+          ),
+        ),
+        'default_value_php' => NULL,
+        'label' => 'Website',
+        'weight' => '38',
+        'description' => 'Enter your website url.',
+        'type' => 'link',
+        'module' => 'link',
+      ),
+    ),
+    'field_supporter_location' => array(
+      'field_name' => 'field_supporter_location',
+      'type_name' => 'profile',
+      'display_settings' => array(
+        'label' => array(
+          'format' => 'above',
+          'exclude' => 0,
+        ),
+        '5' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'teaser' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'full' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '4' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '2' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '3' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'token' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+      ),
+      'widget_active' => '1',
+      'type' => 'location',
+      'required' => '0',
+      'multiple' => '0',
+      'db_storage' => '1',
+      'module' => 'location_cck',
+      'active' => '1',
+      'locked' => '0',
+      'columns' => array(
+        'lid' => array(
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => FALSE,
+        ),
+      ),
+      'location_settings' => array(
+        'form' => array(
+          'fields' => array(
+            'name' => array(
+              'collect' => '0',
+              'default' => '',
+              'weight' => '2',
+            ),
+            'street' => array(
+              'collect' => '0',
+              'default' => '',
+              'weight' => '4',
+            ),
+            'additional' => array(
+              'collect' => '0',
+              'default' => '',
+              'weight' => '6',
+            ),
+            'city' => array(
+              'collect' => '1',
+              'default' => '',
+              'weight' => '8',
+            ),
+            'province' => array(
+              'collect' => '1',
+              'default' => '',
+              'weight' => '10',
+            ),
+            'postal_code' => array(
+              'collect' => '1',
+              'default' => '',
+              'weight' => '12',
+            ),
+            'country' => array(
+              'collect' => '1',
+              'default' => 'uk',
+              'weight' => '14',
+            ),
+            'locpick' => array(
+              'collect' => '4',
+              'weight' => '20',
+            ),
+          ),
+        ),
+        'display' => array(
+          'hide' => array(
+            'name' => 'name',
+            'street' => 'street',
+            'additional' => 'additional',
+            'locpick' => 'locpick',
+            'map_link' => 'map_link',
+            'coords' => 'coords',
+            'city' => 0,
+            'province' => 0,
+            'postal_code' => 0,
+            'country' => 0,
+            'province_name' => 0,
+            'country_name' => 0,
+          ),
+        ),
+      ),
+      'gmap_macro' => '[gmap ]',
+      'gmap_marker' => 'drupal',
+      'widget' => array(
+        'default_value' => array(
+          '0' => array(
+            'city' => '',
+            'province' => '',
+            'postal_code' => '',
+            'country' => 'uk',
+            'locpick' => array(
+              'user_latitude' => '',
+              'user_longitude' => '',
+            ),
+            'cck_preview_in_progress' => TRUE,
+            'location_settings' => array(
+              'form' => array(
+                'fields' => array(
+                  'name' => array(
+                    'default' => '',
+                    'collect' => '0',
+                    'weight' => '2',
+                  ),
+                  'street' => array(
+                    'default' => '',
+                    'collect' => '0',
+                    'weight' => '4',
+                  ),
+                  'additional' => array(
+                    'default' => '',
+                    'collect' => '0',
+                    'weight' => '6',
+                  ),
+                  'city' => array(
+                    'default' => '',
+                    'collect' => '1',
+                    'weight' => '8',
+                  ),
+                  'province' => array(
+                    'default' => '',
+                    'collect' => '1',
+                    'weight' => '10',
+                  ),
+                  'postal_code' => array(
+                    'default' => '',
+                    'collect' => '1',
+                    'weight' => '12',
+                  ),
+                  'country' => array(
+                    'default' => 'uk',
+                    'collect' => '1',
+                    'weight' => '14',
+                  ),
+                  'locpick' => array(
+                    'default' => array(
+                      'user_latitude' => '',
+                      'user_longitude' => '',
+                    ),
+                    'collect' => '4',
+                    'weight' => '20',
+                    'nodiff' => TRUE,
+                  ),
+                  'cck_preview_in_progress' => array(
+                    'default' => TRUE,
+                  ),
+                  'location_settings' => array(
+                    'default' => array(
+                      'form' => array(
+                        'fields' => array(
+                          'name' => array(
+                            'default' => '',
+                            'collect' => '1',
+                            'weight' => '2',
+                          ),
+                          'street' => array(
+                            'default' => '',
+                            'collect' => '1',
+                            'weight' => '4',
+                          ),
+                          'additional' => array(
+                            'default' => '',
+                            'collect' => '1',
+                            'weight' => '6',
+                          ),
+                          'city' => array(
+                            'default' => '',
+                            'collect' => '1',
+                            'weight' => '8',
+                          ),
+                          'province' => array(
+                            'default' => '',
+                            'collect' => '1',
+                            'weight' => '10',
+                          ),
+                          'postal_code' => array(
+                            'default' => '',
+                            'collect' => '1',
+                            'weight' => '12',
+                          ),
+                          'country' => array(
+                            'default' => 'uk',
+                            'collect' => '1',
+                            'weight' => '14',
+                          ),
+                          'locpick' => array(
+                            'default' => array(
+                              'user_latitude' => '',
+                              'user_longitude' => '',
+                            ),
+                            'collect' => '4',
+                            'weight' => '20',
+                            'nodiff' => TRUE,
+                          ),
+                          'cck_preview_in_progress' => array(
+                            'default' => TRUE,
+                          ),
+                          'location_settings' => array(
+                            'default' => array(
+                              'form' => array(
+                                'fields' => array(
+                                  'lid' => array(
+                                    'default' => FALSE,
+                                  ),
+                                  'name' => array(
+                                    'default' => '',
+                                    'collect' => 1,
+                                    'weight' => 2,
+                                  ),
+                                  'street' => array(
+                                    'default' => '',
+                                    'collect' => 1,
+                                    'weight' => 4,
+                                  ),
+                                  'additional' => array(
+                                    'default' => '',
+                                    'collect' => 1,
+                                    'weight' => 6,
+                                  ),
+                                  'city' => array(
+                                    'default' => '',
+                                    'collect' => 0,
+                                    'weight' => 8,
+                                  ),
+                                  'province' => array(
+                                    'default' => '',
+                                    'collect' => 0,
+                                    'weight' => 10,
+                                  ),
+                                  'postal_code' => array(
+                                    'default' => '',
+                                    'collect' => 0,
+                                    'weight' => 12,
+                                  ),
+                                  'country' => array(
+                                    'default' => 'uk',
+                                    'collect' => 1,
+                                    'weight' => 14,
+                                  ),
+                                  'locpick' => array(
+                                    'default' => FALSE,
+                                    'collect' => 1,
+                                    'weight' => 20,
+                                    'nodiff' => TRUE,
+                                  ),
+                                  'latitude' => array(
+                                    'default' => 0,
+                                  ),
+                                  'longitude' => array(
+                                    'default' => 0,
+                                  ),
+                                  'source' => array(
+                                    'default' => 0,
+                                  ),
+                                  'is_primary' => array(
+                                    'default' => 0,
+                                  ),
+                                  'delete_location' => array(
+                                    'default' => FALSE,
+                                    'nodiff' => TRUE,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          'lid' => array(
+                            'default' => FALSE,
+                          ),
+                          'latitude' => array(
+                            'default' => 0,
+                          ),
+                          'longitude' => array(
+                            'default' => 0,
+                          ),
+                          'source' => array(
+                            'default' => 0,
+                          ),
+                          'is_primary' => array(
+                            'default' => 0,
+                          ),
+                          'delete_location' => array(
+                            'default' => FALSE,
+                            'nodiff' => TRUE,
+                          ),
+                        ),
+                      ),
+                      'display' => array(
+                        'hide' => array(
+                          'locpick' => 'locpick',
+                          'map_link' => 'map_link',
+                          'coords' => 'coords',
+                          'name' => 0,
+                          'street' => 0,
+                          'additional' => 0,
+                          'city' => 0,
+                          'province' => 0,
+                          'postal_code' => 0,
+                          'country' => 0,
+                          'province_name' => 0,
+                          'country_name' => 0,
+                        ),
+                      ),
+                    ),
+                  ),
+                  'lid' => array(
+                    'default' => FALSE,
+                  ),
+                  'latitude' => array(
+                    'default' => 0,
+                  ),
+                  'longitude' => array(
+                    'default' => 0,
+                  ),
+                  'source' => array(
+                    'default' => 0,
+                  ),
+                  'is_primary' => array(
+                    'default' => 0,
+                  ),
+                  'delete_location' => array(
+                    'default' => FALSE,
+                    'nodiff' => TRUE,
+                  ),
+                ),
+              ),
+              'display' => array(
+                'hide' => array(
+                  'locpick' => 'locpick',
+                  'map_link' => 'map_link',
+                  'coords' => 'coords',
+                  'name' => 0,
+                  'street' => 0,
+                  'additional' => 0,
+                  'city' => 0,
+                  'province' => 0,
+                  'postal_code' => 0,
+                  'country' => 0,
+                  'province_name' => 0,
+                  'country_name' => 0,
+                ),
+              ),
+            ),
+          ),
+        ),
+        'default_value_php' => NULL,
+        'label' => 'Location',
+        'weight' => '39',
+        'description' => 'Enter your location details.',
+        'type' => 'location',
+        'module' => 'location_cck',
       ),
     ),
     'field_group_image' => array(
@@ -3543,6 +4736,282 @@ function afg_profile_content_default_fields() {
         'module' => 'imagefield',
       ),
     ),
+    'field_ios_app_store' => array(
+      'field_name' => 'field_ios_app_store',
+      'type_name' => 'group_app_team',
+      'display_settings' => array(
+        'label' => array(
+          'format' => 'above',
+          'exclude' => 0,
+        ),
+        '5' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'teaser' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'full' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '4' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '2' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '3' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'token' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+      ),
+      'widget_active' => '1',
+      'type' => 'link',
+      'required' => '0',
+      'multiple' => '0',
+      'db_storage' => '1',
+      'module' => 'link',
+      'active' => '1',
+      'locked' => '0',
+      'columns' => array(
+        'url' => array(
+          'type' => 'varchar',
+          'length' => 2048,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'title' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'attributes' => array(
+          'type' => 'text',
+          'size' => 'medium',
+          'not null' => FALSE,
+        ),
+      ),
+      'attributes' => array(
+        'target' => 'default',
+        'rel' => 'nofollow',
+        'class' => '',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => '80',
+      ),
+      'url' => 0,
+      'title' => 'value',
+      'title_value' => 'Download on IOS app store',
+      'enable_tokens' => 0,
+      'validate_url' => 1,
+      'widget' => array(
+        'default_value' => array(
+          '0' => array(
+            'url' => '',
+          ),
+        ),
+        'default_value_php' => NULL,
+        'label' => 'iOS App Store Download',
+        'weight' => '39',
+        'description' => '',
+        'type' => 'link',
+        'module' => 'link',
+      ),
+    ),
+    'field_android_market' => array(
+      'field_name' => 'field_android_market',
+      'type_name' => 'group_app_team',
+      'display_settings' => array(
+        'label' => array(
+          'format' => 'above',
+          'exclude' => 0,
+        ),
+        '5' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'teaser' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'full' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '4' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '2' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '3' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'token' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+      ),
+      'widget_active' => '1',
+      'type' => 'link',
+      'required' => '0',
+      'multiple' => '0',
+      'db_storage' => '1',
+      'module' => 'link',
+      'active' => '1',
+      'locked' => '0',
+      'columns' => array(
+        'url' => array(
+          'type' => 'varchar',
+          'length' => 2048,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'title' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'attributes' => array(
+          'type' => 'text',
+          'size' => 'medium',
+          'not null' => FALSE,
+        ),
+      ),
+      'attributes' => array(
+        'target' => 'default',
+        'rel' => 'nofollow',
+        'class' => '',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => '80',
+      ),
+      'url' => 0,
+      'title' => 'value',
+      'title_value' => 'Download on Android market',
+      'enable_tokens' => 0,
+      'validate_url' => 1,
+      'widget' => array(
+        'default_value' => array(
+          '0' => array(
+            'url' => '',
+          ),
+        ),
+        'default_value_php' => NULL,
+        'label' => 'Android Market Download',
+        'weight' => '40',
+        'description' => '',
+        'type' => 'link',
+        'module' => 'link',
+      ),
+    ),
+    'field_blackberry_appworld' => array(
+      'field_name' => 'field_blackberry_appworld',
+      'type_name' => 'group_app_team',
+      'display_settings' => array(
+        'label' => array(
+          'format' => 'above',
+          'exclude' => 0,
+        ),
+        '5' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'teaser' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'full' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '4' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '2' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        '3' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+        'token' => array(
+          'format' => 'default',
+          'exclude' => 0,
+        ),
+      ),
+      'widget_active' => '1',
+      'type' => 'link',
+      'required' => '0',
+      'multiple' => '0',
+      'db_storage' => '1',
+      'module' => 'link',
+      'active' => '1',
+      'locked' => '0',
+      'columns' => array(
+        'url' => array(
+          'type' => 'varchar',
+          'length' => 2048,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'title' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'attributes' => array(
+          'type' => 'text',
+          'size' => 'medium',
+          'not null' => FALSE,
+        ),
+      ),
+      'attributes' => array(
+        'target' => 'default',
+        'rel' => 'nofollow',
+        'class' => '',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => '80',
+      ),
+      'url' => 0,
+      'title' => 'value',
+      'title_value' => 'Download on Blackberry appworld',
+      'enable_tokens' => 0,
+      'validate_url' => 1,
+      'widget' => array(
+        'default_value' => array(
+          '0' => array(
+            'url' => '',
+          ),
+        ),
+        'default_value_php' => NULL,
+        'label' => 'Blackberry Appworld Download',
+        'weight' => '41',
+        'description' => '',
+        'type' => 'link',
+        'module' => 'link',
+      ),
+    ),
     'field_centre_loc_details' => array(
       'field_name' => 'field_centre_loc_details',
       'type_name' => 'group_centre_school',
@@ -4091,13 +5560,14 @@ function afg_profile_content_default_fields() {
         'url_cutoff' => '80',
       ),
       'url' => 0,
-      'title' => 'optional',
-      'title_value' => '',
+      'title' => 'value',
+      'title_value' => 'Visit Our Website',
       'enable_tokens' => 0,
       'validate_url' => 1,
       'widget' => array(
         'default_value' => array(
           '0' => array(
+            'title' => '',
             'url' => '',
           ),
         ),
@@ -4174,192 +5644,6 @@ function afg_profile_content_default_fields() {
         'description' => '',
         'type' => 'nodereference_count_widget',
         'module' => 'nodereference_count',
-      ),
-    ),
-    'field_facebook_account' => array(
-      'field_name' => 'field_facebook_account',
-      'type_name' => 'group_centre_school',
-      'display_settings' => array(
-        'label' => array(
-          'format' => 'above',
-          'exclude' => 0,
-        ),
-        '5' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        'teaser' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        'full' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        '4' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        '2' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        '3' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        'token' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-      ),
-      'widget_active' => '1',
-      'type' => 'link',
-      'required' => '0',
-      'multiple' => '0',
-      'db_storage' => '1',
-      'module' => 'link',
-      'active' => '1',
-      'locked' => '0',
-      'columns' => array(
-        'url' => array(
-          'type' => 'varchar',
-          'length' => 2048,
-          'not null' => FALSE,
-          'sortable' => TRUE,
-        ),
-        'title' => array(
-          'type' => 'varchar',
-          'length' => 255,
-          'not null' => FALSE,
-          'sortable' => TRUE,
-        ),
-        'attributes' => array(
-          'type' => 'text',
-          'size' => 'medium',
-          'not null' => FALSE,
-        ),
-      ),
-      'attributes' => array(
-        'target' => 'default',
-        'rel' => 'nofollow',
-        'class' => '',
-        'title' => '',
-      ),
-      'display' => array(
-        'url_cutoff' => '80',
-      ),
-      'url' => 0,
-      'title' => 'none',
-      'title_value' => '',
-      'enable_tokens' => 0,
-      'validate_url' => 1,
-      'widget' => array(
-        'default_value' => array(
-          '0' => array(
-            'title' => '',
-            'url' => '',
-          ),
-        ),
-        'default_value_php' => NULL,
-        'label' => 'Facebook Account',
-        'weight' => '33',
-        'description' => 'Enter your Facebook account address',
-        'type' => 'link',
-        'module' => 'link',
-      ),
-    ),
-    'field_twitter_account' => array(
-      'field_name' => 'field_twitter_account',
-      'type_name' => 'group_centre_school',
-      'display_settings' => array(
-        'label' => array(
-          'format' => 'above',
-          'exclude' => 0,
-        ),
-        '5' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        'teaser' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        'full' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        '4' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        '2' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        '3' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-        'token' => array(
-          'format' => 'default',
-          'exclude' => 0,
-        ),
-      ),
-      'widget_active' => '1',
-      'type' => 'link',
-      'required' => '0',
-      'multiple' => '0',
-      'db_storage' => '1',
-      'module' => 'link',
-      'active' => '1',
-      'locked' => '0',
-      'columns' => array(
-        'url' => array(
-          'type' => 'varchar',
-          'length' => 2048,
-          'not null' => FALSE,
-          'sortable' => TRUE,
-        ),
-        'title' => array(
-          'type' => 'varchar',
-          'length' => 255,
-          'not null' => FALSE,
-          'sortable' => TRUE,
-        ),
-        'attributes' => array(
-          'type' => 'text',
-          'size' => 'medium',
-          'not null' => FALSE,
-        ),
-      ),
-      'attributes' => array(
-        'target' => 'default',
-        'rel' => 'nofollow',
-        'class' => '',
-        'title' => '',
-      ),
-      'display' => array(
-        'url_cutoff' => '80',
-      ),
-      'url' => 0,
-      'title' => 'none',
-      'title_value' => '',
-      'enable_tokens' => 0,
-      'validate_url' => 1,
-      'widget' => array(
-        'default_value' => array(
-          '0' => array(
-            'title' => '',
-            'url' => '',
-          ),
-        ),
-        'default_value_php' => NULL,
-        'label' => 'Twitter Account',
-        'weight' => '34',
-        'description' => 'Enter your Twitter account address',
-        'type' => 'link',
-        'module' => 'link',
       ),
     ),
   );
