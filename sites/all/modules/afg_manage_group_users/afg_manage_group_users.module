@@ -1,5 +1,7 @@
 <?php
 
+
+
 /**
  * Add a menu item to the content creation menu for a new user
  */
@@ -41,4 +43,21 @@ function afg_manage_group_users_og_ucreate_redirect() {
       'og/users/' . $space->id  . '/ucreate',
       'destination=og/users/' . $space->id  . '/roles'
     );
+}
+
+function afg_manage_group_users_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'atrium_members_addform') {
+    
+    //Override atrium's JS behavior for this form
+    drupal_add_js(
+      drupal_get_path('module', 'afg_manage_group_users') .
+      '/afg_atrium_members_add.js',
+      'theme'
+    ); 
+    $space = !isset($space) ? spaces_get_space() : $space;
+    unset($form['add']['#ahah']);
+    $form['#redirect'] = "og/users/{$space->id}/roles";
+  }
+  
+  
 }
