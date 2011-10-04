@@ -7,8 +7,8 @@ function afg_manage_group_users_menu() {
   $items = array();
     
   $items['node/add/groupuser'] = array(
-    'title' => t('Member'),
-    'description' => t('Add A Group Member'),
+    'title' => t('User'),
+    'description' => t('Add a new User to this Group'),
     'access arguments' => array('create users'),
     'page callback' => 'afg_manage_group_users_og_ucreate_redirect',
     'type' => MENU_NORMAL_ITEM,

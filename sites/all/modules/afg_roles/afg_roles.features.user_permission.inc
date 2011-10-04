@@ -68,7 +68,10 @@ function afg_roles_user_default_permissions() {
   // Exported permission: administer case tracker
   $permissions['administer case tracker'] = array(
     'name' => 'administer case tracker',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'CDI Employee',
+      '1' => 'Educator',
+    ),
   );
 
   // Exported permission: administer content types
@@ -155,7 +158,9 @@ function afg_roles_user_default_permissions() {
   // Exported permission: assign user roles
   $permissions['assign user roles'] = array(
     'name' => 'assign user roles',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'CDI Employee',
+    ),
   );
 
   // Exported permission: can disable taxonomy images
