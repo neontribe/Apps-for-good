@@ -1,93 +1,46 @@
 <?php
 
-/*
- * Implementation of hook_menu
+/**
+ * Implementation of hook_perm
  *
- * Registers options block
+ * Create a new permission which will decvide who can use the Create App buttons
  */
-function create_app_button_block($op = 'list', $delta = 0, $edit = array()) {
-	if($op == 'list') {
-		$blocks[0] = array(
-			'info' => t('Create Application Block'),
-			'weight' => 0,
-			'status' => 1,
-			'region' => 'palette'
-		);
-		return $blocks;
-	} else if($op == 'view') {
-		switch($delta) {
-			case 0:
-				$block = array(
-					'subject' => t('Create Application'),
-					'content' => drupal_get_form('create_app_button_form')
-				);
-				break;
-		}
-		return $block;
+function create_app_button_perm() {
+	return array('afg spawn application from centre');
+}
+
+/**
+ * Add a menu item to the content creation menu for a new app
+ */
+function create_app_button_menu() {
+  $items = array();
+    
+  $items['node/add/app'] = array(
+    'title' => t('App'),
+    'description' => t('Add an App based at this centre'),
+    'access arguments' => array('afg spawn application from centre'),
+    'page callback' => 'create_app_button_create_redirect',
+    'type' => MENU_NORMAL_ITEM,
+  );
+  
+  return $items;
+}
+
+function create_app_button_create_redirect() {
+	
+	$og = spaces_get_space();
+	$type = $og->group->type;
+	$id = $og->id;
+  
+	if ($type == 'group_centre_school') {
+	  $path = 'node/add/group-app-team';
+	  $qs ='edit[field_centre_ref][nid][nid]=' . $id; //Use the prepopulate module
+	  drupal_goto($path, $qs);
 	}
 }
 
-/*
- * Create app form
- */
-function create_app_button_form(&$form_state) {
 
-//	drupal_set_message("test");
 
-	$form = array();
-	$form['appName'] = array(
-		'#type' => 'textfield',
-		'#title' => t('Application name'),
-		'#default_value' => '',
-		'#required' => TRUE
-	);
-	$form['submit'] = array(
-		'#type' => 'submit',
-		'#value' => t('Submit'),
-	);	
-	return $form;
-}
 
-/*
- * Implementation of hook_context_links_alter
- * 
- * Adds an entry to the context links menu
- */
-function create_app_button_context_links_alter(&$links) {
-  global $user;
-  $og = spaces_get_space();
-  $type = $og->group->type;
-  $nid = $og->group->nid;
-  $node = node_load($nid);
-  
-  if (
-    $type == 'group_centre_school'
-    && og_is_group_admin($node, $user)
-  ) {
-    $links['create-app-button'] = array(
-      'title' => t('Create Application'),
-      'href' => "create_app_button",
-      'fragment' => 'block-create_app_button-0',
-      'attributes' => array(
-        'class' => 'palette-toggle'
-      )
-    );
-  }
-}
 
-/*
- * Create app form submit handler
- */
-function create_app_button_form_submit($form, &$form_state) {
-  $og = spaces_get_space();
-  $type = $og->group->type;
-  $id = $og->id;
 
-  if ($type == 'group_centre_school') {
-    $path = 'node/add/group-app-team';
-    $qs = 
-      'title=' . urlencode($form['appName']['#value'])
-      . '&centre=' . $id;
-    drupal_goto($path, $qs);
-  }
-}

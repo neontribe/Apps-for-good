@@ -205,6 +205,7 @@ function afg_roles_user_default_permissions() {
     'name' => 'create group_app_team content',
     'roles' => array(
       '0' => 'CDI Employee',
+      '1' => 'Educator',
     ),
   );
 
