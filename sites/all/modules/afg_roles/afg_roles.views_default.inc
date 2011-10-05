@@ -428,7 +428,7 @@ function afg_roles_views_default_views() {
     'rid' => array(
       'operator' => 'or',
       'value' => array(
-        '5' => '5',
+        '12' => '12',
       ),
       'group' => '0',
       'exposed' => FALSE,
