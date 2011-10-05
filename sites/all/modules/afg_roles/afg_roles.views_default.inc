@@ -132,11 +132,6 @@ function afg_roles_views_default_views() {
       'field' => 'current',
       'relationship' => 'none',
     ),
-    'rid' => array(
-      'id' => 'rid',
-      'table' => 'og_users_roles',
-      'field' => 'rid',
-    ),
   ));
   $handler->override_option('access', array(
     'type' => 'spaces_feature',
@@ -448,7 +443,7 @@ function afg_roles_views_default_views() {
         'button' => 'Use default',
       ),
       'relationship' => 'none',
-      'reduce_duplicates' => 1,
+      'reduce_duplicates' => 0,
     ),
   ));
   $handler->override_option('access', array(
