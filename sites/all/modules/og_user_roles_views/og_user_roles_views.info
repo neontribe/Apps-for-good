@@ -1,0 +1,15 @@
+; $Id: og_user_roles_views.info,v 1.0 2010/08/04 17:34:00 destination_node Exp $
+name = Organic groups user roles Views Integration
+description = `Organic groups user roles` Views Integration
+core = 6.x
+
+dependencies[] = og
+dependencies[] = og_views
+dependencies[] = og_user_roles
+package = Organic groups
+
+version = "6.x-1.0"
+project = "og_user_roles_views"
+datestamp = "1280854800"  
+
+

@@ -45,6 +45,12 @@ function afg_roles_user_default_permissions() {
     'roles' => array(),
   );
 
+  // Exported permission: admin vocab perms
+  $permissions['admin vocab perms'] = array(
+    'name' => 'admin vocab perms',
+    'roles' => array(),
+  );
+
   // Exported permission: administer actions
   $permissions['administer actions'] = array(
     'name' => 'administer actions',
@@ -68,7 +74,10 @@ function afg_roles_user_default_permissions() {
   // Exported permission: administer case tracker
   $permissions['administer case tracker'] = array(
     'name' => 'administer case tracker',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'CDI Employee',
+      '1' => 'Educator',
+    ),
   );
 
   // Exported permission: administer content types
@@ -116,7 +125,10 @@ function afg_roles_user_default_permissions() {
   // Exported permission: administer organic groups
   $permissions['administer organic groups'] = array(
     'name' => 'administer organic groups',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'CDI Employee',
+      '1' => 'Educator',
+    ),
   );
 
   // Exported permission: administer quicktabs
@@ -147,6 +159,15 @@ function afg_roles_user_default_permissions() {
   $permissions['administer views'] = array(
     'name' => 'administer views',
     'roles' => array(),
+  );
+
+  // Exported permission: afg spawn application from centre
+  $permissions['afg spawn application from centre'] = array(
+    'name' => 'afg spawn application from centre',
+    'roles' => array(
+      '0' => 'CDI Employee',
+      '1' => 'Educator',
+    ),
   );
 
   // Exported permission: assign user roles
@@ -187,7 +208,11 @@ function afg_roles_user_default_permissions() {
   // Exported permission: create cdi_blog content
   $permissions['create cdi_blog content'] = array(
     'name' => 'create cdi_blog content',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'App team',
+      '1' => 'CDI Employee',
+      '2' => 'Educator',
+    ),
   );
 
   // Exported permission: create group_app_team content
@@ -195,6 +220,7 @@ function afg_roles_user_default_permissions() {
     'name' => 'create group_app_team content',
     'roles' => array(
       '0' => 'CDI Employee',
+      '1' => 'Educator',
     ),
   );
 
@@ -469,7 +495,9 @@ function afg_roles_user_default_permissions() {
   // Exported permission: edit own book content
   $permissions['edit own book content'] = array(
     'name' => 'edit own book content',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'Educator',
+    ),
   );
 
   // Exported permission: edit own cdi_blog content
