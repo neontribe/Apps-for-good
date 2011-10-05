@@ -45,6 +45,12 @@ function afg_roles_user_default_permissions() {
     'roles' => array(),
   );
 
+  // Exported permission: admin vocab perms
+  $permissions['admin vocab perms'] = array(
+    'name' => 'admin vocab perms',
+    'roles' => array(),
+  );
+
   // Exported permission: administer actions
   $permissions['administer actions'] = array(
     'name' => 'administer actions',
@@ -153,6 +159,15 @@ function afg_roles_user_default_permissions() {
   $permissions['administer views'] = array(
     'name' => 'administer views',
     'roles' => array(),
+  );
+
+  // Exported permission: afg spawn application from centre
+  $permissions['afg spawn application from centre'] = array(
+    'name' => 'afg spawn application from centre',
+    'roles' => array(
+      '0' => 'CDI Employee',
+      '1' => 'Educator',
+    ),
   );
 
   // Exported permission: assign user roles
