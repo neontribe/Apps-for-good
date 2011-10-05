@@ -33,7 +33,7 @@ function afg_manage_group_users_atrium_admin_links_alter($links, $space) {
 }
 
 /**
- * Redirect user creation ti the ucreate form in this space
+ * Redirect user creation to the ucreate form in this space
  *
  * Send the browser to the role manager on success
  */

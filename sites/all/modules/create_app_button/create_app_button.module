@@ -9,21 +9,25 @@ function create_app_button_perm() {
 	return array('afg spawn application from centre');
 }
 
+function create_app_button_menu_alter(&$items) {
+	$items['node/add/group-app-team']['type'] = MENU_CALLBACK;
+}
+
 /**
  * Add a menu item to the content creation menu for a new app
  */
 function create_app_button_menu() {
+  
   $items = array();
-    
   $items['node/add/app'] = array(
-    'title' => t('App'),
-    'description' => t('Add an App based at this centre'),
+    'title' => t('Application Team'),
+    'description' => t('Add an App Team based at this centre'),
     'access arguments' => array('afg spawn application from centre'),
     'page callback' => 'create_app_button_create_redirect',
     'type' => MENU_NORMAL_ITEM,
   );
-  
   return $items;
+ 
 }
 
 function create_app_button_create_redirect() {
