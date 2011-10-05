@@ -212,9 +212,7 @@ function afg_roles_user_default_permissions() {
   // Exported permission: assign user roles
   $permissions['assign user roles'] = array(
     'name' => 'assign user roles',
-    'roles' => array(
-      '0' => 'CDI Employee',
-    ),
+    'roles' => array(),
   );
 
   // Exported permission: block users
