@@ -174,6 +174,13 @@ function afg_links($links, $attributes = array('class' => 'links')) {
     }
   }
 
+  if (isset($links['menu-593'])) {
+    $og = og_get_group_context();
+    if (strtolower($og->title) == 'cdi employees') {
+      unset($links['menu-593']);
+    }
+  }
+
   return theme_links($links, $attributes) . $suffix;
 }
 
