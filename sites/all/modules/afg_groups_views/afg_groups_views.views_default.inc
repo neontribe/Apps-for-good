@@ -634,7 +634,6 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'Browse Apps');
   $handler->override_option('use_pager', '1');
   $handler->override_option('style_plugin', 'list');
   $handler = $view->new_display('block', 'Ideas', 'block_1');
@@ -804,7 +803,6 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('block_caching', -1);
   $translatables['afg_app_directory'] = array(
     t('All'),
-    t('Browse Apps'),
     t('Builds'),
     t('Defaults'),
     t('Ideas'),
@@ -1397,7 +1395,7 @@ function afg_groups_views_views_default_views() {
       ),
     ),
   ));
-  $handler->override_option('title', 'Applications');
+  $handler->override_option('title', 'Browse Apps');
   $handler->override_option('empty', '');
   $handler->override_option('use_ajax', FALSE);
   $handler->override_option('items_per_page', 25);
@@ -2589,7 +2587,7 @@ function afg_groups_views_views_default_views() {
       'breadcrumb' => '',
       'default_argument_type' => 'og_group_node',
       'default_argument' => '',
-      'validate_type' => 'none',
+      'validate_type' => 'php',
       'validate_fail' => 'not found',
       'break_phrase' => 0,
       'not' => 0,
@@ -2653,7 +2651,21 @@ function afg_groups_views_views_default_views() {
         'group_app_team' => 0,
         'group_centre_school' => 0,
       ),
-      'validate_argument_php' => '',
+      'validate_argument_php' => '$n = node_load($argument);
+
+if (isset($n))
+{
+    if (!isset($n->field_facebook_account[0][\'url\']) &&
+        !isset($n->field_twitter_account[0][\'url\']) &&
+        !isset($n->field_ios_app_store[0][\'url\']) &&
+        !isset($n->field_android_market[0][\'url\']) &&
+        !isset($n->field_blackberry_appworld[0][\'url\']))
+    {
+      return FALSE;
+    }
+}
+
+return TRUE;',
     ),
   ));
   $handler->override_option('filters', array(
@@ -3027,10 +3039,10 @@ function afg_groups_views_views_default_views() {
   $translatables['groups_listing_app_team'] = array(
     t('About this App'),
     t('App Links'),
-    t('Applications'),
     t('Archived applications'),
     t('Block: My applications (sidebar)'),
     t('Block: User applications'),
+    t('Browse Apps'),
     t('Centre'),
     t('Defaults'),
     t('My applications'),
@@ -5758,7 +5770,7 @@ function afg_groups_views_views_default_views() {
       'breadcrumb' => '',
       'default_argument_type' => 'og_group_node',
       'default_argument' => '',
-      'validate_type' => 'none',
+      'validate_type' => 'php',
       'validate_fail' => 'not found',
       'break_phrase' => 0,
       'not' => 0,
@@ -5822,7 +5834,19 @@ function afg_groups_views_views_default_views() {
         'group_app_team' => 0,
         'group_centre_school' => 0,
       ),
-      'validate_argument_php' => '',
+      'validate_argument_php' => '$n = node_load($argument);
+
+if (isset($n))
+{
+    if (!isset($n->field_website[0][\'url\']) &&
+        !isset($n->field_facebook_account[0][\'url\']) &&
+        !isset($n->field_twitter_account[0][\'url\']))
+    {
+      return FALSE;
+    }
+}
+
+return TRUE;',
     ),
   ));
   $handler->override_option('access', array(

@@ -349,7 +349,7 @@ function afg_groups_views_content_default_fields() {
     ),
     'url' => 0,
     'title' => 'value',
-    'title_value' => 'Facebook',
+    'title_value' => 'Facebook profile',
     'enable_tokens' => 0,
     'validate_url' => 1,
     'widget' => array(
@@ -659,7 +659,7 @@ function afg_groups_views_content_default_fields() {
     ),
     'url' => 0,
     'title' => 'value',
-    'title_value' => 'Twitter',
+    'title_value' => 'Twitter profile',
     'enable_tokens' => 0,
     'validate_url' => 1,
     'widget' => array(
@@ -1232,13 +1232,12 @@ function afg_groups_views_content_default_fields() {
     ),
     'url' => 0,
     'title' => 'value',
-    'title_value' => 'Facebook',
+    'title_value' => 'Facebook profile',
     'enable_tokens' => 0,
     'validate_url' => 1,
     'widget' => array(
       'default_value' => array(
         '0' => array(
-          'title' => '',
           'url' => '',
         ),
       ),
@@ -1551,13 +1550,12 @@ function afg_groups_views_content_default_fields() {
     ),
     'url' => 0,
     'title' => 'value',
-    'title_value' => 'Twitter',
+    'title_value' => 'Twitter profile',
     'enable_tokens' => 0,
     'validate_url' => 1,
     'widget' => array(
       'default_value' => array(
         '0' => array(
-          'title' => '',
           'url' => '',
         ),
       ),
