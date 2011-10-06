@@ -69,7 +69,10 @@ function atrium_user_default_permissions() {
   // Exported permission: administer nodes
   $permissions['administer nodes'] = array(
     'name' => 'administer nodes',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'App team',
+      '1' => 'Educator',
+    ),
   );
 
   // Exported permission: administer notifications
@@ -171,7 +174,11 @@ function atrium_user_default_permissions() {
   // Exported permission: subscribe other users
   $permissions['subscribe other users'] = array(
     'name' => 'subscribe other users',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'administrator',
+      '1' => 'authenticated user',
+      '2' => 'manager',
+    ),
   );
 
   // Exported permission: subscribe to author
@@ -267,8 +274,10 @@ function atrium_user_default_permissions() {
   $permissions['view users outside groups'] = array(
     'name' => 'view users outside groups',
     'roles' => array(
-      '0' => 'anonymous user',
-      '1' => 'authenticated user',
+      '0' => 'administrator',
+      '1' => 'anonymous user',
+      '2' => 'authenticated user',
+      '3' => 'manager',
     ),
   );
 

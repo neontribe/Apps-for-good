@@ -444,7 +444,9 @@ function afg_roles_user_default_permissions() {
   $permissions['edit any group_app_team content'] = array(
     'name' => 'edit any group_app_team content',
     'roles' => array(
-      '0' => 'CDI Employee',
+      '0' => 'App team',
+      '1' => 'CDI Employee',
+      '2' => 'Educator',
     ),
   );
 
@@ -453,6 +455,7 @@ function afg_roles_user_default_permissions() {
     'name' => 'edit any group_centre_school content',
     'roles' => array(
       '0' => 'CDI Employee',
+      '1' => 'Educator',
     ),
   );
 
@@ -513,6 +516,7 @@ function afg_roles_user_default_permissions() {
     'roles' => array(
       '0' => 'App team',
       '1' => 'CDI Employee',
+      '2' => 'Educator',
     ),
   );
 
@@ -520,9 +524,8 @@ function afg_roles_user_default_permissions() {
   $permissions['edit own group_centre_school content'] = array(
     'name' => 'edit own group_centre_school content',
     'roles' => array(
-      '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
+      '0' => 'CDI Employee',
+      '1' => 'Educator',
     ),
   );
 
