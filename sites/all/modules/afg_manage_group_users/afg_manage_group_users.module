@@ -21,15 +21,23 @@ function afg_manage_group_users_menu() {
 
 /**
  * Push a "Manage User Roles" entry into the atrium settings menu"
+ *
+ *  Suppress the display of
+ * "Reorder Menu" and "Customize Features" links
+ * 
  */
-function afg_manage_group_users_atrium_admin_links_alter($links, $space) {
+function afg_manage_group_users_atrium_admin_links_alter(&$links, $space) {
     $item = menu_get_item("og/users/{$space->id}/roles");
     if ($item && $item['access']) {
         $links['roles'] = array(
           'title' => t('Manage User Roles'),
           'href' => $item['href'],
         );
-      }   
+    }
+    
+    //Supress some redundant navigation
+    unset($links['features']);
+    unset($links['reorder']);
 }
 
 /**
@@ -59,6 +67,8 @@ function afg_manage_group_users_atrium_user_links_alter(&$links, $space) {
     }
   }
 }
+
+
 
 /**
  * Redirect user creation to the ucreate form in this space
