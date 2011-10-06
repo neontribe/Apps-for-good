@@ -454,7 +454,7 @@ function atrium_blog_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'Blog');
+  $handler->override_option('title', 'Text');
   $handler->override_option('use_pager', '1');
   $handler->override_option('row_plugin', 'node');
   $handler = $view->new_display('page', 'Page', 'page_1');

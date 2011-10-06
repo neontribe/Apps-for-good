@@ -5,6 +5,7 @@
  */
 function atrium_calendar_context_default_contexts() {
   $export = array();
+
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
@@ -55,8 +56,8 @@ function atrium_calendar_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Calendar');
-
   $export['calendar_calendar'] = $context;
+
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
@@ -90,7 +91,7 @@ function atrium_calendar_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Calendar');
-
   $export['calendar_event'] = $context;
+
   return $export;
 }
