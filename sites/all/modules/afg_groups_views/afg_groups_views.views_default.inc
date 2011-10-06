@@ -1395,7 +1395,7 @@ function afg_groups_views_views_default_views() {
       ),
     ),
   ));
-  $handler->override_option('title', 'Browse Apps');
+  $handler->override_option('title', 'Applications');
   $handler->override_option('empty', '');
   $handler->override_option('use_ajax', FALSE);
   $handler->override_option('items_per_page', 25);
@@ -3039,10 +3039,10 @@ return TRUE;',
   $translatables['groups_listing_app_team'] = array(
     t('About this App'),
     t('App Links'),
+    t('Applications'),
     t('Archived applications'),
     t('Block: My applications (sidebar)'),
     t('Block: User applications'),
-    t('Browse Apps'),
     t('Centre'),
     t('Defaults'),
     t('My applications'),
@@ -6576,7 +6576,13 @@ return TRUE;',
     'nothing' => array(
       'label' => '',
       'alter' => array(
-        'text' => '<div class="activity-info"><div class="views-field-atrium-activity-timestamp">[atrium_activity_timestamp]</div><div class="activity-group-comment"><div class="views-field-title-1">[title_1]</div><div class="views-field-comment-count">[comment_count]</div></div></div>',
+        'text' => '<div class="activity-info">
+    <div class="views-field-atrium-activity-timestamp">[atrium_activity_timestamp]</div>
+    <div class="activity-group-comment">
+        <div class="views-field-comment-count">[comment_count]</div>
+        <div class="views-field-title-1">[title_1]</div>
+    </div>
+</div>',
         'make_link' => 0,
         'path' => '',
         'link_class' => '',
@@ -6637,7 +6643,7 @@ return TRUE;',
       'relationship' => 'none',
     ),
     'comment' => array(
-      'label' => 'New Comment',
+      'label' => '',
       'alter' => array(
         'alter_text' => 1,
         'text' => '<em>[comment]</em>',
@@ -7437,7 +7443,7 @@ return TRUE;',
       'date_format' => 'time ago',
       'custom_date_format' => '',
       'reldate' => '0',
-      'exclude' => 0,
+      'exclude' => 1,
       'id' => 'atrium_activity_timestamp',
       'table' => 'comments',
       'field' => 'atrium_activity_timestamp',
@@ -7475,7 +7481,7 @@ return TRUE;',
       'separator' => ',',
       'prefix' => '',
       'suffix' => '',
-      'exclude' => 0,
+      'exclude' => 1,
       'id' => 'comment_count',
       'table' => 'node_comment_statistics',
       'field' => 'comment_count',
@@ -7542,7 +7548,7 @@ return TRUE;',
         'html' => FALSE,
       ),
       'empty' => '',
-      'hide_empty' => 0,
+      'hide_empty' => 1,
       'empty_zero' => 0,
       'time_horizon' => '30',
       'exclude' => 1,
@@ -7583,6 +7589,42 @@ return TRUE;',
       'id' => 'timestamp',
       'table' => 'history_user',
       'field' => 'timestamp',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+    'nothing' => array(
+      'label' => '',
+      'alter' => array(
+        'text' => '<div class="activity-info">
+    <div class="views-field-atrium-activity-timestamp">[atrium_activity_timestamp]</div>
+    <div class="activity-group-comment">
+        <div class="views-field-comment-count">[comment_count]</div>
+    </div>
+</div>',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'exclude' => 0,
+      'id' => 'nothing',
+      'table' => 'views',
+      'field' => 'nothing',
       'override' => array(
         'button' => 'Use default',
       ),
@@ -7641,7 +7683,7 @@ return TRUE;',
         'strip_tags' => 0,
       ),
       'empty' => '',
-      'hide_empty' => 0,
+      'hide_empty' => 1,
       'empty_zero' => 0,
       'exclude' => 0,
       'id' => 'comment',
@@ -7854,7 +7896,7 @@ return TRUE;',
       'relationship' => 'none',
     ),
   ));
-  $handler->override_option('css_class', 'activity-updates');
+  $handler->override_option('css_class', 'activity-updates activity-updates-apps');
   $handler->override_option('empty', 'No updates yet - check back soon.');
   $handler->override_option('row_options', array(
     'inline' => array(
@@ -8105,7 +8147,7 @@ Click follow above to receive updates & how to help.</p>');
         'enabled' => 0,
         'acronym' => 0,
       ),
-      'exclude' => 0,
+      'exclude' => 1,
       'id' => 'group_nid',
       'table' => 'og_ancestry',
       'field' => 'group_nid',
@@ -8142,7 +8184,7 @@ Click follow above to receive updates & how to help.</p>');
         'frontpage' => 1,
         'type' => 'spaces_og',
       ),
-      'exclude' => 0,
+      'exclude' => 1,
       'id' => 'title_1',
       'table' => 'node',
       'field' => 'title',
@@ -8213,7 +8255,7 @@ Click follow above to receive updates & how to help.</p>');
       'date_format' => 'time ago',
       'custom_date_format' => '',
       'reldate' => '0',
-      'exclude' => 0,
+      'exclude' => 1,
       'id' => 'atrium_activity_timestamp',
       'table' => 'comments',
       'field' => 'atrium_activity_timestamp',
@@ -8292,7 +8334,7 @@ Click follow above to receive updates & how to help.</p>');
       'relationship' => 'none',
     ),
     'field_centre_ref_nid' => array(
-      'label' => 'Parent Centre',
+      'label' => '',
       'alter' => array(
         'alter_text' => 0,
         'text' => '',
@@ -8315,7 +8357,7 @@ Click follow above to receive updates & how to help.</p>');
       'hide_empty' => 0,
       'empty_zero' => 0,
       'link_to_node' => 0,
-      'label_type' => 'widget',
+      'label_type' => 'none',
       'format' => 'default',
       'multiple' => array(
         'group' => TRUE,
@@ -8361,10 +8403,47 @@ Click follow above to receive updates & how to help.</p>');
       'separator' => ',',
       'prefix' => '',
       'suffix' => '',
-      'exclude' => 0,
+      'exclude' => 1,
       'id' => 'comment_count',
       'table' => 'node_comment_statistics',
       'field' => 'comment_count',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+    'nothing' => array(
+      'label' => '',
+      'alter' => array(
+        'text' => '<div class="activity-info">
+    <div class="views-field-atrium-activity-timestamp">[atrium_activity_timestamp]</div>
+    <div class="activity-group-comment">
+        <div class="views-field-comment-count">[comment_count]</div>
+        <div class="views-field-title-1">[title_1]</div>
+    </div>
+</div>',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'exclude' => 0,
+      'id' => 'nothing',
+      'table' => 'views',
+      'field' => 'nothing',
       'override' => array(
         'button' => 'Use default',
       ),
@@ -8406,7 +8485,7 @@ Click follow above to receive updates & how to help.</p>');
       'label' => '',
       'alter' => array(
         'alter_text' => 0,
-        'text' => '',
+        'text' => '[group_nid_1][body]',
         'make_link' => 0,
         'path' => '',
         'link_class' => '',
@@ -8455,7 +8534,7 @@ Click follow above to receive updates & how to help.</p>');
         'strip_tags' => 0,
       ),
       'empty' => '',
-      'hide_empty' => 0,
+      'hide_empty' => 1,
       'empty_zero' => 0,
       'exclude' => 0,
       'id' => 'comment',
@@ -8790,6 +8869,7 @@ Click follow above to receive updates & how to help.</p>');
     ),
   ));
   $handler->override_option('title', 'Recent Activity');
+  $handler->override_option('css_class', 'view-updates-centre');
   $handler->override_option('empty', 'No updates yet - check back soon.');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
