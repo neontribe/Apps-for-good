@@ -177,6 +177,18 @@ function atrium_context_default_contexts() {
           'region' => 'right',
           'weight' => 2,
         ),
+        'views-activity_listing-block_1' => array(
+          'module' => 'views',
+          'delta' => 'activity_listing-block_1',
+          'region' => 'content',
+          'weight' => 1,
+        ),
+        'views-groups_listing-block_2' => array(
+          'module' => 'views',
+          'delta' => 'groups_listing-block_2',
+          'region' => 'right',
+          'weight' => 0,
+        ),
       ),
     ),
   );
