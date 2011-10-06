@@ -62,20 +62,22 @@ $(document).ready(function(){
 		var parent = $(this).parent();
 		
 		// Add active state
-		if ($(this).is(':checked')){	
+		if ($(this).is(':radio:checked')){	
 			parent.addClass('tag-active');
 			parent.contents().filter(function(){ return this.nodeType === 3; }).wrap('<span />');
 		}
 		
 		// Bind click event
 		$(this).bind('click', function(e){
-			// Remove any current active classes set
-			removeActiveTag();
-			
-			// Add active state
-			if ($(this).is(':checked')){	
-				parent.addClass('tag-active');
-				parent.contents().filter(function(){ return this.nodeType === 3; }).wrap('<span />');
+			if ($(this).is(':radio')){
+				// Remove any current active classes set
+				removeActiveTag();
+				
+				// Add active state
+				if ($(this).is(':radio:checked')){	
+					parent.addClass('tag-active');
+					parent.contents().filter(function(){ return this.nodeType === 3; }).wrap('<span />');
+				}
 			}
 		});
 	});
