@@ -94,6 +94,12 @@ function afg_profile_context_default_contexts() {
           'region' => 'right',
           'weight' => 3,
         ),
+        'views-updates-block_3' => array(
+          'module' => 'views',
+          'delta' => 'updates-block_3',
+          'region' => 'content',
+          'weight' => 0,
+        ),
       ),
     ),
   );

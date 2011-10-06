@@ -356,6 +356,13 @@ function afg_views_view_field__updates__block_4__atrium_activity($view, $handler
         return afg_activity_title_rewrite($view, $handler, $obj);
 }
 
+//recent activity stream user profile page
+function afg_views_view_field__updates__block_3__atrium_activity($view, $handler, $obj) {
+        return afg_activity_title_rewrite($view, $handler, $obj);
+}
+
+
+
 
 //hook recent activity field and rewrite
 function afg_activity_title_rewrite($view, $handler, $obj) {
