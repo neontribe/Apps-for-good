@@ -6468,7 +6468,7 @@ return TRUE;',
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'Updates');
+  $handler->override_option('title', 'Recent activity');
   $handler->override_option('empty', 'No updates for this centre yet..');
   $handler->override_option('empty_format', '5');
   $handler->override_option('use_ajax', TRUE);
@@ -9089,7 +9089,6 @@ Click follow above to receive updates & how to help.</p>'),
     t('Profiles you\'re following'),
     t('Recent Activity'),
     t('Recent activity'),
-    t('Updates'),
     t('User activity'),
     t('User\'s activity'),
   );
