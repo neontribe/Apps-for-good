@@ -326,6 +326,11 @@ function afg_views_view_field__updates__block_9__atrium_activity($view, $handler
 }
 
 
+//recent activity stream Centre profile page
+function afg_views_view_field__updates__block_6__atrium_activity($view, $handler, $obj) {
+        return afg_activity_title_rewrite($view, $handler, $obj);
+}
+
 
 
 //hook recent activity field and rewrite
