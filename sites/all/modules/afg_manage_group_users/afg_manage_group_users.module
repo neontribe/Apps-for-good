@@ -33,6 +33,34 @@ function afg_manage_group_users_atrium_admin_links_alter($links, $space) {
 }
 
 /**
+ * Adjust the display of the "subscribe" link to reflect afg_roles
+ *
+ * The "follow" button should show only for non-members
+ *
+ * Unfollow is only for 'Supporters'
+ */
+function afg_manage_group_users_atrium_user_links_alter(&$links, $space) {
+  if ($links['subscribe']) {
+    // Get RID of role 'Supporter'
+    $srid = db_result(
+      db_query("SELECT r.rid FROM {role} r WHERE r.name = '%s'", "Supporter")
+    );
+    global $user;
+    $u_rids = og_user_roles_get_roles_by_group($space->id, $user->uid);
+    $show_link = FALSE;    
+    // If the user has _only_ the 'Supporter' role in the current group
+    // let it exist
+    if (count($u_rids) == 1 && in_array($srid, $u_rids)) { $show_link = TRUE; }
+    // If the user has _no_ roles in the group let the subcribe link exist
+    if (count($u_rids) == 0) { $show_link = TRUE; }
+    // other wise remove it
+    if (!$show_link) {
+      unset($links['subscribe']);
+    }
+  }
+}
+
+/**
  * Redirect user creation to the ucreate form in this space
  *
  * Send the browser to the role manager on success
