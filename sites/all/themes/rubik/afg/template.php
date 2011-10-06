@@ -51,6 +51,9 @@ function afg_preprocess_page(&$vars) {
   // if we are displaying a node and the node has dashboard show that instead
   $arg2 = arg(2);
   $arg1 = arg(1);
+  //dpm($arg1, 'arg1');
+  //dpm($arg2, 'arg2');
+
   if (!$vars['is_front'] && empty($arg2) && $arg1 == 'node') {
     $og = og_get_group_context();
     drupal_goto($og->purl);
@@ -90,7 +93,7 @@ function afg_preprocess_page(&$vars) {
   
   //dpm('a');
   //}
-  //dpm($vars);
+  //dpm($vars, vars);
   
   // Header menu links
   $links = menu_navigation_links('menu-header-menu', 0);
@@ -118,12 +121,12 @@ function afg_preprocess_page(&$vars) {
   $og = og_get_group_context();
   if ($og) {
   $nid = $og->nid;
-  $node = node_load($nid);
+  $group_node = node_load($nid);
   }
   
-  if ($node) {
-    $vars['title'] = $node->title;
-    $vars['header_desc'] = $node->body;
+  if ($group_node) {
+    $vars['title'] = $group_node->title;
+    $vars['header_desc'] = $group_node->body;
  /**website variable not in use in page.tpl**/
   //  if ($node->type == 'group_centre_school') {
   //    $website = $node->field_website[0]['url'];
@@ -131,19 +134,36 @@ function afg_preprocess_page(&$vars) {
   //  $vars['website'] = $website;
 
   //get region from taxonomy for group node
-    if ($node->type == 'group_centre_school') {
+    if ($group_node->type == 'group_centre_school') {
       $q = 'select name from {term_node} tn inner join {term_data} td on tn.tid=td.tid where nid = %d and tn.vid = %d and td.vid = %d';
-      $nid = $node->nid;
-      $vid = $node->vid;
+      $nid = $group_node->nid;
+      $vid = $group_node->vid;
       $res = db_query($q, $nid, $vid, 9);
       $region = db_result($res);
     
     }
   
     $vars['region'] = $region;
-    $vars['city'] = $node->field_centre_loc_details[0]['city'];
+    $vars['city'] = $group_node->field_centre_loc_details[0]['city'];
   }
 
+  //Get vars for user
+  $profile_node = content_profile_load('profile', $arg1);
+  if($profile_node) {
+    $vars['title'] = $profile_node->title;
+    if ($profile_node->picture) {
+      $user_pic_path = $profile_node->picture;
+    } else {
+      $user_pic_path = 'sites/default/files/afg_icon-supporter.png';
+    }
+      $vars['user_pic'] = theme('imagecache', 'user-m', $user_pic_path);
+
+    //dpm($profile_node, 'profile');
+    //dpm(user_load($arg1), 'user');
+    //is_profile_flag for rendering social links
+    $vars['is_profile'] = TRUE;
+  }
+  
   // Rewrite the page titles to remove the Home
   if (strpos($vars['head_title'], 'Home') === 0) {
     $og = og_get_group_context();

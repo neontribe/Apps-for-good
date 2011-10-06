@@ -42,9 +42,11 @@
             <?php print theme('links', $header_links); ?>
           </div>
           
-      </div>   
+      </div>  
+
+
       <div id='page-title' class='limiter clear-block'>
-        
+         <?php if ($user_pic) print $user_pic ?>
         <h1 class='page-title <?php print $page_icon_class ?>'>
           <?php if ($title) print $title ?>
         </h1>
@@ -59,9 +61,9 @@
           <?php print $header_desc ?>
        </span>
 
+
 <!--detect if site home for social links-->
-<?php if ($base_path!==$front_page): ?>
-	   
+<?php if (($base_path!==$front_page) || $is_profile): ?>
        <?php $soc_path = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>
        
 	   <div id="prof-soc-widgets">

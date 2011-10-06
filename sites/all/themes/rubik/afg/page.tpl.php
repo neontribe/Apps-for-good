@@ -1,13 +1,10 @@
 <?php include('header.inc'); ?>
 
 <div id='page' class='clear-block limiter page-content'>
-
   <?php if ($show_messages && $messages): ?>
     <div id='console' class='clear-block'><?php print $messages; ?></div>
   <?php endif; ?>
-   
   <div id='content'>  
-  
     <?php if ($tabs): ?>
       <div id='tabs'>
         <div class='page-tabs limiter clear-block'><?php print $tabs ?></div>
