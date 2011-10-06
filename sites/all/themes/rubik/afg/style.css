@@ -52,10 +52,13 @@ input,
 textarea,
 select {
 	font-family: "Open Sans", "Lucida", "Lucida Grande", "Trebuchet MS", Tahoma, Verdana, sans-serif;
-	background: url('images/afg/background.jpg');
 	line-height: 1.5;
 	color: #2A2A2A;
 	font-size: 81.25%;
+}
+
+body {
+	background: url('images/afg/background.jpg');
 }
 
 a {
@@ -165,6 +168,7 @@ h1 {
 
 #content-right .block-title h2 {
 	font-size: 0.7em;
+	margin: 0 0 10px;
 }
 
 #block-atrium-create h2,
@@ -173,7 +177,9 @@ h1 {
 	font-weight: bold;
 	font-size: 0.3em !important;
 	text-transform: uppercase;
-	padding: 0 0 4px;
+	padding: 5px 0 4px;
+	margin: 0 0 8px;
+	text-align: left;
 	border-bottom: 2px solid #CCC;
 	font-family: "Open Sans", "Lucida", "Lucida Grande", "Trebuchet MS", Tahoma,Verdana, sans-serif;
 }
@@ -669,6 +675,10 @@ input[type='submit'] {
 	font-family: "Open Sans", "Lucida", "Lucida Grande", "Trebuchet MS", Tahoma, Verdana, sans-serif;
 }
 
+#block-atrium-account.account-menu-active .block-content {
+	background: #FFF;
+}
+
 /* Page Footer
 ---------------------------------------------------------- */
 
@@ -830,13 +840,12 @@ input[type='submit'] {
 }
 
 #content-right ul li {
-	/*border-bottom: 1px solid #A8A8A8;*/
 	margin-bottom: 1px;
 	font-size: 1.4em;
 	padding: 8px 0;
 }
 
-#content-right ul li:last-child {
+#content-right > ul li:last-child {
 	border-bottom: 0;
 	margin-bottom: 20px;
 }
@@ -865,6 +874,36 @@ input[type='submit'] {
 #content-right .views-field-mail a:after { content: " \2192"; }
 /*.views-field-field-website-url a:after { content: " \21D7"; }*/
 
+#content-right .view-groups-listing-app-team .views-field-body p {
+	font-size: 0.8em;
+}
+
+#content-right .view-groups-listing li,
+#block-menu-menu-app-directory-links li,
+#block-menu-menu-centre-directory-links li {
+	border-bottom-color: #CCC;
+}
+
+#content-right .view-groups-listing li a,
+#block-menu-menu-app-directory-links li a,
+#block-menu-menu-centre-directory-links li a {
+	font-size: 0.85em;
+}
+
+#content-right .view-groups-listing li a:hover,
+#block-menu-menu-app-directory-links li a:hover,
+#block-menu-menu-centre-directory-links li a:hover {
+	color: #333;
+}
+
+#content-right .view-empty {
+	font-size: 1.1em;
+	line-height: 1.5;
+}
+
+#content-right .view-empty  strong {
+	display: block;
+}
 
 /* User Menu's:
  * Create & Admin Links
@@ -881,14 +920,14 @@ input[type='submit'] {
 
 #block-atrium-create .links,
 #block-atrium-admin_links .links {
-	background: #333;
-	padding: 5px 0 0 0;
-	margin: -15px 0 0 0;
+	background: #DDD;
+	padding: 2px 0 0 0;
+	margin: -10px 0 0 0;
 }
 
 #block-atrium-create li,
 #block-atrium-admin_links li {
-	float: right;
+	float: left;
 }
 
 #block-atrium-admin_links {
@@ -899,12 +938,14 @@ input[type='submit'] {
 #block-atrium-admin_links,
 #block-atrium-create .block-content,
 #block-atrium-admin_links .block-content {
-	background: none !important;
+	background: none;
+	margin: 0;
+	padding: 4px;
 }
 
 #block-atrium-create li,
 #block-atrium-admin_links li {
-	margin: 0 0 10px;
+	margin: 0 0 10px 2px;
 }
 
 #block-atrium-create ul a:link,
@@ -912,9 +953,12 @@ input[type='submit'] {
 #block-atrium-admin_links ul a:link,
 #block-atrium-admin_links ul a:visited {
 	color: #FFF;
-	padding: 5px;
-	margin: 0 5px 0 0;
+	padding: 6px 15px 10px;
+	margin: 0 0 -8px;
 	background: #0099FF;
+	font-family: 'Paytone One', sans-serif;
+	text-transform: uppercase;
+	line-height: 1.7;
 }
 
 #block-atrium-create li:hover a,
@@ -1770,7 +1814,7 @@ li.tab-plan a {  background:url('images/afg/icons/afg_blog-icon.gif')  no-repeat
 ---------------------------------------------------------- */
 
 .account-menu-active {
-	background: #FFF !important;
+	background: #333 !important;
 }
 
 body #header-top .account-menu-active {
@@ -1854,7 +1898,7 @@ body #header-top .account-menu-active a {
 	width: 237px;
 	background: url('images/afg/notes-background.png') no-repeat !important;
 	position: absolute;
-	top: 200px;
+	top: 220px;
 	right: 60px;
 }
 
@@ -2561,6 +2605,7 @@ body #header-top .account-menu-active a {
 .page-node input[type='submit'] {
 	border: 0 !important;
 	float: right;
+	margin: 0 0 0 5px;
 }
 
 .page-node .filefield-element {
