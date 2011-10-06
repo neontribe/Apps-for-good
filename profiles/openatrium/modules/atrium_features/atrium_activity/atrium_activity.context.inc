@@ -5,6 +5,7 @@
  */
 function atrium_activity_context_default_contexts() {
   $export = array();
+
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
@@ -38,7 +39,7 @@ function atrium_activity_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Profile');
-
   $export['activity_profile'] = $context;
+
   return $export;
 }
