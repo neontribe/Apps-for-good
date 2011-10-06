@@ -371,8 +371,13 @@ function afg_activity_title_rewrite($view, $handler, $obj) {
           $username = $user->name;
           $activity_update = $username . ' commented on ' . $title_link;
       } else {
+	if ($obj->node_og_ancestry_nid){
         $sql='SELECT value FROM {purl} where id=' . $obj->node_og_ancestry_nid;
-        $res = db_query($sql);
+        } else {
+	if ($obj->og_ancestry_nid){
+	$sql='SELECT value FROM {purl} where id=' . $obj->og_ancestry_nid;
+	}}
+	$res = db_query($sql);
         $row = db_fetch_array($res);
         $nodepath = $row[value];
         $urlslug = '<a href=' . $nodepath . '>';
