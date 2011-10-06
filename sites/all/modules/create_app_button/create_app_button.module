@@ -35,11 +35,14 @@ function create_app_button_create_redirect() {
 	$og = spaces_get_space();
 	$type = $og->group->type;
 	$id = $og->id;
-  
+    $path = 'node/add/group-app-team';
+	// If we're in the context of a centre
 	if ($type == 'group_centre_school') {
-	  $path = 'node/add/group-app-team';
 	  $qs ='edit[field_centre_ref][nid][nid]=' . $id; //Use the prepopulate module
 	  drupal_goto($path, $qs);
+	}
+	else {
+		drupal_goto($path);
 	}
 }
 
