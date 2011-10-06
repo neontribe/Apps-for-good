@@ -5,6 +5,7 @@
  */
 function atrium_members_spaces_presets() {
   $export = array();
+
   $spaces_presets = new stdClass;
   $spaces_presets->disabled = FALSE; /* Edit this to true to make a default spaces_presets disabled initially */
   $spaces_presets->api_version = 3;
@@ -72,7 +73,7 @@ function atrium_members_spaces_presets() {
   // Included for use with string extractors like potx.
   t('A simple profile with a blog, calendar and dashboard.');
   t('Simple profile');
-
   $export['atrium_members_simple'] = $spaces_presets;
+
   return $export;
 }

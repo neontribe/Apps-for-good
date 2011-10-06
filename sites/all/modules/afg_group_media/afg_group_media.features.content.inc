@@ -421,7 +421,7 @@ function afg_group_media_content_default_fields() {
     ),
     'widget_active' => '1',
     'type' => 'emvideo',
-    'required' => '0',
+    'required' => '1',
     'multiple' => '0',
     'module' => 'emvideo',
     'active' => '1',
@@ -484,9 +484,9 @@ function afg_group_media_content_default_fields() {
       'media_flickr_controlbar_preview' => 'none',
       'media_flickr_allowfullscreen_preview' => 1,
       'media_flickr_logo_preview' => '',
-      'label' => 'Video',
+      'label' => 'YouTube video address',
       'weight' => '-4',
-      'description' => '',
+      'description' => 'Enter the URL address of the YouTube video to show.',
       'type' => 'emvideo_textfields',
       'module' => 'emvideo',
     ),
@@ -641,7 +641,7 @@ function afg_group_media_content_default_fields() {
   t('Activity_link');
   t('Icon');
   t('Image');
-  t('Video');
+  t('YouTube video address');
 
   return $fields;
 }
