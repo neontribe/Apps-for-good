@@ -7,7 +7,7 @@ function atrium_taxonomy_default_vocabularies() {
   return array(
     'keywords' => array(
       'name' => 'Keywords',
-      'description' => NULL,
+      'description' => '',
       'help' => 'Enter tags related to your post.',
       'relations' => '0',
       'hierarchy' => '0',
@@ -17,10 +17,10 @@ function atrium_taxonomy_default_vocabularies() {
       'module' => 'features_keywords',
       'weight' => '0',
       'nodes' => array(
-        'blog' => 'blog',
-        'book' => 'book',
-        'casetracker_basic_case' => 'casetracker_basic_case',
         'casetracker_basic_project' => 'casetracker_basic_project',
+        'casetracker_basic_case' => 'casetracker_basic_case',
+        'book' => 'book',
+        'blog' => 'blog',
         'event' => 'event',
       ),
     ),

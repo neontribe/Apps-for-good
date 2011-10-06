@@ -5,6 +5,7 @@
  */
 function atrium_groups_spaces_presets() {
   $export = array();
+
   $spaces_presets = new stdClass;
   $spaces_presets->disabled = FALSE; /* Edit this to true to make a default spaces_presets disabled initially */
   $spaces_presets->api_version = 3;
@@ -87,8 +88,8 @@ function atrium_groups_spaces_presets() {
   // Included for use with string extractors like potx.
   t('A private group is accessible only to users added to that group by one of the group\'s managers.');
   t('Private group');
-
   $export['atrium_groups_private'] = $spaces_presets;
+
   $spaces_presets = new stdClass;
   $spaces_presets->disabled = FALSE; /* Edit this to true to make a default spaces_presets disabled initially */
   $spaces_presets->api_version = 3;
@@ -170,7 +171,7 @@ function atrium_groups_spaces_presets() {
   // Included for use with string extractors like potx.
   t('A public group is accessible to all users on the site. Users can join and leave public groups freely.');
   t('Public group');
-
   $export['atrium_groups_public'] = $spaces_presets;
+
   return $export;
 }

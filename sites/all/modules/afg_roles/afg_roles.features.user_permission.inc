@@ -39,16 +39,6 @@ function afg_roles_user_default_permissions() {
     ),
   );
 
-  // Exported permission: add content to books
-  $permissions['add content to books'] = array(
-    'name' => 'add content to books',
-    'roles' => array(
-      '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
-    ),
-  );
-
   // Exported permission: add list of open ids
   $permissions['add list of open ids'] = array(
     'name' => 'add list of open ids',
@@ -81,28 +71,9 @@ function afg_roles_user_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported permission: administer book outlines
-  $permissions['administer book outlines'] = array(
-    'name' => 'administer book outlines',
-    'roles' => array(
-      '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
-    ),
-  );
-
   // Exported permission: administer case tracker
   $permissions['administer case tracker'] = array(
     'name' => 'administer case tracker',
-    'roles' => array(
-      '0' => 'CDI Employee',
-      '1' => 'Educator',
-    ),
-  );
-
-  // Exported permission: administer comments
-  $permissions['administer comments'] = array(
-    'name' => 'administer comments',
     'roles' => array(
       '0' => 'CDI Employee',
       '1' => 'Educator',
@@ -199,43 +170,16 @@ function afg_roles_user_default_permissions() {
     ),
   );
 
-  // Exported permission: assign cases
-  $permissions['assign cases'] = array(
-    'name' => 'assign cases',
-    'roles' => array(
-      '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
-    ),
-  );
-
   // Exported permission: assign user roles
   $permissions['assign user roles'] = array(
     'name' => 'assign user roles',
     'roles' => array(),
   );
 
-  // Exported permission: block users
-  $permissions['block users'] = array(
-    'name' => 'block users',
-    'roles' => array(
-      '0' => 'CDI Employee',
-      '1' => 'Educator',
-    ),
-  );
-
   // Exported permission: can disable taxonomy images
   $permissions['can disable taxonomy images'] = array(
     'name' => 'can disable taxonomy images',
     'roles' => array(),
-  );
-
-  // Exported permission: change own username
-  $permissions['change own username'] = array(
-    'name' => 'change own username',
-    'roles' => array(
-      '0' => 'CDI Employee',
-    ),
   );
 
   // Exported permission: clear atrium_calendar_ical_feed feeds
@@ -259,44 +203,6 @@ function afg_roles_user_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported permission: create blog content
-  $permissions['create blog content'] = array(
-    'name' => 'create blog content',
-    'roles' => array(
-      '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
-    ),
-  );
-
-  // Exported permission: create book content
-  $permissions['create book content'] = array(
-    'name' => 'create book content',
-    'roles' => array(
-      '0' => 'Educator',
-    ),
-  );
-
-  // Exported permission: create casetracker_basic_case content
-  $permissions['create casetracker_basic_case content'] = array(
-    'name' => 'create casetracker_basic_case content',
-    'roles' => array(
-      '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
-    ),
-  );
-
-  // Exported permission: create casetracker_basic_project content
-  $permissions['create casetracker_basic_project content'] = array(
-    'name' => 'create casetracker_basic_project content',
-    'roles' => array(
-      '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
-    ),
-  );
-
   // Exported permission: create cdi_blog content
   $permissions['create cdi_blog content'] = array(
     'name' => 'create cdi_blog content',
@@ -305,32 +211,6 @@ function afg_roles_user_default_permissions() {
       '1' => 'CDI Employee',
       '2' => 'Educator',
     ),
-  );
-
-  // Exported permission: create event content
-  $permissions['create event content'] = array(
-    'name' => 'create event content',
-    'roles' => array(
-      '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
-    ),
-  );
-
-  // Exported permission: create feed_ical content
-  $permissions['create feed_ical content'] = array(
-    'name' => 'create feed_ical content',
-    'roles' => array(
-      '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
-    ),
-  );
-
-  // Exported permission: create feed_ical_item content
-  $permissions['create feed_ical_item content'] = array(
-    'name' => 'create feed_ical_item content',
-    'roles' => array(),
   );
 
   // Exported permission: create group_app_team content
@@ -350,56 +230,10 @@ function afg_roles_user_default_permissions() {
     ),
   );
 
-  // Exported permission: create group_media_image content
-  $permissions['create group_media_image content'] = array(
-    'name' => 'create group_media_image content',
-    'roles' => array(
-      '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
-    ),
-  );
-
-  // Exported permission: create group_media_video content
-  $permissions['create group_media_video content'] = array(
-    'name' => 'create group_media_video content',
-    'roles' => array(
-      '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
-    ),
-  );
-
-  // Exported permission: create new books
-  $permissions['create new books'] = array(
-    'name' => 'create new books',
-    'roles' => array(
-      '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
-    ),
-  );
-
   // Exported permission: create page content
   $permissions['create page content'] = array(
     'name' => 'create page content',
     'roles' => array(),
-  );
-
-  // Exported permission: create request_for_help content
-  $permissions['create request_for_help content'] = array(
-    'name' => 'create request_for_help content',
-    'roles' => array(
-      '0' => 'App team',
-    ),
-  );
-
-  // Exported permission: create shoutbox content
-  $permissions['create shoutbox content'] = array(
-    'name' => 'create shoutbox content',
-    'roles' => array(
-      '0' => 'authenticated user',
-    ),
   );
 
   // Exported permission: create url aliases
@@ -408,28 +242,11 @@ function afg_roles_user_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported permission: create users
-  $permissions['create users'] = array(
-    'name' => 'create users',
-    'roles' => array(
-      '0' => 'CDI Employee',
-      '1' => 'Educator',
-    ),
-  );
-
   // Exported permission: delete any blog content
   $permissions['delete any blog content'] = array(
     'name' => 'delete any blog content',
     'roles' => array(
       '0' => 'CDI Employee',
-    ),
-  );
-
-  // Exported permission: delete any book content
-  $permissions['delete any book content'] = array(
-    'name' => 'delete any book content',
-    'roles' => array(
-      '0' => 'Educator',
     ),
   );
 
@@ -461,26 +278,6 @@ function afg_roles_user_default_permissions() {
     ),
   );
 
-  // Exported permission: delete any feed_ical content
-  $permissions['delete any feed_ical content'] = array(
-    'name' => 'delete any feed_ical content',
-    'roles' => array(
-      '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
-    ),
-  );
-
-  // Exported permission: delete any feed_ical_item content
-  $permissions['delete any feed_ical_item content'] = array(
-    'name' => 'delete any feed_ical_item content',
-    'roles' => array(
-      '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
-    ),
-  );
-
   // Exported permission: delete any group content
   $permissions['delete any group content'] = array(
     'name' => 'delete any group content',
@@ -503,22 +300,6 @@ function afg_roles_user_default_permissions() {
     ),
   );
 
-  // Exported permission: delete any group_media_image content
-  $permissions['delete any group_media_image content'] = array(
-    'name' => 'delete any group_media_image content',
-    'roles' => array(
-      '0' => 'CDI Employee',
-    ),
-  );
-
-  // Exported permission: delete any group_media_video content
-  $permissions['delete any group_media_video content'] = array(
-    'name' => 'delete any group_media_video content',
-    'roles' => array(
-      '0' => 'CDI Employee',
-    ),
-  );
-
   // Exported permission: delete any page content
   $permissions['delete any page content'] = array(
     'name' => 'delete any page content',
@@ -531,37 +312,11 @@ function afg_roles_user_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported permission: delete any request_for_help content
-  $permissions['delete any request_for_help content'] = array(
-    'name' => 'delete any request_for_help content',
-    'roles' => array(
-      '0' => 'CDI Employee',
-    ),
-  );
-
   // Exported permission: delete any shoutbox content
   $permissions['delete any shoutbox content'] = array(
     'name' => 'delete any shoutbox content',
     'roles' => array(
       '0' => 'CDI Employee',
-    ),
-  );
-
-  // Exported permission: delete own blog content
-  $permissions['delete own blog content'] = array(
-    'name' => 'delete own blog content',
-    'roles' => array(
-      '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
-    ),
-  );
-
-  // Exported permission: delete own book content
-  $permissions['delete own book content'] = array(
-    'name' => 'delete own book content',
-    'roles' => array(
-      '0' => 'Educator',
     ),
   );
 
@@ -585,28 +340,6 @@ function afg_roles_user_default_permissions() {
       '1' => 'CDI Employee',
       '2' => 'Educator',
     ),
-  );
-
-  // Exported permission: delete own event content
-  $permissions['delete own event content'] = array(
-    'name' => 'delete own event content',
-    'roles' => array(
-      '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
-    ),
-  );
-
-  // Exported permission: delete own feed_ical content
-  $permissions['delete own feed_ical content'] = array(
-    'name' => 'delete own feed_ical content',
-    'roles' => array(),
-  );
-
-  // Exported permission: delete own feed_ical_item content
-  $permissions['delete own feed_ical_item content'] = array(
-    'name' => 'delete own feed_ical_item content',
-    'roles' => array(),
   );
 
   // Exported permission: delete own group_app_team content
@@ -654,32 +387,10 @@ function afg_roles_user_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported permission: delete own profile content
-  $permissions['delete own profile content'] = array(
-    'name' => 'delete own profile content',
-    'roles' => array(
-      '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
-      '3' => 'authenticated user',
-    ),
-  );
-
   // Exported permission: delete own request_for_help content
   $permissions['delete own request_for_help content'] = array(
     'name' => 'delete own request_for_help content',
     'roles' => array(),
-  );
-
-  // Exported permission: delete own shoutbox content
-  $permissions['delete own shoutbox content'] = array(
-    'name' => 'delete own shoutbox content',
-    'roles' => array(
-      '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
-      '3' => 'authenticated user',
-    ),
   );
 
   // Exported permission: delete revisions
@@ -693,14 +404,6 @@ function afg_roles_user_default_permissions() {
     'name' => 'edit any blog content',
     'roles' => array(
       '0' => 'CDI Employee',
-    ),
-  );
-
-  // Exported permission: edit any book content
-  $permissions['edit any book content'] = array(
-    'name' => 'edit any book content',
-    'roles' => array(
-      '0' => 'Educator',
     ),
   );
 
@@ -729,16 +432,6 @@ function afg_roles_user_default_permissions() {
   $permissions['edit any event content'] = array(
     'name' => 'edit any event content',
     'roles' => array(),
-  );
-
-  // Exported permission: edit any feed_ical_item content
-  $permissions['edit any feed_ical_item content'] = array(
-    'name' => 'edit any feed_ical_item content',
-    'roles' => array(
-      '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
-    ),
   );
 
   // Exported permission: edit any group content
@@ -790,15 +483,6 @@ function afg_roles_user_default_permissions() {
     'name' => 'edit own book content',
     'roles' => array(
       '0' => 'Educator',
-    ),
-  );
-
-  // Exported permission: edit own casetracker_basic_case content
-  $permissions['edit own casetracker_basic_case content'] = array(
-    'name' => 'edit own casetracker_basic_case content',
-    'roles' => array(
-      '0' => 'CDI Employee',
-      '1' => 'Educator',
     ),
   );
 
@@ -868,34 +552,12 @@ function afg_roles_user_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported permission: edit own profile content
-  $permissions['edit own profile content'] = array(
-    'name' => 'edit own profile content',
-    'roles' => array(
-      '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
-      '3' => 'authenticated user',
-    ),
-  );
-
   // Exported permission: edit own request_for_help content
   $permissions['edit own request_for_help content'] = array(
     'name' => 'edit own request_for_help content',
     'roles' => array(
       '0' => 'App team',
       '1' => 'CDI Employee',
-    ),
-  );
-
-  // Exported permission: edit own shoutbox content
-  $permissions['edit own shoutbox content'] = array(
-    'name' => 'edit own shoutbox content',
-    'roles' => array(
-      '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
-      '3' => 'authenticated user',
     ),
   );
 
@@ -957,12 +619,6 @@ function afg_roles_user_default_permissions() {
     'roles' => array(
       '0' => 'authenticated user',
     ),
-  );
-
-  // Exported permission: subscribe other users
-  $permissions['subscribe other users'] = array(
-    'name' => 'subscribe other users',
-    'roles' => array(),
   );
 
   // Exported permission: subscribe to content type
