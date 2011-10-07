@@ -1028,6 +1028,7 @@ function afg_groups_views_views_default_views() {
   ));
   $handler->override_option('title', 'My applications');
   $handler->override_option('empty', 'No groups found.');
+  $handler->override_option('empty_format', '5');
   $handler->override_option('use_ajax', TRUE);
   $handler->override_option('items_per_page', 20);
   $handler->override_option('use_pager', 'mini');
@@ -1048,7 +1049,6 @@ function afg_groups_views_views_default_views() {
     'type' => 'perm',
     'perm' => 'access content',
   ));
-  $handler->override_option('empty_format', '5');
   $handler->override_option('items_per_page', 15);
   $handler->override_option('block_description', 'My applications');
   $handler->override_option('block_caching', -1);
@@ -2024,7 +2024,6 @@ function afg_groups_views_views_default_views() {
     ),
   ));
   $handler->override_option('empty', 'No application teams are being followed.');
-  $handler->override_option('empty_format', '5');
   $handler->override_option('block_description', 'User applications');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'Centre', 'block_3');
@@ -2274,7 +2273,6 @@ function afg_groups_views_views_default_views() {
   ));
   $handler->override_option('title', 'Centre');
   $handler->override_option('empty', '');
-  $handler->override_option('empty_format', '5');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'This App', 'block_4');
@@ -2505,7 +2503,6 @@ function afg_groups_views_views_default_views() {
   ));
   $handler->override_option('title', 'The Team');
   $handler->override_option('empty', 'No team details yet.');
-  $handler->override_option('empty_format', '5');
   $handler->override_option('items_per_page', 1);
   $handler->override_option('use_pager', '0');
   $handler->override_option('link_display', 'page_2');
@@ -2849,7 +2846,6 @@ return TRUE;',
   $handler->override_option('title', '');
   $handler->override_option('css_class', 'social-links');
   $handler->override_option('empty', 'No app links added.');
-  $handler->override_option('empty_format', '5');
   $handler->override_option('items_per_page', 6);
   $handler->override_option('use_pager', '0');
   $handler->override_option('block_description', '');
