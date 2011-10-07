@@ -126,6 +126,7 @@ h1 {
 	font-size: 4.2em;
 	margin: 0.25em 0 0.2em;
 	text-shadow: 1px 2px 1px #000;
+	display: inline;
 }
 
 .view-header h2 {
@@ -551,6 +552,12 @@ input[type='submit'] {
 	padding: 0 0 40px;
 }
 
+#page-title img {
+	position: relative;
+	top: 8px;
+	margin: 0 10px 0 0;
+}
+
 #header-links {
 	position: absolute;
 	top: 85px;
@@ -912,6 +919,15 @@ input[type='submit'] {
 }
 
 #content-left .view-afg-profile-display .view-content {
+	margin: 0 0 20px;
+}
+
+#content-left .view-afg-profile-display .views-label-field-about-me-value {
+	font-size: 3em;
+}
+
+#content-left .view-afg-profile-display .views-label-field-about-me-value {
+	display: block;
 	margin: 0 0 20px;
 }
 
@@ -2354,8 +2370,13 @@ body #header-top .account-menu-active a {
 	background: url('images/afg/icons/twitter.png') 5px center no-repeat;
 }
 
+.social-links .views-field-field-supporter-website-url a,
 .social-links .views-field-field-website-url a {
 	background: url('images/afg/icons/site.png') 5px center no-repeat;
+}
+
+.social-links .views-field-field-linkedin-account-url a {
+	background: url('images/afg/icons/linkedin.png') 5px center no-repeat;
 }
 
 .social-links a:hover {

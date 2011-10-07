@@ -11,6 +11,10 @@ $(document).ready(function(){
 	$('<div class="block-shadow"></div>').insertAfter('#block-quicktabs-cdi_features, #content-left .browse-centres, #block-quicktabs-app_directory, #block-quicktabs-app_media');
 	$('#content-left #stats .item').append('<span class="item-arrow"></span>');
 	
+	$('#content-left .views-label-field-about-me-value').wrapInner('<div class="block-title"><h2 /></div>');
+	var text = $('#content-left .views-label-field-about-me-value h2').text();
+	$('#content-left .views-label-field-about-me-value h2').text( text.trim().slice(0, -1) );
+	
 	// Toggle Menus
 	$.each(menus, function(i, menu){
 		// Hide menu by default
