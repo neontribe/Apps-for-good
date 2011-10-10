@@ -10,9 +10,9 @@ function atrium_casetracker_user_default_permissions() {
   $permissions['assign cases'] = array(
     'name' => 'assign cases',
     'roles' => array(
-      '0' => 'administrator',
-      '1' => 'authenticated user',
-      '2' => 'manager',
+      '0' => 'App team',
+      '1' => 'CDI Employee',
+      '2' => 'Educator',
     ),
   );
 
@@ -20,9 +20,9 @@ function atrium_casetracker_user_default_permissions() {
   $permissions['create casetracker_basic_case content'] = array(
     'name' => 'create casetracker_basic_case content',
     'roles' => array(
-      '0' => 'administrator',
-      '1' => 'authenticated user',
-      '2' => 'manager',
+      '0' => 'App team',
+      '1' => 'CDI Employee',
+      '2' => 'Educator',
     ),
   );
 
@@ -30,8 +30,9 @@ function atrium_casetracker_user_default_permissions() {
   $permissions['create casetracker_basic_project content'] = array(
     'name' => 'create casetracker_basic_project content',
     'roles' => array(
-      '0' => 'administrator',
-      '1' => 'manager',
+      '0' => 'App team',
+      '1' => 'CDI Employee',
+      '2' => 'Educator',
     ),
   );
 
@@ -39,19 +40,15 @@ function atrium_casetracker_user_default_permissions() {
   $permissions['edit own casetracker_basic_case content'] = array(
     'name' => 'edit own casetracker_basic_case content',
     'roles' => array(
-      '0' => 'administrator',
-      '1' => 'authenticated user',
-      '2' => 'manager',
+      '0' => 'CDI Employee',
+      '1' => 'Educator',
     ),
   );
 
   // Exported permission: edit own casetracker_basic_project content
   $permissions['edit own casetracker_basic_project content'] = array(
     'name' => 'edit own casetracker_basic_project content',
-    'roles' => array(
-      '0' => 'administrator',
-      '1' => 'manager',
-    ),
+    'roles' => array(),
   );
 
   return $permissions;

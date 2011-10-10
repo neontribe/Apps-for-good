@@ -10,9 +10,7 @@ function atrium_profile_user_default_permissions() {
   $permissions['create profile content'] = array(
     'name' => 'create profile content',
     'roles' => array(
-      '0' => 'administrator',
-      '1' => 'authenticated user',
-      '2' => 'manager',
+      '0' => 'authenticated user',
     ),
   );
 
@@ -20,9 +18,7 @@ function atrium_profile_user_default_permissions() {
   $permissions['delete own profile content'] = array(
     'name' => 'delete own profile content',
     'roles' => array(
-      '0' => 'administrator',
-      '1' => 'authenticated user',
-      '2' => 'manager',
+      '0' => 'authenticated user',
     ),
   );
 
@@ -30,9 +26,7 @@ function atrium_profile_user_default_permissions() {
   $permissions['edit own profile content'] = array(
     'name' => 'edit own profile content',
     'roles' => array(
-      '0' => 'administrator',
-      '1' => 'authenticated user',
-      '2' => 'manager',
+      '0' => 'authenticated user',
     ),
   );
 

@@ -138,6 +138,26 @@ function atrium_members_views_default_views() {
       'field' => 'current',
       'relationship' => 'none',
     ),
+    'rid' => array(
+      'operator' => 'not',
+      'value' => array(
+        '4' => '4',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'rid',
+      'table' => 'users_roles',
+      'field' => 'rid',
+      'override' => array(
+        'button' => 'Override',
+      ),
+      'relationship' => 'none',
+      'reduce_duplicates' => 0,
+    ),
   ));
   $handler->override_option('access', array(
     'type' => 'spaces_feature',
@@ -152,55 +172,17 @@ function atrium_members_views_default_views() {
   $handler->override_option('items_per_page', 25);
   $handler->override_option('use_pager', '1');
   $handler->override_option('distinct', 1);
-  $handler->override_option('style_plugin', 'table');
+  $handler->override_option('style_plugin', 'list');
   $handler->override_option('style_options', array(
     'grouping' => '',
-    'override' => 1,
-    'sticky' => 0,
-    'order' => 'asc',
-    'columns' => array(
-      'picture' => 'picture',
-      'name' => 'name',
-      'groups' => 'groups',
-      'rid' => 'rid',
-      'is_admin' => 'name',
-      'managelink' => 'managelink',
-      'managelinkadmin' => 'managelink',
-    ),
-    'info' => array(
-      'picture' => array(
-        'sortable' => 0,
-        'separator' => '',
-      ),
-      'name' => array(
-        'sortable' => 0,
-        'separator' => '',
-      ),
-      'groups' => array(
-        'separator' => '',
-      ),
-      'rid' => array(
-        'separator' => '',
-      ),
-      'is_admin' => array(
-        'sortable' => 0,
-        'separator' => '',
-      ),
-      'managelink' => array(
-        'separator' => '',
-      ),
-      'managelinkadmin' => array(
-        'separator' => '',
-      ),
-    ),
-    'default' => '-1',
+    'type' => 'ul',
   ));
   $handler = $view->new_display('page', 'Active users', 'page_1');
   $handler->override_option('access', array(
     'type' => 'perm',
     'perm' => 'create users',
   ));
-  $handler->override_option('path', 'members/all');
+  $handler->override_option('path', 'supporters/all');
   $handler->override_option('menu', array(
     'type' => 'tab',
     'title' => 'All users',
@@ -253,7 +235,7 @@ function atrium_members_views_default_views() {
     ),
   ));
   $handler->override_option('title', 'Blocked users');
-  $handler->override_option('path', 'members/blocked');
+  $handler->override_option('path', 'supporters/blocked');
   $handler->override_option('menu', array(
     'type' => 'tab',
     'title' => 'Blocked users',
@@ -339,21 +321,15 @@ function atrium_members_views_default_views() {
     'spaces_feature' => 'atrium_members',
     'perm' => 'access content',
   ));
-  $handler->override_option('title', 'Member directory');
+  $handler->override_option('title', 'Supporters');
   $handler->override_option('items_per_page', 30);
-  $handler->override_option('style_plugin', 'grid');
-  $handler->override_option('style_options', array(
-    'grouping' => '',
-    'columns' => '3',
-    'alignment' => 'horizontal',
-  ));
-  $handler->override_option('path', 'members/directory');
+  $handler->override_option('path', 'supporters');
   $handler->override_option('menu', array(
-    'type' => 'default tab',
-    'title' => 'Directory',
+    'type' => 'normal',
+    'title' => 'Supporters',
     'description' => '',
     'weight' => '-10',
-    'name' => 'navigation',
+    'name' => 'features',
   ));
   $handler->override_option('tab_options', array(
     'type' => 'normal',
@@ -367,6 +343,7 @@ function atrium_members_views_default_views() {
     t('Blocked users'),
     t('Defaults'),
     t('Member directory'),
+    t('Supporters'),
   );
 
   $views[$view->name] = $view;

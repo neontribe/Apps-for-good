@@ -19,7 +19,7 @@ function atrium_shoutbox_ctools_plugin_api() {
 function atrium_shoutbox_node_info() {
   $items = array(
     'shoutbox' => array(
-      'name' => t('Shoutbox'),
+      'name' => t('Comment Wall'),
       'module' => 'features',
       'description' => t('A shoutbox for informal message blasts.'),
       'has_title' => '1',

@@ -1,0 +1,13 @@
+diff --git a/profiles/openatrium/modules/contrib/itweak_upload/itweak_upload.module b/profiles/openatrium/modules/contrib/itweak_upload/itweak_upload.module
+index 979ca24..6571db2 100644
+--- a/profiles/openatrium/modules/contrib/itweak_upload/itweak_upload.module
++++ b/profiles/openatrium/modules/contrib/itweak_upload/itweak_upload.module
+@@ -265,7 +265,7 @@ function _itweak_upload_upload_form_prerender($form) {
+   $add_descr  = ($limits['resolution'] ? t('Images are larger than %resolution will be resized. ', array('%resolution' => $limits['resolution'])) : '') . t('Files must be smaller than %filesize and have one of the following extensions: %extensions.', array('%filesize' => format_size($limits['file_size']), '%extensions' => $limits['extensions']));
+   if (!isset($form['attachments']['#description']))
+     $form['attachments']['#description'] = '';
+-  if (FALSE === strpos($form['attachments']['#description'], $add_descr))
++  if (FALSE === strpos($form['attachments']['#description'], $add_descr) && variable_get('itweak_show_attachments_description', 1))
+     $form['attachments']['#description'] .= ' ' . $add_descr;
+   $form['buttons']['#weight'] = 100;
+   // Schedule theming of file attachments.

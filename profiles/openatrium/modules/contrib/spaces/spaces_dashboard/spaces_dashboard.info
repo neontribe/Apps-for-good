@@ -1,4 +1,6 @@
 core = "6.x"
+datestamp = "1310654220"
+dependencies[] = "badges"
 dependencies[] = "context"
 dependencies[] = "context_ui"
 dependencies[] = "ctools"
@@ -9,11 +11,6 @@ features[context][] = "spaces_dashboard"
 features[ctools][] = "context:context:3"
 name = "Spaces Dashboard"
 package = "Features"
-spaces[types] = "all"
-
-; Information added by drupal.org packaging script on 2011-07-14
-version = "6.x-3.2"
-core = "6.x"
 project = "spaces"
-datestamp = "1310654220"
-
+spaces[types] = "all"
+version = "6.x-3.2"

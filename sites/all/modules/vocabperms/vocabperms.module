@@ -1,0 +1,273 @@
+<?php
+// $Id: vocabperms.module,v 1.3.2.5 2010/03/30 15:11:35 jcisio Exp $
+
+/** @file
+ * Grant/restrict permissions to set vocabularies (extends taxonomy)
+ * By Doug Green
+ */
+
+define('VOCABPERMS_EDIT', 0);
+define('VOCABPERMS_VIEW', 1);
+define('VOCABPERMS_NONE', 2);
+
+/**
+ * Implementation of hook_perm().
+ */
+function vocabperms_perm() {
+  return array('admin vocab perms');
+}
+
+/**
+ * Implementation of hook_form_alter().
+ */
+function vocabperms_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'taxonomy_form_vocabulary') {
+    if (user_access('admin vocab perms')) {
+      /**
+       * admin/content/taxonomy/edit/vocabulary/{vid}
+       * add the permission options to the taxonomy form vocabulary page
+       */
+
+      // create the fieldset to hold the permission options
+      $newform['perms'] = array(
+        '#type' => 'fieldset',
+        '#title' => t('Permissions'),
+        '#collapsed' => TRUE,
+        '#collapsible' => TRUE,
+        '#description' => t('set role based permissions using vocabperms module'),
+        '#theme' => 'vocabperms_taxonomy_form_vocabulary',
+      );
+
+      // get the vocabulary-id
+      $vid = $form['vid']['#value'];
+
+      // get the saved permissions for this vocabulary
+      $perms = unserialize(variable_get('vocab_perms-'. $vid, ''));
+
+      // save the permission options that used repetitively below
+      $options = array(
+        VOCABPERMS_EDIT => t('edit and view'),
+        VOCABPERMS_VIEW => t('view only'),
+        VOCABPERMS_NONE => t('none'),
+      );
+
+      // for each role, create the permission as a radio button
+      $roles = user_roles();
+      foreach ($roles as $rid => $rolename) {
+        $newform['perms']['rid-'. $rid] = array(
+          '#type' => 'radios',
+          '#title' => $rolename,
+          '#options' => $options,
+          '#default_value' => isset($perms[$rid]) ? $perms[$rid] : VOCABPERMS_EDIT,
+          '#attributes' => array('class' => 'vocabperms'),
+        );
+      }
+
+      // add the options to the beginning of the form after the description
+      $form = array_merge(array_slice($form, 0, 2), $newform, array_slice($form, 2));
+
+      // add our submit handler after all other handlers
+      $form['#submit'][] = 'vocabperms_taxonomy_form_vocabulary_submit';
+    }
+  }
+  elseif (substr($form_id, -10) == '_node_form') { // && $form['#base'] != 'confirm_form' @HELP: replace #base with something
+    /**
+     * catch node/add/{type} and all node edit forms (and the submit also!)
+     *
+     * NOTE: this does not need to a submit handler because formsapi
+     * handles this properly, by removing the element from the form before
+     * sending it to the default submit
+     */
+
+    // remove vocabularies from node forms when the user doesn't have perms
+    vocabperms_node_form_remove($form);
+  }
+}
+
+/**
+ * implement hook_taxonomy
+ */
+function vocabperms_taxonomy($op, $type, $edit) {
+  if ($type == 'vocabulary') {
+    switch ($op) {
+      case 'insert':
+        // save the new vocabulary id for use in the hook_submit handler below
+        $GLOBALS['_vocabperms_vid'] = $edit['vid'];
+        break;
+      case 'delete':
+        // good housekeeping - remove permissions when vocabularies are deleted
+        variable_del('vocab_perms-'. $edit['vid']);
+        break;
+    }
+  }
+}
+
+/**
+ * catch the admin vocabulary submit form
+ * admin/content/taxonomy/edit/vocabulary/{vid}
+ * save the options for this vocabulary
+ */
+function vocabperms_taxonomy_form_vocabulary_submit($form, &$form_state) {
+  if (! $vid = $form_state['values']['vid']) {
+    // saved in hook_taxonomy above
+    $vid = $GLOBALS['_vocabperms_vid'];
+  }
+  if ($vid) {
+    foreach ($form_state['values'] as $var => $value) {
+      if (substr($var, 0, 4) == 'rid-') {
+        $rid = substr($var, 4);
+        $perms[$rid] = $value;
+      }
+    }
+    variable_set('vocab_perms-'. $vid, serialize($perms));
+  }
+}
+
+/**
+ * remove vocabularies from node forms when the user doesn't have perms
+ *
+ * NOTE: I tried to combine this form and the one below but the logic
+ * was too confusing.
+ *
+ * 1. This function removes the vocabulary from a form object.
+ * 2. The function below removes the vocabulary from a form array.
+ *
+ * A single code-base to handle an array and an object, IMO, wasn't worth it.
+ */
+function vocabperms_node_form_remove(&$form) {
+  global $user;
+  if ($user->uid != 1 && isset($form['taxonomy'])) {
+    _vocabperms_node_form_remove_field($form['taxonomy']);
+    if (isset($form['taxonomy']['tags'])) {
+      _vocabperms_node_form_remove_field($form['taxonomy']['tags']);
+    }
+  }
+}
+
+function _vocabperms_node_form_remove_field(&$field) {
+  global $user;
+  $count = 0;
+  foreach ($field as $vid => $elem) {
+    if (is_int($vid)) {
+      // get the saved permissions for this vocabulary
+      if ($perms = unserialize(variable_get('vocab_perms-'. $vid, ''))) {
+        $perm = VOCABPERMS_NONE;
+        foreach ($user->roles as $rid => $rolename) {
+          if (isset($perms[$rid]) && $perms[$rid] < $perm) {
+            $perm = $perms[$rid];
+          }
+        }
+        if ($perm > VOCABPERMS_EDIT) {
+          $field[$vid] = array(
+            '#type' => 'value',
+            '#value' => _vocabperms_find_default($elem),
+          );
+        }
+        else {
+          $count ++;
+        }
+      }
+    }
+  }
+  if ($count <= 1) {
+    unset($field['#type']);
+  }
+}
+
+/**
+ * Find a default value for the element.
+ */
+function _vocabperms_find_default($elem) {
+  // Use a default value if available.
+  if ($default_value = _vocabperms_find_value($elem, '#default_value')) {
+    return $default_value;
+  }
+  // Otherwise, use the first option (which would be selected by default).
+  if ($default_value = _vocabperms_find_value($elem, '#options')) {
+    return key($default_value);
+  }
+}
+
+/**
+ * recursively called routine to recursively check sub-elements for a specific key,
+ *  (set to either #default_value or #options).
+ */
+function _vocabperms_find_value($elem, $default_key) {
+  if (isset($elem[$default_key])) {
+    return $elem[$default_key];
+  }
+  foreach ($elem as $key => $value) {
+    if ($key[0] != '#') {
+      if ($default_value = _vocabperms_find_value($value, $default_key)) {
+        return $default_value;
+      }
+    }
+  }
+}
+
+/**
+ * remove vocabularies from nodes when the user doesn't have perms
+ *
+ * SEE NOTE ABOVE
+ */
+function vocabperms_node_remove(&$node) {
+  global $user;
+  if ($user->uid != 1 && isset($node->taxonomy)) {
+    foreach ($node->taxonomy as $tid => $elem) {
+      // get the saved permissions for this vocabulary
+      if ($perms = unserialize(variable_get('vocab_perms-'. $elem->vid, ''))) {
+        $perm = 2;
+        foreach ($user->roles as $rid => $rolename) {
+          if (isset($perms[$rid]) && $perms[$rid] < $perm) {
+            $perm = $perms[$rid];
+          }
+        }
+        if ($perm > VOCABPERMS_VIEW) {
+          unset($node->taxonomy[$tid]);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implementation of hook_nodeapi().
+ */
+function vocabperms_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL) {
+  switch ($op) {
+    case 'view':
+      vocabperms_node_remove($node);
+      break;
+  }
+}
+
+function vocabperms_theme() {
+  return array(
+    'vocabperms_taxonomy_form_vocabulary' => array(
+      'arguments' => array('form'),
+    ),
+  );
+}
+
+/**
+ * Theme the permissions form on
+ * admin/content/taxonomy/edit/vocabulary/{vid}
+ * to display the permissions in a table
+ */
+function theme_vocabperms_taxonomy_form_vocabulary($form) {
+  // add our css file - puts radio buttons on a single line
+  $path = drupal_get_path('module', 'vocabperms');
+  drupal_add_css($path .'/vocabperms.css', 'module');
+
+  foreach ($form as $var => $elem) {
+    if (substr($var, 0, 4) == 'rid-') {
+      $title = $elem['#title'];
+      unset($elem['#title']);
+      $rows[] = array($title, drupal_render($elem));
+      unset($form[$var]);
+    }
+  }
+  $output  = theme('table', array(t('role'), t('permission')), $rows);
+  $output .= drupal_render($form);
+  return $output;
+}

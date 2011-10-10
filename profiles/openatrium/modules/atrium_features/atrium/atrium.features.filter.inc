@@ -27,10 +27,7 @@ function atrium_filter_default_formats() {
   // Exported format: Full HTML
   $formats['Full HTML'] = array(
     'name' => 'Full HTML',
-    'roles' => array(
-      '0' => 'administrator',
-      '1' => 'manager',
-    ),
+    'roles' => array(),
     'filters' => array(
       '0' => array(
         'module' => 'codefilter',
@@ -59,10 +56,8 @@ function atrium_filter_default_formats() {
   $formats['Markdown'] = array(
     'name' => 'Markdown',
     'roles' => array(
-      '0' => 'administrator',
-      '1' => 'anonymous user',
-      '2' => 'authenticated user',
-      '3' => 'manager',
+      '0' => 'anonymous user',
+      '1' => 'authenticated user',
     ),
     'filters' => array(
       '0' => array(

@@ -40,7 +40,7 @@ function afg_group_media_taxonomy_default_vocabularies() {
       'description' => 'tags to classify group videos',
       'help' => '',
       'relations' => '1',
-      'hierarchy' => '0',
+      'hierarchy' => '1',
       'multiple' => '0',
       'required' => '0',
       'tags' => '0',

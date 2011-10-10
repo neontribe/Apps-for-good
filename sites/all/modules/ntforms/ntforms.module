@@ -65,12 +65,12 @@ function ntforms_form_alter(&$form, &$form_state, $form_id) {
   }
 }
 
-
-/*
-// This function is not needed as we rely on core atrium validation of form
-function ntforms_pul_validate($form, &$form_state) {
-  dpm($form);
-  dpm($form_state);
-  $form['values']['purl']['value'] = 'RYRYRY';
+function ntforms_atrium_account_links_alter(&$links) {
+  global $user;
+  $uid = $user->uid;
+  foreach ($links as $index => $link) {
+    if ($link['title'] == 'My dashboard' || $link['href'] == "user/$uid/dashboard") {
+      unset($links[$index]);
+    }
+  }
 }
-*/

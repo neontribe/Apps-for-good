@@ -9,19 +9,13 @@ function atrium_members_user_default_permissions() {
   // Exported permission: block users
   $permissions['block users'] = array(
     'name' => 'block users',
-    'roles' => array(
-      '0' => 'administrator',
-      '1' => 'manager',
-    ),
+    'roles' => array(),
   );
 
   // Exported permission: create users
   $permissions['create users'] = array(
     'name' => 'create users',
-    'roles' => array(
-      '0' => 'administrator',
-      '1' => 'manager',
-    ),
+    'roles' => array(),
   );
 
   return $permissions;

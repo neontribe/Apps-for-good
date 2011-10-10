@@ -6,34 +6,6 @@
 function afg_menus_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: features:apps
-  $menu_links['features:apps'] = array(
-    'menu_name' => 'features',
-    'link_path' => 'apps',
-    'router_path' => 'apps',
-    'link_title' => 'Applications',
-    'options' => array(),
-    'module' => 'system',
-    'hidden' => '1',
-    'external' => '0',
-    'has_children' => '0',
-    'expanded' => '0',
-    'weight' => '-45',
-  );
-  // Exported menu link: features:centres
-  $menu_links['features:centres'] = array(
-    'menu_name' => 'features',
-    'link_path' => 'centres',
-    'router_path' => 'centres',
-    'link_title' => 'Centres',
-    'options' => array(),
-    'module' => 'system',
-    'hidden' => '1',
-    'external' => '0',
-    'has_children' => '0',
-    'expanded' => '0',
-    'weight' => '-44',
-  );
   // Exported menu link: menu-footer-links:<front>
   $menu_links['menu-footer-links:<front>'] = array(
     'menu_name' => 'menu-footer-links',
@@ -74,9 +46,7 @@ function afg_menus_menu_default_menu_links() {
   // Translatables
   // Included for use with string extractors like potx.
   t('About');
-  t('Applications');
   t('Apps for Good');
-  t('Centres');
 
 
   return $menu_links;

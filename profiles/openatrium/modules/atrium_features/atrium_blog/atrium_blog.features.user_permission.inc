@@ -10,9 +10,9 @@ function atrium_blog_user_default_permissions() {
   $permissions['create blog content'] = array(
     'name' => 'create blog content',
     'roles' => array(
-      '0' => 'administrator',
-      '1' => 'authenticated user',
-      '2' => 'manager',
+      '0' => 'App team',
+      '1' => 'CDI Employee',
+      '2' => 'Educator',
     ),
   );
 
@@ -20,9 +20,9 @@ function atrium_blog_user_default_permissions() {
   $permissions['delete own blog content'] = array(
     'name' => 'delete own blog content',
     'roles' => array(
-      '0' => 'administrator',
-      '1' => 'authenticated user',
-      '2' => 'manager',
+      '0' => 'App team',
+      '1' => 'CDI Employee',
+      '2' => 'Educator',
     ),
   );
 
@@ -30,9 +30,7 @@ function atrium_blog_user_default_permissions() {
   $permissions['edit own blog content'] = array(
     'name' => 'edit own blog content',
     'roles' => array(
-      '0' => 'administrator',
-      '1' => 'authenticated user',
-      '2' => 'manager',
+      '0' => 'authenticated user',
     ),
   );
 

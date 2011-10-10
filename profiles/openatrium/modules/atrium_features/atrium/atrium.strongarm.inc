@@ -52,7 +52,7 @@ function atrium_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'allowed_html_5';
-  $strongarm->value = '<div> <span> <br> <a> <em> <strong> <cite> <code> <strike> <ul> <ol> <li> <dl> <dt> <dd> <img> <blockquote> <p> <pre> <h1> <h2> <h3> <h4> <h5> <h6> <table> <caption> <thead> <th> <td> <tr> <sup> <sub>';
+  $strongarm->value = '<b><strong><i><em><p><ul><li><ol><a><br>';
   $export['allowed_html_5'] = $strongarm;
 
   $strongarm = new stdClass;
@@ -295,7 +295,7 @@ function atrium_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_frontpage';
-  $strongarm->value = 'dashboard';
+  $strongarm->value = 'dashboard/profile';
   $export['site_frontpage'] = $strongarm;
 
   $strongarm = new stdClass;
@@ -314,19 +314,18 @@ function atrium_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'spaces_dashboard_blocks';
   $strongarm->value = array(
-    'atrium-welcome_admin' => 1,
-    'atrium-welcome_member' => 1,
     'atrium_calendar-mini' => 1,
-    'views-calendar_upcoming-block_1' => 1,
-    'views-casetracker_projects-block_1' => 1,
-    'views-blog_listing-block_2' => 1,
-    'views-blog_comments-block_1' => 1,
-    'views-casetracker_cases-block_2' => 1,
-    'views-casetracker_cases-block_3' => 1,
-    'views-groups_listing-block_2' => 1,
+    'quicktabs-cdi_features' => 1,
+    'quicktabs-homepage_recent_updates' => 1,
+    'views-1ea07c98bfe3b712442d65a3d4fd9126' => 1,
+    'views-Counters-block_2' => 1,
     'views-activity_listing-block_1' => 1,
     'views-activity_listing-block_2' => 1,
-    'views-shoutbox_shouts-block_1' => 1,
+    'views-blog_comments-block_1' => 1,
+    'views-blog_listing-block_2' => 1,
+    'views-groups_listing_app_team-block_5' => 1,
+    'views-updates-block_8' => 1,
+    'views-updates-block_9' => 1,
   );
   $export['spaces_dashboard_blocks'] = $strongarm;
 
@@ -348,6 +347,7 @@ function atrium_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'spaces_features';
   $strongarm->value = array(
+    'afg_group_media' => '0',
     'atrium_groups' => '1',
     'atrium_members' => '1',
     'spaces_dashboard' => '1',
@@ -415,7 +415,7 @@ function atrium_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_picture_default';
-  $strongarm->value = 'profiles/openatrium/themes/ginkgo/images/user.png';
+  $strongarm->value = 'sites/all/themes/rubik/afg/images/afg/icons/afg_profile-icon.gif';
   $export['user_picture_default'] = $strongarm;
 
   $strongarm = new stdClass;
@@ -478,14 +478,14 @@ function atrium_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_pictures';
-  $strongarm->value = TRUE;
+  $strongarm->value = '1';
   $export['user_pictures'] = $strongarm;
 
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_register';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['user_register'] = $strongarm;
 
   $strongarm = new stdClass;
