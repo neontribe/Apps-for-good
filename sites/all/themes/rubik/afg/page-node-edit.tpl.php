@@ -15,7 +15,7 @@
       </div>
     <?php endif; ?>
 	
-	<h2>Title here</h2>
+	<h2>Make an update</h2>
 	
 	<?php if ($left): ?>
       <div id='left' class='clear-block'><?php print $left ?></div>

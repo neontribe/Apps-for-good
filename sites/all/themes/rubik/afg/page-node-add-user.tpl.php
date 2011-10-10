@@ -15,7 +15,6 @@
       </div>
     <?php endif; ?>
 	
-	<?php //dpm(get_defined_vars()); ?>
 	<h2><?php print $title; ?></h2>
 	
 	<?php if ($left): ?>
