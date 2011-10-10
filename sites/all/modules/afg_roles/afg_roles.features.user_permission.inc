@@ -207,9 +207,7 @@ function afg_roles_user_default_permissions() {
   $permissions['create cdi_blog content'] = array(
     'name' => 'create cdi_blog content',
     'roles' => array(
-      '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
+      '0' => 'CDI Employee',
     ),
   );
 
@@ -336,9 +334,7 @@ function afg_roles_user_default_permissions() {
   $permissions['delete own cdi_blog content'] = array(
     'name' => 'delete own cdi_blog content',
     'roles' => array(
-      '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
+      '0' => 'CDI Employee',
     ),
   );
 
@@ -424,7 +420,6 @@ function afg_roles_user_default_permissions() {
     'name' => 'edit any cdi_blog content',
     'roles' => array(
       '0' => 'CDI Employee',
-      '1' => 'Educator',
     ),
   );
 
@@ -494,7 +489,6 @@ function afg_roles_user_default_permissions() {
     'name' => 'edit own cdi_blog content',
     'roles' => array(
       '0' => 'CDI Employee',
-      '1' => 'Educator',
     ),
   );
 
