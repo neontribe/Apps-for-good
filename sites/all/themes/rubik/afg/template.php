@@ -373,17 +373,23 @@ function afg_views_view_field__updates__block_3__atrium_activity($view, $handler
 function afg_activity_title_rewrite($view, $handler, $obj) {
   $title_link = '<div class="views-field-title"><a href= "'. base_path()  .'node/' . $obj->nid . '">'. $obj->node_title . '<a/></div>';
 
-  switch($obj->node_type) {
+//get user name from profile
+  if ($obj->comments_uid) {
+    $user_profile = content_profile_load('profile', $obj->comments_uid);
+    if ($user_profile->title) {
+      $username = $user_profile->title;
+    } else {
+      $username = user_load($obj-comments_uid)->name;
+    }
+  }
+switch($obj->node_type) {
       case 'group_app_team':
       case 'group_centre_school':
       case 'page':
       if ($obj->comments_uid) {
-    $user = user_load($obj->comments_uid);
-    $username = $user->name;
-    //dpm($user);
-    $activity_update = $username . ' commented on ' . $title_link;
-      } else {
-        $activity_update = $title_link;
+        $activity_update = $username . ' commented on ' . $title_link;
+        } else {
+          $activity_update = $title_link;
         if ($obj->node_changed > $obj->node_created) {
             $activity_update .= ' updated.';
         } else {
@@ -398,8 +404,6 @@ function afg_activity_title_rewrite($view, $handler, $obj) {
       case 'blog':
       case 'group_media_video':
       if ($obj->comments_uid) {
-          $user = user_load($obj->comments_uid);
-          $username = $user->name;
           $activity_update = $username . ' commented on ' . $title_link;
       } else {
 	if ($obj->node_og_ancestry_nid){
