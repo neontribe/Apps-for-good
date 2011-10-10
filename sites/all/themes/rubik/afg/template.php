@@ -57,8 +57,11 @@ function afg_preprocess_page(&$vars) {
   // dpm($arg2, 'arg2');
 
   if (!$vars['is_front'] && empty($arg2) && $arg0 == 'node') {
-    $og = og_get_group_context();
-    drupal_goto($og->purl);
+    $node = node_load($arg1);
+    if ($node && in_array($node->type, array('group_app_team','group_centre_school'))) {
+      $og = og_get_group_context();
+      drupal_goto($og->purl);
+    }
   }
     
   // Override default error message and prompt login
