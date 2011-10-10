@@ -7791,7 +7791,7 @@ return TRUE;',
       'label' => '',
       'alter' => array(
         'alter_text' => 1,
-        'text' => '<a href="node/[nid]#comments" title="View comments">[comment_count] comments</a>',
+        'text' => '<a href="../node/[nid]#comments" title="View comments">[comment_count] comments</a>',
         'make_link' => 0,
         'path' => '',
         'link_class' => '',
@@ -7821,6 +7821,9 @@ return TRUE;',
       'table' => 'node_comment_statistics',
       'field' => 'comment_count',
       'relationship' => 'none',
+      'override' => array(
+        'button' => 'Use default',
+      ),
     ),
     'nothing' => array(
       'label' => '',
