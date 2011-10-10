@@ -1154,7 +1154,7 @@ input[type='submit'] {
 	text-indent: 70px;
 }
 
-#content-left .activity-info {
+#content-left .activity-updates-apps .activity-info {
 	top: -65px;
 }
 
@@ -2275,11 +2275,13 @@ body #header-top .account-menu-active a {
 	margin: 0 0 0 6px;
 }
 
+#content-left .view-updates .views-field-atrium-activity,
 #content-left .recent-activity .views-field-atrium-activity {
 	display: block;
 	float: left;
 	margin-top: 0px;
-	width: 95%;
+	width: 86%;
+	padding-left: 70px;
 }
 
 #content-left .view-updates .views-field-atrium-activity {
@@ -2295,7 +2297,6 @@ body #header-top .account-menu-active a {
 
 #content-left .view-updates .views-field-atrium-activity .field-content {
 	display: block;
-	margin-left: 50px;
 	width: 320px;
 }
 
