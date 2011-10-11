@@ -1,5 +1,0 @@
-name = Activity Newsletter
-description = Sends an activity newsletter to each user
-version = 0.1
-core = 6.x
-php = 5.2

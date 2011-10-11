@@ -1,5 +1,0 @@
-core = "6.x"
-description = "Allows centre admins to create application groups linked to their centre."
-name = "Create App Button"
-dependencies[] = "prepopulate"
-package = "Features"
