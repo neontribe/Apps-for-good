@@ -74,6 +74,8 @@ class ntgmap_plugin_style_gmap extends views_plugin_style {
    * Render the display in this style.
    */
   function render() {
+    // ./modules/gmap/gmap.views.inc
+    module_load_include('inc', 'gmap', 'gmap.views');
 
     if (isset($this->view->live_preview) && $this->view->live_preview) {
       return t('GMap views are not compatible with live preview.');
@@ -116,7 +118,7 @@ class ntgmap_plugin_style_gmap extends views_plugin_style {
     else if ($this->options['markers'] == 'userrole') {
       $markertypes = variable_get('gmap_role_markers', array(DRUPAL_AUTHENTICATED_RID => 'drupal'));
     }
-    $fh = fopen('/tmp/a4g.log', 'a'); fwrite($fh, var_export($this->options, TRUE)); fclose($fh);
+    // $fh = fopen('/tmp/a4g.log', 'a'); fwrite($fh, var_export($this->options, TRUE)); fclose($fh);
 
     // Group the rows according to the grouping field, if specified.
     $sets = $this->render_grouping($this->view->result, $this->options['grouping']);
@@ -208,8 +210,11 @@ class ntgmap_plugin_style_gmap extends views_plugin_style {
           );
 
           $offsets[$markername]++;
+        // } else {
+        //  $fh = fopen('/tmp/a4g.log', 'a'); fwrite($fh, 'NO LONG LAT'); fclose($fh);
         }
       }
+      // $fh = fopen('/tmp/a4g.log', 'a'); fwrite($fh, 'Marker count ' . count($markers) . "\n"); fclose($fh);
       if (!empty($markers)) { // Don't draw empty maps.
         $map = gmap_parse_macro($this->options['macro']);
 
@@ -220,7 +225,11 @@ class ntgmap_plugin_style_gmap extends views_plugin_style {
         }
 
         $map['markers'] = $markers;
+        // $fh = fopen('/tmp/a4g.log', 'a'); fwrite($fh, var_export($map, TRUE) . "\n"); fclose($fh);
+        // $fh = fopen('/tmp/a4g.log', 'a'); fwrite($fh, var_export($this->theme_functions(), TRUE) . "\n"); fclose($fh);
         $output .= theme($this->theme_functions(), $this->view, $this->options, $map, $title);
+      } else {
+        $fh = fopen('/tmp/a4g.log', 'a'); fwrite($fh, 'NO MARKERS' . "\n"); fclose($fh);
       }
     }
 

@@ -159,7 +159,7 @@ function afg_preprocess_page(&$vars) {
     if ($profile_node->picture) {
       $user_pic_path = $profile_node->picture;
     } else {
-      $user_pic_path = 'sites/default/files/afg_icon-supporter.png';
+      $user_pic_path = 'sites/all/themes/rubik/afg/images/afg/icons/afg_profile-icon.gif';
     }
       $vars['user_pic'] = theme('imagecache', 'user-m', $user_pic_path);
 
