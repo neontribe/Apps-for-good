@@ -1,8 +1,8 @@
 <?php
 
 /**
-* Implementation of hook_theme().
-*/
+ * Implementation of hook_theme().
+ */
 function afg_theme(){
   return array(
     'comment_form' => array(
@@ -17,15 +17,38 @@ function afg_theme(){
 
 /**
  * Displays a standard atrium success or failure message.
+ *
+ * @param &$vars
+ *   List of available page variables.
+ *
+ * @param $message
+ *   The message to display.
+ *
+ * @param $success
+ *   Set to TRUE for positive (green) messages such as a successful login and to
+ *   FALSE for a negative (red) message such as an invalid username.
+ *
+ * @param $append
+ *   If set to FALSE the message will override any prior messages and only display
+ *   the value passed into the function.
+ *
  */
-function _afg_show_message(&$vars, $message, $success = TRUE) {
-    if (!$message)
-      return false;
-    
-    $class = ($success) ? 'success' : 'error';
-    $m = "<div class='messages $class'>$message</div>";
-    
-    $vars['messages'] = $m;
+function _afg_show_message(&$vars, $message, $success = TRUE, $append = TRUE) {
+  if (!$message)
+    return FALSE;
+
+  $class = ($success) ? 'success' : 'error';
+  $m = "<div class='messages $class'>$message</div>";
+
+  // Append to current drupal messsages or override
+  if ($append) {
+    $vars['messages'] .= $m;
+  }
+  else {
+    $vars['messages']= $m;
+  }
+  
+  return TRUE;
 }
 
 /**
@@ -33,21 +56,23 @@ function _afg_show_message(&$vars, $message, $success = TRUE) {
  */
 function _afg_override_login_message(&$vars) {
   $msg = trim(check_plain(strip_tags($vars['messages'])));
-    
-    if (strcmp($msg, 'You are not authorized to post comments.') == 0) {
-      $nid = $vars['node']->nid;
-        
+
+  if (strcmp($msg, 'You are not authorized to post comments.') == 0) {
+    $nid = $vars['node']->nid;
+
     $m = '<a href="/user/login?destination=node/'. $nid .'#comment-form">Login</a>';
-      $m .= ' or <a href="/user/register?destination=node/'. $nid .'#comment-form">register</a> to post comments</span>';
-    
-    _afg_show_message($vars, $m, FALSE);
-    }
+    $m .= ' or <a href="/user/register?destination=node/'. $nid .'#comment-form">register</a> to post comments</span>';
+
+    return _afg_show_message($vars, $m, FALSE);
+  }
 }
 
 /**
  * Preprocessor for theme('page').
  */
 function afg_preprocess_page(&$vars) {
+  global $user;
+
   // if we are displaying a node and the node has dashboard show that instead
   $arg0 = arg(0);
   $arg1 = arg(1);
@@ -67,13 +92,25 @@ function afg_preprocess_page(&$vars) {
   // Override default error message and prompt login
   _afg_override_login_message($vars);
 
+  // Show login message on shoutbox form page for anonymous users
+  if ($arg0 == 'shoutbox') {
+    $dest = 'shoutbox';
+    if (!$user->uid) {
+      $m = '<a href="user/login?destination=shoutbox">Login</a>'
+	. ' or <a href="user/register?destination=shoutbox">register</a>'
+	. ' to post comments</span>';
+
+      _afg_show_message($vars, $m, FALSE);
+    }
+  }
+
   // Force using the correct template file
   if(count($vars['template_files']) > 1) {
     foreach($vars['template_files'] as $key => $template) {
-    if(strcasecmp($template, 'page') === 0) {
-      unset($vars['template_files'][$key]);
-      break;
-    }
+      if(strcasecmp($template, 'page') === 0) {
+	unset($vars['template_files'][$key]);
+	break;
+      }
     }
   }
   
