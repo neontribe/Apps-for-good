@@ -5234,7 +5234,7 @@ return TRUE;',
   $handler->override_option('style_plugin', 'ntgmap');
   $handler->override_option('style_options', array(
     'grouping' => '',
-    'macro' => '[gmap ]',
+    'macro' => '[gmap]',
     'datasource' => 'location',
     'latfield' => 'title',
     'lonfield' => 'title',
@@ -8000,7 +8000,7 @@ return TRUE;',
       'label' => '',
       'alter' => array(
         'alter_text' => 1,
-        'text' => '<a href="node/[nid]#comment-form" title="Add new comment">Add new comment</a>',
+        'text' => '<a href="../node/[nid]#comment-form" title="Add new comment">Add new comment</a>',
         'make_link' => 0,
         'path' => '',
         'link_class' => '',
@@ -8025,6 +8025,9 @@ return TRUE;',
       'table' => 'node',
       'field' => 'comments_link',
       'relationship' => 'none',
+      'override' => array(
+        'button' => 'Use default',
+      ),
     ),
   ));
   $handler->override_option('arguments', array(
