@@ -129,6 +129,10 @@ h1 {
 	display: inline;
 }
 
+h1 .term {
+	font-size: 0.7em; 
+}
+
 .view-header h2 {
 	font-size: 2.5em;
 	color: #222;
@@ -1159,6 +1163,7 @@ input[type='submit'] {
 	margin: 0 0 0 70px;
 }
 
+#content-left .view-taxonomy-listing .activity-info,
 #content-left .activity-updates-apps .activity-info {
 	top: -65px;
 }
@@ -1671,6 +1676,7 @@ li.tab-plan a {  background:url('images/afg/icons/afg_blog-icon.gif')  no-repeat
 	text-transform: uppercase;
 }
 
+#content-left .view-taxonomy-listing .views-field-field-icon-fid-1,
 #content-left .view-activity-listing .views-field-field-icon-fid,
 #content-left .view-Group-Media .views-field-field-icon-fid,
 #content-left .view-updates .views-field-field-icon-fid,
@@ -2306,6 +2312,7 @@ body #header-top .account-menu-active a {
 	width: 320px;
 }
 
+#content-left .view-taxonomy-listing .views-field-title,
 #content-left .view-activity-listing .views-field-feature,
 #content-left .activity-updates-apps .views-field-title {
 	background: #1D83C3;
@@ -2313,6 +2320,14 @@ body #header-top .account-menu-active a {
 	position: relative;
 	text-indent: 65px;
 	margin-bottom: 8px;
+}
+
+#content-left .view-taxonomy-listing .views-field-title {
+	text-indent: 0px;
+}
+
+#content-left .view-taxonomy-listing .views-field-field-icon-fid-1 img {
+	margin: 0;
 }
 
 /* Social Network Header
@@ -2702,3 +2717,4 @@ body #header-top .account-menu-active a {
 	-moz-border-radius-bottomleft: 0px;
 	-webkit-border-radius: 0px 3px 3px 0px;
 }
+

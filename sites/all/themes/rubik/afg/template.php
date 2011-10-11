@@ -93,13 +93,23 @@ function afg_preprocess_page(&$vars) {
   _afg_override_login_message($vars);
 
   // Show login message on shoutbox form page for anonymous users
-  if ($arg0 == 'commentwall') {
+  if ($arg0 == 'commentwall' || $arg0 == 'shoutbox') {
     if (!$user->uid) {
       $m = '<a href="user/login?destination='. $arg0 .'">Login</a>'
 	. ' or <a href="user/register?destination='. $arg0 .'">register</a>'
 	. ' to post comments</span>';
 
       _afg_show_message($vars, $m, FALSE);
+    }
+  }
+
+  // Rewrite taxonomy term heading
+  if ($arg0 == 'taxonomy' && $arg1 == 'term') {
+    $title = $vars['title'];
+
+    if (substr($title, 0, 6) === 'Tagged') {
+      $term = ucwords(str_replace('"', '', trim(substr($title, 6))));
+      $vars['title'] = 'Tagged: <span class="term">'. $term .'</span>';
     }
   }
 
