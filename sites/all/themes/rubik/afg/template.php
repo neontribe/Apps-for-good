@@ -93,11 +93,10 @@ function afg_preprocess_page(&$vars) {
   _afg_override_login_message($vars);
 
   // Show login message on shoutbox form page for anonymous users
-  if ($arg0 == 'shoutbox') {
-    $dest = 'shoutbox';
+  if ($arg0 == 'commentwall') {
     if (!$user->uid) {
-      $m = '<a href="user/login?destination=shoutbox">Login</a>'
-	. ' or <a href="user/register?destination=shoutbox">register</a>'
+      $m = '<a href="user/login?destination='. $arg0 .'">Login</a>'
+	. ' or <a href="user/register?destination='. $arg0 .'">register</a>'
 	. ' to post comments</span>';
 
       _afg_show_message($vars, $m, FALSE);
