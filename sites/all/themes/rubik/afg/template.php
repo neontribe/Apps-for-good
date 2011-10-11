@@ -206,6 +206,15 @@ function afg_links($links, $attributes = array('class' => 'links')) {
     }
   }
 
+  // remove the fragment from the shoutbos url
+  if (count($links) == 4) { // && $links[3]['fragment'] == 'block-atrium_shoutbox-shoutbox') {
+    foreach ($links as $id => $link) {
+      if (isset($link['fragment']) && $link['fragment'] == 'block-atrium_shoutbox-shoutbox' ){
+        unset($links[$id]['fragment']);
+      }
+    }
+  }
+
   return theme_links($links, $attributes) . $suffix;
 }
 
