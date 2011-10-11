@@ -560,6 +560,9 @@ input[type='submit'] {
 	position: relative;
 	top: 8px;
 	margin: 0 10px 0 0;
+	border: 6px solid #FFF;
+	-webkit-box-shadow: 0 0 2px 3px #444;
+	box-shadow: 0 0 2px 3px #444;
 }
 
 #header-links {
