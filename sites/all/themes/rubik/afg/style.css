@@ -112,6 +112,10 @@ body .error a {
 	border-bottom-color: #996655;
 }
 
+.content-body p {
+	margin-bottom: 10px;
+}
+
 /* Headers & Spans
 ---------------------------------------------------------- */
 
@@ -2689,6 +2693,32 @@ body #header-top .account-menu-active a {
 	padding: 7px;
 	background: #1B9BDA;
 }
+
+.page-node #content-right {
+	width: 32.3% !important;
+	position: relative;
+	right: 10px;
+	top: -27px;
+}
+
+.page-node #content-right .block {
+	border-bottom-color: #DDD;
+	border-color: #DDD;
+	background: #EEE;
+
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+.page-node #content-right .block:last-child {
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+
+}
+
+
 
 .tag-active {
 	float: left;

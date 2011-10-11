@@ -61,7 +61,6 @@
           <?php print $header_desc ?>
        </span>
 
-
 <!--detect if site home for social links-->
 <?php if (($base_path!==$front_page) || $is_profile): ?>
        <?php $soc_path = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>
