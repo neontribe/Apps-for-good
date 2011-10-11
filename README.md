@@ -12,6 +12,7 @@ checkout to work you will need to carry out the following steps.
  1. Create a user and database for this project.
  1. Edit settings.php and update the mysql url at around line 92
  1. Import the SQL file in site from the folder sites/default/files/
+ 1. If you have no databse you need to create the structure first
 
 If you want to have your settings file check into the repository then follow
 the instructions above. When done move the settings file to a different file
