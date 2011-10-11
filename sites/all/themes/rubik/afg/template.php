@@ -73,6 +73,8 @@ function _afg_override_login_message(&$vars) {
 function afg_preprocess_page(&$vars) {
   global $user;
 
+//	dpm(get_defined_vars());
+
   // if we are displaying a node and the node has dashboard show that instead
   $arg0 = arg(0);
   $arg1 = arg(1);
