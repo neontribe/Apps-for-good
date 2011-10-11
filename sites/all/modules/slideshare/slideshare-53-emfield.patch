@@ -1,0 +1,42 @@
+? slideshare-53-emfield.patch
+Index: slideshare.theme.inc
+===================================================================
+RCS file: /cvs/drupal-contrib/contributions/modules/slideshare/slideshare.theme.inc,v
+retrieving revision 1.4
+diff -u -u -r1.4 slideshare.theme.inc
+--- slideshare.theme.inc	15 Jan 2011 18:14:07 -0000	1.4
++++ slideshare.theme.inc	15 Feb 2011 10:27:01 -0000
+@@ -10,7 +10,7 @@
+ /**
+  * Flash embed.
+  */
+-function theme_slideshare_flash($embed, $width, $height, $field, $item, &$node, $autoplay) {
++function theme_slideshare_flash($embed, $width, $height, $field, $item, $node, $autoplay) {
+   if (is_numeric($embed)) {
+     $embedded_content = $item['data']['EMBED'][0];
+   }
+Index: providers/slideshare.inc
+===================================================================
+RCS file: /cvs/drupal-contrib/contributions/modules/slideshare/providers/slideshare.inc,v
+retrieving revision 1.8
+diff -u -u -r1.8 slideshare.inc
+--- providers/slideshare.inc	15 Jan 2011 18:14:08 -0000	1.8
++++ providers/slideshare.inc	15 Feb 2011 10:27:02 -0000
+@@ -167,7 +167,7 @@
+ /**
+  * Implementation of hook_<provider>_video()
+  */
+-function emvideo_slideshare_video($embed, $width, $height, $field, $item, &$node, $autoplay) {
++function emvideo_slideshare_video($embed, $width, $height, $field, $item, $node, $autoplay) {
+   $output = theme('slideshare_flash', $embed, $width, $height, $field, $item, $node, $autoplay);
+   return $output;
+ }
+@@ -175,7 +175,7 @@
+ /**
+  * Implementation of hook_<provider>_preview()
+  */
+-function emvideo_slideshare_preview($embed, $width, $height, $field, $item, &$node, $autoplay) {
++function emvideo_slideshare_preview($embed, $width, $height, $field, $item, $node, $autoplay) {
+   $output = theme('slideshare_flash', $embed, $width, $height, $field, $item, $node, $autoplay);
+   return $output;
+ }

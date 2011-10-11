@@ -1,0 +1,27 @@
+<?php
+
+function ntd_block($op = 'list', $delta = 0, $edit = array()) {
+  $blocks = array();
+  switch ($op) {
+    case 'list':
+      $blocks[0] = array(
+        'info' => t('Neontribe Debug'),
+      );
+    break;
+    case 'configure':
+    break;
+    case 'save':
+    break;
+    case 'view':
+      $blocks['subject'] = t('Neontribe Debug');
+      $blocks['content'] = _ntd_block();
+    break;
+  }
+  return $blocks;
+}
+
+function _ntd_block() {
+  $r = '<h4>Vars</h4><pre>';
+
+  return $r;
+}
