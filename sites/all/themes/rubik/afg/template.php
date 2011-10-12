@@ -14,7 +14,7 @@ function afg_theme(){
     ),
   );
 }
-
+ 
 /**
  * Displays a standard atrium success or failure message.
  *

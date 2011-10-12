@@ -1,5 +1,5 @@
 <?php
-
+ 
 /*count funtions*/
 
 function afg_user_count() {
