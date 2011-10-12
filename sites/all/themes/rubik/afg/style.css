@@ -1281,7 +1281,7 @@ input[type='submit'] {
 	min-height: 30px;
 }
 
-#content-right .view-groups-listing-centre-school .views-field-changed {
+#content-right .view-groups-listing-app-team .views-field-changed {
 	font-size: 0.9em;
 }
 
@@ -1295,6 +1295,12 @@ input[type='submit'] {
 	line-height: 1.4;
 }
 
+#content-right .view-groups-listing-app-team .views-field-title {
+	background: url('images/afg/icons/afg_app-icon-s.gif') no-repeat left;
+	padding: 0 0 0 20px;
+	line-height: 1.4;
+}
+
 .view-groups-listing-centre-school .views-field-picture {
 	position: absolute;
 	left: 0;
@@ -1304,6 +1310,7 @@ input[type='submit'] {
 	float: left;
 	margin: 0 0 0 40px;
 }
+
 
 /* Shoutbox
 ---------------------------------------------------------- */
