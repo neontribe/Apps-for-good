@@ -2418,6 +2418,23 @@ body #header-top .account-menu-active a {
 	width: 320px;
 }
 
+#content-left .view-taxonomy-listing .views-field-title a {
+	width: 400px;
+	display: block;
+	padding: 5px;
+}
+
+#content-left .activity-updates-apps .views-field-title .field-content {
+	width: 320px;
+	display: block;
+	text-indent: 0;
+}
+
+#content-left .activity-updates-apps .views-field-title .field-content a {
+	position: relative;
+	left: 70px;
+}
+
 #content-left .view-taxonomy-listing .views-field-title,
 #content-left .view-activity-listing .views-field-feature,
 #content-left .activity-updates-apps .views-field-title {
