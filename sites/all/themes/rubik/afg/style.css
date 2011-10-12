@@ -1281,6 +1281,20 @@ input[type='submit'] {
 	min-height: 30px;
 }
 
+#content-right .view-groups-listing-centre-school .views-field-changed {
+	font-size: 0.9em;
+}
+
+#content-right .view-groups-listing-centre-school .views-field-province {
+	font-size: 0.9em;
+}
+
+#content-right .view-groups-listing-centre-school .views-field-title {
+	background: url('images/afg/icons/afg_school-icon-s.gif') no-repeat left;
+	padding: 0 0 0 20px;
+	line-height: 1.4;
+}
+
 .view-groups-listing-centre-school .views-field-picture {
 	position: absolute;
 	left: 0;
