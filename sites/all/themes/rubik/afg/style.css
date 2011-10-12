@@ -565,7 +565,9 @@ input[type='submit'] {
 	top: 8px;
 	margin: 0 10px 0 0;
 	border: 6px solid #FFF;
+
 	-webkit-box-shadow: 0 0 2px 3px #444;
+	-moz-box-shadow: 0 0 2px 3px #444;
 	box-shadow: 0 0 2px 3px #444;
 }
 
@@ -2144,19 +2146,24 @@ body #header-top .account-menu-active a {
 }
 
 .end-node a {
-	color: #FFF;
+	color: #222;
 	border-bottom: 2px solid #FFF;
 	padding: 0 0 1px;
 }
 
 .end-node .picture {
-	float: left;
+	float: right;
 	margin: 0 10px 0 0;
+	border: 6px solid #EEE;
 }
 
 .end-node .picture a {
 	border: 0;
 	padding: 0;
+}
+
+.end-node .picture img {
+	margin-bottom: -5px;
 }
 
 .end-node object,
@@ -2176,19 +2183,19 @@ body #header-top .account-menu-active a {
 }
 
 .end-node .content-wrapper .node {
-	background: #1B9BDA;
+	background: none;
 	padding: 10px;
 	margin: 0 0 10px;
 }
 
-.end-node .meta {
-	padding: 3px;
-	margin: 100px 0 5px;
+.end-node .content {
+	color: #222;
+	margin: 0 0 20px;
 }
 
-.end-node .content {
-	color: #FFF;
-	margin: 0 0 20px;
+.end-node .content-body {
+	font-size: 1.2em;
+	line-height: 1.5;
 }
 
 .end-node .meta a {
@@ -2201,7 +2208,12 @@ body #header-top .account-menu-active a {
 }
 
 .end-node .meta {
-	margin: 0 0 5px;
+	padding: 3px;
+	margin: 0 0 15px;
+}
+
+.end-node .taxonomy-terms span {
+	color: #FFF;
 }
 
 .end-node .meta .byline {
@@ -2211,21 +2223,68 @@ body #header-top .account-menu-active a {
 
 .end-node .date {
 	float: left;
-	color: #61C7F7;
+	color: #222;
 	text-transform: uppercase;
-	background: url('images/afg/icon-timestamp.png') left no-repeat;
-	padding: 0 0 0 16px;
+	background: url('images/afg/icons/afg_timestamp-icon-bl.png') left no-repeat;
+	padding: 0 0 0 25px;
 }
 
 .end-node .comment-count {
 	float: left;
-	background: url('images/afg/icon-commentcount.png') left no-repeat;
+	background: url('images/afg/icons/afg_comment-icon-bl.png') left no-repeat;
 	padding: 0 0 0 25px;
 	margin: 0 0 0 20px;
 }
 
 .end-node .groups .links li a {
 	color: #FFF;
+}
+
+.end-node .comment {
+	background: #D8D6D7;
+	margin: 0 0 8px;
+}
+
+.end-node .comment .comment-title {
+	margin: 0 0 10px;
+	font-size: 1.3em;
+	background: #09F;
+	display: inline;
+	position: relative;
+	left: -20px;
+	padding: 5px 20px;
+}
+
+.end-node .comment .comment-title a {
+	border: 0;
+}
+
+.end-node .comment .comment-title a:hover {
+	color: #FFF;
+}
+
+.end-node .comment .comment-content {
+	font-size: 0.9em;
+	margin: 10px 0 0;
+}
+
+.end-node .comment .comment-submitted .byline {
+	margin: 5px 0;
+	float: right;
+}
+
+.end-node .comment .comment-submitted .date {
+	float: right;
+}
+
+.end-node .comment .comment-links .links {
+	background: #DDD;
+	padding: 5px 10px;
+	margin: 5px 0 0;
+}
+
+.print a {
+	display: none !important;
 }
 
 
@@ -2725,6 +2784,7 @@ body #header-top .account-menu-active a {
 	background: none !important;
 	font-size: 1em;
 	min-height: 150px;
+	resize: none;
 }
 
 .page-node-form #edit-field-help-0-value-wrapper textarea:focus {

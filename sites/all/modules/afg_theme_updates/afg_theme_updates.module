@@ -113,9 +113,7 @@ function afg_theme_updates_form_alter(&$form, &$form_state, $form_id) {
 			break;
 	
 		case 'group_media_image_node_form':
-			$form['field_help']['#disabled'] = TRUE;
-			$form['field_help'][0]['#disabled'] = TRUE;
-
+//	dpm($form);
 			break;
 		
 		//case 'atrium_shoutbox_shoutform':

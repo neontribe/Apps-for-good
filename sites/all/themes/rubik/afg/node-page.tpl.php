@@ -56,8 +56,7 @@
 <?php endif; ?>
 
   <div class="content">
-
-    <div class="meta"> 
+	<div class="meta"> 
       <span class="submitted">
         <div class="date">
           <?php print $date; ?>
@@ -70,8 +69,8 @@
     
     <div class="content-body">
       <?php print $content; ?>
-    </div>
-    
+    </div>    
+   
     <?php
     
     print '<div class="taxonomy-terms"><ul>';

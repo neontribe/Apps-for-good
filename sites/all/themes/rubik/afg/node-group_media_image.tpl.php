@@ -56,7 +56,8 @@
 <?php endif; ?>
 
   <div class="content">
-  
+      <?php print $picture; ?>
+ 
     <h2><?php print $node->title; ?></h2>
 
 	<div class="meta"> 
@@ -72,18 +73,8 @@
     
     <div class="content-body">
       <?php print $content; ?>
-    </div>
-    
-    <?php print $picture; ?>
-    
-    <div class="meta"> 
-      <span class="submitted">
-        <div class="byline">
-    	  <?php print $name; ?>
-        </div>
-      </span>
-    </div>
-    
+    </div>    
+   
     <?php
     
     print '<div class="taxonomy-terms"><ul>';
