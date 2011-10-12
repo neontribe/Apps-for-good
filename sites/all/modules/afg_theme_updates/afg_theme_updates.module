@@ -113,7 +113,23 @@ function afg_theme_updates_form_alter(&$form, &$form_state, $form_id) {
 		case 'ucreate_user_form':
 			//dpm($form);
 			break;
-	
+		
+		case 'blog_node_form':
+			// Hide keywords taxonomy from users who are not CDI Admin's
+			$access = FALSE;
+			$form['taxonomy']['tags'][1]['#access'] = FALSE;
+			
+			if (in_array('CDI Employee', $user->roles) ||
+				  in_array('administer', $user->roles)) {
+						$access = TRUE;
+			}
+
+			if ($access) {
+				$form['taxonomy']['tags'][1]['#access'] = TRUE;
+			}
+
+			break;
+		
 		//case 'atrium_shoutbox_shoutform':
 		//case 'page_node_form':
 		//case 'blog_node_form':
