@@ -45,6 +45,8 @@ function get_user_name() {
 }
 
 function _set_form_field_globals(&$form) {
+	$form['#after_build'][] = '_afg_after_build';
+
 	$form['taxonomy']['#collapsible'] = FALSE;
 	$form['taxonomy']['#collapsed'] = FALSE;
 	
@@ -112,10 +114,6 @@ function afg_theme_updates_form_alter(&$form, &$form_state, $form_id) {
 			//dpm($form);
 			break;
 	
-		case 'group_media_image_node_form':
-			$form['#after_build'][] = '_afg_after_build';
-			break;
-		
 		//case 'atrium_shoutbox_shoutform':
 		//case 'page_node_form':
 		//case 'blog_node_form':
