@@ -2718,6 +2718,22 @@ body #header-top .account-menu-active a {
 
 }
 
+.page-node-form #edit-field-help-0-value-wrapper textarea {
+	border: 0 !important;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	background: none !important;
+	font-size: 1em;
+	min-height: 150px;
+}
+
+.page-node-form #edit-field-help-0-value-wrapper textarea:focus {
+	background: none !important;
+} 
+
+.grippie {
+	display: none;
+}
 
 
 .tag-active {

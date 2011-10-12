@@ -1,7 +1,6 @@
 <?php
  
 /*count funtions*/
-
 function afg_user_count() {
   $count_users = db_result(db_query("SELECT COUNT(uid) FROM {users}"));
   return $count_users;
@@ -114,6 +113,9 @@ function afg_theme_updates_form_alter(&$form, &$form_state, $form_id) {
 			break;
 	
 		case 'group_media_image_node_form':
+			$form['field_help']['#disabled'] = TRUE;
+			$form['field_help'][0]['#disabled'] = TRUE;
+
 			break;
 		
 		//case 'atrium_shoutbox_shoutform':
