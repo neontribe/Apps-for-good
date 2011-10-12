@@ -2145,9 +2145,8 @@ body #header-top .account-menu-active a {
 	display: none;
 }
 
-.end-node a {
+.end-node #content-left a {
 	color: #222;
-	border-bottom: 2px solid #FFF;
 	padding: 0 0 1px;
 }
 
@@ -2260,7 +2259,7 @@ body #header-top .account-menu-active a {
 }
 
 .end-node .comment .comment-title a:hover {
-	color: #FFF;
+	color: #FFF !important;
 }
 
 .end-node .comment .comment-content {
@@ -2751,30 +2750,6 @@ body #header-top .account-menu-active a {
 .page-node-add-user #content-left .content-wrapper {
 	padding: 7px;
 	background: #1B9BDA;
-}
-
-.page-node #content-right {
-	width: 32.3% !important;
-	position: relative;
-	right: 10px;
-	top: -27px;
-}
-
-.page-node #content-right .block {
-	border-bottom-color: #DDD;
-	border-color: #DDD;
-	background: #EEE;
-
-	-moz-border-radius: 0;
-	-webkit-border-radius: 0;
-	border-radius: 0;
-}
-
-.page-node #content-right .block:last-child {
-        -moz-border-radius: 0;
-        -webkit-border-radius: 0;
-        border-radius: 0;
-
 }
 
 .page-node-form #edit-field-help-0-value-wrapper textarea {
