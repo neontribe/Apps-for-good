@@ -200,6 +200,7 @@ function afg_groups_views_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'content_extra_weights_group_app_team';
   $strongarm->value = array(
+    'og_user_roles_default_role' => '0',
     'title' => '-5',
     'body_field' => '1',
     'revision_information' => '7',

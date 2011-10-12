@@ -367,6 +367,73 @@ function afg_groups_views_content_default_fields() {
     ),
   );
 
+  // Exported field: field_help
+  $fields['group_app_team-field_help'] = array(
+    'field_name' => 'field_help',
+    'type_name' => 'group_app_team',
+    'display_settings' => array(
+      'weight' => '35',
+      'parent' => '',
+      'label' => array(
+        'format' => 'above',
+      ),
+      'teaser' => array(
+        'format' => 'plain',
+        'exclude' => 1,
+      ),
+      'full' => array(
+        'format' => 'plain',
+        'exclude' => 1,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'text',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'text',
+    'active' => '1',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'widget' => array(
+      'rows' => '5',
+      'size' => 60,
+      'default_value' => array(
+        '0' => array(
+          'value' => 'Help text here.',
+          '_error_element' => 'default_value_widget][field_help][0][value',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Help',
+      'weight' => '43',
+      'description' => '',
+      'type' => 'text_textarea',
+      'module' => 'text',
+    ),
+  );
+
   // Exported field: field_icon
   $fields['group_app_team-field_icon'] = array(
     'field_name' => 'field_icon',
@@ -1250,6 +1317,73 @@ function afg_groups_views_content_default_fields() {
     ),
   );
 
+  // Exported field: field_help
+  $fields['group_centre_school-field_help'] = array(
+    'field_name' => 'field_help',
+    'type_name' => 'group_centre_school',
+    'display_settings' => array(
+      'weight' => '35',
+      'parent' => '',
+      'label' => array(
+        'format' => 'above',
+      ),
+      'teaser' => array(
+        'format' => 'plain',
+        'exclude' => 1,
+      ),
+      'full' => array(
+        'format' => 'plain',
+        'exclude' => 1,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'text',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'text',
+    'active' => '1',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'widget' => array(
+      'rows' => '5',
+      'size' => 60,
+      'default_value' => array(
+        '0' => array(
+          'value' => 'Help text here.',
+          '_error_element' => 'default_value_widget][field_help][0][value',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Help',
+      'weight' => '36',
+      'description' => '',
+      'type' => 'text_textarea',
+      'module' => 'text',
+    ),
+  );
+
   // Exported field: field_icon
   $fields['group_centre_school-field_icon'] = array(
     'field_name' => 'field_icon',
@@ -1707,6 +1841,73 @@ function afg_groups_views_content_default_fields() {
     ),
   );
 
+  // Exported field: field_help
+  $fields['page-field_help'] = array(
+    'field_name' => 'field_help',
+    'type_name' => 'page',
+    'display_settings' => array(
+      'weight' => '35',
+      'parent' => '',
+      'label' => array(
+        'format' => 'above',
+      ),
+      'teaser' => array(
+        'format' => 'plain',
+        'exclude' => 1,
+      ),
+      'full' => array(
+        'format' => 'plain',
+        'exclude' => 1,
+      ),
+      '5' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'text',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'text',
+    'active' => '1',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'widget' => array(
+      'rows' => '5',
+      'size' => 60,
+      'default_value' => array(
+        '0' => array(
+          'value' => 'Help text here.',
+          '_error_element' => 'default_value_widget][field_help][0][value',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Help',
+      'weight' => '34',
+      'description' => '',
+      'type' => 'text_textarea',
+      'module' => 'text',
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Activity_link');
@@ -1717,6 +1918,7 @@ function afg_groups_views_content_default_fields() {
   t('Centre logo');
   t('Centre website');
   t('Facebook Account');
+  t('Help');
   t('Icon');
   t('Parent Centre');
   t('Staff');

@@ -386,6 +386,35 @@ dpm($node);
   $node_field[0]['value'] = $activity_update;
 }
 
+//member count view field hook
+function afg_views_view_field__groups_listing_centre_school__page_2__member_count($view, $handler, $obj) {
+  //dpm($obj);
+
+  //get supporter role id
+  $sql = 'SELECT rid FROM {role} WHERE name = "supporter"';
+  $res = db_query($sql);
+  //dpm($res);
+  $row = db_fetch_array($res);
+  $supporter_role_id = $row[rid];
+
+  //get member count
+  $sql = 'SELECT COUNT(*) as member_count FROM {og_users_roles} WHERE gid = ' . $obj->nid . ' AND rid = ' . $supporter_role_id;
+  $res = db_query($sql);
+  $row = db_fetch_array($res);
+  $member_count = $row[member_count];
+
+  //get group name and link
+  $group_name =$obj->node_data_field_activity_link_field_activity_link_value;
+  $url_stub = $group_name . '/supporters';
+
+  //construct link
+  $member_count_link = '<a href=' . $url_stub . '/>'. $member_count . '</a>';
+
+  return $member_count_link;
+
+}
+
+
 
 //recent activity stream home page
 function afg_views_view_field__updates__block_1__atrium_activity($view, $handler, $obj) {

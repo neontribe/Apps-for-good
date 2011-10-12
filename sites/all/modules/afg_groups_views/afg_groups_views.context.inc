@@ -13,6 +13,15 @@ function afg_groups_views_context_default_contexts() {
   $context->description = '';
   $context->tag = 'afg_custom';
   $context->conditions = array(
+    'context_og_condition_group_type' => array(
+      'values' => array(
+        'group_app_team' => 'group_app_team',
+        'group_centre_school' => 'group_centre_school',
+      ),
+      'options' => array(
+        'node_form' => 0,
+      ),
+    ),
     'path' => array(
       'values' => array(
         '~dashboard/profile' => '~dashboard/profile',
