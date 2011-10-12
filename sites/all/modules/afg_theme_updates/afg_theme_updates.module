@@ -113,7 +113,7 @@ function afg_theme_updates_form_alter(&$form, &$form_state, $form_id) {
 			break;
 	
 		case 'group_media_image_node_form':
-//	dpm($form);
+			$form['#after_build'][] = '_afg_after_build';
 			break;
 		
 		//case 'atrium_shoutbox_shoutform':
@@ -125,4 +125,31 @@ function afg_theme_updates_form_alter(&$form, &$form_state, $form_id) {
 			//dpm($form, 'form');
 			//break;
 	}
+}
+
+/**
+ * after_build callback handler.
+ */
+function _afg_after_build($form, &$form_state) {
+	_afg_fix_disabled($form['field_help']);
+	return $form;
+}
+
+/**
+ * Recursively set the disabled attribute of a CCK field
+ * and all its dependent FAPI elements.
+ */
+function _afg_fix_disabled(&$elements) {
+  foreach (element_children($elements) as $key) {
+    if (isset($elements[$key]) && $elements[$key]) {
+      // Recurse through all children elements.
+      _afg_fix_disabled($elements[$key]);
+    }
+  }
+
+  if (!isset($elements['#attributes'])) {
+    $elements['#attributes'] = array();
+  }
+
+  $elements['#attributes']['disabled'] = 'disabled';
 }
