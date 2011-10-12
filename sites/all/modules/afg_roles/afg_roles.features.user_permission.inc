@@ -182,12 +182,6 @@ function afg_roles_user_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported permission: clear atrium_calendar_ical_feed feeds
-  $permissions['clear atrium_calendar_ical_feed feeds'] = array(
-    'name' => 'clear atrium_calendar_ical_feed feeds',
-    'roles' => array(),
-  );
-
   // Exported permission: configure member roles
   $permissions['configure member roles'] = array(
     'name' => 'configure member roles',
@@ -248,29 +242,9 @@ function afg_roles_user_default_permissions() {
     ),
   );
 
-  // Exported permission: delete any casetracker_basic_case content
-  $permissions['delete any casetracker_basic_case content'] = array(
-    'name' => 'delete any casetracker_basic_case content',
-    'roles' => array(),
-  );
-
-  // Exported permission: delete any casetracker_basic_project content
-  $permissions['delete any casetracker_basic_project content'] = array(
-    'name' => 'delete any casetracker_basic_project content',
-    'roles' => array(),
-  );
-
   // Exported permission: delete any cdi_blog content
   $permissions['delete any cdi_blog content'] = array(
     'name' => 'delete any cdi_blog content',
-    'roles' => array(
-      '0' => 'CDI Employee',
-    ),
-  );
-
-  // Exported permission: delete any event content
-  $permissions['delete any event content'] = array(
-    'name' => 'delete any event content',
     'roles' => array(
       '0' => 'CDI Employee',
     ),
@@ -316,18 +290,6 @@ function afg_roles_user_default_permissions() {
     'roles' => array(
       '0' => 'CDI Employee',
     ),
-  );
-
-  // Exported permission: delete own casetracker_basic_case content
-  $permissions['delete own casetracker_basic_case content'] = array(
-    'name' => 'delete own casetracker_basic_case content',
-    'roles' => array(),
-  );
-
-  // Exported permission: delete own casetracker_basic_project content
-  $permissions['delete own casetracker_basic_project content'] = array(
-    'name' => 'delete own casetracker_basic_project content',
-    'roles' => array(),
   );
 
   // Exported permission: delete own cdi_blog content
@@ -386,7 +348,9 @@ function afg_roles_user_default_permissions() {
   // Exported permission: delete own request_for_help content
   $permissions['delete own request_for_help content'] = array(
     'name' => 'delete own request_for_help content',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'CDI Employee',
+    ),
   );
 
   // Exported permission: delete revisions
@@ -403,30 +367,12 @@ function afg_roles_user_default_permissions() {
     ),
   );
 
-  // Exported permission: edit any casetracker_basic_case content
-  $permissions['edit any casetracker_basic_case content'] = array(
-    'name' => 'edit any casetracker_basic_case content',
-    'roles' => array(),
-  );
-
-  // Exported permission: edit any casetracker_basic_project content
-  $permissions['edit any casetracker_basic_project content'] = array(
-    'name' => 'edit any casetracker_basic_project content',
-    'roles' => array(),
-  );
-
   // Exported permission: edit any cdi_blog content
   $permissions['edit any cdi_blog content'] = array(
     'name' => 'edit any cdi_blog content',
     'roles' => array(
       '0' => 'CDI Employee',
     ),
-  );
-
-  // Exported permission: edit any event content
-  $permissions['edit any event content'] = array(
-    'name' => 'edit any event content',
-    'roles' => array(),
   );
 
   // Exported permission: edit any group content
@@ -480,7 +426,8 @@ function afg_roles_user_default_permissions() {
   $permissions['edit own book content'] = array(
     'name' => 'edit own book content',
     'roles' => array(
-      '0' => 'Educator',
+      '0' => 'CDI Employee',
+      '1' => 'Educator',
     ),
   );
 
@@ -490,18 +437,6 @@ function afg_roles_user_default_permissions() {
     'roles' => array(
       '0' => 'CDI Employee',
     ),
-  );
-
-  // Exported permission: edit own feed_ical content
-  $permissions['edit own feed_ical content'] = array(
-    'name' => 'edit own feed_ical content',
-    'roles' => array(),
-  );
-
-  // Exported permission: edit own feed_ical_item content
-  $permissions['edit own feed_ical_item content'] = array(
-    'name' => 'edit own feed_ical_item content',
-    'roles' => array(),
   );
 
   // Exported permission: edit own group_app_team content
@@ -561,12 +496,6 @@ function afg_roles_user_default_permissions() {
   // Exported permission: flush imagecache
   $permissions['flush imagecache'] = array(
     'name' => 'flush imagecache',
-    'roles' => array(),
-  );
-
-  // Exported permission: import atrium_calendar_ical_feed feeds
-  $permissions['import atrium_calendar_ical_feed feeds'] = array(
-    'name' => 'import atrium_calendar_ical_feed feeds',
     'roles' => array(),
   );
 
