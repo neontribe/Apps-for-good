@@ -69,8 +69,9 @@ function ntforms_atrium_account_links_alter(&$links) {
   global $user;
   $uid = $user->uid;
   foreach ($links as $index => $link) {
-    if ($link['title'] == 'My dashboard' || $link['href'] == "user/$uid/dashboard") {
-      unset($links[$index]);
+	  if ($link['title'] == 'My dashboard' || $link['href'] == "user/$uid/dashboard" ||
+	 	$link['title'] == 'Notifications' || $link['href'] == "user/$uid/notifications") {
+      	unset($links[$index]);
     }
   }
 }
