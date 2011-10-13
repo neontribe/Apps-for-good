@@ -138,7 +138,6 @@ h1 {
 	font-size: 4.2em;
 	margin: 0.25em 0 0.2em;
 	text-shadow: 1px 2px 1px #000;
-	display: inline;
 }
 
 h1 .term {
@@ -289,6 +288,19 @@ span.header-description {
 #block-views-Counters-block_2,
 .end-node-comment .node > h2 {
 	display: none;
+}
+
+/* Override header description inline styles
+---------------------------------------------------------- */
+
+.header-description span[style] {
+	font-size: inherit !important;
+	font-family: inherit !important;
+	color: inherit !important;
+	background-color: inherit !important;
+	font-style: inherit !important;
+	font-variant: inherit !important;
+	text-decoration: inherit !important;
 }
 
 /* Taxonomy Terms
@@ -2829,4 +2841,7 @@ body #header-top .account-menu-active a {
 	-moz-border-radius-bottomleft: 0px;
 	-webkit-border-radius: 0px 3px 3px 0px;
 }
+
+
+
 
