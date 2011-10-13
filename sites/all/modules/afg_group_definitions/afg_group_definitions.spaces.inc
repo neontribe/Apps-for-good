@@ -5,6 +5,7 @@
  */
 function afg_group_definitions_spaces_presets() {
   $export = array();
+
   $spaces_presets = new stdClass;
   $spaces_presets->disabled = FALSE; /* Edit this to true to make a default spaces_presets disabled initially */
   $spaces_presets->api_version = 3;
@@ -113,8 +114,8 @@ function afg_group_definitions_spaces_presets() {
   // Included for use with string extractors like potx.
   t('Application Team Group');
   t('This is an Application Team. All users may view public content from this group. Users must request to join this group.');
-
   $export['application_team'] = $spaces_presets;
+
   $spaces_presets = new stdClass;
   $spaces_presets->disabled = FALSE; /* Edit this to true to make a default spaces_presets disabled initially */
   $spaces_presets->api_version = 3;
@@ -129,12 +130,8 @@ function afg_group_definitions_spaces_presets() {
       'spaces_og_directory' => 1,
       'spaces_og_private' => 0,
       'spaces_features' => array(
-        'afg_group_media' => '0',
-        'afg_groups_views' => '0',
+        'afg_group_media' => '1',
         'atrium_blog' => '1',
-        'atrium_book' => '0',
-        'atrium_calendar' => '0',
-        'atrium_casetracker' => '0',
         'atrium_members' => '1',
         'atrium_shoutbox' => '0',
         'cdi_blog' => '1',
@@ -155,8 +152,8 @@ function afg_group_definitions_spaces_presets() {
   // Included for use with string extractors like potx.
   t('Apps for Good Group');
   t('This is an Apps for Good group. All users may view public content from this group. Users must request to join this group.');
-
   $export['apps_for_good'] = $spaces_presets;
+
   $spaces_presets = new stdClass;
   $spaces_presets->disabled = FALSE; /* Edit this to true to make a default spaces_presets disabled initially */
   $spaces_presets->api_version = 3;
@@ -275,7 +272,7 @@ function afg_group_definitions_spaces_presets() {
   // Included for use with string extractors like potx.
   t('Centre/ School Group');
   t('This is an Centre or School. All users may view public content from this group. Users must request to join this group.');
-
   $export['centre_school'] = $spaces_presets;
+
   return $export;
 }
