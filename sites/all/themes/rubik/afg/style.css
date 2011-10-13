@@ -1893,6 +1893,7 @@ body #header-top .account-menu-active a {
 #block-atrium-account .pane-left h3,
 #block-atrium-account .pane-right h3 {
 	color: #ACAAAB;
+	border-bottom: 2px solid #CCC;
 }
 
 #block-atrium-account .pane-right li {
