@@ -54,20 +54,20 @@
 <?php if (!$page): ?>
   <h2><a href="<?php print $node_url; ?>" title="<?php print $title; ?>"><?php print $title; ?></a></h2>
 <?php endif; ?>
-
-  <div class="content">
-      <?php print $picture; ?>
- 
-    <h2><?php print $node->title; ?></h2>
-
+  
+	<div class="content">
 	<div class="meta"> 
       <span class="submitted">
         <div class="date">
           <?php print $date; ?>
         </div>
+
+	<?php if($node->comment_count > 0): ?>
         <div class="comment-count">
           <?php print format_plural($node->comment_count, '1 comment', '@count comments'); ?>
         </div>
+	<?php endif; ?>
+
       </span> 
     </div> 
     

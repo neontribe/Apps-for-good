@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Paytone+One);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
-
+ 
 @font-face {
     font-family: 'LeckerliOneRegular';
     src: url('fonts/leckerlione-webfont.eot');
@@ -112,6 +112,10 @@ body .error a {
 	border-bottom-color: #996655;
 }
 
+.content-body p {
+	margin-bottom: 10px;
+}
+
 /* Headers & Spans
 ---------------------------------------------------------- */
 
@@ -127,6 +131,10 @@ h1 {
 	margin: 0.25em 0 0.2em;
 	text-shadow: 1px 2px 1px #000;
 	display: inline;
+}
+
+h1 .term {
+	font-size: 0.7em; 
 }
 
 .view-header h2 {
@@ -556,6 +564,11 @@ input[type='submit'] {
 	position: relative;
 	top: 8px;
 	margin: 0 10px 0 0;
+	border: 6px solid #FFF;
+
+	-webkit-box-shadow: 0 0 2px 3px #444;
+	-moz-box-shadow: 0 0 2px 3px #444;
+	box-shadow: 0 0 2px 3px #444;
 }
 
 #header-links {
@@ -1159,6 +1172,7 @@ input[type='submit'] {
 	margin: 0 0 0 70px;
 }
 
+#content-left .view-taxonomy-listing .activity-info,
 #content-left .activity-updates-apps .activity-info {
 	top: -65px;
 }
@@ -1671,6 +1685,7 @@ li.tab-plan a {  background:url('images/afg/icons/afg_blog-icon.gif')  no-repeat
 	text-transform: uppercase;
 }
 
+#content-left .view-taxonomy-listing .views-field-field-icon-fid-1,
 #content-left .view-activity-listing .views-field-field-icon-fid,
 #content-left .view-Group-Media .views-field-field-icon-fid,
 #content-left .view-updates .views-field-field-icon-fid,
@@ -2130,20 +2145,24 @@ body #header-top .account-menu-active a {
 	display: none;
 }
 
-.end-node a {
-	color: #FFF;
-	border-bottom: 2px solid #FFF;
+.end-node #content-left a {
+	color: #222;
 	padding: 0 0 1px;
 }
 
 .end-node .picture {
-	float: left;
+	float: right;
 	margin: 0 10px 0 0;
+	border: 6px solid #EEE;
 }
 
 .end-node .picture a {
 	border: 0;
 	padding: 0;
+}
+
+.end-node .picture img {
+	margin-bottom: -5px;
 }
 
 .end-node object,
@@ -2163,19 +2182,19 @@ body #header-top .account-menu-active a {
 }
 
 .end-node .content-wrapper .node {
-	background: #1B9BDA;
+	background: none;
 	padding: 10px;
 	margin: 0 0 10px;
 }
 
-.end-node .meta {
-	padding: 3px;
-	margin: 100px 0 5px;
+.end-node .content {
+	color: #222;
+	margin: 0 0 20px;
 }
 
-.end-node .content {
-	color: #FFF;
-	margin: 0 0 20px;
+.end-node .content-body {
+	font-size: 1.2em;
+	line-height: 1.5;
 }
 
 .end-node .meta a {
@@ -2188,7 +2207,12 @@ body #header-top .account-menu-active a {
 }
 
 .end-node .meta {
-	margin: 0 0 5px;
+	padding: 3px;
+	margin: 0 0 15px;
+}
+
+.end-node .taxonomy-terms span {
+	color: #FFF;
 }
 
 .end-node .meta .byline {
@@ -2198,15 +2222,15 @@ body #header-top .account-menu-active a {
 
 .end-node .date {
 	float: left;
-	color: #61C7F7;
+	color: #222;
 	text-transform: uppercase;
-	background: url('images/afg/icon-timestamp.png') left no-repeat;
-	padding: 0 0 0 16px;
+	background: url('images/afg/icons/afg_timestamp-icon-bl.png') left no-repeat;
+	padding: 0 0 0 25px;
 }
 
 .end-node .comment-count {
 	float: left;
-	background: url('images/afg/icon-commentcount.png') left no-repeat;
+	background: url('images/afg/icons/afg_comment-icon-bl.png') left no-repeat;
 	padding: 0 0 0 25px;
 	margin: 0 0 0 20px;
 }
@@ -2214,6 +2238,54 @@ body #header-top .account-menu-active a {
 .end-node .groups .links li a {
 	color: #FFF;
 }
+
+.end-node .comment {
+	background: #D8D6D7;
+	margin: 0 0 8px;
+}
+
+.end-node .comment .comment-title {
+	margin: 0 0 10px;
+	font-size: 1.3em;
+	background: #09F;
+	display: inline;
+	position: relative;
+	left: -20px;
+	padding: 5px 20px;
+}
+
+.end-node .comment .comment-title a {
+	border: 0;
+}
+
+.end-node .comment .comment-title a:hover {
+	color: #FFF !important;
+}
+
+.end-node .comment .comment-content {
+	font-size: 0.9em;
+	margin: 10px 0 0;
+}
+
+.end-node .comment .comment-submitted .byline {
+	margin: 5px 0;
+	float: right;
+}
+
+.end-node .comment .comment-submitted .date {
+	float: right;
+}
+
+.end-node .comment .comment-links .links {
+	background: #DDD;
+	padding: 5px 10px;
+	margin: 5px 0 0;
+}
+
+.print a {
+	display: none !important;
+}
+
 
 /* Pager
 ---------------------------------------------------------- */
@@ -2306,6 +2378,7 @@ body #header-top .account-menu-active a {
 	width: 320px;
 }
 
+#content-left .view-taxonomy-listing .views-field-title,
 #content-left .view-activity-listing .views-field-feature,
 #content-left .activity-updates-apps .views-field-title {
 	background: #1D83C3;
@@ -2313,6 +2386,14 @@ body #header-top .account-menu-active a {
 	position: relative;
 	text-indent: 65px;
 	margin-bottom: 8px;
+}
+
+#content-left .view-taxonomy-listing .views-field-title {
+	text-indent: 0px;
+}
+
+#content-left .view-taxonomy-listing .views-field-field-icon-fid-1 img {
+	margin: 0;
 }
 
 /* Social Network Header
@@ -2671,6 +2752,25 @@ body #header-top .account-menu-active a {
 	background: #1B9BDA;
 }
 
+.page-node-form #edit-field-help-0-value-wrapper textarea {
+	border: 0 !important;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	background: none !important;
+	font-size: 1em;
+	min-height: 150px;
+	resize: none;
+}
+
+.page-node-form #edit-field-help-0-value-wrapper textarea:focus {
+	background: none !important;
+} 
+
+.grippie {
+	display: none;
+}
+
+
 .tag-active {
 	float: left;
 	text-indent: 8px;
@@ -2702,3 +2802,4 @@ body #header-top .account-menu-active a {
 	-moz-border-radius-bottomleft: 0px;
 	-webkit-border-radius: 0px 3px 3px 0px;
 }
+

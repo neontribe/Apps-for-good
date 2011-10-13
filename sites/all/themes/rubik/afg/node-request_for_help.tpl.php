@@ -47,6 +47,7 @@
  * @see template_preprocess()
  * @see template_preprocess_node()
  */
+ 
 ?>
 <div id="node-<?php print $node->nid; ?>" class="node<?php if ($sticky) { print ' sticky'; } ?><?php if (!$status) { print ' node-unpublished'; } ?> clear-block">
 
@@ -55,7 +56,8 @@
 <?php endif; ?>
 
   <div class="content">
-  
+      <?php print $picture; ?>
+ 
     <h2><?php print $node->title; ?></h2>
 
 	<div class="meta"> 
@@ -71,18 +73,8 @@
     
     <div class="content-body">
       <?php print $content; ?>
-    </div>
-    
-    <?php print $picture; ?>
-    
-    <div class="meta"> 
-      <span class="submitted">
-        <div class="byline">
-    	  <?php print $name; ?>
-        </div>
-      </span>
-    </div>
-    
+    </div>    
+   
     <?php
     
     print '<div class="taxonomy-terms"><ul>';
