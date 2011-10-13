@@ -1,3 +1,4 @@
 <?php
+include_once('afg_menus.features.inc');
 
 // Drupal needs this blank file.
