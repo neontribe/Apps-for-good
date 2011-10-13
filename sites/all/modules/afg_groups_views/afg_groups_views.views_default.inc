@@ -5234,7 +5234,7 @@ return TRUE;',
   $handler->override_option('style_plugin', 'ntgmap');
   $handler->override_option('style_options', array(
     'grouping' => '',
-    'macro' => '[gmap ]',
+    'macro' => '[gmap]',
     'datasource' => 'location',
     'latfield' => 'title',
     'lonfield' => 'title',
