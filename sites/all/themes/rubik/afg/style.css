@@ -109,7 +109,15 @@ ol li { list-style: inside decimal; }
 
 body .error a {
 	color: #996655;
-	border-bottom-color: #996655;
+	border-bottom: 2px solid #996655;
+	padding-bottom: 2px;
+	text-transform: uppercase;
+	margin: 0 5px;
+}
+
+body .error a:hover {
+	color: #000;
+	border-bottom-color: #000;
 }
 
 .content-body p {
@@ -1885,6 +1893,7 @@ body #header-top .account-menu-active a {
 #block-atrium-account .pane-left h3,
 #block-atrium-account .pane-right h3 {
 	color: #ACAAAB;
+	border-bottom: 2px solid #CCC;
 }
 
 #block-atrium-account .pane-right li {
@@ -2286,6 +2295,24 @@ body #header-top .account-menu-active a {
 	display: none !important;
 }
 
+/* Recent Comments Block
+---------------------------------------------------------- */
+
+.view-blog-comments .views-field-name {
+	margin: 0 0 10px;
+}
+
+.view-blog-comments .views-field-timestamp,
+.view-blog-comments .views-field-comment {
+	font-size: 0.8em;
+	margin: 0 0 10px;
+}
+
+.view-blog-comments .views-field-timestamp {
+	background: url('images/afg/icons/afg_timestamp-icon-bl.png') no-repeat;
+	padding: 0 0 0 25px;
+	line-height: 1.5;
+}
 
 /* Pager
 ---------------------------------------------------------- */
