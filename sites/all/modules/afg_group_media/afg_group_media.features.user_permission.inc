@@ -11,8 +11,7 @@ function afg_group_media_user_default_permissions() {
     'name' => 'create group_media_image content',
     'roles' => array(
       '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
+      '1' => 'Educator',
     ),
   );
 
@@ -21,8 +20,7 @@ function afg_group_media_user_default_permissions() {
     'name' => 'create group_media_video content',
     'roles' => array(
       '0' => 'App team',
-      '1' => 'CDI Employee',
-      '2' => 'Educator',
+      '1' => 'Educator',
     ),
   );
 
@@ -37,25 +35,19 @@ function afg_group_media_user_default_permissions() {
   // Exported permission: delete any group_media_image content
   $permissions['delete any group_media_image content'] = array(
     'name' => 'delete any group_media_image content',
-    'roles' => array(
-      '0' => 'CDI Employee',
-    ),
+    'roles' => array(),
   );
 
   // Exported permission: delete any group_media_video content
   $permissions['delete any group_media_video content'] = array(
     'name' => 'delete any group_media_video content',
-    'roles' => array(
-      '0' => 'CDI Employee',
-    ),
+    'roles' => array(),
   );
 
   // Exported permission: delete any request_for_help content
   $permissions['delete any request_for_help content'] = array(
     'name' => 'delete any request_for_help content',
-    'roles' => array(
-      '0' => 'CDI Employee',
-    ),
+    'roles' => array(),
   );
 
   // Exported permission: edit any group_media_image content
