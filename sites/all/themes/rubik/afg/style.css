@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Paytone+One);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
-
+ 
 @font-face {
     font-family: 'LeckerliOneRegular';
     src: url('fonts/leckerlione-webfont.eot');
@@ -109,7 +109,19 @@ ol li { list-style: inside decimal; }
 
 body .error a {
 	color: #996655;
-	border-bottom-color: #996655;
+	border-bottom: 2px solid #996655;
+	padding-bottom: 2px;
+	text-transform: uppercase;
+	margin: 0 5px;
+}
+
+body .error a:hover {
+	color: #000;
+	border-bottom-color: #000;
+}
+
+.content-body p {
+	margin-bottom: 10px;
 }
 
 /* Headers & Spans
@@ -126,7 +138,10 @@ h1 {
 	font-size: 4.2em;
 	margin: 0.25em 0 0.2em;
 	text-shadow: 1px 2px 1px #000;
-	display: inline;
+}
+
+h1 .term {
+	font-size: 0.7em; 
 }
 
 .view-header h2 {
@@ -207,6 +222,7 @@ span.header-description {
 	line-height: 1.6;
 	min-height: 60px;
 	display: block;
+	margin: 0 0 20px;
 }
 
 /* Clearing & Hiding
@@ -273,6 +289,19 @@ span.header-description {
 #block-views-Counters-block_2,
 .end-node-comment .node > h2 {
 	display: none;
+}
+
+/* Override header description inline styles
+---------------------------------------------------------- */
+
+.header-description span[style] {
+	font-size: inherit !important;
+	font-family: inherit !important;
+	color: inherit !important;
+	background-color: inherit !important;
+	font-style: inherit !important;
+	font-variant: inherit !important;
+	text-decoration: inherit !important;
 }
 
 /* Taxonomy Terms
@@ -556,6 +585,11 @@ input[type='submit'] {
 	position: relative;
 	top: 8px;
 	margin: 0 10px 0 0;
+	border: 6px solid #FFF;
+
+	-webkit-box-shadow: 0 0 2px 3px #444;
+	-moz-box-shadow: 0 0 2px 3px #444;
+	box-shadow: 0 0 2px 3px #444;
 }
 
 #header-links {
@@ -1159,6 +1193,7 @@ input[type='submit'] {
 	margin: 0 0 0 70px;
 }
 
+#content-left .view-taxonomy-listing .activity-info,
 #content-left .activity-updates-apps .activity-info {
 	top: -65px;
 }
@@ -1246,6 +1281,26 @@ input[type='submit'] {
 	min-height: 30px;
 }
 
+#content-right .view-groups-listing-app-team .views-field-changed {
+	font-size: 0.9em;
+}
+
+#content-right .view-groups-listing-centre-school .views-field-province {
+	font-size: 0.9em;
+}
+
+#content-right .view-groups-listing-centre-school .views-field-title {
+	background: url('images/afg/icons/afg_school-icon-s.gif') no-repeat left;
+	padding: 0 0 0 20px;
+	line-height: 1.4;
+}
+
+#content-right .view-groups-listing-app-team .views-field-title {
+	background: url('images/afg/icons/afg_app-icon-s.gif') no-repeat left;
+	padding: 0 0 0 20px;
+	line-height: 1.4;
+}
+
 .view-groups-listing-centre-school .views-field-picture {
 	position: absolute;
 	left: 0;
@@ -1255,6 +1310,7 @@ input[type='submit'] {
 	float: left;
 	margin: 0 0 0 40px;
 }
+
 
 /* Shoutbox
 ---------------------------------------------------------- */
@@ -1671,6 +1727,7 @@ li.tab-plan a {  background:url('images/afg/icons/afg_blog-icon.gif')  no-repeat
 	text-transform: uppercase;
 }
 
+#content-left .view-taxonomy-listing .views-field-field-icon-fid-1,
 #content-left .view-activity-listing .views-field-field-icon-fid,
 #content-left .view-Group-Media .views-field-field-icon-fid,
 #content-left .view-updates .views-field-field-icon-fid,
@@ -1733,6 +1790,7 @@ li.tab-plan a {  background:url('images/afg/icons/afg_blog-icon.gif')  no-repeat
 
 .views-field-picture img {
 	height: auto;
+	width: auto;
 	max-width: 50px;
 	background: #FFF;
 	border: 6px solid #FFF !important;
@@ -1825,7 +1883,6 @@ li.tab-plan a {  background:url('images/afg/icons/afg_blog-icon.gif')  no-repeat
 
 body #header-top .account-menu-active {
 	top: 5px;
-	right: 5px;
 	border: 4px solid #222;
 }
 
@@ -1870,6 +1927,7 @@ body #header-top .account-menu-active a {
 #block-atrium-account .pane-left h3,
 #block-atrium-account .pane-right h3 {
 	color: #ACAAAB;
+	border-bottom: 2px solid #CCC;
 }
 
 #block-atrium-account .pane-right li {
@@ -1893,6 +1951,10 @@ body #header-top .account-menu-active a {
 #block-atrium-account ul.links  li:hover,
 #block-atrium-account .item-list li:hover {
 	background: #F1F1F1 !important;
+}
+
+#block-atrium-account .pane-right .view-empty {
+	display: none;
 }
 
 /* User Links Menu
@@ -2130,20 +2192,36 @@ body #header-top .account-menu-active a {
 	display: none;
 }
 
-.end-node a {
-	color: #FFF;
-	border-bottom: 2px solid #FFF;
+.end-node #content-left a {
 	padding: 0 0 1px;
 }
 
+.end-node #content-left .comment-title a {
+	color: #222;
+}
+
+.end-node #content-left .comment .comment-content a {
+	border-bottom: 2px solid #39C;
+	margin: 0 5px;
+}
+
+.end-node #content-left .comment .comment-content a:hover {
+	border-bottom-color: #222;
+}
+
 .end-node .picture {
-	float: left;
+	float: right;
 	margin: 0 10px 0 0;
+	border: 6px solid #EEE;
 }
 
 .end-node .picture a {
 	border: 0;
 	padding: 0;
+}
+
+.end-node .picture img {
+	margin-bottom: -5px;
 }
 
 .end-node object,
@@ -2163,19 +2241,19 @@ body #header-top .account-menu-active a {
 }
 
 .end-node .content-wrapper .node {
-	background: #1B9BDA;
+	background: none;
 	padding: 10px;
 	margin: 0 0 10px;
 }
 
-.end-node .meta {
-	padding: 3px;
-	margin: 100px 0 5px;
+.end-node .content {
+	color: #222;
+	margin: 0 0 20px;
 }
 
-.end-node .content {
-	color: #FFF;
-	margin: 0 0 20px;
+.end-node .content-body {
+	font-size: 1.2em;
+	line-height: 1.5;
 }
 
 .end-node .meta a {
@@ -2188,7 +2266,12 @@ body #header-top .account-menu-active a {
 }
 
 .end-node .meta {
-	margin: 0 0 5px;
+	padding: 3px;
+	margin: 0 0 15px;
+}
+
+.end-node .taxonomy-terms span {
+	color: #FFF;
 }
 
 .end-node .meta .byline {
@@ -2198,21 +2281,92 @@ body #header-top .account-menu-active a {
 
 .end-node .date {
 	float: left;
-	color: #61C7F7;
+	color: #222;
 	text-transform: uppercase;
-	background: url('images/afg/icon-timestamp.png') left no-repeat;
-	padding: 0 0 0 16px;
+	background: url('images/afg/icons/afg_timestamp-icon-bl.png') left no-repeat;
+	padding: 0 0 0 25px;
 }
 
 .end-node .comment-count {
 	float: left;
-	background: url('images/afg/icon-commentcount.png') left no-repeat;
+	background: url('images/afg/icons/afg_comment-icon-bl.png') left no-repeat;
 	padding: 0 0 0 25px;
 	margin: 0 0 0 20px;
 }
 
 .end-node .groups .links li a {
 	color: #FFF;
+}
+
+.end-node .comment {
+	background: #D8D6D7;
+	margin: 0 0 8px;
+}
+
+.end-node .comment .comment-title {
+	margin: 0 0 10px;
+	font-size: 1.3em;
+	background: #09F;
+	display: inline;
+	position: relative;
+	left: -20px;
+	padding: 5px 20px;
+}
+
+.end-node .comment .comment-title a {
+	border: 0;
+}
+
+.end-node .comment .comment-title a:hover {
+	color: #FFF !important;
+}
+
+.end-node .comment .comment-content {
+	font-size: 0.9em;
+	margin: 10px 0 0;
+}
+
+.end-node .comment .comment-submitted .byline {
+	margin: 5px 0;
+	float: right;
+}
+
+.end-node .comment .comment-submitted .date {
+	float: right;
+}
+
+.end-node .comment .comment-links .links {
+	background: #DDD;
+	padding: 5px 10px;
+	margin: 5px 0 0;
+}
+
+.end-node .comment .comment-links .comment_forbidden a {
+	float: none;
+	text-transform: uppercase;
+}
+
+.print a {
+	display: none !important;
+}
+
+/* Recent Comments Block
+---------------------------------------------------------- */
+
+.view-blog-comments .views-field-name {
+	margin: 0 0 10px;
+}
+
+.view-blog-comments .views-field-timestamp,
+.view-blog-comments .views-field-comment {
+	font-size: 0.8em;
+	margin: 0 0 10px;
+}
+
+.view-blog-comments .views-field-timestamp {
+	background: url('images/afg/icons/afg_timestamp-icon-bl.png') no-repeat;
+	padding: 0 0 0 25px;
+	line-height: 1.5;
 }
 
 /* Pager
@@ -2306,6 +2460,24 @@ body #header-top .account-menu-active a {
 	width: 320px;
 }
 
+#content-left .view-taxonomy-listing .views-field-title a {
+	width: 400px;
+	display: block;
+	padding: 5px;
+}
+
+#content-left .activity-updates-apps .views-field-title .field-content {
+	width: 320px;
+	display: block;
+	text-indent: 0;
+}
+
+#content-left .activity-updates-apps .views-field-title .field-content a {
+	position: relative;
+	left: 70px;
+}
+
+#content-left .view-taxonomy-listing .views-field-title,
 #content-left .view-activity-listing .views-field-feature,
 #content-left .activity-updates-apps .views-field-title {
 	background: #1D83C3;
@@ -2313,6 +2485,14 @@ body #header-top .account-menu-active a {
 	position: relative;
 	text-indent: 65px;
 	margin-bottom: 8px;
+}
+
+#content-left .view-taxonomy-listing .views-field-title {
+	text-indent: 0px;
+}
+
+#content-left .view-taxonomy-listing .views-field-field-icon-fid-1 img {
+	margin: 0;
 }
 
 /* Social Network Header
@@ -2604,7 +2784,6 @@ body #header-top .account-menu-active a {
 }
 
 .page-node .column-side a {
-	color: #000;
 	border-bottom: 0;
 }
 
@@ -2671,6 +2850,25 @@ body #header-top .account-menu-active a {
 	background: #1B9BDA;
 }
 
+.page-node-form #edit-field-help-0-value-wrapper textarea {
+	border: 0 !important;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	background: none !important;
+	font-size: 1em;
+	min-height: 150px;
+	resize: none;
+}
+
+.page-node-form #edit-field-help-0-value-wrapper textarea:focus {
+	background: none !important;
+} 
+
+.grippie {
+	display: none;
+}
+
+
 .tag-active {
 	float: left;
 	text-indent: 8px;
@@ -2702,3 +2900,7 @@ body #header-top .account-menu-active a {
 	-moz-border-radius-bottomleft: 0px;
 	-webkit-border-radius: 0px 3px 3px 0px;
 }
+
+
+
+
