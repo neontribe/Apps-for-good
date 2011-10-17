@@ -1952,6 +1952,10 @@ body #header-top .account-menu-active a {
 	background: #F1F1F1 !important;
 }
 
+#block-atrium-account .pane-right .view-empty {
+	display: none;
+}
+
 /* User Links Menu
 ---------------------------------------------------------- */
 
@@ -2188,8 +2192,11 @@ body #header-top .account-menu-active a {
 }
 
 .end-node #content-left a {
-	color: #222;
 	padding: 0 0 1px;
+}
+
+.end-node #content-left .comment-title a {
+	color: #222;
 }
 
 .end-node .picture {
@@ -2767,7 +2774,6 @@ body #header-top .account-menu-active a {
 }
 
 .page-node .column-side a {
-	color: #000;
 	border-bottom: 0;
 }
 
