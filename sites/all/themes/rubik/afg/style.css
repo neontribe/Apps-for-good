@@ -2199,6 +2199,15 @@ body #header-top .account-menu-active a {
 	color: #222;
 }
 
+.end-node #content-left .comment .comment-content a {
+	border-bottom: 2px solid #39C;
+	margin: 0 5px;
+}
+
+.end-node #content-left .comment .comment-content a:hover {
+	border-bottom-color: #222;
+}
+
 .end-node .picture {
 	float: right;
 	margin: 0 10px 0 0;
