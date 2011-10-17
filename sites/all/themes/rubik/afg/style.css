@@ -1790,6 +1790,7 @@ li.tab-plan a {  background:url('images/afg/icons/afg_blog-icon.gif')  no-repeat
 
 .views-field-picture img {
 	height: auto;
+	width: auto;
 	max-width: 50px;
 	background: #FFF;
 	border: 6px solid #FFF !important;
