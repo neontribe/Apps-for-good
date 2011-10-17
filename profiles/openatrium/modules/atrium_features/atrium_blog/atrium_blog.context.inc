@@ -18,7 +18,7 @@ function atrium_blog_context_default_contexts() {
         'blog' => 'blog',
       ),
       'options' => array(
-        'node_form' => 1,
+        'node_form' => '0',
       ),
     ),
     'views' => array(
