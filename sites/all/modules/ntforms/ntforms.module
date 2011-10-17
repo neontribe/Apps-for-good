@@ -63,6 +63,11 @@ function ntforms_form_alter(&$form, &$form_state, $form_id) {
     $form['spaces_preset']['spaces_preset_og']['#default_value'] = $forms[$form_id]['space'];
 
   }
+
+  if ($form_id == 'ucreate_user_form') {
+    //_ucreate_og_form($form);
+		_ntforms_og_form($form);
+  }
 }
 
 function ntforms_atrium_account_links_alter(&$links) {
@@ -75,3 +80,88 @@ function ntforms_atrium_account_links_alter(&$links) {
     }
   }
 }
+
+/**
+ * This function adds an OG group selection fieldset and provides default settings by user/group context.
+ */
+function _ntforms_og_form(&$form) {
+  if (isset($_GET['gids'])) {
+    og_set_group_context(node_load($_GET['gids'][0]));
+  }
+  $og = og_get_group_context();
+
+  // Set up OG register checkboxes
+  $form['og_register'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Groups'),
+    'og_register' => array(
+      '#type' => 'checkboxes',
+    ),
+  );
+
+  // Allow user to add new user to her groups
+  global $user;
+	/*
+  if (is_array($user->og_groups)) {
+    $group_options = $user->og_groups;
+  }
+  else if ($og) {
+    $group_options = array($og);
+  }
+	*/
+	
+	// Allow users to add other users to any group
+	if (is_array($user->og_groups)) {
+		$groups = array();
+		$nodes = og_all_groups_options();
+
+		foreach ($nodes as $key => $value) {
+			$node = node_load($key);
+			$groups[$key] = array(
+				'nid' => $key,
+				'title' => $node->title,
+				'status' => $node->status,
+				'type' => $node->type,
+				'uid' => $node->uid,
+				'created' => $node->created,
+				'changed' => $node->changed,
+			);
+		}
+
+		$group_options = $groups;
+	}
+	else if ($og) {
+		$group_options = array($og);
+	}
+
+  $options = array();
+  foreach ($group_options as $group) {
+    $group = (object) $group;
+    if ($group->status) {
+      $options[$group->nid] = '<span class="og-registration-'. $group->nid .'">'. t('Subscribe to @name.', array('@name' => $group->title)) .'</span>';
+      if ($group->selective) {
+        $options[$group->nid] .= ' '. t('(approval needed)');
+      }
+    }
+  }
+  $form['og_register']['og_register']['#options'] = $options;
+  // Completely disable OG options if there are no groups
+  if (empty($options)) {
+    unset($form['og_register']);
+  }
+  // Disable OG options (and select it) if only 1 group
+  else if (count($options) == 1) {
+    // We need to process this correctly (differently) on the hook_user() insert handler
+    $form['og_register']['og_register']['#type'] = 'hidden';
+    $form['og_register']['og_register']['#value'] = key($options);
+
+    $form['og_register']['message']['#type'] = 'item';
+    $group = array_shift($group_options);
+    $form['og_register']['message']['#value'] = t('This user will be added to !group.', array('!group' => $group['title']));
+  }
+  // If group context is set, select it by default
+  else if ($og) {
+    $form['og_register']['og_register']['#default_value'] = array($og->nid);
+  }
+}
+

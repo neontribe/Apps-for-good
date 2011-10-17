@@ -124,6 +124,11 @@ body .error a:hover {
 	margin-bottom: 10px;
 }
 
+.last,
+.views-row-last {
+	border: 0 !important;
+}
+
 /* Headers & Spans
 ---------------------------------------------------------- */
 
@@ -633,7 +638,7 @@ input[type='submit'] {
 	list-style: none;
 }
 
-#header-links li:last-child a {
+#header-links li.last a {
 	margin-right: 0;
 }
 
