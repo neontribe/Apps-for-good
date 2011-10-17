@@ -43,8 +43,7 @@ function atrium_user_default_permissions() {
   $permissions['administer comments'] = array(
     'name' => 'administer comments',
     'roles' => array(
-      '0' => 'CDI Employee',
-      '1' => 'Educator',
+      '0' => 'Educator',
     ),
   );
 
@@ -71,7 +70,8 @@ function atrium_user_default_permissions() {
     'name' => 'administer nodes',
     'roles' => array(
       '0' => 'App team',
-      '1' => 'Educator',
+      '1' => 'CDI Employee',
+      '2' => 'Educator',
     ),
   );
 
@@ -121,7 +121,13 @@ function atrium_user_default_permissions() {
   $permissions['change own username'] = array(
     'name' => 'change own username',
     'roles' => array(
-      '0' => 'CDI Employee',
+      '0' => 'App team',
+      '1' => 'CDI Employee',
+      '2' => 'Educator',
+      '3' => 'Supporter',
+      '4' => 'administrator',
+      '5' => 'authenticated user',
+      '6' => 'manager',
     ),
   );
 

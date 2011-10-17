@@ -139,9 +139,9 @@ function atrium_members_views_default_views() {
       'relationship' => 'none',
     ),
     'rid' => array(
-      'operator' => 'not',
+      'operator' => 'or',
       'value' => array(
-        '4' => '4',
+        '12' => '12',
       ),
       'group' => '0',
       'exposed' => FALSE,
@@ -157,6 +157,11 @@ function atrium_members_views_default_views() {
       ),
       'relationship' => 'none',
       'reduce_duplicates' => 0,
+    ),
+    'rid_1' => array(
+      'id' => 'rid_1',
+      'table' => 'og_users_roles',
+      'field' => 'rid',
     ),
   ));
   $handler->override_option('access', array(
@@ -178,6 +183,64 @@ function atrium_members_views_default_views() {
     'type' => 'ul',
   ));
   $handler = $view->new_display('page', 'Active users', 'page_1');
+  $handler->override_option('filters', array(
+    'status' => array(
+      'operator' => '=',
+      'value' => 1,
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'users',
+      'field' => 'status',
+      'override' => array(
+        'button' => 'Override',
+      ),
+      'relationship' => 'none',
+    ),
+    'current' => array(
+      'operator' => '=',
+      'value' => '',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'current',
+      'table' => 'spaces',
+      'field' => 'current',
+      'relationship' => 'none',
+    ),
+    'rid' => array(
+      'operator' => 'or',
+      'value' => array(
+        '13' => '13',
+        '9' => '9',
+        '10' => '10',
+        '11' => '11',
+        '14' => '14',
+        '12' => '12',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'rid',
+      'table' => 'users_roles',
+      'field' => 'rid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+      'reduce_duplicates' => 0,
+    ),
+  ));
   $handler->override_option('access', array(
     'type' => 'perm',
     'perm' => 'create users',
@@ -314,6 +377,59 @@ function atrium_members_views_default_views() {
       'override' => array(
         'button' => 'Use default',
       ),
+    ),
+  ));
+  $handler->override_option('filters', array(
+    'status' => array(
+      'operator' => '=',
+      'value' => 1,
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'users',
+      'field' => 'status',
+      'override' => array(
+        'button' => 'Override',
+      ),
+      'relationship' => 'none',
+    ),
+    'current' => array(
+      'operator' => '=',
+      'value' => '',
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'current',
+      'table' => 'spaces',
+      'field' => 'current',
+      'relationship' => 'none',
+    ),
+    'rid_1' => array(
+      'operator' => 'or',
+      'value' => array(
+        '12' => '12',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'rid_1',
+      'table' => 'og_users_roles',
+      'field' => 'rid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+      'reduce_duplicates' => 0,
     ),
   ));
   $handler->override_option('access', array(
