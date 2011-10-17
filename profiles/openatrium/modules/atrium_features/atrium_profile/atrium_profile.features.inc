@@ -32,12 +32,3 @@ function atrium_profile_node_info() {
   );
   return $items;
 }
-
-/**
- * Implementation of hook_views_api().
- */
-function atrium_profile_views_api() {
-  return array(
-    'api' => '2',
-  );
-}
