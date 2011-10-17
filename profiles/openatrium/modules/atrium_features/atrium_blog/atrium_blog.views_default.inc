@@ -923,12 +923,12 @@ function atrium_blog_views_default_views() {
   $translatables['blog_listing'] = array(
     t('Archive'),
     t('Block'),
-    t('Blog'),
     t('Blog teaser'),
     t('Blog teaser (list)'),
     t('Defaults'),
     t('Feed'),
     t('Page'),
+    t('Text'),
     t('more'),
   );
 
