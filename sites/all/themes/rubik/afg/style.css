@@ -2324,6 +2324,11 @@ body #header-top .account-menu-active a {
 	margin: 5px 0 0;
 }
 
+.end-node .comment .comment-links .comment_forbidden a {
+	float: none;
+	text-transform: uppercase;
+}
+
 .print a {
 	display: none !important;
 }
