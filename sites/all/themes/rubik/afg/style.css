@@ -296,9 +296,12 @@ span.header-description {
 	display: none;
 }
 
-/* Override header description inline styles
+/* Override WYSIWYG inline styles
 ---------------------------------------------------------- */
 
+.content-body div[style],
+.content-body p[style],
+.content-body span[style],
 .header-description span[style] {
 	font-size: inherit !important;
 	font-family: inherit !important;
@@ -2257,7 +2260,6 @@ body #header-top .account-menu-active a {
 }
 
 .end-node .content-body {
-	font-size: 1.2em;
 	line-height: 1.5;
 }
 
