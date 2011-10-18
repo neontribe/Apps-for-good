@@ -124,6 +124,11 @@ body .error a:hover {
 	margin-bottom: 10px;
 }
 
+.last,
+.views-row-last {
+	border: 0 !important;
+}
+
 /* Headers & Spans
 ---------------------------------------------------------- */
 
@@ -291,9 +296,12 @@ span.header-description {
 	display: none;
 }
 
-/* Override header description inline styles
+/* Override WYSIWYG inline styles
 ---------------------------------------------------------- */
 
+.content-body div[style],
+.content-body p[style],
+.content-body span[style],
 .header-description span[style] {
 	font-size: inherit !important;
 	font-family: inherit !important;
@@ -633,7 +641,7 @@ input[type='submit'] {
 	list-style: none;
 }
 
-#header-links li:last-child a {
+#header-links li.last a {
 	margin-right: 0;
 }
 
@@ -2252,7 +2260,6 @@ body #header-top .account-menu-active a {
 }
 
 .end-node .content-body {
-	font-size: 1.2em;
 	line-height: 1.5;
 }
 

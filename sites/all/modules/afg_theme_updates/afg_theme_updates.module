@@ -59,8 +59,8 @@ function _set_form_field_globals(&$form) {
 	$form['menu']['#collapsible'] = FALSE;
 	$form['menu']['#collapsed'] = FALSE;
 	
-	$form['og_register']['#collapsible'] = FALSE;
-	$form['og_register']['#collapsed'] = FALSE;
+	//$form['og_register']['#collapsible'] = FALSE;
+	//$form['og_register']['#collapsed'] = FALSE;
 	
 	$form['notifications']['#collapsible'] = FALSE;
 	$form['notifications']['#collapsed'] = FALSE;
