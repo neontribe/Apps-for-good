@@ -111,7 +111,8 @@ function afg_theme_updates_form_alter(&$form, &$form_state, $form_id) {
 	
 	switch ($form_id) {
 		case 'ucreate_user_form':
-			//dpm($form);
+			//
+pm($form);
 			break;
 		
 		case 'blog_node_form':
