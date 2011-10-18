@@ -1492,7 +1492,7 @@ function afg_groups_views_views_default_views() {
       ),
     ),
   ));
-  $handler->override_option('title', 'Applications');
+  $handler->override_option('title', 'Browse Apps');
   $handler->override_option('empty', '');
   $handler->override_option('use_ajax', FALSE);
   $handler->override_option('items_per_page', 25);
@@ -3178,10 +3178,10 @@ return TRUE;',
   $translatables['groups_listing_app_team'] = array(
     t('About this App'),
     t('App Links'),
-    t('Applications'),
     t('Archived applications'),
     t('Block: My applications (sidebar)'),
     t('Block: User applications'),
+    t('Browse Apps'),
     t('Centre'),
     t('Defaults'),
     t('My applications'),
