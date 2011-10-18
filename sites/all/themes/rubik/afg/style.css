@@ -225,7 +225,6 @@ span.header-description, span.header-description div.item-list {
 	color: #FFF;
 	font-size: 1.1em;
 	line-height: 1.6 !important;
-	min-height: 60px;
 	display: block;
 	margin: 0 0 20px;
 	border: none;
@@ -589,7 +588,7 @@ input[type='submit'] {
 	float: left;
 	width: 60%;
 	margin: 0 0 0 25px;
-	padding: 0 0 40px;
+	padding: 0 0 20px;
 }
 
 #page-title img {
