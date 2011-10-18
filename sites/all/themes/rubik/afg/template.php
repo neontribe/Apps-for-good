@@ -1,8 +1,8 @@
 <?php
 
 /**
-* Implementation of hook_theme().
-*/
+ * Implementation of hook_theme().
+ */
 function afg_theme(){
   return array(
     'comment_form' => array(
@@ -14,18 +14,41 @@ function afg_theme(){
     ),
   );
 }
-
+ 
 /**
  * Displays a standard atrium success or failure message.
+ *
+ * @param &$vars
+ *   List of available page variables.
+ *
+ * @param $message
+ *   The message to display.
+ *
+ * @param $success
+ *   Set to TRUE for positive (green) messages such as a successful login and to
+ *   FALSE for a negative (red) message such as an invalid username.
+ *
+ * @param $append
+ *   If set to FALSE the message will override any prior messages and only display
+ *   the value passed into the function.
+ *
  */
-function _afg_show_message(&$vars, $message, $success = TRUE) {
-    if (!$message)
-      return false;
-    
-    $class = ($success) ? 'success' : 'error';
-    $m = "<div class='messages $class'>$message</div>";
-    
-    $vars['messages'] = $m;
+function _afg_show_message(&$vars, $message, $success = TRUE, $append = TRUE) {
+  if (!$message)
+    return FALSE;
+
+  $class = ($success) ? 'success' : 'error';
+  $m = "<div class='messages $class'>$message</div>";
+
+  // Append to current drupal messsages or override
+  if ($append) {
+    $vars['messages'] .= $m;
+  }
+  else {
+    $vars['messages']= $m;
+  }
+  
+  return TRUE;
 }
 
 /**
@@ -33,21 +56,25 @@ function _afg_show_message(&$vars, $message, $success = TRUE) {
  */
 function _afg_override_login_message(&$vars) {
   $msg = trim(check_plain(strip_tags($vars['messages'])));
-    
-    if (strcmp($msg, 'You are not authorized to post comments.') == 0) {
-      $nid = $vars['node']->nid;
-        
+
+  if (strcmp($msg, 'You are not authorized to post comments.') == 0) {
+    $nid = $vars['node']->nid;
+
     $m = '<a href="/user/login?destination=node/'. $nid .'#comment-form">Login</a>';
-      $m .= ' or <a href="/user/register?destination=node/'. $nid .'#comment-form">register</a> to post comments</span>';
-    
-    _afg_show_message($vars, $m, FALSE);
-    }
+    $m .= ' or <a href="/user/register?destination=node/'. $nid .'#comment-form">register</a> to post comments</span>';
+
+    return _afg_show_message($vars, $m, FALSE);
+  }
 }
 
 /**
  * Preprocessor for theme('page').
  */
 function afg_preprocess_page(&$vars) {
+  global $user;
+
+ // dpm(get_defined_vars());
+
   // if we are displaying a node and the node has dashboard show that instead
   $arg0 = arg(0);
   $arg1 = arg(1);
@@ -67,13 +94,34 @@ function afg_preprocess_page(&$vars) {
   // Override default error message and prompt login
   _afg_override_login_message($vars);
 
+  // Show login message on shoutbox form page for anonymous users
+  if ($arg0 == 'commentwall' || $arg0 == 'shoutbox') {
+    if (!$user->uid) {
+      $m = '<a href="user/login?destination='. $arg0 .'">Login</a>'
+	. ' or <a href="user/register?destination='. $arg0 .'">register</a>'
+	. ' to post comments</span>';
+
+      _afg_show_message($vars, $m, FALSE);
+    }
+  }
+
+  // Rewrite taxonomy term heading
+  if ($arg0 == 'taxonomy' && $arg1 == 'term') {
+    $title = $vars['title'];
+
+    if (substr($title, 0, 6) === 'Tagged') {
+      $term = ucwords(str_replace('"', '', trim(substr($title, 6))));
+      $vars['title'] = 'Tagged: <span class="term">'. $term .'</span>';
+    }
+  }
+
   // Force using the correct template file
   if(count($vars['template_files']) > 1) {
     foreach($vars['template_files'] as $key => $template) {
-    if(strcasecmp($template, 'page') === 0) {
-      unset($vars['template_files'][$key]);
-      break;
-    }
+      if(strcasecmp($template, 'page') === 0) {
+	unset($vars['template_files'][$key]);
+	break;
+      }
     }
   }
   
@@ -206,15 +254,6 @@ function afg_links($links, $attributes = array('class' => 'links')) {
     }
   }
 
-  // remove the fragment from the shoutbos url
-  if (count($links) == 4) { // && $links[3]['fragment'] == 'block-atrium_shoutbox-shoutbox') {
-    foreach ($links as $id => $link) {
-      if (isset($link['fragment']) && $link['fragment'] == 'block-atrium_shoutbox-shoutbox' ){
-        unset($links[$id]['fragment']);
-      }
-    }
-  }
-
   return theme_links($links, $attributes) . $suffix;
 }
 
@@ -281,71 +320,8 @@ function computed_field_field_activity_link_compute($node, $field, &$node_field)
   $node_field[0]['value'] = $afg_activity_link;
 }
 
-//NOT in use node cannot detect if the view is displaying it's content
-function computed_field_field_activity_update_title_compute($node, $field, &$node_field) {
-$title_link = '<div class="views-field-title"><a href= "node/' . $node->nid . '">'. $node->title . '<a/></div>';
 
-//TODO Comment case
 
-//get group number
-$vals = array_values($node->og_groups);
-$group_num = $vals[0];
-
-  switch($node->type) {
-      case 'group_app_team':
-      case 'group_centre_school':
-      case 'page':
-      if ($node->comments_uid) {
-    $user = user_load($node->comments_uid);
-    $username = $user->name;
-    //dpm($user);
-    $activity_update = $username . ' commented on ' . $title_link;
-      } else {
-        $activity_update = $title_link;
-        if ($node->changed > $node->created) {
-            $activity_update .= ' updated.';
-        } else {
-      $activity_update .= ' created.';
-        }
-      }
-      break;
-
-      case 'group_media_image':
-      case 'cdi_blog':
-      case 'request_for_help':
-      case 'blog':
-      case 'group_media_video':
-dpm($node);
-      if ($node->comments_uid) {
-          $user = user_load($node->comments_uid);
-          $username = $user->name;
-          $activity_update = $username . ' commented on ' . $title_link;
-      } else {
-        $sql='SELECT value FROM {purl} where id=' . $group_num;
-        $res = db_query($sql);
-        $row = db_fetch_array($res);
-        $nodepath = $row[value];
-        $sql = 'SELECT title FROM {node} where nid=' . $group_num;
-	$res = db_query($sql);
-	$row = db_fetch_array($res);
-	$group_name = $row[title];
-        $urlslug = '<a href=' . $nodepath . '>';
-        $activity_update = $urlslug . $group_name . '</a>';
-        if ($node->changed > $node->created) {
-            $activity_update .= ' updated ';
-        } else {
-            $activity_update .= ' created ';
-        }
-        $activity_update .= $title_link;
-      }
-      break;
-      default:
-        $activity_update = '';
-      break;
-  }
-  dpm($activity_update);
-  $node_field[0]['value'] = $activity_update;
-}
 
 //member count view field hook
 function afg_views_view_field__groups_listing_centre_school__page_2__member_count($view, $handler, $obj) {
@@ -444,15 +420,16 @@ switch($obj->node_type) {
       if ($obj->comments_uid) {
           $activity_update = $username . ' commented on ' . $title_link;
       } else {
-	if ($obj->node_og_ancestry_nid){
-        $sql='SELECT value FROM {purl} where id=' . $obj->node_og_ancestry_nid;
-        } else {
-	if ($obj->og_ancestry_nid){
-	$sql='SELECT value FROM {purl} where id=' . $obj->og_ancestry_nid;
-	}}
-	$res = db_query($sql);
+	      if ($obj->node_og_ancestry_nid){
+            $sql='SELECT value FROM {purl} where id=' . $obj->node_og_ancestry_nid;
+      } else {
+	      if ($obj->og_ancestry_nid){
+	        $sql='SELECT value FROM {purl} where id=' . $obj->og_ancestry_nid;
+        }
+      }
+	      $res = db_query($sql);
         $row = db_fetch_array($res);
-        $nodepath = $row[value];
+        $nodepath = base_path() . $row[value];
         $urlslug = '<a href=' . $nodepath . '>';
         $activity_update = $urlslug . $obj->node_og_ancestry_title . '</a>';
         if ($obj->node_changed > $obj->node_created) {
