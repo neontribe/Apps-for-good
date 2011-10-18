@@ -132,7 +132,7 @@ function afg_group_definitions_spaces_presets() {
       'spaces_features' => array(
         'afg_group_media' => '1',
         'atrium_blog' => '1',
-        'atrium_members' => '1',
+        'atrium_members' => '0',
         'atrium_shoutbox' => '0',
         'cdi_blog' => '1',
         'spaces_dashboard' => '1',

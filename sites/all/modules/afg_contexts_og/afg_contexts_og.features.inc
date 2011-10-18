@@ -9,3 +9,12 @@ function afg_contexts_og_ctools_plugin_api() {
     return array("version" => 3);
   }
 }
+
+/**
+ * Implementation of hook_views_api().
+ */
+function afg_contexts_og_views_api() {
+  return array(
+    'api' => '2',
+  );
+}
