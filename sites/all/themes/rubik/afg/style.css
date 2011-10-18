@@ -221,13 +221,15 @@ h1 .term {
 	list-style: none;
 }
 
-span.header-description {
+span.header-description, span.header-description div.item-list {
 	color: #FFF;
 	font-size: 1.1em;
-	line-height: 1.6;
+	line-height: 1.6 !important;
 	min-height: 60px;
 	display: block;
 	margin: 0 0 20px;
+	border: none;
+	background: none !important;
 }
 
 /* Clearing & Hiding

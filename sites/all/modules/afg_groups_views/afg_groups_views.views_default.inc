@@ -981,6 +981,11 @@ function afg_groups_views_views_default_views() {
       'field' => 'field_website_url',
       'relationship' => 'field_centre_ref_nid',
     ),
+    'body' => array(
+      'id' => 'body',
+      'table' => 'node_revisions',
+      'field' => 'body',
+    ),
   ));
   $handler->override_option('sorts', array(
     'title' => array(
@@ -2275,117 +2280,6 @@ function afg_groups_views_views_default_views() {
   $handler->override_option('empty', '');
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
-  $handler = $view->new_display('block', 'This App', 'block_4');
-  $handler->override_option('fields', array(
-    'body' => array(
-      'label' => 'Short Pitch',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'html' => 0,
-        'strip_tags' => 0,
-      ),
-      'empty' => '',
-      'hide_empty' => 0,
-      'empty_zero' => 0,
-      'exclude' => 0,
-      'id' => 'body',
-      'table' => 'node_revisions',
-      'field' => 'body',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-      'relationship' => 'none',
-    ),
-  ));
-  $handler->override_option('arguments', array(
-    'nid' => array(
-      'default_action' => 'default',
-      'style_plugin' => 'default_summary',
-      'style_options' => array(),
-      'wildcard' => 'all',
-      'wildcard_substitution' => 'All',
-      'title' => 'A short pitch for %1',
-      'breadcrumb' => '',
-      'default_argument_type' => 'og_group_node',
-      'default_argument' => '',
-      'validate_type' => 'none',
-      'validate_fail' => 'not found',
-      'break_phrase' => 0,
-      'not' => 0,
-      'id' => 'nid',
-      'table' => 'node',
-      'field' => 'nid',
-      'validate_user_argument_type' => 'uid',
-      'validate_user_roles' => array(
-        '2' => 0,
-        '3' => 0,
-        '6' => 0,
-        '4' => 0,
-        '5' => 0,
-      ),
-      'override' => array(
-        'button' => 'Use default',
-      ),
-      'relationship' => 'none',
-      'default_options_div_prefix' => '',
-      'default_argument_fixed' => '',
-      'default_argument_user' => 0,
-      'default_argument_php' => '',
-      'validate_argument_node_type' => array(
-        'blog' => 0,
-        'book' => 0,
-        'event' => 0,
-        'feed_ical' => 0,
-        'feed_ical_item' => 0,
-        'group' => 0,
-        'profile' => 0,
-        'shoutbox' => 0,
-        'group_image' => 0,
-        'casetracker_basic_case' => 0,
-        'casetracker_basic_project' => 0,
-        'group_app_team' => 0,
-        'group_centre_school' => 0,
-        'group_cdi' => 0,
-      ),
-      'validate_argument_node_access' => 0,
-      'validate_argument_nid_type' => 'nid',
-      'validate_argument_vocabulary' => array(
-        '2' => 0,
-        '1' => 0,
-        '3' => 0,
-      ),
-      'validate_argument_type' => 'tid',
-      'validate_argument_transform' => 0,
-      'validate_user_restrict_roles' => 0,
-      'validate_argument_is_member' => 'OG_VIEWS_DO_NOT_VALIDATE_MEMBERSHIP',
-      'validate_argument_group_node_type' => array(
-        'group' => 0,
-        'group_app_team' => 0,
-        'group_centre_school' => 0,
-        'group_cdi' => 0,
-      ),
-      'validate_argument_php' => '',
-    ),
-  ));
-  $handler->override_option('access', array(
-    'type' => 'none',
-  ));
-  $handler->override_option('title', 'About this App');
-  $handler->override_option('block_description', '');
-  $handler->override_option('block_caching', -1);
   $handler = $view->new_display('block', 'The App Team', 'block_5');
   $handler->override_option('relationships', array());
   $handler->override_option('fields', array(
@@ -3175,8 +3069,115 @@ return TRUE;',
   ));
   $handler->override_option('block_description', '');
   $handler->override_option('block_caching', -1);
+  $handler = $view->new_display('block', 'Short pitch', 'block_6');
+  $handler->override_option('relationships', array());
+  $handler->override_option('fields', array(
+    'body' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'exclude' => 0,
+      'id' => 'body',
+      'table' => 'node_revisions',
+      'field' => 'body',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+  ));
+  $handler->override_option('arguments', array());
+  $handler->override_option('filters', array(
+    'status' => array(
+      'operator' => '=',
+      'value' => 1,
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'status',
+      'table' => 'node',
+      'field' => 'status',
+      'relationship' => 'none',
+    ),
+    'type' => array(
+      'operator' => 'in',
+      'value' => array(
+        'blog' => 'blog',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'id' => 'type',
+      'table' => 'node',
+      'field' => 'type',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
+    'tid' => array(
+      'operator' => 'or',
+      'value' => array(
+        '34' => '34',
+      ),
+      'group' => '0',
+      'exposed' => FALSE,
+      'expose' => array(
+        'operator' => FALSE,
+        'label' => '',
+      ),
+      'type' => 'select',
+      'limit' => TRUE,
+      'limit_by' => 'vid',
+      'vid' => '4',
+      'module' => 'features_app_status',
+      'id' => 'tid',
+      'table' => 'term_node',
+      'field' => 'tid',
+      'hierarchy' => 0,
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+      'reduce_duplicates' => 0,
+    ),
+    'current' => array(
+      'id' => 'current',
+      'table' => 'spaces',
+      'field' => 'current',
+    ),
+  ));
+  $handler->override_option('title', 'Short pitch');
+  $handler->override_option('items_per_page', 1);
+  $handler->override_option('use_pager', '0');
+  $handler->override_option('block_description', 'Short pitch');
+  $handler->override_option('block_caching', -1);
   $translatables['groups_listing_app_team'] = array(
-    t('About this App'),
     t('App Links'),
     t('Archived applications'),
     t('Block: My applications (sidebar)'),
@@ -3193,10 +3194,10 @@ return TRUE;',
     t('Page: Application directory'),
     t('Page: Archived applications'),
     t('Page: My applications'),
+    t('Short pitch'),
     t('The App Team'),
     t('The Centre'),
     t('The Team'),
-    t('This App'),
     t('This team is based at:'),
     t('User applications'),
     t('View more'),
