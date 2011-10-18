@@ -393,7 +393,7 @@ function afg_views_view_field__updates__block_3__atrium_activity($view, $handler
 
 //hook recent activity field and rewrite
 function afg_activity_title_rewrite($view, $handler, $obj) {
-  $title_link = '<div class="views-field-title"><a href= "'. base_path()  .'node/' . $obj->nid . '">'. $obj->node_title . '<a/></div>';
+  $title_link = '<div class="views-field-title"><a href= "'. base_path()  .'node/' . $obj->nid . '">'. $obj->node_title . '</a></div>';
 
 //get user name from profile
   if ($obj->comments_uid) {

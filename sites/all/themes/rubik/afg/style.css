@@ -100,11 +100,13 @@ em {
 	font-style: normal;
 }
 
+/*
 ul li { list-style: inside disc; }
 ol li { list-style: inside decimal; }
+*/
 
 .page-admin ul li {
-	list-style: none;s
+	list-style: none;
 }
 
 body .error a {
@@ -1101,13 +1103,6 @@ input[type='submit'] {
 	color: #FFF;
 }
 
-#content-left .view-id-Group_Media .views-field-changed,
-#content-left .activity-updates span.views-field-atrium-activity-timestamp,
-#content-left .view-updates .views-field-atrium-activity-timestamp,
-#content-left .views-field-comment-count {
-	float: left !important;
-}
-
 #content-left .activity-updates .views-field-fb-social-like {
 	clear: both;
 }
@@ -1182,11 +1177,14 @@ input[type='submit'] {
 	position: relative;
 }
 
+#content-left .views-field-nothing span.field-content {
+	display: block;
+}
+
 #content-left .activity-updates-apps .activity-group-comment,
 #content-left .activity-info .activity-group-comment {
 	clear: both;
 	display: block;
-	float: right;
 }
 
 #quicktabs_container_app_directory ul {
@@ -1705,7 +1703,6 @@ li.tab-plan a {  background:url('images/afg/icons/afg_blog-icon.gif')  no-repeat
 #content-left .view-activity-listing li a,
 #content-left .view-updates li a {
 	color: #FFF;
-	position: relative;
 }
 
 #content-left .view-updates .views-field-atrium-activity {
@@ -2430,6 +2427,7 @@ body #header-top .account-menu-active a {
 }
 
 #content-left .activity-group-comment .views-field-title-1 {
+	display: block;
 	clear: both;
 	font-size: 0.9em;
 }
