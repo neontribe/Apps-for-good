@@ -2697,11 +2697,20 @@ body #header-top .account-menu-active a {
 .page-node-add-user  .fieldset-title,
 .page-node-form .column-main .fieldset-title {
 	font-weight: bold;
+	padding: 4px 0;
+	text-indent: 10px;
 }
 
 .page-node-add-user .fielset-title:after,
 .page-node-form .column-main .fieldset-title:after {
 	content: ':';
+}
+
+.page-node-form .column-main .fieldset-title a {
+	background: #BBB;
+	color: #FFF;
+	font-size: 1em;
+	padding: 5px 0 7px !important;
 }
 
 .page-node-form .column-side label {
@@ -2911,6 +2920,17 @@ body #header-top .account-menu-active a {
 	-webkit-border-radius: 0px 3px 3px 0px;
 }
 
+.page-node-form .column-main .tag-active span {
+	background: none;
+	padding: 0;
+	margin: 0;
+	top: 0;
+	left: 0;
+}
 
-
+.page-node-form .column-main .tag-active {
+	float: none;
+	text-indent: 0;
+	text-transform: none !important;
+}
 
