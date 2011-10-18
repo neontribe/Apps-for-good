@@ -408,7 +408,8 @@ switch($obj->node_type) {
       case 'group_app_team':
       case 'group_centre_school':
       case 'page':
-      if ($obj->comments_uid) {
+      case 'cdi_blog':
+        if ($obj->comments_uid) {
         $activity_update = $username . ' commented on ' . $title_link;
         } else {
           $activity_update = $title_link;
@@ -419,9 +420,8 @@ switch($obj->node_type) {
         }
       }
       break;
-  
+
       case 'group_media_image':
-      case 'cdi_blog':
       case 'request_for_help':
       case 'blog':
       case 'group_media_video':
