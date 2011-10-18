@@ -7610,7 +7610,7 @@ return TRUE;',
       'empty_zero' => 0,
       'link_to_node' => 0,
       'label_type' => 'none',
-      'format' => 'plain',
+      'format' => 'markup',
       'multiple' => array(
         'group' => TRUE,
         'multiple_number' => '',
@@ -7622,6 +7622,9 @@ return TRUE;',
       'table' => 'node_data_field_activity_link',
       'field' => 'field_activity_link_value',
       'relationship' => 'none',
+      'override' => array(
+        'button' => 'Use default',
+      ),
     ),
     'atrium_activity' => array(
       'label' => '',
@@ -7800,13 +7803,13 @@ return TRUE;',
     'nothing' => array(
       'label' => '',
       'alter' => array(
-        'text' => '<div class="activity-info">
-    <div class="views-field-atrium-activity-timestamp">[atrium_activity_timestamp]</div>
-    <div class="activity-group-comment">
-        <div class="views-field-comment-count">[comment_count]</div>
-        <div class="views-field-title-1">[title_2]</div>
-    </div>
-</div>',
+        'text' => '<span class="activity-info">
+    <span class="views-field-atrium-activity-timestamp">[atrium_activity_timestamp]</span>
+    <span class="activity-group-comment">
+        <span class="views-field-comment-count">[comment_count]</span>
+        <span class="views-field-title-1">[title_2]</span>
+    </span>
+</span>',
         'make_link' => 0,
         'path' => '',
         'link_class' => '',
