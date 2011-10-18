@@ -180,7 +180,15 @@ function afg_preprocess_page(&$vars) {
   if ($group_node) {
     $vars['title'] = $group_node->title;
     $vars['header_desc'] = $group_node->body;
- /**website variable not in use in page.tpl**/
+    if ($group_node->type == 'group_app_team') {
+      //get short pitch block
+      $pitch_block = (object) module_invoke('views', 'block', 'view', 'groups_listing_app_team-block_6' );
+      $vars['header_desc'] = $pitch_block->content;
+    }
+    
+    
+    
+    /**website variable not in use in page.tpl**/
   //  if ($node->type == 'group_centre_school') {
   //    $website = $node->field_website[0]['url'];
   //  }
@@ -400,7 +408,8 @@ switch($obj->node_type) {
       case 'group_app_team':
       case 'group_centre_school':
       case 'page':
-      if ($obj->comments_uid) {
+      case 'cdi_blog':
+        if ($obj->comments_uid) {
         $activity_update = $username . ' commented on ' . $title_link;
         } else {
           $activity_update = $title_link;
@@ -411,9 +420,8 @@ switch($obj->node_type) {
         }
       }
       break;
-  
+
       case 'group_media_image':
-      case 'cdi_blog':
       case 'request_for_help':
       case 'blog':
       case 'group_media_video':

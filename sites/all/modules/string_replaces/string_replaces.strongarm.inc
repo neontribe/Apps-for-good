@@ -11,12 +11,13 @@ function string_replaces_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'locale_custom_strings_en';
   $strongarm->value = array(
-    'Dashboard' => 'Profile',
     'Blog' => 'Text',
+    'Dashboard' => 'Profile',
     'Members' => 'Supporters',
     'Membership' => 'Following',
     'Shout' => 'Post →',
     'Shoutbox' => 'Comment Wall',
+    'My groups' => 'I\'m Following',
   );
   $export['locale_custom_strings_en'] = $strongarm;
 

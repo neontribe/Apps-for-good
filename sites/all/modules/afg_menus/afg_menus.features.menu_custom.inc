@@ -12,9 +12,17 @@ function afg_menus_menu_default_menu_custom() {
     'title' => 'Footer',
     'description' => '',
   );
+  // Exported menu: menu-info-and-resources
+  $menus['menu-info-and-resources'] = array(
+    'menu_name' => 'menu-info-and-resources',
+    'title' => 'Info and resources',
+    'description' => 'Information and resources',
+  );
   // Translatables
   // Included for use with string extractors like potx.
   t('Footer');
+  t('Info and resources');
+  t('Information and resources');
 
 
   return $menus;
