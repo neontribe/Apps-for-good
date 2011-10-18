@@ -9,6 +9,7 @@ stylesheets[screen][] = "style.css"
 ; styles[] = "videojs.css"
 
 scripts[] = "afg.js"
+scripts[] = "selectivizr-min.js"
 
 ; Regions
 regions[left] = "Left sidebar"
