@@ -89,6 +89,8 @@ textarea {
 	-moz-border-radius: 15px;
 	-webkit-border-radius: 15px;
 	border-radius: 15px;
+
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 textarea:focus {
@@ -258,6 +260,9 @@ span.header-description, span.header-description div.item-list {
 	
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
+	border-radius: 5px;
+
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 .apps-at-centre li.views-row:after,
@@ -398,6 +403,8 @@ input[type='submit'],
 	box-shadow: 0 2px #111;
 	
 	text-shadow: 1px 1px 2px #444;
+
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 input[type='submit'] {
@@ -425,6 +432,8 @@ input[type='submit'] {
 	box-shadow: 0 2px #111;
 	
 	text-shadow: 1px 1px 2px #444;
+
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 #content-right .views-field-mail a {
@@ -453,9 +462,12 @@ input[type='submit'] {
 	width: 100%;
 	max-width: 1000px;
 	background: #FFF;
+
 	-moz-border-radius: 15px;
-	-webkit-border-radius: 25px;
+	-webkit-border-radius: 15px;
 	border-radius: 15px;
+
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 #page #content {
@@ -495,13 +507,6 @@ input[type='submit'] {
 .gmap-popup a {
 	color: black;
 } 
-/*
-  <div class='views-field-title'>
-    <div class="views-field-title">
-      <span class="field-content">
-        <a href="/apps-for-good-sprint3/node/196">
-          City Academy Norwich
- */
 
 #content-left .gmap {
 	height: 450px !important;
@@ -541,6 +546,8 @@ input[type='submit'] {
 	-webkit-border-top-right-radius: 4px;
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
+
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 #primary-links .links li a {
@@ -549,6 +556,8 @@ input[type='submit'] {
 	text-transform: uppercase;
 	font-family: 'Open Sans', sans-serif;
 	text-shadow: #666 2px 2px 0;
+
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 #primary-links .links li:hover {
@@ -559,6 +568,8 @@ input[type='submit'] {
 #primary-links .links .active {
 	background: #FFF;
 	text-shadow: #DDD 2px 2px 0;
+
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 #primary-links .links .active {
@@ -602,6 +613,8 @@ input[type='submit'] {
 	-webkit-box-shadow: 0 0 2px 3px #444;
 	-moz-box-shadow: 0 0 2px 3px #444;
 	box-shadow: 0 0 2px 3px #444;
+
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 #header-links {
@@ -628,6 +641,8 @@ input[type='submit'] {
 	-moz-box-shadow: 0 2px #111;
 	-webkit-box-shadow: 0 2px #111;
 	box-shadow: 0 2px #111;
+
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 #header-top-links #get-involved {
@@ -649,16 +664,21 @@ input[type='submit'] {
 	margin-right: 0;
 }
 
-/*#header-links li.active-trail a {*/
 #header-links .header-menu-active {
-	box-shadow: inset 0 2px 2px #111;
+	-moz-box-shadow: inset 0 2px 2px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: inset 0 2px 2px rgba(0, 0, 0, .8);
 	box-shadow: inset 0 2px 2px rgba(0, 0, 0, .8);
+	
 	text-shadow: 2px 2px 2px rgba(0, 0, 0, .3);
+
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 #get-involved:hover,
 #header-links li:hover a,
 #editorial-title-teaser div > a:hover {
+	-moz-box-shadow: 0 0 8px 5px rgba(255, 255, 255, .4);
+	-webkit-box-shadow: 0 0 8px 5px rgba(255, 255, 255, .4);
 	box-shadow: 0 0 8px 5px rgba(255, 255, 255, .4);
 }
 
@@ -842,6 +862,8 @@ input[type='submit'] {
 	-moz-border-radius-topright: 6px;
 	-webkit-border-top-right-radius: 6px;
 	border-top-right-radius: 6px;
+
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 #content-right .block + .block {
@@ -852,6 +874,8 @@ input[type='submit'] {
 	-moz-border-radius-topright: 0;
 	-webkit-border-top-right-radius: 0;
 	border-top-right-radius: 0;
+
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 #content-right .block:last-child {
@@ -864,6 +888,8 @@ input[type='submit'] {
 	-moz-border-radius-bottomright: 6px;
 	-webkit-border-bottom-right-radius: 6px;
 	border-bottom-right-radius: 6px;
+
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 #content-right .block-content {
@@ -1074,12 +1100,6 @@ input[type='submit'] {
 	border: 6px solid #FFF;
 	margin: 0 20px 0 0;
 	overflow: hidden;
-	
-	/*
-	-moz-box-shadow: 0 0 6px 6px #0083DA;
-	-webkit-box-shadow: 0 0 6px 6px #0083DA;
-	box-shadow: 0 0 6px 6px #0083DA;
-	*/
 }
 
 #content-left .view-updates img {
@@ -1381,6 +1401,8 @@ input[type='submit'] {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
+	
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 #content-left .view-shoutbox-shouts li {
@@ -1440,6 +1462,8 @@ input[type='submit'] {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
+
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 .views-field-delete-comment:hover {
@@ -1544,10 +1568,11 @@ input[type='submit'] {
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
 	box-shadow: none;
+
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 #block-quicktabs-cdi_features  ul.quicktabs_tabs.quicktabs-style-navlist-afg li a {
-	/* padding: 3px 0 8px; */
 	color: #666;
 	padding: 6px 0 12px;
 }
@@ -1642,6 +1667,8 @@ input[type='submit'] {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
+
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 #editorial-title-teaser div > a:before {
@@ -1762,6 +1789,8 @@ li.tab-plan a {  background:url('images/afg/icons/afg_blog-icon.gif')  no-repeat
 	float: left;
 	position: absolute;
 	z-index: 100;
+
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 #content-left .view-afg-app-directory .views-field-changed {
@@ -1805,6 +1834,8 @@ li.tab-plan a {  background:url('images/afg/icons/afg_blog-icon.gif')  no-repeat
 	-moz-box-shadow: 0 0 6px 1px #CCC;
 	-webkit-box-shadow: 0 0 6px 1px #CCC;
 	border-shadow: 0 0 6px 1px #CCC;
+
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 .page-supporters #content-left li {
@@ -1837,6 +1868,8 @@ li.tab-plan a {  background:url('images/afg/icons/afg_blog-icon.gif')  no-repeat
 	-moz-box-shadow: 0 0 2px 3px #C0C0C0;
 	-webkit-box-shadow: 0 0 2px 3px #C0C0C0;
 	box-shadow: 0 0 2px 3px #C0C0C0;
+
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 .page-supporters #content-left .views-field-managelinkadmin a {
@@ -2079,6 +2112,8 @@ body #header-top .account-menu-active a {
 	-moz-box-shadow: 0 2px 1px #777;
 	-webkit-box-shadow: 0 2px 1px #777;
 	box-shadow: 0 2px 1px #777;
+
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 #stats .item-supporters {
@@ -2167,6 +2202,8 @@ body #header-top .account-menu-active a {
 	-moz-box-shadow: 0 0 6px 2px #A1A1A1;
 	-webkit-box-shadow: 0 0 6px 2px #A1A1A1;
 	box-shadow: 0 0 6px 2px #A1A1A1;
+
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 #content-left .browse-centres h3 li {
@@ -2726,6 +2763,7 @@ body #header-top .account-menu-active a {
 	border: 0;
 	width: 98% !important;
 	background: #FFF;
+
 	-moz-border-radius: 0;
 	-webkit-border-radius: 0;
 	border-radius: 0;
@@ -2734,6 +2772,7 @@ body #header-top .account-menu-active a {
 #cke_edit-body .cke_wrapper {
 	background-color: #D8D6D7;
 	background-image: none !important;
+
 	-moz-border-radius: 0 !important;
 	-webkit-border-radius: 0 !important;
 	border-radius: 0 !important;
@@ -2868,8 +2907,11 @@ body #header-top .account-menu-active a {
 
 .page-node-form #edit-field-help-0-value-wrapper textarea {
 	border: 0 !important;
+
+	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
 	box-shadow: none;
+
 	background: none !important;
 	font-size: 1em;
 	min-height: 150px;
@@ -2915,6 +2957,8 @@ body #header-top .account-menu-active a {
 	-moz-border-radius-bottomright: 3px;
 	-moz-border-radius-bottomleft: 0px;
 	-webkit-border-radius: 0px 3px 3px 0px;
+
+	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 .page-node-form .column-main .tag-active span {
