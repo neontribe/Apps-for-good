@@ -143,9 +143,9 @@ h1, h2, h3, .block-title {
 }
 
 h1 {
+	display: inline;
 	color: #FFF;
 	font-size: 4.2em;
-	margin: 0.25em 0 0.2em;
 	text-shadow: 1px 2px 1px #000;
 }
 
@@ -606,14 +606,8 @@ input[type='submit'] {
 #page-title img {
 	position: relative;
 	top: 8px;
-	margin: 0 10px 0 0;
+	margin: 0 15px 0 0;
 	border: 6px solid #FFF;
-
-	-webkit-box-shadow: 0 0 2px 3px #444;
-	-moz-box-shadow: 0 0 2px 3px #444;
-	box-shadow: 0 0 2px 3px #444;
-
-	behavior: url('/sites/all/libraries/PIE/PIE.htc');
 }
 
 #header-links {
