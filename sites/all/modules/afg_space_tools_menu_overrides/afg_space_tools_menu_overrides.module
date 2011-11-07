@@ -1,0 +1,55 @@
+<?php
+
+/*
+ * set working menu items to callbacks for redirect
+ */
+function afg_space_tools_menu_overrides_menu_alter(&$items) {
+	$items['node/add/group-centre-school']['type'] = MENU_CALLBACK;
+	$items['node/add/page']['type'] = MENU_CALLBACK;
+}
+
+/**
+ * Add a menu item to the content creation menu for a new app
+ */
+function afg_space_tools_menu_overrides_menu() {
+  
+  $items = array();
+  $items['node/add/centre-school'] = array(
+    'title' => t('Centre School'),
+    'description' => t('Add a Centre'),
+    'access arguments' => array('create group_centre_school content'),
+    'page callback' => 'centre_school_redirect',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['node/add/new-page'] = array(
+    'title' => t('Page'),
+    'description' => t('Add a Page'),
+    'access arguments' => array('create page content'),
+    'page callback' => 'page_redirect',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+
+  return $items;
+ 
+}
+
+
+function centre_school_redirect() {
+    $path = 'node/add/group-centre-school';
+    drupal_goto($path);
+}
+
+function page_redirect() {
+    $path = 'node/add/page';
+    drupal_goto($path);
+
+
+}
+
+
+
+
+
+
